@@ -1,3 +1,5 @@
-class HammerCLIKatello
-  VERSION = "0.0.1"
+module HammerCLIKatello
+  def self.version
+    @version ||= Gem::Version.new('0.0.1')
+  end
 end

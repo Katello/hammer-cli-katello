@@ -4,7 +4,7 @@ require 'hammer_cli_katello/version'
 
 Gem::Specification.new do |spec|
   spec.name = "hammer_cli_katello"
-  spec.version = HammerCLIKatello::VERSION
+  spec.version = HammerCLIKatello.version
   spec.authors = ["Adam Price"]
   spec.email = ["komidore64@gmail.com"]
 
