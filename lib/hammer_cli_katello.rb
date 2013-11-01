@@ -10,5 +10,6 @@ module HammerCLIKatello
   # require 'hammer_cli_katello/stuff'
   # ...
   # ...
+  require 'hammer_cli_katello/ping'
 
 end
