@@ -1,66 +1,70 @@
 require 'hammer_cli'
 require 'katello_api'
-require 'hammer_cli_katello/resource'
+require 'hammer_cli_foreman/commands'
 
-module KatelloCLIPing
+module HammerCLIKatello
 
-  class IndexCommand < HammerCLI::Apipie::ReadCommand
-    include HammerCLIKatello::Resource
+  class PingCommand < HammerCLI::Apipie::ReadCommand
 
-    command_name "ping"
     resource KatelloApi::Resources::Ping, :index
+
+
     output do
-      from "result" do
-        from "services" do
+      from "services" do
 
-          label "candlepin" do
-            from "candlepin" do
-              field "status", "Status"
-              field "duration_ms", "Duration"
-            end
+        label "candlepin" do
+          from "candlepin" do
+            field "status", "Status"
+            field "duration_ms", "Duration"
+            field "message", "Message"
           end
+        end
 
-          label "candlepin_auth" do
-            from "candlepin_auth" do
-              field "status", "Status"
-              field "duration_ms", "Duration"
-            end
+        label "candlepin_auth" do
+          from "candlepin_auth" do
+            field "status", "Status"
+            field "duration_ms", "Duration"
+            field "message", "Message"
           end
+        end
 
-          label "pulp" do
-            from "pulp" do
-              field "status", "Status"
-              field "duration_ms", "Duration"
-            end
+        label "pulp" do
+          from "pulp" do
+            field "status", "Status"
+            field "duration_ms", "Duration"
+            field "message", "Message"
           end
+        end
 
-          label "pulp_auth" do
-            from "pulp_auth" do
-              field "status", "Status"
-              field "duration_ms", "Duration"
-            end
+        label "pulp_auth" do
+          from "pulp_auth" do
+            field "status", "Status"
+            field "duration_ms", "Duration"
+            field "message", "Message"
           end
+        end
 
-          label "elasticsearch" do
-            from "elasticsearch" do
-              field "status", "Status"
-              field "duration_ms", "Duration"
-            end
+        label "elasticsearch" do
+          from "elasticsearch" do
+            field "status", "Status"
+            field "duration_ms", "Duration"
+            field "message", "Message"
           end
+        end
 
-          label "katello_jobs" do
-            from "katello_jobs" do
-              field "status", "Status"
-              field "duration_ms", "Duration"
-            end
+        label "katello_jobs" do
+          from "katello_jobs" do
+            field "status", "Status"
+            field "duration_ms", "Duration"
+            field "message", "Message"
           end
+        end
 
-        end # from "status"
-      end # from "result"
+      end # from "status"
     end # output do
 
-  end # class IndexCommand
+  end # class PingCommand
 
-  HammerCLI::MainCommand.subcommand("ping", "ping the katello server", KatelloCLIPing::IndexCommand)
+  HammerCLI::MainCommand.subcommand("ping", "ping the katello server", HammerCLIKatello::PingCommand)
 
-end # module KatelloCLIPing
+end # module HammerCLIKatello
