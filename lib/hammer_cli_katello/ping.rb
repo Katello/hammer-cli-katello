@@ -60,7 +60,7 @@ module HammerCLIKatello
           end
         end
 
-      end # from "status"
+      end # from "services"
     end # output do
 
   end # class PingCommand
