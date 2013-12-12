@@ -65,6 +65,6 @@ module HammerCLIKatello
 
   end # class PingCommand
 
-  HammerCLI::MainCommand.subcommand("ping", "ping the katello server", HammerCLIKatello::PingCommand)
+  HammerCLI::MainCommand.subcommand("ping", "get the status of the server", HammerCLIKatello::PingCommand)
 
 end # module HammerCLIKatello
