@@ -17,8 +17,31 @@ module HammerCLIKatello
       apipie_options :without => [:environment_id]
     end
 
+   class InfoCommand < HammerCLIForeman::InfoCommand
+     resource KatelloApi::Resources::System, :show
+
+     output do
+       field :name, "Name"
+       field :id, "ID"
+       field :uuid, "UUID"
+       field :description, "Description"
+       field :location, "Location"
+       from :environment do
+         field :name, "Lifecycle Environment"
+       end
+       from :content_view do
+         field :name, "Content View"
+       end
+       field :entitlementStatus, "Entitlement Status"
+       field :releaseVer, "Release Version"
+       field :autoheal, "Autoheal"
+     end
+
+     apipie_options
+   end
+
     autoload_subcommands
   end
 
-  HammerCLI::MainCommand.subcommand("system", "systems on the katello server", HammerCLIKatello::SystemCommand)
+  HammerCLI::MainCommand.subcommand("system", "manipulate systems on the server", HammerCLIKatello::SystemCommand)
 end
