@@ -58,16 +58,19 @@ module HammerCLIKatello
     end
     
     class UploadManifestCommand < HammerCLIForeman::WriteCommand
-      resource KatelloApi::Resources::Provider, "products"      
-      output do
-        field :id, "ID"
-        field :name, "Name"   
-        field :provider_type, "Type"
-        field :total_products, "Products"
-        field :total_repositories, "Repositories"
-      end
+      resource KatelloApi::Resources::Provider, "import_manifest"
+      command_name "import_manifest"        
+              
+      option "--file", "MANIFEST", "Path to a file that contains the manifest", :attribute_name => :import, :required => true,
+        :format => HammerCLI::Options::Normalizers::File.new
+      
+      #TODO: Async this.
+      success_message "Manifest is being uploaded"
+      failure_message "Manifest upload failed"
 
-      apipie_options
+
+      apipie_options :without => [:import]
+      
     end    
 
     autoload_subcommands
