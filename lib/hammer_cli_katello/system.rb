@@ -40,6 +40,21 @@ module HammerCLIKatello
      apipie_options
    end
 
+   class CreateCommand < HammerCLIForeman::CreateCommand
+     success_message "System created"
+     failure_message "Could not create system"
+     resource KatelloApi::Resources::System, :create
+
+     def request_params
+       super.tap do |params|
+         params['type'] = "system"
+         params['facts'] = {"uname.machine" => "unknown"} # facts can't be blank
+       end
+     end
+
+     apipie_options :without => [:facts, :type, :installedProducts]
+   end
+
     autoload_subcommands
   end
 
