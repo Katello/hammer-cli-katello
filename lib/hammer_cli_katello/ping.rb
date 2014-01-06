@@ -8,7 +8,6 @@ module HammerCLIKatello
 
     resource KatelloApi::Resources::Ping, :index
 
-
     output do
       from "services" do
 
@@ -65,6 +64,16 @@ module HammerCLIKatello
 
   end # class PingCommand
 
+  class VersionCommand < HammerCLI::Apipie::ReadCommand
+    resource KatelloApi::Resources::Ping, :server_status
+
+    output do
+      field "version", "Version"
+    end
+
+  end
+
   HammerCLI::MainCommand.subcommand("ping", "get the status of the server", HammerCLIKatello::PingCommand)
+  HammerCLI::MainCommand.subcommand("katello-version", "get the version of the server", HammerCLIKatello::VersionCommand)
 
 end # module HammerCLIKatello
