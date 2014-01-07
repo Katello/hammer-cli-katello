@@ -1,6 +1,5 @@
 require 'hammer_cli'
 require 'hammer_cli/exit_codes'
-
 require 'hammer_cli_foreman/output/fields'
 
 module HammerCLIKatello
@@ -9,10 +8,6 @@ module HammerCLIKatello
     HammerCLIForeman::ExceptionHandler
   end
 
-  require 'hammer_cli_katello/organization'
-  require 'hammer_cli_katello/ping'
-  require 'hammer_cli_katello/provider'
-  require 'hammer_cli_katello/system_group'
-  require 'hammer_cli_katello/system'
+  Dir["#{File.dirname(__FILE__)}/hammer_cli_katello/*.rb"].each { |f| require f }
 
 end
