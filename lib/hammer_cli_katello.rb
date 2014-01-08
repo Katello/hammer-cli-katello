@@ -11,6 +11,7 @@ module HammerCLIKatello
 
   require 'hammer_cli_katello/organization'
   require 'hammer_cli_katello/ping'
+  require 'hammer_cli_katello/provider'
   require 'hammer_cli_katello/system_group'
   require 'hammer_cli_katello/system'
 
