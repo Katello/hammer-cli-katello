@@ -98,4 +98,4 @@ module HammerCLIKatello
 
 end
 
-HammerCLI::MainCommand.subcommand 'provider', "Manipulate providers", HammerCLIKatello::Provider
+HammerCLI::MainCommand.subcommand 'provider', "Manipulate providers.", HammerCLIKatello::Provider
