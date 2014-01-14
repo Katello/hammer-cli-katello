@@ -29,4 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'mocha'
   spec.add_development_dependency 'ci_reporter'
+
+  spec.add_development_dependency "rubocop", "0.16.0"
 end
