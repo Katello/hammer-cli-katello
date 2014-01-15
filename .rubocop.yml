@@ -10,8 +10,8 @@ EmptyLinesAroundBody:
 HashSyntax:
   Enabled: false
 
-LineLength:
-  Max: 100
-
 SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Encoding:
   Enabled: false

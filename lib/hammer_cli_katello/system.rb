@@ -46,7 +46,7 @@ module HammerCLIKatello
       def request_params
         super.tap do |params|
           params['type'] = "system"
-          params['facts'] = {"uname.machine" => "unknown"} # facts can't be blank, bro
+          params['facts'] = {"uname.machine" => "unknown"}
         end
       end
 
@@ -86,6 +86,9 @@ module HammerCLIKatello
     autoload_subcommands
   end
 
-  HammerCLI::MainCommand.subcommand("system", "manipulate systems on the server",
-                                    HammerCLIKatello::SystemCommand)
+  cmd_name = "system"
+  cmd_desc = "manipulate systems on the server"
+  cmd_cls  = HammerCLIKatello::SystemCommand
+  HammerCLI::MainCommand.subcommand(cmd_name, cmd_desc, cmd_cls)
+
 end

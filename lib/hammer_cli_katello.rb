@@ -12,5 +12,8 @@ module HammerCLIKatello
     HammerCLIForeman::ExceptionHandler
   end
 
-  Dir["#{File.dirname(__FILE__)}/hammer_cli_katello/*.rb"].each { |f| require f }
+  Dir["#{File.dirname(__FILE__)}/hammer_cli_katello/*.rb"].each do |f|
+    require f
+  end
+
 end
