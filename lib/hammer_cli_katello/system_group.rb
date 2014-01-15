@@ -36,7 +36,7 @@ module HammerCLIKatello
       action "copy"
 
       validate_options do
-        all(:name).required unless option(:id).exist?
+        all(:option_name).required unless option(:option_id).exist?
       end
     end
 
