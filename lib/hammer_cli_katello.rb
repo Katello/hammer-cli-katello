@@ -9,5 +9,4 @@ module HammerCLIKatello
   end
 
   Dir["#{File.dirname(__FILE__)}/hammer_cli_katello/*.rb"].each { |f| require f }
-
 end
