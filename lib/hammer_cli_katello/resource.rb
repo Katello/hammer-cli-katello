@@ -1,5 +1,3 @@
-require 'hammer_cli'
-
 module HammerCLIKatello
 
   module Resource

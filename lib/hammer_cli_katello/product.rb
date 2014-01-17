@@ -1,7 +1,3 @@
-require 'hammer_cli'
-require 'hammer_cli_foreman'
-require 'hammer_cli_foreman/commands'
-
 module HammerCLIKatello
 
   class Product < HammerCLI::Apipie::Command

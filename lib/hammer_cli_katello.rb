@@ -1,6 +1,10 @@
 require 'hammer_cli'
+require 'hammer_cli_foreman'
 require 'hammer_cli/exit_codes'
+require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/output/fields'
+
+require 'katello_api'
 
 module HammerCLIKatello
 
