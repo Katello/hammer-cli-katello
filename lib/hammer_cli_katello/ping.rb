@@ -58,6 +58,13 @@ module HammerCLIKatello
       end # from "services"
     end # output do
 
+    def execute
+      d = retrieve_data
+      logger.debug "Retrieved data: " + d.ai(:raw => true) if HammerCLI::Settings.get(:log_api_calls)
+      print_data d
+      return d['status'] != "FAIL" ? HammerCLI::EX_OK : 1
+    end
+
   end # class PingCommand
 
   HammerCLI::MainCommand.subcommand("ping", "get the status of the server",
