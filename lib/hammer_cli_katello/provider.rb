@@ -50,28 +50,6 @@ module HammerCLIKatello
     end
 
 
-    class UploadManifestCommand < HammerCLIForeman::WriteCommand
-      class FileNormalizer
-        class File < HammerCLI::Options::Normalizers::AbstractNormalizer
-          def format(path)
-            ::File.read(::File.expand_path(path), :encoding => 'ASCII-8BIT')
-          end
-        end
-      end
-
-      action "import_manifest"
-      command_name "import_manifest"
-              
-      option "--file", "MANIFEST", "Path to a file that contains the manifest", :attribute_name => :import, :required => true,
-        :format => FileNormalizer.new
-
-      success_message "Manifest is being uploaded"
-      failure_message "Manifest upload failed"
-
-      apipie_options :without => [:import]
-    end
-
-
     class RefreshManifestCommand < HammerCLIForeman::WriteCommand
       action "refresh_manifest"
       command_name "refresh_manifest"
