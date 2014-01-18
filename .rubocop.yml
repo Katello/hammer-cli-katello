@@ -15,3 +15,9 @@ SpaceInsideHashLiteralBraces:
 
 Encoding:
   Enabled: false
+
+LineLength:
+  Max: 100
+
+FavorSprintf:
+  Enabled: false # we use % for i18n
