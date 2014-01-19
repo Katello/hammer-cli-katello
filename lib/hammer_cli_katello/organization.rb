@@ -1,7 +1,3 @@
-require 'hammer_cli'
-require 'katello_api'
-require 'hammer_cli_foreman/commands'
-
 module HammerCLIKatello
 
   class Organization < HammerCLIForeman::Organization
