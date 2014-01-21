@@ -51,10 +51,10 @@ module HammerCLIKatello
       apipie_options
     end
 
-
     autoload_subcommands
   end
 
 end
 
-HammerCLI::MainCommand.subcommand! 'organization', "Manipulate organizations", HammerCLIKatello::Organization
+HammerCLI::MainCommand.subcommand! 'organization', "Manipulate organizations",
+                                   HammerCLIKatello::Organization

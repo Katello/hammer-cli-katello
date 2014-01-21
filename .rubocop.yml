@@ -1,0 +1,17 @@
+Documentation:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+EmptyLinesAroundBody:
+  Enabled: false
+
+HashSyntax:
+  Enabled: false
+
+SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Encoding:
+  Enabled: false

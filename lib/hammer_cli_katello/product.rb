@@ -86,9 +86,10 @@ module HammerCLIKatello
 
       resource KatelloApi::Resources::Product, "update"
 
-      apipie_options :without => declared_identifiers.keys + [:name, :label, :provider_id, :description, :gpg_key_id]
-      option "--sync_plan_id", "SYNC_PLAN_ID", "plan numeric identifier", { :attribute_name => :sync_plan_id,
-                                                                            :required => true }
+      apipie_options :without => declared_identifiers.keys +
+        [:name, :label, :provider_id, :description, :gpg_key_id]
+      option "--sync_plan_id", "SYNC_PLAN_ID", "plan numeric identifier",
+             :attribute_name => :sync_plan_id, :required => true
     end
 
     class RemoveSyncPlanCommand < HammerCLIForeman::UpdateCommand
@@ -102,13 +103,15 @@ module HammerCLIKatello
 
       resource KatelloApi::Resources::Product, "update"
 
-      apipie_options :without => [:name, :label, :provider_id, :description, :gpg_key_id, :sync_plan_id]
-      option "--sync_plan_id", "SYNC_PLAN_ID", "plan numeric identifier", { :attribute_name => :sync_plan_id,
-                                                                            :required => true }
+      apipie_options :without => [:name, :label, :provider_id, :description,
+                                  :gpg_key_id, :sync_plan_id]
+      option "--sync_plan_id", "SYNC_PLAN_ID", "plan numeric identifier",
+             :attribute_name => :sync_plan_id, :required => true
     end
 
     autoload_subcommands
   end
 end
 
-HammerCLI::MainCommand.subcommand "product", "Manipulate products.", HammerCLIKatello::Product
+HammerCLI::MainCommand.subcommand "product", "Manipulate products.",
+                                  HammerCLIKatello::Product

@@ -36,9 +36,7 @@ module HammerCLIKatello
       action "copy"
 
       validate_options do
-        unless option(:id).exist?
-          all(:name).required
-        end
+        all(:name).required unless option(:id).exist?
       end
     end
 
@@ -46,4 +44,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand 'systemgroup', "Manipulate system groups", HammerCLIKatello::SystemGroup
+HammerCLI::MainCommand.subcommand 'systemgroup', "Manipulate system groups",
+                                  HammerCLIKatello::SystemGroup

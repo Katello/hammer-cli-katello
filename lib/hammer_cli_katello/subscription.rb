@@ -34,14 +34,14 @@ module HammerCLIKatello
       failure_message "Manifest upload failed"
 
       apipie_options
-      option "--file", "MANIFEST", "Subscription manifest file", :attribute_name => :option_content,
-                 :required => true, :format => BinaryFile.new
-
+      option "--file", "MANIFEST", "Subscription manifest file",
+             :attribute_name => :option_content,
+             :required => true, :format => BinaryFile.new
     end
-
 
     autoload_subcommands
   end
 end
 
-HammerCLI::MainCommand.subcommand("subscription", "Manipulate subscriptions.", HammerCLIKatello::SubscriptionCommand)
+HammerCLI::MainCommand.subcommand("subscription", "Manipulate subscriptions.",
+                                  HammerCLIKatello::SubscriptionCommand)
