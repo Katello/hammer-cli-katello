@@ -31,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'ci_reporter'
 
   spec.add_development_dependency "rubocop", "0.16.0"
+  spec.add_development_dependency "rubocop-checkstyle_formatter"
 end
