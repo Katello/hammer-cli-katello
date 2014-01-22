@@ -40,7 +40,6 @@ module HammerCLIKatello
       apipie_options
     end
 
-
     class RefreshManifestCommand < HammerCLIForeman::WriteCommand
       action "refresh_manifest"
       command_name "refresh_manifest"
