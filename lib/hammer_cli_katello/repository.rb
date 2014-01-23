@@ -3,13 +3,20 @@ module HammerCLIKatello
   class Repository < HammerCLI::Apipie::Command
     resource KatelloApi::Resources::Repository
 
+    class CreateCommand < HammerCLIForeman::CreateCommand
+      identifiers :id, :organization_id, :product_id
+
+      success_message "Repository created"
+      failure_message "Could not create the repository"
+    end
+
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      identifiers :id
+      identifiers :id, :organization_id, :product_id
 
       success_message "Repository updated"
       failure_message "Could not update the repository"
 
-      apipie_options
+      apipie_options.without(:name)
     end
 
     autoload_subcommands
