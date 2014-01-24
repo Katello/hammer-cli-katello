@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.version = HammerCLIKatello.version
 
-  spec.add_dependency 'hammer_cli', '0.0.15'
+  spec.add_dependency 'hammer_cli', '0.0.16'
   spec.add_dependency 'hammer_cli_foreman', '0.0.16'
   spec.add_dependency 'katello_api', '0.0.5'
   spec.add_dependency 'mime-types', '~> 1.25' # remove once we're on hammer 0.0.16
