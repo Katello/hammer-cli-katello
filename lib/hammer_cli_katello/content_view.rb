@@ -23,6 +23,20 @@ module HammerCLIKatello
         field :name, "Name"
         field :label, "Label"
         field :description, "Description"
+
+        from :organization do
+          field :name, "Organization"
+        end
+
+        collection :repositories, "Repositories" do
+          field :id, "ID"
+          field :name, "Name"
+        end
+
+        collection :environments, "Environments" do
+          field :id, "ID"
+          field :name, "Name"
+        end
       end
 
       apipie_options
@@ -51,6 +65,8 @@ module HammerCLIKatello
 
       apipie_options
     end
+
+    include HammerCLIKatello::AssociatingCommands::Repository
 
     autoload_subcommands
   end
