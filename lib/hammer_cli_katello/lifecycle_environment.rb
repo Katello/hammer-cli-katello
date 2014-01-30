@@ -16,6 +16,8 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIForeman::InfoCommand
       resource KatelloApi::Resources::Environment, :show
 
+      identifiers :id
+
       output do
         field :id, "ID"
         field :name, "Name"
@@ -48,7 +50,7 @@ module HammerCLIKatello
       failure_message "Could not update environment"
       resource KatelloApi::Resources::Environment, :update
 
-      identifiers :id, :name
+      identifiers :id
 
       def request_params
         super.merge(method_options)
@@ -62,7 +64,7 @@ module HammerCLIKatello
       failure_message "Could not delete environment"
       resource KatelloApi::Resources::Environment, :destroy
 
-      identifiers :id, :name
+      identifiers :id
 
       def request_params
         super.merge(method_options)
