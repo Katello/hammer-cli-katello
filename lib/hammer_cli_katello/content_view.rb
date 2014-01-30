@@ -31,11 +31,18 @@ module HammerCLIKatello
         collection :repositories, "Repositories" do
           field :id, "ID"
           field :name, "Name"
+          field :label, "Label"
         end
 
         collection :environments, "Environments" do
           field :id, "ID"
           field :name, "Name"
+        end
+
+        collection :versions, "Versions" do
+          field :id, "ID"
+          field :version, "Version"
+          field :published, "Published", Fields::Date
         end
       end
 
@@ -72,5 +79,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand "content_view", "Manipulate content views.",
+HammerCLI::MainCommand.subcommand "content-view", "Manipulate content views.",
                                   HammerCLIKatello::ContentView
