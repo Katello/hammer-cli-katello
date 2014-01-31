@@ -3,7 +3,7 @@ module HammerCLIKatello
   class Product < HammerCLI::Apipie::Command
     resource KatelloApi::Resources::Product
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, "Product ID"
         field :name, "Name"
@@ -22,14 +22,14 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       success_message "Product created"
       failure_message "Could not create the product"
 
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       output do
         field :id, "Product ID"
         field :name, "Name"
@@ -61,21 +61,21 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "Product updated"
       failure_message "Could not update the product"
 
       apipie_options
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message "Product destroyed"
       failure_message "Could not destroy the product"
 
       apipie_options
     end
 
-    class SetSyncPlanCommand < HammerCLIForeman::UpdateCommand
+    class SetSyncPlanCommand < HammerCLIKatello::UpdateCommand
       identifiers :id, :sync_plan_id
 
       desc "Assign sync plan to product."
@@ -88,11 +88,12 @@ module HammerCLIKatello
 
       apipie_options :without => declared_identifiers.keys +
         [:name, :label, :provider_id, :description, :gpg_key_id]
+      # TODO set to --sync-plan-id
       option "--sync_plan_id", "SYNC_PLAN_ID", "plan numeric identifier",
              :attribute_name => :option_sync_plan_id, :required => true
     end
 
-    class RemoveSyncPlanCommand < HammerCLIForeman::UpdateCommand
+    class RemoveSyncPlanCommand < HammerCLIKatello::UpdateCommand
       identifiers :id, :sync_plan_id
 
       desc "Delete assignment sync plan and product."

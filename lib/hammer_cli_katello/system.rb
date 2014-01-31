@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   class SystemCommand < HammerCLI::AbstractCommand
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       resource KatelloApi::Resources::System, :index
 
       output do
@@ -13,7 +13,7 @@ module HammerCLIKatello
       apipie_options :without => [:environment_id]
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       resource KatelloApi::Resources::System, :show
 
       identifiers :id
@@ -38,7 +38,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       success_message "System created"
       failure_message "Could not create system"
       resource KatelloApi::Resources::System, :create
@@ -53,7 +53,7 @@ module HammerCLIKatello
       apipie_options :without => [:facts, :type, :installed_products]
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "System updated"
       failure_message "Could not update system"
       resource KatelloApi::Resources::System, :update
@@ -63,7 +63,7 @@ module HammerCLIKatello
       apipie_options :without => [:facts, :type, :installed_products]
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message "System deleted"
       failure_message "Could not delete system"
       resource KatelloApi::Resources::System, :destroy
@@ -73,7 +73,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class TasksCommand < HammerCLIForeman::ListCommand
+    class TasksCommand < HammerCLIKatello::ListCommand
       resource KatelloApi::Resources::System, :tasks
 
       command_name "tasks"

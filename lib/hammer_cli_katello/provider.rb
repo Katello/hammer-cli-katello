@@ -2,7 +2,7 @@ module HammerCLIKatello
   class Provider < HammerCLI::Apipie::Command
     resource KatelloApi::Resources::Provider
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, "ID"
         field :name, "Name"
@@ -14,33 +14,33 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       output ListCommand.output_definition do
         field :created_at, "Created at", Fields::Date
         field :updated_at, "Updated at", Fields::Date
       end
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       success_message "Provider created"
       failure_message "Could not create the provider"
 
       apipie_options
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message "Provider deleted"
       failure_message "Could not delete the provider"
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "Provider updated"
       failure_message "Could not update the provider"
 
       apipie_options
     end
 
-    class RefreshManifestCommand < HammerCLIForeman::WriteCommand
+    class RefreshManifestCommand < HammerCLIKatello::WriteCommand
       action "refresh_manifest"
       command_name "refresh_manifest"
 
@@ -50,7 +50,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class DeleteManifestCommand < HammerCLIForeman::DeleteCommand
+    class DeleteManifestCommand < HammerCLIKatello::DeleteCommand
       action "delete_manifest"
       command_name "delete_manifest"
 

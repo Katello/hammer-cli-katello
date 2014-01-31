@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   class GpgKeyCommand < HammerCLI::AbstractCommand
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       resource KatelloApi::Resources::GpgKey, :index
 
       output do
@@ -13,7 +13,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       resource KatelloApi::Resources::GpgKey, :show
       output do
         field :id, "ID"
@@ -47,7 +47,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       resource KatelloApi::Resources::GpgKey, :create
       success_message "GPG Key created"
       failure_message "Could not create GPG Key"
@@ -58,7 +58,7 @@ module HammerCLIKatello
              :format => HammerCLI::Options::Normalizers::File.new
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "GPG Key updated"
       failure_message "Could not update GPG Key"
       resource KatelloApi::Resources::GpgKey, :update
@@ -75,7 +75,7 @@ module HammerCLIKatello
              :format => HammerCLI::Options::Normalizers::File.new
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message "GPG Key deleted"
       failure_message "Could not delete the GPG Key"
       resource KatelloApi::Resources::GpgKey, :destroy
