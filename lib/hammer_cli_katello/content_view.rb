@@ -1,6 +1,7 @@
 require 'hammer_cli'
 require 'hammer_cli_foreman'
 require 'hammer_cli_foreman/commands'
+require 'hammer_cli_katello/filter'
 
 module HammerCLIKatello
 
@@ -76,6 +77,7 @@ module HammerCLIKatello
     include HammerCLIKatello::AssociatingCommands::Repository
 
     autoload_subcommands
+    subcommand 'filter', HammerCLIKatello::Filter.desc, HammerCLIKatello::Filter
   end
 end
 
