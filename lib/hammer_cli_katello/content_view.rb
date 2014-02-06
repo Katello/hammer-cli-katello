@@ -1,6 +1,3 @@
-require 'hammer_cli'
-require 'hammer_cli_foreman'
-require 'hammer_cli_foreman/commands'
 require 'hammer_cli_katello/filter'
 
 module HammerCLIKatello
