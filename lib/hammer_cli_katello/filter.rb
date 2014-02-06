@@ -1,8 +1,3 @@
-require 'hammer_cli'
-require 'hammer_cli_foreman'
-require 'hammer_cli_foreman/commands'
-require 'hammer_cli_katello/content_view'
-
 module HammerCLIKatello
 
   # TODO: Add as an official normalizer in hammer-cli (i.e. options/normalizers.rb)
