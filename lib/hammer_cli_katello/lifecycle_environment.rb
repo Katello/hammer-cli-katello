@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   class LifecycleEnvironmentCommand < HammerCLI::AbstractCommand
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       resource KatelloApi::Resources::Environment, :index
 
       output do
@@ -13,7 +13,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       resource KatelloApi::Resources::Environment, :show
 
       identifiers :id
@@ -37,7 +37,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       resource KatelloApi::Resources::Environment, :create
       success_message "Environment created"
       failure_message "Could not create environment"
@@ -45,7 +45,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "Environment updated"
       failure_message "Could not update environment"
       resource KatelloApi::Resources::Environment, :update
@@ -59,7 +59,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message "Environment deleted"
       failure_message "Could not delete environment"
       resource KatelloApi::Resources::Environment, :destroy

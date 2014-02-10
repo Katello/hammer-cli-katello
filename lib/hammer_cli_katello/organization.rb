@@ -33,7 +33,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       resource KatelloApi::Resources::Organization, "create"
 
       success_message "Organization created"
@@ -42,7 +42,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       resource KatelloApi::Resources::Organization, "destroy"
 
       success_message "Organization deleted"
