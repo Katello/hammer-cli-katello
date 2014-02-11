@@ -26,6 +26,7 @@ module HammerCLIKatello
 
   class AddAssociatedCommand < HammerCLIForeman::AddAssociatedCommand; end
 
+  # rubocop:disable LineLength
   class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand; end
 
 end
