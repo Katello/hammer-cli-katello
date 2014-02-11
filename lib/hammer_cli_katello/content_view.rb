@@ -5,7 +5,7 @@ module HammerCLIKatello
   class ContentView < HammerCLI::Apipie::Command
     resource KatelloApi::Resources::ContentView
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, "Content View ID"
         field :name, "Name"
@@ -15,7 +15,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       output do
         field :id, "ID"
         field :name, "Name"
@@ -47,21 +47,21 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       success_message "Content view created"
       failure_message "Could not create the content view"
 
       apipie_options
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "Content view updated"
       failure_message "Could not update the content view"
 
       apipie_options
     end
 
-    class PublishCommand < HammerCLIForeman::WriteCommand
+    class PublishCommand < HammerCLIKatello::WriteCommand
       action :publish
       command_name "publish"
 

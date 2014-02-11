@@ -6,7 +6,7 @@ require 'hammer_cli_foreman/commands'
 module HammerCLIKatello
 
   class SubscriptionCommand < HammerCLI::AbstractCommand
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       resource KatelloApi::Resources::Subscription, 'index'
 
       output do
@@ -16,7 +16,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class UploadCommand < HammerCLIForeman::WriteCommand
+    class UploadCommand < HammerCLIKatello::WriteCommand
       resource KatelloApi::Resources::Subscription, 'upload'
       command_name "upload"
 

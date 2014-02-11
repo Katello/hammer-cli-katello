@@ -1,7 +1,7 @@
 module HammerCLIKatello
 
   class SystemGroup < HammerCLI::AbstractCommand
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       resource KatelloApi::Resources::SystemGroup, "index"
 
       output do
@@ -14,7 +14,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       success_message "System group created"
       failure_message "Could not create the system group"
       resource KatelloApi::Resources::SystemGroup, "create"
@@ -22,14 +22,14 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       resource KatelloApi::Resources::SystemGroup, "show"
 
       output ListCommand.output_definition do
       end
     end
 
-    class CopyCommand < HammerCLIForeman::CreateCommand
+    class CopyCommand < HammerCLIKatello::CreateCommand
       success_message "System group created"
       failure_message "Could not create the system group"
       command_name "copy"
