@@ -17,7 +17,7 @@ module HammerCLIKatello
     command_name 'filter'
     desc 'View and manage filters'
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, "Filter ID"
         field :name, "Name"
@@ -27,7 +27,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       output do
         field :id, "Filter ID"
         field :name, "Name"
@@ -68,7 +68,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       success_message "Filter created"
       failure_message "Could not create the filter"
 
@@ -79,7 +79,7 @@ module HammerCLIKatello
              :format => JSONInput.new
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "Filter updated"
       failure_message "Could not update the filter"
 
@@ -90,7 +90,7 @@ module HammerCLIKatello
              :format => JSONInput.new
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message "Filter deleted"
       failure_message "Could not delete the filter"
 
