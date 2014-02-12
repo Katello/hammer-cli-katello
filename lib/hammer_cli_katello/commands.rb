@@ -24,10 +24,8 @@ module HammerCLIKatello
 
   end
 
-  class AssociatedCommand < HammerCLIForeman::AssociatedCommand; end
+  class AddAssociatedCommand < HammerCLIForeman::AddAssociatedCommand; end
 
-  class AddAssociatedCommand < AssociatedCommand; end
-
-  class RemoveAssociatedCommand < AssociatedCommand; end
+  class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand; end
 
 end
