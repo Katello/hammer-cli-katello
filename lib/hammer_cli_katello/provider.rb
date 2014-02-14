@@ -21,18 +21,6 @@ module HammerCLIKatello
       end
     end
 
-    class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message "Provider created"
-      failure_message "Could not create the provider"
-
-      apipie_options
-    end
-
-    class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message "Provider deleted"
-      failure_message "Could not delete the provider"
-    end
-
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message "Provider updated"
       failure_message "Could not update the provider"
