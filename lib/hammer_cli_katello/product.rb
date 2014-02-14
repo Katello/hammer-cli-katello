@@ -88,7 +88,7 @@ module HammerCLIKatello
 
       apipie_options :without => declared_identifiers.keys +
         [:name, :label, :provider_id, :description, :gpg_key_id]
-      # TODO set to --sync-plan-id
+      # TODO: set to --sync-plan-id
       option "--sync_plan_id", "SYNC_PLAN_ID", "plan numeric identifier",
              :attribute_name => :option_sync_plan_id, :required => true
     end
