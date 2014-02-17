@@ -85,10 +85,13 @@ module HammerCLIKatello
 
     autoload_subcommands
 
-    subcommand 'puppet-module', HammerCLIKatello::ContentViewPuppetModule.desc,
+    subcommand 'puppet-module',
+               HammerCLIKatello::ContentViewPuppetModule.desc,
                HammerCLIKatello::ContentViewPuppetModule
 
-    subcommand 'filter', HammerCLIKatello::Filter.desc, HammerCLIKatello::Filter
+    subcommand 'filter',
+               HammerCLIKatello::Filter.desc,
+               HammerCLIKatello::Filter
   end
 end
 

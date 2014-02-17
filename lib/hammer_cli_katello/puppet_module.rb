@@ -42,5 +42,6 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand "puppet-module", "View Puppet Module details.",
+HammerCLI::MainCommand.subcommand "puppet-module",
+                                  "View Puppet Module details.",
                                   HammerCLIKatello::PuppetModule
