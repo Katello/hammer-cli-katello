@@ -11,12 +11,12 @@ module HammerCLIKatello
 
       output do
         field :product_name, "Name"
-        field :contractNumber, "Contract"
-        field :accountNumber, "Account"
+        field :contract_number, "Contract"
+        field :account_number, "Account"
         field :support_level, "Support"
         field :quantity, "Quantity"
         field :consumed, "Consumed"
-        field :endDate, "End Date"
+        field :end_date, "End Date"
         field :id, "ID"
         field :product_name, "Product"
         field :format_quantity, "Quantity"
