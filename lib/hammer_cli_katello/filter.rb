@@ -1,11 +1,12 @@
 module HammerCLIKatello
 
-  # TODO: Add as an official normalizer in hammer-cli (i.e. options/normalizers.rb)
+  # TODO: Add as an official normalizer in hammer-cli
   class JSONInput < HammerCLI::Options::Normalizers::File
     def format(val)
       # The JSON input could be the path to a file whose contents are
       # JSON or a JSON string. (e.g. JSON string =
-      # '{ "units":[ { "name":"zip", "version":"9.0", "inclusion":"false" } ] }')
+      # '{ "units":[ { "name":"zip", "version":"9.0",
+      # "inclusion":"false" } ] }')
       json_string = ::File.exist?(val) ? super(val) : val
       JSON.parse(json_string)
     end
@@ -73,6 +74,8 @@ module HammerCLIKatello
       failure_message "Could not create the filter"
 
       apipie_options :without => [:parameters]
+
+      # rubocop:disable LineLength
       option "--parameters", "PARAMETERS",
              "Filter parameters as either a JSON string or path to file containing JSON",
              :attribute_name => :option_parameters,
@@ -84,6 +87,8 @@ module HammerCLIKatello
       failure_message "Could not update the filter"
 
       apipie_options :without => [:parameters]
+
+      # rubocop:disable LineLength
       option "--parameters", "PARAMETERS",
              "Filter parameters as either a JSON string or path to file containing JSON",
              :attribute_name => :option_parameters,

@@ -1,3 +1,4 @@
+require 'hammer_cli_katello/content_view_puppet_module'
 require 'hammer_cli_katello/filter'
 
 module HammerCLIKatello
@@ -30,6 +31,15 @@ module HammerCLIKatello
           field :id, "ID"
           field :name, "Name"
           field :label, "Label"
+        end
+
+        collection :puppet_modules, "Puppet Modules" do
+          field :id, "ID"
+          field :uuid, "UUID"
+          field :name, "Name"
+          field :author, "Author"
+          field :added, "Added"
+          field :updated, "Updated"
         end
 
         collection :environments, "Environments" do
@@ -74,7 +84,14 @@ module HammerCLIKatello
     include HammerCLIKatello::AssociatingCommands::Repository
 
     autoload_subcommands
-    subcommand 'filter', HammerCLIKatello::Filter.desc, HammerCLIKatello::Filter
+
+    subcommand 'puppet-module',
+               HammerCLIKatello::ContentViewPuppetModule.desc,
+               HammerCLIKatello::ContentViewPuppetModule
+
+    subcommand 'filter',
+               HammerCLIKatello::Filter.desc,
+               HammerCLIKatello::Filter
   end
 end
 
