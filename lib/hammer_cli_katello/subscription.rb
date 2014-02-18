@@ -11,6 +11,14 @@ module HammerCLIKatello
 
       output do
         field :id, "ID"
+        field :product_name, "Product"
+        field :format_quantity, "Quantity"
+        field :consumed, "Attached"
+      end
+
+      def extend_data(data)
+        data["format_quantity"] = data["quantity"] == -1 ? "Unlimited" : data["quantity"]
+        data
       end
 
       apipie_options
