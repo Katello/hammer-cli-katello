@@ -2,6 +2,8 @@ module HammerCLIKatello
 
   class WriteCommand < HammerCLIForeman::WriteCommand; end
 
+  class ReadCommand < HammerCLIForeman::ReadCommand; end
+
   class ListCommand < HammerCLIForeman::ListCommand; end
 
   class InfoCommand < HammerCLIForeman::InfoCommand
