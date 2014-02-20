@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class PingCommand < HammerCLI::Apipie::ReadCommand
+  class PingCommand < HammerCLIKatello::ReadCommand
 
     resource KatelloApi::Resources::Ping, :index
 

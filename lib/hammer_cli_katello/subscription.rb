@@ -11,6 +11,14 @@ module HammerCLIKatello
 
       output do
         field :id, "ID"
+        field :product_name, "Product"
+        field :format_quantity, "Quantity"
+        field :consumed, "Attached"
+      end
+
+      def extend_data(data)
+        data["format_quantity"] = data["quantity"] == -1 ? "Unlimited" : data["quantity"]
+        data
       end
 
       apipie_options
@@ -33,7 +41,7 @@ module HammerCLIKatello
       success_message "Manifest is being uploaded"
       failure_message "Manifest upload failed"
 
-      apipie_options
+      apipie_options :without => [:content]
       option "--file", "MANIFEST", "Subscription manifest file",
              :attribute_name => :option_content,
              :required => true, :format => BinaryFile.new
