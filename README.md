@@ -9,9 +9,64 @@ following [hammer-cli-foreman](https://github.com/theforeman/hammer-cli-foreman)
 
 hammer-cli development docs for [help](https://github.com/theforeman/hammer-cli/blob/master/doc/developer_docs.md#hammer-development-docs)
 
-## development setup
+## Development setup
+With this guide, you'll be able to set up hammer-cli-katello, hammer-cli, katello_api, and hammer-cli-foreman for development. Except for hammer-cli-katello, the other projects can be used as gems instead of git repos. Therefore the steps involving them are optional.
 
-create `~/.foreman/cli_config.yml` and put this in it:
+###Requirements for this setup
+
+These are the requirements for this setup. Note that some may not be needed at
+all depending on your setup.
+
+* git
+* ruby
+* rvm
+* katello
+
+###Steps
+
+First, cd into the directory where you typically keep your projects and where hammer-cli-katello and its projects will live. Then clone everything.
+
+```bash
+git clone https://github.com/Katello/hammer-cli-katello.git
+git clone https://github.com/theforeman/hammer-cli.git
+git clone https://github.com/theforeman/hammer-cli-foreman.git
+git clone https://github.com/Katello/katello_api.git
+```
+
+Now let's setup our rvm environment files for the project.
+
+```bash
+cd hammer-cli-katello
+echo "1.9.3" > .ruby-version
+echo "hammer" > .ruby-gemset
+cd ..; cd -
+```
+
+Before we bundle, we need to setup our local Gemfile. If you're using the gems instead of git repos, you can skip this step. Edit `Gemfile.local` in your hammer-cli-katello directory to point to the local projects instead of using the gems. Enter the following:
+
+```ruby
+# vim:ft=ruby
+gem 'hammer_cli', :path => '../hammer-cli'
+gem 'hammer_cli_foreman', :path => '../hammer-cli-foreman'
+gem 'foreman_api', :path => '../foreman_api'
+
+gem 'katello_api', :path => '../katello_api'
+```
+
+Now run bundler inside your hammer-cli-katello directory:
+
+```bash
+bundle install
+```
+
+Now, let's create the foreman directory and hammer cli config file.
+
+```bash
+mkdir ~/.foreman
+touch ~/.foreman/cli_config.yml
+```
+
+Edit `~/.foreman/cli_config.yml` and enter in the following replacing values where needed based on your setup:
 
 ```yaml
 :modules:
@@ -31,4 +86,11 @@ create `~/.foreman/cli_config.yml` and put this in it:
 :log_level: 'debug'
 ```
 
-if you'd like to run any gems from source or include others for personal development purposes, create a file called `Gemfile.local` in the root directory of this repo and add as many `gem 'katello_api', :path => '../katello_api'` statements as you'd like.
+And then finally test out your installation:
+
+```bash
+bundle exec hammer -vh
+```
+
+Look for any errors. If you see none, you should be good to go.
+
