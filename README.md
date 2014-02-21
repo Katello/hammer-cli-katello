@@ -10,7 +10,7 @@ following [hammer-cli-foreman](https://github.com/theforeman/hammer-cli-foreman)
 hammer-cli development docs for [help](https://github.com/theforeman/hammer-cli/blob/master/doc/developer_docs.md#hammer-development-docs)
 
 ## Development setup
-With this guide, you'll be able to set up hammer-cli-katello, hammer-cli, katello_api, and hammer-cli-foreman for development. Except for hammer-cli-katello, the other projects can be used as gems instead of git repos. Therefore the steps involving them are optional.
+With this guide, you'll be able to set up hammer-cli-katello, hammer-cli, katello_api, and hammer-cli-foreman for development.
 
 ###Requirements for this setup
 
@@ -31,6 +31,7 @@ git clone https://github.com/Katello/hammer-cli-katello.git
 git clone https://github.com/theforeman/hammer-cli.git
 git clone https://github.com/theforeman/hammer-cli-foreman.git
 git clone https://github.com/Katello/katello_api.git
+git clone https://github.com/theforeman/foreman_api.git
 ```
 
 Now let's setup our rvm environment files for the project.
@@ -42,7 +43,7 @@ echo "hammer" > .ruby-gemset
 cd ..; cd -
 ```
 
-Before we bundle, we need to setup our local Gemfile. If you're using the gems instead of git repos, you can skip this step. Edit `Gemfile.local` in your hammer-cli-katello directory to point to the local projects instead of using the gems. Enter the following:
+Before we bundle, we need to setup our local Gemfile. Edit `Gemfile.local` in your hammer-cli-katello directory to point to the local projects instead of using the gems. Enter the following:
 
 ```ruby
 # vim:ft=ruby
