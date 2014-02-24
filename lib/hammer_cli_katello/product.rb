@@ -8,15 +8,16 @@ module HammerCLIKatello
         field :id, _("ID")
         field :name, _("Name")
 
-        from :provider do
-          field :name, _("Provider")
-        end
-
         from :organization do
           field :name, _("Organization")
         end
 
         field :repository_count, _("Repositories")
+
+        from :sync_status do
+          field :state, _("Sync State")
+        end
+
       end
 
       apipie_options
@@ -40,13 +41,17 @@ module HammerCLIKatello
 
         field :sync_plan_id, _("Sync Plan ID")
 
-        from :gpg_key do
-          field :id, _("GPG Key ID")
-          field :name, _("GPG Key")
+        from :sync_status do
+          field :state, _("Sync State")
         end
 
-        from :provider do
-          field :name, _("Provider")
+        field :sync_plan_id, _("Sync Plan ID")
+
+        label _("GPG") do
+          from :gpg_key do
+            field :id, _("GPG Key ID")
+            field :name, _("GPG Key")
+          end
         end
 
         from :organization do
@@ -57,6 +62,13 @@ module HammerCLIKatello
 
         from :permissions do
           field :deletable, _("Deletable")
+        end
+
+        collection :productContent, _("Content") do
+          from :content do
+            field :name, _("Repo Name")
+            field :contentUrl, _("URL")
+          end
         end
       end
 
