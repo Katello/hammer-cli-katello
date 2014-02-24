@@ -4,6 +4,7 @@ module HammerCLIKatello
     module Repository
 
       class AddRepositoryCommand < HammerCLIKatello::AddAssociatedCommand
+        command_name 'add-repository'
         associated_resource KatelloApi::Resources::Repository
         apipie_options
 
@@ -12,6 +13,7 @@ module HammerCLIKatello
       end
 
       class RemoveRepositoryCommand < HammerCLIKatello::RemoveAssociatedCommand
+        command_name 'remove-repository'
         associated_resource KatelloApi::Resources::Repository
         apipie_options
 
