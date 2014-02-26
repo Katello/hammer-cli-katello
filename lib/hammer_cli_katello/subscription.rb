@@ -31,7 +31,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class UploadCommand < HammerCLIKatello::WriteCommand
+    class UploadCommand < HammerCLIForemanTasks::AsyncCommand
       resource KatelloApi::Resources::Subscription, 'upload'
       command_name "upload"
 
@@ -54,7 +54,7 @@ module HammerCLIKatello
              :required => true, :format => BinaryFile.new
     end
 
-    class DeleteManfiestCommand < HammerCLIKatello::WriteCommand
+    class DeleteManfiestCommand < HammerCLIForemanTasks::AsyncCommand
       resource KatelloApi::Resources::Subscription, 'delete_manifest'
       command_name "delete_manifest"
 
@@ -64,7 +64,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class RefreshManfiestCommand < HammerCLIKatello::WriteCommand
+    class RefreshManfiestCommand < HammerCLIForemanTasks::AsyncCommand
       resource KatelloApi::Resources::Subscription, 'refresh_manifest'
       command_name "refresh_manifest"
 
