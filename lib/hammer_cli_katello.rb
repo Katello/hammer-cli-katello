@@ -3,6 +3,7 @@ require 'hammer_cli_foreman'
 require 'hammer_cli/exit_codes'
 require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/output/fields'
+require 'hammer_cli_foreman_tasks'
 
 require 'katello_api'
 
