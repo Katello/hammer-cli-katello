@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.version = HammerCLIKatello.version
 
   spec.add_dependency 'hammer_cli_foreman', '~> 0.0.16'
+  spec.add_dependency 'hammer_cli_foreman_tasks'
   spec.add_dependency 'katello_api', '~> 0.0.5'
 
   spec.add_development_dependency 'rake'
