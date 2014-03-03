@@ -10,6 +10,13 @@ module HammerCLIKatello
       resource KatelloApi::Resources::Subscription, 'index'
 
       output do
+        field :product_name, "Name"
+        field :contract_number, "Contract"
+        field :account_number, "Account"
+        field :support_level, "Support"
+        field :quantity, "Quantity"
+        field :consumed, "Consumed"
+        field :end_date, "End Date"
         field :id, "ID"
         field :product_name, "Product"
         field :format_quantity, "Quantity"
@@ -24,7 +31,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class UploadCommand < HammerCLIKatello::WriteCommand
+    class UploadCommand < HammerCLIForemanTasks::AsyncCommand
       resource KatelloApi::Resources::Subscription, 'upload'
       command_name "upload"
 
@@ -38,13 +45,33 @@ module HammerCLIKatello
         {:content_type => 'multipart/form-data', :multipart => true}
       end
 
-      success_message "Manifest is being uploaded"
+      success_message "Manifest is being uploaded in task %{id}s"
       failure_message "Manifest upload failed"
 
       apipie_options :without => [:content]
       option "--file", "MANIFEST", "Subscription manifest file",
              :attribute_name => :option_content,
              :required => true, :format => BinaryFile.new
+    end
+
+    class DeleteManfiestCommand < HammerCLIForemanTasks::AsyncCommand
+      resource KatelloApi::Resources::Subscription, 'delete_manifest'
+      command_name "delete_manifest"
+
+      success_message "Manifest is being deleted in task %{id}s"
+      failure_message "Manifest deletion failed"
+
+      apipie_options
+    end
+
+    class RefreshManfiestCommand < HammerCLIForemanTasks::AsyncCommand
+      resource KatelloApi::Resources::Subscription, 'refresh_manifest'
+      command_name "refresh_manifest"
+
+      success_message "Manifest is being refreshed in task %{id}s"
+      failure_message "Manifest refresh failed"
+
+      apipie_options
     end
 
     autoload_subcommands
