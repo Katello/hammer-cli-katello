@@ -8,7 +8,14 @@ module HammerCLIKatello
       output do
         field :id, "ID"
         field :name, "Name"
-        field :prior, "Prior"
+        from :prior do
+          field :name, "Prior Lifecycle Environment"
+        end
+      end
+
+      def extend_data(data)
+        data['prior'] ||= {}
+        data
       end
 
       apipie_options
@@ -25,7 +32,7 @@ module HammerCLIKatello
 
       def extend_data(data)
         route = []
-        data["path"].each { |step| route << step["environment"]["name"] }
+        data["environments"].each { |step| route << step["name"] }
 
         data[:pretty_path] = route.join(" >> ")
         data
@@ -47,7 +54,14 @@ module HammerCLIKatello
           field :name, "Organization"
         end
         field :library, "Library"
-        field :prior, "Prior Lifecycle Environment"
+        from  :prior do
+          field :name, "Prior Lifecycle Environment"
+        end
+      end
+
+      def extend_data(data)
+        data['prior'] ||= {}
+        data
       end
 
       def request_params
