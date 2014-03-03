@@ -10,7 +10,7 @@ require 'katello_api'
 module HammerCLIKatello
 
   def self.exception_handler_class
-    HammerCLIForeman::ExceptionHandler
+    HammerCLIKatello::ExceptionHandler
   end
 
   require "#{File.dirname(__FILE__)}/hammer_cli_katello/commands.rb"
