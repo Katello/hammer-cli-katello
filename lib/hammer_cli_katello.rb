@@ -15,6 +15,7 @@ module HammerCLIKatello
 
   require 'hammer_cli_katello/exception_handler.rb'
   require "#{File.dirname(__FILE__)}/hammer_cli_katello/commands.rb"
+  require "#{File.dirname(__FILE__)}/hammer_cli_katello/associating_commands"
   require "#{File.dirname(__FILE__)}/hammer_cli_katello/version.rb"
 
   require "hammer_cli_katello/commands"
