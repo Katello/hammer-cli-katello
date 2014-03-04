@@ -13,13 +13,11 @@ module HammerCLIKatello
     HammerCLIKatello::ExceptionHandler
   end
 
-  require "#{File.dirname(__FILE__)}/hammer_cli_katello/commands.rb"
-  require "#{File.dirname(__FILE__)}/hammer_cli_katello/associating_commands"
-  require "#{File.dirname(__FILE__)}/hammer_cli_katello/version.rb"
-
   require "hammer_cli_katello/commands"
+  require "hammer_cli_katello/associating_commands"
+  require "hammer_cli_katello/version.rb"
+  require "hammer_cli_katello/exception_handler.rb"
   require "hammer_cli_katello/scoped_names"
-
   require "hammer_cli_katello/activation_key"
   require "hammer_cli_katello/gpg_key"
   require "hammer_cli_katello/lifecycle_environment"
