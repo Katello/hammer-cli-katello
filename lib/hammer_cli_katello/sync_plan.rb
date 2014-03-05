@@ -1,6 +1,6 @@
 module HammerCLIKatello
-  class SyncPlan < HammerCLI::Apipie::Command
-    resource KatelloApi::Resources::SyncPlan
+  class SyncPlan < HammerCLIForeman::Command
+    resource :sync_plans
 
     class ListCommand < HammerCLIForeman::ListCommand
 

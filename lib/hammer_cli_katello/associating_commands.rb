@@ -5,7 +5,7 @@ module HammerCLIKatello
 
       class AddRepositoryCommand < HammerCLIKatello::AddAssociatedCommand
         command_name 'add-repository'
-        associated_resource KatelloApi::Resources::Repository
+        associated_resource :repositories
         apipie_options
 
         success_message "The repository has been associated"
@@ -14,7 +14,7 @@ module HammerCLIKatello
 
       class RemoveRepositoryCommand < HammerCLIKatello::RemoveAssociatedCommand
         command_name 'remove-repository'
-        associated_resource KatelloApi::Resources::Repository
+        associated_resource :repositories
         apipie_options
 
         success_message "The repository has been removed"

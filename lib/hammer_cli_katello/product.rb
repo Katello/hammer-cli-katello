@@ -1,7 +1,7 @@
 module HammerCLIKatello
 
-  class Product < HammerCLI::Apipie::Command
-    resource KatelloApi::Resources::Product
+  class Product < HammerCLIForeman::Command
+    resource :products
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
@@ -86,7 +86,7 @@ module HammerCLIKatello
       success_message _("Synchronization plan assigned.")
       failure_message _("Could not assign synchronization plan.")
 
-      resource KatelloApi::Resources::Product, "update"
+      resource :products, :update
 
       apipie_options :without => declared_identifiers.keys +
         [:name, :label, :provider_id, :description, :gpg_key_id]
@@ -104,7 +104,7 @@ module HammerCLIKatello
       success_message _("Synchronization plan removed.")
       failure_message _("Could not remove synchronization plan.")
 
-      resource KatelloApi::Resources::Product, "update"
+      resource :products, :update
 
       apipie_options :without => [:name, :label, :provider_id, :description,
                                   :gpg_key_id, :sync_plan_id]

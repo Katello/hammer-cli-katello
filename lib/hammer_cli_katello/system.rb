@@ -3,7 +3,7 @@ module HammerCLIKatello
   class SystemCommand < HammerCLI::AbstractCommand
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::System, :index
+      resource :systems, :index
 
       output do
         field :uuid, _("ID")
@@ -14,7 +14,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource KatelloApi::Resources::System, :show
+      resource :systems, :show
 
       identifiers :id
 
@@ -39,9 +39,10 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      resource :systems, :create
+
       success_message _("System created")
       failure_message _("Could not create system")
-      resource KatelloApi::Resources::System, :create
 
       def request_params
         super.tap do |params|
@@ -54,9 +55,10 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      resource :systems, :update
+
       success_message _("System updated")
       failure_message _("Could not update system")
-      resource KatelloApi::Resources::System, :update
 
       identifiers :id
 
@@ -64,9 +66,10 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      resource :systems, :destroy
+
       success_message _("System deleted")
       failure_message _("Could not delete system")
-      resource KatelloApi::Resources::System, :destroy
 
       identifiers :id
 
@@ -74,7 +77,7 @@ module HammerCLIKatello
     end
 
     class TasksCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::System, :tasks
+      resource :systems, :tasks
 
       command_name "tasks"
 

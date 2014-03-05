@@ -3,7 +3,7 @@ module HammerCLIKatello
   class GpgKeyCommand < HammerCLI::AbstractCommand
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::GpgKey, :index
+      resource :gpg_keys, :index
 
       output do
         field :id, _("ID")
@@ -14,7 +14,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource KatelloApi::Resources::GpgKey, :show
+      resource :gpg_keys, :show
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -48,9 +48,11 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      resource KatelloApi::Resources::GpgKey, :create
+      resource :gpg_keys, :create
+
       success_message _("GPG Key created")
       failure_message _("Could not create GPG Key")
+
       apipie_options  :without => [:content]
       option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
@@ -59,9 +61,10 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      resource :gpg_keys, :update
+
       success_message _("GPG Key updated")
       failure_message _("Could not update GPG Key")
-      resource KatelloApi::Resources::GpgKey, :update
 
       identifiers :id
 
@@ -76,9 +79,10 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      resource :gpg_keys, :destroy
+
       success_message _("GPG Key deleted")
       failure_message _("Could not delete the GPG Key")
-      resource KatelloApi::Resources::GpgKey, :destroy
 
       identifiers :id
       def request_params

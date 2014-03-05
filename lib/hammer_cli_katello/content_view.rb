@@ -5,7 +5,7 @@ require 'hammer_cli_katello/content_view_version'
 module HammerCLIKatello
 
   class ContentView < HammerCLI::Apipie::Command
-    resource KatelloApi::Resources::ContentView
+    resource :content_views
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
@@ -105,7 +105,7 @@ module HammerCLIKatello
         plural ? "components" : "component"
       end
 
-      associated_resource KatelloApi::Resources::ContentViewVersion
+      associated_resource :content_view_versions
       apipie_options
 
       success_message "The component version has been added"
@@ -126,7 +126,7 @@ module HammerCLIKatello
         plural ? "components" : "component"
       end
 
-      associated_resource KatelloApi::Resources::ContentViewVersion
+      associated_resource :content_view_versions
       apipie_options
 
       success_message "The component version has been removed"

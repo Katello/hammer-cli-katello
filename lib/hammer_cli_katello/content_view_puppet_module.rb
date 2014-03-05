@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   class ContentViewPuppetModule < HammerCLI::Apipie::Command
 
-    resource KatelloApi::Resources::ContentViewPuppetModule
+    resource :content_view_puppet_modules
     command_name 'puppet-module'
     desc 'View and manage puppet modules'
 

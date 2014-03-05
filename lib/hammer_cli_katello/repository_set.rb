@@ -3,7 +3,7 @@ module HammerCLIKatello
   class RepositorySetCommand < HammerCLI::AbstractCommand
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::RepositorySet, :index
+      resource :repository_sets, :index
 
       output do
         field :id, _("ID")
@@ -24,7 +24,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource KatelloApi::Resources::RepositorySet, :show
+      resource :repository_sets, :show
 
       output do
         field :id, _("ID")
@@ -55,8 +55,9 @@ module HammerCLIKatello
     end
 
     class EnableCommand < HammerCLIKatello::UpdateCommand
+      resource :repository_sets, :enable
       command_name "enable"
-      resource KatelloApi::Resources::RepositorySet, :enable
+
       success_message _("Repository set enabled")
       failure_message _("Could not enable repository set")
 
@@ -64,8 +65,9 @@ module HammerCLIKatello
     end
 
     class DisableCommand < HammerCLIKatello::UpdateCommand
+      resource :repository_sets, :disable
       command_name "disable"
-      resource KatelloApi::Resources::RepositorySet, :disable
+
       success_message _("Repository set disabled")
       failure_message _("Could not disable repository set")
 

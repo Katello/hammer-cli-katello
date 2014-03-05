@@ -4,7 +4,7 @@ module HammerCLIKatello
 
   class Filter < HammerCLI::Apipie::Command
 
-    resource KatelloApi::Resources::ContentViewFilter
+    resource :content_view_filters
     command_name 'filter'
     desc 'View and manage filters'
 
