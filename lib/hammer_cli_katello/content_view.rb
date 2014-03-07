@@ -1,5 +1,6 @@
 require 'hammer_cli_katello/content_view_puppet_module'
 require 'hammer_cli_katello/filter'
+require 'hammer_cli_katello/content_view_version'
 
 module HammerCLIKatello
 
@@ -12,6 +13,7 @@ module HammerCLIKatello
         field :name, "Name"
         field :label, "Label"
         field :composite, "Composite"
+        field :repository_ids, "Repository IDs", Fields::List
       end
 
       apipie_options
@@ -142,6 +144,10 @@ module HammerCLIKatello
     subcommand 'filter',
                HammerCLIKatello::Filter.desc,
                HammerCLIKatello::Filter
+
+    subcommand 'version',
+               HammerCLIKatello::ContentViewVersion.desc,
+               HammerCLIKatello::ContentViewVersion
   end
 end
 
