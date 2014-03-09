@@ -44,5 +44,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand 'systemgroup', "Manipulate system groups",
+HammerCLI::MainCommand.subcommand 'system-group', "Manipulate system groups",
                                   HammerCLIKatello::SystemGroup
