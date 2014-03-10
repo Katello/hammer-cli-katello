@@ -5,42 +5,42 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do
-        field :id, "Taco ID"
-        field :name, "Name"
+        field :id, _("Taco ID")
+        field :name, _("Name")
       end
 
       apipie_options
     end
 
     class CreateCommand < HammerCLIForeman::CreateCommand
-      success_message "Taco created"
-      failure_message "Could not create the taco"
+      success_message _("Taco created")
+      failure_message _("Could not create the taco")
 
       apipie_options
     end
 
     class InfoCommand < HammerCLIForeman::InfoCommand
       output do
-        field :id, "Taco ID"
-        field :name, "Name"
-        field :crunchiness, "Crunchiness"
-        field :meat, "Meat"
+        field :id, _("Taco ID")
+        field :name, _("Name")
+        field :crunchiness, _("Crunchiness")
+        field :meat, _("Meat")
       end
 
       apipie_options
     end
 
     class UpdateCommand < HammerCLIForeman::UpdateCommand
-      success_message "Taco updated"
-      failure_message "Could not update the taco"
+      success_message _("Taco updated")
+      failure_message _("Could not update the taco")
 
       apipie_options :without => [:doritos_locos]
-      option "--meat", "MEAT", "meat type", :attribute_name => :option_meat
+      option "--meat", "MEAT", _("meat type"), :attribute_name => :option_meat
     end
 
     class DeleteCommand < HammerCLIForeman::DeleteCommand
-      success_message "Taco deleted"
-      failure_message "Could not delete the taco"
+      success_message _("Taco deleted")
+      failure_message _("Could not delete the taco")
 
       apipie_options
     end
@@ -51,4 +51,4 @@ module HammerCLIKatello
 
 end
 
-HammerCLI::MainCommand.subcommand "taco", "Manipulate tacos", HammerCLIKatello::Taco
+HammerCLI::MainCommand.subcommand "taco", _("Manipulate tacos"), HammerCLIKatello::Taco

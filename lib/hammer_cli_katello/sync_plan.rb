@@ -5,10 +5,10 @@ module HammerCLIKatello
     class ListCommand < HammerCLIForeman::ListCommand
 
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :sync_date, "Start Date", Fields::Date
-        field :interval, "Interval"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :sync_date, _("Start Date"), Fields::Date
+        field :interval, _("Interval")
       end
 
       apipie_options
@@ -18,8 +18,8 @@ module HammerCLIKatello
       identifiers :id
 
       output ListCommand.output_definition do
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
 
       apipie_options
@@ -27,16 +27,16 @@ module HammerCLIKatello
 
     class CreateCommand < HammerCLIForeman::CreateCommand
 
-      option "--interval", "INTERVAL", "how often synchronization should run",
+      option "--interval", "INTERVAL", _("how often synchronization should run"),
              :default => 'none',
              :format => HammerCLI::Options::Normalizers::Enum.new(
                 %w('none', 'hourly', 'daily', 'weekly')
               )
-      option "--sync-date", "SYNC_DATE", "start date and time of the synchronization",
+      option "--sync-date", "SYNC_DATE", _("start date and time of the synchronization"),
              :format => HammerCLI::Options::Normalizers::DateTime.new, :required => true
 
-      success_message "Sync plan created"
-      failure_message "Could not create the sync plan"
+      success_message _("Sync plan created")
+      failure_message _("Could not create the sync plan")
 
       apipie_options :without => [:interval, :sync_date]
     end
@@ -44,15 +44,15 @@ module HammerCLIKatello
     class UpdateCommand < HammerCLIForeman::UpdateCommand
       identifiers :id
 
-      option "--interval", "INTERVAL", "how often synchronization should run",
+      option "--interval", "INTERVAL", _("how often synchronization should run"),
              :format => HammerCLI::Options::Normalizers::Enum.new(
                 %('none', 'hourly', 'daily', 'weekly')
               )
-      option "--sync-date", "SYNC_DATE", "start date and time of the synchronization",
+      option "--sync-date", "SYNC_DATE", _("start date and time of the synchronization"),
              :format => HammerCLI::Options::Normalizers::DateTime.new
 
-      success_message "Sync plan updated"
-      failure_message "Could not update the sync plan"
+      success_message _("Sync plan updated")
+      failure_message _("Could not update the sync plan")
 
       apipie_options :without => [:interval, :sync_date]
     end
@@ -60,8 +60,8 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIForeman::DeleteCommand
       identifiers :id
 
-      success_message "Sync plan destroyed"
-      failure_message "Could not destroy the sync plan"
+      success_message _("Sync plan destroyed")
+      failure_message _("Could not destroy the sync plan")
 
       apipie_options
     end
@@ -70,5 +70,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand 'sync_plan', "Manipulate sync plans",
+HammerCLI::MainCommand.subcommand 'sync_plan', _("Manipulate sync plans"),
                                   HammerCLIKatello::SyncPlan
