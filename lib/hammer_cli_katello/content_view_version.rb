@@ -38,6 +38,12 @@ module HammerCLIKatello
           field :name, "Name"
           field :label, "Label"
         end
+
+        collection :repositories, "Repositories" do
+          field :id, "ID"
+          field :name, "Name"
+          field :label, "Label"
+        end
       end
 
       apipie_options
