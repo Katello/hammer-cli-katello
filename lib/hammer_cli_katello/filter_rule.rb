@@ -15,8 +15,10 @@ module HammerCLIKatello
         field :version, "Version"
         field :min_version, "Minimum Version"
         field :max_version, "Maximum Version"
+
         field :start_date, "Start Date"
         field :end_date, "End Date"
+        field :types, "Types", Fields::List
       end
 
       apipie_options
