@@ -15,6 +15,7 @@ module HammerCLIKatello
         field :version, "Version"
         field :min_version, "Minimum Version"
         field :max_version, "Maximum Version"
+        field :errata_id, "Errata ID"
         field :start_date, "Start Date"
         field :end_date, "End Date"
       end
@@ -31,6 +32,7 @@ module HammerCLIKatello
         field :version, "Version", Fields::Field, :hide_blank => true
         field :min_version, "Minimum Version", Fields::Field, :hide_blank => true
         field :max_version, "Maximum Version", Fields::Field, :hide_blank => true
+        field :errata_id, "Errata ID", Fields::Field, :hide_blank => true
         field :start_date, "Start Date", Fields::Field, :hide_blank => true
         field :end_date, "End Date", Fields::Field, :hide_blank => true
         field :types, "Types", Fields::List, :hide_blank => true
