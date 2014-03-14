@@ -20,11 +20,11 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
         field :id, "ID"
-        field :uuid, "UUID"
+        field :uuid, "UUID", Fields::Field, :hide_blank => true
         field :name, "Name"
         field :author, "Author"
-        field :added, "Added"
-        field :updated, "Updated"
+        field :created_at, "Created", Fields::Date
+        field :updated_at, "Updated", Fields::Date
       end
 
       def request_params
