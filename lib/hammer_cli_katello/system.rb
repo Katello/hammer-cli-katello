@@ -6,8 +6,8 @@ module HammerCLIKatello
       resource KatelloApi::Resources::System, :index
 
       output do
-        field :uuid, "ID"
-        field :name, "Name"
+        field :uuid, _("ID")
+        field :name, _("Name")
       end
 
       apipie_options :without => [:environment_id]
@@ -19,28 +19,28 @@ module HammerCLIKatello
       identifiers :id
 
       output do
-        field :name, "Name"
-        field :id, "ID"
-        field :uuid, "UUID"
-        field :description, "Description"
-        field :location, "Location"
+        field :name, _("Name")
+        field :id, _("ID")
+        field :uuid, _("UUID")
+        field :description, _("Description")
+        field :location, _("Location")
         from :environment do
-          field :name, "Lifecycle Environment"
+          field :name, _("Lifecycle Environment")
         end
         from :content_view do
-          field :name, "Content View"
+          field :name, _("Content View")
         end
-        field :entitlementStatus, "Entitlement Status"
-        field :releaseVer, "Release Version"
-        field :autoheal, "Autoheal"
+        field :entitlementStatus, _("Entitlement Status")
+        field :releaseVer, _("Release Version")
+        field :autoheal, _("Autoheal")
       end
 
       apipie_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message "System created"
-      failure_message "Could not create system"
+      success_message _("System created")
+      failure_message _("Could not create system")
       resource KatelloApi::Resources::System, :create
 
       def request_params
@@ -54,8 +54,8 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message "System updated"
-      failure_message "Could not update system"
+      success_message _("System updated")
+      failure_message _("Could not update system")
       resource KatelloApi::Resources::System, :update
 
       identifiers :id
@@ -64,8 +64,8 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message "System deleted"
-      failure_message "Could not delete system"
+      success_message _("System deleted")
+      failure_message _("Could not delete system")
       resource KatelloApi::Resources::System, :destroy
 
       identifiers :id
@@ -87,7 +87,7 @@ module HammerCLIKatello
   end
 
   cmd_name = "system"
-  cmd_desc = "manipulate systems on the server"
+  cmd_desc = _("manipulate systems on the server")
   cmd_cls  = HammerCLIKatello::SystemCommand
   HammerCLI::MainCommand.subcommand(cmd_name, cmd_desc, cmd_cls)
 

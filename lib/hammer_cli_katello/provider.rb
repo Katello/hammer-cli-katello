@@ -4,11 +4,11 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :provider_type, "Type"
-        field :total_products, "Products"
-        field :total_repositories, "Repositories"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :provider_type, _("Type")
+        field :total_products, _("Products")
+        field :total_repositories, _("Repositories")
       end
 
       apipie_options
@@ -16,14 +16,14 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output ListCommand.output_definition do
-        field :created_at, "Created at", Fields::Date
-        field :updated_at, "Updated at", Fields::Date
+        field :created_at, _("Created at"), Fields::Date
+        field :updated_at, _("Updated at"), Fields::Date
       end
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message "Provider updated"
-      failure_message "Could not update the provider"
+      success_message _("Provider updated")
+      failure_message _("Could not update the provider")
 
       apipie_options
     end
@@ -32,8 +32,8 @@ module HammerCLIKatello
       action "refresh_manifest"
       command_name "refresh_manifest"
 
-      success_message "Manifest is being refreshed"
-      failure_message "Could not refresh the manifest"
+      success_message _("Manifest is being refreshed")
+      failure_message _("Could not refresh the manifest")
 
       apipie_options
     end
@@ -42,8 +42,8 @@ module HammerCLIKatello
       action "delete_manifest"
       command_name "delete_manifest"
 
-      success_message "Manifest deleted"
-      failure_message "Could not delete the manifest"
+      success_message _("Manifest deleted")
+      failure_message _("Could not delete the manifest")
 
       apipie_options
     end
@@ -52,5 +52,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand 'provider', "Manipulate providers",
+HammerCLI::MainCommand.subcommand 'provider', _("Manipulate providers"),
                                   HammerCLIKatello::Provider

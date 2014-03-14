@@ -5,9 +5,9 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do
-        field :id, "Id"
-        field :label, "Label"
-        field :description, "Description"
+        field :id, _("Id")
+        field :label, _("Label")
+        field :description, _("Description")
       end
 
       apipie_options
@@ -17,8 +17,8 @@ module HammerCLIKatello
       action "sync"
       command_name "synchronize"
 
-      success_message "Repository is being synchronized in task %{id}s"
-      failure_message "Could not synchronize the repository"
+      success_message _("Repository is being synchronized in task %{id}s")
+      failure_message _("Could not synchronize the repository")
 
       apipie_options
     end
@@ -27,5 +27,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand "repository", "Manipulate repositories",
+HammerCLI::MainCommand.subcommand "repository", _("Manipulate repositories"),
                                   HammerCLIKatello::Repository

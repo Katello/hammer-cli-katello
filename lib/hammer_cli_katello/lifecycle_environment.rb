@@ -6,9 +6,9 @@ module HammerCLIKatello
       resource KatelloApi::Resources::Environment, :index
 
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :prior, "Prior"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :prior, _("Prior")
       end
 
       apipie_options
@@ -20,7 +20,7 @@ module HammerCLIKatello
       command_name "paths"
 
       output do
-        field :pretty_path, "Lifecycle Path"
+        field :pretty_path, _("Lifecycle Path")
       end
 
       def extend_data(data)
@@ -39,15 +39,15 @@ module HammerCLIKatello
       include HammerCLIKatello::ScopedNameCommand
 
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :label, "Label"
-        field :description, "Description"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :label, _("Label")
+        field :description, _("Description")
         from :organization do
-          field :name, "Organization"
+          field :name, _("Organization")
         end
-        field :library, "Library"
-        field :prior, "Prior Lifecycle Environment"
+        field :library, _("Library")
+        field :prior, _("Prior Lifecycle Environment")
       end
 
       def request_params
@@ -58,8 +58,8 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       resource KatelloApi::Resources::Environment, :create
       include HammerCLIKatello::ScopedName
-      success_message "Environment created"
-      failure_message "Could not create environment"
+      success_message _("Environment created")
+      failure_message _("Could not create environment")
 
       apipie_options
 
@@ -70,8 +70,8 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message "Environment updated"
-      failure_message "Could not update environment"
+      success_message _("Environment updated")
+      failure_message _("Could not update environment")
       include HammerCLIKatello::ScopedNameCommand
       resource KatelloApi::Resources::Environment
 
@@ -85,8 +85,8 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message "Environment deleted"
-      failure_message "Could not delete environment"
+      success_message _("Environment deleted")
+      failure_message _("Could not delete environment")
       include HammerCLIKatello::ScopedNameCommand
       resource KatelloApi::Resources::Environment
 
@@ -103,7 +103,7 @@ module HammerCLIKatello
   end
 
   cmd_name = "lifecycle-environment"
-  cmd_desc = "manipulate lifecycle_environments on the server"
+  cmd_desc = _("manipulate lifecycle_environments on the server")
   cmd_cls  = HammerCLIKatello::LifecycleEnvironmentCommand
   HammerCLI::MainCommand.subcommand(cmd_name, cmd_desc, cmd_cls)
 end

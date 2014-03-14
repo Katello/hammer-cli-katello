@@ -13,6 +13,8 @@ module HammerCLIKatello
     HammerCLIKatello::ExceptionHandler
   end
 
+  require 'hammer_cli_katello/i18n'
+
   require "hammer_cli_katello/commands"
   require "hammer_cli_katello/exception_handler"
   require "hammer_cli_katello/scoped_names"

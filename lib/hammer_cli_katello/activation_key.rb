@@ -5,16 +5,16 @@ module HammerCLIKatello
       resource KatelloApi::Resources::ActivationKey, 'index'
 
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :format_consumed, "Consumed"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :format_consumed, _("Consumed")
       end
 
       def extend_data(data)
-        data["format_consumed"] = "%{consumed} of %{limit}" %
+        data["format_consumed"] = _("%{consumed} of %{limit}") %
           {
             :consumed => data["usage_count"],
-            :limit => data["usage_limit"] == -1 ? "Unlimited" : data["usage_limit"]
+            :limit => data["usage_limit"] == -1 ? _("Unlimited") : data["usage_limit"]
           }
         data
       end
@@ -28,14 +28,14 @@ module HammerCLIKatello
       identifiers :id
 
       output do
-        field :name, "Name"
-        field :id, "ID"
-        field :description, "Description"
+        field :name, _("Name")
+        field :id, _("ID")
+        field :description, _("Description")
         from :environment do
-          field :name, "Lifecycle Environment"
+          field :name, _("Lifecycle Environment")
         end
         from :content_view do
-          field :name, "Content View"
+          field :name, _("Content View")
         end
       end
 
@@ -46,5 +46,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand("activation-key", "Manipulate activation keys.",
+HammerCLI::MainCommand.subcommand("activation-key", _("Manipulate activation keys."),
                                   HammerCLIKatello::ActivationKeyCommand)
