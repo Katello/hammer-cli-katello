@@ -2,14 +2,14 @@ module HammerCLIKatello
 
   class FilterRule < HammerCLI::Apipie::Command
 
-    resource KatelloApi::Resources::FilterRule
+    resource KatelloApi::Resources::ContentViewFilterRule
     command_name 'rule'
     desc 'View and manage filter rules'
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, "Rule ID"
-        field :filter_id, "Filter ID"
+        field :content_view_filter_id, "Filter ID"
 
         field :name, "Name"
         field :version, "Version"
@@ -25,16 +25,17 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
         field :id, "Rule ID"
-        field :filter_id, "Filter ID"
+        field :content_view_filter_id, "Filter ID"
 
-        field :name, "Name"
-        field :version, "Version"
-        field :min_version, "Minimum Version"
-        field :max_version, "Maximum Version"
-        field :start_date, "Start Date"
-        field :end_date, "End Date"
-        field :created_at, "Created"
-        field :updated_at, "Updated"
+        field :name, "Name", Fields::Field, :hide_blank => true
+        field :version, "Version", Fields::Field, :hide_blank => true
+        field :min_version, "Minimum Version", Fields::Field, :hide_blank => true
+        field :max_version, "Maximum Version", Fields::Field, :hide_blank => true
+        field :start_date, "Start Date", Fields::Field, :hide_blank => true
+        field :end_date, "End Date", Fields::Field, :hide_blank => true
+        field :types, "Types", Fields::List, :hide_blank => true
+        field :created_at, "Created", Fields::Date
+        field :updated_at, "Updated", Fields::Date
       end
 
       apipie_options
