@@ -49,11 +49,11 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class PromoteCommand < HammerCLIKatello::WriteCommand
+    class PromoteCommand < HammerCLIForemanTasks::AsyncCommand
       action :promote
       command_name "promote"
 
-      success_message "Content view promoted"
+      success_message "Content view is being promoted with task %{id}s"
       failure_message "Could not promote the content view"
 
       apipie_options
