@@ -7,14 +7,14 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :version, "Version"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :version, _("Version")
 
         from :content_view do
-          field :id, "Content View ID"
-          field :name, "Content View Name"
-          field :label, "Content View Label"
+          field :id, _("Content View ID")
+          field :name, _("Content View Name")
+          field :label, _("Content View Label")
         end
       end
 
@@ -23,33 +23,33 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :version, "Version"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :version, _("Version")
 
         from :content_view do
-          field :id, "Content View ID"
-          field :name, "Content View Name"
-          field :label, "Content View Label"
+          field :id, _("Content View ID")
+          field :name, _("Content View Name")
+          field :label, _("Content View Label")
         end
 
-        collection :environments, "Environments" do
-          field :id, "ID"
-          field :name, "Name"
-          field :label, "Label"
+        collection :environments, _("Environments") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :label, _("Label")
         end
 
-        collection :repositories, "Repositories" do
-          field :id, "ID"
-          field :name, "Name"
-          field :label, "Label"
+        collection :repositories, _("Repositories") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :label, _("Label")
         end
 
-        collection :puppet_modules, "Puppet Modules" do
-          field :id, "ID"
-          field :name, "Name"
-          field :author, "Author"
-          field :version, "Version"
+        collection :puppet_modules, _("Puppet Modules") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :author, _("Author")
+          field :version, _("Version")
         end
       end
 
@@ -60,8 +60,8 @@ module HammerCLIKatello
       action :promote
       command_name "promote"
 
-      success_message "Content view is being promoted with task %{id}s"
-      failure_message "Could not promote the content view"
+      success_message _("Content view is being promoted with task %{id}s")
+      failure_message _("Could not promote the content view")
 
       apipie_options
     end
