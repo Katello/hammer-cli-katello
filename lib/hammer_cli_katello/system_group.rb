@@ -5,18 +5,18 @@ module HammerCLIKatello
       resource KatelloApi::Resources::SystemGroup, "index"
 
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :max_systems, "Limit"
-        field :description, "Description"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :max_systems, _("Limit")
+        field :description, _("Description")
       end
 
       apipie_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message "System group created"
-      failure_message "Could not create the system group"
+      success_message _("System group created")
+      failure_message _("Could not create the system group")
       resource KatelloApi::Resources::SystemGroup, "create"
 
       apipie_options
@@ -30,8 +30,8 @@ module HammerCLIKatello
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
-      success_message "System group created"
-      failure_message "Could not create the system group"
+      success_message _("System group created")
+      failure_message _("Could not create the system group")
       command_name "copy"
       action "copy"
 
@@ -44,5 +44,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand 'systemgroup', "Manipulate system groups",
+HammerCLI::MainCommand.subcommand 'systemgroup', _("Manipulate system groups"),
                                   HammerCLIKatello::SystemGroup

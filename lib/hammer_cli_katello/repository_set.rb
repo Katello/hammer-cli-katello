@@ -6,13 +6,13 @@ module HammerCLIKatello
       resource KatelloApi::Resources::RepositorySet, :index
 
       output do
-        field :id, "ID"
-        field :_enabled, "Enabled"
-        field :name, "Name"
+        field :id, _("ID")
+        field :_enabled, _("Enabled")
+        field :name, _("Name")
       end
 
       def extend_data(data)
-        data["_enabled"] = data["katello_enabled"] ? "enabled" : "disabled"
+        data["_enabled"] = data["katello_enabled"] ? _("enabled") : _("disabled")
         data
       end
 
@@ -27,14 +27,14 @@ module HammerCLIKatello
       resource KatelloApi::Resources::RepositorySet, :show
 
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :_enabled, "Enabled"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :_enabled, _("Enabled")
 
-        collection :repositories, "Repositories" do
-          field :id, "ID"
-          field :name, "Name"
-          field :_enabled, "Enabled"
+        collection :repositories, _("Repositories") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :_enabled, _("Enabled")
         end
       end
 
@@ -44,9 +44,9 @@ module HammerCLIKatello
 
       def retrieve_data
         super.tap do |data|
-          data["_enabled"] = data["katello_enabled"] ? "yes" : "no"
+          data["_enabled"] = data["katello_enabled"] ? _("yes") : _("no")
           data["repositories"].each do |repo|
-            repo["_enabled"] = repo["enabled"] ? "yes" : "no"
+            repo["_enabled"] = repo["enabled"] ? _("yes") : _("no")
           end
         end
       end
@@ -57,8 +57,8 @@ module HammerCLIKatello
     class EnableCommand < HammerCLIKatello::UpdateCommand
       command_name "enable"
       resource KatelloApi::Resources::RepositorySet, :enable
-      success_message "Repository set enabled"
-      failure_message "Could not enable repository set"
+      success_message _("Repository set enabled")
+      failure_message _("Could not enable repository set")
 
       apipie_options
     end
@@ -66,8 +66,8 @@ module HammerCLIKatello
     class DisableCommand < HammerCLIKatello::UpdateCommand
       command_name "disable"
       resource KatelloApi::Resources::RepositorySet, :disable
-      success_message "Repository set disabled"
-      failure_message "Could not disable repository set"
+      success_message _("Repository set disabled")
+      failure_message _("Could not disable repository set")
 
       apipie_options
     end
@@ -75,6 +75,6 @@ module HammerCLIKatello
     autoload_subcommands
   end
 
-  HammerCLI::MainCommand.subcommand("repository-set", "manipulate repository sets on the server",
+  HammerCLI::MainCommand.subcommand("repository-set", _("manipulate repository sets on the server"),
                                     HammerCLIKatello::RepositorySetCommand)
 end

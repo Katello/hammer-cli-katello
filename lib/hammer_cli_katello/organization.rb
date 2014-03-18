@@ -6,8 +6,8 @@ module HammerCLIKatello
       resource KatelloApi::Resources::Organization, "index"
 
       output do
-        field :label, "Label"
-        field :description, "Description"
+        field :label, _("Label")
+        field :description, _("Description")
       end
 
       apipie_options
@@ -17,8 +17,8 @@ module HammerCLIKatello
       resource KatelloApi::Resources::Organization, "show"
 
       output do
-        field :label, "Label"
-        field :description, "Description"
+        field :label, _("Label")
+        field :description, _("Description")
       end
 
       apipie_options
@@ -27,8 +27,8 @@ module HammerCLIKatello
     class UpdateCommand < HammerCLIForeman::Organization::UpdateCommand
       resource KatelloApi::Resources::Organization, "update"
 
-      success_message "Organization updated"
-      failure_message "Could not update the organization"
+      success_message _("Organization updated")
+      failure_message _("Could not update the organization")
 
       apipie_options
     end
@@ -36,8 +36,8 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       resource KatelloApi::Resources::Organization, "create"
 
-      success_message "Organization created"
-      failure_message "Could not create the organization"
+      success_message _("Organization created")
+      failure_message _("Could not create the organization")
 
       apipie_options
     end
@@ -45,8 +45,8 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       resource KatelloApi::Resources::Organization, "destroy"
 
-      success_message "Organization deleted"
-      failure_message "Could not delete the organization"
+      success_message _("Organization deleted")
+      failure_message _("Could not delete the organization")
 
       apipie_options
     end
@@ -56,5 +56,5 @@ module HammerCLIKatello
 
 end
 
-HammerCLI::MainCommand.subcommand! 'organization', "Manipulate organizations",
+HammerCLI::MainCommand.subcommand! 'organization', _("Manipulate organizations"),
                                    HammerCLIKatello::Organization

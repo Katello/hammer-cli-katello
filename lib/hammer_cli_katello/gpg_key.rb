@@ -6,8 +6,8 @@ module HammerCLIKatello
       resource KatelloApi::Resources::GpgKey, :index
 
       output do
-        field :id, "ID"
-        field :name, "Name"
+        field :id, _("ID")
+        field :name, _("Name")
       end
 
       apipie_options
@@ -16,18 +16,18 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIKatello::InfoCommand
       resource KatelloApi::Resources::GpgKey, :show
       output do
-        field :id, "ID"
-        field :name, "Name"
+        field :id, _("ID")
+        field :name, _("Name")
         from :organization do
-          field :name, "Organization"
+          field :name, _("Organization")
         end
 
         collection :repositories, "Repositories" do
-          field :id, "ID"
-          field :name, "Name"
-          field :content_type, "Content Type"
+          field :id, _("ID")
+          field :name, _("Name")
+          field :content_type, _("Content Type")
           from :product do
-            field :name, "Product"
+            field :name, _("Product")
           end
         end
 
@@ -36,7 +36,7 @@ module HammerCLIKatello
         # Contents
         # <content>
 
-        field "", "Content"
+        field "", _("Content")
         field :content, nil
       end
 
@@ -49,18 +49,18 @@ module HammerCLIKatello
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       resource KatelloApi::Resources::GpgKey, :create
-      success_message "GPG Key created"
-      failure_message "Could not create GPG Key"
+      success_message _("GPG Key created")
+      failure_message _("Could not create GPG Key")
       apipie_options  :without => [:content]
-      option "--key", "GPG_KEY_FILE", "GPG Key file",
+      option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
              :required => true,
              :format => HammerCLI::Options::Normalizers::File.new
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message "GPG Key updated"
-      failure_message "Could not update GPG Key"
+      success_message _("GPG Key updated")
+      failure_message _("Could not update GPG Key")
       resource KatelloApi::Resources::GpgKey, :update
 
       identifiers :id
@@ -70,14 +70,14 @@ module HammerCLIKatello
       end
 
       apipie_options :without => [:content]
-      option "--key", "GPG_KEY_FILE", "GPG Key file",
+      option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
              :format => HammerCLI::Options::Normalizers::File.new
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message "GPG Key deleted"
-      failure_message "Could not delete the GPG Key"
+      success_message _("GPG Key deleted")
+      failure_message _("Could not delete the GPG Key")
       resource KatelloApi::Resources::GpgKey, :destroy
 
       identifiers :id
@@ -92,6 +92,6 @@ module HammerCLIKatello
   end
 
   HammerCLI::MainCommand.subcommand("gpg",
-                                    "manipulate GPG Key actions on the server",
+                                    _("manipulate GPG Key actions on the server"),
                                     HammerCLIKatello::GpgKeyCommand)
 end

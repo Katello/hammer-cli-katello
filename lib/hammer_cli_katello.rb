@@ -17,6 +17,7 @@ module HammerCLIKatello
   require "hammer_cli_katello/associating_commands"
   require "hammer_cli_katello/version.rb"
   require "hammer_cli_katello/exception_handler.rb"
+  require 'hammer_cli_katello/i18n'
   require "hammer_cli_katello/scoped_names"
   require "hammer_cli_katello/activation_key"
   require "hammer_cli_katello/gpg_key"
@@ -25,6 +26,7 @@ module HammerCLIKatello
   require "hammer_cli_katello/ping"
   require "hammer_cli_katello/product"
   require "hammer_cli_katello/provider"
+  require "hammer_cli_katello/repository"
   require "hammer_cli_katello/repository_set"
   require "hammer_cli_katello/subscription"
   require "hammer_cli_katello/system_group"
