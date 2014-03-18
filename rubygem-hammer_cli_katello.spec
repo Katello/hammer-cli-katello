@@ -21,6 +21,7 @@ Requires: ruby(abi)
 Requires: ruby(rubygems)
 Requires: rubygem(hammer_cli)
 Requires: rubygem(katello_api)
+Requires: rubygem(hammer_cli_foreman_tasks)
 BuildRequires: ruby(rubygems)
 %if 0%{?fedora}
 BuildRequires: rubygems-devel
@@ -56,6 +57,7 @@ cp -pa .%{gem_dir}/* \
 %files
 %dir %{geminstdir}
 %{geminstdir}/lib
+%{geminstdir}/locale
 %exclude %{gem_dir}/cache/%{gemname}-%{version}.gem
 %{gem_dir}/specifications/%{gemname}-%{version}.gemspec
 

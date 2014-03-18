@@ -4,8 +4,14 @@ module HammerCLIKatello
       organization = get_option_value(:organization_id)
       results = resource.call(:index, "name" => "#{name}", "organization_id" => organization).first
       results = HammerCLIForeman.collection_to_common_format(results)
-      fail "#{resource.name} with name '#{name}' not found" if results.empty?
-      fail "#{resource.name} with name '#{name}' found more than once" if results.count > 1
+
+      msg_opt = {
+        :resource => resource.name,
+        :value => name
+      }
+
+      fail _("%{resource} with name '%{value}' not found") % msg_opt  if results.empty?
+      fail _("%{resource} with name '%{value}' found more than once") % msg_opt if results.count > 1
       results.first['id']
     end
   end
@@ -15,16 +21,16 @@ module HammerCLIKatello
 
     def self.included(cls)
 
-      cls.option "--id", "ID", "The id",
+      cls.option "--id", "ID", _("The id"),
                  :attribute_name => :option_id,
                  :required => false
 
       cls.option "--organization-id", "ORGANIZATION",
-                 "The ID of the organization which the resource belongs to",
+                 _("The ID of the organization which the resource belongs to"),
                  :attribute_name => :option_organization_id,
                  :required => false
 
-      cls.option "--name", "NAME", "The name of the resource",
+      cls.option "--name", "NAME", _("The name of the resource"),
                  :attribute_name => :option_name,
                  :required => false
     end
@@ -33,7 +39,7 @@ module HammerCLIKatello
       id = get_option_value(:id)
       name = get_option_value(:name)
       organization_id = get_option_value(:organization_id)
-      msg = "Either --id or --organization-id and --name is required"
+      msg = _("Either --id or --organization-id and --name is required")
 
       name_and_org = (!organization_id.nil? && !name.nil?)
 

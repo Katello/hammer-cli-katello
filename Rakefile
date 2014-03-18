@@ -26,3 +26,18 @@ end
 task :default do
   Rake::Task['rubocop'].execute
 end
+
+
+namespace :gettext do
+
+  desc "Update pot file"
+  task :find do
+    require "hammer_cli_katello/version"
+    require "hammer_cli_katello/i18n"
+    require 'gettext/tools'
+
+    domain = HammerCLIKatello::I18n::LocaleDomain.new
+    GetText.update_pofiles(domain.domain_name, domain.translated_files, "#{domain.domain_name} #{HammerCLIKatello.version.to_s}", :po_root => domain.locale_dir)
+  end
+
+end
