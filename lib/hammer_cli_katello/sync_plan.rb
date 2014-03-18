@@ -11,11 +11,10 @@ module HammerCLIKatello
         field :interval, _("Interval")
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      identifiers :id
 
       output ListCommand.output_definition do
         field :description, _("Description")
@@ -23,7 +22,7 @@ module HammerCLIKatello
         field :updated_at, _("Updated at"), Fields::Date
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -42,11 +41,10 @@ module HammerCLIKatello
       success_message _("Sync plan created")
       failure_message _("Could not create the sync plan")
 
-      apipie_options :without => [:interval, :sync_date]
+      build_options :without => [:interval, :sync_date]
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      identifiers :id
 
       option "--interval", "INTERVAL", _("how often synchronization should run"),
              :format => HammerCLI::Options::Normalizers::Enum.new(
@@ -58,16 +56,14 @@ module HammerCLIKatello
       success_message _("Sync plan updated")
       failure_message _("Could not update the sync plan")
 
-      apipie_options :without => [:interval, :sync_date]
+      build_options :without => [:interval, :sync_date]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      identifiers :id
-
       success_message _("Sync plan destroyed")
       failure_message _("Could not destroy the sync plan")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

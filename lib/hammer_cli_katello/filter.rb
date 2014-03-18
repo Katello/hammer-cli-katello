@@ -16,7 +16,7 @@ module HammerCLIKatello
         field :inclusion, _("Inclusion")
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -47,31 +47,31 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options :without => [:content_view_id]
+      build_options :without => [:content_view_id]
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Filter created")
       failure_message _("Could not create the filter")
 
-      apipie_options
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Filter updated")
       failure_message _("Could not update the filter")
 
-      apipie_options :without => [:content_view_id]
+      build_options :without => [:content_view_id]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message _("Filter deleted")
       failure_message _("Could not delete the filter")
 
-      apipie_options :without => [:content_view_id]
+      build_options :without => [:content_view_id]
     end
 
-    include HammerCLIKatello::AssociatingCommands::Repository
+    HammerCLIKatello::AssociatingCommands::Repository.extend_command(self)
 
     autoload_subcommands
 

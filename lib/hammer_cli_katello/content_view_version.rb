@@ -18,7 +18,7 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -53,7 +53,7 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options
+      build_options
     end
 
     class PromoteCommand < HammerCLIForemanTasks::AsyncCommand
@@ -63,7 +63,7 @@ module HammerCLIKatello
       success_message _("Content view is being promoted with task %{id}s")
       failure_message _("Could not promote the content view")
 
-      apipie_options
+      build_options
     end
 
     class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
@@ -73,7 +73,7 @@ module HammerCLIKatello
       success_message _("Content view is being deleted with task %{id}s")
       failure_message _("Could not delete the content view")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

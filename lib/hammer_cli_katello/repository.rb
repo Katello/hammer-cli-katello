@@ -56,7 +56,7 @@ module HammerCLIKatello
         end
       end
 
-      def retrieve_data
+      def send_request
         super.tap do |data|
           data["_redhat_repo"] = data["product_type"] == "redhat" ? _("yes") : _("no")
           data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
@@ -97,7 +97,7 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
     class SyncCommand < HammerCLIForemanTasks::AsyncCommand
@@ -107,24 +107,25 @@ module HammerCLIKatello
       success_message _("Repository is being synchronized in task %{id}s")
       failure_message _("Could not synchronize the repository")
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Repository created")
       failure_message _("Could not create the repository")
 
-      apipie_options :without => [:unprotected]
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
+
+      build_options :without => [:unprotected]
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Repository updated")
       failure_message _("Could not update the repository")
 
-      apipie_options :without => [:unprotected]
+      build_options :without => [:unprotected]
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
@@ -134,7 +135,7 @@ module HammerCLIKatello
       success_message _("Repository deleted")
       failure_message _("Could not delete the Repository")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands
