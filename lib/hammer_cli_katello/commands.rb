@@ -1,40 +1,64 @@
 module HammerCLIKatello
 
-  class Command < HammerCLIForeman::Command; end
 
-  class WriteCommand < HammerCLIForeman::WriteCommand; end
+  module ResolverCommons
 
-  class ReadCommand < HammerCLIForeman::ReadCommand; end
+    def self.included(base)
+      base.extend(ClassMethods)
+    end
 
-  class ListCommand < HammerCLIForeman::ListCommand; end
+    module ClassMethods
 
-  class InfoCommand < HammerCLIForeman::InfoCommand
+      def resolver
+        api = HammerCLI::Connection.get("foreman").api
+        HammerCLIKatello::IdResolver.new(api, HammerCLIKatello::Searchables.new)
+      end
 
-    identifiers :id
+      def searchables
+        @searchables ||= HammerCLIKatello::Searchables.new
+        @searchables
+      end
 
+    end
   end
 
-  class CreateCommand < HammerCLIForeman::CreateCommand; end
+  class Command < HammerCLIForeman::Command
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class WriteCommand < HammerCLIForeman::WriteCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class ReadCommand < HammerCLIForeman::ReadCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class ListCommand < HammerCLIForeman::ListCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class InfoCommand < HammerCLIForeman::InfoCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class CreateCommand < HammerCLIForeman::CreateCommand
+    include HammerCLIKatello::ResolverCommons
+  end
 
   class UpdateCommand < HammerCLIForeman::UpdateCommand
-
-    identifiers :id
-
+    include HammerCLIKatello::ResolverCommons
   end
 
   class DeleteCommand < HammerCLIForeman::DeleteCommand
-
-    identifiers :id
-
+    include HammerCLIKatello::ResolverCommons
   end
 
   class AddAssociatedCommand < HammerCLIForeman::AddAssociatedCommand
-    identifiers :id
-    associated_identifiers :id
+    include HammerCLIKatello::ResolverCommons
   end
 
   class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand
-    identifiers :id
-    associated_identifiers :id
+    include HammerCLIKatello::ResolverCommons
   end
 end

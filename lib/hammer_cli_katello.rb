@@ -18,6 +18,7 @@ module HammerCLIKatello
   require 'hammer_cli_katello/i18n'
   require "hammer_cli_katello/scoped_names"
   require "hammer_cli_katello/version"
+  require 'hammer_cli_katello/id_resolver'
 
   # commands
   require "hammer_cli_katello/activation_key"

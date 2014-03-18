@@ -11,7 +11,7 @@ module HammerCLIKatello
         field :name, _("Name"), nil, :max_width => 300
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -44,7 +44,7 @@ module HammerCLIKatello
         field :enabled, _("Enabled"), Fields::Boolean
       end
 
-      apipie_options
+      # build_options
     end
 
     class EnableCommand < HammerCLIKatello::UpdateCommand
@@ -54,7 +54,7 @@ module HammerCLIKatello
       success_message _("Repository enabled")
       failure_message _("Could not enable repository")
 
-      apipie_options
+      build_options
     end
 
     class DisableCommand < HammerCLIKatello::UpdateCommand
@@ -64,7 +64,7 @@ module HammerCLIKatello
       success_message _("Repository disabled")
       failure_message _("Could not disable repository")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

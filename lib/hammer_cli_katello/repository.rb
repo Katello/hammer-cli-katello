@@ -10,6 +10,25 @@ module HammerCLIKatello
         field :content_type, _("Content Type")
       end
 
+      option ["--disabled"], :flag, _("limit to only the disabled repos")
+      option ["--all"], :flag, _("include both enabled and disabled repos")
+
+      def retrieve_data
+        super.tap do |items|
+          items.each do |data|
+            data["_enabled"] = data["enabled"] ? _("yes") : _("no")
+          end
+        end
+      end
+
+      def request_params
+        opts = super
+        opts["disabled"] = option_disabled? if option_disabled?
+        opts["all"] = option_all? if option_all?
+        opts
+      end
+
+      build_options :without => [:disabled, :all]
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -97,7 +116,7 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
     class SyncCommand < HammerCLIForemanTasks::AsyncCommand
@@ -107,24 +126,25 @@ module HammerCLIKatello
       success_message _("Repository is being synchronized in task %{id}s")
       failure_message _("Could not synchronize the repository")
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Repository created")
       failure_message _("Could not create the repository")
 
-      apipie_options :without => [:unprotected]
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
+
+      build_options :without => [:unprotected]
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Repository updated")
       failure_message _("Could not update the repository")
 
-      apipie_options :without => [:unprotected]
+      build_options :without => [:unprotected]
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
@@ -134,7 +154,7 @@ module HammerCLIKatello
       success_message _("Repository deleted")
       failure_message _("Could not delete the Repository")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

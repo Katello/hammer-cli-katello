@@ -16,7 +16,7 @@ module HammerCLIKatello
         field :repository_ids, _("Repository IDs"), Fields::List
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -63,7 +63,7 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -71,20 +71,21 @@ module HammerCLIKatello
       failure_message _("Could not create the content view")
 
       option ["--composite"], :flag, _("Create a composite content view")
-      apipie_options :without => ["composite"]
 
       def request_params
         super.tap do |opts|
           opts['composite'] = option_composite?
         end
       end
+
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Content view updated")
       failure_message _("Could not update the content view")
 
-      apipie_options
+      build_options
     end
 
     class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
@@ -103,7 +104,7 @@ module HammerCLIKatello
       success_message _("Content view is being published with task %{id}s")
       failure_message _("Could not publish the content view")
 
-      apipie_options
+      build_options
     end
 
     class RemoveFromEnvironmentCommand < HammerCLIForemanTasks::AsyncCommand
@@ -144,19 +145,12 @@ module HammerCLIKatello
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
       command_name 'add-version'
 
-      def self.setup_associated_identifier_options
-        option '--version', 'VERSION_NAME', ' ',
-               :attribute_name => :associated_name
-        option '--version-id', 'VERSION_ID', ' ',
-               :attribute_name => :associated_id
-      end
-
       def association_name(plural = false)
         plural ? "components" : "component"
       end
 
       associated_resource :content_view_versions
-      apipie_options
+      build_options
 
       success_message _("The component version has been added")
       failure_message _("Could not add version")
@@ -165,25 +159,18 @@ module HammerCLIKatello
     class RemoveContentViewVersionCommand < HammerCLIKatello::RemoveAssociatedCommand
       command_name 'remove-version'
 
-      def self.setup_associated_identifier_options
-        option '--version', 'VERSION_NAME', ' ',
-               :attribute_name => :associated_name
-        option '--version-id', 'VERSION_ID', ' ',
-               :attribute_name => :associated_id
-      end
-
       def association_name(plural = false)
         plural ? "components" : "component"
       end
 
       associated_resource :content_view_versions
-      apipie_options
+      build_options
 
       success_message _("The component version has been removed")
       failure_message _("Could not remove version")
     end
 
-    include HammerCLIKatello::AssociatingCommands::Repository
+    HammerCLIKatello::AssociatingCommands::Repository.extend_command(self)
 
     autoload_subcommands
 

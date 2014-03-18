@@ -10,11 +10,17 @@ module HammerCLIKatello
         field :name, _("Name")
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       resource :gpg_keys, :show
+
+      option '--name', 'NAME', _("GPG key name to search by")
+      option '--id', 'ID', _("GPG key numeric id to search by")
+      option '--organization-id', 'ORG_ID', _("Org numeric id to search by")
+      option '--organization', 'ORG', _("Org numeric id to search by"), :attribute_name => :option_organization_name
+
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -38,7 +44,7 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options :without => :id
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -47,7 +53,7 @@ module HammerCLIKatello
       success_message _("GPG Key created")
       failure_message _("Could not create GPG Key")
 
-      apipie_options  :without => [:content]
+      build_options  :without => [:content]
       option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
              :required => true,
@@ -60,13 +66,11 @@ module HammerCLIKatello
       success_message _("GPG Key updated")
       failure_message _("Could not update GPG Key")
 
-      identifiers :id
-
       def request_params
         super.merge(method_options)
       end
 
-      apipie_options :without => [:content]
+      build_options :without => [:content]
       option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
              :format => HammerCLI::Options::Normalizers::File.new
@@ -78,12 +82,11 @@ module HammerCLIKatello
       success_message _("GPG Key deleted")
       failure_message _("Could not delete the GPG Key")
 
-      identifiers :id
       def request_params
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands
