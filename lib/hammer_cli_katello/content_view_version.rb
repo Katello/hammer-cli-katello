@@ -44,6 +44,13 @@ module HammerCLIKatello
           field :name, "Name"
           field :label, "Label"
         end
+
+        collection :puppet_modules, "Puppet Modules" do
+          field :id, "ID"
+          field :name, "Name"
+          field :author, "Author"
+          field :version, "Version"
+        end
       end
 
       apipie_options
