@@ -15,7 +15,7 @@ module HammerCLIKatello
     end
 
     class PathsCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::Environment, :paths
+      resource KatelloApi::Resources::LifecycleEnvironment, :paths
 
       command_name "paths"
 
@@ -56,7 +56,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      resource KatelloApi::Resources::Environment, :create
+      resource KatelloApi::Resources::LifecycleEnvironment, :create
       include HammerCLIKatello::ScopedName
       success_message _("Environment created")
       failure_message _("Could not create environment")
@@ -73,7 +73,7 @@ module HammerCLIKatello
       success_message _("Environment updated")
       failure_message _("Could not update environment")
       include HammerCLIKatello::ScopedNameCommand
-      resource KatelloApi::Resources::Environment
+      resource KatelloApi::Resources::LifecycleEnvironment
 
       identifiers :id
 
@@ -88,7 +88,7 @@ module HammerCLIKatello
       success_message _("Environment deleted")
       failure_message _("Could not delete environment")
       include HammerCLIKatello::ScopedNameCommand
-      resource KatelloApi::Resources::Environment
+      resource KatelloApi::Resources::LifecycleEnvironment
 
       identifiers :id
 
