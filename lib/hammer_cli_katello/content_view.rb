@@ -9,11 +9,11 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, "Content View ID"
-        field :name, "Name"
-        field :label, "Label"
-        field :composite, "Composite"
-        field :repository_ids, "Repository IDs", Fields::List
+        field :id, _("Content View ID")
+        field :name, _("Name")
+        field :label, _("Label")
+        field :composite, _("Composite")
+        field :repository_ids, _("Repository IDs"), Fields::List
       end
 
       apipie_options
@@ -21,45 +21,45 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :label, "Label"
-        field :composite, "Composite"
-        field :description, "Description"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :label, _("Label")
+        field :composite, _("Composite")
+        field :description, _("Description")
 
         from :organization do
-          field :name, "Organization"
+          field :name, _("Organization")
         end
 
-        collection :repositories, "Repositories" do
-          field :id, "ID"
-          field :name, "Name"
-          field :label, "Label"
+        collection :repositories, _("Repositories") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :label, _("Label")
         end
 
-        collection :puppet_modules, "Puppet Modules" do
-          field :id, "ID"
-          field :uuid, "UUID", Fields::Field, :hide_blank => true
-          field :name, "Name"
-          field :author, "Author"
-          field :created_at, "Created", Fields::Date
-          field :updated_at, "Updated", Fields::Date
+        collection :puppet_modules, _("Puppet Modules") do
+          field :id, _("ID")
+          field :uuid, _("UUID"), Fields::Field, :hide_blank => true
+          field :name, _("Name")
+          field :author, _("Author")
+          field :created_at, _("Created"), Fields::Date
+          field :updated_at, _("Updated"), Fields::Date
         end
 
-        collection :environments, "Environments" do
-          field :id, "ID"
-          field :name, "Name"
+        collection :environments, _("Environments") do
+          field :id, _("ID")
+          field :name, _("Name")
         end
 
-        collection :versions, "Versions" do
-          field :id, "ID"
-          field :version, "Version"
-          field :published, "Published", Fields::Date
+        collection :versions, _("Versions") do
+          field :id, _("ID")
+          field :version, _("Version")
+          field :published, _("Published"), Fields::Date
         end
 
-        collection :components, "Components" do
-          field :id, "ID"
-          field :name, "Name"
+        collection :components, _("Components") do
+          field :id, _("ID")
+          field :name, _("Name")
         end
       end
 
@@ -67,16 +67,16 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message "Content view created"
-      failure_message "Could not create the content view"
+      success_message _("Content view created")
+      failure_message _("Could not create the content view")
 
-      option ["--composite"], :flag, "Create a composite content view"
+      option ["--composite"], :flag, _("Create a composite content view")
       apipie_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message "Content view updated"
-      failure_message "Could not update the content view"
+      success_message _("Content view updated")
+      failure_message _("Could not update the content view")
 
       apipie_options
     end
@@ -85,8 +85,8 @@ module HammerCLIKatello
       action :publish
       command_name "publish"
 
-      success_message "Content view is being published with task %{id}s"
-      failure_message "Could not publish the content view"
+      success_message _("Content view is being published with task %{id}s")
+      failure_message _("Could not publish the content view")
 
       apipie_options
     end
@@ -108,8 +108,8 @@ module HammerCLIKatello
       associated_resource :content_view_versions
       apipie_options
 
-      success_message "The component version has been added"
-      failure_message "Could not add version"
+      success_message _("The component version has been added")
+      failure_message _("Could not add version")
     end
 
     class RemoveContentViewVersionCommand < HammerCLIKatello::RemoveAssociatedCommand
@@ -129,8 +129,8 @@ module HammerCLIKatello
       associated_resource :content_view_versions
       apipie_options
 
-      success_message "The component version has been removed"
-      failure_message "Could not remove version"
+      success_message _("The component version has been removed")
+      failure_message _("Could not remove version")
     end
 
     include HammerCLIKatello::AssociatingCommands::Repository
@@ -151,5 +151,5 @@ module HammerCLIKatello
   end
 end
 
-HammerCLI::MainCommand.subcommand "content-view", "Manipulate content views.",
+HammerCLI::MainCommand.subcommand "content-view", _("Manipulate content views."),
                                   HammerCLIKatello::ContentView
