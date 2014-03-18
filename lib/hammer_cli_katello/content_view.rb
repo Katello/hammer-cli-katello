@@ -81,11 +81,11 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class PublishCommand < HammerCLIKatello::WriteCommand
+    class PublishCommand < HammerCLIForemanTasks::AsyncCommand
       action :publish
       command_name "publish"
 
-      success_message "Content view published"
+      success_message "Content view is being published with task %{id}s"
       failure_message "Could not publish the content view"
 
       apipie_options
