@@ -5,10 +5,10 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :version, "Version"
-        field :author, "Author"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :version, _("Version")
+        field :author, _("Author")
       end
 
       apipie_options
@@ -16,19 +16,19 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, "ID"
-        field :name, "Name"
-        field :version, "Version"
-        field :author, "Author"
+        field :id, _("ID")
+        field :name, _("Name")
+        field :version, _("Version")
+        field :author, _("Author")
 
-        field :summary, "Summary"
-        field :description, "Description"
-        field :license, "License"
-        field :project_page, "Project Page"
-        field :source, "Source"
-        field :dependencies, "Dependencies", Fields::List
-        field :checksums, "Checksums", Fields::List
-        field :tag_list, "Tag List", Fields::List
+        field :summary, _("Summary")
+        field :description, _("Description")
+        field :license, _("License")
+        field :project_page, _("Project Page")
+        field :source, _("Source")
+        field :dependencies, _("Dependencies"), Fields::List
+        field :checksums, _("Checksums"), Fields::List
+        field :tag_list, _("Tag List"), Fields::List
       end
 
       def request_params
