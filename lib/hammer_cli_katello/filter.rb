@@ -2,7 +2,7 @@ require 'hammer_cli_katello/filter_rule'
 
 module HammerCLIKatello
 
-  class Filter < HammerCLI::Apipie::Command
+  class Filter < HammerCLIForeman::Command
 
     resource :content_view_filters
     command_name 'filter'

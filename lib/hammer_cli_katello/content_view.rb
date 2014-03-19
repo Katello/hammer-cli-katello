@@ -4,7 +4,7 @@ require 'hammer_cli_katello/content_view_version'
 
 module HammerCLIKatello
 
-  class ContentView < HammerCLI::Apipie::Command
+  class ContentView < HammerCLIForeman::Command
     resource :content_views
 
     class ListCommand < HammerCLIKatello::ListCommand

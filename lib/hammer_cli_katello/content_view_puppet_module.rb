@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class ContentViewPuppetModule < HammerCLI::Apipie::Command
+  class ContentViewPuppetModule < HammerCLIForeman::Command
 
     resource :content_view_puppet_modules
     command_name 'puppet-module'

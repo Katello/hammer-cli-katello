@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class FilterRule < HammerCLI::Apipie::Command
+  class FilterRule < HammerCLIForeman::Command
 
     resource :content_view_filter_rules
     command_name 'rule'
