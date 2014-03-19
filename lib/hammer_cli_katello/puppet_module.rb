@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class PuppetModule < HammerCLI::Apipie::Command
+  class PuppetModule < HammerCLIForeman::Command
     resource :puppet_modules
 
     class ListCommand < HammerCLIKatello::ListCommand

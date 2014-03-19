@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class ContentViewVersion < HammerCLI::Apipie::Command
+  class ContentViewVersion < HammerCLIForeman::Command
     resource :content_view_versions
     command_name 'version'
     desc 'View and manage content view versions'
