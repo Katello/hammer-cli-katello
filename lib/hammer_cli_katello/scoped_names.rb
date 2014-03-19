@@ -2,7 +2,7 @@ module HammerCLIKatello
   module ScopedName
     def scoped_name_to_id(name, resource)
       organization = get_option_value(:organization_id)
-      results = resource.call(:index, "name" => "#{name}", "organization_id" => organization).first
+      results = resource.call(:index, "name" => "#{name}", "organization_id" => organization)
       results = HammerCLIForeman.collection_to_common_format(results)
 
       msg_opt = {
