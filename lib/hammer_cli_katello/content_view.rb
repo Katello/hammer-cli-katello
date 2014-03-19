@@ -141,11 +141,11 @@ module HammerCLIKatello
                HammerCLIKatello::ContentViewPuppetModule.desc,
                HammerCLIKatello::ContentViewPuppetModule
 
-    subcommand 'filter',
+    subcommand HammerCLIKatello::Filter.command_name,
                HammerCLIKatello::Filter.desc,
                HammerCLIKatello::Filter
 
-    subcommand 'version',
+    subcommand HammerCLIKatello::ContentViewVersion.command_name,
                HammerCLIKatello::ContentViewVersion.desc,
                HammerCLIKatello::ContentViewVersion
   end

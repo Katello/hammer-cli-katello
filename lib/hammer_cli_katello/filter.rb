@@ -75,7 +75,7 @@ module HammerCLIKatello
 
     autoload_subcommands
 
-    subcommand 'rule',
+    subcommand HammerCLIKatello::FilterRule.command_name,
                HammerCLIKatello::FilterRule.desc,
                HammerCLIKatello::FilterRule
 
