@@ -10,10 +10,10 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, "Filter ID"
-        field :name, "Name"
-        field :type, "Type"
-        field :inclusion, "Inclusion"
+        field :id, _("Filter ID")
+        field :name, _("Name")
+        field :type, _("Type")
+        field :inclusion, _("Inclusion")
       end
 
       apipie_options
@@ -21,29 +21,29 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, "Filter ID"
-        field :name, "Name"
-        field :type, "Type"
-        field :inclusion, "Inclusion"
+        field :id, _("Filter ID")
+        field :name, _("Name")
+        field :type, _("Type")
+        field :inclusion, _("Inclusion")
 
-        collection :repositories, "Repositories" do
-          field :id, "ID"
-          field :name, "Name"
-          field :label, "Label"
+        collection :repositories, _("Repositories") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :label, _("Label")
         end
 
-        collection :rules, "Rules" do
-          field :id, "ID"
-          field :name, "Name", Fields::Field, :hide_blank => true
-          field :version, "Version", Fields::Field, :hide_blank => true
-          field :min_version, "Minimum Version", Fields::Field, :hide_blank => true
-          field :max_version, "Maximum Version", Fields::Field, :hide_blank => true
-          field :errata_id, "Errata ID", Fields::Field, :hide_blank => true
-          field :start_date, "Start Date", Fields::Field, :hide_blank => true
-          field :end_date, "End Date", Fields::Field, :hide_blank => true
-          field :types, "Types", Fields::List, :hide_blank => true
-          field :created_at, "Created", Fields::Date
-          field :updated_at, "Updated", Fields::Date
+        collection :rules, _("Rules") do
+          field :id, _("ID")
+          field :name, _("Name"), Fields::Field, :hide_blank => true
+          field :version, _("Version"), Fields::Field, :hide_blank => true
+          field :min_version, _("Minimum Version"), Fields::Field, :hide_blank => true
+          field :max_version, _("Maximum Version"), Fields::Field, :hide_blank => true
+          field :errata_id, _("Errata ID"), Fields::Field, :hide_blank => true
+          field :start_date, _("Start Date"), Fields::Field, :hide_blank => true
+          field :end_date, _("End Date"), Fields::Field, :hide_blank => true
+          field :types, _("Types"), Fields::List, :hide_blank => true
+          field :created_at, _("Created"), Fields::Date
+          field :updated_at, _("Updated"), Fields::Date
         end
       end
 
@@ -51,22 +51,22 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message "Filter created"
-      failure_message "Could not create the filter"
+      success_message _("Filter created")
+      failure_message _("Could not create the filter")
 
       apipie_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message "Filter updated"
-      failure_message "Could not update the filter"
+      success_message _("Filter updated")
+      failure_message _("Could not update the filter")
 
       apipie_options :without => [:content_view_id]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message "Filter deleted"
-      failure_message "Could not delete the filter"
+      success_message _("Filter deleted")
+      failure_message _("Could not delete the filter")
 
       apipie_options :without => [:content_view_id]
     end
@@ -75,7 +75,7 @@ module HammerCLIKatello
 
     autoload_subcommands
 
-    subcommand 'rule',
+    subcommand HammerCLIKatello::FilterRule.command_name,
                HammerCLIKatello::FilterRule.desc,
                HammerCLIKatello::FilterRule
 
