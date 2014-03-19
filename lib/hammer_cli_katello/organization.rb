@@ -43,7 +43,7 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      resource KatelloApi::Resources::Organization, "destroy"
+      resource ForemanApi::Resources::Organization, "destroy"
 
       success_message _("Organization deleted")
       failure_message _("Could not delete the organization")

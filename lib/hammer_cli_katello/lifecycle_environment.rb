@@ -15,7 +15,7 @@ module HammerCLIKatello
     end
 
     class PathsCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::Environment, :paths
+      resource KatelloApi::Resources::LifecycleEnvironment, :paths
 
       command_name "paths"
 
