@@ -31,13 +31,7 @@ module HammerCLIKatello
           end
         end
 
-        # TODO: Below!
-        # Need a better way to say
-        # Contents
-        # <content>
-
-        field "", _("Content")
-        field :content, nil
+        field :content, _("Content"), Fields::LongText
       end
 
       def request_params
