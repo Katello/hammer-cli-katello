@@ -27,6 +27,7 @@ module HammerCLIKatello
   require "hammer_cli_katello/ping"
   require "hammer_cli_katello/product"
   require "hammer_cli_katello/provider"
+  require "hammer_cli_katello/puppet_module"
   require "hammer_cli_katello/repository"
   require "hammer_cli_katello/repository_set"
   require "hammer_cli_katello/subscription"
