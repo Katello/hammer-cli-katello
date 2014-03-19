@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   class PingCommand < HammerCLIKatello::ReadCommand
 
-    resource KatelloApi::Resources::Ping, :index
+    resource :ping, :index
 
     output do
       from "services" do

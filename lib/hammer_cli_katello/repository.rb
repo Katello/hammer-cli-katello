@@ -1,7 +1,7 @@
 module HammerCLIKatello
 
-  class Repository < HammerCLI::Apipie::Command
-    resource KatelloApi::Resources::Repository
+  class Repository < HammerCLIForeman::Command
+    resource :repositories
 
     class ListCommand < HammerCLIForeman::ListCommand
       output do
@@ -14,7 +14,7 @@ module HammerCLIKatello
     end
 
     class SyncCommand < HammerCLIForemanTasks::AsyncCommand
-      action "sync"
+      action :sync
       command_name "synchronize"
 
       success_message _("Repository is being synchronized in task %{id}s")

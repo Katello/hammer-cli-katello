@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   class FilterRule < HammerCLI::Apipie::Command
 
-    resource KatelloApi::Resources::ContentViewFilterRule
+    resource :content_view_filter_rules
     command_name 'rule'
     desc 'View and manage filter rules'
 

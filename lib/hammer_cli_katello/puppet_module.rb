@@ -1,7 +1,7 @@
 module HammerCLIKatello
 
   class PuppetModule < HammerCLI::Apipie::Command
-    resource KatelloApi::Resources::PuppetModule
+    resource :puppet_modules
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do

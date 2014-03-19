@@ -3,7 +3,7 @@ module HammerCLIKatello
   class Organization < HammerCLIForeman::Organization
 
     class ListCommand < HammerCLIForeman::Organization::ListCommand
-      resource KatelloApi::Resources::Organization, "index"
+      resource :organizations, :index
 
       output do
         field :label, _("Label")
@@ -14,7 +14,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIForeman::Organization::InfoCommand
-      resource KatelloApi::Resources::Organization, "show"
+      resource :organizations, :show
 
       output do
         field :label, _("Label")
@@ -25,7 +25,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIForeman::Organization::UpdateCommand
-      resource KatelloApi::Resources::Organization, "update"
+      resource :organizations, :update
 
       success_message _("Organization updated")
       failure_message _("Could not update the organization")
@@ -34,7 +34,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      resource KatelloApi::Resources::Organization, "create"
+      resource :organizations, :create
 
       success_message _("Organization created")
       failure_message _("Could not create the organization")
@@ -43,7 +43,7 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      resource ForemanApi::Resources::Organization, "destroy"
+      resource :organizations, :destroy
 
       success_message _("Organization deleted")
       failure_message _("Could not delete the organization")

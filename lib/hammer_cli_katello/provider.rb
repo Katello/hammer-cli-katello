@@ -1,6 +1,6 @@
 module HammerCLIKatello
-  class Provider < HammerCLI::Apipie::Command
-    resource KatelloApi::Resources::Provider
+  class Provider < HammerCLIForeman::Command
+    resource :providers
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do

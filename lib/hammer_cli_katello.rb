@@ -5,8 +5,6 @@ require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/output/fields'
 require 'hammer_cli_foreman_tasks'
 
-require 'katello_api'
-
 module HammerCLIKatello
 
   def self.exception_handler_class

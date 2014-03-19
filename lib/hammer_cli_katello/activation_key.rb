@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   class ActivationKeyCommand < HammerCLI::AbstractCommand
     class ListCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::ActivationKey, 'index'
+      resource :activation_keys, :index
 
       output do
         field :id, _("ID")
@@ -23,7 +23,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource KatelloApi::Resources::ActivationKey, :show
+      resource :activation_keys, :show
 
       identifiers :id
 

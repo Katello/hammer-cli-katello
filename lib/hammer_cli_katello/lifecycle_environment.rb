@@ -3,7 +3,7 @@ module HammerCLIKatello
   class LifecycleEnvironmentCommand < HammerCLI::AbstractCommand
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::Environment, :index
+      resource :lifecycle_environments, :index
 
       output do
         field :id, _("ID")
@@ -15,7 +15,7 @@ module HammerCLIKatello
     end
 
     class PathsCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::LifecycleEnvironment, :paths
+      resource :lifecycle_environments, :paths
 
       command_name "paths"
 
@@ -35,7 +35,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource KatelloApi::Resources::Environment
+      resource :lifecycle_environments
       include HammerCLIKatello::ScopedNameCommand
 
       output do
@@ -56,8 +56,9 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      resource KatelloApi::Resources::LifecycleEnvironment, :create
+      resource :lifecycle_environments, :create
       include HammerCLIKatello::ScopedName
+
       success_message _("Environment created")
       failure_message _("Could not create environment")
 
@@ -70,10 +71,11 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      resource :lifecycle_environments
+      include HammerCLIKatello::ScopedNameCommand
+
       success_message _("Environment updated")
       failure_message _("Could not update environment")
-      include HammerCLIKatello::ScopedNameCommand
-      resource KatelloApi::Resources::LifecycleEnvironment
 
       identifiers :id
 
@@ -85,10 +87,11 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      resource :lifecycle_environments
+      include HammerCLIKatello::ScopedNameCommand
+
       success_message _("Environment deleted")
       failure_message _("Could not delete environment")
-      include HammerCLIKatello::ScopedNameCommand
-      resource KatelloApi::Resources::LifecycleEnvironment
 
       identifiers :id
 

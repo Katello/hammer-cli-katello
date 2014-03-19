@@ -1,5 +1,4 @@
 require 'hammer_cli'
-require 'katello_api'
 require 'hammer_cli_foreman'
 require 'hammer_cli_foreman/commands'
 
@@ -7,7 +6,7 @@ module HammerCLIKatello
 
   class SubscriptionCommand < HammerCLI::AbstractCommand
     class ListCommand < HammerCLIKatello::ListCommand
-      resource KatelloApi::Resources::Subscription, 'index'
+      resource :subscriptions, :index
 
       output do
         field :product_name, _("Name")
@@ -32,7 +31,7 @@ module HammerCLIKatello
     end
 
     class UploadCommand < HammerCLIForemanTasks::AsyncCommand
-      resource KatelloApi::Resources::Subscription, 'upload'
+      resource :subscriptions, :upload
       command_name "upload"
 
       class BinaryFile < HammerCLI::Options::Normalizers::File
@@ -55,7 +54,7 @@ module HammerCLIKatello
     end
 
     class DeleteManfiestCommand < HammerCLIForemanTasks::AsyncCommand
-      resource KatelloApi::Resources::Subscription, 'delete_manifest'
+      resource :subscriptions, :delete_manifest
       command_name "delete_manifest"
 
       success_message _("Manifest is being deleted in task %{id}s")
@@ -65,7 +64,7 @@ module HammerCLIKatello
     end
 
     class RefreshManfiestCommand < HammerCLIForemanTasks::AsyncCommand
-      resource KatelloApi::Resources::Subscription, 'refresh_manifest'
+      resource :subscriptions, :refresh_manifest
       command_name "refresh_manifest"
 
       success_message _("Manifest is being refreshed in task %{id}s")
