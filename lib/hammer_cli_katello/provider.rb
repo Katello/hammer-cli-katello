@@ -1,5 +1,5 @@
 module HammerCLIKatello
-  class Provider < HammerCLIForeman::Command
+  class Provider < HammerCLIKatello::Command
     resource :providers
 
     class ListCommand < HammerCLIKatello::ListCommand

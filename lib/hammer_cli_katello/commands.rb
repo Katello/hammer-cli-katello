@@ -1,5 +1,7 @@
 module HammerCLIKatello
 
+  class Command < HammerCLIForeman::Command; end
+
   class WriteCommand < HammerCLIForeman::WriteCommand; end
 
   class ReadCommand < HammerCLIForeman::ReadCommand; end
@@ -29,5 +31,4 @@ module HammerCLIKatello
   class AddAssociatedCommand < HammerCLIForeman::AddAssociatedCommand; end
 
   class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand; end
-
 end

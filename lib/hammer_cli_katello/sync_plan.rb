@@ -1,8 +1,8 @@
 module HammerCLIKatello
-  class SyncPlan < HammerCLIForeman::Command
+  class SyncPlan < HammerCLIKatello::Command
     resource :sync_plans
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
 
       output do
         field :id, _("ID")
@@ -14,7 +14,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       identifiers :id
 
       output ListCommand.output_definition do
@@ -25,7 +25,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
 
       option "--interval", "INTERVAL", _("how often synchronization should run"),
              :default => 'none',
@@ -41,7 +41,7 @@ module HammerCLIKatello
       apipie_options :without => [:interval, :sync_date]
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       identifiers :id
 
       option "--interval", "INTERVAL", _("how often synchronization should run"),
@@ -57,7 +57,7 @@ module HammerCLIKatello
       apipie_options :without => [:interval, :sync_date]
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       identifiers :id
 
       success_message _("Sync plan destroyed")
