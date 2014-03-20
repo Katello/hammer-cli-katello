@@ -1,9 +1,9 @@
 module HammerCLIKatello
 
-  class Repository < HammerCLIForeman::Command
+  class Repository < HammerCLIKatello::Command
     resource :repositories
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, _("Id")
         field :label, _("Label")

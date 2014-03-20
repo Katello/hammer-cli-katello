@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class Product < HammerCLIForeman::Command
+  class Product < HammerCLIKatello::Command
     resource :products
 
     class ListCommand < HammerCLIKatello::ListCommand

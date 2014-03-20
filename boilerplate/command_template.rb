@@ -3,7 +3,7 @@ module HammerCLIKatello
   class Taco < HammerCLI::Apipie::Command
     resource KatelloApi::Resources::Taco
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, _("Taco ID")
         field :name, _("Name")
@@ -12,14 +12,14 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class CreateCommand < HammerCLIForeman::CreateCommand
+    class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Taco created")
       failure_message _("Could not create the taco")
 
       apipie_options
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIKatello::InfoCommand
       output do
         field :id, _("Taco ID")
         field :name, _("Name")
@@ -30,7 +30,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Taco updated")
       failure_message _("Could not update the taco")
 
@@ -38,7 +38,7 @@ module HammerCLIKatello
       option "--meat", "MEAT", _("meat type"), :attribute_name => :option_meat
     end
 
-    class DeleteCommand < HammerCLIForeman::DeleteCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message _("Taco deleted")
       failure_message _("Could not delete the taco")
 
