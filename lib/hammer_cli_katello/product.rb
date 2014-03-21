@@ -81,7 +81,7 @@ module HammerCLIKatello
       identifiers :id, :sync_plan_id
 
       desc _("Assign sync plan to product.")
-      command_name "set_sync_plan"
+      command_name "set-sync-plan"
 
       success_message _("Synchronization plan assigned.")
       failure_message _("Could not assign synchronization plan.")
@@ -99,7 +99,7 @@ module HammerCLIKatello
       identifiers :id, :sync_plan_id
 
       desc _("Delete assignment sync plan and product.")
-      command_name "remove_sync_plan"
+      command_name "remove-sync-plan"
 
       success_message _("Synchronization plan removed.")
       failure_message _("Could not remove synchronization plan.")
