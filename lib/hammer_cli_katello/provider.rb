@@ -30,7 +30,7 @@ module HammerCLIKatello
 
     class RefreshManifestCommand < HammerCLIKatello::WriteCommand
       action "refresh_manifest"
-      command_name "refresh_manifest"
+      command_name "refresh-manifest"
 
       success_message _("Manifest is being refreshed")
       failure_message _("Could not refresh the manifest")
@@ -40,7 +40,7 @@ module HammerCLIKatello
 
     class DeleteManifestCommand < HammerCLIKatello::DeleteCommand
       action "delete_manifest"
-      command_name "delete_manifest"
+      command_name "delete-manifest"
 
       success_message _("Manifest deleted")
       failure_message _("Could not delete the manifest")

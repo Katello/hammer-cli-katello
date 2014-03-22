@@ -55,7 +55,7 @@ module HammerCLIKatello
 
     class DeleteManfiestCommand < HammerCLIForemanTasks::AsyncCommand
       resource :subscriptions, :delete_manifest
-      command_name "delete_manifest"
+      command_name "delete-manifest"
 
       success_message _("Manifest is being deleted in task %{id}s")
       failure_message _("Manifest deletion failed")
@@ -65,7 +65,7 @@ module HammerCLIKatello
 
     class RefreshManfiestCommand < HammerCLIForemanTasks::AsyncCommand
       resource :subscriptions, :refresh_manifest
-      command_name "refresh_manifest"
+      command_name "refresh-manifest"
 
       success_message _("Manifest is being refreshed in task %{id}s")
       failure_message _("Manifest refresh failed")
