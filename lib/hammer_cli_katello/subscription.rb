@@ -48,7 +48,7 @@ module HammerCLIKatello
       failure_message _("Manifest upload failed")
 
       apipie_options :without => [:content]
-      option "--file", "MANIFEST", "Subscription manifest file",
+      option "--file", "MANIFEST", _("Subscription manifest file"),
              :attribute_name => :option_content,
              :required => true, :format => BinaryFile.new
     end
