@@ -5,7 +5,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, _("Product ID")
+        field :id, _("ID")
         field :name, _("Name")
 
         from :provider do
@@ -33,7 +33,7 @@ module HammerCLIKatello
       include HammerCLIKatello::ScopedNameCommand
 
       output do
-        field :id, _("Product ID")
+        field :id, _("ID")
         field :name, _("Name")
         field :label, _("Label")
         field :description, _("Description")
