@@ -18,6 +18,7 @@ module HammerCLIKatello
       identifiers :id
 
       output ListCommand.output_definition do
+        field :description, _("Description")
         field :created_at, _("Created at"), Fields::Date
         field :updated_at, _("Updated at"), Fields::Date
       end
