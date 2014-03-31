@@ -1,6 +1,8 @@
 module HammerCLIKatello
 
-  class ActivationKeyCommand < HammerCLI::AbstractCommand
+  class ActivationKeyCommand < HammerCLIKatello::Command
+    resource :activation_keys
+
     class ListCommand < HammerCLIKatello::ListCommand
       resource :activation_keys, :index
 
@@ -37,13 +39,133 @@ module HammerCLIKatello
         from :content_view do
           field :name, _("Content View")
         end
+
+        collection :system_groups, _("System Groups") do
+          field :id, _("ID")
+          field :name, _("Name")
+        end
       end
 
       apipie_options
     end
 
+    class CreateCommand < HammerCLIKatello::CreateCommand
+      resource :activation_keys, :create
+      success_message _("Activation key created")
+      failure_message _("Could not create the activation key")
+
+      apipie_options
+    end
+
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
+      resource :activation_keys, :update
+      success_message _("Activation key updated")
+      failure_message _("Could not update the activation key")
+
+      apipie_options
+    end
+
+    class SubscriptionsCommand < HammerCLIKatello::ListCommand
+      resource :subscriptions, :index
+      desc _("List associated subscriptions")
+      command_name "subscriptions"
+
+      output do
+        field :id, _("ID")
+        field :product_name, _("Name")
+      end
+
+      option '--id', 'ID', _("resource ID")
+
+      def request_params
+        {
+          'activation_key_id' => option_id
+        }
+      end
+
+      validate_options do
+        all(:option_id).required
+      end
+    end
+
+    class AddSubscriptionCommand < HammerCLIKatello::UpdateCommand
+      resource :subscriptions, :create
+
+      desc "Add subscription"
+      command_name "add-subscription"
+
+      option '--id', 'ID', _("resource ID")
+      option '--subscription-id', 'ID', _("subscription ID")
+      option '--quantity', 'QUANTITY', _("subscription quantity")
+
+      def request_params
+        {
+          'activation_key_id' => option_id,
+          'id' => option_subscription_id,
+          'quantity' => option_quantity
+        }
+      end
+
+      validate_options do
+        all(:option_id, :option_subscription_id).required
+      end
+
+      success_message _("Subscription added to activation key")
+      failure_message _("Could not add subscription to activation key")
+    end
+
+    class RemoveSubscriptionCommand < HammerCLIKatello::UpdateCommand
+      resource :subscriptions, :destroy
+
+      desc _("Remove subscription")
+      command_name "remove-subscription"
+
+      option '--id', 'ID', _("resource ID")
+      option '--subscription-id', 'ID', _("subscription ID")
+
+      def request_params
+        {
+          'id' => option_subscription_id,
+          'activation_key_id' => option_id
+        }
+      end
+
+      validate_options do
+        all(:option_id, :option_subscription_id).required
+      end
+      success_message _("Subscription removed from activation key")
+      failure_message _("Could not remove subscription from activation key")
+    end
+
+    class SystemGroupsCommand < HammerCLIKatello::ListCommand
+      resource :system_groups, :index
+
+      desc _("List associated system groups")
+      command_name "system-groups"
+
+      output do
+        field :id, _("ID")
+        field :name, _("Name")
+      end
+
+      option '--id', 'ID', _("resource ID")
+
+      def request_params
+        {
+          'activation_key_id' => option_id
+        }
+      end
+
+      validate_options do
+        all(:option_id).required
+      end
+    end
+
+    include HammerCLIKatello::AssociatingCommands::SystemGroup
+
     autoload_subcommands
   end
+
 end
 
 HammerCLI::MainCommand.subcommand("activation-key", _("Manipulate activation keys."),

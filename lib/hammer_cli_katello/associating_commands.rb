@@ -22,5 +22,27 @@ module HammerCLIKatello
       end
 
     end
+
+    module SystemGroup
+
+      class AddSystemGroupCommand < HammerCLIKatello::AddAssociatedCommand
+        command_name 'add-system-group'
+        associated_resource :system_groups
+        apipie_options
+
+        success_message _("The system group has been associated")
+        failure_message _("Could not add system group")
+      end
+
+      class RemoveSystemGroupCommand < HammerCLIKatello::RemoveAssociatedCommand
+        command_name 'remove-repository'
+        associated_resource :system_groups
+        apipie_options
+
+        success_message _("The system group has been removed")
+        failure_message _("Could not remove system group")
+      end
+
+    end
   end
 end
