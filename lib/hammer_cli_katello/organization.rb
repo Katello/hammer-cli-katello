@@ -10,7 +10,6 @@ module HammerCLIKatello
         field :description, _("Description")
       end
 
-      apipie_options
     end
 
     class InfoCommand < HammerCLIForeman::Organization::InfoCommand
@@ -20,8 +19,6 @@ module HammerCLIKatello
         field :label, _("Label")
         field :description, _("Description")
       end
-
-      apipie_options
     end
 
     class UpdateCommand < HammerCLIForeman::Organization::UpdateCommand
@@ -29,8 +26,6 @@ module HammerCLIKatello
 
       success_message _("Organization updated")
       failure_message _("Could not update the organization")
-
-      apipie_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
