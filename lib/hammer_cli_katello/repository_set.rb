@@ -8,17 +8,7 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :type, _("Type")
-        field :_enabled, _("Enabled")
-        field :name, _("Name")
-      end
-
-      def extend_data(data)
-        data["_enabled"] = data["katello_enabled"] ? _("enabled") : _("disabled")
-        data
-      end
-
-      def adapter
-        :csv
+        field :name, _("Name"), nil, :max_width => 300
       end
 
       apipie_options
@@ -30,26 +20,28 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :name, _("Name")
-        field :_enabled, _("Enabled")
 
         collection :repositories, _("Repositories") do
           field :id, _("ID")
           field :name, _("Name")
-          field :_enabled, _("Enabled")
+          field :enabled, _("Enabled"), Fields::Boolean
         end
       end
 
-      def request_params
-        super.merge(method_options)
-      end
+      apipie_options
+    end
 
-      def retrieve_data
-        super.tap do |data|
-          data["_enabled"] = data["katello_enabled"] ? _("yes") : _("no")
-          data["repositories"].each do |repo|
-            repo["_enabled"] = repo["enabled"] ? _("yes") : _("no")
-          end
+    class AvailableRepositoriesCommand < HammerCLIKatello::ListCommand
+      resource :repository_sets, :available_repositories
+      command_name "available-repositories"
+
+      output do
+        field :repo_name, _("Name")
+        from :substitutions do
+          field :basearch, _("Arch")
+          field :releasever, _("Release")
         end
+        field :enabled, _("Enabled"), Fields::Boolean
       end
 
       apipie_options
@@ -59,8 +51,8 @@ module HammerCLIKatello
       resource :repository_sets, :enable
       command_name "enable"
 
-      success_message _("Repository set enabled")
-      failure_message _("Could not enable repository set")
+      success_message _("Repository enabled")
+      failure_message _("Could not enable repository")
 
       apipie_options
     end
@@ -69,8 +61,8 @@ module HammerCLIKatello
       resource :repository_sets, :disable
       command_name "disable"
 
-      success_message _("Repository set disabled")
-      failure_message _("Could not disable repository set")
+      success_message _("Repository disabled")
+      failure_message _("Could not disable repository")
 
       apipie_options
     end

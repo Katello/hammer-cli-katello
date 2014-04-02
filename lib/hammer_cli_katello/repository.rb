@@ -8,29 +8,8 @@ module HammerCLIKatello
         field :id, _("Id")
         field :name, _("Name")
         field :content_type, _("Content Type")
-        field :_enabled, _("Enabled")
       end
 
-      def retrieve_data
-        super.tap do |items|
-          items.each do |data|
-            data["_enabled"] = data["enabled"] ? _("yes") : _("no")
-          end
-
-        end
-      end
-
-      option ["--disabled"], :flag, _("limit to only the disabled repos")
-      option ["--all"], :flag, _("include both enabled and disabled repos")
-
-      apipie_options :without => [:disabled, :all]
-
-      def request_params
-        opts = super
-        opts["disabled"] =  option_disabled? if option_disabled?
-        opts["all"] =  option_all? if option_all?
-        opts
-      end
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -41,7 +20,6 @@ module HammerCLIKatello
         from :organization do
           field :name, _("Organization")
         end
-        field :_enabled, _("Enabled")
         field :_redhat_repo, _("Red Hat Repository")
         field :content_type, _("Content Type")
         field :url, _("URL")
@@ -82,7 +60,6 @@ module HammerCLIKatello
         super.tap do |data|
           data["_redhat_repo"] = data["product_type"] == "redhat" ? _("yes") : _("no")
           data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
-          data["_enabled"] = data["enabled"] ? _("yes") : _("no")
           data["_sync_state"] = get_sync_status(data["sync_state"])
           setup_content_counts(data)
         end
@@ -156,26 +133,6 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message _("Repository deleted")
       failure_message _("Could not delete the Repository")
-
-      apipie_options
-    end
-
-    class EnableCommand < HammerCLIKatello::UpdateCommand
-      action :enable
-      command_name "enable"
-
-      success_message _("Repository enabled")
-      failure_message _("Could not enable the repository")
-
-      apipie_options
-    end
-
-    class DisableCommand < HammerCLIKatello::UpdateCommand
-      action :disable
-
-      command_name "disable"
-      success_message _("Repository disabled")
-      failure_message _("Could not disable the repository")
 
       apipie_options
     end
