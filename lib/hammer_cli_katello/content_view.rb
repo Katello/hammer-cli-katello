@@ -71,7 +71,13 @@ module HammerCLIKatello
       failure_message _("Could not create the content view")
 
       option ["--composite"], :flag, _("Create a composite content view")
-      apipie_options
+      apipie_options :without => ["composite"]
+
+      def request_params
+        super.tap do |opts|
+          opts['composite'] = option_composite?
+        end
+      end
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
