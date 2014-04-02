@@ -19,20 +19,23 @@ module HammerCLIKatello
   module ScopedNameCommand
     include HammerCLIKatello::ScopedName
 
+    # rubocop:disable MethodLength
     def self.included(cls)
+      unless cls.find_option("--id")
+        cls.option("--id", "ID", _("resource id"),
+                   :attribute_name => :option_id, :required => false)
+      end
 
-      cls.option "--id", "ID", _("The id"),
-                 :attribute_name => :option_id,
-                 :required => false
+      unless cls.find_option("--organization-id")
+        cls.option("--organization-id", "ORGANIZATION",
+                   _("ID of the organization which the resource belongs to"),
+                   :attribute_name => :option_organization_id, :required => false)
+      end
 
-      cls.option "--organization-id", "ORGANIZATION",
-                 _("The ID of the organization which the resource belongs to"),
-                 :attribute_name => :option_organization_id,
-                 :required => false
-
-      cls.option "--name", "NAME", _("The name of the resource"),
-                 :attribute_name => :option_name,
-                 :required => false
+      unless cls.find_option("--name")
+        cls.option("--name", "NAME", _("resource name"),
+                   :attribute_name => :option_name, :required => false)
+      end
     end
 
     def validate_options

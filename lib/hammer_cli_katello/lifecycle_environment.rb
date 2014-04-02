@@ -36,7 +36,6 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       resource :lifecycle_environments
-      include HammerCLIKatello::ScopedNameCommand
 
       output do
         field :id, _("ID")
@@ -53,16 +52,19 @@ module HammerCLIKatello
       def request_params
         super.merge(method_options)
       end
+
+      apipie_options
+      include HammerCLIKatello::ScopedNameCommand
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       resource :lifecycle_environments, :create
-      include HammerCLIKatello::ScopedName
 
       success_message _("Environment created")
       failure_message _("Could not create environment")
 
       apipie_options
+      include HammerCLIKatello::ScopedName
 
       def execute
         self.option_prior = scoped_name_to_id(get_option_value(:prior), resource)
@@ -72,23 +74,22 @@ module HammerCLIKatello
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       resource :lifecycle_environments
-      include HammerCLIKatello::ScopedNameCommand
 
       success_message _("Environment updated")
       failure_message _("Could not update environment")
 
-      identifiers :id
+      identifiers
 
       def request_params
         super.merge(method_options)
       end
 
       apipie_options
+      include HammerCLIKatello::ScopedNameCommand
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       resource :lifecycle_environments
-      include HammerCLIKatello::ScopedNameCommand
 
       success_message _("Environment deleted")
       failure_message _("Could not delete environment")
@@ -100,6 +101,7 @@ module HammerCLIKatello
       end
 
       apipie_options
+      include HammerCLIKatello::ScopedNameCommand
     end
 
     autoload_subcommands
