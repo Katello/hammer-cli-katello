@@ -91,6 +91,16 @@ module HammerCLIKatello
       apipie_options
     end
 
+    class RemoveFromEnvironmentCommand < HammerCLIForemanTasks::AsyncCommand
+      action :remove_from_environment
+      command_name "remove-from-environment"
+
+      success_message _("Content view is being removed from environment with task %{id}s")
+      failure_message _("Could not remove the content view from environment")
+
+      apipie_options
+    end
+
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
       command_name 'add-version'
 
