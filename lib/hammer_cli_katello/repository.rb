@@ -6,10 +6,31 @@ module HammerCLIKatello
     class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, _("Id")
-        field :label, _("Label")
+        field :name, _("Name")
+        field :content_type, _("Content Type")
+        field :_enabled, _("Enabled")
       end
 
-      apipie_options
+      def retrieve_data
+        super.tap do |items|
+          items.each do |data|
+            data["_enabled"] = data["enabled"] ? _("yes") : _("no")
+          end
+
+        end
+      end
+
+      option ["--disabled"], :flag, _("limit to only the disabled repos")
+      option ["--all"], :flag, _("include both enabled and disabled repos")
+
+      apipie_options :without => [:disabled, :all]
+
+      def request_params
+        opts = super
+        opts["disabled"] =  option_disabled? if option_disabled?
+        opts["all"] =  option_all? if option_all?
+        opts
+      end
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -22,8 +43,8 @@ module HammerCLIKatello
         end
         field :_enabled, _("Enabled")
         field :_redhat_repo, _("Red Hat Repository")
-        field :content_type, _("Type")
-        field :feed, _("URL")
+        field :content_type, _("Content Type")
+        field :url, _("URL")
         field :_publish_via_http, _("Publish Via HTTP")
         field :full_path, _("Published At")
 
@@ -116,12 +137,10 @@ module HammerCLIKatello
       success_message _("Repository created")
       failure_message _("Could not create the repository")
 
-      apipie_options :without => [:unprotected, :url]
+      apipie_options :without => [:unprotected]
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--feed", "FEED_URL", _("repository source url"),
-             :attribute_name => :option_url
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
@@ -137,6 +156,26 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message _("Repository deleted")
       failure_message _("Could not delete the Repository")
+
+      apipie_options
+    end
+
+    class EnableCommand < HammerCLIKatello::UpdateCommand
+      action :enable
+      command_name "enable"
+
+      success_message _("Repository enabled")
+      failure_message _("Could not enable the repository")
+
+      apipie_options
+    end
+
+    class DisableCommand < HammerCLIKatello::UpdateCommand
+      action :disable
+
+      command_name "disable"
+      success_message _("Repository disabled")
+      failure_message _("Could not disable the repository")
 
       apipie_options
     end
