@@ -28,7 +28,13 @@ module HammerCLIKatello
 
   end
 
-  class AddAssociatedCommand < HammerCLIForeman::AddAssociatedCommand; end
+  class AddAssociatedCommand < HammerCLIForeman::AddAssociatedCommand
+    identifiers :id
+    associated_identifiers :id
+  end
 
-  class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand; end
+  class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand
+    identifiers :id
+    associated_identifiers :id
+  end
 end
