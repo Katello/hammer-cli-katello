@@ -67,24 +67,11 @@ mkdir ~/.foreman
 touch ~/.foreman/cli_config.yml
 ```
 
-Edit `~/.foreman/cli_config.yml` and enter in the following replacing values where needed based on your setup:
+Create `~/.foreman/hammer.modules.d/katello.yml` and enter the following text:
 
 ```yaml
-:modules:
-  - hammer_cli_foreman
-  - hammer_cli_katello
-
-:foreman:
-  :host: 'http://localhost:3000/'
-  :username: 'admin'
-  :password: 'changeme'
-
-# :watch_plain: true disables color output of logger.watch in Clamp commands
-:watch_plain: false
-
-#:log_dir: '/var/log/foreman'
-:log_dir: '~/.foreman/log'
-:log_level: 'debug'
+:katello
+  :enable_module: true
 ```
 
 And then finally test out your installation:
