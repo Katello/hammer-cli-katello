@@ -30,8 +30,6 @@ First, cd into the directory where you typically keep your projects and where ha
 git clone https://github.com/Katello/hammer-cli-katello.git
 git clone https://github.com/theforeman/hammer-cli.git
 git clone https://github.com/theforeman/hammer-cli-foreman.git
-git clone https://github.com/Katello/katello_api.git
-git clone https://github.com/theforeman/foreman_api.git
 ```
 
 Now let's setup our rvm environment files for the project.
@@ -49,9 +47,6 @@ Before we bundle, we need to setup our local Gemfile. Edit `Gemfile.local` in yo
 # vim:ft=ruby
 gem 'hammer_cli', :path => '../hammer-cli'
 gem 'hammer_cli_foreman', :path => '../hammer-cli-foreman'
-gem 'foreman_api', :path => '../foreman_api'
-
-gem 'katello_api', :path => '../katello_api'
 ```
 
 Now run bundler inside your hammer-cli-katello directory:
@@ -60,31 +55,30 @@ Now run bundler inside your hammer-cli-katello directory:
 bundle install
 ```
 
-Now, let's create the foreman directory and hammer cli config file.
+Now, let's create the directories we need for configuration.
 
 ```bash
-mkdir ~/.foreman
-touch ~/.foreman/cli_config.yml
+mkdir -p ~/.hammer/cli.modules.d
 ```
 
-Edit `~/.foreman/cli_config.yml` and enter in the following replacing values where needed based on your setup:
+Edit `~/.hammer/cli_config.yml` and [enter any hammer-cli config values you
+want](https://github.com/theforeman/hammer-cli/blob/master/doc/installation.md#options).
+
+Next edit `~/.hammer/cli.modules.d/foreman.yml` and enter the following:
 
 ```yaml
-:modules:
-  - hammer_cli_foreman
-  - hammer_cli_katello
-
 :foreman:
+  :enable_module: true
   :host: 'http://localhost:3000/'
   :username: 'admin'
   :password: 'changeme'
+```
 
-# :watch_plain: true disables color output of logger.watch in Clamp commands
-:watch_plain: false
+Edit `~/.hammer/cli.modules.d/katello.yml` and enter in the following:
 
-#:log_dir: '/var/log/foreman'
-:log_dir: '~/.foreman/log'
-:log_level: 'debug'
+```yaml
+:katello:
+  :enable_module: true
 ```
 
 And then finally test out your installation:
