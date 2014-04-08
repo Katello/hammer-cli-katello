@@ -73,6 +73,17 @@ module HammerCLIKatello
       apipie_options
     end
 
+    class RepositoryURLCommand < HammerCLIKatello::UpdateCommand
+      identifiers
+      resource :subscriptions, :repository_url
+      command_name "set-repository-url"
+
+      success_message _("Repository URL set")
+      failure_message _("Could not set repository URL")
+
+      apipie_options
+    end
+
     autoload_subcommands
   end
 end
