@@ -66,7 +66,7 @@ module HammerCLIKatello
       apipie_options
     end
 
-    class DestroyCommand < HammerCLIForemanTasks::AsyncCommand
+    class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
       action :destroy
       command_name "destroy"
 
