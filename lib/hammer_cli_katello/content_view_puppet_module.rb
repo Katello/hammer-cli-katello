@@ -34,7 +34,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class CreateCommand < HammerCLIKatello::WriteCommand
+    class CreateCommand < HammerCLIKatello::Command
       action :create
       command_name "add"
 
@@ -55,7 +55,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class DeleteCommand < HammerCLIKatello::WriteCommand
+    class DeleteCommand < HammerCLIKatello::Command
       action :destroy
       command_name "remove"
 

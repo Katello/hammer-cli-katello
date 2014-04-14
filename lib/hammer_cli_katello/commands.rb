@@ -22,15 +22,8 @@ module HammerCLIKatello
     end
   end
 
+
   class Command < HammerCLIForeman::Command
-    include HammerCLIKatello::ResolverCommons
-  end
-
-  class WriteCommand < HammerCLIForeman::WriteCommand
-    include HammerCLIKatello::ResolverCommons
-  end
-
-  class ReadCommand < HammerCLIForeman::ReadCommand
     include HammerCLIKatello::ResolverCommons
   end
 
