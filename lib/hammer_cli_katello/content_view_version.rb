@@ -66,6 +66,16 @@ module HammerCLIKatello
       apipie_options
     end
 
+    class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
+      action :destroy
+      command_name "destroy"
+
+      success_message _("Content view is being deleted with task %{id}s")
+      failure_message _("Could not delete the content view")
+
+      apipie_options
+    end
+
     autoload_subcommands
   end
 end

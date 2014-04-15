@@ -87,6 +87,15 @@ module HammerCLIKatello
       apipie_options
     end
 
+    class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
+      action :destroy
+      command_name "delete"
+      success_message _("Content view is being destroy with task %{id}s")
+      failure_message _("Could not destroyed the content view")
+
+      apipie_options
+    end
+
     class PublishCommand < HammerCLIForemanTasks::AsyncCommand
       action :publish
       command_name "publish"
@@ -105,6 +114,31 @@ module HammerCLIKatello
       failure_message _("Could not remove the content view from environment")
 
       apipie_options
+    end
+
+    class RemoveCommand < HammerCLIForemanTasks::AsyncCommand
+      # command to remove content view environments and versions from a content view.
+      # corresponds to the UI screen.
+      action :remove
+      command_name "remove"
+
+      option ["--content-view-version-ids"], "VERSION_IDS",
+             _("Comma separated list of version ids to remove")
+      option ["--environment-ids"], "ENVIRONMENT_IDS",
+             _("Comma separated list of environment ids to remove")
+
+      def request_params
+        super.tap do |opts|
+          %w(content_view_version_ids :environment_ids).each do |key|
+            opts[key] = opts[key].split(",") if opts[key]
+          end
+        end
+      end
+
+      success_message _("Content view objects are being removed task %{id}s")
+      failure_message _("Could not remove objects from content view")
+
+      apipie_options :without => %w(content_view_version_ids  environment_ids)
     end
 
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
