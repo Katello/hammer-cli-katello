@@ -123,7 +123,7 @@ module HammerCLIKatello
       action :sync
       command_name "synchronize"
 
-      success_message _("Repository is being synchronized in task %{id}s")
+      success_message _("Repository is being synchronized in task %{id}")
       failure_message _("Could not synchronize the repository")
 
       build_options
