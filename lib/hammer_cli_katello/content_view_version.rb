@@ -60,7 +60,7 @@ module HammerCLIKatello
       action :promote
       command_name "promote"
 
-      success_message _("Content view is being promoted with task %{id}s")
+      success_message _("Content view is being promoted with task %{id}")
       failure_message _("Could not promote the content view")
 
       build_options
@@ -70,7 +70,7 @@ module HammerCLIKatello
       action :destroy
       command_name "delete"
 
-      success_message _("Content view is being deleted with task %{id}s")
+      success_message _("Content view is being deleted with task %{id}")
       failure_message _("Could not delete the content view")
 
       build_options

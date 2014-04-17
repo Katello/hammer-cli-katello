@@ -91,7 +91,8 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
       action :destroy
       command_name "delete"
-      success_message _("Content view is being deleted with task %{id}s")
+
+      success_message _("Content view is being deleted with task %{id}")
       failure_message _("Could not delete the content view")
 
       build_options
@@ -101,7 +102,7 @@ module HammerCLIKatello
       action :publish
       command_name "publish"
 
-      success_message _("Content view is being published with task %{id}s")
+      success_message _("Content view is being published with task %{id}")
       failure_message _("Could not publish the content view")
 
       build_options
@@ -111,7 +112,7 @@ module HammerCLIKatello
       action :remove_from_environment
       command_name "remove-from-environment"
 
-      success_message _("Content view is being removed from environment with task %{id}s")
+      success_message _("Content view is being removed from environment with task %{id}")
       failure_message _("Could not remove the content view from environment")
 
       build_options
@@ -136,7 +137,7 @@ module HammerCLIKatello
         end
       end
 
-      success_message _("Content view objects are being removed task %{id}s")
+      success_message _("Content view objects are being removed task %{id}")
       failure_message _("Could not remove objects from content view")
 
       build_options :without => %w(content_view_version_ids  environment_ids)
