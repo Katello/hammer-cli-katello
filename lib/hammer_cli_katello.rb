@@ -32,7 +32,7 @@ module HammerCLIKatello
   require "hammer_cli_katello/subscription"
   require "hammer_cli_katello/sync_plan"
   require "hammer_cli_katello/system_group"
-  require "hammer_cli_katello/system"
+  require "hammer_cli_katello/content_host"
   require "hammer_cli_katello/content_view"
 
 end
