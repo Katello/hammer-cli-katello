@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class SystemCommand < HammerCLI::AbstractCommand
+  class ContentHostCommand < HammerCLI::AbstractCommand
 
     class ListCommand < HammerCLIKatello::ListCommand
       resource :systems, :index
@@ -41,8 +41,8 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       resource :systems, :create
 
-      success_message _("System created")
-      failure_message _("Could not create system")
+      success_message _("Content host created")
+      failure_message _("Could not create content host")
 
       def request_params
         super.tap do |params|
@@ -57,8 +57,8 @@ module HammerCLIKatello
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       resource :systems, :update
 
-      success_message _("System updated")
-      failure_message _("Could not update system")
+      success_message _("Content host updated")
+      failure_message _("Could not update content host")
 
       identifiers :id
 
@@ -68,8 +68,8 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       resource :systems, :destroy
 
-      success_message _("System deleted")
-      failure_message _("Could not delete system")
+      success_message _("Content host deleted")
+      failure_message _("Could not delete content host")
 
       identifiers :id
 
@@ -89,9 +89,9 @@ module HammerCLIKatello
     autoload_subcommands
   end
 
-  cmd_name = "system"
-  cmd_desc = _("manipulate systems on the server")
-  cmd_cls  = HammerCLIKatello::SystemCommand
+  cmd_name = "content-host"
+  cmd_desc = _("manipulate content hosts on the server")
+  cmd_cls  = HammerCLIKatello::ContentHostCommand
   HammerCLI::MainCommand.subcommand(cmd_name, cmd_desc, cmd_cls)
 
 end
