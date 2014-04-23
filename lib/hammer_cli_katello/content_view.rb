@@ -129,7 +129,7 @@ module HammerCLIKatello
 
       def request_params
         super.tap do |opts|
-          %w(content_view_version_ids :environment_ids).each do |key|
+          %w(content_view_version_ids environment_ids).each do |key|
             opts[key] = opts[key].split(",") if opts[key]
           end
         end

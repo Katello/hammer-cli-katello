@@ -68,7 +68,7 @@ module HammerCLIKatello
 
     class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
       action :destroy
-      command_name "destroy"
+      command_name "delete"
 
       success_message _("Content view is being deleted with task %{id}s")
       failure_message _("Could not delete the content view")
