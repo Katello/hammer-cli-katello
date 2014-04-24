@@ -10,6 +10,12 @@ module HammerCLIKatello
         field :id, _("ID")
         field :name, _("Name")
         field :format_consumed, _("Consumed")
+        from :environment do
+          field :name, _("Lifecycle Environment")
+        end
+        from :content_view do
+          field :name, _("Content View")
+        end
       end
 
       def extend_data(data)
