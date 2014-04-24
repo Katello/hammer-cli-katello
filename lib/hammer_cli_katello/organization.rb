@@ -18,6 +18,7 @@ module HammerCLIKatello
       output do
         field :label, _("Label")
         field :description, _("Description")
+        field :redhat_repository_url, _("Red Hat Repository URL")
       end
     end
 
