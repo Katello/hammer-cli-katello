@@ -21,3 +21,6 @@ LineLength:
 
 FavorSprintf:
   Enabled: false # we use % for i18n
+
+IfUnlessModifier:
+  Enabled: false
