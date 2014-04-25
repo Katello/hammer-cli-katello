@@ -94,7 +94,7 @@ module HammerCLIKatello
       success_message _("Content view is being deleted with task %{id}s")
       failure_message _("Could not delete the content view")
 
-      apipie_options
+      build_options
     end
 
     class PublishCommand < HammerCLIForemanTasks::AsyncCommand
@@ -114,7 +114,7 @@ module HammerCLIKatello
       success_message _("Content view is being removed from environment with task %{id}")
       failure_message _("Could not remove the content view from environment")
 
-      apipie_options
+      build_options
     end
 
     class RemoveCommand < HammerCLIForemanTasks::AsyncCommand
@@ -139,7 +139,7 @@ module HammerCLIKatello
       success_message _("Content view objects are being removed task %{id}")
       failure_message _("Could not remove objects from content view")
 
-      apipie_options :without => %w(content_view_version_ids  environment_ids)
+      build_options :without => %w(content_view_version_ids environment_ids)
     end
 
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand

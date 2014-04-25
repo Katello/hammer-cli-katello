@@ -28,7 +28,7 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options
+      build_options
     end
 
     class AvailableRepositoriesCommand < HammerCLIKatello::ListCommand

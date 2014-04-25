@@ -73,7 +73,7 @@ module HammerCLIKatello
       success_message _("Content view is being deleted with task %{id}")
       failure_message _("Could not delete the content view")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands
