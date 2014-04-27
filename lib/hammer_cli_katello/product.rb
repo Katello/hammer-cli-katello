@@ -31,8 +31,6 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      include HammerCLIKatello::ScopedNameCommand
-
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -70,6 +68,8 @@ module HammerCLIKatello
         end
       end
 
+      include HammerCLIKatello::ScopedNameCommand
+      apipie_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
@@ -80,11 +80,11 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      include HammerCLIKatello::ScopedNameCommand
       success_message _("Product destroyed")
       failure_message _("Could not destroy the product")
 
       apipie_options
+      include HammerCLIKatello::ScopedNameCommand
     end
 
     class SetSyncPlanCommand < HammerCLIKatello::UpdateCommand
