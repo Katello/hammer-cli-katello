@@ -3,6 +3,7 @@ module HammerCLIKatello
   class Organization < HammerCLIForeman::Organization
 
     class ListCommand < HammerCLIForeman::Organization::ListCommand
+      include HammerCLIKatello::ResolverCommons
       resource :organizations, :index
 
       output do
@@ -14,6 +15,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIForeman::Organization::InfoCommand
+      include HammerCLIKatello::ResolverCommons
       resource :organizations, :show
 
       output do
@@ -26,6 +28,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIForeman::Organization::UpdateCommand
+      include HammerCLIKatello::ResolverCommons
       resource :organizations, :update
 
       success_message _("Organization updated")

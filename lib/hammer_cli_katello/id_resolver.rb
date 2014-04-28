@@ -3,6 +3,11 @@ module HammerCLIKatello
   class Searchables
 
     SEARCHABLES = {
+      :organization => [
+        HammerCLIForeman::Searchable.new("name", _("Name to search by")),
+        HammerCLIForeman::Searchable.new("label", _("Label to search by"), :editable => false)
+      ]
+
     }
     DEFAULT_SEARCHABLES = [HammerCLIForeman::Searchable.new("name", _("Name to search by"))]
 
