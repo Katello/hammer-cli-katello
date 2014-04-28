@@ -11,7 +11,7 @@ module HammerCLIKatello
         field :author, _("Author")
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -35,7 +35,7 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

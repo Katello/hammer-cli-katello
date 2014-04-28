@@ -11,7 +11,7 @@ module HammerCLIKatello
         field :description, _("Description")
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -20,7 +20,7 @@ module HammerCLIKatello
       success_message _("System group created")
       failure_message _("Could not create the system group")
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand

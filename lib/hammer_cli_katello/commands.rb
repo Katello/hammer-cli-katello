@@ -1,40 +1,55 @@
 module HammerCLIKatello
 
-  class Command < HammerCLIForeman::Command; end
+  module ResolverCommons
 
-  class WriteCommand < HammerCLIForeman::WriteCommand; end
+    def self.included(base)
+      base.extend(ClassMethods)
+    end
 
-  class ReadCommand < HammerCLIForeman::ReadCommand; end
+    module ClassMethods
 
-  class ListCommand < HammerCLIForeman::ListCommand; end
+      def resolver
+        api = HammerCLI::Connection.get("foreman").api
+        HammerCLIKatello::IdResolver.new(api, HammerCLIKatello::Searchables.new)
+      end
 
-  class InfoCommand < HammerCLIForeman::InfoCommand
+      def searchables
+        @searchables ||= HammerCLIKatello::Searchables.new
+        @searchables
+      end
 
-    identifiers :id
-
+    end
   end
 
-  class CreateCommand < HammerCLIForeman::CreateCommand; end
+  class Command < HammerCLIForeman::Command
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class ListCommand < HammerCLIForeman::ListCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class InfoCommand < HammerCLIForeman::InfoCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
+  class CreateCommand < HammerCLIForeman::CreateCommand
+    include HammerCLIKatello::ResolverCommons
+  end
 
   class UpdateCommand < HammerCLIForeman::UpdateCommand
-
-    identifiers :id
-
+    include HammerCLIKatello::ResolverCommons
   end
 
   class DeleteCommand < HammerCLIForeman::DeleteCommand
-
-    identifiers :id
-
+    include HammerCLIKatello::ResolverCommons
   end
 
   class AddAssociatedCommand < HammerCLIForeman::AddAssociatedCommand
-    identifiers :id
-    associated_identifiers :id
+    include HammerCLIKatello::ResolverCommons
   end
 
   class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand
-    identifiers :id
-    associated_identifiers :id
+    include HammerCLIKatello::ResolverCommons
   end
 end

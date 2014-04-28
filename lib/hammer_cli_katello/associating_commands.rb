@@ -2,11 +2,11 @@ module HammerCLIKatello
   module AssociatingCommands
 
     module Repository
+      extend HammerCLIForeman::AssociatingCommands::CommandExtension
 
       class AddRepositoryCommand < HammerCLIKatello::AddAssociatedCommand
         command_name 'add-repository'
         associated_resource :repositories
-        apipie_options
 
         success_message _("The repository has been associated")
         failure_message _("Could not add repository")
@@ -15,7 +15,6 @@ module HammerCLIKatello
       class RemoveRepositoryCommand < HammerCLIKatello::RemoveAssociatedCommand
         command_name 'remove-repository'
         associated_resource :repositories
-        apipie_options
 
         success_message _("The repository has been removed")
         failure_message _("Could not remove repository")
@@ -24,11 +23,11 @@ module HammerCLIKatello
     end
 
     module SystemGroup
+      extend HammerCLIForeman::AssociatingCommands::CommandExtension
 
       class AddSystemGroupCommand < HammerCLIKatello::AddAssociatedCommand
         command_name 'add-system-group'
         associated_resource :system_groups
-        apipie_options
 
         success_message _("The system group has been associated")
         failure_message _("Could not add system group")
@@ -37,7 +36,6 @@ module HammerCLIKatello
       class RemoveSystemGroupCommand < HammerCLIKatello::RemoveAssociatedCommand
         command_name 'remove-repository'
         associated_resource :system_groups
-        apipie_options
 
         success_message _("The system group has been removed")
         failure_message _("Could not remove system group")

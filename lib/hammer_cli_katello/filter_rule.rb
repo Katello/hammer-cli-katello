@@ -20,7 +20,7 @@ module HammerCLIKatello
         field :end_date, _("End Date")
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -40,21 +40,21 @@ module HammerCLIKatello
         field :updated_at, _("Updated"), Fields::Date
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Filter rule created")
       failure_message _("Could not create the filter rule")
 
-      apipie_options
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Filter rule updated")
       failure_message _("Could not update the filter rule")
 
-      apipie_options
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
@@ -65,7 +65,7 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

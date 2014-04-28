@@ -9,14 +9,14 @@ module HammerCLIKatello
         field :name, _("Name")
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Taco created")
       failure_message _("Could not create the taco")
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -27,14 +27,14 @@ module HammerCLIKatello
         field :meat, _("Meat")
       end
 
-      apipie_options
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Taco updated")
       failure_message _("Could not update the taco")
 
-      apipie_options :without => [:doritos_locos]
+      build_options :without => [:doritos_locos]
       option "--meat", "MEAT", _("meat type"), :attribute_name => :option_meat
     end
 
@@ -42,7 +42,7 @@ module HammerCLIKatello
       success_message _("Taco deleted")
       failure_message _("Could not delete the taco")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

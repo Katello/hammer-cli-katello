@@ -10,13 +10,11 @@ module HammerCLIKatello
         field :name, _("Name")
       end
 
-      apipie_options :without => [:environment_id]
+      build_options :without => [:environment_id]
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       resource :systems, :show
-
-      identifiers :id
 
       output do
         field :name, _("Name")
@@ -35,7 +33,7 @@ module HammerCLIKatello
         field :autoheal, _("Autoheal")
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -51,7 +49,7 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options :without => [:facts, :type, :installed_products]
+      build_options :without => [:facts, :type, :installed_products]
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
@@ -60,9 +58,7 @@ module HammerCLIKatello
       success_message _("Content host updated")
       failure_message _("Could not update content host")
 
-      identifiers :id
-
-      apipie_options :without => [:facts, :type, :installed_products]
+      build_options :without => [:facts, :type, :installed_products]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
@@ -71,9 +67,7 @@ module HammerCLIKatello
       success_message _("Content host deleted")
       failure_message _("Could not delete content host")
 
-      identifiers :id
-
-      apipie_options
+      build_options
     end
 
     class TasksCommand < HammerCLIKatello::ListCommand
@@ -81,9 +75,7 @@ module HammerCLIKatello
 
       command_name "tasks"
 
-      identifiers :id
-
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

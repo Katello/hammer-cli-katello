@@ -20,14 +20,14 @@ module HammerCLIKatello
 
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Product created")
       failure_message _("Could not create the product")
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -76,7 +76,7 @@ module HammerCLIKatello
       success_message _("Product updated")
       failure_message _("Could not update the product")
 
-      apipie_options
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
@@ -84,12 +84,10 @@ module HammerCLIKatello
       success_message _("Product destroyed")
       failure_message _("Could not destroy the product")
 
-      apipie_options
+      build_options
     end
 
     class SetSyncPlanCommand < HammerCLIKatello::UpdateCommand
-      identifiers :id, :sync_plan_id
-
       desc _("Assign sync plan to product.")
       command_name "set-sync-plan"
 
@@ -98,16 +96,13 @@ module HammerCLIKatello
 
       resource :products, :update
 
-      apipie_options :without => declared_identifiers.keys +
-        [:name, :label, :provider_id, :description, :gpg_key_id]
+      build_options :without => [:name, :label, :provider_id, :description, :gpg_key_id]
       # TODO: set to --sync-plan-id
       option "--sync_plan_id", "SYNC_PLAN_ID", _("plan numeric identifier"),
              :attribute_name => :option_sync_plan_id, :required => true
     end
 
     class RemoveSyncPlanCommand < HammerCLIKatello::UpdateCommand
-      identifiers :id, :sync_plan_id
-
       desc _("Delete assignment sync plan and product.")
       command_name "remove-sync-plan"
 
@@ -116,8 +111,8 @@ module HammerCLIKatello
 
       resource :products, :update
 
-      apipie_options :without => [:name, :label, :provider_id, :description,
-                                  :gpg_key_id, :sync_plan_id]
+      build_options :without => [:name, :label, :provider_id, :description,
+                                 :gpg_key_id, :sync_plan_id]
       option "--sync_plan_id", "SYNC_PLAN_ID", _("plan numeric identifier"),
              :attribute_name => :option_sync_plan_id, :required => true
     end

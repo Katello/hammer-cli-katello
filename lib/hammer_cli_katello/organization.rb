@@ -3,6 +3,7 @@ module HammerCLIKatello
   class Organization < HammerCLIForeman::Organization
 
     class ListCommand < HammerCLIForeman::Organization::ListCommand
+      include HammerCLIKatello::ResolverCommons
       resource :organizations, :index
 
       output do
@@ -10,9 +11,11 @@ module HammerCLIKatello
         field :description, _("Description")
       end
 
+      build_options
     end
 
     class InfoCommand < HammerCLIForeman::Organization::InfoCommand
+      include HammerCLIKatello::ResolverCommons
       resource :organizations, :show
 
       output do
@@ -20,13 +23,18 @@ module HammerCLIKatello
         field :description, _("Description")
         field :redhat_repository_url, _("Red Hat Repository URL")
       end
+
+      build_options
     end
 
     class UpdateCommand < HammerCLIForeman::Organization::UpdateCommand
+      include HammerCLIKatello::ResolverCommons
       resource :organizations, :update
 
       success_message _("Organization updated")
       failure_message _("Could not update the organization")
+
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -35,7 +43,7 @@ module HammerCLIKatello
       success_message _("Organization created")
       failure_message _("Could not create the organization")
 
-      apipie_options
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
@@ -44,7 +52,7 @@ module HammerCLIKatello
       success_message _("Organization deleted")
       failure_message _("Could not delete the organization")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

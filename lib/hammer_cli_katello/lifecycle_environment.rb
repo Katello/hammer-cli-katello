@@ -1,22 +1,20 @@
 module HammerCLIKatello
 
-  class LifecycleEnvironmentCommand < HammerCLI::AbstractCommand
+  class LifecycleEnvironmentCommand < HammerCLIKatello::Command
+    resource :lifecycle_environments
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource :lifecycle_environments, :index
-
       output do
         field :id, _("ID")
         field :name, _("Name")
         field :prior, _("Prior")
       end
 
-      apipie_options
+      build_options
     end
 
     class PathsCommand < HammerCLIKatello::ListCommand
-      resource :lifecycle_environments, :paths
-
+      action :paths
       command_name "paths"
 
       output do
@@ -31,13 +29,10 @@ module HammerCLIKatello
         data
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource :lifecycle_environments
-      include HammerCLIKatello::ScopedNameCommand
-
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -50,56 +45,46 @@ module HammerCLIKatello
         field :prior, _("Prior Lifecycle Environment")
       end
 
-      def request_params
-        super.merge(method_options)
-      end
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      resource :lifecycle_environments, :create
-      include HammerCLIKatello::ScopedName
-
       success_message _("Environment created")
       failure_message _("Could not create environment")
 
-      apipie_options
-
-      def execute
-        self.option_prior = scoped_name_to_id(get_option_value(:prior), resource)
-        super
+      def request_params
+        params = super
+        params["prior"] = resolver.lifecycle_environment_id(
+          HammerCLI.option_accessor_name("name") => params["prior"],
+          HammerCLI.option_accessor_name("organization_id") => params["organization_id"]
+        )
+        params
       end
+
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      resource :lifecycle_environments
-      include HammerCLIKatello::ScopedNameCommand
-
       success_message _("Environment updated")
       failure_message _("Could not update environment")
 
-      identifiers :id
-
       def request_params
-        super.merge(method_options)
+        params = super
+        params["prior"] = resolver.lifecycle_environment_id(
+          HammerCLI.option_accessor_name("name") => params["prior"],
+          HammerCLI.option_accessor_name("organization_id") => params["organization_id"]
+        )
+        params
       end
 
-      apipie_options
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      resource :lifecycle_environments
-      include HammerCLIKatello::ScopedNameCommand
-
       success_message _("Environment deleted")
       failure_message _("Could not delete environment")
 
-      identifiers :id
-
-      def request_params
-        super.merge(method_options)
-      end
-
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

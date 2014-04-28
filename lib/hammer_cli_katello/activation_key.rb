@@ -4,7 +4,7 @@ module HammerCLIKatello
     resource :activation_keys
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource :activation_keys, :index
+      action :index
 
       output do
         field :id, _("ID")
@@ -21,13 +21,11 @@ module HammerCLIKatello
         data
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource :activation_keys, :show
-
-      identifiers :id
+      action :show
 
       output do
         field :name, _("Name")
@@ -46,23 +44,23 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      resource :activation_keys, :create
+      action :create
       success_message _("Activation key created")
       failure_message _("Could not create the activation key")
 
-      apipie_options
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      resource :activation_keys, :update
+      action :update
       success_message _("Activation key updated")
       failure_message _("Could not update the activation key")
 
-      apipie_options
+      build_options
     end
 
     class SubscriptionsCommand < HammerCLIKatello::ListCommand
@@ -161,7 +159,7 @@ module HammerCLIKatello
       end
     end
 
-    include HammerCLIKatello::AssociatingCommands::SystemGroup
+    HammerCLIKatello::AssociatingCommands::SystemGroup.extend_command(self)
 
     autoload_subcommands
   end

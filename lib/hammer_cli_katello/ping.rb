@@ -1,6 +1,6 @@
 module HammerCLIKatello
 
-  class PingCommand < HammerCLIKatello::ReadCommand
+  class PingCommand < HammerCLIKatello::Command
 
     resource :ping, :index
 
