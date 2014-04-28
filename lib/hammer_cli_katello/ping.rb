@@ -53,15 +53,12 @@ module HammerCLIKatello
     end # output do
 
     def execute
-      d = retrieve_data
-      if HammerCLI::Settings.get(:log_api_calls)
-        logger.debug "Retrieved data: " + d.ai(:raw => true)
-      end
+      d = send_request
       print_data d
       d['status'] != _("FAIL") ? HammerCLI::EX_OK : 1
     end
 
-    def retrieve_data
+    def send_request
       super.tap do |data|
         data['services'].each do |name, service|
           service['_response'] = get_server_response(service)
