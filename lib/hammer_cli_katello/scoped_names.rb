@@ -1,5 +1,6 @@
-module HammerCLIKatello
+# TODO: remove this once name->id from hammer-core is merged in
 
+module HammerCLIKatello
 
   module ScopedNameCommand
 
