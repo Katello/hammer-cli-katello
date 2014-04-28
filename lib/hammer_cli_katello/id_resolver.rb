@@ -4,7 +4,7 @@ module HammerCLIKatello
 
     SEARCHABLES = {
     }
-    DEFAULT_SEARCHABLES = [ HammerCLIForeman::Searchable.new("name", _("Name to search by")) ]
+    DEFAULT_SEARCHABLES = [HammerCLIForeman::Searchable.new("name", _("Name to search by"))]
 
     def for(resource)
       SEARCHABLES[resource.singular_name.to_sym] || DEFAULT_SEARCHABLES
@@ -41,12 +41,11 @@ module HammerCLIKatello
     private
 
     def organization_by_id(numeric_id)
-      org = @api.resource(:organizations).call(:show, {:id => numeric_id})
+      org = @api.resource(:organizations).call(:show, :id => numeric_id)
       org = HammerCLIForeman.record_to_common_format(org)
       org
     end
 
   end
-
 
 end

@@ -19,7 +19,8 @@ module HammerCLIKatello
       option '--name', 'NAME', _("GPG key name to search by")
       option '--id', 'ID', _("GPG key numeric id to search by")
       option '--organization-id', 'ORG_ID', _("Org numeric id to search by")
-      option '--organization', 'ORG', _("Org numeric id to search by"), :attribute_name => :option_organization_name
+      option '--organization', 'ORG', _("Org numeric id to search by"),
+             :attribute_name => :option_organization_name
 
       output do
         field :id, _("ID")

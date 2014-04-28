@@ -1,6 +1,5 @@
 module HammerCLIKatello
 
-
   module ResolverCommons
 
     def self.included(base)
@@ -21,7 +20,6 @@ module HammerCLIKatello
 
     end
   end
-
 
   class Command < HammerCLIForeman::Command
     include HammerCLIKatello::ResolverCommons

@@ -112,7 +112,7 @@ module HammerCLIKatello
       resource :products, :update
 
       build_options :without => [:name, :label, :provider_id, :description,
-                                  :gpg_key_id, :sync_plan_id]
+                                 :gpg_key_id, :sync_plan_id]
       option "--sync_plan_id", "SYNC_PLAN_ID", _("plan numeric identifier"),
              :attribute_name => :option_sync_plan_id, :required => true
     end

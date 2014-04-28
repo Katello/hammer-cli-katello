@@ -3,6 +3,7 @@ module HammerCLIKatello
 
   module ScopedNameCommand
 
+    # rubocop: disable MethodLength
     def self.included(cls)
 
       cls.option "--id", "ID", _("The id"),
@@ -25,9 +26,10 @@ module HammerCLIKatello
     end
 
     def validate_options
-      if !validator.option(:option_id).exist?
+      unless validator.option(:option_id).exist?
         validator.option(:option_name).required :msg => _("Either --id or --name is required")
-        validator.any(:option_organization_id, :option_organization_name).required :msg => _("Either --organization or --organization-id is required")
+        validator.any(:option_organization_id, :option_organization_name)
+          .required(:msg => _("Either --organization or --organization-id is required"))
       end
       super
     end
