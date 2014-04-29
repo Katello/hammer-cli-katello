@@ -73,6 +73,19 @@ module HammerCLIKatello
       build_options
     end
 
+    class ManifestHistoryCommand <  HammerCLIKatello::ListCommand
+      command_name "manifest-history"
+      resource :subscriptions, :manifest_history
+
+      output do
+        field :status, _("Status")
+        field :statusMessage, _("Status Message")
+        field :created, _("Time"), Fields::Date
+      end
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
