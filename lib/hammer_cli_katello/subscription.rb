@@ -27,7 +27,7 @@ module HammerCLIKatello
         data
       end
 
-      apipie_options
+      build_options
     end
 
     class UploadCommand < HammerCLIForemanTasks::AsyncCommand
@@ -44,10 +44,10 @@ module HammerCLIKatello
         {:content_type => 'multipart/form-data', :multipart => true}
       end
 
-      success_message _("Manifest is being uploaded in task %{id}s")
+      success_message _("Manifest is being uploaded in task %{id}")
       failure_message _("Manifest upload failed")
 
-      apipie_options :without => [:content]
+      build_options :without => [:content]
       option "--file", "MANIFEST", _("Subscription manifest file"),
              :attribute_name => :option_content,
              :required => true, :format => BinaryFile.new
@@ -57,20 +57,20 @@ module HammerCLIKatello
       resource :subscriptions, :delete_manifest
       command_name "delete-manifest"
 
-      success_message _("Manifest is being deleted in task %{id}s")
+      success_message _("Manifest is being deleted in task %{id}")
       failure_message _("Manifest deletion failed")
 
-      apipie_options
+      build_options
     end
 
     class RefreshManfiestCommand < HammerCLIForemanTasks::AsyncCommand
       resource :subscriptions, :refresh_manifest
       command_name "refresh-manifest"
 
-      success_message _("Manifest is being refreshed in task %{id}s")
+      success_message _("Manifest is being refreshed in task %{id}")
       failure_message _("Manifest refresh failed")
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

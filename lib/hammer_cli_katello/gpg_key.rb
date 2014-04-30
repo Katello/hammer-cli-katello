@@ -1,20 +1,21 @@
 module HammerCLIKatello
 
-  class GpgKeyCommand < HammerCLI::AbstractCommand
+  class GpgKeyCommand < HammerCLIForeman::Command
+
+    resource :gpg_keys
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource :gpg_keys, :index
 
       output do
         field :id, _("ID")
         field :name, _("Name")
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource :gpg_keys, :show
+
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -34,20 +35,14 @@ module HammerCLIKatello
         field :content, _("Content"), Fields::LongText
       end
 
-      def request_params
-        super.merge(method_options)
-      end
-
-      apipie_options
+      build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      resource :gpg_keys, :create
-
       success_message _("GPG Key created")
       failure_message _("Could not create GPG Key")
 
-      apipie_options  :without => [:content]
+      build_options  :without => [:content]
       option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
              :required => true,
@@ -55,35 +50,20 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      resource :gpg_keys, :update
-
       success_message _("GPG Key updated")
       failure_message _("Could not update GPG Key")
 
-      identifiers :id
-
-      def request_params
-        super.merge(method_options)
-      end
-
-      apipie_options :without => [:content]
+      build_options :without => [:content]
       option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
              :format => HammerCLI::Options::Normalizers::File.new
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      resource :gpg_keys, :destroy
-
       success_message _("GPG Key deleted")
       failure_message _("Could not delete the GPG Key")
 
-      identifiers :id
-      def request_params
-        super.merge(method_options)
-      end
-
-      apipie_options
+      build_options
     end
 
     autoload_subcommands

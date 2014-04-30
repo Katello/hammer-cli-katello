@@ -14,7 +14,7 @@ module HammerCLIKatello
         field :author, _("Author")
       end
 
-      apipie_options
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -31,17 +31,17 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
-    class CreateCommand < HammerCLIKatello::WriteCommand
+    class CreateCommand < HammerCLIKatello::Command
       action :create
       command_name "add"
 
       success_message _("Puppet module added to content view")
       failure_message _("Could not add the puppet module")
 
-      apipie_options
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
@@ -52,10 +52,10 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
-    class DeleteCommand < HammerCLIKatello::WriteCommand
+    class DeleteCommand < HammerCLIKatello::Command
       action :destroy
       command_name "remove"
 
@@ -66,7 +66,7 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      apipie_options
+      build_options
     end
 
     autoload_subcommands
