@@ -26,8 +26,9 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIKatello::InfoCommand
       resource :system_groups, :show
 
-      output ListCommand.output_definition do
-      end
+      output ListCommand.output_definition
+
+      build_options
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
