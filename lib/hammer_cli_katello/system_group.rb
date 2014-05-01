@@ -26,7 +26,10 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIKatello::InfoCommand
       resource :system_groups, :show
 
-      output ListCommand.output_definition
+      output ListCommand.output_definition do
+        field :total_systems, _("Total Systems")
+        field :max_systems, _("Max Systems")
+      end
 
       build_options
     end
