@@ -45,6 +45,15 @@ module HammerCLIKatello
       end
     end
 
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
+      resource :system_groups, :destroy
+
+      success_message _("System group deleted")
+      failure_message _("Could not delete the system group")
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
