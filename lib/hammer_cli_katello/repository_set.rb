@@ -28,7 +28,7 @@ module HammerCLIKatello
         end
       end
 
-      apipie_options
+      build_options
     end
 
     class AvailableRepositoriesCommand < HammerCLIKatello::ListCommand
@@ -42,6 +42,16 @@ module HammerCLIKatello
           field :releasever, _("Release")
         end
         field :enabled, _("Enabled"), Fields::Boolean
+      end
+
+      # We need to define +custom_option_builders+ and +request_params+ to
+      # be able to resolve the --name to --id for repository set
+      def self.custom_option_builders
+        super + [HammerCLIForeman::SearchablesOptionBuilder.new(resource, searchables)]
+      end
+
+      def request_params
+        super.update('id' => get_identifier)
       end
 
       build_options
