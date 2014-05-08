@@ -30,6 +30,7 @@ First, cd into the directory where you typically keep your projects and where ha
 git clone https://github.com/Katello/hammer-cli-katello.git
 git clone https://github.com/theforeman/hammer-cli.git
 git clone https://github.com/theforeman/hammer-cli-foreman.git
+git clone https://github.com/theforeman/hammer-cli-foreman-tasks.git
 ```
 
 Now let's setup our rvm environment files for the project.
@@ -47,6 +48,7 @@ Before we bundle, we need to setup our local Gemfile. Edit `Gemfile.local` in yo
 # vim:ft=ruby
 gem 'hammer_cli', :path => '../hammer-cli'
 gem 'hammer_cli_foreman', :path => '../hammer-cli-foreman'
+gem 'hammer_cli_foreman_tasks', :path => '../hammer-cli-foreman-tasks'
 ```
 
 Now run bundler inside your hammer-cli-katello directory:
