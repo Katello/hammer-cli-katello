@@ -22,23 +22,23 @@ module HammerCLIKatello
 
     end
 
-    module SystemGroup
+    module HostCollection
       extend HammerCLIForeman::AssociatingCommands::CommandExtension
 
-      class AddSystemGroupCommand < HammerCLIKatello::AddAssociatedCommand
-        command_name 'add-system-group'
-        associated_resource :system_groups
+      class AddHostCollectionCommand < HammerCLIKatello::AddAssociatedCommand
+        command_name 'add-host-collection'
+        associated_resource :host_collections
 
-        success_message _("The system group has been associated")
-        failure_message _("Could not add system group")
+        success_message _("The host collection has been associated")
+        failure_message _("Could not add host collection")
       end
 
-      class RemoveSystemGroupCommand < HammerCLIKatello::RemoveAssociatedCommand
+      class RemoveHostCollectionCommand < HammerCLIKatello::RemoveAssociatedCommand
         command_name 'remove-repository'
-        associated_resource :system_groups
+        associated_resource :host_collections
 
-        success_message _("The system group has been removed")
-        failure_message _("Could not remove system group")
+        success_message _("The host collection has been removed")
+        failure_message _("Could not remove host collection")
       end
 
     end

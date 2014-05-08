@@ -44,7 +44,7 @@ module HammerCLIKatello
           field :name, _("Content View")
         end
 
-        collection :system_groups, _("System Groups") do
+        collection :host_collections, _("Host Collections") do
           field :id, _("ID")
           field :name, _("Name")
         end
@@ -141,11 +141,11 @@ module HammerCLIKatello
       failure_message _("Could not remove subscription from activation key")
     end
 
-    class SystemGroupsCommand < HammerCLIKatello::ListCommand
-      resource :system_groups, :index
+    class HostCollectionsCommand < HammerCLIKatello::ListCommand
+      resource :host_collections, :index
 
-      desc _("List associated system groups")
-      command_name "system-groups"
+      desc _("List associated host collections")
+      command_name "host-collections"
 
       output do
         field :id, _("ID")
@@ -165,7 +165,7 @@ module HammerCLIKatello
       end
     end
 
-    HammerCLIKatello::AssociatingCommands::SystemGroup.extend_command(self)
+    HammerCLIKatello::AssociatingCommands::HostCollection.extend_command(self)
 
     autoload_subcommands
   end
