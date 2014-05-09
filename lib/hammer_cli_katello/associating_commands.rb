@@ -42,5 +42,26 @@ module HammerCLIKatello
       end
 
     end
+
+    module ContentHost
+      extend HammerCLIForeman::AssociatingCommands::CommandExtension
+
+      class AddContentHostCommand < HammerCLIKatello::AddAssociatedCommand
+        command_name 'add-content-host'
+        associated_resource :systems
+
+        success_message _("The content host has been added")
+        failure_message _("Could not add content host")
+      end
+
+      class RemoveContentHostCommand < HammerCLIKatello::RemoveAssociatedCommand
+        command_name 'remove-content-host'
+        associated_resource :systems
+
+        success_message _("The content host has been removed")
+        failure_message _("Could not remove content host")
+      end
+
+    end
   end
 end

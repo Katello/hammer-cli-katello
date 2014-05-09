@@ -1,6 +1,8 @@
 module HammerCLIKatello
 
-  class HostCollection < HammerCLI::AbstractCommand
+  class HostCollection < HammerCLIKatello::Command
+    resource :host_collections
+
     class ListCommand < HammerCLIKatello::ListCommand
       resource :host_collections, :index
 
@@ -50,6 +52,13 @@ module HammerCLIKatello
       build_options
     end
 
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
+      success_message _("Host collection updated")
+      failure_message _("Could not update the the host collection")
+
+      build_options
+    end
+
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       resource :host_collections, :destroy
 
@@ -58,6 +67,8 @@ module HammerCLIKatello
 
       build_options
     end
+
+    HammerCLIKatello::AssociatingCommands::ContentHost.extend_command(self)
 
     autoload_subcommands
   end
