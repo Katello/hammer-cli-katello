@@ -35,14 +35,19 @@ module HammerCLIKatello
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
+      resource :host_collections, :copy
+
+      action :copy
+      command_name "copy"
+
       success_message _("Host collection created")
       failure_message _("Could not create the host collection")
-      command_name "copy"
-      action :copy
 
       validate_options do
         all(:option_name).required unless option(:option_id).exist?
       end
+
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
