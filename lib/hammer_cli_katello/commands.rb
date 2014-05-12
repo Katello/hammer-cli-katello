@@ -52,4 +52,22 @@ module HammerCLIKatello
   class RemoveAssociatedCommand < HammerCLIForeman::RemoveAssociatedCommand
     include HammerCLIKatello::ResolverCommons
   end
+
+  class NestedResourceListCommand < HammerCLIKatello::ListCommand
+    # obtain resource id
+    def request_params
+      params = super
+      params['id'] ||= get_identifier
+      params
+    end
+
+    # override to use searchables defined
+    def self.custom_option_builders
+      builders = super
+      if resource_defined?
+        builders <<  HammerCLIForeman::SearchablesOptionBuilder.new(resource, searchables)
+      end
+      builders
+    end
+  end
 end

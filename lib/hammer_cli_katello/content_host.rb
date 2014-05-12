@@ -71,7 +71,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class TasksCommand < HammerCLIKatello::ListCommand
+    class TasksCommand < HammerCLIKatello::NestedResourceListCommand
       resource :systems, :tasks
 
       command_name "tasks"
