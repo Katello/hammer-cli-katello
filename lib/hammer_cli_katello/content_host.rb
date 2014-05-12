@@ -10,7 +10,7 @@ module HammerCLIKatello
         field :name, _("Name")
       end
 
-      build_options :without => [:environment_id]
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
