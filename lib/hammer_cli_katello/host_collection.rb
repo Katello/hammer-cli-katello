@@ -34,6 +34,19 @@ module HammerCLIKatello
       build_options
     end
 
+    class ContentHostsCommand < HammerCLIKatello::ListCommand
+      resource :host_collections, :systems
+      command_name "content-hosts"
+
+      output do
+        field :id, _("ID")
+        field :uuid, _("UUID")
+        field :name, _("Name")
+      end
+
+      build_options
+    end
+
     class CopyCommand < HammerCLIKatello::CreateCommand
       resource :host_collections, :copy
 
