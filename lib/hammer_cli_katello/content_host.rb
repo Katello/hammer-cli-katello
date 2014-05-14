@@ -18,8 +18,7 @@ module HammerCLIKatello
 
       output do
         field :name, _("Name")
-        field :id, _("ID")
-        field :uuid, _("UUID")
+        field :uuid, _("ID")
         field :description, _("Description")
         field :location, _("Location")
         from :environment do
@@ -38,6 +37,8 @@ module HammerCLIKatello
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       resource :systems, :create
+
+      output InfoCommand.output_definition
 
       success_message _("Content host created")
       failure_message _("Could not create content host")
