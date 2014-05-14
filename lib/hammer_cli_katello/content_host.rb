@@ -2,6 +2,24 @@ module HammerCLIKatello
 
   class ContentHostCommand < HammerCLI::AbstractCommand
 
+    module NameOrganizationEnvironmentIdSearchable
+      def self.included(base)
+        base.extend(ClassMethods)
+      end
+
+      module ClassMethods
+        def resolver
+          HammerCLIKatello::UuidIdResolver.new(super.api,
+                                               HammerCLIKatello::EnvironmentSearchables.new)
+        end
+
+        def searchables
+          @searchables ||= HammerCLIKatello::EnvironmentSearchables.new
+          @searchables
+        end
+      end
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
       resource :systems, :index
 
@@ -10,10 +28,12 @@ module HammerCLIKatello
         field :name, _("Name")
       end
 
-      build_options :without => [:environment_id]
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include NameOrganizationEnvironmentIdSearchable
+
       resource :systems, :show
 
       output do
@@ -54,6 +74,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include NameOrganizationEnvironmentIdSearchable
       resource :systems, :update
 
       success_message _("Content host updated")
@@ -63,6 +84,7 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include NameOrganizationEnvironmentIdSearchable
       resource :systems, :destroy
 
       success_message _("Content host deleted")
@@ -72,6 +94,23 @@ module HammerCLIKatello
     end
 
     class TasksCommand < HammerCLIKatello::ListCommand
+      include NameOrganizationEnvironmentIdSearchable
+
+      def request_params
+        params = super
+        params['id'] ||= get_identifier
+        params
+      end
+
+      # override so that command can use the searchables defined in UuidAsIdResolvable
+      def self.custom_option_builders
+        builders = super
+        if resource_defined?
+          builders <<  HammerCLIForeman::SearchablesOptionBuilder.new(resource, searchables)
+        end
+        builders
+      end
+
       resource :systems, :tasks
 
       command_name "tasks"
@@ -86,5 +125,4 @@ module HammerCLIKatello
   cmd_desc = _("manipulate content hosts on the server")
   cmd_cls  = HammerCLIKatello::ContentHostCommand
   HammerCLI::MainCommand.subcommand(cmd_name, cmd_desc, cmd_cls)
-
 end

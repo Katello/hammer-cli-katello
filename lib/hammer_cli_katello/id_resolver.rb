@@ -33,4 +33,20 @@ module HammerCLIKatello
 
   end
 
+  class EnvironmentSearchables < Searchables
+
+    DEFAULT_SEARCHABLES = Searchables::DEFAULT_SEARCHABLES +
+      [HammerCLIForeman::Searchable.new("environment-id", _("environment id to search by"))]
+
+    def for(resource)
+      SEARCHABLES[resource.singular_name.to_sym] || DEFAULT_SEARCHABLES
+    end
+  end
+
+  class UuidIdResolver < HammerCLIKatello::IdResolver
+
+    def get_id(resource_name, options)
+      options[HammerCLI.option_accessor_name("id")] || find_resource(resource_name, options)['uuid']
+    end
+  end
 end
