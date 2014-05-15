@@ -30,7 +30,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class UploadCommand < HammerCLIForemanTasks::AsyncCommand
+    class UploadCommand < HammerCLIKatello::Command
+      include HammerCLIForemanTasks::Async
+
       resource :subscriptions, :upload
       command_name "upload"
 
@@ -53,7 +55,9 @@ module HammerCLIKatello
              :required => true, :format => BinaryFile.new
     end
 
-    class DeleteManfiestCommand < HammerCLIForemanTasks::AsyncCommand
+    class DeleteManfiestCommand < HammerCLIKatello::DeleteCommand
+      include HammerCLIForemanTasks::Async
+
       resource :subscriptions, :delete_manifest
       command_name "delete-manifest"
 
@@ -63,7 +67,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class RefreshManfiestCommand < HammerCLIForemanTasks::AsyncCommand
+    class RefreshManfiestCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       resource :subscriptions, :refresh_manifest
       command_name "refresh-manifest"
 

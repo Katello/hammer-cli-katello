@@ -25,6 +25,10 @@ module HammerCLIKatello
     include HammerCLIKatello::ResolverCommons
   end
 
+  class SingleResourceCommand < HammerCLIForeman::SingleResourceCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
   class ListCommand < HammerCLIForeman::ListCommand
     include HammerCLIKatello::ResolverCommons
   end

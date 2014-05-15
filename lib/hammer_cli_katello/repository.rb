@@ -10,6 +10,7 @@ module HammerCLIKatello
         field :content_type, _("Content Type")
       end
 
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -100,7 +101,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class SyncCommand < HammerCLIForemanTasks::AsyncCommand
+    class SyncCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       action :sync
       command_name "synchronize"
 
