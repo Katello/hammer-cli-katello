@@ -20,11 +20,14 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :name, _("Name")
+        field :type, _("Type")
+        field :contentUrl, _("URL")
+        field :gpgUrl, _("GPG Key")
+        field :label, _("Label")
 
-        collection :repositories, _("Repositories") do
+        collection :repositories, _("Enabled Repositories") do
           field :id, _("ID")
           field :name, _("Name")
-          field :enabled, _("Enabled"), Fields::Boolean
         end
       end
 
