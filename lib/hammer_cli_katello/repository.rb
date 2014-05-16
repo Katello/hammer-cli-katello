@@ -10,6 +10,7 @@ module HammerCLIKatello
         field :content_type, _("Content Type")
       end
 
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
