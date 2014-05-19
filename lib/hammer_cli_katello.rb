@@ -34,5 +34,6 @@ module HammerCLIKatello
   require "hammer_cli_katello/host_collection"
   require "hammer_cli_katello/content_host"
   require "hammer_cli_katello/content_view"
+  require "hammer_cli_katello/capsule"
 
 end
