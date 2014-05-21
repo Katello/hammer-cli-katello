@@ -69,6 +69,7 @@ module HammerCLIKatello
         end
       end
 
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
