@@ -19,6 +19,10 @@ module HammerCLIKatello
 
   class IdResolver < HammerCLIForeman::IdResolver
 
+    def system_id(options)
+      options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
+    end
+
     def create_search_options(options, resource)
       return super if resource.name == :organizations
 
@@ -32,5 +36,4 @@ module HammerCLIKatello
     end
 
   end
-
 end
