@@ -1,7 +1,3 @@
-require 'hammer_cli_katello/content_view_puppet_module'
-require 'hammer_cli_katello/filter'
-require 'hammer_cli_katello/content_view_version'
-
 module HammerCLIKatello
   class Capsule < HammerCLIForeman::Command
     resource :capsules
@@ -23,7 +19,7 @@ module HammerCLIKatello
       action :show
 
       output ListCommand.output_definition do
-        field :_features, _( "Features"),   Fields::List
+        field :_features, _("Features"),   Fields::List
         field :created_at, _("Created at"), Fields::Date
         field :updated_at, _("Updated at"), Fields::Date
       end
@@ -43,6 +39,18 @@ module HammerCLIKatello
       class ListLifecycleEnvironmentsCommand < HammerCLIKatello::ListCommand
         resource :capsule_content, :lifecycle_environments
         command_name 'lifecycle-environments'
+
+        output do
+          field :id, _("ID")
+          field :name, _("Name")
+        end
+
+        build_options
+      end
+
+      class ListAvailableLifecycleEnvironmentsCommand < HammerCLIKatello::ListCommand
+        resource :capsule_content, :available_lifecycle_environments
+        command_name 'available-lifecycle-environments'
 
         output do
           field :id, _("ID")
@@ -82,7 +90,6 @@ module HammerCLIKatello
         build_options
       end
 
-
       autoload_subcommands
     end
 
@@ -91,4 +98,3 @@ module HammerCLIKatello
 
   HammerCLI::MainCommand.subcommand "capsule", _("Manipulate capsule"), Capsule
 end
-
