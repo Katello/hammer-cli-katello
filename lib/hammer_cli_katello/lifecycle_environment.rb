@@ -7,7 +7,9 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :name, _("Name")
-        field :prior, _("Prior")
+        from :prior do
+          field :name, _("Prior")
+        end
       end
 
       build_options
@@ -42,7 +44,9 @@ module HammerCLIKatello
           field :name, _("Organization")
         end
         field :library, _("Library")
-        field :prior, _("Prior Lifecycle Environment")
+        from :prior do
+          field :name, _("Prior Lifecycle Environment")
+        end
       end
 
       build_options
