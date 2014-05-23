@@ -61,7 +61,7 @@ module HammerCLIKatello
           field :deletable, _("Deletable")
         end
 
-        collection :productContent, _("Content") do
+        collection :product_content, _("Content") do
           from :content do
             field :name, _("Repo Name")
             field :contentUrl, _("URL")
