@@ -3,6 +3,16 @@ module HammerCLIKatello
   class HostCollection < HammerCLIKatello::Command
     resource :host_collections
 
+    module UuidRequestable
+
+      def request_params
+        params = super
+        params['system_uuids'] = option_system_ids unless option_system_ids.nil?
+        params.delete('system_ids') if params.keys.include? 'system_ids'
+        params
+      end
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
       resource :host_collections, :index
 
@@ -17,12 +27,12 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include UuidRequestable
       resource :host_collections, :create
 
       success_message _("Host collection created")
       failure_message _("Could not create the host collection")
-
-      build_options
+      build_options :without => [:system_uuids]
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -41,8 +51,7 @@ module HammerCLIKatello
       command_name "content-hosts"
 
       output do
-        field :id, _("ID")
-        field :uuid, _("UUID")
+        field :uuid, _("ID")
         field :name, _("Name")
       end
 
@@ -66,10 +75,11 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include UuidRequestable
       success_message _("Host collection updated")
       failure_message _("Could not update the the host collection")
 
-      build_options
+      build_options :without => [:system_uuids]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
