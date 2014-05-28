@@ -139,6 +139,89 @@ module HammerCLIKatello
       build_options
     end
 
+    class UploadContentCommand < HammerCLIKatello::InfoCommand
+      resource :repositories, :upload_content
+      command_name "upload-content"
+      CONTENT_CHUNK_SIZE = 10_485_760 # bytes
+
+      class BinaryPath < HammerCLI::Options::Normalizers::File
+        def format(path)
+          fullpath = ::File.expand_path(path)
+
+          if File.directory?(fullpath)
+            Dir["#{fullpath}/*"].map { |file| ::File.new(file, 'rb') }
+          else
+            [::File.new(fullpath, 'rb')]
+          end
+        end
+      end
+
+      def request_headers
+        {:content_type => 'multipart/form-data', :multipart => true}
+      end
+
+      def execute
+        @failure = false
+        option_content.each { |file| upload_file(file) }
+
+        @failure ? HammerCLI::EX_DATAERR : HammerCLI::EX_OK
+      end
+
+      def content_upload_resource
+        ::HammerCLIForeman.foreman_resource(:content_uploads)
+      end
+
+      success_message _("Repository content uploaded")
+      failure_message _("Could not upload the content")
+
+      build_options :without => [:content]
+      option "--path", "PATH", _("Upload file or directory of files as content for a repository"),
+             :attribute_name => :option_content,
+             :required => true, :format => BinaryPath.new
+
+      private
+
+      def upload_file(file)
+        upload_id = create_content_upload
+        repo_id = get_identifier
+        filename = File.basename(file.path)
+
+        offset = 0
+        while (content = file.read(CONTENT_CHUNK_SIZE))
+          params = {:offset => offset,
+                    :id => upload_id,
+                    :content => content,
+                    :repository_id => repo_id
+          }
+
+          content_upload_resource.call(:update, params, request_headers)
+          offset += CONTENT_CHUNK_SIZE
+        end
+
+        import_upload_ids([upload_id])
+        print_message _("Successfully uploaded file '%s'.") % filename
+      rescue
+        @failure = true
+        print_message _("Failed to upload file '%s' to repository. Please check "\
+                        "the file and try again.") % filename
+      ensure
+        content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
+      end
+
+      def create_content_upload
+        response = content_upload_resource.call(:create, :repository_id => get_identifier)
+
+        response["upload_id"]
+      end
+
+      def import_upload_ids(ids)
+        params = {:id => get_identifier,
+                  :upload_ids => ids
+        }
+        resource.call(:import_uploads, params)
+      end
+    end
+
     autoload_subcommands
   end
 end
