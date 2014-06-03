@@ -4,6 +4,12 @@ module HammerCLIKatello
     resource :host_collections
 
     module UuidRequestable
+      def self.included(base)
+        base.option "--system-ids",
+                    "SYSTEM_IDS",
+                    _("Array of system ids to replace the content hosts in host collection"),
+                    :format => HammerCLI::Options::Normalizers::List.new
+      end
 
       def request_params
         params = super
