@@ -43,6 +43,10 @@ module HammerCLIKatello
         output do
           field :id, _("ID")
           field :name, _("Name")
+          from :organization do
+            field :name, _("Organization")
+          end
+
         end
 
         build_options
@@ -55,6 +59,10 @@ module HammerCLIKatello
         output do
           field :id, _("ID")
           field :name, _("Name")
+          from :organization do
+            field :name, _("Organization")
+          end
+
         end
 
         build_options
