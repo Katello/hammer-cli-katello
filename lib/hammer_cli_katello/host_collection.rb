@@ -91,7 +91,25 @@ module HammerCLIKatello
       build_options
     end
 
-    HammerCLIKatello::AssociatingCommands::ContentHost.extend_command(self)
+    class AddContentHostCommand < HammerCLIKatello::SingleResourceCommand
+      command_name 'add-content-host'
+      action  :add_systems
+
+      success_message _("The content host(s) has been added")
+      failure_message _("Could not add content host(s)")
+
+      build_options
+    end
+
+    class RemoveContentHostCommand < HammerCLIKatello::SingleResourceCommand
+      command_name 'remove-content-host'
+      action  :remove_systems
+
+      success_message _("The content host(s) has been removed")
+      failure_message _("Could not remove content host(s)")
+
+      build_options
+    end
 
     autoload_subcommands
   end
