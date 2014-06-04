@@ -101,7 +101,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class SyncCommand < HammerCLIForemanTasks::AsyncCommand
+    class SyncCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       action :sync
       command_name "synchronize"
 

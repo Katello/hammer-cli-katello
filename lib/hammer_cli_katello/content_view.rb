@@ -88,7 +88,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include HammerCLIForemanTasks::Async
+
       action :destroy
       command_name "delete"
 
@@ -98,7 +100,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class PublishCommand < HammerCLIForemanTasks::AsyncCommand
+    class PublishCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       action :publish
       command_name "publish"
 
@@ -108,7 +112,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class RemoveFromEnvironmentCommand < HammerCLIForemanTasks::AsyncCommand
+    class RemoveFromEnvironmentCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       action :remove_from_environment
       command_name "remove-from-environment"
 
@@ -118,7 +124,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class RemoveCommand < HammerCLIForemanTasks::AsyncCommand
+    class RemoveCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       # command to remove content view environments and versions from a content view.
       # corresponds to the UI screen.
       action :remove
