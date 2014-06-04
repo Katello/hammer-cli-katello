@@ -56,7 +56,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class PromoteCommand < HammerCLIForemanTasks::AsyncCommand
+    class PromoteCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       action :promote
       command_name "promote"
 
@@ -66,7 +68,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class DeleteCommand < HammerCLIForemanTasks::AsyncCommand
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include HammerCLIForemanTasks::Async
+
       action :destroy
       command_name "delete"
 
