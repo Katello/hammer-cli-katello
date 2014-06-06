@@ -3,6 +3,19 @@ module HammerCLIKatello
   class LifecycleEnvironmentCommand < HammerCLIKatello::Command
     resource :lifecycle_environments
 
+    module PriorIdResolvable
+      def request_params
+        params = super
+        if params["prior"]
+          params["prior"] = resolver.lifecycle_environment_id(
+            HammerCLI.option_accessor_name("name") => params["prior"],
+            HammerCLI.option_accessor_name("organization_id") => params["organization_id"]
+          )
+        end
+        params
+      end
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, _("ID")
@@ -53,33 +66,19 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include PriorIdResolvable
+
       success_message _("Environment created")
       failure_message _("Could not create environment")
-
-      def request_params
-        params = super
-        params["prior"] = resolver.lifecycle_environment_id(
-          HammerCLI.option_accessor_name("name") => params["prior"],
-          HammerCLI.option_accessor_name("organization_id") => params["organization_id"]
-        )
-        params
-      end
 
       build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include PriorIdResolvable
+
       success_message _("Environment updated")
       failure_message _("Could not update environment")
-
-      def request_params
-        params = super
-        params["prior"] = resolver.lifecycle_environment_id(
-          HammerCLI.option_accessor_name("name") => params["prior"],
-          HammerCLI.option_accessor_name("organization_id") => params["organization_id"]
-        )
-        params
-      end
 
       build_options
     end
