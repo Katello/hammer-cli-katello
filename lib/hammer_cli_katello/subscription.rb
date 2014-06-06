@@ -5,7 +5,17 @@ require 'hammer_cli_foreman/commands'
 module HammerCLIKatello
 
   class SubscriptionCommand < HammerCLI::AbstractCommand
+    module SystemIdDescriptionOverridable
+      def self.included(base)
+        base.option "--system-id",
+                    "ID",
+                    _("ID of the content host")
+      end
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
+      include SystemIdDescriptionOverridable
+
       resource :subscriptions, :index
 
       output do
@@ -56,6 +66,7 @@ module HammerCLIKatello
     end
 
     class DeleteManfiestCommand < HammerCLIKatello::DeleteCommand
+      include SystemIdDescriptionOverridable
       include HammerCLIForemanTasks::Async
 
       resource :subscriptions, :delete_manifest
