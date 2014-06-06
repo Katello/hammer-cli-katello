@@ -1,6 +1,12 @@
 module HammerCLIKatello
 
   class ContentHostCommand < HammerCLI::AbstractCommand
+    module IdDescriptionOverridable
+      def self.included(base)
+        base.option "--id", "ID",
+                    _("ID of the content host")
+      end
+    end
 
     class ListCommand < HammerCLIKatello::ListCommand
       resource :systems, :index
@@ -14,6 +20,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include IdDescriptionOverridable
       resource :systems, :show
 
       output do
@@ -54,6 +61,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include IdDescriptionOverridable
       resource :systems, :update
 
       success_message _("Content host updated")
@@ -63,6 +71,7 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include IdDescriptionOverridable
       resource :systems, :destroy
 
       success_message _("Content host deleted")
@@ -72,6 +81,7 @@ module HammerCLIKatello
     end
 
     class TasksCommand < HammerCLIKatello::ListCommand
+      include IdDescriptionOverridable
       resource :systems, :tasks
 
       command_name "tasks"
