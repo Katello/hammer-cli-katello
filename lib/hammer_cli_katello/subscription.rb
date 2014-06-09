@@ -65,7 +65,7 @@ module HammerCLIKatello
              :required => true, :format => BinaryFile.new
     end
 
-    class DeleteManfiestCommand < HammerCLIKatello::DeleteCommand
+    class DeleteManfiestCommand < HammerCLIKatello::Command
       include SystemIdDescriptionOverridable
       include HammerCLIForemanTasks::Async
 
@@ -78,7 +78,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class RefreshManfiestCommand < HammerCLIKatello::SingleResourceCommand
+    class RefreshManfiestCommand < HammerCLIKatello::Command
       include HammerCLIForemanTasks::Async
 
       resource :subscriptions, :refresh_manifest
