@@ -9,6 +9,7 @@ module HammerCLIKatello
     end
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include LifecycleEnvironmentNameResolvable
       resource :systems, :index
 
       output do
@@ -20,6 +21,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include LifecycleEnvironmentNameResolvable
       include IdDescriptionOverridable
       resource :systems, :show
 
@@ -43,6 +45,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include LifecycleEnvironmentNameResolvable
       resource :systems, :create
 
       output InfoCommand.output_definition
@@ -62,6 +65,7 @@ module HammerCLIKatello
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       include IdDescriptionOverridable
+      include LifecycleEnvironmentNameResolvable
       resource :systems, :update
 
       success_message _("Content host updated")
@@ -72,6 +76,7 @@ module HammerCLIKatello
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       include IdDescriptionOverridable
+      include LifecycleEnvironmentNameResolvable
       resource :systems, :destroy
 
       success_message _("Content host deleted")

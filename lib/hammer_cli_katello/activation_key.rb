@@ -4,6 +4,7 @@ module HammerCLIKatello
     resource :activation_keys
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include LifecycleEnvironmentNameResolvable
       action :index
 
       output do
@@ -31,6 +32,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include LifecycleEnvironmentNameResolvable
       action :show
 
       output do
@@ -54,6 +56,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include LifecycleEnvironmentNameResolvable
       action :create
       success_message _("Activation key created")
       failure_message _("Could not create the activation key")
@@ -62,6 +65,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include LifecycleEnvironmentNameResolvable
       action :update
       success_message _("Activation key updated")
       failure_message _("Could not update the activation key")
