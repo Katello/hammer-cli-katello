@@ -5,16 +5,8 @@ require 'hammer_cli_foreman/commands'
 module HammerCLIKatello
 
   class SubscriptionCommand < HammerCLI::AbstractCommand
-    module SystemIdDescriptionOverridable
-      def self.included(base)
-        base.option "--system-id",
-                    "ID",
-                    _("ID of the content host")
-      end
-    end
 
     class ListCommand < HammerCLIKatello::ListCommand
-      include SystemIdDescriptionOverridable
 
       resource :subscriptions, :index
 
@@ -66,7 +58,6 @@ module HammerCLIKatello
     end
 
     class DeleteManfiestCommand < HammerCLIKatello::Command
-      include SystemIdDescriptionOverridable
       include HammerCLIForemanTasks::Async
 
       resource :subscriptions, :delete_manifest
@@ -75,7 +66,9 @@ module HammerCLIKatello
       success_message _("Manifest is being deleted in task %{id}")
       failure_message _("Manifest deletion failed")
 
-      build_options
+      build_options do |o|
+        o.expand.including(:systems)
+      end
     end
 
     class RefreshManfiestCommand < HammerCLIKatello::Command

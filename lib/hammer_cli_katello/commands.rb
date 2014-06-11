@@ -1,5 +1,9 @@
 module HammerCLIKatello
 
+  RESOURCE_NAME_MAPPING = {
+    :system => :content_host
+  }
+
   module ResolverCommons
 
     def self.included(base)
@@ -16,6 +20,10 @@ module HammerCLIKatello
       def searchables
         @searchables ||= HammerCLIKatello::Searchables.new
         @searchables
+      end
+
+      def resource_name_mapping
+        HammerCLIKatello::RESOURCE_NAME_MAPPING
       end
 
     end
