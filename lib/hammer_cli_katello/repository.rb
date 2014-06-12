@@ -7,6 +7,9 @@ module HammerCLIKatello
       output do
         field :id, _("Id")
         field :name, _("Name")
+        from :product do
+          field :name, _("Product")
+        end
         field :content_type, _("Content Type")
       end
 
