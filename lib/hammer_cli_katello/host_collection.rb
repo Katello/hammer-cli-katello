@@ -5,16 +5,16 @@ module HammerCLIKatello
 
     module UuidRequestable
       def self.included(base)
-        base.option "--system-ids",
-                    "SYSTEM_IDS",
+        base.option "--host-collection-ids",
+                    "HOST_COLLECTION_IDS",
                     _("Array of system ids to replace the content hosts in host collection"),
                     :format => HammerCLI::Options::Normalizers::List.new
       end
 
       def request_params
         params = super
-        params['system_uuids'] = option_system_ids unless option_system_ids.nil?
-        params.delete('system_ids') if params.keys.include? 'system_ids'
+        params['system_uuids'] = option_host_collection_ids unless option_host_collection_ids.nil?
+        params.delete('host_collection_ids') if params.keys.include? 'host_collection_ids'
         params
       end
     end
