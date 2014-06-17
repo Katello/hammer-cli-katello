@@ -73,6 +73,15 @@ module HammerCLIKatello
       build_options
     end
 
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include LifecycleEnvironmentNameResolvable
+      action :destroy
+      success_message _("Activation key deleted")
+      failure_message _("Could not delete the activation key")
+
+      build_options
+    end
+
     class SubscriptionsCommand < HammerCLIKatello::ListCommand
       resource :subscriptions, :index
       desc _("List associated subscriptions")
