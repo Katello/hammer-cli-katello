@@ -34,7 +34,7 @@ module HammerCLIKatello
       end
 
       class RemoveHostCollectionCommand < HammerCLIKatello::RemoveAssociatedCommand
-        command_name 'remove-repository'
+        command_name 'remove-host-collection'
         associated_resource :host_collections
 
         success_message _("The host collection has been removed")
