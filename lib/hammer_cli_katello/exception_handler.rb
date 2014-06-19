@@ -4,7 +4,8 @@ module HammerCLIKatello
 
     def mappings
       super + [
-        [RestClient::InternalServerError, :handle_internal_error]
+        [RestClient::InternalServerError, :handle_internal_error],
+        [RestClient::BadRequest, :handle_bad_request]
       ]
     end
 
@@ -21,6 +22,11 @@ module HammerCLIKatello
     end
 
     def handle_not_found(e)
+      handle_katello_error(e)
+      HammerCLI::EX_NOT_FOUND
+    end
+
+    def handle_bad_request(e)
       handle_katello_error(e)
       HammerCLI::EX_NOT_FOUND
     end
