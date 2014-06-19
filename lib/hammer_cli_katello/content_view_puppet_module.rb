@@ -44,8 +44,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class CreateCommand < HammerCLIKatello::Command
-      action :create
+    class CreateCommand < HammerCLIKatello::CreateCommand
       command_name "add"
 
       success_message _("Puppet module added to content view")
@@ -65,16 +64,11 @@ module HammerCLIKatello
       build_options
     end
 
-    class DeleteCommand < HammerCLIKatello::Command
-      action :destroy
+    class DeleteCommand < HammerCLIKatello::DeleteCommand
       command_name "remove"
 
       success_message _("Puppet module removed from content view")
-      failure_message _("Could not delete the filter")
-
-      def request_params
-        super.merge(method_options)
-      end
+      failure_message _("Couldn't remove puppet module from the content view")
 
       build_options
     end

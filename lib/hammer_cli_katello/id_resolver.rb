@@ -20,7 +20,12 @@ module HammerCLIKatello
       :subscription =>          [s_name(_("Subscription name to search by"))],
       :sync_plan =>             [s_name(_("Sync plan name to search by"))],
       :task =>                  [s_name(_("Task name to search by"))],
-      :user =>                  [s_name(_("User name to search by"))]
+      :user =>                  [s_name(_("User name to search by"))],
+      :content_view_puppet_module => [
+        s_name(_("Puppet module name to search by")),
+        s("author", _("Puppet module's author to search by")),
+        s("uuid", _("Puppet module's UUID to search by"))
+      ]
     }
 
     DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))]
@@ -61,13 +66,14 @@ module HammerCLIKatello
     end
 
     def create_search_options(options, resource)
+      search_options = {}
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
         if value
-          return {"#{s.name}" => "#{value}"}
+          search_options.update("#{s.name}" => "#{value}")
         end
       end
-      {}
+      search_options
     end
 
   end
