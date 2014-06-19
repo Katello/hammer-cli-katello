@@ -7,8 +7,8 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :name, _("Name")
-        field :version, _("Version")
         field :author, _("Author")
+        field :version, _("Version")
       end
 
       build_options
@@ -26,13 +26,20 @@ module HammerCLIKatello
         field :license, _("License")
         field :project_page, _("Project Page")
         field :source, _("Source")
-        field :dependencies, _("Dependencies"), Fields::List
-        field :checksums, _("Checksums"), Fields::List
-        field :tag_list, _("Tag List"), Fields::List
-      end
 
-      def request_params
-        super.merge(method_options)
+        collection :dependencies, _("Dependencies"), :numbered => false do
+          field nil, nil, HammerCLIKatello::Output::Fields::Dependency
+        end
+        collection :checksums, _("File checksums"), :numbered => false do
+          field nil, nil, HammerCLIKatello::Output::Fields::ChecksumFilePair
+        end
+
+        field :tag_list, _("Tag List"), Fields::List
+
+        collection :repositories, _("Repositories") do
+          field :id, _("Id")
+          field :name, _("Name")
+        end
       end
 
       build_options

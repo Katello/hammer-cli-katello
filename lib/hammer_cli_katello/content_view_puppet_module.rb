@@ -12,6 +12,16 @@ module HammerCLIKatello
         field :uuid, _("UUID")
         field :name, _("Name")
         field :author, _("Author")
+        field :version, _("Version")
+      end
+
+      def extend_data(mod)
+        if mod['uuid']
+          mod['version'] = mod['computed_version']
+        else
+          mod['version'] = _("Latest(Currently %s)") % mod['computed_version']
+        end
+        mod
       end
 
       build_options
