@@ -12,6 +12,7 @@ module HammerCLIKatello
   end
 
   require 'hammer_cli_katello/lifecycle_environment_name_resolvable'
+  require 'hammer_cli_katello/repository_scoped_to_product'
   require "hammer_cli_katello/commands"
   require "hammer_cli_katello/associating_commands"
   require "hammer_cli_katello/version"

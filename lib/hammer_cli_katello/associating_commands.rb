@@ -5,6 +5,7 @@ module HammerCLIKatello
       extend HammerCLIForeman::AssociatingCommands::CommandExtension
 
       class AddRepositoryCommand < HammerCLIKatello::AddAssociatedCommand
+        include RepositoryScopedToProduct
         command_name 'add-repository'
         associated_resource :repositories
 
@@ -13,6 +14,7 @@ module HammerCLIKatello
       end
 
       class RemoveRepositoryCommand < HammerCLIKatello::RemoveAssociatedCommand
+        include RepositoryScopedToProduct
         command_name 'remove-repository'
         associated_resource :repositories
 

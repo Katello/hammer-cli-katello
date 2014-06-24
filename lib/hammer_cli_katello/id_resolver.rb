@@ -37,9 +37,30 @@ module HammerCLIKatello
       options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
     end
 
-    def create_search_options(options, resource)
-      return super if resource.name == :organizations
+    def repository_id(options)
+      key_id = HammerCLI.option_accessor_name("id")
+      key_product_id = HammerCLI.option_accessor_name("product_id")
 
+      return options[key_id] if options[key_id]
+
+      options[key_product_id] ||= product_id(scoped_options("product", options))
+      find_resource(:repositories, options)['id']
+    end
+
+    def create_repositories_search_options(options)
+      search_options = {}
+      search_options['name'] = options[HammerCLI.option_accessor_name("name")]
+      search_options['product_id'] = options[HammerCLI.option_accessor_name("product_id")]
+      search_options
+    end
+
+    def create_organizations_search_options(options)
+      # wow, such hack, very meta, amaze
+      self.class.superclass.instance_method(:create_search_options).bind(self)
+        .call(options, api.resource(:organizations))
+    end
+
+    def create_search_options(options, resource)
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
         if value

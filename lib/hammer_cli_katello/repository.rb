@@ -17,6 +17,8 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include RepositoryScopedToProduct
+
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -101,11 +103,14 @@ module HammerCLIKatello
         super.merge(method_options)
       end
 
-      build_options
+      build_options do |o|
+        o.expand.including(:products)
+      end
     end
 
     class SyncCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
+      include RepositoryScopedToProduct
 
       action :sync
       command_name "synchronize"
@@ -113,7 +118,9 @@ module HammerCLIKatello
       success_message _("Repository is being synchronized in task %{id}")
       failure_message _("Could not synchronize the repository")
 
-      build_options
+      build_options do |o|
+        o.expand.including(:products)
+      end
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -128,23 +135,33 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include RepositoryScopedToProduct
+
       success_message _("Repository updated")
       failure_message _("Could not update the repository")
 
-      build_options :without => [:unprotected]
+      build_options(:without => [:unprotected]) do |o|
+        o.expand.including(:products)
+      end
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include RepositoryScopedToProduct
+
       success_message _("Repository deleted")
       failure_message _("Could not delete the Repository")
 
-      build_options
+      build_options do |o|
+        o.expand.including(:products)
+      end
     end
 
     class UploadContentCommand < HammerCLIKatello::InfoCommand
+      include RepositoryScopedToProduct
+
       resource :repositories, :upload_content
       command_name "upload-content"
       CONTENT_CHUNK_SIZE = 10_485_760 # bytes
@@ -179,7 +196,9 @@ module HammerCLIKatello
       success_message _("Repository content uploaded")
       failure_message _("Could not upload the content")
 
-      build_options :without => [:content]
+      build_options(:without => [:content]) do |o|
+        o.expand.including(:products)
+      end
       option "--path", "PATH", _("Upload file or directory of files as content for a repository"),
              :attribute_name => :option_content,
              :required => true, :format => BinaryPath.new
