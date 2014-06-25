@@ -7,6 +7,7 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :name, _("Name")
+        field :description, _("Description")
 
         from :organization do
           field :name, _("Organization")
