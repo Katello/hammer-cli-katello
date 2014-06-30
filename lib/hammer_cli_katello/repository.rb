@@ -11,6 +11,7 @@ module HammerCLIKatello
           field :name, _("Product")
         end
         field :content_type, _("Content Type")
+        field :url, _("URL")
       end
 
       build_options
