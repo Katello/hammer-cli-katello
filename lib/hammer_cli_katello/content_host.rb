@@ -60,6 +60,12 @@ module HammerCLIKatello
         end
       end
 
+      validate_options do
+        if any(:option_environment_id, :option_environment_name).exist?
+          any(:option_content_view_name, :option_content_view_id).required
+        end
+      end
+
       build_options :without => [:facts, :type, :installed_products]
     end
 
