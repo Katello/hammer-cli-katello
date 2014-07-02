@@ -35,6 +35,15 @@ module HammerCLIKatello
       include LifecycleEnvironmentNameResolvable
       action :show
 
+      def request_params
+        params = super
+        if options.keys.any? { |o| o.match(/\Aoption_organization.*/) }
+          params['organization_id'] = resolver.organization_id(
+                            resolver.scoped_options('organization', all_options))
+        end
+        params
+      end
+
       output do
         field :name, _("Name")
         field :id, _("ID")
