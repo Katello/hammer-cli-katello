@@ -56,7 +56,7 @@ module HammerCLIKatello
 
     def create_organizations_search_options(options)
       # wow, such hack, very meta, amaze
-      self.class.superclass.instance_method(:create_search_options).bind(self)
+      self.class.superclass.instance_method(:create_search_options).bind(self)\
         .call(options, api.resource(:organizations))
     end
 
