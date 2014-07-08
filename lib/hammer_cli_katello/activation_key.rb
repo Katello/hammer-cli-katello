@@ -23,7 +23,7 @@ module HammerCLIKatello
         data["format_consumed"] = _("%{consumed} of %{limit}") %
           {
             :consumed => data["usage_count"],
-            :limit => data["usage_limit"] == -1 ? _("Unlimited") : data["usage_limit"]
+            :limit => data["unlimited"] ? _("Unlimited") : data["usage_limit"]
           }
         data
       end
