@@ -46,15 +46,16 @@ module HammerCLIKatello
       build_options
     end
 
-    # TODO: ORG_DESTROY - reenable this command after org destroy has been implemented
-    # class DeleteCommand < HammerCLIKatello::DeleteCommand
-      # resource :organizations, :destroy
+    class DeleteCommand < HammerCLIForeman::Organization::DeleteCommand
+      include HammerCLIKatello::ResolverCommons
+      include HammerCLIForemanTasks::Async
+      resource :organizations, :destroy
 
-      # success_message _("Organization deleted")
-      # failure_message _("Could not delete the organization")
+      success_message _("Organization deleted")
+      failure_message _("Could not delete the organization")
 
-      # build_options
-    # end
+      build_options
+    end
 
     autoload_subcommands
   end
