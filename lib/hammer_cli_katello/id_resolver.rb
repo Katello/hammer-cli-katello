@@ -25,7 +25,9 @@ module HammerCLIKatello
         s_name(_("Puppet module name to search by")),
         s("author", _("Puppet module's author to search by")),
         s("uuid", _("Puppet module's UUID to search by"))
-      ]
+      ],
+      :content_view =>         [s_name(_("Content view name"))],
+      :content_view_version => [s("version", _("Content view version number"))]
     }
 
     DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))]
@@ -42,6 +44,10 @@ module HammerCLIKatello
       options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
     end
 
+    def environment_id(options)
+      lifecycle_environment_id(options)
+    end
+
     def repository_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_product_id = HammerCLI.option_accessor_name("product_id")
@@ -52,10 +58,37 @@ module HammerCLIKatello
       find_resource(:repositories, options)['id']
     end
 
+    def content_view_version_id(options)
+      key_id = HammerCLI.option_accessor_name("id")
+      key_environment_id = HammerCLI.option_accessor_name("environment_id")
+
+      return options[key_id] if options[key_id]
+
+      begin
+        options[key_environment_id] ||= lifecycle_environment_id(
+          scoped_options("environment", options)
+        )
+      rescue HammerCLIForeman::MissingSeachOptions # rubocop:disable HandleExceptions
+        # Intentionally suppressing the exception,
+        # environment is not always required.
+      end
+      find_resource(:content_view_versions, options)['id']
+    end
+
     def create_repositories_search_options(options)
       search_options = {}
       search_options['name'] = options[HammerCLI.option_accessor_name("name")]
       search_options['product_id'] = options[HammerCLI.option_accessor_name("product_id")]
+      search_options
+    end
+
+    def create_content_view_versions_search_options(options)
+      environment_id = options[HammerCLI.option_accessor_name("environment_id")]
+      version = options[HammerCLI.option_accessor_name("version")]
+
+      search_options = {}
+      search_options['environment_id'] = environment_id if environment_id
+      search_options['version'] = version if version
       search_options
     end
 
