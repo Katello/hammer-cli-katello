@@ -10,7 +10,7 @@ end
 
 begin
   require 'rubocop/rake_task'
-  Rubocop::RakeTask.new
+  RuboCop::RakeTask.new
 
   desc "Runs Rubocop style checker with xml output for Jenkins"
   task 'rubocop:jenkins' do
@@ -27,7 +27,6 @@ task :default do
   Rake::Task['rubocop'].execute
 end
 
-
 namespace :gettext do
 
   desc "Update pot file"
@@ -37,7 +36,11 @@ namespace :gettext do
     require 'gettext/tools'
 
     domain = HammerCLIKatello::I18n::LocaleDomain.new
-    GetText.update_pofiles(domain.domain_name, domain.translated_files, "#{domain.domain_name} #{HammerCLIKatello.version.to_s}", :po_root => domain.locale_dir)
+    GetText.update_pofiles(domain.domain_name,
+                           domain.translated_files,
+                           "#{domain.domain_name} #{HammerCLIKatello.version}",
+                           :po_root => domain.locale_dir
+                          )
   end
 
 end

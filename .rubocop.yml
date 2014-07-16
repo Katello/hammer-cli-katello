@@ -19,8 +19,11 @@ Encoding:
 LineLength:
   Max: 100
 
-FavorSprintf:
+FormatString:
   Enabled: false # we use % for i18n
 
 IfUnlessModifier:
   Enabled: false
+
+Next:
+  Enabled: false # don't force next over conditions

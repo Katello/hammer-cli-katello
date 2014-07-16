@@ -60,7 +60,7 @@ module HammerCLIKatello
 
     def send_request
       super.tap do |data|
-        data['services'].each do |name, service|
+        data['services'].each do |_, service|
           service['_response'] = get_server_response(service)
         end
       end
