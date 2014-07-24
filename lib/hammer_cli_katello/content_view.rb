@@ -27,6 +27,7 @@ module HammerCLIKatello
         field :label, _("Label")
         field :composite, _("Composite")
         field :description, _("Description")
+        field :content_host_count, _("Content Host Count")
 
         from :organization do
           field :name, _("Organization")
@@ -61,6 +62,10 @@ module HammerCLIKatello
         collection :components, _("Components") do
           field :id, _("ID")
           field :name, _("Name")
+        end
+
+        collection :activation_keys, _("Activation Keys") do
+          custom_field Fields::Reference
         end
       end
 
