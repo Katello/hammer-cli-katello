@@ -24,20 +24,82 @@ module HammerCLIKatello
   require 'hammer_cli_katello/id_resolver'
 
   # commands
-  require "hammer_cli_katello/activation_key"
-  require "hammer_cli_katello/gpg_key"
-  require "hammer_cli_katello/lifecycle_environment"
-  require "hammer_cli_katello/organization"
-  require "hammer_cli_katello/ping"
-  require "hammer_cli_katello/product"
-  require "hammer_cli_katello/puppet_module"
-  require "hammer_cli_katello/repository"
-  require "hammer_cli_katello/repository_set"
-  require "hammer_cli_katello/subscription"
-  require "hammer_cli_katello/sync_plan"
-  require "hammer_cli_katello/host_collection"
-  require "hammer_cli_katello/content_host"
-  require "hammer_cli_katello/content_view"
-  require "hammer_cli_katello/capsule"
+  HammerCLI::MainCommand.lazy_subcommand("activation-key", _("Manipulate activation keys."),
+                                         'HammerCLIKatello::ActivationKeyCommand',
+                                         'hammer_cli_katello/activation_key'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand!("organization", _("Manipulate organizations"),
+                                          'HammerCLIKatello::Organization',
+                                          'hammer_cli_katello/organization'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("gpg", _("manipulate GPG Key actions on the server"),
+                                         'HammerCLIKatello::GpgKeyCommand',
+                                         'hammer_cli_katello/gpg_key'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("lifecycle-environment",
+                                         _("manipulate lifecycle_environments on the server"),
+                                         'HammerCLIKatello::LifecycleEnvironmentCommand',
+                                         'hammer_cli_katello/lifecycle_environment'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("ping", _("get the status of the server"),
+                                         'HammerCLIKatello::PingCommand',
+                                         'hammer_cli_katello/ping'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("product", _("Manipulate products."),
+                                         'HammerCLIKatello::Product',
+                                         'hammer_cli_katello/product'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("puppet-module", _("View Puppet Module details."),
+                                         'HammerCLIKatello::PuppetModule',
+                                         'hammer_cli_katello/puppet_module'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("repository", _("Manipulate repositories"),
+                                         'HammerCLIKatello::Repository',
+                                         'hammer_cli_katello/repository'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("repository-set",
+                                         _("manipulate repository sets on the server"),
+                                         'HammerCLIKatello::RepositorySetCommand',
+                                         'hammer_cli_katello/repository_set'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("subscription", _("Manipulate subscriptions."),
+                                         'HammerCLIKatello::SubscriptionCommand',
+                                         'hammer_cli_katello/subscription'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand('sync-plan', _("Manipulate sync plans"),
+                                         'HammerCLIKatello::SyncPlan',
+                                         'hammer_cli_katello/sync_plan'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand('host-collection', _("Manipulate host collections"),
+                                         'HammerCLIKatello::HostCollection',
+                                         'hammer_cli_katello/host_collection'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("content-host",
+                                         _("manipulate content hosts on the server"),
+                                         'HammerCLIKatello::ContentHostCommand',
+                                         'hammer_cli_katello/content_host'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("content-view", _("Manipulate content views."),
+                                         'HammerCLIKatello::ContentView',
+                                         'hammer_cli_katello/content_view'
+  )
+
+  HammerCLI::MainCommand.lazy_subcommand("capsule", _("Manipulate capsule"),
+                                         'HammerCLIKatello::Capsule',
+                                         'hammer_cli_katello/capsule'
+  )
 
 end

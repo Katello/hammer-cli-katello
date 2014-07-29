@@ -193,6 +193,3 @@ module HammerCLIKatello
   end
 
 end
-
-HammerCLI::MainCommand.subcommand("activation-key", _("Manipulate activation keys."),
-                                  HammerCLIKatello::ActivationKeyCommand)

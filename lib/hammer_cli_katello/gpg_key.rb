@@ -69,7 +69,4 @@ module HammerCLIKatello
     autoload_subcommands
   end
 
-  HammerCLI::MainCommand.subcommand("gpg",
-                                    _("manipulate GPG Key actions on the server"),
-                                    HammerCLIKatello::GpgKeyCommand)
 end

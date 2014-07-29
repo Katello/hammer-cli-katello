@@ -78,7 +78,4 @@ module HammerCLIKatello
 
   end # class PingCommand
 
-  HammerCLI::MainCommand.subcommand("ping", _("get the status of the server"),
-                                    HammerCLIKatello::PingCommand)
-
 end # module HammerCLIKatello

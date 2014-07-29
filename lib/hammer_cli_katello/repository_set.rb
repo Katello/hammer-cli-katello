@@ -83,6 +83,4 @@ module HammerCLIKatello
     autoload_subcommands
   end
 
-  HammerCLI::MainCommand.subcommand("repository-set", _("manipulate repository sets on the server"),
-                                    HammerCLIKatello::RepositorySetCommand)
 end

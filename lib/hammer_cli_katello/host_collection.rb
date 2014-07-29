@@ -120,6 +120,3 @@ module HammerCLIKatello
     autoload_subcommands
   end
 end
-
-HammerCLI::MainCommand.subcommand 'host-collection', _("Manipulate host collections"),
-                                  HammerCLIKatello::HostCollection

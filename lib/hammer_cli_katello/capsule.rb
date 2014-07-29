@@ -104,5 +104,4 @@ module HammerCLIKatello
     autoload_subcommands
   end
 
-  HammerCLI::MainCommand.subcommand "capsule", _("Manipulate capsule"), Capsule
 end
