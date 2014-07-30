@@ -42,7 +42,7 @@ module HammerCLIKatello
       success_message _("GPG Key created")
       failure_message _("Could not create GPG Key")
 
-      build_options  :without => [:content]
+      build_options :without => [:content]
       option "--key", "GPG_KEY_FILE", _("GPG Key file"),
              :attribute_name => :option_content,
              :required => true,

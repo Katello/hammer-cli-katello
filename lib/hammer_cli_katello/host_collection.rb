@@ -99,7 +99,7 @@ module HammerCLIKatello
 
     class AddContentHostCommand < HammerCLIKatello::SingleResourceCommand
       command_name 'add-content-host'
-      action  :add_systems
+      action :add_systems
 
       success_message _("The content host(s) has been added")
       failure_message _("Could not add content host(s)")
@@ -109,7 +109,7 @@ module HammerCLIKatello
 
     class RemoveContentHostCommand < HammerCLIKatello::SingleResourceCommand
       command_name 'remove-content-host'
-      action  :remove_systems
+      action :remove_systems
 
       success_message _("The content host(s) has been removed")
       failure_message _("Could not remove content host(s)")

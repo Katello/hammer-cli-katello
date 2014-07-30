@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-$:.unshift(File.expand_path('../lib', __FILE__))
+$LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
 
 require 'hammer_cli_katello/version'
 
@@ -7,12 +7,13 @@ Gem::Specification.new do |spec|
   spec.authors = ['Katello']
   spec.email = ['katello@lists.fedorahosted.org']
   spec.license = "GPL-3"
-  spec.description = 'Hammer-CLI-Katello is a plugin for Hammer to provide connectivity to a Katello server.'
+  spec.description = 'Hammer-CLI-Katello is a plugin for Hammer to provide' \
+    ' connectivity to a Katello server.'
   spec.summary = 'Katello commands for Hammer'
   spec.homepage = 'http://github.com/theforeman/hammer-cli-katello'
 
   spec.files = Dir['lib/**/*.rb', 'locale/**/**']
-  spec.test_files = `git ls-files -- {test,spec,features}/*`.split($\)
+  spec.test_files = `git ls-files -- {test,spec,features}/*`.split($ORS)
 
   spec.name = 'hammer_cli_katello'
   spec.require_paths = ['lib']
@@ -29,6 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mocha'
   spec.add_development_dependency 'ci_reporter'
 
-  spec.add_development_dependency "rubocop", "0.17.0"
+  spec.add_development_dependency "rubocop", "0.24.1"
   spec.add_development_dependency "rubocop-checkstyle_formatter"
 end
