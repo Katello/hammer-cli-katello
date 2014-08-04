@@ -1,0 +1,1215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-katello 0.0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-09 16:17-0400\n"
+"PO-Revision-Date: 2014-03-10 15:12+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: lib/hammer_cli_katello/id_resolver.rb:7
+#: lib/hammer_cli_katello/id_resolver.rb:12
+msgid "Name to search by"
+msgstr ""
+
+#: lib/hammer_cli_katello/id_resolver.rb:8
+msgid "Label to search by"
+msgstr ""
+
+#: lib/hammer_cli_katello/ping.rb:12 lib/hammer_cli_katello/ping.rb:19
+#: lib/hammer_cli_katello/ping.rb:26 lib/hammer_cli_katello/ping.rb:33
+#: lib/hammer_cli_katello/ping.rb:40 lib/hammer_cli_katello/ping.rb:47
+#: lib/hammer_cli_katello/repository.rb:47
+#: lib/hammer_cli_katello/subscription.rb:85
+msgid "Status"
+msgstr ""
+
+#: lib/hammer_cli_katello/ping.rb:13 lib/hammer_cli_katello/ping.rb:20
+#: lib/hammer_cli_katello/ping.rb:27 lib/hammer_cli_katello/ping.rb:34
+#: lib/hammer_cli_katello/ping.rb:41 lib/hammer_cli_katello/ping.rb:48
+msgid "Server Response"
+msgstr ""
+
+#: lib/hammer_cli_katello/ping.rb:58
+msgid "FAIL"
+msgstr ""
+
+#: lib/hammer_cli_katello/ping.rb:73
+msgid "Duration: %sms"
+msgstr ""
+
+#: lib/hammer_cli_katello/ping.rb:75
+msgid "Message: %s"
+msgstr ""
+
+#: lib/hammer_cli_katello/ping.rb:81
+msgid "get the status of the server"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:10
+#: lib/hammer_cli_katello/organization.rb:22
+#: lib/hammer_cli_katello/repository.rb:22
+#: lib/hammer_cli_katello/content_view.rb:14
+#: lib/hammer_cli_katello/content_view.rb:26
+#: lib/hammer_cli_katello/content_view.rb:37
+#: lib/hammer_cli_katello/filter.rb:32
+#: lib/hammer_cli_katello/lifecycle_environment.rb:39
+#: lib/hammer_cli_katello/content_view_version.rb:39
+#: lib/hammer_cli_katello/content_view_version.rb:45
+#: lib/hammer_cli_katello/product.rb:38
+msgid "Label"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:11
+#: lib/hammer_cli_katello/organization.rb:23
+#: lib/hammer_cli_katello/sync_plan.rb:20
+#: lib/hammer_cli_katello/activation_key.rb:39
+#: lib/hammer_cli_katello/puppet_module.rb:25
+#: lib/hammer_cli_katello/content_view.rb:28
+#: lib/hammer_cli_katello/lifecycle_environment.rb:40
+#: lib/hammer_cli_katello/host_collection.rb:11
+#: lib/hammer_cli_katello/content_host.rb:23
+#: lib/hammer_cli_katello/product.rb:39
+msgid "Description"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:24
+msgid "Red Hat Repository URL"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:34
+msgid "Organization updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:35
+msgid "Could not update the organization"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:43
+msgid "Organization created"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:44
+msgid "Could not create the organization"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:52
+msgid "Organization deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:53
+msgid "Could not delete the organization"
+msgstr ""
+
+#: lib/hammer_cli_katello/organization.rb:63
+msgid "Manipulate organizations"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:9
+msgid "Id"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:10
+#: lib/hammer_cli_katello/repository.rb:21
+#: lib/hammer_cli_katello/repository.rb:35
+#: lib/hammer_cli_katello/repository.rb:42
+#: lib/hammer_cli_katello/sync_plan.rb:9
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:13
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:24
+#: lib/hammer_cli_katello/filter_rule.rb:14
+#: lib/hammer_cli_katello/filter_rule.rb:31
+#: lib/hammer_cli_katello/subscription.rb:12
+#: lib/hammer_cli_katello/activation_key.rb:11
+#: lib/hammer_cli_katello/activation_key.rb:37
+#: lib/hammer_cli_katello/activation_key.rb:49
+#: lib/hammer_cli_katello/activation_key.rb:79
+#: lib/hammer_cli_katello/activation_key.rb:152
+#: lib/hammer_cli_katello/puppet_module.rb:9
+#: lib/hammer_cli_katello/puppet_module.rb:20
+#: lib/hammer_cli_katello/content_view.rb:13
+#: lib/hammer_cli_katello/content_view.rb:25
+#: lib/hammer_cli_katello/content_view.rb:36
+#: lib/hammer_cli_katello/content_view.rb:43
+#: lib/hammer_cli_katello/content_view.rb:51
+#: lib/hammer_cli_katello/content_view.rb:62
+#: lib/hammer_cli_katello/filter.rb:14 lib/hammer_cli_katello/filter.rb:25
+#: lib/hammer_cli_katello/filter.rb:31 lib/hammer_cli_katello/filter.rb:37
+#: lib/hammer_cli_katello/lifecycle_environment.rb:9
+#: lib/hammer_cli_katello/lifecycle_environment.rb:38
+#: lib/hammer_cli_katello/repository_set.rb:11
+#: lib/hammer_cli_katello/repository_set.rb:22
+#: lib/hammer_cli_katello/repository_set.rb:26
+#: lib/hammer_cli_katello/repository_set.rb:39
+#: lib/hammer_cli_katello/host_collection.rb:9
+#: lib/hammer_cli_katello/content_host.rb:10
+#: lib/hammer_cli_katello/content_host.rb:20
+#: lib/hammer_cli_katello/gpg_key.rb:11 lib/hammer_cli_katello/gpg_key.rb:21
+#: lib/hammer_cli_katello/gpg_key.rb:28
+#: lib/hammer_cli_katello/content_view_version.rb:11
+#: lib/hammer_cli_katello/content_view_version.rb:27
+#: lib/hammer_cli_katello/content_view_version.rb:38
+#: lib/hammer_cli_katello/content_view_version.rb:44
+#: lib/hammer_cli_katello/content_view_version.rb:50
+#: lib/hammer_cli_katello/product.rb:9 lib/hammer_cli_katello/product.rb:37
+msgid "Name"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:11
+#: lib/hammer_cli_katello/repository.rb:27
+#: lib/hammer_cli_katello/gpg_key.rb:29
+msgid "Content Type"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:20
+#: lib/hammer_cli_katello/repository.rb:34
+#: lib/hammer_cli_katello/repository.rb:41
+#: lib/hammer_cli_katello/sync_plan.rb:8
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:11
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:22
+#: lib/hammer_cli_katello/subscription.rb:19
+#: lib/hammer_cli_katello/activation_key.rb:10
+#: lib/hammer_cli_katello/activation_key.rb:38
+#: lib/hammer_cli_katello/activation_key.rb:48
+#: lib/hammer_cli_katello/activation_key.rb:78
+#: lib/hammer_cli_katello/activation_key.rb:151
+#: lib/hammer_cli_katello/puppet_module.rb:8
+#: lib/hammer_cli_katello/puppet_module.rb:19
+#: lib/hammer_cli_katello/content_view.rb:24
+#: lib/hammer_cli_katello/content_view.rb:35
+#: lib/hammer_cli_katello/content_view.rb:41
+#: lib/hammer_cli_katello/content_view.rb:50
+#: lib/hammer_cli_katello/content_view.rb:55
+#: lib/hammer_cli_katello/content_view.rb:61
+#: lib/hammer_cli_katello/filter.rb:30 lib/hammer_cli_katello/filter.rb:36
+#: lib/hammer_cli_katello/lifecycle_environment.rb:8
+#: lib/hammer_cli_katello/lifecycle_environment.rb:37
+#: lib/hammer_cli_katello/repository_set.rb:9
+#: lib/hammer_cli_katello/repository_set.rb:21
+#: lib/hammer_cli_katello/repository_set.rb:25
+#: lib/hammer_cli_katello/host_collection.rb:8
+#: lib/hammer_cli_katello/content_host.rb:9
+#: lib/hammer_cli_katello/content_host.rb:21
+#: lib/hammer_cli_katello/gpg_key.rb:10 lib/hammer_cli_katello/gpg_key.rb:20
+#: lib/hammer_cli_katello/gpg_key.rb:27
+#: lib/hammer_cli_katello/content_view_version.rb:10
+#: lib/hammer_cli_katello/content_view_version.rb:26
+#: lib/hammer_cli_katello/content_view_version.rb:37
+#: lib/hammer_cli_katello/content_view_version.rb:43
+#: lib/hammer_cli_katello/content_view_version.rb:49
+#: lib/hammer_cli_katello/product.rb:8 lib/hammer_cli_katello/product.rb:36
+msgid "ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:24
+#: lib/hammer_cli_katello/content_view.rb:31
+#: lib/hammer_cli_katello/lifecycle_environment.rb:42
+#: lib/hammer_cli_katello/gpg_key.rb:23 lib/hammer_cli_katello/product.rb:12
+#: lib/hammer_cli_katello/product.rb:55
+msgid "Organization"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:26
+msgid "Red Hat Repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:28
+#: lib/hammer_cli_katello/product.rb:67
+msgid "URL"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:29
+#: lib/hammer_cli_katello/repository.rb:123
+#: lib/hammer_cli_katello/repository.rb:146
+msgid "Publish Via HTTP"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:30
+msgid "Published At"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:32
+#: lib/hammer_cli_katello/subscription.rb:20
+#: lib/hammer_cli_katello/gpg_key.rb:31
+msgid "Product"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:39
+#: lib/hammer_cli_katello/product.rb:50
+msgid "GPG Key"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:46
+msgid "Sync"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:48
+msgid "Last Sync Date"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:51
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:26
+#: lib/hammer_cli_katello/filter_rule.rb:39
+#: lib/hammer_cli_katello/content_view.rb:45
+#: lib/hammer_cli_katello/filter.rb:45
+msgid "Created"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:52
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:27
+#: lib/hammer_cli_katello/filter_rule.rb:40
+#: lib/hammer_cli_katello/content_view.rb:46
+#: lib/hammer_cli_katello/filter.rb:46
+msgid "Updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:54
+msgid "Content Counts"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:55
+msgid "Packages"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:56
+msgid "Package Groups"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:57
+msgid "Errata"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:58
+#: lib/hammer_cli_katello/content_view.rb:40
+#: lib/hammer_cli_katello/content_view_version.rb:48
+msgid "Puppet Modules"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:64
+#: lib/hammer_cli_katello/repository.rb:65
+msgid "yes"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:64
+#: lib/hammer_cli_katello/repository.rb:65
+msgid "no"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:87
+msgid "Failed"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:88
+msgid "Success"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:89
+msgid "Finished"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:90
+msgid "Error"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:91
+msgid "Running"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:92
+msgid "Waiting"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:93
+msgid "Canceled"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:94
+msgid "Not Synced"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:111
+msgid "Repository is being synchronized in task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:112
+msgid "Could not synchronize the repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:120
+msgid "Repository created"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:121
+msgid "Could not create the repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:142
+msgid "Repository updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:143
+msgid "Could not update the repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:154
+msgid "Repository deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:155
+msgid "Could not delete the Repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository.rb:163
+msgid "Manipulate repositories"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:10
+#: lib/hammer_cli_katello/filter_rule.rb:19
+#: lib/hammer_cli_katello/filter_rule.rb:36
+#: lib/hammer_cli_katello/filter.rb:42
+msgid "Start Date"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:11
+msgid "Interval"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:21
+msgid "Created at"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:22
+msgid "Updated at"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:30
+#: lib/hammer_cli_katello/sync_plan.rb:49
+msgid "how often synchronization should run"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:37
+msgid "start date and time of the synchronization defaults to now"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:41
+msgid "Sync plan created"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:42
+msgid "Could not create the sync plan"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:53
+msgid "start date and time of the synchronization"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:56
+msgid "Sync plan updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:57
+msgid "Could not update the sync plan"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:63
+msgid "Sync plan destroyed"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:64
+msgid "Could not destroy the sync plan"
+msgstr ""
+
+#: lib/hammer_cli_katello/sync_plan.rb:73
+msgid "Manipulate sync plans"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:11
+msgid "The repository has been associated"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:12
+msgid "Could not add repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:19
+msgid "The repository has been removed"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:20
+msgid "Could not remove repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:32
+msgid "The host collection has been associated"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:33
+msgid "Could not add host collection"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:40
+msgid "The host collection has been removed"
+msgstr ""
+
+#: lib/hammer_cli_katello/associating_commands.rb:41
+msgid "Could not remove host collection"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:12
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:23
+#: lib/hammer_cli_katello/content_view.rb:42
+#: lib/hammer_cli_katello/content_host.rb:22
+msgid "UUID"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:14
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:25
+#: lib/hammer_cli_katello/puppet_module.rb:11
+#: lib/hammer_cli_katello/puppet_module.rb:22
+#: lib/hammer_cli_katello/content_view.rb:44
+#: lib/hammer_cli_katello/content_view_version.rb:51
+msgid "Author"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:41
+msgid "Puppet module added to content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:42
+msgid "Could not add the puppet module"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:48
+msgid "Puppet module updated for content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:49
+msgid "Could not update the puppet module"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:62
+msgid "Puppet module removed from content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:63
+#: lib/hammer_cli_katello/filter.rb:69
+msgid "Could not delete the filter"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:11
+#: lib/hammer_cli_katello/filter_rule.rb:28
+msgid "Rule ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:12
+#: lib/hammer_cli_katello/filter_rule.rb:29
+#: lib/hammer_cli_katello/filter.rb:13 lib/hammer_cli_katello/filter.rb:24
+msgid "Filter ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:15
+#: lib/hammer_cli_katello/filter_rule.rb:32
+#: lib/hammer_cli_katello/puppet_module.rb:10
+#: lib/hammer_cli_katello/puppet_module.rb:21
+#: lib/hammer_cli_katello/content_view.rb:56
+#: lib/hammer_cli_katello/filter.rb:38
+#: lib/hammer_cli_katello/content_view_version.rb:12
+#: lib/hammer_cli_katello/content_view_version.rb:28
+#: lib/hammer_cli_katello/content_view_version.rb:52
+msgid "Version"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:16
+#: lib/hammer_cli_katello/filter_rule.rb:33
+#: lib/hammer_cli_katello/filter.rb:39
+msgid "Minimum Version"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:17
+#: lib/hammer_cli_katello/filter_rule.rb:34
+#: lib/hammer_cli_katello/filter.rb:40
+msgid "Maximum Version"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:18
+#: lib/hammer_cli_katello/filter_rule.rb:35
+#: lib/hammer_cli_katello/filter.rb:41
+msgid "Errata ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:20
+#: lib/hammer_cli_katello/filter_rule.rb:37
+#: lib/hammer_cli_katello/subscription.rb:18
+#: lib/hammer_cli_katello/filter.rb:43
+msgid "End Date"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:38
+#: lib/hammer_cli_katello/filter.rb:44
+msgid "Types"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:47
+msgid "Filter rule created"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:48
+msgid "Could not create the filter rule"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:54
+msgid "Filter rule updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:55
+msgid "Could not update the filter rule"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:61
+msgid "Filter rule deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:62
+msgid "Could not delete the filter rule"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:13
+msgid "Contract"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:14
+msgid "Account"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:15
+msgid "Support"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:16
+#: lib/hammer_cli_katello/subscription.rb:21
+msgid "Quantity"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:17
+#: lib/hammer_cli_katello/activation_key.rb:12
+msgid "Consumed"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:22
+msgid "Attached"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:26
+#: lib/hammer_cli_katello/activation_key.rb:25
+msgid "Unlimited"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:51
+msgid "Manifest is being uploaded in task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:52
+msgid "Manifest upload failed"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:55
+msgid "Subscription manifest file"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:64
+msgid "Manifest is being deleted in task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:65
+msgid "Manifest deletion failed"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:74
+msgid "Manifest is being refreshed in task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:75
+msgid "Manifest refresh failed"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:86
+msgid "Status Message"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:87
+msgid "Time"
+msgstr ""
+
+#: lib/hammer_cli_katello/subscription.rb:97
+msgid "Manipulate subscriptions."
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:14
+#: lib/hammer_cli_katello/activation_key.rb:41
+#: lib/hammer_cli_katello/content_host.rb:26
+msgid "Lifecycle Environment"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:17
+#: lib/hammer_cli_katello/activation_key.rb:44
+#: lib/hammer_cli_katello/content_host.rb:29
+msgid "Content View"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:22
+msgid "%{consumed} of %{limit}"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:47
+msgid "Host Collections"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:58
+msgid "Activation key created"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:59
+msgid "Could not create the activation key"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:66
+msgid "Activation key updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:67
+msgid "Could not update the activation key"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:74
+msgid "List associated subscriptions"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:82
+#: lib/hammer_cli_katello/activation_key.rb:101
+#: lib/hammer_cli_katello/activation_key.rb:127
+#: lib/hammer_cli_katello/activation_key.rb:155
+msgid "resource ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:102
+#: lib/hammer_cli_katello/activation_key.rb:128
+msgid "subscription ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:103
+msgid "subscription quantity"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:117
+msgid "Subscription added to activation key"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:118
+msgid "Could not add subscription to activation key"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:124
+msgid "Remove subscription"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:140
+msgid "Subscription removed from activation key"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:141
+msgid "Could not remove subscription from activation key"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:147
+msgid "List associated host collections"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:175
+msgid "Manipulate activation keys."
+msgstr ""
+
+#: lib/hammer_cli_katello/puppet_module.rb:24
+msgid "Summary"
+msgstr ""
+
+#: lib/hammer_cli_katello/puppet_module.rb:26
+msgid "License"
+msgstr ""
+
+#: lib/hammer_cli_katello/puppet_module.rb:27
+msgid "Project Page"
+msgstr ""
+
+#: lib/hammer_cli_katello/puppet_module.rb:28
+msgid "Source"
+msgstr ""
+
+#: lib/hammer_cli_katello/puppet_module.rb:29
+msgid "Dependencies"
+msgstr ""
+
+#: lib/hammer_cli_katello/puppet_module.rb:30
+msgid "Checksums"
+msgstr ""
+
+#: lib/hammer_cli_katello/puppet_module.rb:31
+msgid "Tag List"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:12
+#: lib/hammer_cli_katello/content_view_version.rb:15
+#: lib/hammer_cli_katello/content_view_version.rb:31
+msgid "Content View ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:15
+#: lib/hammer_cli_katello/content_view.rb:27
+msgid "Composite"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:16
+msgid "Repository IDs"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:34
+#: lib/hammer_cli_katello/filter.rb:29
+#: lib/hammer_cli_katello/repository_set.rb:24
+#: lib/hammer_cli_katello/content_view_version.rb:42
+#: lib/hammer_cli_katello/product.rb:15
+msgid "Repositories"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:49
+#: lib/hammer_cli_katello/content_view_version.rb:36
+msgid "Environments"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:54
+msgid "Versions"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:57
+msgid "Published"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:60
+msgid "Components"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:70
+msgid "Content view created"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:71
+msgid "Could not create the content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:73
+msgid "Create a composite content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:85
+msgid "Content view updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:86
+msgid "Could not update the content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:95
+#: lib/hammer_cli_katello/content_view_version.rb:73
+msgid "Content view is being deleted with task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:96
+#: lib/hammer_cli_katello/content_view_version.rb:74
+msgid "Could not delete the content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:105
+msgid "Content view is being published with task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:106
+msgid "Could not publish the content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:115
+msgid "Content view is being removed from environment with task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:116
+msgid "Could not remove the content view from environment"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:128
+msgid "Comma separated list of version ids to remove"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:130
+msgid "Comma separated list of environment ids to remove"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:140
+msgid "Content view objects are being removed task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:141
+msgid "Could not remove objects from content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:156
+msgid "The component version has been added"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:157
+msgid "Could not add version"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:170
+msgid "The component version has been removed"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:171
+msgid "Could not remove version"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view.rb:192
+msgid "Manipulate content views."
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:15 lib/hammer_cli_katello/filter.rb:26
+#: lib/hammer_cli_katello/repository_set.rb:10
+msgid "Type"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:16 lib/hammer_cli_katello/filter.rb:27
+msgid "Inclusion"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:35
+msgid "Rules"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:54
+msgid "Filter created"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:55
+msgid "Could not create the filter"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:61
+msgid "Filter updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:62
+msgid "Could not update the filter"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter.rb:68
+msgid "Filter deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:10
+msgid "Prior"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:21
+msgid "Lifecycle Path"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:44
+msgid "Library"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:45
+msgid "Prior Lifecycle Environment"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:52
+msgid "Environment created"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:53
+msgid "Could not create environment"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:68
+msgid "Environment updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:69
+msgid "Could not update environment"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:84
+msgid "Environment deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:85
+msgid "Could not delete environment"
+msgstr ""
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:94
+msgid "manipulate lifecycle_environments on the server"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:27
+#: lib/hammer_cli_katello/repository_set.rb:44
+msgid "Enabled"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:41
+msgid "Arch"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:42
+msgid "Release"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:64
+msgid "Repository enabled"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:65
+msgid "Could not enable repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:74
+msgid "Repository disabled"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:75
+msgid "Could not disable repository"
+msgstr ""
+
+#: lib/hammer_cli_katello/repository_set.rb:83
+msgid "manipulate repository sets on the server"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:10
+msgid "Limit"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:20
+#: lib/hammer_cli_katello/host_collection.rb:43
+msgid "Host collection created"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:21
+#: lib/hammer_cli_katello/host_collection.rb:44
+msgid "Could not create the host collection"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:30
+msgid "Total Content Hosts"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:31
+msgid "Max Content Hosts"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:56
+msgid "Host collection deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:57
+msgid "Could not delete the host collection"
+msgstr ""
+
+#: lib/hammer_cli_katello/host_collection.rb:66
+msgid "Manipulate host collections"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:24
+msgid "Location"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:31
+msgid "Entitlement Status"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:32
+msgid "Release Version"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:33
+msgid "Autoheal"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:42
+msgid "Content host created"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:43
+msgid "Could not create content host"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:58
+msgid "Content host updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:59
+msgid "Could not update content host"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:67
+msgid "Content host deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:68
+msgid "Could not delete content host"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_host.rb:85
+msgid "manipulate content hosts on the server"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:35 lib/hammer_cli_katello/product.rb:64
+msgid "Content"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:42
+msgid "GPG Key created"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:43
+msgid "Could not create GPG Key"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:46 lib/hammer_cli_katello/gpg_key.rb:57
+msgid "GPG Key file"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:53
+msgid "GPG Key updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:54
+msgid "Could not update GPG Key"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:63
+msgid "GPG Key deleted"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:64
+msgid "Could not delete the GPG Key"
+msgstr ""
+
+#: lib/hammer_cli_katello/gpg_key.rb:73
+msgid "manipulate GPG Key actions on the server"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_version.rb:16
+#: lib/hammer_cli_katello/content_view_version.rb:32
+msgid "Content View Name"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_version.rb:17
+#: lib/hammer_cli_katello/content_view_version.rb:33
+msgid "Content View Label"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_version.rb:63
+msgid "Content view is being promoted with task %{id}"
+msgstr ""
+
+#: lib/hammer_cli_katello/content_view_version.rb:64
+msgid "Could not promote the content view"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:18 lib/hammer_cli_katello/product.rb:42
+msgid "Sync State"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:27
+msgid "Product created"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:28
+msgid "Could not create the product"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:45
+msgid "Sync Plan ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:47
+msgid "GPG"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:49
+msgid "GPG Key ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:58
+msgid "Readonly"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:61
+msgid "Deletable"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:66
+msgid "Repo Name"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:75
+msgid "Product updated"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:76
+msgid "Could not update the product"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:82
+msgid "Product destroyed"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:83
+msgid "Could not destroy the product"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:89
+msgid "Assign sync plan to product."
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:92
+msgid "Synchronization plan assigned."
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:93
+msgid "Could not assign synchronization plan."
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:99 lib/hammer_cli_katello/product.rb:114
+msgid "plan numeric identifier"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:104
+msgid "Delete assignment sync plan and product."
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:107
+msgid "Synchronization plan removed."
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:108
+msgid "Could not remove synchronization plan."
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:122
+msgid "Manipulate products."
+msgstr ""
