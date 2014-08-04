@@ -7,7 +7,7 @@ module HammerCLIKatello
       def self.included(base)
         base.option "--host-collection-ids",
                     "HOST_COLLECTION_IDS",
-                    _("Array of system ids to replace the content hosts in host collection"),
+                    _("Array of content host ids to replace the content hosts in host collection"),
                     :format => HammerCLI::Options::Normalizers::List.new
       end
 
