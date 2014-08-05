@@ -1,0 +1,10 @@
+[main]
+host = https://www.transifex.com
+
+[katello.hammer-cli-katello]
+file_filter = locale/<lang>/hammer-cli-katello.po
+source_file = locale/hammer-cli-katello.pot
+source_lang = en
+type = PO
+
+
