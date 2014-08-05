@@ -1,5 +1,4 @@
-# hammer-cli-katello
-
+# hammer-cli-katello ![Travis # Status](https://travis-ci.org/Katello/hammer-cli-katello.svg?branch=master)
 
 Next-gen CLI tool for [Katello](http://katello.org) (Katello-specific commands)
 
