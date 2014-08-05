@@ -60,12 +60,10 @@ module HammerCLIKatello
     end
 
     def create_organizations_search_options(options)
-      # wow, such hack, very meta, amaze
-      self.class.superclass.instance_method(:create_search_options).bind(self)\
-        .call(options, api.resource(:organizations))
+      create_search_options_without_katello_api(options, api.resource(:organizations))
     end
 
-    def create_search_options(options, resource)
+    def create_search_options_with_katello_api(options, resource)
       search_options = {}
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
@@ -75,6 +73,9 @@ module HammerCLIKatello
       end
       search_options
     end
+    # alias_method_chain :create_search_options, :katello_api
+    alias_method :create_search_options_without_katello_api, :create_search_options
+    alias_method :create_search_options, :create_search_options_with_katello_api
 
   end
 end
