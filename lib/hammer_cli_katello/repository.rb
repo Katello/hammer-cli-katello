@@ -100,10 +100,6 @@ module HammerCLIKatello
         sync_states[state]
       end
 
-      def request_params
-        super.merge(method_options)
-      end
-
       build_options do |o|
         o.expand.including(:products)
       end
