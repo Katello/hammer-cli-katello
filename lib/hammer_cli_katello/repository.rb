@@ -165,7 +165,7 @@ module HammerCLIKatello
 
       resource :repositories, :upload_content
       command_name "upload-content"
-      CONTENT_CHUNK_SIZE = 10_485_760 # bytes
+      CONTENT_CHUNK_SIZE = 4_000_000 # bytes
 
       class BinaryPath < HammerCLI::Options::Normalizers::File
         def format(path)
