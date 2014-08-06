@@ -93,8 +93,4 @@ module HammerCLIKatello
     autoload_subcommands
   end
 
-  cmd_name = "lifecycle-environment"
-  cmd_desc = _("manipulate lifecycle_environments on the server")
-  cmd_cls  = HammerCLIKatello::LifecycleEnvironmentCommand
-  HammerCLI::MainCommand.subcommand(cmd_name, cmd_desc, cmd_cls)
 end

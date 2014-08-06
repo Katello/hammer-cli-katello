@@ -1,3 +1,5 @@
+require 'hammer_cli_foreman/organization'
+
 module HammerCLIKatello
 
   class Organization < HammerCLIForeman::Organization
@@ -61,6 +63,3 @@ module HammerCLIKatello
   end
 
 end
-
-HammerCLI::MainCommand.subcommand! 'organization', _("Manipulate organizations"),
-                                   HammerCLIKatello::Organization

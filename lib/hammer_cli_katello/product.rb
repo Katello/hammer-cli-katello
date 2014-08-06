@@ -120,6 +120,3 @@ module HammerCLIKatello
     autoload_subcommands
   end
 end
-
-HammerCLI::MainCommand.subcommand "product", _("Manipulate products."),
-                                  HammerCLIKatello::Product

@@ -203,6 +203,3 @@ module HammerCLIKatello
                HammerCLIKatello::ContentViewVersion
   end
 end
-
-HammerCLI::MainCommand.subcommand "content-view", _("Manipulate content views."),
-                                  HammerCLIKatello::ContentView

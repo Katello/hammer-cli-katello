@@ -99,6 +99,3 @@ module HammerCLIKatello
     autoload_subcommands
   end
 end
-
-HammerCLI::MainCommand.subcommand("subscription", _("Manipulate subscriptions."),
-                                  HammerCLIKatello::SubscriptionCommand)

@@ -69,6 +69,3 @@ module HammerCLIKatello
     autoload_subcommands
   end
 end
-
-HammerCLI::MainCommand.subcommand 'sync-plan', _("Manipulate sync plans"),
-                                  HammerCLIKatello::SyncPlan

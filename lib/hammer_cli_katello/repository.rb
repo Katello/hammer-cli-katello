@@ -250,6 +250,3 @@ module HammerCLIKatello
     autoload_subcommands
   end
 end
-
-HammerCLI::MainCommand.subcommand "repository", _("Manipulate repositories"),
-                                  HammerCLIKatello::Repository
