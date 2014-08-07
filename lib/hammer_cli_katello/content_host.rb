@@ -1,3 +1,7 @@
+require 'hammer_cli_katello/content_host_package'
+require 'hammer_cli_katello/content_host_package_group'
+require 'hammer_cli_katello/content_host_errata'
+
 module HammerCLIKatello
 
   class ContentHostCommand < HammerCLI::AbstractCommand
@@ -101,6 +105,18 @@ module HammerCLIKatello
     end
 
     autoload_subcommands
+
+    subcommand "package",
+               HammerCLIKatello::ContentHostPackage.desc,
+               HammerCLIKatello::ContentHostPackage
+
+    subcommand "package-group",
+               HammerCLIKatello::ContentHostPackageGroup.desc,
+               HammerCLIKatello::ContentHostPackageGroup
+
+    subcommand "errata",
+               HammerCLIKatello::ContentHostErrata.desc,
+               HammerCLIKatello::ContentHostErrata
   end
 
 end
