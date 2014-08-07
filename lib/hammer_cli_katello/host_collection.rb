@@ -35,6 +35,13 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       include UuidRequestable
       resource :host_collections, :create
+      def request_params
+        super.tap do |params|
+          if params['max_content_hosts'] && params['unlimited_content_hosts'].nil?
+            params['unlimited_content_hosts'] = false
+          end
+        end
+      end
 
       success_message _("Host collection created")
       failure_message _("Could not create the host collection")
