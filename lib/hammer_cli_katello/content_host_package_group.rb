@@ -8,11 +8,11 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :system_packages, :install
       command_name "install"
-      success_message "Package-groupsinstalled successfully"
+      success_message "Package-groups installed successfully"
       failure_message "Could not install package-groups"
 
       validate_options do
-        option(:options_groups).required
+        option(:option_groups).required
       end
 
       build_options :without => [:packages]
