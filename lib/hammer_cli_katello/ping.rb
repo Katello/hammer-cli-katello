@@ -42,8 +42,8 @@ module HammerCLIKatello
           end
         end
 
-        label "katello_jobs" do
-          from "katello_jobs" do
+        label "foreman_tasks" do
+          from "foreman_tasks" do
             field "status", _("Status")
             field "_response", _("Server Response")
           end
