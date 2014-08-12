@@ -33,14 +33,11 @@ module HammerCLIKatello
       command_name "paths"
 
       output do
-        field :pretty_path, _("Lifecycle Path")
+        field :_pretty_path, _("Lifecycle Path")
       end
 
       def extend_data(data)
-        route = []
-        data["path"].each { |step| route << step["environment"]["name"] }
-
-        data[:pretty_path] = route.join(" >> ")
+        data["_pretty_path"] = data["environments"].map { |env| env["name"] }.join(" >> ")
         data
       end
 
