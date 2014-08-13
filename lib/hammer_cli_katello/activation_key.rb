@@ -2,6 +2,9 @@ module HammerCLIKatello
 
   class ActivationKeyCommand < HammerCLIKatello::Command
     resource :activation_keys
+    class Common
+      INTEGER_FORMAT = /^-?\d+/
+    end
 
     class ListCommand < HammerCLIKatello::ListCommand
       include LifecycleEnvironmentNameResolvable
@@ -69,6 +72,14 @@ module HammerCLIKatello
       action :create
       success_message _("Activation key created")
       failure_message _("Could not create the activation key")
+
+      def request_params
+        params = super
+        if params.key?('max_content_hosts') && !params['max_content_hosts'].match(Common::INTEGER_FORMAT)
+          fail ::HammerCLI::Validator::ValidationError, 'Content host limit must be an integer'
+        end
+        params
+      end
 
       build_options
     end
