@@ -61,10 +61,6 @@ module HammerCLIKatello
       success_message _("Filter rule deleted")
       failure_message _("Could not delete the filter rule")
 
-      def request_params
-        super.merge(method_options)
-      end
-
       build_options
     end
 
