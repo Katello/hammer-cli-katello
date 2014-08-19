@@ -13,8 +13,8 @@ module HammerCLIKatello
 
       def request_params
         params = super
-        params['system_uuids'] = option_host_collection_ids unless option_host_collection_ids.nil?
-        params.delete('host_collection_ids') if params.keys.include? 'host_collection_ids'
+        params['system_uuids'] = option_system_ids unless option_system_ids.nil?
+        params.delete('system_ids') if params.keys.include? 'system_ids'
         params
       end
     end
