@@ -104,7 +104,23 @@ module HammerCLIKatello
       build_options
     end
 
+    # TODO: temp fix until apipie reports correct type for type array params
+    module HostCollectionIDsAsNormalizedList
+      def self.included(base)
+        base.option "--content-host-ids", "CONTENT_HOST_IDS", _("Array of content-host ids"),
+                    :format => HammerCLI::Options::Normalizers::List.new
+      end
+
+      def all_options
+        result = super
+        result['option_system_ids'] = result['option_content_host_ids']
+        result.delete 'option_content_host_ids'
+        result
+      end
+    end
+
     class AddContentHostCommand < HammerCLIKatello::SingleResourceCommand
+      include HostCollectionIDsAsNormalizedList
       command_name 'add-content-host'
       action :add_systems
 
@@ -115,6 +131,7 @@ module HammerCLIKatello
     end
 
     class RemoveContentHostCommand < HammerCLIKatello::SingleResourceCommand
+      include HostCollectionIDsAsNormalizedList
       command_name 'remove-content-host'
       action :remove_systems
 
