@@ -4,7 +4,24 @@ $LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
 require 'hammer_cli_katello/version'
 
 Gem::Specification.new do |spec|
-  spec.authors = ['Katello']
+  spec.authors = [
+    "Adam Price",
+    "Brad Buckingham",
+    "Bryan Kearney",
+    "David Davis",
+    "Dustin Tsang",
+    "Ivan Nečas",
+    "Jason L Connor",
+    "Jason Montleon",
+    "Justin Sherrill",
+    "Martin Bačovský",
+    "Michaux Kelley",
+    "Og Maciel",
+    "Partha Aji",
+    "Tomas Strachota",
+    "Tom McKay",
+    "Walden Raines"
+  ]
   spec.email = ['katello@lists.fedorahosted.org']
   spec.license = "GPL-3"
   spec.description = 'Hammer-CLI-Katello is a plugin for Hammer to provide' \
