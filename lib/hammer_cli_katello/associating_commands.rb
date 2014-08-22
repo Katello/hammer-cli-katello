@@ -2,9 +2,28 @@ module HammerCLIKatello
   module AssociatingCommands
 
     module Repository
+      module AddProductOptions
+        def dependencies
+          dependency_resolver.resource_dependencies(associated_resource,
+                                                    :only_required => false,
+                                                    :recursive => true)
+        end
+
+        def create_option_builder
+          super.tap do |option_builder|
+            products = dependencies.find { |r| r.name == :products }
+            if products
+              option_builder.builders << HammerCLIForeman::DependentSearchablesOptionBuilder.new(
+                                        products, searchables)
+            end
+          end
+        end
+      end
+
       extend HammerCLIForeman::AssociatingCommands::CommandExtension
 
       class AddRepositoryCommand < HammerCLIKatello::AddAssociatedCommand
+        extend AddProductOptions
         include RepositoryScopedToProduct
         command_name 'add-repository'
         associated_resource :repositories
@@ -14,6 +33,7 @@ module HammerCLIKatello
       end
 
       class RemoveRepositoryCommand < HammerCLIKatello::RemoveAssociatedCommand
+        extend AddProductOptions
         include RepositoryScopedToProduct
         command_name 'remove-repository'
         associated_resource :repositories
