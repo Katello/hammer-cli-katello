@@ -102,4 +102,9 @@ module HammerCLIKatello
                                          'hammer_cli_katello/capsule'
   )
 
+  HammerCLI::MainCommand.lazy_subcommand("package", _("Manipulate packages."),
+                                         'HammerCLIKatello::PackageCommand',
+                                         'hammer_cli_katello/package'
+  )
+
 end
