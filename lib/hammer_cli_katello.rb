@@ -111,4 +111,9 @@ module HammerCLIKatello
                                          'HammerCLIKatello::PackageGroupCommand',
                                          'hammer_cli_katello/package_group'
   )
+
+  HammerCLI::MainCommand.lazy_subcommand("erratum", _("Manipulate errata"),
+                                         'HammerCLIKatello::ErratumCommand',
+                                         'hammer_cli_katello/erratum'
+  )
 end
