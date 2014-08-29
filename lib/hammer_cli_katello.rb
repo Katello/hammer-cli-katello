@@ -107,4 +107,8 @@ module HammerCLIKatello
                                          'hammer_cli_katello/package'
   )
 
+  HammerCLI::MainCommand.lazy_subcommand("package-group", _("Manipulate package groups"),
+                                         'HammerCLIKatello::PackageGroupCommand',
+                                         'hammer_cli_katello/package_group'
+  )
 end
