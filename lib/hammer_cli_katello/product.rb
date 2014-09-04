@@ -108,8 +108,10 @@ module HammerCLIKatello
 
       resource :products, :update
 
-      build_options :without => [:name, :label, :provider_id, :description,
-                                 :gpg_key_id, :sync_plan_id]
+      build_options do |o|
+        o.expand(:all).except(:sync_plans)
+        o.without(:sync_plan_id)
+      end
 
       def request_params
         super.merge("sync_plan_id" => nil)
