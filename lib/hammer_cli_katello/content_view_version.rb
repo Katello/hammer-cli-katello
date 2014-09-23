@@ -26,6 +26,7 @@ module HammerCLIKatello
         field :id, _("ID")
         field :name, _("Name")
         field :version, _("Version")
+        field :description, _("Description")
 
         from :content_view do
           field :id, _("Content View ID")
