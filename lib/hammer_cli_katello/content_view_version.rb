@@ -67,6 +67,10 @@ module HammerCLIKatello
       success_message _("Content view is being promoted with task %{id}")
       failure_message _("Could not promote the content view")
 
+      option "--force",
+             :flag,
+             _("force content view promotion and bypass lifecycle environment restriction")
+
       option "--from-lifecycle-environment", "FROM_ENVIRONMENT",
              _("Name of the source environment"), :attribute_name => :option_environment_name
       option "--from-lifecycle-environment-id", "FROM_ENVIRONMENT_ID",
@@ -76,18 +80,20 @@ module HammerCLIKatello
       option "--to-lifecycle-environment-id", "TO_ENVIRONMENT_ID",
              _("Id of the target environment"), :attribute_name => :option_to_environment_id
 
-      def request_params
-        params = super
-
-        env_search_opts = {
+      def environment_search_options
+        {
           "option_id" => options["option_to_environment_id"],
           "option_name" => options["option_to_environment_name"],
           "option_organization_id" => options["option_organization_id"],
           "option_organization_name" => options["option_organization_name"],
           "option_organization_label" => options["option_organization_label"]
         }
+      end
 
-        params['environment_id'] = resolver.lifecycle_environment_id(env_search_opts)
+      def request_params
+        params = super
+        params['environment_id'] = resolver.lifecycle_environment_id(environment_search_options)
+        params['force'] = option_force?
         params
       end
 
