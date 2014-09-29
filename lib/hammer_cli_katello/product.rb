@@ -87,6 +87,18 @@ module HammerCLIKatello
       build_options
     end
 
+    class SyncCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
+      action :sync
+      command_name "synchronize"
+
+      success_message _("Product repositories are being synchronized in task %{id}")
+      failure_message _("Could not synchronize the product repositories")
+
+      build_options
+    end
+
     class SetSyncPlanCommand < HammerCLIKatello::UpdateCommand
       desc _("Assign sync plan to product.")
       command_name "set-sync-plan"
