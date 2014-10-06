@@ -110,66 +110,80 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :product_name, _("Name")
+        field :format_consumed, _("Attached")
+        field :amount, _("Quantity")
+        field :start_date, _("Start Date"), Fields::Date
+        field :end_date, _("End Date"), Fields::Date
+        field :support_level, _("Support")
+        field :contract_number, _("Contract")
+        field :account_number, _("Account")
       end
 
-      option '--id', 'ID', _("resource ID")
-
-      def request_params
-        {
-          'activation_key_id' => option_id
-        }
+      def extend_data(data)
+        data["format_consumed"] = _("%{consumed} of %{limit}") %
+          {
+            :consumed => data["consumed"],
+            :limit => data["quantity"] == -1 ? _("Unlimited") : data["quantity"]
+          }
+        data
       end
+
+      option "--id", "ID", _("ID of activation key"),
+             :attribute_name => :option_activation_key_id
+      option "--name", "NAME", _("Name of activation key"),
+             :attribute_name => :option_activation_key_name
 
       validate_options do
-        all(:option_id).required
+        any(:option_activation_key_id, :option_activation_key_name).required
+      end
+
+      build_options do |o|
+        o.expand.only(:organizations)
+        o.without(
+                  :system_id,
+                  :activation_key_id,
+                  :full_results,
+                  :search,
+                  :order,
+                  :sort,
+                  :page,
+                  :per_page
+                 )
       end
     end
 
-    class AddSubscriptionCommand < HammerCLIKatello::UpdateCommand
-      resource :subscriptions, :create
+    class AddSubscriptionsCommand < HammerCLIKatello::SingleResourceCommand
+      action :add_subscriptions
 
       desc "Add subscription"
       command_name "add-subscription"
 
-      option '--id', 'ID', _("resource ID")
-      option '--subscription-id', 'ID', _("subscription ID")
-      option '--quantity', 'QUANTITY', _("subscription quantity")
+      option "--subscription-id", "SUBSCRIPTION_ID", _("ID of subscription"),
+             :attribute_name => :option_subscription_id, :required => true
 
-      def request_params
-        {
-          'activation_key_id' => option_id,
-          'id' => option_subscription_id,
-          'quantity' => option_quantity
-        }
-      end
-
-      validate_options do
-        all(:option_id, :option_subscription_id).required
+      build_options do |o|
+        o.expand.except(:subscriptions)
+        o.without(:subscriptions)
       end
 
       success_message _("Subscription added to activation key")
       failure_message _("Could not add subscription to activation key")
     end
 
-    class RemoveSubscriptionCommand < HammerCLIKatello::UpdateCommand
-      resource :subscriptions, :destroy
+    class RemoveSubscriptionCommand < HammerCLIKatello::SingleResourceCommand
+      action :remove_subscriptions
 
       desc _("Remove subscription")
       command_name "remove-subscription"
 
-      option '--id', 'ID', _("resource ID")
-      option '--subscription-id', 'ID', _("subscription ID")
+      option "--subscription-id", "SUBSCRIPTION_ID", _("ID of subscription"),
+             :attribute_name => :option_subscription_id, :required => true
 
-      def request_params
-        {
-          'id' => option_subscription_id,
-          'activation_key_id' => option_id
-        }
+      build_options do |o|
+        o.expand.except(:subscriptions)
+        o.without(:subscriptions)
       end
 
-      validate_options do
-        all(:option_id, :option_subscription_id).required
-      end
       success_message _("Subscription removed from activation key")
       failure_message _("Could not remove subscription from activation key")
     end
@@ -185,16 +199,27 @@ module HammerCLIKatello
         field :name, _("Name")
       end
 
-      option '--id', 'ID', _("resource ID")
-
-      def request_params
-        {
-          'activation_key_id' => option_id
-        }
-      end
+      option "--id", "ID", _("ID of activation key"),
+             :attribute_name => :option_activation_key_id
+      option "--name", "NAME", _("Name of activation key"),
+             :attribute_name => :option_activation_key_name
 
       validate_options do
-        all(:option_id).required
+        any(:option_activation_key_id, :option_activation_key_name).required
+      end
+
+      build_options do |o|
+        o.expand.only(:organizations)
+        o.without(
+                  :system_id,
+                  :activation_key_id,
+                  :full_results,
+                  :search,
+                  :order,
+                  :sort,
+                  :page,
+                  :per_page
+                 )
       end
     end
 
