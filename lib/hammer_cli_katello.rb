@@ -34,18 +34,18 @@ module HammerCLIKatello
                                           'hammer_cli_katello/organization'
   )
 
-  HammerCLI::MainCommand.lazy_subcommand("gpg", _("manipulate GPG Key actions on the server"),
+  HammerCLI::MainCommand.lazy_subcommand("gpg", _("Manipulate GPG Key actions on the server"),
                                          'HammerCLIKatello::GpgKeyCommand',
                                          'hammer_cli_katello/gpg_key'
   )
 
   HammerCLI::MainCommand.lazy_subcommand("lifecycle-environment",
-                                         _("manipulate lifecycle_environments on the server"),
+                                         _("Manipulate lifecycle_environments on the server"),
                                          'HammerCLIKatello::LifecycleEnvironmentCommand',
                                          'hammer_cli_katello/lifecycle_environment'
   )
 
-  HammerCLI::MainCommand.lazy_subcommand("ping", _("get the status of the server"),
+  HammerCLI::MainCommand.lazy_subcommand("ping", _("Get the status of the server"),
                                          'HammerCLIKatello::PingCommand',
                                          'hammer_cli_katello/ping'
   )
@@ -66,7 +66,7 @@ module HammerCLIKatello
   )
 
   HammerCLI::MainCommand.lazy_subcommand("repository-set",
-                                         _("manipulate repository sets on the server"),
+                                         _("Manipulate repository sets on the server"),
                                          'HammerCLIKatello::RepositorySetCommand',
                                          'hammer_cli_katello/repository_set'
   )
@@ -87,7 +87,7 @@ module HammerCLIKatello
   )
 
   HammerCLI::MainCommand.lazy_subcommand("content-host",
-                                         _("manipulate content hosts on the server"),
+                                         _("Manipulate content hosts on the server"),
                                          'HammerCLIKatello::ContentHostCommand',
                                          'hammer_cli_katello/content_host'
   )
