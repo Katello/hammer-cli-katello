@@ -84,6 +84,19 @@ module HammerCLIKatello
       build_options
     end
 
+    class CopyCommand < HammerCLIKatello::CreateCommand
+      include LifecycleEnvironmentNameResolvable
+      action :copy
+
+      desc _("Copy an activation key")
+      command_name "copy"
+
+      build_options
+
+      success_message _("Activation key copied")
+      failure_message _("Could not copy the activation key")
+    end
+
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       include LifecycleEnvironmentNameResolvable
       action :update
