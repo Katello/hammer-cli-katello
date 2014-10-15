@@ -66,6 +66,7 @@ module HammerCLIKatello
           from :content do
             field :name, _("Repo Name")
             field :contentUrl, _("URL")
+            field :type, _("Content Type")
           end
         end
       end
