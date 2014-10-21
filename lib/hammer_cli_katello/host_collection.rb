@@ -5,10 +5,10 @@ module HammerCLIKatello
 
     module UuidRequestable
       def self.included(base)
-        base.option "--host-collection-ids",
-                    "HOST_COLLECTION_IDS",
-                    _("Array of content host ids to replace the content hosts in host collection"),
-                    :format => HammerCLI::Options::Normalizers::List.new
+        base.option("--host-collection-ids",
+          "HOST_COLLECTION_IDS",
+          _("Array of content host ids to replace the content hosts in host collection"),
+          :format => HammerCLI::Options::Normalizers::List.new)
       end
 
       def request_params
@@ -125,5 +125,63 @@ module HammerCLIKatello
     end
 
     autoload_subcommands
+
+    class ContentBaseCommand < DeleteCommand
+      resource :systems_bulk_actions
+
+      build_options do |o|
+        o.without(:content_type, :content, :ids, :search)
+      end
+
+      def request_params
+        params = super
+        params['content'] = content
+        params['content_type'] = content_type
+        params['included'] = { :search => "host_collection_ids:#{params['id']}" }
+        params.delete('id')
+        params
+      end
+
+      def resolver
+        api = HammerCLI::Connection.get("foreman").api
+        custom_resolver = Class.new(HammerCLIKatello::IdResolver) do
+          def systems_bulk_action_id(options)
+            host_collection_id(options)
+          end
+        end
+        custom_resolver.new(api, HammerCLIKatello::Searchables.new)
+      end
+    end
+
+    class InstallContentBaseCommand < ContentBaseCommand
+      action :install_content
+      command_name "install"
+    end
+
+    class UpdateContentBaseCommand < ContentBaseCommand
+      action :update_content
+      command_name "update"
+    end
+
+    class RemoveContentBaseCommand < ContentBaseCommand
+      action :remove_content
+      command_name "remove"
+    end
+
+    require 'hammer_cli_katello/host_collection_package'
+    subcommand HammerCLIKatello::HostCollectionPackageCommand.command_name,
+               HammerCLIKatello::HostCollectionPackageCommand.desc,
+               HammerCLIKatello::HostCollectionPackageCommand
+
+    require 'hammer_cli_katello/host_collection_package_group'
+    subcommand HammerCLIKatello::HostCollectionPackageGroupCommand.command_name,
+               HammerCLIKatello::HostCollectionPackageGroupCommand.desc,
+               HammerCLIKatello::HostCollectionPackageGroupCommand
+
+    require 'hammer_cli_katello/host_collection_erratum'
+    subcommand HammerCLIKatello::HostCollectionErratumCommand.command_name,
+               HammerCLIKatello::HostCollectionErratumCommand.desc,
+               HammerCLIKatello::HostCollectionErratumCommand
   end
+
 end
