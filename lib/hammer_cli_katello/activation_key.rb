@@ -26,7 +26,7 @@ module HammerCLIKatello
         data["format_consumed"] = _("%{consumed} of %{limit}") %
           {
             :consumed => data["usage_count"],
-            :limit => data["unlimited"] ? _("Unlimited") : data["usage_limit"]
+            :limit => data["unlimited_content_hosts"] ? _("Unlimited") : data["max_content_hosts"]
           }
         data
       end
@@ -51,6 +51,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :id, _("ID")
         field :description, _("Description")
+        field :format_limit, _("Content Host Limit")
         from :environment do
           field :name, _("Lifecycle Environment")
         end
@@ -62,6 +63,12 @@ module HammerCLIKatello
           field :id, _("ID")
           field :name, _("Name")
         end
+      end
+
+      def extend_data(data)
+        data["format_limit"] =
+          data["unlimited_content_hosts"] ? _("Unlimited") : data["max_content_hosts"]
+        data
       end
 
       build_options
