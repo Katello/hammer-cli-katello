@@ -208,6 +208,38 @@ module HammerCLIKatello
       failure_message _("Could not remove subscription from activation key")
     end
 
+    class ProductContentCommand < HammerCLIKatello::ListCommand
+      action :product_content
+
+      desc _("List associated products")
+      command_name "product-content"
+
+      output do
+        from :content do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :type, _("Type")
+          field :contentUrl, _("URL")
+          field :gpgUrl, _("GPG Key")
+          field :label, _("Label")
+        end
+      end
+
+      build_options
+    end
+
+    class ContentOverrideCommand < HammerCLIKatello::SingleResourceCommand
+      action :content_override
+
+      desc _("Override product content defaults")
+      command_name "content-override"
+
+      build_options
+
+      success_message _("Updated content override")
+      failure_message _("Could not update content override")
+    end
+
     class HostCollectionsCommand < HammerCLIKatello::ListCommand
       resource :host_collections, :index
 
