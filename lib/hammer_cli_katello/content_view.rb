@@ -33,7 +33,13 @@ module HammerCLIKatello
           field :name, _("Organization")
         end
 
-        collection :repositories, _("Repositories") do
+        collection :_yum_repositories, _("Yum Repositories") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :label, _("Label")
+        end
+
+        collection :_docker_repositories, _("Docker Repositories") do
           field :id, _("ID")
           field :name, _("Name")
           field :label, _("Label")
@@ -67,6 +73,17 @@ module HammerCLIKatello
         collection :activation_keys, _("Activation Keys") do
           custom_field Fields::Reference
         end
+      end
+
+      def extend_data(data)
+        data["_yum_repositories"] = data["repositories"].select do |repo|
+          repo["content_type"] == "yum"
+        end
+
+        data["_docker_repositories"] = data["repositories"].select do |repo|
+          repo["content_type"] == "docker"
+        end
+        data
       end
 
       build_options
