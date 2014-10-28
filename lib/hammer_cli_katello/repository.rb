@@ -29,6 +29,7 @@ module HammerCLIKatello
         end
         field :_redhat_repo, _("Red Hat Repository")
         field :content_type, _("Content Type")
+        field :checksum_type, _("Metadata Checksum"), Fields::Field, :hide_blank => true
         field :url, _("URL")
         field :_publish_via_http, _("Publish Via HTTP")
         field :full_path, _("Published At")
