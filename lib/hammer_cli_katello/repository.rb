@@ -61,6 +61,8 @@ module HammerCLIKatello
           field :package_group_total, _("Package Groups"), Fields::Field, :hide_blank => true
           field :errata_total, _("Errata"), Fields::Field, :hide_blank => true
           field :puppet_total, _("Puppet Modules"), Fields::Field, :hide_blank => true
+          field :docker_image_total, _("Docker Images"), Fields::Field, :hide_blank => true
+          field :docker_tag_total, _("Docker Tags"), Fields::Field, :hide_blank => true
         end
       end
 
@@ -69,20 +71,26 @@ module HammerCLIKatello
           data["_redhat_repo"] = data["product_type"] == "redhat" ? _("yes") : _("no")
           data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
           data["_sync_state"] = get_sync_status(data["sync_state"])
-          setup_content_counts(data)
+          if data["content_type"] == "yum" && data["gpg_key"]
+            data["gpg_key_name"] = data["gpg_key"]["name"]
+          end
+
+          setup_content_counts(data) if data["content_counts"]
         end
       end
 
       def setup_content_counts(data)
-        if data["content_type"] == "yum"
-          if data["content_counts"]
-            data["package_total"]  =  data["content_counts"]["rpm"]
-            data["package_group_total"]  =  data["content_counts"]["package_group"]
-            data["errata_total"]  =  data["content_counts"]["erratum"]
-          end
-          data["gpg_key_name"] = data["gpg_key"]["name"] if data["gpg_key"]
-        else
-          data["puppet_total"] = data["content_counts"]["puppet_module"] if data["content_counts"]
+        content_counts = data["content_counts"]
+        case data["content_type"]
+        when "yum"
+          data["package_total"]  =  content_counts["rpm"]
+          data["package_group_total"]  =  content_counts["package_group"]
+          data["errata_total"]  =  content_counts["erratum"]
+        when "docker"
+          data["docker_image_total"] = content_counts["docker_image"]
+          data["docker_tag_total"] = content_counts["docker_tag"]
+        when "puppet"
+          data["puppet_total"] = content_counts["puppet_module"]
         end
       end
 
