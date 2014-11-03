@@ -116,4 +116,9 @@ module HammerCLIKatello
                                          'HammerCLIKatello::ErratumCommand',
                                          'hammer_cli_katello/erratum'
   )
+
+  HammerCLI::MainCommand.lazy_subcommand("docker-image", _("Manipulate docker images"),
+                                         'HammerCLIKatello::DockerImageCommand',
+                                         'hammer_cli_katello/docker_image'
+  )
 end
