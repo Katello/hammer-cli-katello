@@ -121,4 +121,9 @@ module HammerCLIKatello
                                          'HammerCLIKatello::DockerImageCommand',
                                          'hammer_cli_katello/docker_image'
   )
+
+  HammerCLI::MainCommand.lazy_subcommand("docker-tag", _("Manipulate docker tags"),
+                                         'HammerCLIKatello::DockerTagCommand',
+                                         'hammer_cli_katello/docker_tag'
+  )
 end
