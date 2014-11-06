@@ -21,7 +21,12 @@ module HammerCLIKatello
         field :errata_id, _("Errata ID")
         field :title, _("Title")
         field :type, _("Type")
+        field :severity, _("Severity")
         field :issued, _("Issued")
+        field :updated, _("Updated")
+        field :description, _("Description")
+        field :summary, _("Summary")
+        field :solution, _("Solution")
       end
 
       build_options
