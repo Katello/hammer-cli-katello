@@ -54,7 +54,7 @@ module HammerCLIKatello
           field :updated_at, _("Updated"), Fields::Date
         end
 
-        collection :environments, _("Environments") do
+        collection :environments, _("Lifecycle Environments") do
           field :id, _("ID")
           field :name, _("Name")
         end
