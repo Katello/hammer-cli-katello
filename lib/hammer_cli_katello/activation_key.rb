@@ -122,6 +122,32 @@ module HammerCLIKatello
       build_options
     end
 
+    class ReleasesCommand < HammerCLIKatello::InfoCommand
+      action :available_releases
+
+      desc _("List available releases for activation key")
+      command_name "releases"
+
+      build_options
+
+      output do
+        field :results, _("Available Releases"), Fields::List
+      end
+    end
+
+    class ServiceLevelsCommand < ReleasesCommand
+      action :service_levels
+
+      desc _("List service levels for activation key")
+      command_name "service-levels"
+
+      build_options
+
+      output do
+        field :results, _("Service Levels"), Fields::List
+      end
+    end
+
     class SubscriptionsCommand < HammerCLIKatello::ListCommand
       resource :subscriptions, :index
       desc _("List associated subscriptions")
