@@ -1,6 +1,8 @@
 module HammerCLIKatello
   class DockerTagCommand < HammerCLIKatello::Command
     resource :docker_tags
+    command_name 'tag'
+    desc 'Manage docker tags'
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do

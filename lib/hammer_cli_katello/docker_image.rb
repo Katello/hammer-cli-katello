@@ -1,6 +1,8 @@
 module HammerCLIKatello
   class DockerImageCommand < HammerCLIKatello::Command
     resource :docker_images
+    command_name 'image'
+    desc 'Manage docker images'
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
