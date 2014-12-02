@@ -244,6 +244,28 @@ module HammerCLIKatello
       end
     end
 
+    class RemoveContentCommand < HammerCLIKatello::SingleResourceCommand
+      include RepositoryScopedToProduct
+
+      resource :repositories, :remove_content
+      command_name "remove-content"
+
+      option ["--content-ids"], "CONTENT_IDS",
+        _("Comma separated list of package/puppet module/docker image ids"),
+        :format => HammerCLI::Options::Normalizers::List.new, :required => true
+
+      def request_params
+        super.tap do |opts|
+          opts[:uuids] = option_content_ids
+        end
+      end
+
+      success_message _("Repository content removed")
+      failure_message _("Could not remove content")
+
+      build_options :without => ["uuids"]
+    end
+
     autoload_subcommands
   end
 end
