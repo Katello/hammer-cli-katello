@@ -19,6 +19,9 @@ module HammerCLIKatello
       output do
         field :uuid, _("ID")
         field :name, _("Name")
+        from :errata_counts do
+          field :total, _("Available Errata")
+        end
       end
 
       build_options
@@ -44,6 +47,11 @@ module HammerCLIKatello
         field :entitlementStatus, _("Entitlement Status")
         field :releaseVer, _("Release Version")
         field :autoheal, _("Autoheal")
+        from :errata_counts do
+          field :security, _("Security Errata")
+          field :bugfix, _("Bugfix Errata")
+          field :enhancement, _("Enhancement Errata")
+        end
       end
 
       build_options

@@ -7,6 +7,7 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :errata_id, _("Errata ID")
+        field :type, _("Type")
         field :title, _("Title")
       end
 

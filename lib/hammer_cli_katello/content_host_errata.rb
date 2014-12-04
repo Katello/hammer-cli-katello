@@ -12,6 +12,21 @@ module HammerCLIKatello
       build_options
     end
 
+    class ListCommand < HammerCLIKatello::ListCommand
+      resource :systems, :errata
+      command_name "list"
+
+      output do
+        field :id, _("ID")
+        field :errata_id, _("Erratum ID")
+        field :type, _("Type")
+        field :title, _("Title")
+        field :available, _("Available")
+      end
+
+      build_options
+    end
+
     class InfoCommand < HammerCLIKatello::InfoCommand
       resource :system_errata, :show
       command_name "info"
