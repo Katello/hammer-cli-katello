@@ -76,9 +76,12 @@ module HammerCLIKatello
     end
 
     def create_repositories_search_options(options)
+      name = options[HammerCLI.option_accessor_name("name")]
+      product_id = options[HammerCLI.option_accessor_name("product_id")]
+
       search_options = {}
-      search_options['name'] = options[HammerCLI.option_accessor_name("name")]
-      search_options['product_id'] = options[HammerCLI.option_accessor_name("product_id")]
+      search_options['name'] = name if name
+      search_options['product_id'] = product_id if product_id
       search_options
     end
 
