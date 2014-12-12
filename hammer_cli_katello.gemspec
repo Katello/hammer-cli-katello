@@ -38,6 +38,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'hammer_cli_foreman', '~> 0.1.3'
   spec.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.3'
+  spec.add_dependency 'hammer_cli_foreman_bootdisk'
 
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'thor'
