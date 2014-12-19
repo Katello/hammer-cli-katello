@@ -21,7 +21,8 @@ Source1: katello.yml
 Requires: ruby(abi)
 %endif
 Requires: ruby(rubygems)
-Requires: rubygem(hammer_cli) >= 0.1.1
+Requires: rubygem(hammer_cli) >= 0.1.3
+Requires: rubygem(hammer_cli_bootdisk)
 Requires: rubygem(hammer_cli_foreman_tasks) >= 0.0.3
 BuildRequires: ruby(rubygems)
 %if 0%{?fedora} || 0%{?rhel} > 6
