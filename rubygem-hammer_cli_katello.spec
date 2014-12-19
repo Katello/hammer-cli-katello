@@ -70,6 +70,9 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Fri Dec 19 2014 Adam Price <komidore64@gmail.com> 0.0.7-1
+- new package built with tito
+
 * Wed Jun 11 2014 Jason Montleon <jmontleo@redhat.com> 0.0.4-6
 - Fixes #6096 - override sub --system-id description (dtsang@redhat.com)
 - Fixes #6071 - override CH --id desc (dtsang@redhat.com)
