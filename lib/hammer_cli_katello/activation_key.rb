@@ -52,6 +52,7 @@ module HammerCLIKatello
         field :id, _("ID")
         field :description, _("Description")
         field :format_limit, _("Content Host Limit")
+        field :auto_attach, _("Auto Attach")
         from :environment do
           field :name, _("Lifecycle Environment")
         end
