@@ -61,6 +61,7 @@ module HammerCLIKatello
     def content_view_version_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_environment_id = HammerCLI.option_accessor_name("environment_id")
+      key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
 
       return options[key_id] if options[key_id]
 
@@ -72,6 +73,16 @@ module HammerCLIKatello
         # Intentionally suppressing the exception,
         # environment is not always required.
       end
+
+      begin
+        options[key_content_view_id] ||= content_view_id(
+          scoped_options("content_view", options)
+        )
+      rescue HammerCLIForeman::MissingSeachOptions # rubocop:disable HandleExceptions
+        # Intentionally suppressing the exception,
+        # content_view is not always required.
+      end
+
       find_resource(:content_view_versions, options)['id']
     end
 
@@ -87,9 +98,12 @@ module HammerCLIKatello
 
     def create_content_view_versions_search_options(options)
       environment_id = options[HammerCLI.option_accessor_name("environment_id")]
+      content_view_id = options[HammerCLI.option_accessor_name("content_view_id")]
       version = options[HammerCLI.option_accessor_name("version")]
 
       search_options = {}
+
+      search_options['content_view_id'] = content_view_id if content_view_id
       search_options['environment_id'] = environment_id if environment_id
       search_options['version'] = version if version
       search_options
