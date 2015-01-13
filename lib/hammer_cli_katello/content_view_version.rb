@@ -99,7 +99,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand(:all).except(:environments)
+        o.expand(:all).except(:environments).including(:content_views, :organizations)
         o.without(:environment_id)
       end
     end
