@@ -7,7 +7,7 @@ module HammerCLIKatello
     class ListCommand < HammerCLIKatello::ListCommand
       output do
         field :id, _("ID")
-        field :tag, _("Tag")
+        field :name, _("Name")
         field :repository_id, _("Repository ID")
       end
 
@@ -19,7 +19,7 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
         field :id, _("ID")
-        field :tag, _("Tag")
+        field :name, _("Name")
         field :repository_id, _("Repository ID")
 
         from :image do
