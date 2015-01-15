@@ -29,11 +29,8 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       command_name "add"
 
-      option "--id", "ID", _("id of the puppet module to associate")
-
-      def request_params
-        super.tap { |params| params['uuid'] = params.delete('id') if params['id'] }
-      end
+      option "--id", "ID", _("id of the puppet module to associate"),
+        :attribute_name => "uuid"
 
       success_message _("Puppet module added to content view")
       failure_message _("Could not add the puppet module")
