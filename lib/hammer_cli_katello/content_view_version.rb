@@ -72,10 +72,6 @@ module HammerCLIKatello
              :flag,
              _("force content view promotion and bypass lifecycle environment restriction")
 
-      option "--from-lifecycle-environment", "FROM_ENVIRONMENT",
-             _("Name of the source environment"), :attribute_name => :option_environment_name
-      option "--from-lifecycle-environment-id", "FROM_ENVIRONMENT_ID",
-             _("Id of the source environment"), :attribute_name => :option_environment_id
       option "--to-lifecycle-environment", "TO_ENVIRONMENT",
              _("Name of the target environment"), :attribute_name => :option_to_environment_name
       option "--to-lifecycle-environment-id", "TO_ENVIRONMENT_ID",
