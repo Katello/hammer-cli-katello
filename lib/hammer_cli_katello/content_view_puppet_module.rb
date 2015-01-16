@@ -30,7 +30,7 @@ module HammerCLIKatello
       command_name "add"
 
       option "--id", "ID", _("id of the puppet module to associate"),
-        :attribute_name => "uuid"
+        :attribute_name => "option_uuid"
 
       success_message _("Puppet module added to content view")
       failure_message _("Could not add the puppet module")
