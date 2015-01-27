@@ -24,7 +24,7 @@ module HammerCLIKatello
 
         collection :tags, _("Tags") do
           field :repository_id, _("Repository ID")
-          field :tag, _("Tag")
+          field :name, _("Tag")
         end
       end
 
