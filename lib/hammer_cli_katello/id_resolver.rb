@@ -26,7 +26,6 @@ module HammerCLIKatello
         s("author", _("Puppet module's author to search by")),
         s("uuid", _("Puppet module's UUID to search by"))
       ],
-      :content_view =>         [s_name(_("Content view name"))],
       :content_view_version => [s("version", _("Content view version number"))]
     }
 
