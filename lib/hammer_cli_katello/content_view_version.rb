@@ -114,6 +114,45 @@ module HammerCLIKatello
       end
     end
 
+    class IncrementalUpdate < HammerCLIKatello::Command
+      include HammerCLIForemanTasks::Async
+
+      action :incremental_update
+      command_name "incremental-update"
+
+      success_message _("Incremental update is being performed with task %{id}")
+      failure_message _("An error occurred incrementally updating the content view")
+
+      option('--environment-ids',
+        'ENVIRONMENTS',
+        _("list of environment IDs to update the content view version in"),
+        :required => true,
+        :format => HammerCLI::Options::Normalizers::List.new
+      )
+
+      option('--id',
+        'ID',
+        _("ID of a content view version to incrementally update"),
+        :required => true
+      )
+
+      def request_params
+        params = super
+
+        params[:content_view_version_environments] = [
+          {
+            :environment_ids => option_environment_ids,
+            :content_view_version_id => params['id']
+          }
+        ]
+
+        params.delete('id')
+        params
+      end
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
