@@ -113,6 +113,42 @@ module HammerCLIKatello
       build_options
     end
 
+    class AvailableIncrementalUpdates < HammerCLIKatello::ListCommand
+      resource :systems_bulk_actions, :available_incremental_updates
+      command_name 'available-incremental-updates'
+
+      option("--id", "ID", _("ID of a content host"))
+
+      def extend_data(data)
+        data['environments'] = data['environments'].map { |env| env['name'] }.join(',')
+        data
+      end
+
+      output do
+        from :content_view_version do
+          from :content_view do
+            field :name, _("Name")
+          end
+          field :version, _("Version")
+        end
+
+        field :environments, _("Environments")
+      end
+
+      def request_params
+        params = super
+        params.delete('exclude')
+        params.delete('ids')
+
+        params[:ids] = params[:id]
+        params.delete('id')
+
+        params
+      end
+
+      build_options :without => [:id]
+    end
+
     autoload_subcommands
 
     subcommand "package",
