@@ -21,7 +21,7 @@ module HammerCLIKatello
         field :errata_id, _("Erratum ID")
         field :type, _("Type")
         field :title, _("Title")
-        field :available, _("Available")
+        field :available, _("Installable")
       end
 
       build_options

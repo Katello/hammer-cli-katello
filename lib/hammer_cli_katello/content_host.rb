@@ -20,7 +20,7 @@ module HammerCLIKatello
         field :uuid, _("ID")
         field :name, _("Name")
         from :errata_counts do
-          field :total, _("Available Errata")
+          field :total, _("Installable Errata")
         end
       end
 
