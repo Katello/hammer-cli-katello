@@ -10,7 +10,7 @@ module HammerCLIKatello
 
       option('--errata',
         'ERRATA',
-        _("comma-separated list of errata to install"),
+        _("List of Errata to install"),
         :required => true,
         :format => HammerCLI::Options::Normalizers::List.new)
 
