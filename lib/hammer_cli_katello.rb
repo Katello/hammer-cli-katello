@@ -117,8 +117,4 @@ module HammerCLIKatello
                                          'hammer_cli_katello/erratum'
   )
 
-  HammerCLI::MainCommand.lazy_subcommand("docker", _("Manipulate docker content"),
-                                         'HammerCLIKatello::DockerCommand',
-                                         'hammer_cli_katello/docker'
-  )
 end
