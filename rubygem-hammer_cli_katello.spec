@@ -70,6 +70,33 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Tue Feb 24 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.8-1
+- Version bump to 0.0.8 (ericdhelms@gmail.com)
+- fixes #9504 - rename available to installable (stbenjam@redhat.com)
+- Merge pull request #271 from daviddavis/temp/20150127110109
+  (david@memorious.net)
+- Fixes #8203, #9226 - Docker counts displayed on repo info (paji@redhat.com)
+- Merge pull request #274 from ehelms/fixes-8190 (eric.d.helms@gmail.com)
+- Fixes #8190: Show incremental updates for given content host.
+  (ericdhelms@gmail.com)
+- Fixes #8179,#8193: Add ability to incrementally update a content view
+  version. (ericdhelms@gmail.com)
+- Fixes #9133 - Fixing docker tag name field in CLI (daviddavis@redhat.com)
+- Merge pull request #267 from cfouant/auto-attach (cfouant@redhat.com)
+- fixes #9008 - fixing content-view puppet-module add (jsherril@redhat.com)
+- Merge pull request #258 from daviddavis/temp/20141202134530
+  (daviddavis@redhat.com)
+- Merge pull request #260 from daviddavis/temp/20141204105103
+  (daviddavis@redhat.com)
+- Merge pull request #266 from daviddavis/temp/20150106162616
+  (daviddavis@redhat.com)
+- fixes #8913 - add back content view options for content view version promote
+  (jsherril@redhat.com)
+- fixes #8891 - adds auto-attach to cli output, BZ1180285 (cfouant@redhat.com)
+- Refs #8632 - Updating docker attributes (daviddavis@redhat.com)
+- Fixes #8583 - Renaming id attribute to avoid lookup (daviddavis@redhat.com)
+- Fixes #8547 - Showing error when no env params (daviddavis@redhat.com)
+
 * Fri Dec 19 2014 Adam Price <komidore64@gmail.com> 0.0.7-1
 - new package built with tito
 
