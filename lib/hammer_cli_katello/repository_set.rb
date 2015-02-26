@@ -44,6 +44,7 @@ module HammerCLIKatello
           field :basearch, _("Arch")
           field :releasever, _("Release")
         end
+        field :registry_name, _("Registry Name")
         field :enabled, _("Enabled"), Fields::Boolean
       end
 
