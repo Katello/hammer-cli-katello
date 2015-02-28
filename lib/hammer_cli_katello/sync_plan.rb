@@ -28,15 +28,13 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
 
       option "--interval", "INTERVAL", _("how often synchronization should run"),
-             :default => 'none',
              :format => HammerCLI::Options::Normalizers::Enum.new(
-                %w(none hourly daily weekly)
+                %w(hourly daily weekly)
               )
 
       option "--sync-date", "SYNC_DATE",
              _("start date and time of the synchronization defaults to now"),
-             :format => HammerCLI::Options::Normalizers::DateTime.new,
-             :default => DateTime.now.strftime("%F %T")
+             :format => HammerCLI::Options::Normalizers::DateTime.new
 
       success_message _("Sync plan created")
       failure_message _("Could not create the sync plan")
@@ -48,7 +46,7 @@ module HammerCLIKatello
 
       option "--interval", "INTERVAL", _("how often synchronization should run"),
              :format => HammerCLI::Options::Normalizers::Enum.new(
-                %w(none hourly daily weekly)
+                %w(hourly daily weekly)
               )
       option "--sync-date", "SYNC_DATE", _("start date and time of the synchronization"),
              :format => HammerCLI::Options::Normalizers::DateTime.new
