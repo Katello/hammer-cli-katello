@@ -45,7 +45,7 @@ module HammerCLIKatello
           field :name, _("Content View")
         end
         field :entitlementStatus, _("Entitlement Status")
-        field :releaseVer, _("Release Version")
+        field :release_ver, _("Release Version")
         field :autoheal, _("Autoheal")
         from :errata_counts do
           field :security, _("Security Errata")
