@@ -12,7 +12,8 @@ module HammerCLIKatello
         'ERRATA',
         _("List of Errata to install"),
         :required => true,
-        :format => HammerCLI::Options::Normalizers::List.new)
+        :format => HammerCLI::Options::Normalizers::List.new,
+        :attribute_name => :content)
 
       def content_type
         'errata'
