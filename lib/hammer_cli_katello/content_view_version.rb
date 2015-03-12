@@ -146,6 +146,12 @@ module HammerCLIKatello
           }
         ]
 
+        if params['update_systems']['included'].key?('ids')
+          params['update_systems'].delete('excluded')
+        else
+          params.delete('update_systems')
+        end
+
         params.delete('id')
         params
       end
