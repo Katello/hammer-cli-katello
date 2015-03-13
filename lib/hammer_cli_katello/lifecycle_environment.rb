@@ -4,11 +4,24 @@ module HammerCLIKatello
     resource :lifecycle_environments
 
     module PriorIdResolvable
+
+      def self.included(base)
+        base.option(
+          "--prior",
+          "PRIOR",
+          _("Name of the prior enviroment")
+        )
+        base.validate_options do
+          any(:option_prior, :option_prior_id).required
+        end
+      end
+
       def request_params
         params = super
-        if params["prior"]
-          params["prior"] = resolver.lifecycle_environment_id(
-            HammerCLI.option_accessor_name("name") => params["prior"],
+        prior = options.delete(HammerCLI.option_accessor_name("prior"))
+        if prior
+          params["prior_id"] = resolver.lifecycle_environment_id(
+            HammerCLI.option_accessor_name("name") => prior,
             HammerCLI.option_accessor_name("organization_id") => params["organization_id"]
           )
         end
@@ -68,7 +81,9 @@ module HammerCLIKatello
       success_message _("Environment created")
       failure_message _("Could not create environment")
 
-      build_options
+      build_options do |o|
+        o.without(:prior)
+      end
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
@@ -77,7 +92,9 @@ module HammerCLIKatello
       success_message _("Environment updated")
       failure_message _("Could not update environment")
 
-      build_options
+      build_options do |o|
+        o.without(:prior)
+      end
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
