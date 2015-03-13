@@ -35,6 +35,8 @@ module HammerCLIKatello
         field :full_path, _("Published At")
         field :docker_upstream_name, _("Upstream Repository Name"),
               Fields::Field, :hide_blank => true
+        field :container_repository_name, _("Container Repository Name"),
+              Fields::Field, :hide_blank => true
 
         label _("Product") do
           from :product do
