@@ -24,6 +24,7 @@ Requires: ruby(rubygems)
 Requires: rubygem(hammer_cli) >= 0.1.3
 Requires: rubygem(hammer_cli_foreman_tasks) >= 0.0.3
 Requires: rubygem(hammer_cli_foreman_bootdisk)
+Requires: rubygem(hammer_cli_foreman_docker)
 BuildRequires: ruby(rubygems)
 %if 0%{?fedora} || 0%{?rhel} > 6
 BuildRequires: rubygems-devel
