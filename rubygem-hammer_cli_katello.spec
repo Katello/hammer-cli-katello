@@ -1,7 +1,7 @@
 %global gemname hammer_cli_katello
 %global confdir hammer
 
-%if 0%{?rhel} < 7
+%if (0%{?rhel} < 7 && 0%{?rhel} >= 1)
 %global gem_dir /usr/lib/ruby/gems/1.8
 %endif
 
@@ -9,7 +9,7 @@
 
 Summary: Katello command plugin for the Hammer CLI
 Name: rubygem-%{gemname}
-Version: 0.0.8
+Version: 0.0.9
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -17,7 +17,7 @@ URL: http://github.com/theforeman/hammer-cli-katello
 Source0: %{gemname}-%{version}.gem
 Source1: katello.yml
 
-%if !( 0%{?rhel} > 6 || 0%{?fedora} > 18 )
+%if !( 0%{?rhel} > 6 )
 Requires: ruby(abi)
 %endif
 Requires: ruby(rubygems)
@@ -26,9 +26,7 @@ Requires: rubygem(hammer_cli_foreman_tasks) >= 0.0.3
 Requires: rubygem(hammer_cli_foreman_bootdisk)
 Requires: rubygem(hammer_cli_foreman_docker)
 BuildRequires: ruby(rubygems)
-%if 0%{?fedora} || 0%{?rhel} > 6
 BuildRequires: rubygems-devel
-%endif
 BuildRequires: ruby
 BuildArch: noarch
 Provides: rubygem(%{gemname}) = %{version}
@@ -71,6 +69,19 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Thu Mar 05 2015 Adam Price <komidore64@gmail.com> 0.0.9-1
+- Merge pull request #279 from parthaa/cdn-enablement (parthaa@gmail.com)
+- Merge pull request #272 from eLobato/patch-1 (david@memorious.net)
+- Refs #7796 - Shows docker registry names for CDN enablement (paji@redhat.com)
+- Merge pull request #276 from mbacovsky/8227_docker_moved
+  (david@memorious.net)
+- Merge pull request #278 from Katello/9537 (walden@redhat.com)
+- Fixes #9537: update help text for host collection erratum, BZ1179473.
+  (walden@redhat.com)
+- Refs #8227 - docker commands moved to separate plugin
+  (martin.bacovsky@gmail.com)
+- Fixes #9183 - Remove duplicate key for content_view (elobatocs@gmail.com)
+
 * Tue Feb 24 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.8-1
 - Version bump to 0.0.8 (ericdhelms@gmail.com)
 - fixes #9504 - rename available to installable (stbenjam@redhat.com)
