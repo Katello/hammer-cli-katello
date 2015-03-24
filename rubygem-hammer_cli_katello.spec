@@ -69,6 +69,27 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Tue Mar 24 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.10-1
+- bump to version 0.0.10 (komidore64@gmail.com)
+- Merge pull request #287 from komidore64/bz1189478 (komidore64@gmail.com)
+- Merge pull request #284 from stbenjam/9679 (stephen@bitbin.de)
+- Merge pull request #282 from komidore64/new-version (komidore64@gmail.com)
+- Merge pull request #280 from omaciel/master (komidore64@gmail.com)
+- Fixes #9819 - No default values for Sync Plans. (omaciel@ogmaciel.com)
+- Merge pull request #285 from daviddavis/temp/20150312110618
+  (david@memorious.net)
+- fixes #9628 - hcli-katello now accepts --prior or --prior-id, BZ1189478
+  (komidore64@gmail.com)
+- Merge pull request #281 from parthaa/containers (parthaa@gmail.com)
+- Fixes #9732: Update incremental update based on server API changes.
+  (ericdhelms@gmail.com)
+- Fixes #9728 - Adding dependencies for hammer_cli_foreman_docker
+  (daviddavis@redhat.com)
+- fixes #9679 - fix host collection erratum install (stbenjam@redhat.com)
+- Fixes #9666 - hammer content-host info having blank "Release Version" every
+  time (pmoravec@redhat.com)
+- Refs #9518, #9310 - Show container repo image name (paji@redhat.com)
+
 * Thu Mar 05 2015 Adam Price <komidore64@gmail.com> 0.0.9-1
 - Merge pull request #279 from parthaa/cdn-enablement (parthaa@gmail.com)
 - Merge pull request #272 from eLobato/patch-1 (david@memorious.net)
