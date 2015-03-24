@@ -9,7 +9,7 @@
 
 Summary: Katello command plugin for the Hammer CLI
 Name: rubygem-%{gemname}
-Version: 0.0.9
+Version: 0.0.10
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
