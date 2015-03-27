@@ -69,6 +69,10 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Fri Mar 27 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.11-1
+- bump to version 0.0.11 (komidore64@gmail.com)
+- refs #9628 - need to use params instead of options (komidore64@gmail.com)
+
 * Tue Mar 24 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.10-1
 - bump to version 0.0.10 (komidore64@gmail.com)
 - Merge pull request #287 from komidore64/bz1189478 (komidore64@gmail.com)
