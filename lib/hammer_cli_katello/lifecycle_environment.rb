@@ -18,7 +18,7 @@ module HammerCLIKatello
 
       def request_params
         params = super
-        prior = options.delete(HammerCLI.option_accessor_name("prior"))
+        prior = params.delete("prior")
         if prior
           params["prior_id"] = resolver.lifecycle_environment_id(
             HammerCLI.option_accessor_name("name") => prior,
