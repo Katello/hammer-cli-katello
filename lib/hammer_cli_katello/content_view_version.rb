@@ -152,6 +152,13 @@ module HammerCLIKatello
           params.delete('update_systems')
         end
 
+        add_content = {}
+        params['add_content'].each do |key, value|
+          add_content[key] = value if options.key?(HammerCLI.option_accessor_name(key))
+        end
+
+        params['add_content'] = add_content
+
         params.delete('id')
         params
       end
