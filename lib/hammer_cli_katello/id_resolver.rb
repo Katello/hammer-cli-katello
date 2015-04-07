@@ -103,7 +103,7 @@ module HammerCLIKatello
       search_options = {}
 
       search_options['content_view_id'] = content_view_id if content_view_id
-      search_options['environment_id'] = environment_id if environment_id
+      search_options['environment_id'] = environment_id if environment_id && content_view_id
       search_options['version'] = version if version
       search_options
     end
@@ -122,6 +122,7 @@ module HammerCLIKatello
       end
       search_options
     end
+
     # alias_method_chain :create_search_options, :katello_api
     alias_method :create_search_options_without_katello_api, :create_search_options
     alias_method :create_search_options, :create_search_options_with_katello_api
