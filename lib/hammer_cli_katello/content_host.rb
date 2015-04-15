@@ -90,6 +90,12 @@ module HammerCLIKatello
       success_message _("Content host updated")
       failure_message _("Could not update content host")
 
+      def request_params
+        params = super
+        params.delete('facts')
+        params
+      end
+
       build_options :without => [:facts, :type, :installed_products]
     end
 
