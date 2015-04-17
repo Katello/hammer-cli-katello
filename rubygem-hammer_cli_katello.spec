@@ -69,6 +69,18 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Fri Apr 17 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.12-1
+- bump to version 0.0.12 (komidore64@gmail.com)
+- Merge pull request #291 from ehelms/fixes-9849 (eric.d.helms@gmail.com)
+- Merge pull request #289 from cfouant/cv-cli (cfouant@redhat.com)
+- Fixes #9849: Prevent users from clearing content host facts unknowingly.
+  (ericdhelms@gmail.com)
+- fixes #9736 - fixes content-view-version param interfering with erratum
+  commands, BZ1201352 (cfouant@redhat.com)
+- Fixes #9995: Only send content IDs that user passes during incremental
+  update. (ericdhelms@gmail.com)
+- Add releasers for tito. (ericdhelms@gmail.com)
+
 * Fri Mar 27 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.11-1
 - bump to version 0.0.11 (komidore64@gmail.com)
 - refs #9628 - need to use params instead of options (komidore64@gmail.com)
