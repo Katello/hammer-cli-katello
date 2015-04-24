@@ -69,6 +69,9 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Fri Apr 24 2015 Adam Price <komidore64@gmail.com> 0.0.13-1
+- bump to version 0.0.13 (komidore64@gmail.com)
+
 * Fri Apr 17 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.12-1
 - bump to version 0.0.12 (komidore64@gmail.com)
 - Merge pull request #291 from ehelms/fixes-9849 (eric.d.helms@gmail.com)
