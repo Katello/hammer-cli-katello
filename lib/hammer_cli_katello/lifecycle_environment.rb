@@ -87,14 +87,10 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      include PriorIdResolvable
-
       success_message _("Environment updated")
       failure_message _("Could not update environment")
 
-      build_options do |o|
-        o.without(:prior)
-      end
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
