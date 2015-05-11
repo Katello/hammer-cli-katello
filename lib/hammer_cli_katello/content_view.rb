@@ -97,7 +97,7 @@ module HammerCLIKatello
 
       def request_params
         super.tap do |opts|
-          opts['composite'] = option_composite?
+          opts['composite'] = option_composite? || false
         end
       end
 
