@@ -13,7 +13,7 @@ module HammerCLIKatello
     end
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource :systems, :errata
+      resource :system_errata, :index
       command_name "list"
 
       output do
