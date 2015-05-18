@@ -68,6 +68,10 @@ module HammerCLIKatello
           field :docker_image_total, _("Docker Images"), Fields::Field, :hide_blank => true
           field :docker_tag_total, _("Docker Tags"), Fields::Field, :hide_blank => true
         end
+        collection :ostree_branches, _("RPM OS Tree Branches"),
+                   :numbered => false, :hide_blank => true do
+          custom_field Fields::Field
+        end
       end
 
       def extend_data(data)
