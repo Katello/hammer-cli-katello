@@ -130,10 +130,10 @@ module HammerCLIKatello
         :format => HammerCLI::Options::Normalizers::List.new
       )
 
-      option('--id',
-        'ID',
-        _("ID of a content view version to incrementally update"),
-        :required => true
+      option('--content-host-ids',
+        'CONTENT_HOST_IDS',
+        _("IDs of content hosts to update"),
+        :format => HammerCLI::Options::Normalizers::List.new
       )
 
       def request_params
@@ -157,13 +157,20 @@ module HammerCLIKatello
           add_content[key] = value if options.key?(HammerCLI.option_accessor_name(key))
         end
 
+        if option_content_host_ids
+          params['update_systems'] = {'included' => {'ids' => option_content_host_ids}}
+        end
+
         params['add_content'] = add_content
 
         params.delete('id')
         params
       end
 
-      build_options
+      build_options do |opt|
+        opt.expand(:all)
+        opt.without(:content_view_version_environments, :ids)
+      end
     end
 
     autoload_subcommands
