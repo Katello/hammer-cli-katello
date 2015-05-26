@@ -9,7 +9,7 @@
 
 Summary: Katello command plugin for the Hammer CLI
 Name: rubygem-%{gemname}
-Version: 0.0.13
+Version: 0.0.14
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -69,6 +69,14 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Tue May 26 2015 Adam Price <komidore64@gmail.com> 0.0.14-1
+- fixes #10499 - switch content-host errata list to use correct resource
+  (jsherril@redhat.com)
+- fixes #10473 - do not support prior id on environment update
+  (jsherril@redhat.com)
+- Fixes #10456: Set composite to false if user does not specify it.
+  (ericdhelms@gmail.com)
+
 * Fri Apr 24 2015 Adam Price <komidore64@gmail.com> 0.0.13-1
 - bump to version 0.0.13 (komidore64@gmail.com)
 
