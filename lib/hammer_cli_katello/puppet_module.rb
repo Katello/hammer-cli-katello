@@ -11,7 +11,9 @@ module HammerCLIKatello
         field :version, _("Version")
       end
 
-      build_options
+      build_options do |o|
+        o.expand(:all).including(:organizations, :content_views)
+      end
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
