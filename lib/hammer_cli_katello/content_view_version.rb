@@ -55,7 +55,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand(:all).including(:environments)
+        o.expand(:all).including(:environments, :content_views)
       end
     end
 
@@ -110,7 +110,7 @@ module HammerCLIKatello
       failure_message _("Could not delete the content view")
 
       build_options do |o|
-        o.expand(:all).including(:environments)
+        o.expand(:all).including(:environments, :content_views)
       end
     end
 
