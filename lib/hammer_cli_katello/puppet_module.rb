@@ -42,7 +42,9 @@ module HammerCLIKatello
         end
       end
 
-      build_options
+      build_options do |o|
+        o.expand(:all).including(:organizations)
+      end
     end
 
     autoload_subcommands
