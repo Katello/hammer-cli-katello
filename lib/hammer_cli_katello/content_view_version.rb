@@ -18,7 +18,9 @@ module HammerCLIKatello
         version
       end
 
-      build_options
+      build_options do |o|
+        o.expand(:all).including(:organizations)
+      end
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -55,7 +57,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand(:all).including(:environments, :content_views)
+        o.expand(:all).including(:environments, :content_views, :organizations)
       end
     end
 
@@ -110,7 +112,7 @@ module HammerCLIKatello
       failure_message _("Could not delete the content view")
 
       build_options do |o|
-        o.expand(:all).including(:environments, :content_views)
+        o.expand(:all).including(:environments, :content_views, :organizations)
       end
     end
 
