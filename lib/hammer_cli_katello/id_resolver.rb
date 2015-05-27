@@ -82,7 +82,9 @@ module HammerCLIKatello
         # content_view is not always required.
       end
 
-      find_resource(:content_view_versions, options)['id']
+      results = find_resources(:content_view_versions, options)
+      return  pick_result(results, @api.resource(:content_view_versions))['id'] if results.size <= 1
+      results.sort { |a, b| a['version'].to_f <=> b['version'].to_f }.last['id']
     end
 
     def create_repositories_search_options(options)
