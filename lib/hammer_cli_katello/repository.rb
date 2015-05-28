@@ -180,9 +180,9 @@ module HammerCLIKatello
           fullpath = ::File.expand_path(path)
 
           if File.directory?(fullpath)
-            Dir["#{fullpath}/*"].map { |file| ::File.new(file, 'rb') }
+            Dir["#{fullpath}/*"]
           else
-            [::File.new(fullpath, 'rb')]
+            [fullpath]
           end
         end
       end
@@ -193,7 +193,9 @@ module HammerCLIKatello
 
       def execute
         @failure = false
-        option_content.each { |file| upload_file(file) }
+        option_content.each do |file_path|
+          File.open(file_path, 'rb') { |file| upload_file file }
+        end
 
         @failure ? HammerCLI::EX_DATAERR : HammerCLI::EX_OK
       end
