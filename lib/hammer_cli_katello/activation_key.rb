@@ -224,6 +224,7 @@ module HammerCLIKatello
           field :gpgUrl, _("GPG Key")
           field :label, _("Label")
         end
+        field :override, _("Enabled?")
       end
 
       build_options
