@@ -19,13 +19,21 @@ module HammerCLIKatello
       end
     end
 
+    module LimitFieldDataExtension
+      def extend_data(data)
+        data['_limit'] = data['unlimited_content_hosts'] ? 'None' : data['max_content_hosts']
+        data
+      end
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
+      include LimitFieldDataExtension
       resource :host_collections, :index
 
       output do
         field :id, _("ID")
         field :name, _("Name")
-        field :max_content_hosts, _("Limit")
+        field :_limit, _("Limit")
         field :description, _("Description")
       end
 
@@ -49,11 +57,11 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include LimitFieldDataExtension
       resource :host_collections, :show
 
       output ListCommand.output_definition do
         field :total_content_hosts, _("Total Content Hosts")
-        field :max_content_hosts, _("Max Content Hosts")
       end
 
       build_options
