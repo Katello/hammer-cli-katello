@@ -9,7 +9,7 @@
 
 Summary: Katello command plugin for the Hammer CLI
 Name: rubygem-%{gemname}
-Version: 0.0.14
+Version: 0.0.15
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -69,6 +69,24 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_dir}/doc/%{gemname}-%{version}
 
 %changelog
+* Tue Jul 07 2015 Stephen Benjamin <stbenjam@redhat.com> 0.0.15-1
+- Version bump to 0.0.15 (stbenjam@redhat.com)
+- fixes #10948 - fix text for Limit field, BZ 1214675 (komidore64@gmail.com)
+- Merge pull request #295 from ehelms/fixes-10600 (eric.d.helms@gmail.com)
+- Merge pull request #298 from adamruzicka/10561-repository_upload
+  (eric.d.helms@gmail.com)
+- Fixes #10561,BZ1206734 - repository content-upload opens files one by one
+  (aruzicka@redhat.com)
+- refs #10628 - add org back to content-view version commands, bz 1223086
+  (komidore64@gmail.com)
+- refs #10628 - add orgs and CVs back to puppet_module list, bz 1223086
+  (komidore64@gmail.com)
+- refs #10628 - adding back organization for puppet-module info, bz 1223086
+  (komidore64@gmail.com)
+- refs #10628 - adding back content-view[-id], BZ 1223086
+  (komidore64@gmail.com)
+- Fixes #10600: Cleanup incremental update options. (ericdhelms@gmail.com)
+
 * Tue May 26 2015 Adam Price <komidore64@gmail.com> 0.0.14-1
 - fixes #10499 - switch content-host errata list to use correct resource
   (jsherril@redhat.com)
