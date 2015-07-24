@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Katello commands for Hammer'
   spec.homepage = 'http://github.com/theforeman/hammer-cli-katello'
 
-  spec.files = Dir['lib/**/*.rb', 'locale/**/**']
+  spec.files = Dir['config/**/*', 'lib/**/*.rb', 'locale/**/**']
   spec.test_files = `git ls-files -- {test,spec,features}/*`.split($ORS)
 
   spec.name = 'hammer_cli_katello'

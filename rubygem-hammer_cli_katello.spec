@@ -1,21 +1,14 @@
-%global gemname hammer_cli_katello
+%global gem_name hammer_cli_katello
 %global confdir hammer
 
-%if (0%{?rhel} < 7 && 0%{?rhel} >= 1)
-%global gem_dir /usr/lib/ruby/gems/1.8
-%endif
-
-%global geminstdir %{gem_dir}/gems/%{gemname}-%{version}
-
 Summary: Katello command plugin for the Hammer CLI
-Name: rubygem-%{gemname}
+Name: rubygem-%{gem_name}
 Version: 0.0.15
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-katello
-Source0: %{gemname}-%{version}.gem
-Source1: katello.yml
+Source0: %{gem_name}-%{version}.gem
 
 %if !( 0%{?rhel} > 6 )
 Requires: ruby(abi)
@@ -29,7 +22,7 @@ BuildRequires: ruby(rubygems)
 BuildRequires: rubygems-devel
 BuildRequires: ruby
 BuildArch: noarch
-Provides: rubygem(%{gemname}) = %{version}
+Provides: rubygem(%{gem_name}) = %{version}
 
 %description
 Katello command plugin for the Hammer CLI.
@@ -52,21 +45,22 @@ gem install --local --install-dir .%{gem_dir} \
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d
-install -m 755 %{SOURCE1} %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d/katello.yml
+install -m 755 .%{gem_instdir}/config/katello.yml %{buildroot}%{_sysconfdir}/%{confdir}/cli.modules.d/katello.yml
 mkdir -p %{buildroot}%{gem_dir}
 cp -pa .%{gem_dir}/* \
         %{buildroot}%{gem_dir}/
 
 %files
-%dir %{geminstdir}
-%{geminstdir}/lib
-%{geminstdir}/locale
+%dir %{gem_instdir}
+%{gem_instdir}/lib
+%{gem_instdir}/locale
 %config(noreplace) %{_sysconfdir}/%{confdir}/cli.modules.d/katello.yml
-%exclude %{gem_dir}/cache/%{gemname}-%{version}.gem
-%{gem_dir}/specifications/%{gemname}-%{version}.gemspec
+%exclude %{gem_dir}/cache/%{gem_name}-%{version}.gem
+%{gem_dir}/specifications/%{gem_name}-%{version}.gemspec
 
 %files doc
-%doc %{gem_dir}/doc/%{gemname}-%{version}
+%doc %{gem_dir}/doc/%{gem_name}-%{version}
+%doc %{gem_instdir}/config
 
 %changelog
 * Tue Jul 07 2015 Stephen Benjamin <stbenjam@redhat.com> 0.0.15-1
