@@ -152,6 +152,22 @@ module HammerCLIKatello
     end
 
     autoload_subcommands
-  end
 
+    class GetContentOverrideCommand < HammerCLIKatello::ListCommand
+      resource :host_subscriptions
+      action :product_content
+      command_name "list"
+    end
+
+    class SetContentOverrideCommand < HammerCLIKatello::SingleResourceCommand
+      resource :host_subscriptions
+      action :content_override
+      command_name "update"
+    end
+
+    require 'hammer_cli_katello/content_host_content_override'
+    subcommand HammerCLIKatello::ContentHostContentOverrideCommand.command_name,
+               HammerCLIKatello::ContentHostContentOverrideCommand.desc,
+               HammerCLIKatello::ContentHostContentOverrideCommand
+  end
 end
