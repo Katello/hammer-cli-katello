@@ -61,6 +61,7 @@ module HammerCLIKatello
       key_id = HammerCLI.option_accessor_name("id")
       key_environment_id = HammerCLI.option_accessor_name("environment_id")
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
+      from_environment_id = HammerCLI.option_accessor_name("from_environment_id")
 
       return options[key_id] if options[key_id]
 
@@ -82,7 +83,19 @@ module HammerCLIKatello
         # content_view is not always required.
       end
 
-      find_resource(:content_view_versions, options)['id']
+      results = find_resources(:content_view_versions, options)
+      options[from_environment_id] ||= from_lifecycle_environment_id(options)
+
+      if results.size > 1 && options[from_environment_id]
+        results_in_from_environment = results.select do  |version|
+          member_of_environment_ids = version['environments'].map { |env| env['id'].to_s }
+          member_of_environment_ids.include? options[from_environment_id].to_s
+        end
+        results_in_from_environment
+          .sort { |a, b| a['version'].to_f <=> b['version'].to_f }.last['id']
+      else
+        pick_result(results, @api.resource(:content_view_versions))['id']
+      end
     end
 
     def create_repositories_search_options(options)
@@ -127,5 +140,19 @@ module HammerCLIKatello
     alias_method :create_search_options_without_katello_api, :create_search_options
     alias_method :create_search_options, :create_search_options_with_katello_api
 
+    private
+
+    def from_lifecycle_environment_id(options)
+      environment_id = HammerCLI.option_accessor_name("environment_id")
+      environment_name = HammerCLI.option_accessor_name("environment_name")
+      from_environment_id = HammerCLI.option_accessor_name("from_environment_id")
+      from_environment_name = HammerCLI.option_accessor_name("from_environment_name")
+      return nil if options[from_environment_id].nil? && options[from_environment_name].nil?
+      search_options = options.dup.tap do |opts|
+        opts[environment_name] = opts[from_environment_name]
+        opts[environment_id] = opts[from_environment_id]
+      end
+      lifecycle_environment_id(scoped_options("environment", search_options))
+    end
   end
 end
