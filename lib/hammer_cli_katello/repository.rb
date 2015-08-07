@@ -54,7 +54,7 @@ module HammerCLIKatello
 
         label _("Sync") do
           field :_sync_state, _("Status")
-          field :last_sync, _("Last Sync Date"), Fields::Date, :hide_blank => true
+          field :last_sync_words, _("Last Sync Date"), Fields::Field, :hide_blank => true
         end
 
         field :created_at, _("Created"), Fields::Date
@@ -73,13 +73,23 @@ module HammerCLIKatello
       def extend_data(data)
         data["_redhat_repo"] = data["product_type"] == "redhat" ? _("yes") : _("no")
         data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
-        data["_sync_state"] = get_sync_status(data["sync_state"])
+
         if data["content_type"] == "yum" && data["gpg_key"]
           data["gpg_key_name"] = data["gpg_key"]["name"]
         end
 
+        setup_sync_state(data)
         setup_content_counts(data) if data["content_counts"]
         data
+      end
+
+      def setup_sync_state(data)
+        if data['last_sync']
+          data['_sync_state'] = get_sync_status(data["last_sync"]["result"])
+          data['last_sync'] = data['last_sync_words']
+        else
+          data['_sync_state'] = _("Not Synced")
+        end
       end
 
       def setup_content_counts(data)
