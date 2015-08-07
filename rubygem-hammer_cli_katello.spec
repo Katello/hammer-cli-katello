@@ -3,7 +3,7 @@
 
 Summary: Katello command plugin for the Hammer CLI
 Name: rubygem-%{gem_name}
-Version: 0.0.15
+Version: 0.0.17
 Release: 1%{?dist}
 Group: Development/Languages
 License: GPLv3
@@ -63,6 +63,8 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_instdir}/config
 
 %changelog
+* Thu Aug 06 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.17-1
+- Update rubygem-hammer_cli_katello to 0.0.17 (ericdhelms@gmail.com)
 * Tue Jul 07 2015 Stephen Benjamin <stbenjam@redhat.com> 0.0.15-1
 - Version bump to 0.0.15 (stbenjam@redhat.com)
 - fixes #10948 - fix text for Limit field, BZ 1214675 (komidore64@gmail.com)
