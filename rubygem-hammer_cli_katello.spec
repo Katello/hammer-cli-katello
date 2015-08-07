@@ -4,7 +4,7 @@
 Summary: Katello command plugin for the Hammer CLI
 Name: rubygem-%{gem_name}
 Version: 0.0.17
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: GPLv3
 URL: http://github.com/theforeman/hammer-cli-katello
@@ -63,6 +63,17 @@ cp -pa .%{gem_dir}/* \
 %doc %{gem_instdir}/config
 
 %changelog
+* Fri Aug 07 2015 Stephen Benjamin <stbenjam@redhat.com> 0.0.17-2
+- Bump RPM spec to 0.0.17 (stbenjam@redhat.com)
+- bump version to include new dep on hammer_cli-0.3.0 (komidore64@gmail.com)
+- fixes #11256 - updates gem dependency for hammer-cli-foreman
+  (cfouant@redhat.com)
+- fixes #9876 - Adds override value of product content in activation key,
+  BZ1180282 (cfouant@redhat.com)
+- bumping version to 0.0.16 (jsherril@redhat.com)
+- Refs #9848: Move config file to config directory and provide via gem.
+  (ericdhelms@gmail.com)
+
 * Thu Aug 06 2015 Eric D. Helms <ericdhelms@gmail.com> 0.0.17-1
 - Update rubygem-hammer_cli_katello to 0.0.17 (ericdhelms@gmail.com)
 * Tue Jul 07 2015 Stephen Benjamin <stbenjam@redhat.com> 0.0.15-1
