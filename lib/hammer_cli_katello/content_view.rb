@@ -191,6 +191,7 @@ module HammerCLIKatello
 
     class RemoveContentViewVersionCommand < HammerCLIKatello::RemoveAssociatedCommand
       command_name 'remove-version'
+      desc _('Remove a version of a content view')
 
       def association_name(plural = false)
         plural ? "components" : "component"
