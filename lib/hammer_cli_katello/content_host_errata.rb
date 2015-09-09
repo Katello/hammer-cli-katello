@@ -4,6 +4,7 @@ module HammerCLIKatello
     desc "Manage errata on your content hosts"
 
     class ApplyCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
       resource :system_errata, :apply
       command_name "apply"
       success_message _("Errata applied successfully")
