@@ -8,7 +8,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :uuid, _("ID")
+        field :uuid, _("UUID")
         field :name, _("Name")
         field :author, _("Author")
         field :version, _("Version")
@@ -29,13 +29,15 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       command_name "add"
 
-      option "--id", "ID", _("id of the puppet module to associate"),
-        :attribute_name => "option_uuid"
+      option "--id", "ID", _("(deprecated) id of the puppet module to associate"),
+        :attribute_name => "option_uuid",
+        :deprecated => _("This option will be removed in Katello 2.5, Use --uuid")
 
       success_message _("Puppet module added to content view")
       failure_message _("Could not add the puppet module")
 
-      build_options :without => :uuid
+      #build_options :without => :uuid
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
