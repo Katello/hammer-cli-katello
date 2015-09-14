@@ -1,0 +1,1606 @@
+# nnakakit <nnakakit@redhat.com>, 2012. #zanata
+# kmoriguc <kmoriguc@redhat.com>, 2013. #zanata
+# noriko <noriko@redhat.com>, 2013. #zanata
+# tnagamot <tnagamot@redhat.com>, 2013. #zanata
+# Ykatabam <ykatabam@redhat.com>, 2014. #zanata
+# asasaki <asasaki@redhat.com>, 2014. #zanata
+# jito <jito@redhat.com>, 2014. #zanata
+# kmoriguc <kmoriguc@redhat.com>, 2014. #zanata
+# Ykatabam <ykatabam@redhat.com>, 2015. #zanata
+# asasaki <asasaki@redhat.com>, 2015. #zanata
+# myamamot <myamamot@redhat.com>, 2015. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-katello 0.0.7.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-04 13:31+0200\n"
+"PO-Revision-Date: 2015-04-27 06:30+0000\n"
+"Last-Translator: asasaki <asasaki@redhat.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Zanata 3.6.0\n"
+
+#: lib/hammer_cli_katello/host_collection.rb:10
+msgid "Array of system ids to replace the content hosts in host collection"
+msgstr ""
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/host_collection.rb:26
+#: lib/hammer_cli_katello/host_collection.rb:60
+#: lib/hammer_cli_katello/repository_set.rb:9
+#: lib/hammer_cli_katello/repository_set.rb:21
+#: lib/hammer_cli_katello/repository_set.rb:29
+#: lib/hammer_cli_katello/content_view.rb:25
+#: lib/hammer_cli_katello/content_view.rb:36
+#: lib/hammer_cli_katello/content_view.rb:42
+#: lib/hammer_cli_katello/content_view.rb:51
+#: lib/hammer_cli_katello/content_view.rb:56
+#: lib/hammer_cli_katello/content_view.rb:62
+#: lib/hammer_cli_katello/activation_key.rb:11
+#: lib/hammer_cli_katello/activation_key.rb:49
+#: lib/hammer_cli_katello/activation_key.rb:59
+#: lib/hammer_cli_katello/activation_key.rb:100
+#: lib/hammer_cli_katello/activation_key.rb:173
+#: lib/hammer_cli_katello/sync_plan.rb:8
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:11
+#: lib/hammer_cli_katello/gpg_key.rb:10 lib/hammer_cli_katello/gpg_key.rb:20
+#: lib/hammer_cli_katello/gpg_key.rb:27
+#: lib/hammer_cli_katello/subscription.rb:21
+#: lib/hammer_cli_katello/content_host.rb:16
+#: lib/hammer_cli_katello/content_host.rb:30
+#: lib/hammer_cli_katello/puppet_module.rb:8
+#: lib/hammer_cli_katello/puppet_module.rb:19
+#: lib/hammer_cli_katello/repository.rb:24
+#: lib/hammer_cli_katello/repository.rb:38
+#: lib/hammer_cli_katello/repository.rb:45
+#: lib/hammer_cli_katello/content_view_version.rb:10
+#: lib/hammer_cli_katello/content_view_version.rb:26
+#: lib/hammer_cli_katello/content_view_version.rb:37
+#: lib/hammer_cli_katello/content_view_version.rb:43
+#: lib/hammer_cli_katello/content_view_version.rb:49
+#: lib/hammer_cli_katello/product.rb:8 lib/hammer_cli_katello/product.rb:37
+#: lib/hammer_cli_katello/filter.rb:30 lib/hammer_cli_katello/filter.rb:36
+#: lib/hammer_cli_katello/lifecycle_environment.rb:21
+#: lib/hammer_cli_katello/lifecycle_environment.rb:52
+#: lib/hammer_cli_katello/capsule.rb:44 lib/hammer_cli_katello/capsule.rb:60
+msgid "ID"
+msgstr "ID"
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#: lib/hammer_cli_katello/host_collection.rb:27
+#: lib/hammer_cli_katello/host_collection.rb:61
+#: lib/hammer_cli_katello/repository_set.rb:11
+#: lib/hammer_cli_katello/repository_set.rb:22
+#: lib/hammer_cli_katello/repository_set.rb:30
+#: lib/hammer_cli_katello/repository_set.rb:42
+#: lib/hammer_cli_katello/filter_rule.rb:14
+#: lib/hammer_cli_katello/filter_rule.rb:31
+#: lib/hammer_cli_katello/content_view.rb:14
+#: lib/hammer_cli_katello/content_view.rb:26
+#: lib/hammer_cli_katello/content_view.rb:37
+#: lib/hammer_cli_katello/content_view.rb:44
+#: lib/hammer_cli_katello/content_view.rb:52
+#: lib/hammer_cli_katello/content_view.rb:63
+#: lib/hammer_cli_katello/activation_key.rb:12
+#: lib/hammer_cli_katello/activation_key.rb:48
+#: lib/hammer_cli_katello/activation_key.rb:60
+#: lib/hammer_cli_katello/activation_key.rb:101
+#: lib/hammer_cli_katello/activation_key.rb:174
+#: lib/hammer_cli_katello/sync_plan.rb:9
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:13
+#: lib/hammer_cli_katello/gpg_key.rb:11 lib/hammer_cli_katello/gpg_key.rb:21
+#: lib/hammer_cli_katello/gpg_key.rb:28
+#: lib/hammer_cli_katello/subscription.rb:14
+#: lib/hammer_cli_katello/content_host.rb:17
+#: lib/hammer_cli_katello/content_host.rb:29
+#: lib/hammer_cli_katello/puppet_module.rb:9
+#: lib/hammer_cli_katello/puppet_module.rb:20
+#: lib/hammer_cli_katello/puppet_module.rb:41
+#: lib/hammer_cli_katello/repository.rb:9
+#: lib/hammer_cli_katello/repository.rb:25
+#: lib/hammer_cli_katello/repository.rb:39
+#: lib/hammer_cli_katello/repository.rb:46
+#: lib/hammer_cli_katello/content_view_version.rb:11
+#: lib/hammer_cli_katello/content_view_version.rb:27
+#: lib/hammer_cli_katello/content_view_version.rb:38
+#: lib/hammer_cli_katello/content_view_version.rb:44
+#: lib/hammer_cli_katello/content_view_version.rb:50
+#: lib/hammer_cli_katello/product.rb:9 lib/hammer_cli_katello/product.rb:38
+#: lib/hammer_cli_katello/filter.rb:14 lib/hammer_cli_katello/filter.rb:25
+#: lib/hammer_cli_katello/filter.rb:31 lib/hammer_cli_katello/filter.rb:37
+#: lib/hammer_cli_katello/lifecycle_environment.rb:22
+#: lib/hammer_cli_katello/lifecycle_environment.rb:53
+#: lib/hammer_cli_katello/capsule.rb:10 lib/hammer_cli_katello/capsule.rb:45
+#: lib/hammer_cli_katello/capsule.rb:61
+msgid "Name"
+msgstr "名前"
+
+#: lib/hammer_cli_katello/host_collection.rb:28
+msgid "Limit"
+msgstr "制限"
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker, author myamamot
+#: lib/hammer_cli_katello/host_collection.rb:29
+#: lib/hammer_cli_katello/organization.rb:11
+#: lib/hammer_cli_katello/organization.rb:23
+#: lib/hammer_cli_katello/content_view.rb:29
+#: lib/hammer_cli_katello/activation_key.rb:50
+#: lib/hammer_cli_katello/sync_plan.rb:20
+#: lib/hammer_cli_katello/content_host.rb:31
+#: lib/hammer_cli_katello/puppet_module.rb:25
+#: lib/hammer_cli_katello/product.rb:10 lib/hammer_cli_katello/product.rb:40
+#: lib/hammer_cli_katello/lifecycle_environment.rb:55
+msgid "Description"
+msgstr "説明"
+
+#: lib/hammer_cli_katello/host_collection.rb:39
+#: lib/hammer_cli_katello/host_collection.rb:73
+msgid "Host collection created"
+msgstr "ホストコレクションが作成されました"
+
+#: lib/hammer_cli_katello/host_collection.rb:40
+#: lib/hammer_cli_katello/host_collection.rb:74
+msgid "Could not create the host collection"
+msgstr "ホストコレクションを作成できませんでした"
+
+#: lib/hammer_cli_katello/host_collection.rb:48
+msgid "Total Content Hosts"
+msgstr "コンテンツホストの合計"
+
+#: lib/hammer_cli_katello/host_collection.rb:49
+msgid "Max Content Hosts"
+msgstr "コンテンツホストの最大数"
+
+#: lib/hammer_cli_katello/host_collection.rb:85
+msgid "Host collection updated"
+msgstr "ホストコレクションが更新されました"
+
+#: lib/hammer_cli_katello/host_collection.rb:86
+msgid "Could not update the the host collection"
+msgstr "ホストコレクションを更新できませんでした"
+
+#: lib/hammer_cli_katello/host_collection.rb:94
+msgid "Host collection deleted"
+msgstr "ホストコレクションが削除されました"
+
+#: lib/hammer_cli_katello/host_collection.rb:95
+msgid "Could not delete the host collection"
+msgstr "ホストコレクションを削除できませんでした"
+
+#: lib/hammer_cli_katello/host_collection.rb:104
+msgid "The content host(s) has been added"
+msgstr "コンテンツホストが追加されました"
+
+#: lib/hammer_cli_katello/host_collection.rb:105
+msgid "Could not add content host(s)"
+msgstr "コンテンツホストを追加できませんでした"
+
+#: lib/hammer_cli_katello/host_collection.rb:114
+msgid "The content host(s) has been removed"
+msgstr "コンテンツホストが削除されました"
+
+#: lib/hammer_cli_katello/host_collection.rb:115
+msgid "Could not remove content host(s)"
+msgstr "コンテンツホストを削除できませんでした"
+
+#: lib/hammer_cli_katello/host_collection.rb:124
+msgid "Manipulate host collections"
+msgstr "ホストコレクションの操作"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/organization.rb:10
+#: lib/hammer_cli_katello/organization.rb:22
+#: lib/hammer_cli_katello/repository_set.rb:26
+#: lib/hammer_cli_katello/content_view.rb:15
+#: lib/hammer_cli_katello/content_view.rb:27
+#: lib/hammer_cli_katello/content_view.rb:38
+#: lib/hammer_cli_katello/repository.rb:26
+#: lib/hammer_cli_katello/content_view_version.rb:39
+#: lib/hammer_cli_katello/content_view_version.rb:45
+#: lib/hammer_cli_katello/product.rb:39 lib/hammer_cli_katello/filter.rb:32
+#: lib/hammer_cli_katello/lifecycle_environment.rb:54
+msgid "Label"
+msgstr "ラベル"
+
+#: lib/hammer_cli_katello/organization.rb:24
+msgid "Red Hat Repository URL"
+msgstr "Red Hat リポジトリー URL"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/organization.rb:34
+msgid "Organization updated"
+msgstr "組織が更新されました"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/organization.rb:35
+msgid "Could not update the organization"
+msgstr "組織を更新できませんでした"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/organization.rb:43
+msgid "Organization created"
+msgstr "組織が作成されました"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/organization.rb:44
+msgid "Could not create the organization"
+msgstr "組織を作成できませんでした"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/organization.rb:54
+msgid "Organization deleted"
+msgstr "組織が削除されました"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/organization.rb:55
+msgid "Could not delete the organization"
+msgstr "組織を削除できませんでした"
+
+#: lib/hammer_cli_katello/organization.rb:65
+msgid "Manipulate organizations"
+msgstr "組織の操作"
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 7698-743369, author Ykatabam
+#: lib/hammer_cli_katello/repository_set.rb:10
+#: lib/hammer_cli_katello/repository_set.rb:23
+#: lib/hammer_cli_katello/filter.rb:15 lib/hammer_cli_katello/filter.rb:26
+msgid "Type"
+msgstr "タイプ"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/repository_set.rb:24
+#: lib/hammer_cli_katello/repository.rb:14
+#: lib/hammer_cli_katello/repository.rb:32
+#: lib/hammer_cli_katello/product.rb:68 lib/hammer_cli_katello/capsule.rb:11
+msgid "URL"
+msgstr "URL"
+
+#: lib/hammer_cli_katello/repository_set.rb:25
+#: lib/hammer_cli_katello/repository.rb:43
+#: lib/hammer_cli_katello/product.rb:51
+msgid "GPG Key"
+msgstr "GPG キー"
+
+#: lib/hammer_cli_katello/repository_set.rb:28
+msgid "Enabled Repositories"
+msgstr "有効にされたリポジトリー"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/repository_set.rb:44
+msgid "Arch"
+msgstr "アーキテクチャー"
+
+#: lib/hammer_cli_katello/repository_set.rb:45
+msgid "Release"
+msgstr "リリース"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/repository_set.rb:47
+msgid "Enabled"
+msgstr "有効化"
+
+#: lib/hammer_cli_katello/repository_set.rb:67
+msgid "Repository enabled"
+msgstr "リポジトリーが有効にされました"
+
+#: lib/hammer_cli_katello/repository_set.rb:68
+msgid "Could not enable repository"
+msgstr "リポジトリーを有効にできませんでした"
+
+#: lib/hammer_cli_katello/repository_set.rb:77
+msgid "Repository disabled"
+msgstr "リポジトリーが無効にされました"
+
+#: lib/hammer_cli_katello/repository_set.rb:78
+msgid "Could not disable repository"
+msgstr "リポジトリーを無効にできませんでした"
+
+#: lib/hammer_cli_katello/repository_set.rb:86
+msgid "manipulate repository sets on the server"
+msgstr ""
+
+#: lib/hammer_cli_katello/filter_rule.rb:11
+#: lib/hammer_cli_katello/filter_rule.rb:28
+msgid "Rule ID"
+msgstr "ルール ID"
+
+#: lib/hammer_cli_katello/filter_rule.rb:12
+#: lib/hammer_cli_katello/filter_rule.rb:29
+#: lib/hammer_cli_katello/filter.rb:13 lib/hammer_cli_katello/filter.rb:24
+msgid "Filter ID"
+msgstr "フィルター ID"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/filter_rule.rb:15
+#: lib/hammer_cli_katello/filter_rule.rb:32
+#: lib/hammer_cli_katello/content_view.rb:57
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:15
+#: lib/hammer_cli_katello/puppet_module.rb:11
+#: lib/hammer_cli_katello/puppet_module.rb:21
+#: lib/hammer_cli_katello/content_view_version.rb:12
+#: lib/hammer_cli_katello/content_view_version.rb:28
+#: lib/hammer_cli_katello/content_view_version.rb:52
+#: lib/hammer_cli_katello/filter.rb:38
+msgid "Version"
+msgstr "バージョン"
+
+#: lib/hammer_cli_katello/filter_rule.rb:16
+#: lib/hammer_cli_katello/filter_rule.rb:33
+#: lib/hammer_cli_katello/filter.rb:39
+msgid "Minimum Version"
+msgstr "最小のバージョン"
+
+#: lib/hammer_cli_katello/filter_rule.rb:17
+#: lib/hammer_cli_katello/filter_rule.rb:34
+#: lib/hammer_cli_katello/filter.rb:40
+msgid "Maximum Version"
+msgstr "最大のバージョン"
+
+#: lib/hammer_cli_katello/filter_rule.rb:18
+#: lib/hammer_cli_katello/filter_rule.rb:35
+#: lib/hammer_cli_katello/filter.rb:41
+msgid "Errata ID"
+msgstr "エラータ ID"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/filter_rule.rb:19
+#: lib/hammer_cli_katello/filter_rule.rb:36
+#: lib/hammer_cli_katello/sync_plan.rb:10 lib/hammer_cli_katello/filter.rb:42
+msgid "Start Date"
+msgstr "開始日"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/filter_rule.rb:20
+#: lib/hammer_cli_katello/filter_rule.rb:37
+#: lib/hammer_cli_katello/subscription.rb:20
+#: lib/hammer_cli_katello/filter.rb:43
+msgid "End Date"
+msgstr "終了日"
+
+# translation auto-copied from project policycoreutils, version 2.1.14, document policycoreutils, author noriko
+#: lib/hammer_cli_katello/filter_rule.rb:38
+#: lib/hammer_cli_katello/filter.rb:44
+msgid "Types"
+msgstr "タイプ"
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 26789-635853, author tnagamot
+#: lib/hammer_cli_katello/filter_rule.rb:39
+#: lib/hammer_cli_katello/content_view.rb:46
+#: lib/hammer_cli_katello/repository.rb:55 lib/hammer_cli_katello/filter.rb:45
+msgid "Created"
+msgstr "作成"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#: lib/hammer_cli_katello/filter_rule.rb:40
+#: lib/hammer_cli_katello/content_view.rb:47
+#: lib/hammer_cli_katello/repository.rb:56 lib/hammer_cli_katello/filter.rb:46
+msgid "Updated"
+msgstr "更新"
+
+#: lib/hammer_cli_katello/filter_rule.rb:47
+msgid "Filter rule created"
+msgstr "フィルタールールが作成されました"
+
+#: lib/hammer_cli_katello/filter_rule.rb:48
+msgid "Could not create the filter rule"
+msgstr "フィルタールールを作成できませんでした"
+
+#: lib/hammer_cli_katello/filter_rule.rb:54
+msgid "Filter rule updated"
+msgstr "フィルタールールが更新されました"
+
+#: lib/hammer_cli_katello/filter_rule.rb:55
+msgid "Could not update the filter rule"
+msgstr "フィルタールールを更新できませんでした"
+
+#: lib/hammer_cli_katello/filter_rule.rb:61
+msgid "Filter rule deleted"
+msgstr "フィルタールールが削除されました"
+
+#: lib/hammer_cli_katello/filter_rule.rb:62
+msgid "Could not delete the filter rule"
+msgstr "フィルタールールを削除できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:13
+#: lib/hammer_cli_katello/content_view_version.rb:15
+#: lib/hammer_cli_katello/content_view_version.rb:31
+msgid "Content View ID"
+msgstr "コンテンツビュー ID"
+
+#: lib/hammer_cli_katello/content_view.rb:16
+#: lib/hammer_cli_katello/content_view.rb:28
+msgid "Composite"
+msgstr "複合"
+
+#: lib/hammer_cli_katello/content_view.rb:17
+msgid "Repository IDs"
+msgstr "リポジトリー ID"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/content_view.rb:32
+#: lib/hammer_cli_katello/gpg_key.rb:23
+#: lib/hammer_cli_katello/repository.rb:28
+#: lib/hammer_cli_katello/product.rb:13 lib/hammer_cli_katello/product.rb:56
+#: lib/hammer_cli_katello/lifecycle_environment.rb:57
+#: lib/hammer_cli_katello/capsule.rb:47 lib/hammer_cli_katello/capsule.rb:63
+msgid "Organization"
+msgstr "組織"
+
+# translation auto-copied from project JBoss SOA5.2 DS Metadata Repository Reference Guide, version 5.2, document content/jcr/configuration, author tnagamot
+#: lib/hammer_cli_katello/content_view.rb:35
+#: lib/hammer_cli_katello/puppet_module.rb:39
+#: lib/hammer_cli_katello/content_view_version.rb:42
+#: lib/hammer_cli_katello/product.rb:16 lib/hammer_cli_katello/filter.rb:29
+msgid "Repositories"
+msgstr "リポジトリー"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#: lib/hammer_cli_katello/content_view.rb:41
+#: lib/hammer_cli_katello/repository.rb:62
+#: lib/hammer_cli_katello/content_view_version.rb:48
+msgid "Puppet Modules"
+msgstr "Puppet モジュール"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/content_view.rb:43
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:12
+msgid "UUID"
+msgstr "UUID"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#: lib/hammer_cli_katello/content_view.rb:45
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:14
+#: lib/hammer_cli_katello/puppet_module.rb:10
+#: lib/hammer_cli_katello/puppet_module.rb:22
+#: lib/hammer_cli_katello/content_view_version.rb:51
+msgid "Author"
+msgstr "作成者"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/content_view.rb:50
+#: lib/hammer_cli_katello/content_view_version.rb:36
+msgid "Environments"
+msgstr "環境"
+
+# translation auto-copied from project Customer Portal Translations, version 006_DrupalPO, document interface, author asasaki
+#: lib/hammer_cli_katello/content_view.rb:55
+msgid "Versions"
+msgstr "バージョン"
+
+# translation auto-copied from project Customer Portal Translations, version 006_DrupalPO, document interface, author asasaki
+#: lib/hammer_cli_katello/content_view.rb:58
+msgid "Published"
+msgstr "公開"
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 30481-632191, author jito
+#: lib/hammer_cli_katello/content_view.rb:61
+msgid "Components"
+msgstr "コンポーネント"
+
+#: lib/hammer_cli_katello/content_view.rb:71
+msgid "Content view created"
+msgstr "コンテンツビューが作成されました"
+
+#: lib/hammer_cli_katello/content_view.rb:72
+msgid "Could not create the content view"
+msgstr "コンテンツビューを作成できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:74
+msgid "Create a composite content view"
+msgstr "複合コンテンツビューの作成"
+
+#: lib/hammer_cli_katello/content_view.rb:86
+msgid "Content view updated"
+msgstr "コンテンツビューが更新されました"
+
+#: lib/hammer_cli_katello/content_view.rb:87
+msgid "Could not update the content view"
+msgstr "コンテンツビューを更新できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:98
+#: lib/hammer_cli_katello/content_view_version.rb:77
+msgid "Content view is being deleted with task %{id}"
+msgstr "タスク %{id} でコンテンツビューが削除されています"
+
+#: lib/hammer_cli_katello/content_view.rb:99
+#: lib/hammer_cli_katello/content_view_version.rb:78
+msgid "Could not delete the content view"
+msgstr "コンテンツビューを削除できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:110
+msgid "Content view is being published with task %{id}"
+msgstr "タスク %{id} でコンテンツビューが公開されています"
+
+#: lib/hammer_cli_katello/content_view.rb:111
+msgid "Could not publish the content view"
+msgstr "コンテンツビューを公開できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:123
+msgid "Content view is being removed from environment with task %{id}"
+msgstr "タスク %{id} でコンテンツビューが環境から削除されています"
+
+#: lib/hammer_cli_katello/content_view.rb:124
+msgid "Could not remove the content view from environment"
+msgstr "コンテンツビューを環境から削除できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:138
+msgid "Comma separated list of version ids to remove"
+msgstr "削除するバージョン ID のコンマ区切りの一覧"
+
+#: lib/hammer_cli_katello/content_view.rb:140
+msgid "Comma separated list of environment ids to remove"
+msgstr "削除する環境 ID のコンマ区切りの一覧"
+
+#: lib/hammer_cli_katello/content_view.rb:150
+msgid "Content view objects are being removed task %{id}"
+msgstr "タスク %{id} でコンテンツビューのオブジェクトが削除されています"
+
+#: lib/hammer_cli_katello/content_view.rb:151
+msgid "Could not remove objects from content view"
+msgstr "オブジェクトをコンテンツビューから削除できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:166
+msgid "The component version has been added"
+msgstr "コンポーネントバージョンが追加されました"
+
+#: lib/hammer_cli_katello/content_view.rb:167
+msgid "Could not add version"
+msgstr "バージョンを追加できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:180
+msgid "The component version has been removed"
+msgstr "コンポーネントのバージョンが削除されました"
+
+#: lib/hammer_cli_katello/content_view.rb:181
+msgid "Could not remove version"
+msgstr "バージョンを削除できませんでした"
+
+#: lib/hammer_cli_katello/content_view.rb:202
+msgid "Manipulate content views."
+msgstr "コンテンツビューの操作。"
+
+#: lib/hammer_cli_katello/activation_key.rb:13
+#: lib/hammer_cli_katello/subscription.rb:19
+msgid "Consumed"
+msgstr "使用済み"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Host_Groups
+#: lib/hammer_cli_katello/activation_key.rb:15
+#: lib/hammer_cli_katello/activation_key.rb:52
+#: lib/hammer_cli_katello/content_host.rb:34
+msgid "Lifecycle Environment"
+msgstr "ライフサイクル環境"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#: lib/hammer_cli_katello/activation_key.rb:18
+#: lib/hammer_cli_katello/activation_key.rb:55
+#: lib/hammer_cli_katello/content_host.rb:37
+msgid "Content View"
+msgstr "コンテンツビュー"
+
+#: lib/hammer_cli_katello/activation_key.rb:23
+msgid "%{consumed} of %{limit}"
+msgstr "%{consumed} (合計: %{limit})"
+
+# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author kmoriguc
+#: lib/hammer_cli_katello/activation_key.rb:26
+#: lib/hammer_cli_katello/subscription.rb:28
+msgid "Unlimited"
+msgstr "無制限"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Using_the_CloudForms_System_Engine_Dashboard
+#: lib/hammer_cli_katello/activation_key.rb:58
+msgid "Host Collections"
+msgstr "ホストコレクション"
+
+#: lib/hammer_cli_katello/activation_key.rb:70
+msgid "Activation key created"
+msgstr "アクティベーションキーが作成されました"
+
+#: lib/hammer_cli_katello/activation_key.rb:71
+msgid "Could not create the activation key"
+msgstr "アクティベーションキーを作成できませんでした"
+
+#: lib/hammer_cli_katello/activation_key.rb:79
+msgid "Activation key updated"
+msgstr "アクティベーションキーが更新されました"
+
+#: lib/hammer_cli_katello/activation_key.rb:80
+msgid "Could not update the activation key"
+msgstr "アクティベーションキーを更新できませんでした"
+
+#: lib/hammer_cli_katello/activation_key.rb:88
+msgid "Activation key deleted"
+msgstr "アクティベーションキーが削除されました"
+
+#: lib/hammer_cli_katello/activation_key.rb:89
+msgid "Could not delete the activation key"
+msgstr "アクティベーションキーを削除できませんでした"
+
+#: lib/hammer_cli_katello/activation_key.rb:96
+msgid "List associated subscriptions"
+msgstr "関連付けられたサブスクリプションの一覧表示"
+
+#: lib/hammer_cli_katello/activation_key.rb:104
+#: lib/hammer_cli_katello/activation_key.rb:123
+#: lib/hammer_cli_katello/activation_key.rb:149
+#: lib/hammer_cli_katello/activation_key.rb:177
+msgid "resource ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:124
+#: lib/hammer_cli_katello/activation_key.rb:150
+msgid "subscription ID"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:125
+msgid "subscription quantity"
+msgstr ""
+
+#: lib/hammer_cli_katello/activation_key.rb:139
+msgid "Subscription added to activation key"
+msgstr "サブスクリプションがアクティベーションキーに追加されました"
+
+#: lib/hammer_cli_katello/activation_key.rb:140
+msgid "Could not add subscription to activation key"
+msgstr "サブスクリプションをアクティベーションキーに追加できませんでした"
+
+#: lib/hammer_cli_katello/activation_key.rb:146
+msgid "Remove subscription"
+msgstr "サブスクリプションの削除"
+
+#: lib/hammer_cli_katello/activation_key.rb:162
+msgid "Subscription removed from activation key"
+msgstr "サブスクリプションがアクティベーションキーから削除されました"
+
+#: lib/hammer_cli_katello/activation_key.rb:163
+msgid "Could not remove subscription from activation key"
+msgstr "サブスクリプションをアクティベーションキーから削除できませんでした"
+
+#: lib/hammer_cli_katello/activation_key.rb:169
+msgid "List associated host collections"
+msgstr "関連付けられているホストコレクションの一覧"
+
+#: lib/hammer_cli_katello/activation_key.rb:197
+msgid "Manipulate activation keys."
+msgstr "アクティベーションキーの操作。"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/sync_plan.rb:11
+msgid "Interval"
+msgstr "間隔"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/sync_plan.rb:21 lib/hammer_cli_katello/capsule.rb:23
+msgid "Created at"
+msgstr "作成:"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/sync_plan.rb:22 lib/hammer_cli_katello/capsule.rb:24
+msgid "Updated at"
+msgstr "更新:"
+
+#: lib/hammer_cli_katello/sync_plan.rb:30
+#: lib/hammer_cli_katello/sync_plan.rb:49
+msgid "how often synchronization should run"
+msgstr "同期を実行する頻度"
+
+#: lib/hammer_cli_katello/sync_plan.rb:37
+msgid "start date and time of the synchronization defaults to now"
+msgstr "同期の開始日時のデフォルトが「now」に設定されます"
+
+#: lib/hammer_cli_katello/sync_plan.rb:41
+msgid "Sync plan created"
+msgstr "同期プランが作成されました"
+
+#: lib/hammer_cli_katello/sync_plan.rb:42
+msgid "Could not create the sync plan"
+msgstr "同期プランを作成できませんでした"
+
+#: lib/hammer_cli_katello/sync_plan.rb:53
+msgid "start date and time of the synchronization"
+msgstr "同期の開始日時"
+
+#: lib/hammer_cli_katello/sync_plan.rb:56
+msgid "Sync plan updated"
+msgstr "同期プランが更新されました"
+
+#: lib/hammer_cli_katello/sync_plan.rb:57
+msgid "Could not update the sync plan"
+msgstr "同期プランを更新できませんでした"
+
+#: lib/hammer_cli_katello/sync_plan.rb:63
+msgid "Sync plan destroyed"
+msgstr "同期プランが破棄されました"
+
+#: lib/hammer_cli_katello/sync_plan.rb:64
+msgid "Could not destroy the sync plan"
+msgstr "同期プランを破棄できませんでした"
+
+#: lib/hammer_cli_katello/sync_plan.rb:73
+msgid "Manipulate sync plans"
+msgstr "同期プランの操作"
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:22
+msgid "Latest(Currently %s)"
+msgstr "最新 (現在: %s)"
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:33
+msgid "Puppet module added to content view"
+msgstr "Puppet モジュールがコンテンツビューに追加されました"
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:34
+msgid "Could not add the puppet module"
+msgstr "Puppet モジュールを追加できませんでした"
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:42
+msgid "Puppet module removed from content view"
+msgstr "Puppet モジュールがコンテンツビューから削除されました"
+
+#: lib/hammer_cli_katello/content_view_puppet_module.rb:43
+msgid "Couldn't remove puppet module from the content view"
+msgstr "Puppet モジュールをコンテンツビューから削除できませんでした"
+
+#: lib/hammer_cli_katello/associating_commands.rb:12
+msgid "The repository has been associated"
+msgstr "リポジトリーが関連付けられました"
+
+#: lib/hammer_cli_katello/associating_commands.rb:13
+msgid "Could not add repository"
+msgstr "リポジトリーを追加できませんでした"
+
+#: lib/hammer_cli_katello/associating_commands.rb:21
+msgid "The repository has been removed"
+msgstr "リポジトリーが削除されました"
+
+#: lib/hammer_cli_katello/associating_commands.rb:22
+msgid "Could not remove repository"
+msgstr "リポジトリーを削除できませんでした"
+
+#: lib/hammer_cli_katello/associating_commands.rb:34
+msgid "The host collection has been associated"
+msgstr "ホストコレクションが関連付けられました"
+
+#: lib/hammer_cli_katello/associating_commands.rb:35
+msgid "Could not add host collection"
+msgstr "ホストコレクションを追加できませんでした"
+
+#: lib/hammer_cli_katello/associating_commands.rb:42
+msgid "The host collection has been removed"
+msgstr "ホストコレクションが削除されました"
+
+#: lib/hammer_cli_katello/associating_commands.rb:43
+msgid "Could not remove host collection"
+msgstr "ホストコレクションを削除できませんでした"
+
+#: lib/hammer_cli_katello/associating_commands.rb:55
+msgid "The content host has been added"
+msgstr "コンテンツホストが追加されました"
+
+#: lib/hammer_cli_katello/associating_commands.rb:56
+msgid "Could not add content host"
+msgstr "コンテンツホストを追加できませんでした"
+
+#: lib/hammer_cli_katello/associating_commands.rb:63
+msgid "The content host has been removed"
+msgstr "コンテンツホストが削除されました"
+
+#: lib/hammer_cli_katello/associating_commands.rb:64
+msgid "Could not remove content host"
+msgstr "コンテンツホストを削除できませんでした"
+
+# translation auto-copied from project Customer Portal Translations, version 006_DrupalPO, document interface, author asasaki
+#: lib/hammer_cli_katello/gpg_key.rb:29
+#: lib/hammer_cli_katello/repository.rb:13
+#: lib/hammer_cli_katello/repository.rb:31
+msgid "Content Type"
+msgstr "コンテンツタイプ"
+
+# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author asasaki
+#: lib/hammer_cli_katello/gpg_key.rb:31
+#: lib/hammer_cli_katello/subscription.rb:22
+#: lib/hammer_cli_katello/repository.rb:11
+#: lib/hammer_cli_katello/repository.rb:36
+msgid "Product"
+msgstr "製品"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#: lib/hammer_cli_katello/gpg_key.rb:35 lib/hammer_cli_katello/product.rb:65
+msgid "Content"
+msgstr "コンテンツ"
+
+#: lib/hammer_cli_katello/gpg_key.rb:42
+msgid "GPG Key created"
+msgstr "GPG キーが作成されました"
+
+#: lib/hammer_cli_katello/gpg_key.rb:43
+msgid "Could not create GPG Key"
+msgstr "GPG キーを作成できませんでした"
+
+#: lib/hammer_cli_katello/gpg_key.rb:46 lib/hammer_cli_katello/gpg_key.rb:57
+msgid "GPG Key file"
+msgstr "GPG キーファイル"
+
+#: lib/hammer_cli_katello/gpg_key.rb:53
+msgid "GPG Key updated"
+msgstr "GPG キーが更新されました"
+
+#: lib/hammer_cli_katello/gpg_key.rb:54
+msgid "Could not update GPG Key"
+msgstr "GPG キーを更新できませんでした"
+
+#: lib/hammer_cli_katello/gpg_key.rb:63
+msgid "GPG Key deleted"
+msgstr "GPG キーが削除されました"
+
+#: lib/hammer_cli_katello/gpg_key.rb:64
+msgid "Could not delete the GPG Key"
+msgstr "GPG キーを削除できませんでした"
+
+#: lib/hammer_cli_katello/gpg_key.rb:73
+msgid "manipulate GPG Key actions on the server"
+msgstr ""
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/subscription.rb:15
+msgid "Contract"
+msgstr "コントラクト"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#: lib/hammer_cli_katello/subscription.rb:16
+msgid "Account"
+msgstr "アカウント"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#: lib/hammer_cli_katello/subscription.rb:17
+msgid "Support"
+msgstr "サポート"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/subscription.rb:18
+#: lib/hammer_cli_katello/subscription.rb:23
+msgid "Quantity"
+msgstr "数量"
+
+# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author asasaki
+#: lib/hammer_cli_katello/subscription.rb:24
+msgid "Attached"
+msgstr "割り当て済み"
+
+#: lib/hammer_cli_katello/subscription.rb:51
+msgid "Manifest is being uploaded in task %{id}"
+msgstr "タスク %{id} でマニフェストがアップロードされています"
+
+#: lib/hammer_cli_katello/subscription.rb:52
+msgid "Manifest upload failed"
+msgstr "マニフェストのアップロードが失敗しました"
+
+#: lib/hammer_cli_katello/subscription.rb:55
+msgid "Subscription manifest file"
+msgstr "サブスクリプションのマニフェストファイル"
+
+#: lib/hammer_cli_katello/subscription.rb:66
+msgid "Manifest is being deleted in task %{id}"
+msgstr "タスク %{id} でマニフェストが削除されています"
+
+#: lib/hammer_cli_katello/subscription.rb:67
+msgid "Manifest deletion failed"
+msgstr "マニフェストの削除が失敗しました"
+
+#: lib/hammer_cli_katello/subscription.rb:80
+msgid "Manifest is being refreshed in task %{id}"
+msgstr "タスク %{id} でマニフェストが更新されています"
+
+#: lib/hammer_cli_katello/subscription.rb:81
+msgid "Manifest refresh failed"
+msgstr "マニフェストの更新が失敗しました"
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 6888-635853, author tnagamot
+#: lib/hammer_cli_katello/subscription.rb:91
+#: lib/hammer_cli_katello/repository.rb:51 lib/hammer_cli_katello/ping.rb:12
+#: lib/hammer_cli_katello/ping.rb:19 lib/hammer_cli_katello/ping.rb:26
+#: lib/hammer_cli_katello/ping.rb:33 lib/hammer_cli_katello/ping.rb:40
+#: lib/hammer_cli_katello/ping.rb:47
+msgid "Status"
+msgstr "状態"
+
+#: lib/hammer_cli_katello/subscription.rb:92
+msgid "Status Message"
+msgstr "状態メッセージ"
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 10738-641496, author Ykatabam
+#: lib/hammer_cli_katello/subscription.rb:93
+msgid "Time"
+msgstr "時刻"
+
+#: lib/hammer_cli_katello/subscription.rb:103
+msgid "Manipulate subscriptions."
+msgstr "サブスクリプションの操作。"
+
+#: lib/hammer_cli_katello/output/formatters.rb:11
+msgid "%s  %s"
+msgstr "%s  %s"
+
+#: lib/hammer_cli_katello/content_host.rb:7
+msgid "ID of the content host"
+msgstr "コンテンツホストの ID"
+
+# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+#: lib/hammer_cli_katello/content_host.rb:32
+msgid "Location"
+msgstr "ロケーション"
+
+#: lib/hammer_cli_katello/content_host.rb:39
+msgid "Entitlement Status"
+msgstr "エンタイトルメントの状態"
+
+#: lib/hammer_cli_katello/content_host.rb:40
+msgid "Release Version"
+msgstr "リリースバージョン"
+
+#: lib/hammer_cli_katello/content_host.rb:41
+msgid "Autoheal"
+msgstr "自動修復"
+
+#: lib/hammer_cli_katello/content_host.rb:53
+msgid "Content host created"
+msgstr "コンテンツホストが作成されました"
+
+#: lib/hammer_cli_katello/content_host.rb:54
+msgid "Could not create content host"
+msgstr "コンテンツホストを作成できませんでした"
+
+#: lib/hammer_cli_katello/content_host.rb:77
+msgid "Content host updated"
+msgstr "コンテンツホストが更新されました"
+
+#: lib/hammer_cli_katello/content_host.rb:78
+msgid "Could not update content host"
+msgstr "コンテンツホストを更新できませんでした"
+
+#: lib/hammer_cli_katello/content_host.rb:88
+msgid "Content host deleted"
+msgstr "コンテンツホストが削除されました"
+
+#: lib/hammer_cli_katello/content_host.rb:89
+msgid "Could not delete content host"
+msgstr "コンテンツホストを削除できませんでした"
+
+#: lib/hammer_cli_katello/content_host.rb:107
+msgid "manipulate content hosts on the server"
+msgstr ""
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 7336-719185-122041, author Ykatabam
+#: lib/hammer_cli_katello/puppet_module.rb:24
+msgid "Summary"
+msgstr "要約"
+
+# translation auto-copied from project gtk3, version 3.8.2, document gtk30
+#: lib/hammer_cli_katello/puppet_module.rb:26
+msgid "License"
+msgstr "ライセンス"
+
+#: lib/hammer_cli_katello/puppet_module.rb:27
+msgid "Project Page"
+msgstr "プロジェクトページ"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#: lib/hammer_cli_katello/puppet_module.rb:28
+msgid "Source"
+msgstr "ソース"
+
+#: lib/hammer_cli_katello/puppet_module.rb:30
+msgid "Dependencies"
+msgstr "依存関係"
+
+#: lib/hammer_cli_katello/puppet_module.rb:33
+msgid "File checksums"
+msgstr "ファイルのチェックサム"
+
+#: lib/hammer_cli_katello/puppet_module.rb:37
+msgid "Tag List"
+msgstr "タグ一覧"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/puppet_module.rb:40
+#: lib/hammer_cli_katello/repository.rb:8 lib/hammer_cli_katello/capsule.rb:9
+msgid "Id"
+msgstr "ID"
+
+#: lib/hammer_cli_katello/repository.rb:30
+msgid "Red Hat Repository"
+msgstr "Red Hat リポジトリー"
+
+#: lib/hammer_cli_katello/repository.rb:33
+#: lib/hammer_cli_katello/repository.rb:131
+#: lib/hammer_cli_katello/repository.rb:147
+msgid "Publish Via HTTP"
+msgstr "HTTP での公開"
+
+#: lib/hammer_cli_katello/repository.rb:34
+msgid "Published At"
+msgstr "公開:"
+
+# translation auto-copied from project Katello, version 0.1v, document app
+#: lib/hammer_cli_katello/repository.rb:50
+msgid "Sync"
+msgstr "同期"
+
+#: lib/hammer_cli_katello/repository.rb:52
+msgid "Last Sync Date"
+msgstr "最終同期日"
+
+#: lib/hammer_cli_katello/repository.rb:58
+msgid "Content Counts"
+msgstr "コンテンツ数"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/repository.rb:59
+msgid "Packages"
+msgstr "パッケージ"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/repository.rb:60
+msgid "Package Groups"
+msgstr "パッケージグループ"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/repository.rb:61
+msgid "Errata"
+msgstr "エラータ"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#: lib/hammer_cli_katello/repository.rb:68
+#: lib/hammer_cli_katello/repository.rb:69
+msgid "yes"
+msgstr "yes"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#: lib/hammer_cli_katello/repository.rb:68
+#: lib/hammer_cli_katello/repository.rb:69
+msgid "no"
+msgstr "no"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/repository.rb:91
+msgid "Failed"
+msgstr "失敗"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#: lib/hammer_cli_katello/repository.rb:92
+msgid "Success"
+msgstr "成功"
+
+# translation auto-copied from project gnome-packagekit, version 3.8.2, document gnome-packagekit
+#: lib/hammer_cli_katello/repository.rb:93
+msgid "Finished"
+msgstr "終了しました"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#: lib/hammer_cli_katello/repository.rb:94
+msgid "Error"
+msgstr "エラー"
+
+# translation auto-copied from project virt-manager, version 0.10.0, document virt-manager
+#: lib/hammer_cli_katello/repository.rb:95
+msgid "Running"
+msgstr "実行中"
+
+# translation auto-copied from project evolution-data-server, version el6, document evolution-data-server-2.32
+#: lib/hammer_cli_katello/repository.rb:96
+msgid "Waiting"
+msgstr "待機中"
+
+# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
+#: lib/hammer_cli_katello/repository.rb:97
+msgid "Canceled"
+msgstr "キャンセル済み"
+
+#: lib/hammer_cli_katello/repository.rb:98
+msgid "Not Synced"
+msgstr "同期しない"
+
+#: lib/hammer_cli_katello/repository.rb:119
+msgid "Repository is being synchronized in task %{id}"
+msgstr "タスク %{id} でリポジトリーが同期されています"
+
+#: lib/hammer_cli_katello/repository.rb:120
+msgid "Could not synchronize the repository"
+msgstr "リポジトリーを同期できませんでした"
+
+#: lib/hammer_cli_katello/repository.rb:128
+msgid "Repository created"
+msgstr "リポジトリーが作成されました"
+
+#: lib/hammer_cli_katello/repository.rb:129
+msgid "Could not create the repository"
+msgstr "リポジトリーを作成できませんでした"
+
+#: lib/hammer_cli_katello/repository.rb:141
+msgid "Repository updated"
+msgstr "リポジトリーが更新されました"
+
+#: lib/hammer_cli_katello/repository.rb:142
+msgid "Could not update the repository"
+msgstr "リポジトリーを更新できませんでした"
+
+#: lib/hammer_cli_katello/repository.rb:155
+msgid "Repository deleted"
+msgstr "リポジトリーが削除されました"
+
+#: lib/hammer_cli_katello/repository.rb:156
+msgid "Could not delete the Repository"
+msgstr "リポジトリーを削除できませんでした"
+
+#: lib/hammer_cli_katello/repository.rb:197
+msgid "Repository content uploaded"
+msgstr "リポジトリーのコンテンツがアップロードされました"
+
+#: lib/hammer_cli_katello/repository.rb:198
+msgid "Could not upload the content"
+msgstr "コンテンツをアップロードできませんでした"
+
+#: lib/hammer_cli_katello/repository.rb:203
+msgid "Upload file or directory of files as content for a repository"
+msgstr ""
+"ファイルまたはファイルのディレクトリーをリポジトリーのコンテンツとしてアップ"
+"ロード"
+
+#: lib/hammer_cli_katello/repository.rb:227
+msgid "Successfully uploaded file '%s'."
+msgstr "ファイル '%s' が正常にアップロードされました。"
+
+#: lib/hammer_cli_katello/repository.rb:230
+msgid ""
+"Failed to upload file '%s' to repository. Please check the file and try "
+"again."
+msgstr ""
+"ファイル '%s' のリポジトリーへのアップロードに失敗しました。ファイルを確認し"
+"てからやり直してください。"
+
+#: lib/hammer_cli_katello/repository.rb:254
+msgid "Manipulate repositories"
+msgstr "リポジトリーの操作。"
+
+#: lib/hammer_cli_katello/content_view_version.rb:16
+#: lib/hammer_cli_katello/content_view_version.rb:32
+msgid "Content View Name"
+msgstr "コンテンツビュー名"
+
+#: lib/hammer_cli_katello/content_view_version.rb:17
+#: lib/hammer_cli_katello/content_view_version.rb:33
+msgid "Content View Label"
+msgstr "コンテンツビューラベル"
+
+#: lib/hammer_cli_katello/content_view_version.rb:65
+msgid "Content view is being promoted with task %{id}"
+msgstr "タスク %{id} でコンテンツビューがプロモートされています"
+
+#: lib/hammer_cli_katello/content_view_version.rb:66
+msgid "Could not promote the content view"
+msgstr "コンテンツビューをプロモートできませんでした"
+
+#: lib/hammer_cli_katello/product.rb:19 lib/hammer_cli_katello/product.rb:43
+msgid "Sync State"
+msgstr "同期の状態"
+
+#: lib/hammer_cli_katello/product.rb:28
+msgid "Product created"
+msgstr "製品が作成されました"
+
+#: lib/hammer_cli_katello/product.rb:29
+msgid "Could not create the product"
+msgstr "製品を作成できませんでした"
+
+#: lib/hammer_cli_katello/product.rb:46
+msgid "Sync Plan ID"
+msgstr "同期プラン ID "
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#: lib/hammer_cli_katello/product.rb:48
+msgid "GPG"
+msgstr "GPG"
+
+#: lib/hammer_cli_katello/product.rb:50
+msgid "GPG Key ID"
+msgstr "GPG キー ID"
+
+#: lib/hammer_cli_katello/product.rb:59
+msgid "Readonly"
+msgstr "読み取り専用"
+
+#: lib/hammer_cli_katello/product.rb:62
+msgid "Deletable"
+msgstr "削除可能"
+
+#: lib/hammer_cli_katello/product.rb:67
+msgid "Repo Name"
+msgstr "リポジトリー名"
+
+#: lib/hammer_cli_katello/product.rb:77
+msgid "Product updated"
+msgstr "製品が更新されました"
+
+#: lib/hammer_cli_katello/product.rb:78
+msgid "Could not update the product"
+msgstr "製品を更新できませんでした"
+
+#: lib/hammer_cli_katello/product.rb:84
+msgid "Product destroyed"
+msgstr "製品が破棄されました"
+
+#: lib/hammer_cli_katello/product.rb:85
+msgid "Could not destroy the product"
+msgstr "製品を破棄できませんでした"
+
+#: lib/hammer_cli_katello/product.rb:91
+msgid "Assign sync plan to product."
+msgstr "同期プランを製品に割り当てます。"
+
+#: lib/hammer_cli_katello/product.rb:94
+msgid "Synchronization plan assigned."
+msgstr "同期プランが割り当てられました。"
+
+#: lib/hammer_cli_katello/product.rb:95
+msgid "Could not assign synchronization plan."
+msgstr "同期プランを割り当てることができませんでした。"
+
+#: lib/hammer_cli_katello/product.rb:101 lib/hammer_cli_katello/product.rb:116
+msgid "plan numeric identifier"
+msgstr ""
+
+#: lib/hammer_cli_katello/product.rb:106
+msgid "Delete assignment sync plan and product."
+msgstr "割り当て同期プランおよび製品を削除します。"
+
+#: lib/hammer_cli_katello/product.rb:109
+msgid "Synchronization plan removed."
+msgstr "同期プランが削除されました。"
+
+#: lib/hammer_cli_katello/product.rb:110
+msgid "Could not remove synchronization plan."
+msgstr "同期プランを削除できませんでした。"
+
+#: lib/hammer_cli_katello/product.rb:124
+msgid "Manipulate products."
+msgstr "製品の操作。"
+
+#: lib/hammer_cli_katello/ping.rb:13 lib/hammer_cli_katello/ping.rb:20
+#: lib/hammer_cli_katello/ping.rb:27 lib/hammer_cli_katello/ping.rb:34
+#: lib/hammer_cli_katello/ping.rb:41 lib/hammer_cli_katello/ping.rb:48
+msgid "Server Response"
+msgstr "サーバーの応答"
+
+# translation auto-copied from project libvirt, version 1.1.1, document libvirt
+#: lib/hammer_cli_katello/ping.rb:58
+msgid "FAIL"
+msgstr "失敗"
+
+#: lib/hammer_cli_katello/ping.rb:73
+msgid "Duration: %sms"
+msgstr "期間: %s (ミリ秒)"
+
+#: lib/hammer_cli_katello/ping.rb:75
+msgid "Message: %s"
+msgstr "メッセージ: %s"
+
+#: lib/hammer_cli_katello/ping.rb:81
+msgid "get the status of the server"
+msgstr ""
+
+#: lib/hammer_cli_katello/id_resolver.rb:6
+msgid "Activation key name to search by"
+msgstr "検索するアクティベーションキー名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:7
+msgid "Capsule name to search by"
+msgstr "検索する Capsule 名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:8
+msgid "Content host name to search by"
+msgstr "検索するコンテンツホスト名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:9
+msgid "Content view name to search by"
+msgstr "検索するコンテンツビュー名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:10
+msgid "Gpg key name to search by"
+msgstr "検索する GPG  キー名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:11
+msgid "Host collection name to search by"
+msgstr "検索するホストコレクション名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:12
+msgid "Lifecycle environment name to search by"
+msgstr "検索するライフサイクル環境名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:13
+msgid "Organization name to search by"
+msgstr "検索する組織名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:14
+msgid "Organization label to search by"
+msgstr "検索する組織ラベル"
+
+#: lib/hammer_cli_katello/id_resolver.rb:17
+msgid "Product name to search by"
+msgstr "検索する製品名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:18
+msgid "Repository name to search by"
+msgstr "検索するリポジトリー名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:19
+msgid "Repository set name to search by"
+msgstr "検索するリポジトリーセット名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:20
+msgid "Subscription name to search by"
+msgstr "検索するサブスクリプション名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:21
+msgid "Sync plan name to search by"
+msgstr "検索する同期プラン名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:22
+msgid "Task name to search by"
+msgstr "検索するタスク名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:23
+msgid "User name to search by"
+msgstr "検索するユーザー名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:25
+msgid "Puppet module name to search by"
+msgstr "検索する Puppet モジュール名"
+
+#: lib/hammer_cli_katello/id_resolver.rb:26
+msgid "Puppet module's author to search by"
+msgstr "検索する Puppet モジュールの作成者"
+
+#: lib/hammer_cli_katello/id_resolver.rb:27
+msgid "Puppet module's UUID to search by"
+msgstr "検索する Puppet モジュールの UUID"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/id_resolver.rb:31
+msgid "Name to search by"
+msgstr "検索する名前"
+
+#: lib/hammer_cli_katello/filter.rb:16 lib/hammer_cli_katello/filter.rb:27
+msgid "Inclusion"
+msgstr "組み込み"
+
+# translation auto-copied from project firewalld, version 0.3.8, document firewalld
+#: lib/hammer_cli_katello/filter.rb:35
+msgid "Rules"
+msgstr "ルール"
+
+#: lib/hammer_cli_katello/filter.rb:54
+msgid "Filter created"
+msgstr "フィルターが作成されました"
+
+#: lib/hammer_cli_katello/filter.rb:55
+msgid "Could not create the filter"
+msgstr "フィルターを作成できませんでした"
+
+#: lib/hammer_cli_katello/filter.rb:61
+msgid "Filter updated"
+msgstr "フィルターが更新されました"
+
+#: lib/hammer_cli_katello/filter.rb:62
+msgid "Could not update the filter"
+msgstr "フィルターを更新できませんでした"
+
+#: lib/hammer_cli_katello/filter.rb:68
+msgid "Filter deleted"
+msgstr "フィルターが削除されました"
+
+#: lib/hammer_cli_katello/filter.rb:69
+msgid "Could not delete the filter"
+msgstr "フィルターを削除できませんでした"
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:24
+msgid "Prior"
+msgstr "以前の"
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:36
+msgid "Lifecycle Path"
+msgstr "ライフサイクルパス"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#: lib/hammer_cli_katello/lifecycle_environment.rb:59
+msgid "Library"
+msgstr "ライブラリー"
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:61
+msgid "Prior Lifecycle Environment"
+msgstr "以前のライフサイクル環境"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/lifecycle_environment.rb:71
+msgid "Environment created"
+msgstr "環境が作成されました"
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:72
+msgid "Could not create environment"
+msgstr "環境を作成できませんでした"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/lifecycle_environment.rb:80
+msgid "Environment updated"
+msgstr "環境が更新されました"
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:81
+msgid "Could not update environment"
+msgstr "環境を更新できませんでした"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#: lib/hammer_cli_katello/lifecycle_environment.rb:87
+msgid "Environment deleted"
+msgstr "環境が削除されました"
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:88
+msgid "Could not delete environment"
+msgstr "環境を削除できませんでした"
+
+#: lib/hammer_cli_katello/lifecycle_environment.rb:97
+msgid "manipulate lifecycle_environments on the server"
+msgstr ""
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 7935-743371-120503, author Ykatabam
+#: lib/hammer_cli_katello/capsule.rb:22
+msgid "Features"
+msgstr "機能"
+
+#: lib/hammer_cli_katello/capsule.rb:37
+msgid "Manage the capsule content"
+msgstr "Capsule コンテンツの管理"
+
+#: lib/hammer_cli_katello/capsule.rb:75
+msgid "Lifecycle environment successfully added to the capsule"
+msgstr "ライフサイクル環境が Capsule に正常に追加されました"
+
+#: lib/hammer_cli_katello/capsule.rb:76
+msgid "Could not add the lifecycle environment to the capsule"
+msgstr "ライフサイクル環境を Capsule に追加できませんでした"
+
+#: lib/hammer_cli_katello/capsule.rb:85
+msgid "Lifecycle environment successfully removed from the capsule"
+msgstr "ライフサイクル環境が Capsule から正常に削除されました"
+
+#: lib/hammer_cli_katello/capsule.rb:86
+msgid "Could not remove the lifecycle environment from the capsule"
+msgstr "ライフサイクル環境を Capsule から削除できませんでした"
+
+#: lib/hammer_cli_katello/capsule.rb:95
+msgid "Capsule content is being synchronized in task %{id}"
+msgstr "タスク %{id} で Capsule コンテンツが同期されています"
+
+#: lib/hammer_cli_katello/capsule.rb:96
+msgid "Could not synchronize capsule content"
+msgstr "Capsule コンテンツを同期できませんでした"
+
+#: lib/hammer_cli_katello/capsule.rb:107
+msgid "Manipulate capsule"
+msgstr "Capsule の操作"
+
+
+
+
+
+
+
+
+
+
+
+
+
+# translation auto-copied from project RHEL Virtualization Host Configuration and Guest Installation Guide, version 6.4, document Host_Installation, author kmoriguc
+
+
+# translation auto-copied from project RHEL Virtualization Host Configuration and Guest Installation Guide, version 6.4, document Host_Installation, author kmoriguc
+
+
+
+# translation auto-copied from project Customer Portal Translations, version 012_June_RHEL, document downloads.html, author asasaki
+
+
+
+
+
+
+
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+
+# translation auto-copied from project Satellite6 Bastion Katello, version 6.1, document bastion_katello, author asasaki
+
+
+# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
+
+# translation auto-copied from project Customer Portal Translations, version 006_DrupalPO, document interface, author asasaki
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document chap-Configuring_Organizations_Locations_and_Lifecycle_Environments, author asasaki
+
+
+
+
+
+
+
+
+
+
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+
+# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author asasaki
+
+
+
+
+# translation auto-copied from project Satellite6 Bastion Katello, version 6.1, document bastion_katello, author asasaki
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author asasaki
+
+# translation auto-copied from project RHELOSP Deploying Enterprise Env, version 5.0, document topics/Architecture6
+
+# translation auto-copied from project Red Hat Subscription Manager, version 1.0, document Distributors-RHSM, author nnakakit
+
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+
