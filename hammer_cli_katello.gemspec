@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.version = HammerCLIKatello.version
 
+  spec.add_dependency "powerbar", "~> 1.0.11"
   spec.add_dependency 'hammer_cli_foreman', '>= 0.1.3', '< 0.4.0'
   spec.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.3'
   spec.add_dependency 'hammer_cli_foreman_bootdisk'

@@ -1,3 +1,5 @@
+require 'powerbar'
+
 module HammerCLIKatello
 
   class Repository < HammerCLIKatello::Command
@@ -174,6 +176,7 @@ module HammerCLIKatello
       resource :repositories, :upload_content
       command_name "upload-content"
       CONTENT_CHUNK_SIZE = 4_000_000 # bytes
+      INTERVAL = 2 # seconds
 
       class BinaryPath < HammerCLI::Options::Normalizers::File
         def format(path)
@@ -222,15 +225,19 @@ module HammerCLIKatello
         filename = File.basename(file.path)
 
         offset = 0
-        while (content = file.read(CONTENT_CHUNK_SIZE))
-          params = {:offset => offset,
-                    :id => upload_id,
-                    :content => content,
-                    :repository_id => repo_id
-          }
+        total = file.size
+        progress_bar do |bar|
+          while (content = file.read(CONTENT_CHUNK_SIZE))
+            bar.show(:msg => progress_message(filename), :done => offset, :total => total)
+            params = {:offset => offset,
+                      :id => upload_id,
+                      :content => content,
+                      :repository_id => repo_id
+            }
 
-          content_upload_resource.call(:update, params, request_headers)
-          offset += CONTENT_CHUNK_SIZE
+            content_upload_resource.call(:update, params, request_headers)
+            offset += CONTENT_CHUNK_SIZE
+          end
         end
 
         import_upload_ids([upload_id])
@@ -254,6 +261,27 @@ module HammerCLIKatello
                   :upload_ids => ids
         }
         resource.call(:import_uploads, params)
+      end
+
+      def progress_message(filename)
+        _('Uploading %{filename}') % {:filename => filename}
+      end
+
+      def render_result
+        print_message _('finished')
+      end
+
+      def progress_bar
+        bar                                      = PowerBar.new
+        @closed = false
+        bar.settings.tty.finite.template.main    = '[${<bar>}] [${<percent>%}]'
+        bar.settings.tty.finite.template.padchar = ' '
+        bar.settings.tty.finite.template.barchar = '.'
+        bar.settings.tty.finite.output           = proc { |s| $stderr.print s }
+        yield bar
+      ensure
+        bar.close
+        render_result
       end
     end
 
