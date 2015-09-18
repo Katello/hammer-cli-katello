@@ -9,6 +9,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :sync_date, _("Start Date"), Fields::Date
         field :interval, _("Interval")
+        field :enabled, _("Enabled"), Fields::Boolean
       end
 
       build_options
