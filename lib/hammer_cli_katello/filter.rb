@@ -25,6 +25,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :type, _("Type")
         field :inclusion, _("Inclusion")
+        field :description, _("Description")
 
         collection :repositories, _("Repositories") do
           field :id, _("ID")
