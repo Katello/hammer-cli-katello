@@ -45,6 +45,12 @@ module HammerCLIKatello
           field :label, _("Label")
         end
 
+        collection :_ostree_repositories, _("OSTree Repositories") do
+          field :id, _("ID")
+          field :name, _("Name")
+          field :label, _("Label")
+        end
+
         collection :puppet_modules, _("Puppet Modules") do
           field :id, _("ID")
           field :uuid, _("UUID"), Fields::Field, :hide_blank => true
@@ -76,13 +82,12 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
-        data["_yum_repositories"] = data["repositories"].select do |repo|
-          repo["content_type"] == "yum"
+        %w(yum docker ostree).each do |content_type|
+          data["_#{content_type}_repositories"] = data["repositories"].select do |repo|
+            repo["content_type"] == content_type
+          end
         end
 
-        data["_docker_repositories"] = data["repositories"].select do |repo|
-          repo["content_type"] == "docker"
-        end
         data
       end
 
