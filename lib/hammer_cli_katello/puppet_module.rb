@@ -12,7 +12,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand(:all).including(:organizations, :content_views)
+        o.expand(:all).including(:organizations, :products, :content_views)
       end
     end
 
