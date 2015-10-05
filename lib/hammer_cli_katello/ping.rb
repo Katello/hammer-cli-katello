@@ -28,10 +28,10 @@ module HammerCLIKatello
           end
         end
 
-        label "pulp_auth" do
+        label "pulp_auth", :hide_blank => true do
           from "pulp_auth" do
-            field "status", _("Status")
-            field "_response", _("Server Response")
+            field "status", _("Status"), Fields::Field, :hide_blank => true
+            field "_response", _("Server Response"), Fields::Field, :hide_blank => true
           end
         end
 
@@ -71,7 +71,7 @@ module HammerCLIKatello
     def get_server_response(service_hash)
       if service_hash['duration_ms']
         _("Duration: %sms") % service_hash['duration_ms']
-      else
+      elsif service_hash['message']
         _("Message: %s") % service_hash['message']
       end
     end
