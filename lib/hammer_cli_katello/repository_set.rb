@@ -39,7 +39,7 @@ module HammerCLIKatello
       command_name "available-repositories"
 
       output do
-        field :repo_name, _("Name")
+        field :name, _("Name")
         from :substitutions do
           field :basearch, _("Arch")
           field :releasever, _("Release")
