@@ -49,6 +49,7 @@ gem 'hammer_cli_foreman_tasks', :path => '../hammer-cli-foreman-tasks'
 Now run bundler inside your hammer-cli-katello directory:
 
 ```bash
+gem install bundler
 bundle install
 ```
 
