@@ -39,6 +39,10 @@ module HammerCLIKatello
 
   class IdResolver < HammerCLIForeman::IdResolver
 
+    def capsule_content_id(options)
+      smart_proxy_id(options)
+    end
+
     def system_id(options)
       options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
     end
@@ -123,6 +127,14 @@ module HammerCLIKatello
 
     def create_organizations_search_options(options)
       create_search_options_without_katello_api(options, api.resource(:organizations))
+    end
+
+    def create_smart_proxies_search_options(options)
+      create_search_options_without_katello_api(options, api.resource(:smart_proxies))
+    end
+
+    def create_capsules_search_options(options)
+      create_search_options_without_katello_api(options, api.resource(:smart_proxies))
     end
 
     def create_search_options_with_katello_api(options, resource)
