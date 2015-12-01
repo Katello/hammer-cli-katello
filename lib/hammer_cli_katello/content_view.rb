@@ -104,6 +104,19 @@ module HammerCLIKatello
       build_options
     end
 
+    class CopyCommand < HammerCLIKatello::CreateCommand
+      action :copy
+
+      desc _("Copy a content view")
+      command_name "copy"
+
+      option "--name", "NAME", _("New content view name"), :attribute_name => :option_name
+      build_options
+
+      success_message _("Content view copied")
+      failure_message _("Could not copy the content view")
+    end
+
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Content view updated")
       failure_message _("Could not update the content view")
