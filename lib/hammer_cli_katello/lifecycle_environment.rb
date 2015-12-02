@@ -9,7 +9,7 @@ module HammerCLIKatello
         base.option(
           "--prior",
           "PRIOR",
-          _("Name of the prior enviroment")
+          _("Name of the prior environment")
         )
         base.validate_options do
           any(:option_prior, :option_prior_id).required
