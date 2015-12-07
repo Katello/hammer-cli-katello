@@ -57,7 +57,7 @@ module HammerCLIKatello
              :required => true, :format => BinaryFile.new
     end
 
-    class DeleteManfiestCommand < HammerCLIKatello::Command
+    class DeleteManifestCommand < HammerCLIKatello::Command
       include HammerCLIForemanTasks::Async
 
       resource :subscriptions, :delete_manifest
@@ -71,7 +71,7 @@ module HammerCLIKatello
       end
     end
 
-    class RefreshManfiestCommand < HammerCLIKatello::Command
+    class RefreshManifestCommand < HammerCLIKatello::Command
       include HammerCLIForemanTasks::Async
 
       resource :subscriptions, :refresh_manifest
