@@ -35,13 +35,6 @@ module HammerCLIKatello
           end
         end
 
-        label "elasticsearch" do
-          from "elasticsearch" do
-            field "status", _("Status")
-            field "_response", _("Server Response")
-          end
-        end
-
         label "foreman_tasks" do
           from "foreman_tasks" do
             field "status", _("Status")
