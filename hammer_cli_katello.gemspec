@@ -3,8 +3,8 @@ $LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
 
 require 'hammer_cli_katello/version'
 
-Gem::Specification.new do |spec|
-  spec.authors = [
+Gem::Specification.new do |gem|
+  gem.authors = [
     "Adam Price",
     "Brad Buckingham",
     "Bryan Kearney",
@@ -22,33 +22,33 @@ Gem::Specification.new do |spec|
     "Tom McKay",
     "Walden Raines"
   ]
-  spec.email = ['katello@lists.fedorahosted.org']
-  spec.license = "GPL-3"
-  spec.description = 'Hammer-CLI-Katello is a plugin for Hammer to provide' \
+  gem.email = ['katello@lists.fedorahosted.org']
+  gem.license = "GPL-3"
+  gem.description = 'Hammer-CLI-Katello is a plugin for Hammer to provide' \
     ' connectivity to a Katello server.'
-  spec.summary = 'Katello commands for Hammer'
-  spec.homepage = 'http://github.com/theforeman/hammer-cli-katello'
+  gem.summary = 'Katello commands for Hammer'
+  gem.homepage = 'http://github.com/theforeman/hammer-cli-katello'
 
-  spec.files = Dir['config/**/*', 'lib/**/*.rb', 'locale/**/**']
-  spec.test_files = `git ls-files -- {test,spec,features}/*`.split($ORS)
+  gem.files = Dir['config/**/*', 'lib/**/*.rb', 'locale/**/**']
+  gem.test_files = `git ls-files -- {test,spec,features}/*`.split($ORS)
 
-  spec.name = 'hammer_cli_katello'
-  spec.require_paths = ['lib']
-  spec.version = HammerCLIKatello.version
+  gem.name = 'hammer_cli_katello'
+  gem.require_paths = ['lib']
+  gem.version = HammerCLIKatello.version
 
-  spec.add_dependency 'hammer_cli_foreman', '>= 0.1.3', '< 0.5.0'
-  spec.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.3'
-  spec.add_dependency 'hammer_cli_foreman_bootdisk'
-  spec.add_dependency 'hammer_cli_foreman_docker'
+  gem.add_dependency 'hammer_cli_foreman', '>= 0.1.3', '< 0.5.0'
+  gem.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.3'
+  gem.add_dependency 'hammer_cli_foreman_bootdisk'
+  gem.add_dependency 'hammer_cli_foreman_docker'
 
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'thor'
-  spec.add_development_dependency 'minitest', '4.7.4'
-  spec.add_development_dependency 'minitest-spec-context'
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'mocha'
-  spec.add_development_dependency 'ci_reporter'
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'thor'
+  gem.add_development_dependency 'minitest', '4.7.4'
+  gem.add_development_dependency 'minitest-spec-context'
+  gem.add_development_dependency 'simplecov'
+  gem.add_development_dependency 'mocha'
+  gem.add_development_dependency 'ci_reporter'
 
-  spec.add_development_dependency "rubocop", "0.24.1"
-  spec.add_development_dependency "rubocop-checkstyle_formatter"
+  gem.add_development_dependency "rubocop", "0.24.1"
+  gem.add_development_dependency "rubocop-checkstyle_formatter"
 end
