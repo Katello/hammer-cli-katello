@@ -151,7 +151,7 @@ module HammerCLIKatello
         params[:content_view_version_environments] = [
           {
             :environment_ids => option_environment_ids,
-            :content_view_version_id => params['id']
+            :content_view_version_id => option_content_view_version_id
           }
         ]
 
