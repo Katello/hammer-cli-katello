@@ -35,6 +35,7 @@ module HammerCLIKatello
         field :errata_id, _("Errata ID"), Fields::Field, :hide_blank => true
         field :start_date, _("Start Date"), Fields::Field, :hide_blank => true
         field :end_date, _("End Date"), Fields::Field, :hide_blank => true
+        field :date_type, _("Date Type"), Fields::Field, :hide_blank => true
         field :types, _("Types"), Fields::List, :hide_blank => true
         field :created_at, _("Created"), Fields::Date
         field :updated_at, _("Updated"), Fields::Date
