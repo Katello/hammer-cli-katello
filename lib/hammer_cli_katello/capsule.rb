@@ -105,6 +105,17 @@ module HammerCLIKatello
         build_options
       end
 
+      class CancelSyncCommand < HammerCLIKatello::Command
+        resource :capsule_content, :cancel_sync
+        command_name "cancel-synchronization"
+
+        def print_data(message)
+          print_message message
+        end
+
+        build_options
+      end
+
       autoload_subcommands
     end
 
