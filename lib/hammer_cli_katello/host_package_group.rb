@@ -1,12 +1,12 @@
 module HammerCLIKatello
 
-  class ContentHostPackageGroup < HammerCLIKatello::Command
+  class HostPackageGroup < HammerCLIKatello::Command
 
-    desc "Manage package-groups on your content hosts"
+    desc "Manage package-groups on your hosts"
 
     class InstallCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
-      resource :system_packages, :install
+      resource :host_packages, :install
       command_name "install"
       success_message "Package-groups installed successfully"
       failure_message "Could not install package-groups"
@@ -20,7 +20,7 @@ module HammerCLIKatello
 
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
-      resource :system_packages, :remove
+      resource :host_packages, :remove
       command_name "remove"
       success_message "Package-groups removed successfully"
       failure_message "Could not remove package-groups"

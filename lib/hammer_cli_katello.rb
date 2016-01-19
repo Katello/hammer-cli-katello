@@ -117,4 +117,7 @@ module HammerCLIKatello
                                          'hammer_cli_katello/erratum'
   )
 
+  # subcommands to hammer_cli_foreman commands
+  require 'hammer_cli_katello/host'
+
 end
