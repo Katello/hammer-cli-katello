@@ -7,21 +7,21 @@ module HammerCLIKatello
       def self.included(base)
         base.option("--host-collection-ids",
           "HOST_COLLECTION_IDS",
-          _("Array of content host ids to replace the content hosts in host collection"),
+          _("Array of host ids to replace the hosts in host collection"),
           :format => HammerCLI::Options::Normalizers::List.new)
       end
 
       def request_params
         params = super
-        params['system_uuids'] = option_system_ids unless option_system_ids.nil?
-        params.delete('system_ids') if params.keys.include? 'system_ids'
+        params['host_ids'] = option_host_ids unless option_host_ids.nil?
+        params.delete('host_ids') if params.keys.include? 'host_ids'
         params
       end
     end
 
     module LimitFieldDataExtension
       def extend_data(data)
-        data['_limit'] = data['unlimited_content_hosts'] ? 'None' : data['max_content_hosts']
+        data['_limit'] = data['unlimited_hosts'] ? 'None' : data['max_hosts']
         data
       end
     end
@@ -45,15 +45,15 @@ module HammerCLIKatello
       resource :host_collections, :create
       def request_params
         super.tap do |params|
-          if params['max_content_hosts'] && params['unlimited_content_hosts'].nil?
-            params['unlimited_content_hosts'] = false
+          if params['max_hosts'] && params['unlimited_hosts'].nil?
+            params['unlimited_hosts'] = false
           end
         end
       end
 
       success_message _("Host collection created")
       failure_message _("Could not create the host collection")
-      build_options :without => [:system_uuids]
+      build_options :without => [:host_ids]
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -61,18 +61,18 @@ module HammerCLIKatello
       resource :host_collections, :show
 
       output ListCommand.output_definition do
-        field :total_content_hosts, _("Total Content Hosts")
+        field :total_hosts, _("Total Hosts")
       end
 
       build_options
     end
 
-    class ContentHostsCommand < HammerCLIKatello::ListCommand
-      resource :host_collections, :systems
-      command_name "content-hosts"
+    class HostsCommand < HammerCLIKatello::ListCommand
+      resource :host_collections, :hosts
+      command_name "hosts"
 
       output do
-        field :uuid, _("ID")
+        field :id, _("ID")
         field :name, _("Name")
       end
 
@@ -100,7 +100,7 @@ module HammerCLIKatello
       success_message _("Host collection updated")
       failure_message _("Could not update the the host collection")
 
-      build_options :without => [:system_uuids]
+      build_options :without => [:host_ids]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
@@ -112,22 +112,22 @@ module HammerCLIKatello
       build_options
     end
 
-    class AddContentHostCommand < HammerCLIKatello::SingleResourceCommand
-      command_name 'add-content-host'
-      action :add_systems
+    class AddHostCommand < HammerCLIKatello::SingleResourceCommand
+      command_name 'add-host'
+      action :add_hosts
 
-      success_message _("The content host(s) has been added")
-      failure_message _("Could not add content host(s)")
+      success_message _("The host(s) has been added")
+      failure_message _("Could not add host(s)")
 
       build_options
     end
 
-    class RemoveContentHostCommand < HammerCLIKatello::SingleResourceCommand
-      command_name 'remove-content-host'
-      action :remove_systems
+    class RemoveHostCommand < HammerCLIKatello::SingleResourceCommand
+      command_name 'remove-host'
+      action :remove_hosts
 
-      success_message _("The content host(s) has been removed")
-      failure_message _("Could not remove content host(s)")
+      success_message _("The host(s) has been removed")
+      failure_message _("Could not remove host(s)")
 
       build_options
     end
