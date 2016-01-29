@@ -33,6 +33,7 @@ module HammerCLIKatello
         field :url, _("URL")
         field :_publish_via_http, _("Publish Via HTTP")
         field :full_path, _("Published At")
+        field :relative_path, _("Relative Path")
         field :download_policy, _("Download Policy"), Fields::Field, :hide_blank => true
         field :docker_upstream_name, _("Upstream Repository Name"),
               Fields::Field, :hide_blank => true
@@ -292,14 +293,19 @@ module HammerCLIKatello
       build_options :without => %w(uuids ids)
     end
 
-    class ExportCommand < HammerCLIKatello::Command
-      resource :repositories, :export
+    class ExportCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+      include RepositoryScopedToProduct
+
+      action :export
       command_name "export"
 
-      success_message _("Exported repository")
-      failure_message _("Could not export repository")
+      success_message _("Repository is being exported in task %{id}")
+      failure_message _("Could not export the repository")
 
-      build_options
+      build_options do |o|
+        o.expand.including(:products)
+      end
     end
 
     autoload_subcommands
