@@ -33,6 +33,7 @@ module HammerCLIKatello
         field :url, _("URL")
         field :_publish_via_http, _("Publish Via HTTP")
         field :full_path, _("Published At")
+        field :download_policy, _("Download Policy"), Fields::Field, :hide_blank => true
         field :docker_upstream_name, _("Upstream Repository Name"),
               Fields::Field, :hide_blank => true
         field :container_repository_name, _("Container Repository Name"),
