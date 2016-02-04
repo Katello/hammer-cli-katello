@@ -1,5 +1,3 @@
-require 'hammer_cli_katello/content_host_errata'
-
 module HammerCLIKatello
 
   class ContentHostCommand < HammerCLI::AbstractCommand
@@ -154,10 +152,6 @@ module HammerCLIKatello
     end
 
     autoload_subcommands
-
-    subcommand "errata",
-               HammerCLIKatello::ContentHostErrata.desc,
-               HammerCLIKatello::ContentHostErrata
   end
 
 end

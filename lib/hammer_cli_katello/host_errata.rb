@@ -1,11 +1,11 @@
 module HammerCLIKatello
-  class ContentHostErrata < HammerCLIKatello::Command
+  class HostErrata < HammerCLIKatello::Command
 
-    desc "Manage errata on your content hosts"
+    desc "Manage errata on your hosts"
 
     class ApplyCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
-      resource :system_errata, :apply
+      resource :host_errata, :apply
       command_name "apply"
       success_message _("Errata applied successfully")
       failure_message _("Could not apply errata")
@@ -14,7 +14,7 @@ module HammerCLIKatello
     end
 
     class ListCommand < HammerCLIKatello::ListCommand
-      resource :system_errata, :index
+      resource :host_errata, :index
       command_name "list"
 
       output do
@@ -29,7 +29,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      resource :system_errata, :show
+      resource :host_errata, :show
       command_name "info"
 
       output do
