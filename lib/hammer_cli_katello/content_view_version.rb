@@ -182,6 +182,16 @@ module HammerCLIKatello
       end
     end
 
+    class ExportCommand < HammerCLIKatello::Command
+      action :export
+      command_name "export"
+
+      success_message _("Export complete")
+      failure_message _("Could not export")
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
