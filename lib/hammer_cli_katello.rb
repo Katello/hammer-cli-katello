@@ -22,6 +22,7 @@ module HammerCLIKatello
   require 'hammer_cli_katello/i18n'
   require "hammer_cli_katello/version"
   require 'hammer_cli_katello/id_resolver'
+  require 'hammer_cli_katello/capsule'
 
   # commands
   HammerCLI::MainCommand.lazy_subcommand("activation-key", _("Manipulate activation keys."),
@@ -97,9 +98,10 @@ module HammerCLIKatello
                                          'hammer_cli_katello/content_view'
   )
 
+  # Capsule is just an alias to smart proxy
   HammerCLI::MainCommand.lazy_subcommand("capsule", _("Manipulate capsule"),
-                                         'HammerCLIKatello::Capsule',
-                                         'hammer_cli_katello/capsule'
+                                         'HammerCLIForeman::SmartProxy',
+                                         'hammer_cli_foreman/smart_proxy'
   )
 
   HammerCLI::MainCommand.lazy_subcommand("package", _("Manipulate packages."),
