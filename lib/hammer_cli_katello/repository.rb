@@ -290,6 +290,16 @@ module HammerCLIKatello
       build_options :without => ["uuids"]
     end
 
+    class ExportCommand < HammerCLIKatello::Command
+      resource :repositories, :export
+      command_name "export"
+
+      success_message _("Exported repository")
+      failure_message _("Could not export repository")
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
