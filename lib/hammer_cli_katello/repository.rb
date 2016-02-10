@@ -66,7 +66,7 @@ module HammerCLIKatello
           field :package_group_total, _("Package Groups"), Fields::Field, :hide_blank => true
           field :errata_total, _("Errata"), Fields::Field, :hide_blank => true
           field :puppet_total, _("Puppet Modules"), Fields::Field, :hide_blank => true
-          field :docker_image_total, _("Docker Images"), Fields::Field, :hide_blank => true
+          field :docker_manifest_total, _("Docker Manifests"), Fields::Field, :hide_blank => true
           field :docker_tag_total, _("Docker Tags"), Fields::Field, :hide_blank => true
         end
       end
@@ -101,7 +101,7 @@ module HammerCLIKatello
           data["package_group_total"]  =  content_counts["package_group"]
           data["errata_total"]  =  content_counts["erratum"]
         when "docker"
-          data["docker_image_total"] = content_counts["docker_image"]
+          data["docker_manifest_total"] = content_counts["docker_manifest"]
           data["docker_tag_total"] = content_counts["docker_tag"]
         when "puppet"
           data["puppet_total"] = content_counts["puppet_module"]
@@ -275,19 +275,21 @@ module HammerCLIKatello
       command_name "remove-content"
 
       option ["--content-ids"], "CONTENT_IDS",
-        _("Comma separated list of package/puppet module/docker image ids"),
+        _("package IDs, puppet module IDs, and/or docker manifest IDs"),
         :format => HammerCLI::Options::Normalizers::List.new, :required => true
 
       def request_params
-        super.tap do |opts|
-          opts[:uuids] = option_content_ids
+        super.tap do |params|
+          params[:ids] = option_content_ids
+          params[:uuids] = option_content_ids
         end
       end
 
       success_message _("Repository content removed")
       failure_message _("Could not remove content")
 
-      build_options :without => ["uuids"]
+      # ``uuids`` is deprecated
+      build_options :without => %w(uuids ids)
     end
 
     class ExportCommand < HammerCLIKatello::Command
