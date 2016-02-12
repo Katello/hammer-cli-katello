@@ -1,6 +1,9 @@
 require File.join(File.dirname(__FILE__), '../../test_helper')
+require File.join(File.dirname(__FILE__), './capsule_content_helpers')
 
 describe 'capsule content cancel-synchronization' do
+  include CapsuleContentHelpers
+
   before do
     @cmd = ['capsule', 'content', 'cancel-synchronization']
   end
@@ -27,11 +30,7 @@ describe 'capsule content cancel-synchronization' do
       par['id'] == '3'
     end
     ex.returns("message" => MESSAGE)
-
-    ex = api_expects(:smart_proxies, :index, 'Find the proxy') do |par|
-      par[:search] == "name = \"capsule1\""
-    end
-    ex.returns(index_response([{'id' => '3'}]))
+    expect_capsule_search('capsule1', '3')
 
     run_cmd(@cmd + params)
   end

@@ -1,0 +1,62 @@
+{
+    "failed1": {
+        "id": "ab3e2ae3-fbed-466d-81fc-37130fc9efaa",
+        "label": "Actions::Katello::ContentView::CapsuleGenerateAndSync",
+        "pending": true,
+        "started_at": "2016-01-16 05:13:33 +0100",
+        "ended_at": null,
+        "state": "paused",
+        "result": "error",
+        "progress": 0.3,
+        "humanized": {
+            "action": "Generate Capsule Metadata and Sync",
+            "errors": [
+                "404 Resource Not Found"
+            ]
+        }
+    },
+    "failed2": {
+        "id": "ab3e2ae3-fbed-466d-81fc-37130fc9efbb",
+        "label": "Actions::Katello::ContentView::CapsuleGenerateAndSync",
+        "pending": true,
+        "started_at": "2016-01-16 05:13:33 +0100",
+        "ended_at": null,
+        "state": "paused",
+        "result": "error",
+        "progress": 0.5,
+        "humanized": {
+            "action": "Generate Capsule Metadata and Sync",
+            "errors": [
+                "404 Resource Not Found"
+            ]
+        }
+    },
+    "running": {
+        "id": "a484eb0d-b40d-4c4c-b187-bb6291d78652",
+        "label": "Actions::Katello::CapsuleContent::Sync",
+        "pending": true,
+        "started_at": "2016-01-16 05:14:16 +0100",
+        "ended_at": null,
+        "state": "pending",
+        "result": "success",
+        "progress": 0.6666666666666666,
+        "humanized": {
+            "action": "Synchronize capsule content",
+            "errors": []
+        }
+    },
+    "successful": {
+        "id": "a484eb0d-b40d-4c4c-b187-bb6291d78652",
+        "label": "Actions::Katello::CapsuleContent::Sync",
+        "pending": true,
+        "started_at": "2016-01-16 05:14:16 +0100",
+        "ended_at": null,
+        "state": "paused",
+        "result": "error",
+        "progress": 0.5,
+        "humanized": {
+            "action": "Synchronize capsule content",
+            "errors": []
+        }
+    }
+}
