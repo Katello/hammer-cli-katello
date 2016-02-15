@@ -182,14 +182,18 @@ module HammerCLIKatello
       end
     end
 
-    class ExportCommand < HammerCLIKatello::Command
+    class ExportCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
       action :export
       command_name "export"
 
-      success_message _("Export complete")
-      failure_message _("Could not export")
+      success_message _("Content view is being exported in task %{id}")
+      failure_message _("Could not export the content view")
 
-      build_options
+      build_options do |o|
+        o.expand(:all).including(:environments, :content_views, :organizations)
+      end
     end
 
     autoload_subcommands
