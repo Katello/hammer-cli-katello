@@ -18,7 +18,7 @@ module HammerCLIKatello
 
       def request_params
         params = super
-        prior = params.delete("prior")
+        prior = option_prior
         if prior
           params["prior_id"] = resolver.lifecycle_environment_id(
             HammerCLI.option_accessor_name("name") => prior,
@@ -81,9 +81,7 @@ module HammerCLIKatello
       success_message _("Environment created")
       failure_message _("Could not create environment")
 
-      build_options do |o|
-        o.without(:prior)
-      end
+      build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
