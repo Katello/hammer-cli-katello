@@ -1,7 +1,7 @@
-module HammerCLIKatello
-  class Capsule < HammerCLIForeman::Command
-    resource :capsules
+require 'hammer_cli_foreman/smart_proxy'
 
+module HammerCLIKatello
+  module Capsule
     module LifecycleEnvironmentNameResolvable
       def lifecycle_environment_resolve_options(options)
         {
@@ -22,39 +22,11 @@ module HammerCLIKatello
       end
     end
 
-    class ListCommand < HammerCLIKatello::ListCommand
-      action :index
-
-      output do
-        field :id, _("Id")
-        field :name, _("Name")
-        field :url, _("URL")
-      end
-
-      build_options
-    end
-
-    class InfoCommand < HammerCLIKatello::InfoCommand
-
-      action :show
-
-      output ListCommand.output_definition do
-        field :_features, _("Features"),   Fields::List
-        field :created_at, _("Created at"), Fields::Date
-        field :updated_at, _("Updated at"), Fields::Date
-      end
-
-      def extend_data(proxy)
-        proxy['_features'] = proxy['features'].map { |f| f['name'] }
-        proxy
-      end
-
-      build_options
-    end
-
-    class Content < HammerCLI::AbstractCommand
+    class Content < HammerCLIKatello::Command
       command_name 'content'
       desc _('Manage the capsule content')
+
+      resource :capsules
 
       class ListLifecycleEnvironmentsCommand < HammerCLIKatello::ListCommand
         resource :capsule_content, :lifecycle_environments
@@ -136,7 +108,10 @@ module HammerCLIKatello
       autoload_subcommands
     end
 
-    autoload_subcommands
+    HammerCLIForeman::SmartProxy.subcommand(
+      HammerCLIKatello::Capsule::Content.command_name,
+      HammerCLIKatello::Capsule::Content.desc,
+      HammerCLIKatello::Capsule::Content
+    )
   end
-
 end
