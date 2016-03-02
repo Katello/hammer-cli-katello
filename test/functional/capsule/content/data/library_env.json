@@ -1,0 +1,47 @@
+{
+    "library": true,
+    "id": 3,
+    "name": "Library",
+    "label": "Library",
+    "description": null,
+    "organization": {
+        "name": "Default Organization",
+        "label": "Default_Organization",
+        "id": 1
+    },
+    "syncable": true,
+    "counts": {
+        "content_hosts": 0,
+        "content_views": 1,
+        "products": 3,
+        "yum_repositories": 1,
+        "packages": 32,
+        "package_groups": 2,
+        "errata": 4,
+        "puppet_repositories": 0,
+        "puppet_modules": 0,
+        "docker_repositories": 0,
+        "docker_images": 0
+    },
+    "content_views": [
+        {
+            "id": 3,
+            "label": "CV1",
+            "name": "CV1",
+            "composite": false,
+            "last_published": "2016-01-08 15:44:10 +0100",
+            "counts": {
+                "content_hosts": 0,
+                "products": 3,
+                "yum_repositories": 1,
+                "packages": 32,
+                "package_groups": 2,
+                "errata": 4,
+                "puppet_repositories": 0,
+                "puppet_modules": 0,
+                "docker_repositories": 0,
+                "docker_images": 0
+            }
+        }
+    ]
+}
