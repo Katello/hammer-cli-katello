@@ -56,7 +56,7 @@ describe 'capsule content info' do
   end
 
   it "is mounted under proxy too" do
-    result = run_cmd(['proxy', 'content', 'list', '-h'])
+    result = run_cmd(['proxy', 'content', 'info', '-h'])
     assert_exit_code_equal(HammerCLI::EX_OK, result.exit_code)
   end
 end
