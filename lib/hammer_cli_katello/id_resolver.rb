@@ -62,6 +62,16 @@ module HammerCLIKatello
       find_resource(:repositories, options)['id']
     end
 
+    def repository_ids(options)
+      return options['option_repository_ids'] unless options['option_repository_ids'].nil?
+
+      key_names = HammerCLI.option_accessor_name 'names'
+      key_product_id = HammerCLI.option_accessor_name 'product_id'
+      options[key_product_id] ||= product_id(scoped_options 'product', options)
+      find_resources(:repositories, options)
+        .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
+    end
+
     def content_view_version_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_environment_id = HammerCLI.option_accessor_name("environment_id")
@@ -172,4 +182,5 @@ module HammerCLIKatello
       lifecycle_environment_id(scoped_options("environment", search_options))
     end
   end
+  # rubocop:enable ClassLength
 end
