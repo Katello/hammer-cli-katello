@@ -10,7 +10,7 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :name, _("Name")
-        field :format_consumed, _("Consumed")
+        field :format_consumed, _("Host Limit")
         from :environment do
           field :name, _("Lifecycle Environment")
         end
@@ -48,7 +48,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :id, _("ID")
         field :description, _("Description")
-        field :format_limit, _("Content Host Limit")
+        field :format_limit, _("Host Limit")
         field :auto_attach, _("Auto Attach")
         from :environment do
           field :name, _("Lifecycle Environment")
