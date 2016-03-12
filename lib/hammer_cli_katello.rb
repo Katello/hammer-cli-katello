@@ -119,6 +119,11 @@ module HammerCLIKatello
                                          'hammer_cli_katello/erratum'
   )
 
+  HammerCLI::MainCommand.lazy_subcommand("ostree-branch", _("Manipulate ostree branches"),
+                                         'HammerCLIKatello::OstreeBranchCommand',
+                                         'hammer_cli_katello/ostree_branch'
+  )
+
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
 

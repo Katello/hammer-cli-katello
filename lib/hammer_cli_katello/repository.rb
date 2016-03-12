@@ -69,6 +69,7 @@ module HammerCLIKatello
           field :puppet_total, _("Puppet Modules"), Fields::Field, :hide_blank => true
           field :docker_manifest_total, _("Docker Manifests"), Fields::Field, :hide_blank => true
           field :docker_tag_total, _("Docker Tags"), Fields::Field, :hide_blank => true
+          field :ostree_branch_total, _("OSTree Branches"), Fields::Field, :hide_blank => true
         end
       end
 
@@ -106,6 +107,8 @@ module HammerCLIKatello
           data["docker_tag_total"] = content_counts["docker_tag"]
         when "puppet"
           data["puppet_total"] = content_counts["puppet_module"]
+        when "ostree"
+          data["ostree_branch_total"] = content_counts["ostree_branch"]
         end
       end
 
