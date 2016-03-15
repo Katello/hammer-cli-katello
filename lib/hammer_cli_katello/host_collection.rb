@@ -41,7 +41,6 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      include UuidRequestable
       resource :host_collections, :create
       def request_params
         super.tap do |params|
@@ -53,7 +52,10 @@ module HammerCLIKatello
 
       success_message _("Host collection created")
       failure_message _("Could not create the host collection")
-      build_options :without => [:host_ids]
+      build_options do |o|
+        o.expand.except(:hosts)
+        o.without(:host_ids)
+      end
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
