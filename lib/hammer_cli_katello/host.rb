@@ -1,5 +1,6 @@
 require 'hammer_cli_foreman/host'
 require 'hammer_cli_katello/host_errata'
+require 'hammer_cli_katello/host_subscription'
 require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
 
@@ -16,4 +17,7 @@ module HammerCLIKatello
                                     HammerCLIKatello::HostPackageGroup.desc,
                                     HammerCLIKatello::HostPackageGroup
 
+  HammerCLIForeman::Host.subcommand "subscription",
+                                    HammerCLIKatello::HostSubscription.desc,
+                                    HammerCLIKatello::HostSubscription
 end

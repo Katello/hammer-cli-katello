@@ -137,6 +137,10 @@ module HammerCLIKatello
       create_search_options_without_katello_api(options, api.resource(:smart_proxies))
     end
 
+    def create_hosts_search_options(options)
+      create_search_options_without_katello_api(options, api.resource(:hosts))
+    end
+
     def create_search_options_with_katello_api(options, resource)
       search_options = {}
       searchables(resource).each do |s|
