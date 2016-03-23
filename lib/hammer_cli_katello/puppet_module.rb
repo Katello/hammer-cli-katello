@@ -9,6 +9,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :author, _("Author")
         field :version, _("Version")
+        field :uuid, _("Uuid")
       end
 
       build_options do |o|
@@ -22,6 +23,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :version, _("Version")
         field :author, _("Author")
+        field :uuid, _("Uuid")
 
         field :summary, _("Summary")
         field :description, _("Description")
