@@ -29,14 +29,9 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       command_name "add"
 
-      option "--id", "ID", _("(deprecated) id of the puppet module to associate"),
-        :attribute_name => "option_uuid",
-        :deprecated => _("This option will be removed in Katello 2.5, Use --uuid")
-
       success_message _("Puppet module added to content view")
       failure_message _("Could not add the puppet module")
 
-      #build_options :without => :uuid
       build_options
     end
 
