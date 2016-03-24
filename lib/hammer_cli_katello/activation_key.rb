@@ -106,6 +106,8 @@ module HammerCLIKatello
       success_message _("Activation key updated")
       failure_message _("Could not update the activation key")
 
+      option "--unlimited-hosts", :flag, "set hosts max to unlimited"
+
       validate_options do
         all(:option_unlimited_hosts, :option_max_hosts).rejected
       end
