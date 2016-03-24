@@ -23,7 +23,7 @@ module HammerCLIKatello
         data["format_consumed"] = _("%{consumed} of %{limit}") %
           {
             :consumed => data["usage_count"],
-            :limit => data["unlimited_content_hosts"] ? _("Unlimited") : data["max_content_hosts"]
+            :limit => data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
           }
         data
       end
@@ -65,7 +65,7 @@ module HammerCLIKatello
 
       def extend_data(data)
         data["format_limit"] =
-          data["unlimited_content_hosts"] ? _("Unlimited") : data["max_content_hosts"]
+          data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
         data
       end
 
@@ -78,10 +78,10 @@ module HammerCLIKatello
       success_message _("Activation key created")
       failure_message _("Could not create the activation key")
 
-      option "--unlimited-content-hosts", :flag, "Set content hosts max to unlimited"
+      option "--unlimited-hosts", :flag, "Set hosts max to unlimited"
 
       validate_options do
-        all(:option_unlimited_content_hosts, :option_max_content_hosts).rejected
+        all(:option_unlimited_hosts, :option_max_hosts).rejected
       end
 
       build_options
@@ -107,7 +107,7 @@ module HammerCLIKatello
       failure_message _("Could not update the activation key")
 
       validate_options do
-        all(:option_unlimited_content_hosts, :option_max_content_hosts).rejected
+        all(:option_unlimited_hosts, :option_max_hosts).rejected
       end
 
       build_options
