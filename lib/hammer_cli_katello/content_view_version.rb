@@ -132,53 +132,97 @@ module HammerCLIKatello
       success_message _("Incremental update is being performed with task %{id}")
       failure_message _("An error occurred incrementally updating the content view")
 
-      option('--environment-ids',
-        'ENVIRONMENTS',
-        _("list of environment IDs to update the content view version in"),
-        :required => true,
+      option('--lifecycle-environment-ids',
+        'ENVIRONMENT_IDS',
+        _("list of lifecycle environment IDs to update the content view version in"),
         :format => HammerCLI::Options::Normalizers::List.new
       )
 
-      option('--content-host-ids',
-        'CONTENT_HOST_IDS',
-        _("IDs of content hosts to update"),
+      option('--lifecycle-environments',
+        'ENVIRONMENTS',
+        _("list of lifecycle environment names to update the content view version in"),
+        :format => HammerCLI::Options::Normalizers::List.new,
+        :attribute_name => :option_lifecycle_environment_names
+      )
+
+      option('--organization',
+        'ORGANIZATION_NAME',
+        _("Organization name for resolving lifecycle environment names"),
+        :attribute_name => :option_organization_name
+      )
+
+      option('--organization-id',
+        'ORGANIZATION_ID',
+        _("Organization id for resolving lifecycle environment names")
+      )
+
+      option('--update-all-hosts',
+        'UPDATE',
+        _('Update all editable and applicable hosts within the specified Content View and \
+          Lifecycle Environments'),
+        :format => HammerCLI::Options::Normalizers::Bool.new
+      )
+
+      option('--host-ids',
+        'HOST_IDS',
+        _("IDs of hosts to update"),
         :format => HammerCLI::Options::Normalizers::List.new
       )
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name]
+
+        if option(:option_lifecycle_environment_ids).exist?
+          any(*organization_options).rejected
+          option(:option_lifecycle_environment_names).rejected
+        end
+
+        if option(:option_lifecycle_environment_names).exist?
+          any(*organization_options).required
+        end
+      end
 
       def request_params
         params = super
-
         params[:content_view_version_environments] = [
           {
-            :environment_ids => option_environment_ids,
+            :environment_ids => resolver.environment_ids(options),
             :content_view_version_id => option_content_view_version_id
           }
         ]
-
-        if params['update_systems']['included'].key?('ids')
-          params['update_systems'].delete('excluded')
-        else
-          params.delete('update_systems')
-        end
 
         add_content = {}
         params['add_content'].each do |key, value|
           add_content[key] = value if options.key?(HammerCLI.option_accessor_name(key))
         end
 
-        if option_content_host_ids
-          params['update_systems'] = {'included' => {'ids' => option_content_host_ids}}
-        end
-
+        params = request_params_hosts(params)
         params['add_content'] = add_content
 
         params.delete('id')
         params
       end
 
-      build_options do |opt|
-        opt.expand(:all)
-        opt.without(:content_view_version_environments, :ids)
+      def request_params_hosts(params)
+        if params['update_hosts'] && params['update_hosts']['included'] &&
+             params['update_hosts']['included'].key?('ids')
+          params['update_hosts'].delete('excluded')
+        else
+          params.delete('update_hosts')
+        end
+
+        if option_host_ids
+          params['update_hosts'] = {'included' => {'ids' => option_host_ids}}
+        elsif option_update_all_hosts
+          params['update_hosts'] = { 'included' => {:search => ''}}
+        end
+
+        params
+      end
+
+      build_options do |o|
+        o.expand(:all).except(:environments)
+        o.without(:content_view_version_environments, :ids, :update_hosts, :update_hosts_included)
       end
     end
 
