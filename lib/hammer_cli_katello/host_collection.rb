@@ -3,22 +3,6 @@ module HammerCLIKatello
   class HostCollection < HammerCLIKatello::Command
     resource :host_collections
 
-    module UuidRequestable
-      def self.included(base)
-        base.option("--host-collection-ids",
-          "HOST_COLLECTION_IDS",
-          _("Array of host ids to replace the hosts in host collection"),
-          :format => HammerCLI::Options::Normalizers::List.new)
-      end
-
-      def request_params
-        params = super
-        params['host_ids'] = option_host_ids unless option_host_ids.nil?
-        params.delete('host_ids') if params.keys.include? 'host_ids'
-        params
-      end
-    end
-
     module LimitFieldDataExtension
       def extend_data(data)
         data['_limit'] = data['unlimited_hosts'] ? 'None' : data['max_hosts']
@@ -52,10 +36,8 @@ module HammerCLIKatello
 
       success_message _("Host collection created")
       failure_message _("Could not create the host collection")
-      build_options do |o|
-        o.expand.except(:hosts)
-        o.without(:host_ids)
-      end
+
+      build_options
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -98,11 +80,10 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      include UuidRequestable
       success_message _("Host collection updated")
       failure_message _("Could not update the the host collection")
 
-      build_options :without => [:host_ids]
+      build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
