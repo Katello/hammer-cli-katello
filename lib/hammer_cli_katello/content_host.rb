@@ -95,26 +95,6 @@ module HammerCLIKatello
       build_options :without => [:facts, :type, :installed_products]
     end
 
-    class DeleteCommand < HammerCLIKatello::DeleteCommand
-      include IdDescriptionOverridable
-      include LifecycleEnvironmentNameResolvable
-      resource :systems, :destroy
-
-      success_message _("Content host deleted")
-      failure_message _("Could not delete content host")
-
-      build_options
-    end
-
-    class TasksCommand < HammerCLIKatello::ListCommand
-      include IdDescriptionOverridable
-      resource :systems, :tasks
-
-      command_name "tasks"
-
-      build_options
-    end
-
     class AvailableIncrementalUpdates < HammerCLIKatello::ListCommand
       resource :systems_bulk_actions, :available_incremental_updates
       command_name 'available-incremental-updates'
