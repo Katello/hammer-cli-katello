@@ -25,6 +25,7 @@ end
 
 task :default do
   Rake::Task['rubocop'].execute
+  Rake::Task['test'].execute
 end
 
 namespace :gettext do
