@@ -69,6 +69,10 @@ module HammerCLIKatello
       end
     end
 
+    def request_options
+      { with_authentication: false }
+    end
+
   end # class PingCommand
 
 end # module HammerCLIKatello
