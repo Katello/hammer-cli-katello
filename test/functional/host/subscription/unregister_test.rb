@@ -8,7 +8,7 @@ describe 'host subscription unregister' do
     @cmd = %w(host subscription unregister)
   end
 
-  it "lists content counts" do
+  it "unregisters the host" do
     params = ['--host-id=3']
     ex = api_expects(:host_subscriptions, :destroy, 'Host unregister') do |par|
       par['host_id'] == 3

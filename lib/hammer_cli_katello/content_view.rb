@@ -8,7 +8,7 @@ module HammerCLIKatello
     resource :content_views
 
     class ListCommand < HammerCLIKatello::ListCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       output do
         field :id, _("Content View ID")
         field :name, _("Name")
@@ -154,7 +154,7 @@ module HammerCLIKatello
     end
 
     class RemoveFromEnvironmentCommand < HammerCLIKatello::SingleResourceCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       include HammerCLIForemanTasks::Async
 
       action :remove_from_environment

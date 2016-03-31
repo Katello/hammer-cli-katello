@@ -4,7 +4,7 @@ module HammerCLIKatello
     resource :activation_keys
 
     class ListCommand < HammerCLIKatello::ListCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       action :index
 
       output do
@@ -32,7 +32,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       action :show
 
       def request_params
@@ -73,7 +73,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       action :create
       success_message _("Activation key created")
       failure_message _("Could not create the activation key")
@@ -88,7 +88,7 @@ module HammerCLIKatello
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       action :copy
 
       desc _("Copy an activation key")
@@ -101,7 +101,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       action :update
       success_message _("Activation key updated")
       failure_message _("Could not update the activation key")
@@ -114,7 +114,7 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       action :destroy
       success_message _("Activation key deleted")
       failure_message _("Could not delete the activation key")

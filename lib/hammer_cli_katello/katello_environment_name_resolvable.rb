@@ -1,5 +1,17 @@
 module HammerCLIKatello
-  module LifecycleEnvironmentNameResolvable
+  module KatelloEnvironmentNameResolvable
+    def self.included(base)
+      base.extend(ClassMethods)
+    end
+
+    module ClassMethods
+      def resource_name_mapping
+        mapping = Command.resource_name_mapping
+        mapping[:environment] = :lifecycle_environment
+        mapping
+      end
+    end
+
     def lifecycle_environment_resolve_options(options)
       {
         HammerCLI.option_accessor_name("name") => options['option_environment_name'],
@@ -13,7 +25,7 @@ module HammerCLIKatello
       result = super.clone
       if result['option_environment_name']
         result['option_environment_id'] =  resolver.lifecycle_environment_id(
-            lifecycle_environment_resolve_options(result))
+                                             lifecycle_environment_resolve_options(result))
       end
       result
     end

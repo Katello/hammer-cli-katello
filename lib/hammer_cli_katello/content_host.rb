@@ -9,7 +9,7 @@ module HammerCLIKatello
     end
 
     class ListCommand < HammerCLIKatello::ListCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       resource :systems, :index
 
       output do
@@ -24,7 +24,7 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       include IdDescriptionOverridable
       resource :systems, :show
 
@@ -53,34 +53,9 @@ module HammerCLIKatello
       build_options
     end
 
-    class CreateCommand < HammerCLIKatello::CreateCommand
-      include LifecycleEnvironmentNameResolvable
-      resource :systems, :create
-
-      output InfoCommand.output_definition
-
-      success_message _("Content host created")
-      failure_message _("Could not create content host")
-
-      def request_params
-        super.tap do |params|
-          params['type'] = "system"
-          params['facts'] = {"uname.machine" => "unknown"}
-        end
-      end
-
-      validate_options do
-        if any(:option_environment_id, :option_environment_name).exist?
-          any(:option_content_view_name, :option_content_view_id).required
-        end
-      end
-
-      build_options :without => [:facts, :type, :installed_products]
-    end
-
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       include IdDescriptionOverridable
-      include LifecycleEnvironmentNameResolvable
+      include KatelloEnvironmentNameResolvable
       resource :systems, :update
 
       success_message _("Content host updated")
