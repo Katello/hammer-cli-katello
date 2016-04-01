@@ -203,7 +203,7 @@ module HammerCLIKatello
       end
 
       def request_headers
-        {:content_type => 'multipart/form-data', :multipart => true}
+        {:content_type => 'multipart/form-data'}
       end
 
       def execute
@@ -238,10 +238,12 @@ module HammerCLIKatello
 
         offset = 0
         while (content = file.read(CONTENT_CHUNK_SIZE))
-          params = {:offset => offset,
-                    :id => upload_id,
-                    :content => content,
-                    :repository_id => repo_id
+          params = {
+            :offset => offset,
+            :id => upload_id,
+            :content => content,
+            :repository_id => repo_id,
+            :multipart => true
           }
 
           content_upload_resource.call(:update, params, request_headers)
