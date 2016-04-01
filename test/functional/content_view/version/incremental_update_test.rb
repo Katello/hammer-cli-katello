@@ -47,6 +47,23 @@ describe 'content-view version incremental-update' do
     run_cmd(@cmd + params)
   end
 
+  it "performs incremental update with no environment" do
+    params = ['--update-all-hosts=true', '--errata-ids=FOO2012', '--content-view-version-id=5']
+
+    ex = api_expects(:content_view_versions, :incremental_update, 'Incremental Update') do |par|
+      par['update_hosts']['included'][:search] == '' &&
+        par[:content_view_version_environments][0][:environment_ids].nil? &&
+        par[:content_view_version_environments][0][:content_view_version_id] == 5 &&
+        par['add_content']['errata_ids'] == ['FOO2012']
+    end
+    ex.returns('id' => '3', 'state' => 'stopped')
+
+    ex2 = api_expects(:foreman_tasks, :show, 'Show task')
+    ex2.returns('id' => '3', 'state' => 'stopped')
+
+    run_cmd(@cmd + params)
+  end
+
   it "performs incremental update with names" do
     params = ['--update-all-hosts=true', '--errata-ids=FOO2012',
               '--lifecycle-environments=trump,cruz,bernie',
