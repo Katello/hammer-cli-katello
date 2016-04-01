@@ -190,6 +190,7 @@ module HammerCLIKatello
 
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
       command_name 'add-version'
+      desc _('Add a content view version to a composite view')
 
       def association_name(plural = false)
         plural ? "components" : "component"
@@ -204,7 +205,7 @@ module HammerCLIKatello
 
     class RemoveContentViewVersionCommand < HammerCLIKatello::RemoveAssociatedCommand
       command_name 'remove-version'
-      desc _('Remove a version of a content view')
+      desc _('Remove a content view version from a composite view')
 
       def association_name(plural = false)
         plural ? "components" : "component"
