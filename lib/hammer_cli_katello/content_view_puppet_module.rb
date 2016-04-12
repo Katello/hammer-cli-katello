@@ -33,6 +33,14 @@ module HammerCLIKatello
       failure_message _("Could not add the puppet module")
 
       build_options
+
+      # rubocop:disable Style/AccessorMethodName:
+      def get_identifier
+        # This will intentionally disable the id resolver.  Without it, if the user were to
+        # execute the 'add' command specifying a 'name', the id resolver will attempt to
+        # translate the 'name' to an 'id'.  That is not desirable for this command.
+        nil
+      end
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
