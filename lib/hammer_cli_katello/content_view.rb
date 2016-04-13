@@ -1,4 +1,5 @@
 require 'hammer_cli_katello/content_view_puppet_module'
+require 'hammer_cli_katello/content_view_purge'
 require 'hammer_cli_katello/filter'
 require 'hammer_cli_katello/content_view_version'
 
@@ -252,5 +253,9 @@ module HammerCLIKatello
     subcommand HammerCLIKatello::ContentViewVersion.command_name,
                HammerCLIKatello::ContentViewVersion.desc,
                HammerCLIKatello::ContentViewVersion
+
+    subcommand HammerCLIKatello::ContentViewPurge.command_name,
+               HammerCLIKatello::ContentViewPurge.desc,
+               HammerCLIKatello::ContentViewPurge
   end
 end
