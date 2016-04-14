@@ -29,6 +29,10 @@ module HammerCLIKatello
     end
   end
 
+  class AsyncCommand < HammerCLIForemanTasks::AsyncCommand
+    include HammerCLIKatello::ResolverCommons
+  end
+
   class Command < HammerCLIForeman::Command
     include HammerCLIKatello::ResolverCommons
   end
