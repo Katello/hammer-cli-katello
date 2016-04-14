@@ -93,23 +93,12 @@ module HammerCLIKatello
 
       return options[key_id] if options[key_id]
 
-      begin
-        options[key_environment_id] ||= lifecycle_environment_id(
-          scoped_options("environment", options)
-        )
-      rescue HammerCLIForeman::MissingSeachOptions # rubocop:disable HandleExceptions
-        # Intentionally suppressing the exception,
-        # environment is not always required.
+      if options[key_environment_id]
+        options[key_environment_id] ||= search_and_rescue(
+          :lifecycle_environment_id, "environment", options)
       end
 
-      begin
-        options[key_content_view_id] ||= content_view_id(
-          scoped_options("content_view", options)
-        )
-      rescue HammerCLIForeman::MissingSeachOptions # rubocop:disable HandleExceptions
-        # Intentionally suppressing the exception,
-        # content_view is not always required.
-      end
+      options[key_content_view_id] ||= search_and_rescue(:content_view_id, "content_view", options)
 
       results = find_resources(:content_view_versions, options)
       options[from_environment_id] ||= from_lifecycle_environment_id(options)
@@ -141,8 +130,13 @@ module HammerCLIKatello
       organization_id = options[HammerCLI.option_accessor_name("organization_id")]
 
       search_options = {}
+
       search_options['name'] = name if name
-      search_options['organization_id'] = organization_id
+      if options['option_lifecycle_environment_names']
+        search_options['organization_id'] = organization_id
+      else
+        search_options['organization_id'] = organization_id if name
+      end
       search_options
     end
 
@@ -203,6 +197,13 @@ module HammerCLIKatello
         opts[environment_id] = opts[from_environment_id]
       end
       lifecycle_environment_id(scoped_options("environment", search_options))
+    end
+
+    def search_and_rescue(search_function, resource, options)
+      self.send(search_function, scoped_options(resource, options))
+    rescue HammerCLIForeman::MissingSeachOptions # rubocop:disable HandleExceptions
+      # Intentionally suppressing the exception,
+      # These are not always required.
     end
   end
   # rubocop:enable ClassLength
