@@ -1,3 +1,5 @@
+require 'hammer_cli_katello/search_options_creators'
+
 module HammerCLIKatello
 
   class Searchables < HammerCLIForeman::Searchables
@@ -39,6 +41,11 @@ module HammerCLIKatello
 
   # rubocop:disable ClassLength
   class IdResolver < HammerCLIForeman::IdResolver
+    include HammerCLIKatello::SearchOptionsCreators
+
+    # alias_method_chain :create_search_options, :katello_api
+    alias_method :create_search_options_without_katello_api, :create_search_options
+    alias_method :create_search_options, :create_search_options_with_katello_api
 
     def capsule_content_id(options)
       smart_proxy_id(options)
@@ -80,7 +87,9 @@ module HammerCLIKatello
 
       key_names = HammerCLI.option_accessor_name 'names'
       key_product_id = HammerCLI.option_accessor_name 'product_id'
-      options[key_product_id] ||= product_id(scoped_options 'product', options)
+      unless options['option_product_name'].nil?
+        options[key_product_id] ||= product_id(scoped_options 'product', options)
+      end
       find_resources(:repositories, options)
         .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
     end
@@ -114,75 +123,6 @@ module HammerCLIKatello
         pick_result(results, @api.resource(:content_view_versions))['id']
       end
     end
-
-    def create_repositories_search_options(options)
-      name = options[HammerCLI.option_accessor_name("name")]
-      product_id = options[HammerCLI.option_accessor_name("product_id")]
-
-      search_options = {}
-      search_options['name'] = name if name
-      search_options['product_id'] = product_id if product_id
-      search_options
-    end
-
-    def create_lifecycle_environments_search_options(options)
-      name = options[HammerCLI.option_accessor_name("name")]
-      organization_id = options[HammerCLI.option_accessor_name("organization_id")]
-
-      search_options = {}
-
-      search_options['name'] = name if name
-      if options['option_lifecycle_environment_names']
-        search_options['organization_id'] = organization_id
-      else
-        search_options['organization_id'] = organization_id if name
-      end
-      search_options
-    end
-
-    def create_content_view_versions_search_options(options)
-      environment_id = options[HammerCLI.option_accessor_name("environment_id")]
-      content_view_id = options[HammerCLI.option_accessor_name("content_view_id")]
-      version = options[HammerCLI.option_accessor_name("version")]
-
-      search_options = {}
-
-      search_options['content_view_id'] = content_view_id if content_view_id
-      search_options['environment_id'] = environment_id if environment_id && content_view_id
-      search_options['version'] = version if version
-      search_options
-    end
-
-    def create_organizations_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:organizations))
-    end
-
-    def create_smart_proxies_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:smart_proxies))
-    end
-
-    def create_capsules_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:smart_proxies))
-    end
-
-    def create_hosts_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:hosts))
-    end
-
-    def create_search_options_with_katello_api(options, resource)
-      search_options = {}
-      searchables(resource).each do |s|
-        value = options[HammerCLI.option_accessor_name(s.name.to_s)]
-        if value
-          search_options.update("#{s.name}" => "#{value}")
-        end
-      end
-      search_options
-    end
-
-    # alias_method_chain :create_search_options, :katello_api
-    alias_method :create_search_options_without_katello_api, :create_search_options
-    alias_method :create_search_options, :create_search_options_with_katello_api
 
     private
 
