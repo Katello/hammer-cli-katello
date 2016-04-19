@@ -52,7 +52,7 @@ module HammerCLIKatello
     end
 
     def system_id(options)
-      options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
+      options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)["uuid"]
     end
 
     def environment_id(options)
@@ -60,16 +60,16 @@ module HammerCLIKatello
     end
 
     def environment_ids(options)
-      unless options['option_lifecycle_environment_ids'].nil?
-        return options['option_lifecycle_environment_ids']
+      unless options['option_environment_ids'].nil?
+        return options['option_environment_ids']
       end
 
-      key_names = HammerCLI.option_accessor_name 'lifecycle_environment_names'
+      key_names = HammerCLI.option_accessor_name 'environment_names'
       key_organization_id = HammerCLI.option_accessor_name 'organization_id'
       options[key_organization_id] ||= organization_id(scoped_options 'organization', options)
 
       find_resources(:lifecycle_environments, options)
-        .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
+        .select { |repo| options[key_names].include? repo["name"] }.map { |repo| repo["id"] }
     end
 
     def repository_id(options)
