@@ -28,7 +28,10 @@ module HammerCLIKatello
         s("author", _("Puppet module's author to search by")),
         s("uuid", _("Puppet module's UUID to search by"))
       ],
-      :content_view_version => [s("version", _("Content view version number"))]
+      :content_view_version => [
+        s_name(_("Content view version name to search by")),
+        s("version", _("Content view version number"))
+      ]
     }
 
     DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))]
@@ -49,6 +52,14 @@ module HammerCLIKatello
 
     def capsule_content_id(options)
       smart_proxy_id(options)
+    end
+
+    def component_ids(options)
+      cvv_names = options[HammerCLI.option_accessor_name 'components']
+      options[HammerCLI.option_accessor_name('content_view_version_names')] ||= cvv_names
+      content_view_versions = find_resources(:content_view_versions,
+                                             scoped_options('content_view_version', options))
+      content_view_versions.map { |cvv| cvv['id'] }
     end
 
     def system_id(options)

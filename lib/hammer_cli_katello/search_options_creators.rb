@@ -29,12 +29,14 @@ module HammerCLIKatello
       environment_id = options[HammerCLI.option_accessor_name("environment_id")]
       content_view_id = options[HammerCLI.option_accessor_name("content_view_id")]
       version = options[HammerCLI.option_accessor_name("version")]
+      names = options[HammerCLI.option_accessor_name("names")]
 
       search_options = {}
 
       search_options['content_view_id'] = content_view_id if content_view_id
       search_options['environment_id'] = environment_id if environment_id && content_view_id
       search_options['version'] = version if version
+      search_options['names'] = names if names
       search_options
     end
 
@@ -58,8 +60,11 @@ module HammerCLIKatello
       search_options = {}
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
+        values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
         if value
           search_options.update("#{s.name}" => "#{value}")
+        elsif values
+          search_options.update("#{s.plural_name}" => "#{values}")
         end
       end
       search_options

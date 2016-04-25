@@ -99,10 +99,14 @@ module HammerCLIKatello
       failure_message _("Could not create the content view")
 
       option ["--composite"], :flag, _("Create a composite content view")
+      option ["--components"], 'COMPONENTS',
+        _("List of component content view version names for composite views"),
+        format: HammerCLI::Options::Normalizers::List.new
 
       def request_params
         super.tap do |opts|
           opts['composite'] = option_composite? || false
+          opts['component_ids'] ||= resolver.component_ids(all_options) if option_composite?
         end
       end
 
