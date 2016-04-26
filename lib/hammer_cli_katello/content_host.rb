@@ -32,7 +32,6 @@ module HammerCLIKatello
         field :name, _("Name")
         field :uuid, _("ID")
         field :katello_agent_installed, _("Katello Agent Installed"), Fields::Boolean
-        field :description, _("Description")
         field :location, _("Location")
         from :environment do
           field :name, _("Lifecycle Environment")
