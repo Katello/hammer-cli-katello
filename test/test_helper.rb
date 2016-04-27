@@ -1,7 +1,7 @@
+require File.join(File.dirname(__FILE__), './task_helper.rb')
 require 'minitest/autorun'
 require 'minitest/spec'
-require "mocha/setup"
-
+require 'mocha/setup'
 require 'hammer_cli'
 require 'hammer_cli_foreman/commands'
 
