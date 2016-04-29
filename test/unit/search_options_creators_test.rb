@@ -3,12 +3,6 @@ require 'hammer_cli_katello/search_options_creators'
 
 class SearchOptionsCreatorsMock
   include HammerCLIKatello::SearchOptionsCreators
-
-  def one
-  end
-
-  def two
-  end
 end
 
 describe HammerCLIKatello::SearchOptionsCreators do
@@ -16,6 +10,8 @@ describe HammerCLIKatello::SearchOptionsCreators do
   let(:search_options_creators) { SearchOptionsCreatorsMock.new }
   let(:options) { Hash.new }
   let(:resource) { mock('ApipieBindings::Resource') }
+  let(:searchable1) { mock('Searchable') }
+  let(:searchable2) { mock('Searchable') }
 
   describe '#create_repositories_search_options' do
     it 'handles an array of names' do
@@ -94,9 +90,16 @@ describe HammerCLIKatello::SearchOptionsCreators do
   end # describe 'without the katello api'
 
   describe '#create_search_options_with_katello_api' do
+    before(:each) do
+      searchable1.stubs(:name).returns('one')
+      searchable2.stubs(:name).returns('two')
+      searchable1.stubs(:plural_name)
+      searchable2.stubs(:plural_name)
+    end
+
     it 'translates all searchable fields from options' do
       search_options_creators.stubs(:searchables).
-        returns([search_options_creators.method(:one), search_options_creators.method(:two)])
+        returns([searchable1, searchable2])
 
       search_options_creators.create_search_options_with_katello_api(
         {'option_one' => 1, 'option_two' => 2}, resource
