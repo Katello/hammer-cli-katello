@@ -7,7 +7,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :host_errata, :apply
       command_name "apply"
-      success_message _("Errata applied successfully")
+      success_message _("Errata is being applied with task %{id}")
       failure_message _("Could not apply errata")
 
       build_options

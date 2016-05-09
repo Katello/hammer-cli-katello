@@ -6,6 +6,7 @@ require File.join(File.dirname(__FILE__),
 describe 'content-view version incremental-update' do
   include OrganizationHelpers
   include LifecycleEnvironmentHelpers
+  include ForemanTaskHelpers
 
   before do
     @cmd = %w(content-view version incremental-update)
@@ -23,8 +24,7 @@ describe 'content-view version incremental-update' do
     end
     ex.returns('id' => '3', 'state' => 'stopped')
 
-    ex2 = api_expects(:foreman_tasks, :show, 'Show task')
-    ex2.returns('id' => '3', 'state' => 'stopped')
+    expect_foreman_task('3')
 
     run_cmd(@cmd + params)
   end
@@ -41,8 +41,7 @@ describe 'content-view version incremental-update' do
     end
     ex.returns('id' => '3', 'state' => 'stopped')
 
-    ex2 = api_expects(:foreman_tasks, :show, 'Show task')
-    ex2.returns('id' => '3', 'state' => 'stopped')
+    expect_foreman_task('3')
 
     run_cmd(@cmd + params)
   end
@@ -58,8 +57,7 @@ describe 'content-view version incremental-update' do
     end
     ex.returns('id' => '3', 'state' => 'stopped')
 
-    ex2 = api_expects(:foreman_tasks, :show, 'Show task')
-    ex2.returns('id' => '3', 'state' => 'stopped')
+    expect_foreman_task('3')
 
     run_cmd(@cmd + params)
   end
@@ -82,8 +80,7 @@ describe 'content-view version incremental-update' do
     end
     ex.returns('id' => '3', 'state' => 'stopped')
 
-    ex2 = api_expects(:foreman_tasks, :show, 'Show task')
-    ex2.returns('id' => '3', 'state' => 'stopped')
+    expect_foreman_task('3')
 
     run_cmd(@cmd + params)
   end
