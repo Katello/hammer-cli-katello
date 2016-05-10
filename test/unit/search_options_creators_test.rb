@@ -1,9 +1,6 @@
 require_relative '../test_helper'
-require 'hammer_cli_katello/search_options_creators'
 
-class SearchOptionsCreatorsMock
-  include HammerCLIKatello::SearchOptionsCreators
-
+class SearchOptionsCreatorsMock < HammerCLIKatello::IdResolver
   def one
   end
 
@@ -12,9 +9,16 @@ class SearchOptionsCreatorsMock
 end
 
 describe HammerCLIKatello::SearchOptionsCreators do
-  let(:search_options_creators) { SearchOptionsCreatorsMock.new }
+  let(:api) { mock('api') }
+  let(:searchables) { HammerCLIKatello::Searchables.new }
+  let(:search_options_creators) { SearchOptionsCreatorsMock.new(api, searchables) }
   let(:options) { Hash.new }
   let(:resource) { mock('ApipieBindings::Resource') }
+
+  before(:each) do
+    api.stubs(:resources).returns([resource])
+    resource.stubs(:singular_name).returns('')
+  end
 
   describe '#create_repositories_search_options' do
     it 'handles an array of names' do
@@ -57,9 +61,19 @@ describe HammerCLIKatello::SearchOptionsCreators do
     end
   end
 
-  describe 'without the katello api' do
-    let(:api) { mock('api') }
+  describe "#create_host_collections_search_options" do
+    it 'handles organization options' do
+      api.stubs(:resource)
+      search_options_creators.stubs(:scoped_options).returns('option_name' => 'org1')
+      search_options_creators.expects(:organization_id).with('option_name' => 'org1').returns(1)
+      search_options_creators.expects(:create_search_options_with_katello_api)
+      search_options_creators.create_host_collections_search_options(
+        'option_organization_name' => 'org1'
+      )
+    end
+  end
 
+  describe 'without the katello api' do
     before(:each) do
       search_options_creators.expects(:create_search_options_without_katello_api)
       search_options_creators.stubs(:api).returns(api)
