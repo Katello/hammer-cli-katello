@@ -1,3 +1,16 @@
+if RUBY_VERSION > "2.2"
+  # Coverage - Keep these two lines at the top of this file
+  require 'simplecov'
+  require 'coveralls'
+  SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
+  SimpleCov.start do
+    minimum_coverage 46
+    refuse_coverage_drop
+    track_files "lib/**/*.rb"
+    add_filter '/test/'
+  end
+end
+
 require File.join(File.dirname(__FILE__), './task_helper.rb')
 require 'minitest/autorun'
 require 'minitest/spec'
