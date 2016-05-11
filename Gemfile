@@ -10,8 +10,8 @@ group :test do
   gem 'thor'
   gem 'minitest', '4.7.4'
   gem 'minitest-spec-context'
-  gem 'simplecov'
   gem 'mocha'
+  gem 'coveralls', require: false
 end
 
 # load local gemfile

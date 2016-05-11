@@ -4,6 +4,16 @@ require 'minitest/spec'
 require 'mocha/setup'
 require 'hammer_cli'
 require 'hammer_cli_foreman/commands'
+require 'simplecov'
+require 'coveralls'
+
+if RUBY_VERSION > "2.2"
+  # don't run coverage for every ruby version in Travis
+  SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
+  SimpleCov.start do
+    add_filter '/test/'
+  end
+end
 
 KATELLO_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '3.0')
 
