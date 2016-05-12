@@ -3,7 +3,6 @@ module HammerCLIKatello
     resource :sync_plans
 
     class ListCommand < HammerCLIKatello::ListCommand
-
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -16,7 +15,6 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-
       output ListCommand.output_definition do
         field :description, _("Description")
         field :created_at, _("Created at"), Fields::Date
@@ -27,11 +25,10 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-
       option "--interval", "INTERVAL", _("how often synchronization should run"),
              :format => HammerCLI::Options::Normalizers::Enum.new(
-                %w(hourly daily weekly)
-              )
+               %w(hourly daily weekly)
+             )
 
       option "--sync-date", "SYNC_DATE",
              _("start date and time of the synchronization defaults to now"),
@@ -44,11 +41,10 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-
       option "--interval", "INTERVAL", _("how often synchronization should run"),
              :format => HammerCLI::Options::Normalizers::Enum.new(
-                %w(hourly daily weekly)
-              )
+               %w(hourly daily weekly)
+             )
       option "--sync-date", "SYNC_DATE", _("start date and time of the synchronization"),
              :format => HammerCLI::Options::Normalizers::DateTime.new
 

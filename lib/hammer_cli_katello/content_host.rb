@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class ContentHostCommand < HammerCLI::AbstractCommand
     module IdDescriptionOverridable
       def self.included(base)
@@ -107,5 +106,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end

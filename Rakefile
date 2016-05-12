@@ -29,7 +29,6 @@ task :default do
 end
 
 namespace :gettext do
-
   task :setup do
     require "hammer_cli_katello/version"
     require "hammer_cli_katello/i18n"
@@ -50,5 +49,4 @@ namespace :gettext do
   task :find => [:setup] do
     Rake::Task["gettext:po:update"].invoke
   end
-
 end

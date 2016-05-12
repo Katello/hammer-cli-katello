@@ -1,7 +1,5 @@
 module HammerCLIKatello
-
   class ContentViewPuppetModule < HammerCLIKatello::Command
-
     resource :content_view_puppet_modules
     command_name 'puppet-module'
     desc 'View and manage puppet modules'
@@ -15,11 +13,11 @@ module HammerCLIKatello
       end
 
       def extend_data(mod)
-        if mod['uuid']
-          mod['version'] = mod['computed_version']
-        else
-          mod['version'] = _("Latest(Currently %s)") % mod['computed_version']
-        end
+        mod['version'] = if mod['uuid']
+                           mod['computed_version']
+                         else
+                           _("Latest(Currently %s)") % mod['computed_version']
+                         end
         mod
       end
 

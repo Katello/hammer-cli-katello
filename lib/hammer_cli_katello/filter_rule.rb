@@ -1,7 +1,5 @@
 module HammerCLIKatello
-
   class FilterRule < HammerCLIKatello::Command
-
     resource :content_view_filter_rules
     command_name 'rule'
     desc 'View and manage filter rules'

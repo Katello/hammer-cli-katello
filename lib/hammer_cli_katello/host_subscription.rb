@@ -1,6 +1,5 @@
 module HammerCLIKatello
   class HostSubscription < HammerCLIKatello::Command
-
     desc "Manage subscription information on your hosts"
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand

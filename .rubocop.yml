@@ -1,3 +1,6 @@
+# TODO: remove this
+inherit_from: .rubocop_todo.yml
+
 MethodLength:
   Description: 'Avoid methods longer than 30 lines of code.'
   Max: 30 # default is 10
@@ -6,9 +9,6 @@ Documentation:
   Enabled: false
 
 StringLiterals:
-  Enabled: false
-
-EmptyLinesAroundBody:
   Enabled: false
 
 HashSyntax:
@@ -73,3 +73,9 @@ SingleLineBlockParams:
 
 FormatString:
   Enabled: false # we use % for i18n
+
+Style/Alias:
+  Enabled: false
+
+Style/IndentArray:
+  EnforcedStyle: consistent

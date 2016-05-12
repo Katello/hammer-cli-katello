@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class PackageGroupCommand < HammerCLIKatello::Command
     resource :package_groups
 

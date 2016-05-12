@@ -18,7 +18,6 @@ module HammerCLIKatello
           from :organization do
             field :name, _("Organization")
           end
-
         end
 
         build_options
@@ -34,7 +33,6 @@ module HammerCLIKatello
           from :organization do
             field :name, _("Organization")
           end
-
         end
 
         build_options
@@ -114,7 +112,7 @@ module HammerCLIKatello
           data['_last_failure'] = data["last_failed_sync_tasks"][-1]
 
           data["active_sync_tasks"].each do |task|
-            task['_progress'] =  format_progress(task['progress'])
+            task['_progress'] = format_progress(task['progress'])
           end
           data
         end

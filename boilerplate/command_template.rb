@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class Taco < HammerCLI::Apipie::Command
     resource KatelloApi::Resources::Taco
 
@@ -46,9 +45,7 @@ module HammerCLIKatello
     end
 
     autoload_subcommands
-
   end
-
 end
 
 HammerCLI::MainCommand.subcommand "taco", _("Manipulate tacos"), HammerCLIKatello::Taco

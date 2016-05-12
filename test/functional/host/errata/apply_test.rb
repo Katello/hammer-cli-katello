@@ -12,10 +12,11 @@ describe 'apply an errata' do
   let(:errata_id) { "RHEA-1111:1111" }
   let(:host_id) { 1 }
   let(:task_id) { 5 }
-  let(:response) do {
-    'id' => task_id,
-    'state' => 'stopped'
-  }
+  let(:response) do
+    {
+      'id' => task_id,
+      'state' => 'stopped'
+    }
   end
 
   it "applies an errata to a host" do

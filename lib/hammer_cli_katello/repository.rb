@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class Repository < HammerCLIKatello::Command
     resource :repositories
 
@@ -99,9 +98,9 @@ module HammerCLIKatello
         content_counts = data["content_counts"]
         case data["content_type"]
         when "yum"
-          data["package_total"]  =  content_counts["rpm"]
-          data["package_group_total"]  =  content_counts["package_group"]
-          data["errata_total"]  =  content_counts["erratum"]
+          data["package_total"] = content_counts["rpm"]
+          data["package_group_total"] = content_counts["package_group"]
+          data["errata_total"] = content_counts["erratum"]
         when "docker"
           data["docker_manifest_total"] = content_counts["docker_manifest"]
           data["docker_tag_total"] = content_counts["docker_tag"]
@@ -112,7 +111,6 @@ module HammerCLIKatello
         end
       end
 
-      # rubocop:disable MethodLength
       def get_sync_status(state)
         sync_states = {
           "failed" => _("Failed"),

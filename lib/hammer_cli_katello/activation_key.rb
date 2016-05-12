@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class ActivationKeyCommand < HammerCLIKatello::Command
     resource :activation_keys
 
@@ -20,11 +19,13 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
+        limit = data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
+
         data["format_consumed"] = _("%{consumed} of %{limit}") %
-          {
-            :consumed => data["usage_count"],
-            :limit => data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
-          }
+                                  {
+                                    :consumed => data["usage_count"],
+                                    :limit => limit
+                                  }
         data
       end
 
@@ -39,7 +40,7 @@ module HammerCLIKatello
         params = super
         if options.keys.any? { |o| o.match(/\Aoption_organization.*/) }
           params['organization_id'] = resolver.organization_id(
-                            resolver.scoped_options('organization', all_options))
+            resolver.scoped_options('organization', all_options))
         end
         params
       end
@@ -142,11 +143,13 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
+        limit = data["quantity"] == -1 ? _("Unlimited") : data["quantity"]
+
         data["format_consumed"] = _("%{consumed} of %{limit}") %
-          {
-            :consumed => data["consumed"],
-            :limit => data["quantity"] == -1 ? _("Unlimited") : data["quantity"]
-          }
+                                  {
+                                    :consumed => data["consumed"],
+                                    :limit => limit
+                                  }
         data
       end
 
@@ -162,15 +165,15 @@ module HammerCLIKatello
       build_options do |o|
         o.expand.only(:organizations)
         o.without(
-                  :system_id,
-                  :activation_key_id,
-                  :full_results,
-                  :search,
-                  :order,
-                  :sort,
-                  :page,
-                  :per_page
-                 )
+          :system_id,
+          :activation_key_id,
+          :full_results,
+          :search,
+          :order,
+          :sort,
+          :page,
+          :per_page
+        )
       end
     end
 
@@ -266,15 +269,15 @@ module HammerCLIKatello
       build_options do |o|
         o.expand.only(:organizations)
         o.without(
-                  :system_id,
-                  :activation_key_id,
-                  :full_results,
-                  :search,
-                  :order,
-                  :sort,
-                  :page,
-                  :per_page
-                 )
+          :system_id,
+          :activation_key_id,
+          :full_results,
+          :search,
+          :order,
+          :sort,
+          :page,
+          :per_page
+        )
       end
     end
 
@@ -282,5 +285,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end

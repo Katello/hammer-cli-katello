@@ -1,9 +1,7 @@
 require 'hammer_cli_katello/search_options_creators'
 
 module HammerCLIKatello
-
   class Searchables < HammerCLIForeman::Searchables
-
     SEARCHABLES = {
       :activation_key =>        [s_name(_("Activation key name to search by"))],
       :capsule =>               [s_name(_("Capsule name to search by"))],
@@ -29,17 +27,15 @@ module HammerCLIKatello
         s("uuid", _("Puppet module's UUID to search by"))
       ],
       :content_view_version => [s("version", _("Content view version number"))]
-    }
+    }.freeze
 
-    DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))]
+    DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))].freeze
 
     def for(resource)
       SEARCHABLES[resource.singular_name.to_sym] || DEFAULT_SEARCHABLES
     end
-
   end
 
-  # rubocop:disable ClassLength
   class IdResolver < HammerCLIForeman::IdResolver
     include HammerCLIKatello::SearchOptionsCreators
 
@@ -66,7 +62,7 @@ module HammerCLIKatello
 
       key_names = HammerCLI.option_accessor_name 'lifecycle_environment_names'
       key_organization_id = HammerCLI.option_accessor_name 'organization_id'
-      options[key_organization_id] ||= organization_id(scoped_options 'organization', options)
+      options[key_organization_id] ||= organization_id(scoped_options('organization', options))
 
       find_resources(:lifecycle_environments, options)
         .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
@@ -88,7 +84,7 @@ module HammerCLIKatello
       key_names = HammerCLI.option_accessor_name 'names'
       key_product_id = HammerCLI.option_accessor_name 'product_id'
       unless options['option_product_name'].nil?
-        options[key_product_id] ||= product_id(scoped_options 'product', options)
+        options[key_product_id] ||= product_id(scoped_options('product', options))
       end
       find_resources(:repositories, options)
         .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
@@ -113,7 +109,7 @@ module HammerCLIKatello
       options[from_environment_id] ||= from_lifecycle_environment_id(options)
 
       if results.size > 1 && options[from_environment_id]
-        results_in_from_environment = results.select do  |version|
+        results_in_from_environment = results.select do |version|
           member_of_environment_ids = version['environments'].map { |env| env['id'].to_s }
           member_of_environment_ids.include? options[from_environment_id].to_s
         end

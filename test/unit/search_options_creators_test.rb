@@ -12,7 +12,6 @@ class SearchOptionsCreatorsMock
 end
 
 describe HammerCLIKatello::SearchOptionsCreators do
-
   let(:search_options_creators) { SearchOptionsCreatorsMock.new }
   let(:options) { Hash.new }
   let(:resource) { mock('ApipieBindings::Resource') }
@@ -90,7 +89,6 @@ describe HammerCLIKatello::SearchOptionsCreators do
         search_options_creators.create_organizations_search_options(:anything)
       end
     end
-
   end # describe 'without the katello api'
 
   describe '#create_search_options_with_katello_api' do
@@ -103,5 +101,4 @@ describe HammerCLIKatello::SearchOptionsCreators do
       ).must_equal('one' => '1', 'two' => '2')
     end
   end # describe '#create_search_options_with_katello_api'
-
 end # describe HammerCLIKatello::SearchOptionsCreators
