@@ -2,7 +2,7 @@ module HammerCLIKatello
 
   RESOURCE_NAME_MAPPING = {
     :system => :content_host
-  }
+  }.freeze
 
   module ResolverCommons
 
@@ -23,7 +23,7 @@ module HammerCLIKatello
       end
 
       def resource_name_mapping
-        HammerCLIKatello::RESOURCE_NAME_MAPPING
+        HammerCLIKatello::RESOURCE_NAME_MAPPING.dup
       end
 
     end

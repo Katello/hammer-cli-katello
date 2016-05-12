@@ -47,7 +47,7 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
   end
 
   it "lists the repositories belonging to a lifecycle-environment by name" do
-    params = ['--organization-id=1', '--lifecycle-environment=test']
+    params = ['--organization-id=1', '--environment=test']
 
     expect_lifecycle_environment_search(org_id, 'test', lifecycle_env_id)
 
