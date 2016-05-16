@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.authors = [
     "Adam Price",
     "Adam Ruzicka",
+    "Andrew Kofink",
     "Brad Buckingham",
     "Bryan Kearney",
     "Chris Duryee",
@@ -29,7 +30,8 @@ Gem::Specification.new do |gem|
     "Stephen Benjamin",
     "Tomas Strachota",
     "Tom McKay",
-    "Walden Raines"
+    "Walden Raines",
+    "Zach Huntington-Meath"
   ]
   gem.email = ['katello@lists.fedorahosted.org']
   gem.license = "GPL-3"
