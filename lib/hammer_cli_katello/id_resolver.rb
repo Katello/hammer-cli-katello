@@ -141,7 +141,7 @@ module HammerCLIKatello
 
     def search_and_rescue(search_function, resource, options)
       self.send(search_function, scoped_options(resource, options))
-    rescue HammerCLIForeman::MissingSeachOptions # rubocop:disable HandleExceptions
+    rescue HammerCLIForeman::MissingSearchOptions # rubocop:disable HandleExceptions
       # Intentionally suppressing the exception,
       # These are not always required.
     end
