@@ -128,7 +128,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand.including(:products)
+        o.expand.including(:products, :organizations)
       end
     end
 
@@ -143,7 +143,7 @@ module HammerCLIKatello
       failure_message _("Could not synchronize the repository")
 
       build_options do |o|
-        o.expand.including(:products)
+        o.expand.including(:products, :organizations)
       end
     end
 
@@ -223,7 +223,7 @@ module HammerCLIKatello
       failure_message _("Could not upload the content")
 
       build_options(:without => [:content]) do |o|
-        o.expand.including(:products)
+        o.expand.including(:products, :organizations)
       end
       option "--path", "PATH", _("Upload file or directory of files as content for a repository"),
              :attribute_name => :option_content,

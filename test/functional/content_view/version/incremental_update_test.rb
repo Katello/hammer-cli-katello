@@ -26,7 +26,8 @@ describe 'content-view version incremental-update' do
 
     expect_foreman_task('3')
 
-    run_cmd(@cmd + params)
+    result = run_cmd(@cmd + params)
+    assert(result.exit_code, 0)
   end
 
   it "performs incremental update with update all hosts" do
@@ -43,7 +44,8 @@ describe 'content-view version incremental-update' do
 
     expect_foreman_task('3')
 
-    run_cmd(@cmd + params)
+    result = run_cmd(@cmd + params)
+    assert(result.exit_code, 0)
   end
 
   it "performs incremental update with no environment" do
@@ -59,7 +61,8 @@ describe 'content-view version incremental-update' do
 
     expect_foreman_task('3')
 
-    run_cmd(@cmd + params)
+    result = run_cmd(@cmd + params)
+    assert(result.exit_code, 0)
   end
 
   it "performs incremental update with names" do
@@ -82,6 +85,7 @@ describe 'content-view version incremental-update' do
 
     expect_foreman_task('3')
 
-    run_cmd(@cmd + params)
+    result = run_cmd(@cmd + params)
+    assert(result.exit_code, 0)
   end
 end
