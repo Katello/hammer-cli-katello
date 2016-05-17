@@ -126,4 +126,5 @@ module HammerCLIKatello
 
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
+  require 'hammer_cli_katello/hostgroup'
 end
