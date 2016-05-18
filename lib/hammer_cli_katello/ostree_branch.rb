@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class OstreeBranchCommand < HammerCLIKatello::Command
     resource :ostree_branches
 

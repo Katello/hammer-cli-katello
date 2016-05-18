@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class ContentViewVersion < HammerCLIKatello::Command
     resource :content_view_versions
     command_name 'version'
@@ -133,41 +132,41 @@ module HammerCLIKatello
       failure_message _("An error occurred incrementally updating the content view")
 
       option('--lifecycle-environment-ids',
-        'ENVIRONMENT_IDS',
-        _("list of lifecycle environment IDs to update the content view version in"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      )
+             'ENVIRONMENT_IDS',
+             _("list of lifecycle environment IDs to update the content view version in"),
+             :format => HammerCLI::Options::Normalizers::List.new
+            )
 
       option('--lifecycle-environments',
-        'ENVIRONMENTS',
-        _("list of lifecycle environment names to update the content view version in"),
-        :format => HammerCLI::Options::Normalizers::List.new,
-        :attribute_name => :option_lifecycle_environment_names
-      )
+             'ENVIRONMENTS',
+             _("list of lifecycle environment names to update the content view version in"),
+             :format => HammerCLI::Options::Normalizers::List.new,
+             :attribute_name => :option_lifecycle_environment_names
+            )
 
       option('--organization',
-        'ORGANIZATION_NAME',
-        _("Organization name for resolving lifecycle environment names"),
-        :attribute_name => :option_organization_name
-      )
+             'ORGANIZATION_NAME',
+             _("Organization name for resolving lifecycle environment names"),
+             :attribute_name => :option_organization_name
+            )
 
       option('--organization-id',
-        'ORGANIZATION_ID',
-        _("Organization id for resolving lifecycle environment names")
-      )
+             'ORGANIZATION_ID',
+             _("Organization id for resolving lifecycle environment names")
+            )
 
       option('--update-all-hosts',
-        'UPDATE',
-        _('Update all editable and applicable hosts within the specified Content View and \
-          Lifecycle Environments'),
-        :format => HammerCLI::Options::Normalizers::Bool.new
-      )
+             'UPDATE',
+             _('Update all editable and applicable hosts within the specified Content View and \
+               Lifecycle Environments'),
+             :format => HammerCLI::Options::Normalizers::Bool.new
+            )
 
       option('--host-ids',
-        'HOST_IDS',
-        _("IDs of hosts to update"),
-        :format => HammerCLI::Options::Normalizers::List.new
-      )
+             'HOST_IDS',
+             _("IDs of hosts to update"),
+             :format => HammerCLI::Options::Normalizers::List.new
+            )
 
       validate_options do
         organization_options = [:option_organization_id, :option_organization_name]
@@ -191,9 +190,9 @@ module HammerCLIKatello
         ]
 
         if options.key?(HammerCLI.option_accessor_name(:lifecycle_environment_names)) ||
-            options.key?(HammerCLI.option_accessor_name(:lifecycle_environment_ids))
+           options.key?(HammerCLI.option_accessor_name(:lifecycle_environment_ids))
           params[:content_view_version_environments][0][:environment_ids] =
-              resolver.environment_ids(options)
+            resolver.environment_ids(options)
         end
 
         add_content = {}
@@ -210,7 +209,7 @@ module HammerCLIKatello
 
       def request_params_hosts(params)
         if params['update_hosts'] && params['update_hosts']['included'] &&
-             params['update_hosts']['included'].key?('ids')
+           params['update_hosts']['included'].key?('ids')
           params['update_hosts'].delete('excluded')
         else
           params.delete('update_hosts')

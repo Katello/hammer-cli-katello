@@ -1,9 +1,7 @@
 require 'hammer_cli_foreman/organization'
 
 module HammerCLIKatello
-
   class Organization < HammerCLIForeman::Organization
-
     class ListCommand < HammerCLIForeman::Organization::ListCommand
       include HammerCLIKatello::ResolverCommons
       resource :organizations, :index
@@ -61,5 +59,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end

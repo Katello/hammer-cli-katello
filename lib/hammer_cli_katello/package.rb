@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class PackageCommand < HammerCLIKatello::Command
     resource :packages
 

@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class Product < HammerCLIKatello::Command
     resource :products
 
@@ -18,7 +17,6 @@ module HammerCLIKatello
         from :sync_status do
           field :state, _("Sync State")
         end
-
       end
 
       build_options
@@ -32,7 +30,6 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-
       output do
         field :id, _("ID")
         field :name, _("Name")

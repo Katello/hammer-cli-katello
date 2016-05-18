@@ -17,7 +17,7 @@ describe 'host subscription register' do
     params = ['--name=trump.wall.com', '--content-view-id=1', '--lifecycle-environment-id=2']
     ex = api_expects(:host_subscriptions, :create, 'Host subscription register') do |par|
       par['name'] == 'trump.wall.com' && par['content_view_id'] == 1 &&
-          par['lifecycle_environment_id'] == 2
+        par['lifecycle_environment_id'] == 2
     end
     ex.returns({})
 
@@ -36,7 +36,7 @@ describe 'host subscription register' do
 
     api_expects(:host_subscriptions, :create, 'Host subscription register') do |par|
       par['name'] == 'trump.wall.com' && par['content_view_id'] == 1 &&
-          par['lifecycle_environment_id'] == 2
+        par['lifecycle_environment_id'] == 2
     end
 
     expect_organization_search('trumporg', 3)

@@ -1,12 +1,9 @@
 module HammerCLIKatello
-
   class PingCommand < HammerCLIKatello::Command
-
     resource :ping, :index
 
     output do
       from "services" do
-
         label "candlepin" do
           from "candlepin" do
             field "status", _("Status")
@@ -41,7 +38,6 @@ module HammerCLIKatello
             field "_response", _("Server Response")
           end
         end
-
       end # from "services"
     end # output do
 
@@ -72,7 +68,5 @@ module HammerCLIKatello
     def request_options
       { with_authentication: false }
     end
-
   end # class PingCommand
-
 end # module HammerCLIKatello

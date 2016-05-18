@@ -8,7 +8,7 @@ describe 'capsule content cancel-synchronization' do
     @cmd = ['capsule', 'content', 'cancel-synchronization']
   end
 
-  MESSAGE = "There's no running synchronization for this capsule."
+  MESSAGE = "There's no running synchronization for this capsule.".freeze
 
   it "triggers the cancel" do
     expected_result = success_result("#{MESSAGE}\n")

@@ -12,19 +12,20 @@ describe 'listing content-views' do
 
   let(:org_id) { 1 }
   let(:lifecycle_env_id) { 1 }
-  let(:empty_response) do {
-    "total" => 0,
-    "subtotal" => 0,
-    "page" => "1",
-    "per_page" => "1000",
-    "error" => nil,
-    "search" => nil,
-    "sort" => {
-      "by" => nil,
-      "order" => nil
-    },
-    "results" => []
-  }
+  let(:empty_response) do
+    {
+      "total" => 0,
+      "subtotal" => 0,
+      "page" => "1",
+      "per_page" => "1000",
+      "error" => nil,
+      "search" => nil,
+      "sort" => {
+        "by" => nil,
+        "order" => nil
+      },
+      "results" => []
+    }
   end
 
   it "lists an organizations content-views" do

@@ -1,7 +1,5 @@
 module HammerCLIKatello
-
   class HostPackage < HammerCLIKatello::Command
-
     desc "Manage packages on your hosts"
 
     class ListCommand < HammerCLIKatello::ListCommand
@@ -64,5 +62,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end

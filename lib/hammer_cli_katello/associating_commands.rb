@@ -1,6 +1,5 @@
 module HammerCLIKatello
   module AssociatingCommands
-
     module Repository
       module AddProductOptions
         def dependencies
@@ -14,7 +13,7 @@ module HammerCLIKatello
             products = dependencies.find { |r| r.name == :products }
             if products
               option_builder.builders << HammerCLIForeman::DependentSearchablesOptionBuilder.new(
-                                        products, searchables)
+                products, searchables)
             end
           end
         end
@@ -51,7 +50,6 @@ module HammerCLIKatello
         success_message _("The repository has been removed")
         failure_message _("Could not remove repository")
       end
-
     end
 
     module HostCollection
@@ -72,7 +70,6 @@ module HammerCLIKatello
         success_message _("The host collection has been removed")
         failure_message _("Could not remove host collection")
       end
-
     end
 
     module Host
@@ -93,7 +90,6 @@ module HammerCLIKatello
         success_message _("The host has been removed")
         failure_message _("Could not remove host")
       end
-
     end
   end
 end

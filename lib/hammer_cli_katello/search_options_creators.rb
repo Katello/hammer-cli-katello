@@ -1,6 +1,5 @@
 module HammerCLIKatello
   module SearchOptionsCreators
-
     def create_repositories_search_options(options)
       name = options[HammerCLI.option_accessor_name("name")]
       names = options[HammerCLI.option_accessor_name("names")]
@@ -59,12 +58,10 @@ module HammerCLIKatello
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
         if value
-          search_options.update("#{s.name}" => "#{value}")
+          search_options.update(s.name.to_s => value.to_s)
         end
       end
       search_options
     end
-
   end # module SearchOptionsCreators
-
 end # module HammerCLIKatello

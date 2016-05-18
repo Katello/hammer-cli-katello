@@ -1,10 +1,8 @@
 module HammerCLIKatello
-
   class LifecycleEnvironmentCommand < HammerCLIKatello::Command
     resource :lifecycle_environments
 
     module PriorIdResolvable
-
       def self.included(base)
         base.option(
           "--prior",
@@ -100,5 +98,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end

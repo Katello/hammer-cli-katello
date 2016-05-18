@@ -1,11 +1,8 @@
 module HammerCLIKatello
-
   class GpgKeyCommand < HammerCLIForeman::Command
-
     resource :gpg_keys
 
     class ListCommand < HammerCLIKatello::ListCommand
-
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -15,7 +12,6 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -68,5 +64,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end

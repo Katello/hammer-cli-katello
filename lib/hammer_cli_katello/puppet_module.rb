@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class PuppetModule < HammerCLIKatello::Command
     resource :puppet_modules
 

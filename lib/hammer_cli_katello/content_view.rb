@@ -3,7 +3,6 @@ require 'hammer_cli_katello/filter'
 require 'hammer_cli_katello/content_view_version'
 
 module HammerCLIKatello
-
   class ContentView < HammerCLIKatello::Command
     resource :content_views
 

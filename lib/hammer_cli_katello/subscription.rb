@@ -3,11 +3,8 @@ require 'hammer_cli_foreman'
 require 'hammer_cli_foreman/commands'
 
 module HammerCLIKatello
-
   class SubscriptionCommand < HammerCLI::AbstractCommand
-
     class ListCommand < HammerCLIKatello::ListCommand
-
       resource :subscriptions, :index
 
       output do
@@ -83,7 +80,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class ManifestHistoryCommand <  HammerCLIKatello::ListCommand
+    class ManifestHistoryCommand < HammerCLIKatello::ListCommand
       command_name "manifest-history"
       resource :subscriptions, :manifest_history
 

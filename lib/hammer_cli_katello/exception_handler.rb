@@ -1,7 +1,6 @@
 
 module HammerCLIKatello
   class ExceptionHandler < HammerCLIForeman::ExceptionHandler
-
     def mappings
       super + [
         [RestClient::InternalServerError, :handle_internal_error],
@@ -41,6 +40,5 @@ module HammerCLIKatello
       print_error response["displayMessage"] || response["full_messages"] || response["message"]
       log_full_error e
     end
-
   end
 end

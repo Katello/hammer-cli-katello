@@ -1,9 +1,7 @@
 require 'hammer_cli_katello/filter_rule'
 
 module HammerCLIKatello
-
   class Filter < HammerCLIKatello::Command
-
     resource :content_view_filters
     command_name 'filter'
     desc 'View and manage filters'
@@ -79,6 +77,5 @@ module HammerCLIKatello
     subcommand HammerCLIKatello::FilterRule.command_name,
                HammerCLIKatello::FilterRule.desc,
                HammerCLIKatello::FilterRule
-
   end
 end

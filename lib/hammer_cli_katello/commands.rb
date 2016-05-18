@@ -1,17 +1,14 @@
 module HammerCLIKatello
-
   RESOURCE_NAME_MAPPING = {
     :system => :content_host
   }.freeze
 
   module ResolverCommons
-
     def self.included(base)
       base.extend(ClassMethods)
     end
 
     module ClassMethods
-
       def resolver
         api = HammerCLI::Connection.get("foreman").api
         HammerCLIKatello::IdResolver.new(api, HammerCLIKatello::Searchables.new)
@@ -25,7 +22,6 @@ module HammerCLIKatello
       def resource_name_mapping
         HammerCLIKatello::RESOURCE_NAME_MAPPING.dup
       end
-
     end
   end
 

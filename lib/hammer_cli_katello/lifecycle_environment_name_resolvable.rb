@@ -12,8 +12,8 @@ module HammerCLIKatello
     def all_options
       result = super.clone
       if result['option_environment_name']
-        result['option_environment_id'] =  resolver.lifecycle_environment_id(
-            lifecycle_environment_resolve_options(result))
+        result['option_environment_id'] = resolver.lifecycle_environment_id(
+          lifecycle_environment_resolve_options(result))
       end
       result
     end

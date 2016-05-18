@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class ErratumCommand < HammerCLIKatello::Command
     resource :errata
 

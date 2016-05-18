@@ -1,6 +1,5 @@
 module HammerCLIKatello
   class HostErrata < HammerCLIKatello::Command
-
     desc "Manage errata on your hosts"
 
     class ApplyCommand < HammerCLIKatello::SingleResourceCommand

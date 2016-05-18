@@ -1,7 +1,5 @@
 module HammerCLIKatello
-
   class HostPackageGroup < HammerCLIKatello::Command
-
     desc "Manage package-groups on your hosts"
 
     class InstallCommand < HammerCLIKatello::SingleResourceCommand
@@ -34,5 +32,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end

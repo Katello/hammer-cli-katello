@@ -1,5 +1,4 @@
 module HammerCLIKatello
-
   class HostCollection < HammerCLIKatello::Command
     resource :host_collections
 
@@ -174,5 +173,4 @@ module HammerCLIKatello
                HammerCLIKatello::HostCollectionErratumCommand.desc,
                HammerCLIKatello::HostCollectionErratumCommand
   end
-
 end

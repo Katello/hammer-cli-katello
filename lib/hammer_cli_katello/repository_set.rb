@@ -1,7 +1,5 @@
 module HammerCLIKatello
-
   class RepositorySetCommand < HammerCLI::AbstractCommand
-
     class ListCommand < HammerCLIKatello::ListCommand
       resource :repository_sets, :index
 
@@ -83,5 +81,4 @@ module HammerCLIKatello
 
     autoload_subcommands
   end
-
 end
