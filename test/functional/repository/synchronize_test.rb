@@ -33,7 +33,7 @@ describe 'Synchronize a repository' do
     expect_foreman_task('3')
 
     result = run_cmd(@cmd + params)
-    assert(result.exit_code, 0)
+    assert_equal(result.exit_code, 0)
   end
 
   it "synchronizes a repository with a repository name" do
@@ -52,6 +52,6 @@ describe 'Synchronize a repository' do
     expect_foreman_task('3')
 
     result = run_cmd(@cmd + params)
-    assert(result.exit_code, 0)
+    assert_equal(result.exit_code, 0)
   end
 end

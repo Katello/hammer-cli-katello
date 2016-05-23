@@ -47,7 +47,7 @@ describe 'upload repository' do
     ex3.returns("")
 
     result = run_cmd(@cmd + params)
-    assert(result.exit_code, 0)
+    assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
   end
 
@@ -80,7 +80,7 @@ describe 'upload repository' do
     ex3.returns("")
 
     result = run_cmd(@cmd + params)
-    assert(result.exit_code, 0)
+    assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
   end
 end

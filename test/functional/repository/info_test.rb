@@ -24,7 +24,7 @@ describe "get repository info" do
     ex.returns({})
 
     result = run_cmd(@cmd + params)
-    assert(result.exit_code, 0)
+    assert_equal(result.exit_code, 0)
   end
 
   it "Shows information about a repository with organization-id and product name" do
@@ -41,6 +41,6 @@ describe "get repository info" do
     ex2.returns({})
 
     result = run_cmd(@cmd + params)
-    assert(result.exit_code, 0)
+    assert_equal(result.exit_code, 0)
   end
 end
