@@ -240,6 +240,21 @@ module HammerCLIKatello
       desc _("Override product content defaults")
       command_name "content-override"
 
+      def request_params
+        super.tap do |params|
+          case params['content_override']['value']
+          when "no"
+            params['content_override']['value'] = 0
+          when "yes"
+            params['content_override']['value'] = 1
+          when "default"
+            params['content_override']['value'] = nil
+          else
+            params['content_override'] = nil
+          end
+        end
+      end
+
       build_options
 
       success_message _("Updated content override")
