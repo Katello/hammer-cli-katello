@@ -1,4 +1,5 @@
 require 'hammer_cli_foreman/host'
+require 'hammer_cli_katello/host_extensions'
 require 'hammer_cli_katello/host_errata'
 require 'hammer_cli_katello/host_subscription'
 require 'hammer_cli_katello/host_package'
