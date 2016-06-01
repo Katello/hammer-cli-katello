@@ -37,7 +37,7 @@ echo "hammer" > .ruby-gemset
 cd ..; cd -
 ```
 
-Before we bundle, we need to setup our local Gemfile. Edit `Gemfile.local` in your hammer-cli-katello directory to point to the local projects instead of using the gems. Enter the following:
+Before we bundle, we need to setup our local Gemfile. Edit `Gemfile.local.rb` in your hammer-cli-katello directory to point to the local projects instead of using the gems. Enter the following:
 
 ```ruby
 # vim:ft=ruby
