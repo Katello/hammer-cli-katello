@@ -49,7 +49,7 @@ CONTENT VIEW ID | NAME | LABEL | COMPOSITE | REPOSITORY IDS
   it "lists the content-views belonging to a lifecycle-environment by name" do
     params = ["--organization-id=#{org_id}", '--lifecycle-environment=test']
 
-    expect_lifecycle_environment_search(org_id, 'test', lifecycle_env_id).at_least_once
+    expect_lifecycle_environment_search(org_id, 'test', lifecycle_env_id)
 
     ex = api_expects(:content_views, :index, 'lifecycles content-views list') do |par|
       par['organization_id'] == org_id && par['page'] == 1 &&

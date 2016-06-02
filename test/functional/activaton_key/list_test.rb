@@ -50,7 +50,7 @@ ID | NAME | HOST LIMIT | LIFECYCLE ENVIRONMENT | CONTENT VIEW
   it "lists the activation-keys belonging to a lifecycle environment by name" do
     params = ["--organization-id=#{org_id}", '--lifecycle-environment=test']
 
-    expect_lifecycle_environment_search(org_id, 'test', lifecycle_env_id).at_least_once
+    expect_lifecycle_environment_search(org_id, 'test', lifecycle_env_id)
 
     ex = api_expects(:activation_keys, :index, 'lifecycle activation-key list') do |par|
       par['organization_id'] == org_id && par['page'] == 1 &&
