@@ -8,6 +8,8 @@ module HammerCLIKatello
       resource :subscriptions, :index
 
       output do
+        field :id, _("ID")
+        field :cp_id, _("UUID")
         field :product_name, _("Name")
         field :contract_number, _("Contract")
         field :account_number, _("Account")
@@ -15,8 +17,6 @@ module HammerCLIKatello
         field :quantity, _("Quantity")
         field :consumed, _("Consumed")
         field :end_date, _("End Date")
-        field :id, _("ID")
-        field :product_name, _("Product")
         field :format_quantity, _("Quantity")
         field :consumed, _("Attached")
       end
