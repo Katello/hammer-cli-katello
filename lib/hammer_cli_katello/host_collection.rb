@@ -47,7 +47,7 @@ module HammerCLIKatello
         field :total_hosts, _("Total Hosts")
       end
 
-      build_options
+      build_options { |o| o.expand(:all).including(:organizations) }
     end
 
     class HostsCommand < HammerCLIKatello::ListCommand
@@ -63,26 +63,30 @@ module HammerCLIKatello
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
-      resource :host_collections, :copy
-
       action :copy
       command_name "copy"
+      desc _("Copy a host collection")
 
-      success_message _("Host collection created")
-      failure_message _("Could not create the host collection")
+      option "--new-name", "NEW_NAME", _("New host collection name"), required: true
 
-      validate_options do
-        all(:option_name).required unless option(:option_id).exist?
+      success_message _("New host collection created")
+      failure_message _("Could not create the new host collection")
+
+      def request_params
+        params = super
+        # This is a hack to keep Hammer consistent without changing the inconsistent API V2
+        params['name'] = options[HammerCLI.option_accessor_name('new_name')] if params['id']
+        params
       end
 
-      build_options
+      build_options { |o| o.expand(:all).including(:organizations) }
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       success_message _("Host collection updated")
       failure_message _("Could not update the the host collection")
 
-      build_options
+      build_options { |o| o.expand(:all).including(:organizations) }
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
@@ -91,7 +95,7 @@ module HammerCLIKatello
       success_message _("Host collection deleted")
       failure_message _("Could not delete the host collection")
 
-      build_options
+      build_options { |o| o.expand(:all).including(:organizations) }
     end
 
     class AddHostCommand < HammerCLIKatello::SingleResourceCommand
@@ -101,7 +105,7 @@ module HammerCLIKatello
       success_message _("The host(s) has been added")
       failure_message _("Could not add host(s)")
 
-      build_options
+      build_options { |o| o.expand(:all).including(:organizations) }
     end
 
     class RemoveHostCommand < HammerCLIKatello::SingleResourceCommand
@@ -111,7 +115,7 @@ module HammerCLIKatello
       success_message _("The host(s) has been removed")
       failure_message _("Could not remove host(s)")
 
-      build_options
+      build_options { |o| o.expand(:all).including(:organizations) }
     end
 
     autoload_subcommands
