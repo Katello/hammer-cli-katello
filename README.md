@@ -87,3 +87,6 @@ bundle exec hammer -vh
 
 Look for any errors. If you see none, you should be good to go.
 
+## Testing
+hammer-cli-foreman stubs the API for functional tests. See
+[api_expectations.rb](https://github.com/theforeman/hammer-cli-foreman/blob/master/lib/hammer_cli_foreman/testing/api_expectations.rb). To regenerate the stubbed API, refer to the [test data Readme](https://github.com/katello/hammer-cli-katello/blob/master/test/data/Readme.md).
