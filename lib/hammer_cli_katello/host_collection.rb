@@ -51,15 +51,45 @@ module HammerCLIKatello
     end
 
     class HostsCommand < HammerCLIKatello::ListCommand
-      resource :host_collections, :hosts
+      resource :hosts, :index
       command_name "hosts"
+
+      option "--id", "HOST_COLLECTION_ID", _("Host Collection ID"),
+             :attribute_name => :option_host_collection_id
+      option "--name", "HOST_COLLECTION_NAME", _("Host Collection Name"),
+             :attribute_name => :option_host_collection_name
+
+      validate_options do
+        host_collection_options = [:option_host_collection_id, :option_host_collection_name]
+        any(*host_collection_options).required
+      end
+
+      def host_collection_options
+        {
+          "option_name" => option_host_collection_name,
+          "option_organization_name" => option_organization_name,
+          "option_organization_id" => option_organization_id,
+          "option_organization_label" => option_organization_label
+        }
+      end
+
+      def request_params
+        params = super
+        host_collection_id = option_host_collection_id
+        unless option_host_collection_name.nil?
+          host_collection_id = resolver.host_collection_id(
+            options.merge(resolver.scoped_options("host_collection", options)))
+        end
+        params['search'] = "host_collection_id=#{host_collection_id}"
+        params
+      end
 
       output do
         field :id, _("ID")
         field :name, _("Name")
       end
 
-      build_options
+      build_options { |o| o.expand(:all).including(:organizations) }
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
