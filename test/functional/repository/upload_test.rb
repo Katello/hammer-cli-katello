@@ -59,7 +59,7 @@ describe 'upload repository' do
 
     expect_product_search(org_id, 'test_product', product_id)
 
-    expect_repository_search(org_id, product_id, 'test_repo', repo_id)
+    expect_repository_search(product_id, 'test_repo', repo_id)
 
     ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
       par[:repository_id] == repo_id
