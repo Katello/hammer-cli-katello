@@ -41,7 +41,7 @@ describe 'Synchronize a repository' do
 
     expect_product_search(org_id, "test_product", product_id)
 
-    expect_repository_search(org_id, product_id, "test_repo", repo_id)
+    expect_repository_search(product_id, "test_repo", repo_id)
 
     ex = api_expects(:repositories, :sync, 'Repository is synced') do |par|
       par['id'] == repo_id
