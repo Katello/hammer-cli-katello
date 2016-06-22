@@ -29,7 +29,10 @@ module HammerCLIKatello
         s("author", _("Puppet module's author to search by")),
         s("uuid", _("Puppet module's UUID to search by"))
       ],
-      :content_view_version => [s("version", _("Content view version number"))]
+      :content_view_version => [
+        s("version", _("Content view version number")),
+        s("content_view_id", _("Content view to search by"))
+      ]
     }.freeze
 
     DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))].freeze
