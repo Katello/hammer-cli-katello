@@ -53,6 +53,15 @@ module HammerCLIKatello
       success_message _("Filter created")
       failure_message _("Could not create the filter")
 
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_repository_names).exist? || option(:option_content_view_name).exist?
+          any(*organization_options).required
+        end
+      end
+
       build_options
     end
 
