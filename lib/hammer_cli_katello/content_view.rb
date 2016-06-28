@@ -180,6 +180,7 @@ module HammerCLIKatello
     end
 
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
+      include LifecycleEnvironmentNamesResolvable
       include HammerCLIForemanTasks::Async
 
       # command to remove content view environments and versions from a content view.
@@ -191,14 +192,6 @@ module HammerCLIKatello
              _("Comma separated list of version ids to remove")
       option ["--environment-ids"], "ENVIRONMENT_IDS",
              _("Comma separated list of environment ids to remove")
-
-      def request_params
-        super.tap do |opts|
-          %w(content_view_version_ids environment_ids).each do |key|
-            opts[key] = opts[key].split(",") if opts[key]
-          end
-        end
-      end
 
       success_message _("Content view objects are being removed task %{id}")
       failure_message _("Could not remove objects from content view")
