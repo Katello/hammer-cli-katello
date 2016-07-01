@@ -13,10 +13,7 @@ module HammerCLIKatello
         end
 
         field :repository_count, _("Repositories")
-
-        from :sync_status do
-          field :state, _("Sync State")
-        end
+        field :sync_state, _("Sync State")
       end
 
       build_options
