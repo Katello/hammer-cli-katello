@@ -142,39 +142,16 @@ module HammerCLIKatello
         field :account_number, _("Account")
       end
 
-      def extend_data(data)
-        limit = data["quantity"] == -1 ? _("Unlimited") : data["quantity"]
-
-        data["format_consumed"] = _("%{consumed} of %{limit}") %
-                                  {
-                                    :consumed => data["consumed"],
-                                    :limit => limit
-                                  }
-        data
-      end
-
-      option "--id", "ID", _("ID of activation key"),
-             :attribute_name => :option_activation_key_id
-      option "--name", "NAME", _("Name of activation key"),
-             :attribute_name => :option_activation_key_name
+      option '--id', "ACTIVATION_KEY_ID", _("ID of the activation key"),
+        attribute_name: :option_activation_key_id
+      option '--name', "ACTIVATION_KEY_NAME", _("Activation key name to search by"),
+        attribute_name: :option_activation_key_name
 
       validate_options do
         any(:option_activation_key_id, :option_activation_key_name).required
       end
 
-      build_options do |o|
-        o.expand.only(:organizations)
-        o.without(
-          :system_id,
-          :activation_key_id,
-          :full_results,
-          :search,
-          :order,
-          :sort,
-          :page,
-          :per_page
-        )
-      end
+      build_options
     end
 
     class AddSubscriptionsCommand < HammerCLIKatello::SingleResourceCommand
