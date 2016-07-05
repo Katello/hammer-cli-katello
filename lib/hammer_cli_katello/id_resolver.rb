@@ -83,10 +83,14 @@ module HammerCLIKatello
     def repository_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_product_id = HammerCLI.option_accessor_name("product_id")
+      key_product_name = HammerCLI.option_accessor_name("product_name")
 
       return options[key_id] if options[key_id]
 
-      options[key_product_id] ||= product_id(scoped_options("product", options))
+      unless options[key_product_name].nil?
+        options[key_product_id] ||= product_id(scoped_options("product", options))
+      end
+
       find_resource(:repositories, options)['id']
     end
 
