@@ -51,23 +51,6 @@ module HammerCLIKatello
       build_options
     end
 
-    class UpdateCommand < HammerCLIKatello::UpdateCommand
-      include IdDescriptionOverridable
-      include KatelloEnvironmentNameResolvable
-      resource :systems, :update
-
-      success_message _("Content host updated")
-      failure_message _("Could not update content host")
-
-      def request_params
-        params = super
-        params.delete('facts')
-        params
-      end
-
-      build_options :without => [:facts, :type, :installed_products]
-    end
-
     class AvailableIncrementalUpdates < HammerCLIKatello::ListCommand
       resource :systems_bulk_actions, :available_incremental_updates
       command_name 'available-incremental-updates'
