@@ -12,6 +12,11 @@ module HammerCLIKatello
     end
 
     describe '#repository_ids' do
+      it 'accepts nil repository_names' do
+        id_resolver.stubs(:find_resources).returns([])
+        id_resolver.repository_ids({}).must_equal([])
+      end
+
       it 'accepts repository_ids' do
         id_resolver.repository_ids(
           'option_repository_ids' => [1, 2]

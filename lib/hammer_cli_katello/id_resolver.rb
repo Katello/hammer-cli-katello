@@ -99,6 +99,9 @@ module HammerCLIKatello
 
       key_names = HammerCLI.option_accessor_name 'names'
       key_product_id = HammerCLI.option_accessor_name 'product_id'
+
+      options[key_names] ||= []
+
       unless options['option_product_name'].nil?
         options[key_product_id] ||= product_id(scoped_options('product', options))
       end
