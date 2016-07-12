@@ -27,11 +27,13 @@ module HammerCLIKatello
     def create_lifecycle_environments_search_options(options)
       name = options[HammerCLI.option_accessor_name("name")]
       organization_id = options[HammerCLI.option_accessor_name("organization_id")]
+      search = options[HammerCLI.option_accessor_name("search")]
 
       search_options = {}
       search_options['name'] = name if name
+      search_options['search'] = search if search
       if options['option_lifecycle_environment_names'] || name
-        search_options['organization_id'] = organization_id
+        search_options['organization_id'] = organization_id if organization_id
       end
       search_options
     end

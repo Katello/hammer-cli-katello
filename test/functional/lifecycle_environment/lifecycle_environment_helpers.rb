@@ -12,4 +12,13 @@ module LifecycleEnvironmentHelpers
     end
     ex.returns(index_response(results))
   end
+
+  def expect_lifecycle_environment_index(checks, returns)
+    ex = api_expects(:lifecycle_environments, :index) do |par|
+      checks.inject(true) do |result, check|
+        result && par[check[0]] == check[1]
+      end
+    end
+    ex.returns(index_response([returns]))
+  end
 end

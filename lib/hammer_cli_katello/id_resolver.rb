@@ -6,18 +6,21 @@ module HammerCLIKatello
       :activation_key =>        [s_name(_("Activation key name to search by"))],
       :capsule =>               [s_name(_("Capsule name to search by"))],
       :content_host =>          [s_name(_("Content host name to search by"))],
-      :content_view => [
-        s_name(_("Content view name to search by")),
-        s("organization_id", _("Organization ID"))
+      :content_view =>          [
+        s_name(_('Content view name to search by')),
+        s('search', _('Search query for content view')),
+        s('organization_id', _('Organization ID to search by'))
       ],
       :gpg =>                   [s_name(_("Gpg key name to search by"))],
       :host_collection =>       [
         s_name(_("Host collection name to search by")),
         s("organization_id", _("Organization ID to search by"))
       ],
+      :hostgroup =>             [s('search', _('Search query for hostgroup'))],
       :lifecycle_environment => [
         s_name(_("Lifecycle environment name to search by")),
-        s("organization_id", _("Organization ID"))
+        s('search', _('Search query for lifecycle environment')),
+        s('organization_id', _('Organization ID to search by'))
       ],
       :organization =>          [s_name(_("Organization name to search by")),
                                  s("label", _("Organization label to search by"),
@@ -137,6 +140,11 @@ module HammerCLIKatello
       else
         pick_result(results, @api.resource(:content_view_versions))['id']
       end
+    end
+
+    def hostgroup_id(options)
+      options['option_search'] = "name=#{options['option_name']}" if options['option_name']
+      get_id(:hostgroups, options)
     end
 
     private

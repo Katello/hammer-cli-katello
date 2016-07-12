@@ -40,7 +40,7 @@ describe 'host subscription register' do
     end
 
     expect_organization_search('trumporg', 3)
-    expect_content_view_search(3, 'someview', 1)
+    expect_content_view_search('3', 'someview', 1)
     expect_lifecycle_environment_search(3, 'someenv', 2)
 
     expected_result = success_result(

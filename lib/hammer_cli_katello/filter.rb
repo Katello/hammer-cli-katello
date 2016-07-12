@@ -62,7 +62,7 @@ module HammerCLIKatello
         end
       end
 
-      build_options
+      build_options { |o| o.expand.including(:organizations) }
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
