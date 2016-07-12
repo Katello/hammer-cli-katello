@@ -1,5 +1,9 @@
 module HammerCLIKatello
   module ForemanSearchOptionsCreators
+    def create_environments_search_options(options)
+      create_search_options_without_katello_api(options, api.resource(:environments))
+    end
+
     def create_organizations_search_options(options)
       create_search_options_without_katello_api(options, api.resource(:organizations))
     end
