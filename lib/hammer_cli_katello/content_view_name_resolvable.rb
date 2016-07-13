@@ -1,9 +1,9 @@
 module HammerCLIKatello
-  module LifecycleEnvironmentNameResolvable
+  module ContentViewNameResolvable
     def all_options
       @all_options ||= super.clone
 
-      @all_options['option_lifecycle_environment_organization_id'] ||= (
+      @all_options['option_content_view_organization_id'] ||= (
         @all_options['option_organization_id'] ||= resolver.organization_id(
           resolver.scoped_options('organization', @all_options)
         )
@@ -13,9 +13,9 @@ module HammerCLIKatello
         resolver.scoped_options('organization', @all_options)
       ) if @all_options['option_organization_names']
 
-      if @all_options['option_lifecycle_environment_name']
-        @all_options['option_lifecycle_environment_id'] ||= resolver.lifecycle_environment_id(
-          resolver.scoped_options('lifecycle_environment', @all_options).merge(search_query)
+      if @all_options['option_content_view_name']
+        @all_options['option_content_view_id'] ||= resolver.content_view_id(
+          resolver.scoped_options('content_view', @all_options).merge(search_query)
         )
       end
       @all_options
