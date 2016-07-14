@@ -13,6 +13,32 @@ module HammerCLIKatello
         field :url, _("URL")
       end
 
+      option '--environment', 'LIFECYCLE_ENVIRONMENT',
+        _("Lifecycle environment name to search by"),
+        attribute_name: 'option_lifecycle_environment_name'
+      option '--environment-id', 'LIFECYCLE_ENVIRONMENT_ID',
+        _("Lifecycle environment name to search by"),
+        attribute_name: 'option_lifecycle_environment_id'
+
+      def all_options
+        all_opts = super
+
+        if all_opts['option_organization_name']
+          all_opts['option_organization_id'] ||= resolver.organization_id(
+            resolver.scoped_options('organization', all_opts))
+        end
+
+        lifecycle_org_id_key = 'option_lifecycle_environment_organization_id'
+        all_opts[lifecycle_org_id_key] = all_opts['option_organization_id']
+
+        if all_opts['option_lifecycle_environment_name']
+          all_opts['option_lifecycle_environment_id'] ||= resolver.lifecycle_environment_id(
+            resolver.scoped_options('lifecycle_environment', all_opts))
+        end
+
+        all_opts
+      end
+
       build_options
     end
 

@@ -63,11 +63,7 @@ module HammerCLIKatello
       options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
     end
 
-    def environment_id(options)
-      lifecycle_environment_id(options)
-    end
-
-    def environment_ids(options)
+    def lifecycle_environment_ids(options)
       unless options['option_lifecycle_environment_ids'].nil?
         return options['option_lifecycle_environment_ids']
       end
