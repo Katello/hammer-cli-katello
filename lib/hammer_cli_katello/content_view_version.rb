@@ -192,7 +192,7 @@ module HammerCLIKatello
         if options.key?(HammerCLI.option_accessor_name(:lifecycle_environment_names)) ||
            options.key?(HammerCLI.option_accessor_name(:lifecycle_environment_ids))
           params[:content_view_version_environments][0][:environment_ids] =
-            resolver.environment_ids(options)
+            resolver.lifecycle_environment_ids(options)
         end
 
         add_content = {}
