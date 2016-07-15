@@ -1,5 +1,9 @@
+require 'hammer_cli_katello/foreman_search_options_creators'
+
 module HammerCLIKatello
   module SearchOptionsCreators
+    include HammerCLIKatello::ForemanSearchOptionsCreators
+
     def create_repository_search_options(options)
       name = options[HammerCLI.option_accessor_name("name")]
       organization_id = options[HammerCLI.option_accessor_name("organization_id")]
@@ -47,22 +51,6 @@ module HammerCLIKatello
       search_options['environment_id'] = environment_id if environment_id && content_view_id
       search_options['version'] = version if version
       search_options
-    end
-
-    def create_organizations_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:organizations))
-    end
-
-    def create_smart_proxies_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:smart_proxies))
-    end
-
-    def create_capsules_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:smart_proxies))
-    end
-
-    def create_hosts_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:hosts))
     end
 
     def create_host_collections_search_options(options)

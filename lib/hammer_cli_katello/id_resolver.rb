@@ -24,6 +24,7 @@ module HammerCLIKatello
                                    :editable => false)
                                 ],
       :product =>               [s_name(_("Product name to search by"))],
+      :operatingsystem =>       [s("title", _("Operating system title"), :editable => false)],
       :repository =>            [s_name(_("Repository name to search by"))],
       :repository_set =>        [s_name(_("Repository set name to search by"))],
       :subscription =>          [s_name(_("Subscription name to search by"))],
@@ -61,6 +62,10 @@ module HammerCLIKatello
 
     def system_id(options)
       options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
+    end
+
+    def puppet_environment_id(options)
+      get_id(:environments, options)
     end
 
     def environment_id(options)
