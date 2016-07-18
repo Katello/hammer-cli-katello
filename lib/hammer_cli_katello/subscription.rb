@@ -63,9 +63,7 @@ module HammerCLIKatello
       success_message _("Manifest is being deleted in task %{id}")
       failure_message _("Manifest deletion failed")
 
-      build_options do |o|
-        o.expand.including(:systems)
-      end
+      build_options(&:expand)
     end
 
     class RefreshManifestCommand < HammerCLIKatello::Command

@@ -5,7 +5,6 @@ module HammerCLIKatello
     SEARCHABLES = {
       :activation_key =>        [s_name(_("Activation key name to search by"))],
       :capsule =>               [s_name(_("Capsule name to search by"))],
-      :content_host =>          [s_name(_("Content host name to search by"))],
       :content_view => [
         s_name(_("Content view name to search by")),
         s("organization_id", _("Organization ID"))
@@ -58,10 +57,6 @@ module HammerCLIKatello
 
     def capsule_content_id(options)
       smart_proxy_id(options)
-    end
-
-    def system_id(options)
-      options[HammerCLI.option_accessor_name("id")] || find_resource(:systems, options)['uuid']
     end
 
     def puppet_environment_id(options)

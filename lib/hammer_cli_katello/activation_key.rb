@@ -246,7 +246,6 @@ module HammerCLIKatello
       build_options do |o|
         o.expand.only(:organizations)
         o.without(
-          :system_id,
           :activation_key_id,
           :full_results,
           :search,
