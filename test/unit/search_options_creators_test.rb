@@ -106,15 +106,21 @@ describe HammerCLIKatello::SearchOptionsCreators do
       end
     end
 
+    describe '#create_environments_search_options(options)' do
+      it 'does not use the katello api' do
+        search_options_creators.create_environments_search_options(:environments)
+      end
+    end
+
     describe '#create_smart_proxies_search_options(options)' do
       it 'does not use the katello api' do
-        search_options_creators.create_organizations_search_options(:anything)
+        search_options_creators.create_smart_proxies_search_options(:anything)
       end
     end
 
     describe '#create_capsules_search_options(options)' do
       it 'does not use the katello api' do
-        search_options_creators.create_organizations_search_options(:anything)
+        search_options_creators.create_capsules_search_options(:anything)
       end
     end
 
