@@ -1,7 +1,5 @@
 module HammerCLIKatello
-  RESOURCE_NAME_MAPPING = {
-    :system => :content_host
-  }.freeze
+  RESOURCE_NAME_MAPPING = {}.freeze
 
   module ResolverCommons
     def self.included(base)
