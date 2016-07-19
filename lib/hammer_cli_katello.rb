@@ -87,12 +87,6 @@ module HammerCLIKatello
                                          'hammer_cli_katello/host_collection'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("content-host",
-                                         _("Manipulate content hosts on the server"),
-                                         'HammerCLIKatello::ContentHostCommand',
-                                         'hammer_cli_katello/content_host'
-                                        )
-
   HammerCLI::MainCommand.lazy_subcommand("content-view", _("Manipulate content views."),
                                          'HammerCLIKatello::ContentView',
                                          'hammer_cli_katello/content_view'
