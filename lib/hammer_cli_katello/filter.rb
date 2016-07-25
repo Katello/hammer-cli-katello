@@ -50,6 +50,8 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include OrganizationOptions
+
       success_message _("Filter created")
       failure_message _("Could not create the filter")
 

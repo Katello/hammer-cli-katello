@@ -14,6 +14,8 @@ module HammerCLIKatello
 
     class CreateCommand < HammerCLIKatello::SingleResourceCommand
       include LifecycleEnvironmentNameResolvable
+      include OrganizationOptions
+
       resource :host_subscriptions, :create
       command_name "register"
       success_message _("Host successfully registered")

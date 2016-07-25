@@ -28,7 +28,7 @@ module HammerCLIForeman
         api_expects(:hostgroups, :create) do |p|
           p['hostgroup']['content_view_id'] == 1 && p['hostgroup']['name'] == 'hg1'
         end
-        run_cmd(%w(hostgroup create --name hg1 --content-view cv1 --content-view-organization-id 1))
+        run_cmd(%w(hostgroup create --name hg1 --content-view cv1 --query-organization-id 1))
       end
 
       it 'allows lifecycle environment id' do
@@ -48,7 +48,7 @@ module HammerCLIForeman
           p['hostgroup']['name'] == 'hg1' && p['hostgroup']['lifecycle_environment_id'] == 1
         end
         run_cmd(%w(hostgroup create --name hg1 --lifecycle-environment le1
-                   --lifecycle-environment-organization-id 1 --organization-ids 1,2))
+                   --query-organization-id 1 --organization-ids 1,2))
       end
     end
   end

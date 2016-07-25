@@ -46,6 +46,14 @@ module HammerCLIKatello
       success_message _("Filter rule created")
       failure_message _("Could not create the filter rule")
 
+      option '--names', 'NAMES', _('Package and package group names')
+
+      def all_options
+        options = super
+        options['option_name'] ||= options['option_names'].split(',') if options['option_names']
+        options
+      end
+
       build_options
     end
 
