@@ -105,8 +105,11 @@ module HammerCLIKatello
       unless options['option_product_name'].nil?
         options[key_product_id] ||= product_id(scoped_options('product', options))
       end
-      find_resources(:repositories, options)
-        .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
+
+      if options[key_names].any?
+        find_resources(:repositories, options)
+          .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
+      end
     end
 
     def content_view_version_id(options)
