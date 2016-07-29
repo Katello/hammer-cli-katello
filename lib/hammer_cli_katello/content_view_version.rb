@@ -18,7 +18,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand(:all).including(:organizations)
+        o.expand(:all).including(:environments, :content_views)
       end
     end
 
@@ -55,9 +55,7 @@ module HammerCLIKatello
         end
       end
 
-      build_options do |o|
-        o.expand(:all).including(:environments, :content_views, :organizations)
-      end
+      build_options
     end
 
     class PromoteCommand < HammerCLIKatello::SingleResourceCommand
