@@ -1,4 +1,4 @@
-# hammer-cli-katello ![Travis # Status](https://travis-ci.org/Katello/hammer-cli-katello.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/Katello/hammer-cli-katello/badge.svg?branch=master)](https://coveralls.io/github/Katello/hammer-cli-katello?branch=master)
+# hammer-cli-katello [![Build Status](https://travis-ci.org/Katello/hammer-cli-katello.svg?branch=master)](https://travis-ci.org/Katello/hammer-cli-katello) [![Coverage Status](https://coveralls.io/repos/github/Katello/hammer-cli-katello/badge.svg?branch=master)](https://coveralls.io/github/Katello/hammer-cli-katello?branch=master)
 
 Next-gen CLI tool for [Katello](http://katello.org) (Katello-specific commands)
 
