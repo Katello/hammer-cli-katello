@@ -20,6 +20,8 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include OrganizationOptions
+
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -156,6 +158,7 @@ module HammerCLIKatello
 
     class PublishCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
+      include OrganizationOptions
 
       action :publish
       command_name "publish"
@@ -169,6 +172,7 @@ module HammerCLIKatello
     class RemoveFromEnvironmentCommand < HammerCLIKatello::SingleResourceCommand
       include KatelloEnvironmentNameResolvable
       include HammerCLIForemanTasks::Async
+      include OrganizationOptions
 
       action :remove_from_environment
       command_name "remove-from-environment"
@@ -181,6 +185,7 @@ module HammerCLIKatello
 
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
+      include OrganizationOptions
 
       # command to remove content view environments and versions from a content view.
       # corresponds to the UI screen.

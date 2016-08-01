@@ -12,43 +12,30 @@ module HammerCLIKatello
     end
   end
 
+  module QueryOrganizationOptions
+    def self.included(base)
+      base.option '--query-organization-id', 'ORGANIZATION_ID',
+        _('Organization ID to search by'), attribute_name: :option_organization_id
+      base.option '--query-organization', 'ORGANIZATION_NAME',
+        _('Organization name to search by'), attribute_name: :option_organization_name
+      base.option '--query-organization-label', 'ORGANIZATION_LABEL',
+        _('Organization label to search by'), attribute_name: :option_organization_label
+    end
+  end
+
   module HostgroupExtensions
     ::HammerCLIForeman::Hostgroup::CreateCommand.instance_eval do
       include HammerCLIKatello::ResolverCommons
       include HammerCLIKatello::PuppetEnvironmentNameResolvable
-      option '--content-view-organization-id', 'ORGANIZATION_ID',
-        _('Organization ID to search by')
-      option '--lifecycle-environment-organization-id', 'ORGANIZATION_ID',
-        _('Organization ID to search by')
-
-      validate_options do
-        if option(:option_lifecycle_environment_name).exist?
-          option(:option_lifecycle_environment_organization_id).required
-        end
-
-        if option(:option_content_view_name).exist?
-          option(:option_content_view_organization_id).required
-        end
-      end
+      include HammerCLIKatello::ContentViewNameResolvable
+      include HammerCLIKatello::QueryOrganizationOptions
     end
 
     ::HammerCLIForeman::Hostgroup::UpdateCommand.instance_eval do
       include HammerCLIKatello::ResolverCommons
       include HammerCLIKatello::PuppetEnvironmentNameResolvable
-      option '--content-view-organization-id', 'ORGANIZATION_ID',
-        _('Organization ID to search by')
-      option '--lifecycle-environment-organization-id', 'ORGANIZATION_ID',
-        _('Organization ID to search by')
-
-      validate_options do
-        if option(:option_lifecycle_environment_name).exist?
-          option(:option_lifecycle_environment_organization_id).required
-        end
-
-        if option(:option_content_view_name).exist?
-          option(:option_content_view_organization_id).required
-        end
-      end
+      include HammerCLIKatello::ContentViewNameResolvable
+      include HammerCLIKatello::QueryOrganizationOptions
     end
   end
 end

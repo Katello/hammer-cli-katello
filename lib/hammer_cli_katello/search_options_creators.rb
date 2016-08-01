@@ -28,9 +28,23 @@ module HammerCLIKatello
       search_options
     end
 
+    def create_content_views_search_options(options)
+      name = options[HammerCLI.option_accessor_name('name')]
+      organization_id = options[HammerCLI.option_accessor_name("organization_id")] ||
+                        organization_id(scoped_options('organization', options))
+
+      search_options = {}
+      search_options['name'] = name if name
+      if options['option_content_view_name'] || name
+        search_options['organization_id'] = organization_id
+      end
+      search_options
+    end
+
     def create_lifecycle_environments_search_options(options)
       name = options[HammerCLI.option_accessor_name("name")]
-      organization_id = options[HammerCLI.option_accessor_name("organization_id")]
+      organization_id = options[HammerCLI.option_accessor_name("organization_id")] ||
+                        organization_id(scoped_options('organization', options))
 
       search_options = {}
       search_options['name'] = name if name

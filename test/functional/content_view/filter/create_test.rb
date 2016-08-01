@@ -41,7 +41,7 @@ describe 'content-view filter create' do
   it 'creates a content-view filter with repository names' do
     params = %W(--repositories=#{repo_names.join(',')})
 
-    expect_repositories_search(org_id, repo_names, repo_ids)
+    expect_repositories_search(org_id.to_s, repo_names, repo_ids)
 
     api_expects(:content_view_filters, :create, "Create content-view filter") do |par|
       par['name'] == filter_name && par['repository_ids'] == repo_ids &&

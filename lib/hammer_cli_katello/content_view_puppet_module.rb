@@ -5,6 +5,8 @@ module HammerCLIKatello
     desc 'View and manage puppet modules'
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include OrganizationOptions
+
       output do
         field :uuid, _("UUID")
         field :name, _("Name")
@@ -25,6 +27,8 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include OrganizationOptions
+
       command_name "add"
 
       success_message _("Puppet module added to content view")
@@ -42,6 +46,8 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include OrganizationOptions
+
       command_name "remove"
 
       success_message _("Puppet module removed from content view")
