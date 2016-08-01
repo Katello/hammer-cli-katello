@@ -4,7 +4,8 @@ if RUBY_VERSION > "2.2"
   require 'coveralls'
   SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
   SimpleCov.start do
-    minimum_coverage 46
+    minimum_coverage 70
+    maximum_coverage_drop 0.1
     refuse_coverage_drop
     track_files "lib/**/*.rb"
     add_filter '/test/'
