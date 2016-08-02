@@ -14,11 +14,6 @@ describe 'host info' do
     json_file = File.join(File.dirname(__FILE__), 'data', 'host.json')
     ex.returns(JSON.parse(File.read(json_file)))
 
-    param_ex = api_expects(:parameters, :index, 'Parameter index') do |par|
-      par[:host_id] == 1
-    end
-    param_ex.returns(index_response([]))
-
     result = run_cmd(@cmd + params)
 
     expected_fields = [['Lifecycle Environment', 'Library'],
