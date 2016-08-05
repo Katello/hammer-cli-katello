@@ -15,6 +15,7 @@ module HammerCLIKatello
   require 'hammer_cli_katello/katello_environment_name_resolvable'
   require 'hammer_cli_katello/lifecycle_environment_name_resolvable'
   require 'hammer_cli_katello/content_view_name_resolvable'
+  require 'hammer_cli_katello/composite_content_view_name_resolvable'
   require 'hammer_cli_katello/organization_options'
   require 'hammer_cli_katello/repository_scoped_to_product'
   require "hammer_cli_katello/commands"
