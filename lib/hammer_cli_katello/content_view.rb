@@ -57,8 +57,6 @@ module HammerCLIKatello
           field :uuid, _("UUID"), Fields::Field, :hide_blank => true
           field :name, _("Name")
           field :author, _("Author")
-          field :created_at, _("Created"), Fields::Date
-          field :updated_at, _("Updated"), Fields::Date
         end
 
         collection :environments, _("Lifecycle Environments") do
