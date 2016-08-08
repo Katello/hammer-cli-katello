@@ -40,7 +40,8 @@ module HammerCLIKatello
         params = super
         if options.keys.any? { |o| o.match(/\Aoption_organization.*/) }
           params['organization_id'] = resolver.organization_id(
-            resolver.scoped_options('organization', all_options))
+            resolver.scoped_options('organization', all_options)
+          )
         end
         params
       end
@@ -205,7 +206,8 @@ module HammerCLIKatello
           field :gpgUrl, _("GPG Key")
           field :label, _("Label")
         end
-        field :override, _("Enabled?")
+        field :enabled, _("Enabled?"), Fields::Boolean
+        field :override, _("Override")
       end
 
       build_options
