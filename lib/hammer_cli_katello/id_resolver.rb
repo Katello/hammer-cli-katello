@@ -7,10 +7,7 @@ module HammerCLIKatello
       :capsule =>               [s_name(_("Capsule name to search by"))],
       :content_view =>          [s_name(_("Content view name to search by"))],
       :gpg =>                   [s_name(_("Gpg key name to search by"))],
-      :host_collection =>       [
-        s_name(_("Host collection name to search by")),
-        s("organization_id", _("Organization ID to search by"))
-      ],
+      :host_collection =>       [s_name(_("Host collection name to search by"))],
       :lifecycle_environment => [s_name(_("Lifecycle environment name to search by"))],
       :organization =>          [s_name(_("Organization name to search by")),
                                  s("label", _("Organization label to search by"),
