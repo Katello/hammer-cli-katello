@@ -37,5 +37,12 @@ module HammerCLIKatello
       include HammerCLIKatello::ContentViewNameResolvable
       include HammerCLIKatello::QueryOrganizationOptions
     end
+
+    ::HammerCLIForeman::Hostgroup::InfoCommand.instance_eval do
+      output do
+        field :content_view_name, _('Content View')
+        field :lifecycle_environment_name, _('Lifecycle Environment')
+      end
+    end
   end
 end
