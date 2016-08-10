@@ -61,11 +61,6 @@ module HammerCLIKatello
         command_name 'add-host-collection'
         associated_resource :host_collections
 
-        def request_params
-          all_options['option_host_collection_organization_id'] ||= option_organization_id
-          super
-        end
-
         success_message _("The host collection has been associated")
         failure_message _("Could not add host collection")
       end
@@ -73,11 +68,6 @@ module HammerCLIKatello
       class RemoveHostCollectionCommand < HammerCLIKatello::RemoveAssociatedCommand
         command_name 'remove-host-collection'
         associated_resource :host_collections
-
-        def request_params
-          all_options['option_host_collection_organization_id'] ||= option_organization_id
-          super
-        end
 
         success_message _("The host collection has been removed")
         failure_message _("Could not remove host collection")

@@ -71,7 +71,11 @@ module HammerCLIKatello
       options[HammerCLI.option_accessor_name("organization_id")] ||= organization_id(
         scoped_options("organization", options)
       )
-      create_search_options_with_katello_api(options, api.resource(:host_collections))
+      search_options = create_search_options_with_katello_api(
+        options, api.resource(:host_collections)
+      ) || {}
+      search_options['organization_id'] ||= options['option_organization_id']
+      search_options
     end
 
     def create_search_options_with_katello_api(options, resource)
