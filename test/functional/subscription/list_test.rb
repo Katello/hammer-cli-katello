@@ -9,6 +9,21 @@ module HammerCLIKatello
 
     let(:org_id) { 1 }
 
+    it "returns the correct subscription type" do
+      cmd = SubscriptionCommand::ListCommand.new({})
+      assert_equal("Physical", cmd.get_subscription_type("virt_only" => false))
+
+      hostname = "boo.com"
+      with_hostname = cmd.get_subscription_type("virt_only" => true, "host" => {"name" => hostname})
+      assert(with_hostname.include?(hostname))
+
+      assert_equal("Temporary",
+                   cmd.get_subscription_type("virt_only" => true, "unmapper_guest" => true))
+
+      assert_equal("Virtual",
+                   cmd.get_subscription_type("virt_only" => true))
+    end
+
     it "lists an organizations subscriptions" do
       params = ["--organization-id=#{org_id}"]
 
@@ -20,8 +35,8 @@ module HammerCLIKatello
 
       result = run_cmd(@cmd + params)
 
-      fields = ['ID', 'UUID', 'NAME', 'CONTRACT', 'ACCOUNT', 'SUPPORT', 'QUANTITY', 'CONSUMED',
-                'END DATE', 'QUANTITY', 'ATTACHED']
+      fields = ['ID', 'UUID', 'NAME', 'TYPE', 'CONTRACT', 'ACCOUNT', 'SUPPORT',
+                'END DATE', 'QUANTITY', 'CONSUMED']
       expected_result = success_result(IndexMatcher.new([fields, []]))
       assert_cmd(expected_result, result)
     end
