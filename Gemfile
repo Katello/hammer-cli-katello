@@ -5,11 +5,6 @@ gemspec
 # for generating i18n files, gettext > 3.0 dropped ruby 1.8 support
 gem 'gettext', '>= 3.1.3', '< 4.0.0'
 
-group :development, :test do
-  gem 'hammer_cli_foreman', :git => 'https://github.com/theforeman/hammer-cli-foreman.git'
-  gem 'hammer_cli', :git => 'https://github.com/theforeman/hammer-cli.git'
-end
-
 group :test do
   gem 'rake', '~> 10.1.0'
   gem 'thor'
@@ -17,6 +12,9 @@ group :test do
   gem 'minitest-spec-context'
   gem 'mocha'
   gem 'coveralls', require: false
+
+  gem 'hammer_cli_foreman', :git => 'https://github.com/theforeman/hammer-cli-foreman.git'
+  gem 'hammer_cli', :git => 'https://github.com/theforeman/hammer-cli.git'
 end
 
 # load local gemfile

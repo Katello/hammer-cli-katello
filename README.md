@@ -23,6 +23,11 @@ First, cd into the directory where you typically keep your projects and where ha
 
 ```bash
 git clone https://github.com/Katello/hammer-cli-katello.git
+```
+
+Optionally, if you want to have git checkouts for hammer-cli-katello's dependencies, check these projects out:
+
+```
 git clone https://github.com/theforeman/hammer-cli.git
 git clone https://github.com/theforeman/hammer-cli-foreman.git
 git clone https://github.com/theforeman/hammer-cli-foreman-tasks.git
@@ -37,13 +42,22 @@ echo "hammer" > .ruby-gemset
 cd ..; cd -
 ```
 
-Before we bundle, we need to setup our local Gemfile. Edit `Gemfile.local.rb` in your hammer-cli-katello directory to point to the local projects instead of using the gems. Enter the following:
+Before we bundle, we need to setup our local Gemfile. Edit `Gemfile.local.rb` in your hammer-cli-katello directory to point to the local projects instead of using the gems. 
+
+If you're using local checkouts, enter the following:
 
 ```ruby
 # vim:ft=ruby
 gem 'hammer_cli', :path => '../hammer-cli'
 gem 'hammer_cli_foreman', :path => '../hammer-cli-foreman'
 gem 'hammer_cli_foreman_tasks', :path => '../hammer-cli-foreman-tasks'
+```
+
+Otherwise enter:
+
+```ruby
+gem 'hammer_cli_foreman', :git => 'https://github.com/theforeman/hammer-cli-foreman.git'
+gem 'hammer_cli', :git => 'https://github.com/theforeman/hammer-cli.git'
 ```
 
 Now run bundler inside your hammer-cli-katello directory:
