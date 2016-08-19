@@ -6,6 +6,7 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :filename, _("Filename")
+        field :sourcerpm, _("Source RPM")
       end
 
       build_options do |o|
