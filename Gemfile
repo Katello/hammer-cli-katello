@@ -12,9 +12,6 @@ group :test do
   gem 'minitest-spec-context'
   gem 'mocha'
   gem 'coveralls', require: false
-
-  gem 'hammer_cli_foreman', :git => 'https://github.com/theforeman/hammer-cli-foreman.git'
-  gem 'hammer_cli', :git => 'https://github.com/theforeman/hammer-cli.git'
 end
 
 # load local gemfile
