@@ -275,6 +275,7 @@ module HammerCLIKatello
     class RemoveContentCommand < HammerCLIKatello::SingleResourceCommand
       resource :repositories, :remove_content
       command_name "remove-content"
+      desc _("Remove content from a repository")
 
       success_message _("Repository content removed")
       failure_message _("Could not remove content")
