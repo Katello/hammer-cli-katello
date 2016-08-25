@@ -23,6 +23,8 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      resource :content_view_versions, :show
+
       output do
         field :id, _("ID")
         field :name, _("Name")
