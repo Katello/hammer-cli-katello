@@ -11,22 +11,34 @@ module HammerCLIKatello
         field :id, _("ID")
         field :cp_id, _("UUID")
         field :product_name, _("Name")
+        field :subscription_type, _("Type")
         field :contract_number, _("Contract")
         field :account_number, _("Account")
         field :support_level, _("Support")
-        field :quantity, _("Quantity")
-        field :consumed, _("Consumed")
-        field :end_date, _("End Date")
+        field :end_date, _("End Date"), Fields::Date
         field :format_quantity, _("Quantity")
-        field :consumed, _("Attached")
+        field :consumed, _("Consumed")
       end
 
       def extend_data(data)
         data["format_quantity"] = data["quantity"] == -1 ? _("Unlimited") : data["quantity"]
+        data["subscription_type"] = get_subscription_type(data)
         data
       end
 
       build_options
+
+      def get_subscription_type(data)
+        if !data["virt_only"]
+          _("Physical")
+        elsif data["host"]
+          _("Guests of %s" % data['host']['name'])
+        elsif data["unmapper_guest"]
+          _("Temporary")
+        else
+          _("Virtual")
+        end
+      end
     end
 
     class UploadCommand < HammerCLIKatello::Command
