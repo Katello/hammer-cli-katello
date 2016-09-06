@@ -35,7 +35,13 @@ describe 'upload repository' do
     ex.returns(upload_response)
 
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      par[:id] == repo_id.to_s && par[:upload_ids] == ['1234']
+      upload = {
+        :id => '1234',
+        :name => 'test.rpm',
+        :size => 0,
+        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      }
+      par[:id] == repo_id.to_s && par[:uploads] == [upload]
     end
 
     ex2.returns("")
@@ -68,7 +74,13 @@ describe 'upload repository' do
     ex.returns(upload_response)
 
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      par[:id] == repo_id && par[:upload_ids] == ['1234']
+      upload = {
+        :id => '1234',
+        :name => 'test.rpm',
+        :size => 0,
+        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      }
+      par[:id] == repo_id && par[:uploads] == [upload]
     end
 
     ex2.returns("")
