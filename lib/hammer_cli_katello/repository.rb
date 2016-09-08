@@ -234,21 +234,20 @@ module HammerCLIKatello
         repo_id = get_identifier
         filename = File.basename(file.path)
 
-        offset = 0
-        while (content = file.read(CONTENT_CHUNK_SIZE))
-          params = {
-            :offset => offset,
-            :id => upload_id,
-            :content => content,
-            :repository_id => repo_id,
-            :multipart => true
+        update_content_upload(upload_id, repo_id, file)
+
+        file.rewind
+        content = file.read
+
+        import_uploads([
+          {
+            id: upload_id,
+            name: filename,
+            size: file.size,
+            checksum: Digest::SHA256.hexdigest(content)
           }
+        ])
 
-          content_upload_resource.call(:update, params, request_headers)
-          offset += CONTENT_CHUNK_SIZE
-        end
-
-        import_upload_ids([upload_id])
         print_message _("Successfully uploaded file '%s'.") % filename
       rescue
         @failure = true
@@ -264,9 +263,26 @@ module HammerCLIKatello
         response["upload_id"]
       end
 
-      def import_upload_ids(ids)
+      def update_content_upload(upload_id, repo_id, file)
+        offset = 0
+
+        while (content = file.read(CONTENT_CHUNK_SIZE))
+          params = {
+            :offset => offset,
+            :id => upload_id,
+            :content => content,
+            :repository_id => repo_id,
+            :multipart => true
+          }
+
+          content_upload_resource.call(:update, params, request_headers)
+          offset += CONTENT_CHUNK_SIZE
+        end
+      end
+
+      def import_uploads(uploads)
         params = {:id => get_identifier,
-                  :upload_ids => ids
+                  :uploads => uploads
         }
         resource.call(:import_uploads, params)
       end
