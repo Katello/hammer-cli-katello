@@ -13,6 +13,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :label, _("Label")
         field :composite, _("Composite")
+        field :last_published, _("Last Published"), Fields::Date, :hide_blank => true
         field :repository_ids, _("Repository IDs"), Fields::List
       end
 
