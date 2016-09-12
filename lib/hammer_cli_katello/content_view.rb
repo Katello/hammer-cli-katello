@@ -207,7 +207,7 @@ module HammerCLIKatello
       success_message _("Content view objects are being removed task %{id}")
       failure_message _("Could not remove objects from content view")
 
-      build_options :without => %w(content_view_version_ids  environment_ids)
+      build_options :without => %w(content_view_version_ids environment_ids)
     end
 
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
