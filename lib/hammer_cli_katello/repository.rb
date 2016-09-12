@@ -194,8 +194,10 @@ module HammerCLIKatello
 
           if File.directory?(fullpath)
             Dir["#{fullpath}/*"]
-          else
+          elsif File.exist?(fullpath)
             [fullpath]
+          else
+            Dir[fullpath]
           end
         end
       end
@@ -206,7 +208,14 @@ module HammerCLIKatello
 
       def execute
         @failure = false
-        option_content.each do |file_path|
+        files = option_content
+
+        if files.length.zero?
+          output.print_error _("Could not find any files matching PATH")
+          return HammerCLI::EX_NOINPUT
+        end
+
+        files.each do |file_path|
           File.open(file_path, 'rb') { |file| upload_file file }
         end
 
@@ -223,7 +232,9 @@ module HammerCLIKatello
       build_options(:without => [:content]) do |o|
         o.expand.including(:products, :organizations)
       end
-      option "--path", "PATH", _("Upload file or directory of files as content for a repository"),
+      option "--path", "PATH", _("Upload file, directory of files, or glob of files " \
+                                 "as content for a repository.\n" \
+                                 "Globs must be escaped by single or double quotes."),
              :attribute_name => :option_content,
              :required => true, :format => BinaryPath.new
 
@@ -251,8 +262,8 @@ module HammerCLIKatello
         print_message _("Successfully uploaded file '%s'.") % filename
       rescue
         @failure = true
-        print_message _("Failed to upload file '%s' to repository. Please check "\
-                        "the file and try again.") % filename
+        output.print_error _("Failed to upload file '%s' to repository. Please check "\
+                             "the file and try again.") % filename
       ensure
         content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
       end
