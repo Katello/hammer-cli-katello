@@ -92,7 +92,9 @@
       "content_view_version_id":1,
       "content_view_default?":true,
       "lifecycle_environment_library?":true,
-      "katello_agent_installed":true
+      "katello_agent_installed":true,
+      "applicable_package_count": 5,
+      "upgradable_package_count": 4
    },
    "subscription_facet_attributes":{
       "id":2,
