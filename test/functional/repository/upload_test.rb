@@ -95,4 +95,47 @@ describe 'upload repository' do
     assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
   end
+
+  it "supports globs" do
+    File.new("test.rpm", "w")
+
+    params = ["--id=#{repo_id}", "--path={test}.[r{1}]pm"]
+
+    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
+      par[:repository_id] == repo_id.to_s
+    end
+
+    ex.returns(upload_response)
+
+    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
+      upload = {
+        :id => '1234',
+        :name => 'test.rpm',
+        :size => 0,
+        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      }
+      par[:id] == repo_id.to_s && par[:uploads] == [upload]
+    end
+
+    ex2.returns("")
+
+    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
+      par[:id] == upload_id && par[:repository_id] == repo_id.to_s
+    end
+
+    ex3.returns("")
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 0)
+    File.delete("test.rpm")
+  end
+
+  it "errors if there are no matching files" do
+    params = ["--id=#{repo_id}", "--path=#{path}"]
+
+    result = run_cmd(@cmd + params)
+
+    assert_equal "Could not find any files matching PATH\n", result.err
+    assert_equal HammerCLI::EX_NOINPUT, result.exit_code
+  end
 end
