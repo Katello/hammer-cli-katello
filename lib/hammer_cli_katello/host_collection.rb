@@ -150,18 +150,23 @@ module HammerCLIKatello
 
     autoload_subcommands
 
-    class ContentBaseCommand < DeleteCommand
-      resource :systems_bulk_actions
+    class ContentBaseCommand < Command
+      resource :hosts_bulk_actions
+
+      option "--id", "HOST_COLLECTION_ID", _("Host Collection ID"),
+             :attribute_name => :option_host_collection_id
+      option "--name", "HOST_COLLECTION_NAME", _("Host Collection Name"),
+             :attribute_name => :option_host_collection_name
 
       build_options do |o|
-        o.without(:content_type, :content, :ids, :search)
+        o.expand(:all).including(:organizations)
       end
 
       def request_params
         params = super
         params['content'] = content
         params['content_type'] = content_type
-        params['included'] = { :search => "host_collection_ids:#{params['id']}" }
+        params['included'] = { search: "host_collection_id=\"#{option_host_collection_id}\"" }
         params.delete('id')
         params
       end
@@ -169,7 +174,7 @@ module HammerCLIKatello
       def resolver
         api = HammerCLI::Connection.get("foreman").api
         custom_resolver = Class.new(HammerCLIKatello::IdResolver) do
-          def systems_bulk_action_id(options)
+          def hosts_bulk_action_id(options)
             host_collection_id(options)
           end
         end
