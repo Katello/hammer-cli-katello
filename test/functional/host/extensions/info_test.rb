@@ -20,7 +20,9 @@ describe 'host info' do
                        ['Content View', 'Default Organization View'],
                        ['Release Version', '7Server'],
                        ['Bug Fix', '0'],
-                       ['Name', 'my host collection']]
+                       ['Name', 'my host collection'],
+                       ['Applicable Packages', '5'],
+                       ['Upgradable Packages', '4']]
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
     expected_results.each { |expected|  assert_cmd(expected, result) }
   end

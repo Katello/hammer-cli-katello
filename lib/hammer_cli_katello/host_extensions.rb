@@ -21,6 +21,8 @@ module HammerCLIKatello
           from :content_facet_attributes do
             field :content_view_name, _('Content View')
             field :lifecycle_environment_name, _('Lifecycle Environment')
+            field :applicable_package_count, _('Applicable Packages')
+            field :upgradable_package_count, _('Upgradable Packages')
 
             label _('Applicable Errata') do
               from :errata_counts do
