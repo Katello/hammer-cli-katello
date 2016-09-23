@@ -1,8 +1,5 @@
 require_relative '../test_helper'
 
-# Workaround for issue #14289
-require 'hammer_cli_katello/content_view_puppet_module'
-
 describe 'content-view create' do
   before do
     @cmd = %w(content-view create)
