@@ -172,6 +172,7 @@ module HammerCLIKatello
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       include RepositoryScopedToProduct
+      include OrganizationOptions
 
       success_message _("Repository deleted")
       failure_message _("Could not delete the Repository")
