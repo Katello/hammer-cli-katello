@@ -9,6 +9,8 @@ module HammerCLIKatello
       end
 
       build_options do |o|
+        o.without(:repository_id)
+        o.expand.except(:repositories)
         o.expand.including(:products, :organizations, :content_views)
       end
     end
