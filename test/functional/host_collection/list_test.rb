@@ -38,5 +38,26 @@ module HammerCLIKatello
 
       run_cmd(%w(host-collection list --organization-label org1))
     end
+
+    it 'allows host id' do
+      api_expects(:host_collections, :index) do |par|
+        par['host_id'] == 1
+      end
+
+      run_cmd(%w(host-collection list --host-id 1))
+    end
+
+    it 'allows host name' do
+      ex = api_expects(:hosts, :index) do |par|
+        par[:search] == "name = \"host1\""
+      end
+      ex.returns(index_response([{'id' => 1}]))
+
+      api_expects(:host_collections, :index) do |par|
+        par['host_id'] == 1
+      end
+
+      run_cmd(%w(host-collection list --host host1))
+    end
   end
 end
