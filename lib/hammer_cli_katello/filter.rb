@@ -7,6 +7,9 @@ module HammerCLIKatello
     desc 'View and manage filters'
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include OrganizationOptions
+      extend IdNameOptionsValidator
+
       output do
         field :id, _("Filter ID")
         field :name, _("Name")
@@ -15,9 +18,13 @@ module HammerCLIKatello
       end
 
       build_options
+      validate_id_or_name_with_parent :content_view
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include OrganizationOptions
+      extend IdNameOptionsValidator
+
       output do
         field :id, _("Filter ID")
         field :name, _("Name")
@@ -47,6 +54,8 @@ module HammerCLIKatello
       end
 
       build_options :without => [:content_view_id]
+      validate_id_or_name_with_parent parent: :content_view
+      validate_id_or_name_with_parent :content_view, required: false
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -68,17 +77,27 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include OrganizationOptions
+      extend IdNameOptionsValidator
+
       success_message _("Filter updated")
       failure_message _("Could not update the filter")
 
       build_options :without => [:content_view_id]
+      validate_id_or_name_with_parent parent: :content_view
+      validate_id_or_name_with_parent :content_view, required: false
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include OrganizationOptions
+      extend IdNameOptionsValidator
+
       success_message _("Filter deleted")
       failure_message _("Could not delete the filter")
 
       build_options :without => [:content_view_id]
+      validate_id_or_name_with_parent parent: :content_view
+      validate_id_or_name_with_parent :content_view, required: false
     end
 
     HammerCLIKatello::AssociatingCommands::Repository.extend_command(self)
