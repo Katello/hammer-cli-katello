@@ -29,6 +29,7 @@ module HammerCLIKatello
         field :_redhat_repo, _("Red Hat Repository")
         field :content_type, _("Content Type")
         field :checksum_type, _("Checksum Type"), Fields::Field, :hide_blank => true
+        field :_mirror_on_sync, _("Mirror on Sync")
         field :url, _("URL")
         field :_publish_via_http, _("Publish Via HTTP")
         field :full_path, _("Published At")
@@ -73,16 +74,20 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
-        data["_redhat_repo"] = data["product_type"] == "redhat" ? _("yes") : _("no")
-        data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
-
         if data["content_type"] == "yum" && data["gpg_key"]
           data["gpg_key_name"] = data["gpg_key"]["name"]
         end
 
         setup_sync_state(data)
+        setup_booleans(data)
         setup_content_counts(data) if data["content_counts"]
         data
+      end
+
+      def setup_booleans(data)
+        data["_redhat_repo"] = data["product_type"] == "redhat" ? _("yes") : _("no")
+        data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
+        data["_mirror_on_sync"] = data["mirror_on_sync"] ? _("yes") : _("no")
       end
 
       def setup_sync_state(data)
@@ -113,14 +118,9 @@ module HammerCLIKatello
 
       def get_sync_status(state)
         sync_states = {
-          "failed" => _("Failed"),
-          "success" => _("Success"),
-          "finished" => _("Finished"),
-          "error" => _("Error"),
-          "running" => _("Running"),
-          "waiting" => _("Waiting"),
-          "canceled" => _("Canceled"),
-          "not_synced" => _("Not Synced")
+          "failed" => _("Failed"), "success" => _("Success"), "finished" => _("Finished"),
+          "error" => _("Error"), "running" => _("Running"), "waiting" => _("Waiting"),
+          "canceled" => _("Canceled"), "not_synced" => _("Not Synced")
         }
         sync_states[state]
       end
