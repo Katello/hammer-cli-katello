@@ -5,6 +5,8 @@ module HammerCLIKatello
     desc 'View and manage filter rules'
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include OrganizationOptions
+
       output do
         field :id, _("Rule ID")
         field :content_view_filter_id, _("Filter ID")
@@ -22,6 +24,8 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include OrganizationOptions
+
       output do
         field :id, _("Rule ID")
         field :content_view_filter_id, _("Filter ID")
@@ -43,6 +47,8 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include OrganizationOptions
+
       success_message _("Filter rule created")
       failure_message _("Could not create the filter rule")
 
@@ -58,6 +64,8 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include OrganizationOptions
+
       success_message _("Filter rule updated")
       failure_message _("Could not update the filter rule")
 
@@ -65,6 +73,8 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
+      include OrganizationOptions
+
       success_message _("Filter rule deleted")
       failure_message _("Could not delete the filter rule")
 

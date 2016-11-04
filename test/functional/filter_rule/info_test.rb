@@ -2,19 +2,24 @@ require_relative '../test_helper'
 require 'hammer_cli_katello/filter_rule'
 
 module HammerCLIKatello
-  describe FilterRule::CreateCommand do
+  describe FilterRule::InfoCommand do
     it 'allows minimal options' do
-      api_expects(:content_view_filter_rules, :create) do |p|
-        p['content_view_filter_id'] == 1 && p['name'] == %w(rpm1)
+      api_expects(:content_view_filter_rules, :show) do |p|
+        p['content_view_filter_id'] == 1 && p['id'] == '9'
       end
-      run_cmd(%w(content-view filter rule create --content-view-filter-id 1 --name rpm1))
+      run_cmd(%w(content-view filter rule info --content-view-filter-id 1 --id 9))
     end
 
-    it 'allows multiple package names' do
-      api_expects(:content_view_filter_rules, :create) do |p|
-        p['content_view_filter_id'] == 1 && p['name'] == %w(rpm1 rpm2)
+    it 'resolves rule ID from rule name and filter ID' do
+      ex = api_expects(:content_view_filter_rules, :index) do |p|
+        p['content_view_filter_id'] == 1 && p['name'] == 'rule9'
       end
-      run_cmd(%w(content-view filter rule create --content-view-filter-id 1 --names rpm1,rpm2))
+      ex.returns(index_response([{'id' => 9}]))
+
+      api_expects(:content_view_filter_rules, :show) do |p|
+        p['content_view_filter_id'] == 1 && p['id'] == 9
+      end
+      run_cmd(%w(content-view filter rule info --content-view-filter-id 1 --name rule9))
     end
 
     it 'allows name resolution of filter with content-view-id' do
@@ -23,11 +28,11 @@ module HammerCLIKatello
       end
       ex.returns(index_response([{'id' => 1}]))
 
-      api_expects(:content_view_filter_rules, :create) do |p|
-        p['content_view_filter_id'] == 1 && p['name'] == %w(rule9)
+      api_expects(:content_view_filter_rules, :show) do |p|
+        p['content_view_filter_id'] == 1 && p['id'] == '9'
       end
-      run_cmd(%w(content-view filter rule create --content-view-filter cvf1 --content-view-id 3
-                 --name rule9))
+      run_cmd(%w(content-view filter rule info --content-view-filter cvf1 --content-view-id 3
+                 --id 9))
     end
 
     describe 'organization' do
@@ -42,11 +47,11 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:content_view_filter_rules, :create) do |p|
-          p['content_view_filter_id'] == 1 && p['name'] == %w(rule9)
+        api_expects(:content_view_filter_rules, :show) do |p|
+          p['content_view_filter_id'] == 1 && p['id'] == '9'
         end
-        run_cmd(%w(content-view filter rule create --content-view-filter cvf1 --organization-id 6
-                   --content-view cv3 --name rule9))
+        run_cmd(%w(content-view filter rule info --content-view-filter cvf1 --organization-id 6
+                   --content-view cv3 --id 9))
       end
 
       it 'name can be specified to resolve content view name' do
@@ -65,11 +70,11 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:content_view_filter_rules, :create) do |p|
-          p['content_view_filter_id'] == 1 && p['name'] == %w(rule9)
+        api_expects(:content_view_filter_rules, :show) do |p|
+          p['content_view_filter_id'] == 1 && p['id'] == '9'
         end
-        run_cmd(%w(content-view filter rule create --content-view-filter cvf1 --organization org6
-                   --content-view cv3 --name rule9))
+        run_cmd(%w(content-view filter rule info --content-view-filter cvf1 --organization org6
+                   --content-view cv3 --id 9))
       end
 
       it 'label can be specified to resolve content view name' do
@@ -88,11 +93,11 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:content_view_filter_rules, :create) do |p|
-          p['content_view_filter_id'] == 1 && p['name'] == %w(rule9)
+        api_expects(:content_view_filter_rules, :show) do |p|
+          p['content_view_filter_id'] == 1 && p['id'] == '9'
         end
-        run_cmd(%w(content-view filter rule create --content-view-filter cvf1 --organization-label
-                   org6 --content-view cv3 --name rule9))
+        run_cmd(%w(content-view filter rule info --content-view-filter cvf1 --organization-label
+                   org6 --content-view cv3 --id 9))
       end
     end
   end
