@@ -5,6 +5,21 @@ require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
 
 module HammerCLIKatello
+  module HostgroupInheritable
+    def request_params
+      params = super
+      if option_hostgroup_id
+        hostgroup = resolver.api.resource(:hostgroups).call(:show, id: option_hostgroup_id)
+        params["host"]["content_facet_attributes"] ||= {}
+        params["host"]["content_facet_attributes"].merge!(
+          "content_view_id" => hostgroup["content_view_id"],
+          "lifecycle_environment_id" => hostgroup["lifecycle_environment_id"]
+        ) { |_key, old, _new| old }
+      end
+      params
+    end
+  end
+
   module HostExtensions
     ::HammerCLIForeman::Host::ListCommand.instance_eval do
       output do
@@ -53,6 +68,10 @@ module HammerCLIKatello
           field :name, _('Name')
         end
       end
+    end
+
+    ::HammerCLIForeman::Host::CreateCommand.instance_eval do
+      include HammerCLIKatello::HostgroupInheritable
     end
   end
 end
