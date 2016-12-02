@@ -172,13 +172,12 @@ module HammerCLIKatello
       end
 
       def resolver
-        api = HammerCLI::Connection.get("foreman").api
         custom_resolver = Class.new(HammerCLIKatello::IdResolver) do
           def hosts_bulk_action_id(options)
             host_collection_id(options)
           end
         end
-        custom_resolver.new(api, HammerCLIKatello::Searchables.new)
+        custom_resolver.new(HammerCLIKatello.api_connection, HammerCLIKatello::Searchables.new)
       end
     end
 
