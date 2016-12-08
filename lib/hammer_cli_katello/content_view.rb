@@ -1,6 +1,7 @@
 require 'hammer_cli_katello/content_view_puppet_module'
 require 'hammer_cli_katello/filter'
 require 'hammer_cli_katello/content_view_version'
+require 'hammer_cli_katello/content_view_component'
 
 module HammerCLIKatello
   class ContentView < HammerCLIKatello::Command
@@ -255,5 +256,9 @@ module HammerCLIKatello
     subcommand HammerCLIKatello::ContentViewVersion.command_name,
                HammerCLIKatello::ContentViewVersion.desc,
                HammerCLIKatello::ContentViewVersion
+
+    subcommand HammerCLIKatello::ContentViewComponent.command_name,
+               HammerCLIKatello::ContentViewComponent.desc,
+               HammerCLIKatello::ContentViewComponent
   end
 end

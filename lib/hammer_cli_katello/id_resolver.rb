@@ -6,6 +6,7 @@ module HammerCLIKatello
       :activation_key =>        [s_name(_("Activation key name to search by"))],
       :capsule =>               [s_name(_("Capsule name to search by"))],
       :content_view =>          [s_name(_("Content view name to search by"))],
+      :content_view_component => [],
       :gpg =>                   [s_name(_("Gpg key name to search by"))],
       :host_collection =>       [s_name(_("Host collection name to search by"))],
       :lifecycle_environment => [s_name(_("Lifecycle environment name to search by"))],
