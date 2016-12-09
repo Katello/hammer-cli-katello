@@ -50,6 +50,12 @@ module HammerCLIForeman
         run_cmd(%w(hostgroup update --id 1 --lifecycle-environment le1
                    --query-organization-id 1 --organization-ids 1,2))
       end
+
+      it 'requires organization options to resolve lifecycle environment name' do
+        api_expects_no_call
+        result = run_cmd(%w(hostgroup update --name hg1 --lifecycle-environment le1))
+        assert_match(/--query-organization/, result.err)
+      end
     end
   end
 end
