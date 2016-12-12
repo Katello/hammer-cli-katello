@@ -1,6 +1,14 @@
 module HammerCLIKatello
   RESOURCE_NAME_MAPPING = {}.freeze
 
+  def self.api_connection
+    if HammerCLI.context[:api_connection]
+      HammerCLI.context[:api_connection].get("foreman")
+    else
+      HammerCLI::Connection.get("foreman").api
+    end
+  end
+
   module ResolverCommons
     def self.included(base)
       base.extend(ClassMethods)
@@ -8,8 +16,10 @@ module HammerCLIKatello
 
     module ClassMethods
       def resolver
-        api = HammerCLI::Connection.get("foreman").api
-        HammerCLIKatello::IdResolver.new(api, HammerCLIKatello::Searchables.new)
+        HammerCLIKatello::IdResolver.new(
+          HammerCLIKatello.api_connection,
+          HammerCLIKatello::Searchables.new
+        )
       end
 
       def searchables
