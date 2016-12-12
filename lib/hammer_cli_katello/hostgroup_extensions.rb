@@ -20,6 +20,16 @@ module HammerCLIKatello
         _('Organization name to search by'), attribute_name: :option_organization_name
       base.option '--query-organization-label', 'ORGANIZATION_LABEL',
         _('Organization label to search by'), attribute_name: :option_organization_label
+
+      base.validate_options do
+        organization_options = [
+          :option_organization_id, :option_organization_name, :option_organization_label
+        ]
+
+        if option(:option_lifecycle_environment_name).exist?
+          any(*organization_options).required
+        end
+      end
     end
   end
 
