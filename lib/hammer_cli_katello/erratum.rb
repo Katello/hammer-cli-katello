@@ -10,6 +10,15 @@ module HammerCLIKatello
         field :title, _("Title")
       end
 
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
+      end
+
       build_options do |o|
         o.expand.including(:products, :organizations, :content_views)
       end
