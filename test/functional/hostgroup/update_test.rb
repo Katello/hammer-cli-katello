@@ -31,6 +31,12 @@ module HammerCLIForeman
         run_cmd(%w(hostgroup update --id 1 --content-view cv1 --query-organization-id 1))
       end
 
+      it 'requires organization options to resolve content view name' do
+        api_expects_no_call
+        result = run_cmd(%w(hostgroup update --id 1 --content-view cv1))
+        assert_match(/--query-organization/, result.err)
+      end
+
       it 'allows lifecycle environment id' do
         api_expects(:hostgroups, :update) do |p|
           p['id'] == '1' && p['hostgroup']['lifecycle_environment_id'] == 1 &&
@@ -54,6 +60,12 @@ module HammerCLIForeman
       it 'requires organization options to resolve lifecycle environment name' do
         api_expects_no_call
         result = run_cmd(%w(hostgroup update --name hg1 --lifecycle-environment le1))
+        assert_match(/--query-organization/, result.err)
+      end
+
+      it 'requires organization options to resolve lifecycle environment name' do
+        api_expects_no_call
+        result = run_cmd(%w(hostgroup update --id 1 --lifecycle-environment le1))
         assert_match(/--query-organization/, result.err)
       end
     end
