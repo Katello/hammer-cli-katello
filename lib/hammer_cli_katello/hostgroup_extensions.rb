@@ -26,7 +26,8 @@ module HammerCLIKatello
           :option_organization_id, :option_organization_name, :option_organization_label
         ]
 
-        if option(:option_lifecycle_environment_name).exist?
+        if option(:option_lifecycle_environment_name).exist? ||
+           option(:option_content_view_name).exist?
           any(*organization_options).required
         end
       end

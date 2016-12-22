@@ -31,6 +31,12 @@ module HammerCLIForeman
         run_cmd(%w(hostgroup create --name hg1 --content-view cv1 --query-organization-id 1))
       end
 
+      it 'requires organization options to resolve content view name' do
+        api_expects_no_call
+        result = run_cmd(%w(hostgroup create --name hg1 --content-view cv1))
+        assert_match(/--query-organization/, result.err)
+      end
+
       it 'allows lifecycle environment id' do
         api_expects(:hostgroups, :create) do |p|
           p['hostgroup']['name'] == 'hg1' && p['hostgroup']['lifecycle_environment_id'] == 1 &&
