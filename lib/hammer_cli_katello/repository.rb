@@ -184,6 +184,7 @@ module HammerCLIKatello
 
     class UploadContentCommand < HammerCLIKatello::InfoCommand
       include RepositoryScopedToProduct
+      include HammerCLIForemanTasks::Helper
 
       resource :repositories, :upload_content
       command_name "upload-content"
@@ -219,6 +220,8 @@ module HammerCLIKatello
         files.each do |file_path|
           File.open(file_path, 'rb') { |file| upload_file file }
         end
+
+        task_progress(publish_repository)
 
         @failure ? HammerCLI::EX_DATAERR : HammerCLI::EX_OK
       end
@@ -294,9 +297,16 @@ module HammerCLIKatello
 
       def import_uploads(uploads)
         params = {:id => get_identifier,
-                  :uploads => uploads
+                  :uploads => uploads,
+                  :publish_repository => false
         }
         resource.call(:import_uploads, params)
+      end
+
+      def publish_repository
+        print_message _("Publishing Repository.")
+        params = {:id => get_identifier}
+        resource.call(:republish, params)
       end
     end
 

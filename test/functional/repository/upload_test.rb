@@ -5,6 +5,7 @@ require File.join(File.dirname(__FILE__), './repository_helpers')
 describe 'upload repository' do
   include ProductHelpers
   include RepositoryHelpers
+  include ForemanTaskHelpers
 
   before do
     @cmd = %w(repository upload-content)
@@ -52,6 +53,13 @@ describe 'upload repository' do
 
     ex3.returns("")
 
+    ex4 = api_expects(:repositories, :republish, "Publish the repo") do |par|
+      par[:id] == repo_id.to_s
+    end
+
+    ex4.returns(:id => '3')
+    expect_foreman_task('3')
+
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
@@ -91,6 +99,13 @@ describe 'upload repository' do
 
     ex3.returns("")
 
+    ex4 = api_expects(:repositories, :republish, "Publish the repo") do |par|
+      par[:id] == repo_id
+    end
+
+    ex4.returns(:id => '3')
+    expect_foreman_task('3')
+
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
@@ -124,6 +139,13 @@ describe 'upload repository' do
     end
 
     ex3.returns("")
+
+    ex4 = api_expects(:repositories, :republish, "Publish the Repo") do |par|
+      par[:id] == repo_id.to_s
+    end
+
+    ex4.returns('id' => '3')
+    expect_foreman_task('3')
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
