@@ -218,10 +218,9 @@ module HammerCLIKatello
         end
 
         files.each do |file_path|
-          File.open(file_path, 'rb') { |file| upload_file file }
+          last_file = file_path == files.last
+          File.open(file_path, 'rb') { |file| upload_file(file, last_file: last_file) }
         end
-
-        task_progress(publish_repository)
 
         @failure ? HammerCLI::EX_DATAERR : HammerCLI::EX_OK
       end
@@ -244,7 +243,7 @@ module HammerCLIKatello
 
       private
 
-      def upload_file(file)
+      def upload_file(file, opts = {})
         upload_id = create_content_upload
         repo_id = get_identifier
         filename = File.basename(file.path)
@@ -261,7 +260,7 @@ module HammerCLIKatello
             size: file.size,
             checksum: Digest::SHA256.hexdigest(content)
           }
-        ])
+        ], opts)
 
         print_message _("Successfully uploaded file '%s'.") % filename
       rescue
@@ -295,18 +294,15 @@ module HammerCLIKatello
         end
       end
 
-      def import_uploads(uploads)
+      def import_uploads(uploads, opts = {})
+        publish_repository = opts.fetch(:last_file, false)
+        sync_capsule = opts.fetch(:last_file, false)
         params = {:id => get_identifier,
                   :uploads => uploads,
-                  :publish_repository => false
+                  publish_repository: publish_repository,
+                  sync_capsule: sync_capsule
         }
         resource.call(:import_uploads, params)
-      end
-
-      def publish_repository
-        print_message _("Publishing Repository.")
-        params = {:id => get_identifier}
-        resource.call(:republish, params)
       end
     end
 

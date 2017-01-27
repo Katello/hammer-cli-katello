@@ -42,7 +42,8 @@ describe 'upload repository' do
         :size => 0,
         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       }
-      par[:id] == repo_id.to_s && par[:uploads] == [upload]
+      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+        par[:publish_repository] == true
     end
 
     ex2.returns("")
@@ -52,13 +53,6 @@ describe 'upload repository' do
     end
 
     ex3.returns("")
-
-    ex4 = api_expects(:repositories, :republish, "Publish the repo") do |par|
-      par[:id] == repo_id.to_s
-    end
-
-    ex4.returns(:id => '3')
-    expect_foreman_task('3')
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
@@ -88,7 +82,8 @@ describe 'upload repository' do
         :size => 0,
         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       }
-      par[:id] == repo_id && par[:uploads] == [upload]
+      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+        par[:publish_repository] == true
     end
 
     ex2.returns("")
@@ -98,13 +93,6 @@ describe 'upload repository' do
     end
 
     ex3.returns("")
-
-    ex4 = api_expects(:repositories, :republish, "Publish the repo") do |par|
-      par[:id] == repo_id
-    end
-
-    ex4.returns(:id => '3')
-    expect_foreman_task('3')
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
@@ -129,7 +117,8 @@ describe 'upload repository' do
         :size => 0,
         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       }
-      par[:id] == repo_id.to_s && par[:uploads] == [upload]
+      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+        par[:publish_repository] == true
     end
 
     ex2.returns("")
@@ -140,16 +129,75 @@ describe 'upload repository' do
 
     ex3.returns("")
 
-    ex4 = api_expects(:repositories, :republish, "Publish the Repo") do |par|
-      par[:id] == repo_id.to_s
-    end
-
-    ex4.returns('id' => '3')
-    expect_foreman_task('3')
-
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
+  end
+
+  it "only syncs the capsule on the last file import" do
+    File.new("test1.rpm", "w")
+    File.new("test2.rpm", "w")
+
+    params = ["--id=#{repo_id}", "--path=test*.rpm"]
+
+    # Begin first upload cycle
+
+    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
+      par[:repository_id] == repo_id.to_s
+    end
+
+    ex.returns(upload_response)
+
+    ex = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
+      upload = {
+        :id => '1234',
+        :name => 'test1.rpm',
+        :size => 0,
+        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      }
+      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == false &&
+        par[:publish_repository] == false
+    end
+
+    ex.returns("")
+
+    ex = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
+      par[:id] == upload_id && par[:repository_id] == repo_id.to_s
+    end
+
+    ex.returns("")
+
+    # Begin second upload cycle
+
+    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
+      par[:repository_id] == repo_id.to_s
+    end
+
+    ex.returns(upload_response)
+
+    ex = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
+      upload = {
+        :id => '1234',
+        :name => 'test2.rpm',
+        :size => 0,
+        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      }
+      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+        par[:publish_repository] == true
+    end
+
+    ex.returns("")
+
+    ex = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
+      par[:id] == upload_id && par[:repository_id] == repo_id.to_s
+    end
+
+    ex.returns("")
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 0)
+    File.delete("test1.rpm")
+    File.delete("test2.rpm")
   end
 
   it "errors if there are no matching files" do
