@@ -125,12 +125,32 @@ module HammerCLIKatello
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
+      include OrganizationOptions
+
       action :copy
 
       desc _("Copy a content view")
       command_name "copy"
 
-      option "--name", "NAME", _("New content view name"), :attribute_name => :option_name
+      option "--name", "NAME", _("Content view name to search by"), :attribute_name => :option_name
+      option "--new-name", "NEW_NAME", _("New content view name"),
+             :attribute_name => :option_new_name
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_name).exist?
+          any(*organization_options).required
+        end
+      end
+
+      def request_params
+        super.tap do |opts|
+          opts['name'] = option_new_name
+        end
+      end
+
       build_options
 
       success_message _("Content view copied")
@@ -138,20 +158,41 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
+      include OrganizationOptions
+
       success_message _("Content view updated")
       failure_message _("Could not update the content view")
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_name).exist?
+          any(*organization_options).required
+        end
+      end
 
       build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       include HammerCLIForemanTasks::Async
+      include OrganizationOptions
 
       action :destroy
       command_name "delete"
 
       success_message _("Content view is being deleted with task %{id}")
       failure_message _("Could not delete the content view")
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_name).exist?
+          any(*organization_options).required
+        end
+      end
 
       build_options
     end
@@ -212,11 +253,22 @@ module HammerCLIKatello
     end
 
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
+      include OrganizationOptions
+
       command_name 'add-version'
       desc _('Add a content view version to a composite view')
 
       def association_name(plural = false)
         plural ? "components" : "component"
+      end
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_name).exist?
+          any(*organization_options).required
+        end
       end
 
       associated_resource :content_view_versions
@@ -227,11 +279,22 @@ module HammerCLIKatello
     end
 
     class RemoveContentViewVersionCommand < HammerCLIKatello::RemoveAssociatedCommand
+      include OrganizationOptions
+
       command_name 'remove-version'
       desc _('Remove a content view version from a composite view')
 
       def association_name(plural = false)
         plural ? "components" : "component"
+      end
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_name).exist?
+          any(*organization_options).required
+        end
       end
 
       associated_resource :content_view_versions
