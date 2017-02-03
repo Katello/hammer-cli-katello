@@ -197,10 +197,17 @@ module HammerCLIKatello
       option ["--environment-ids"], "ENVIRONMENT_IDS",
              _("Comma separated list of environment ids to remove")
 
+      def all_options
+        opts = super
+        opts['option_content_view_id'] = option_id
+        opts['option_lifecycle_environment_names'] = opts['option_environment_names']
+        opts
+      end
+
       def request_params
         super.tap do |opts|
           %w(content_view_version_ids environment_ids).each do |key|
-            opts[key] = opts[key].split(",") if opts[key]
+            opts[key] = opts[key].split(",") if opts[key] && opts[key].respond_to?(:split)
           end
         end
       end
@@ -208,19 +215,28 @@ module HammerCLIKatello
       success_message _("Content view objects are being removed task %{id}")
       failure_message _("Could not remove objects from content view")
 
-      build_options :without => %w(content_view_version_ids environment_ids)
+      build_options
     end
 
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
       command_name 'add-version'
       desc _('Add a content view version to a composite view')
 
+      validate_options do
+        if option(:option_content_view_version_version).exist?
+          any(:option_content_view_id, :option_content_view_name).required
+        end
+      end
+
       def association_name(plural = false)
         plural ? "components" : "component"
       end
 
       associated_resource :content_view_versions
-      build_options
+
+      build_options do |o|
+        o.expand.including(:content_views)
+      end
 
       success_message _("The component version has been added")
       failure_message _("Could not add version")
@@ -230,12 +246,21 @@ module HammerCLIKatello
       command_name 'remove-version'
       desc _('Remove a content view version from a composite view')
 
+      validate_options do
+        if option(:option_content_view_version_version).exist?
+          any(:option_content_view_id, :option_content_view_name).required
+        end
+      end
+
       def association_name(plural = false)
         plural ? "components" : "component"
       end
 
       associated_resource :content_view_versions
-      build_options
+
+      build_options do |o|
+        o.expand.including(:content_views)
+      end
 
       success_message _("The component version has been removed")
       failure_message _("Could not remove version")
