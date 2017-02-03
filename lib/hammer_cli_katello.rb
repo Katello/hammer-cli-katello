@@ -23,7 +23,6 @@ module HammerCLIKatello
   require "hammer_cli_katello/version"
   require "hammer_cli_katello/exception_handler"
   require 'hammer_cli_katello/i18n'
-  require "hammer_cli_katello/version"
   require 'hammer_cli_katello/id_resolver'
   require 'hammer_cli_katello/capsule'
   require 'hammer_cli_katello/id_name_options_validator'
