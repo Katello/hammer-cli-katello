@@ -27,10 +27,7 @@ module HammerCLIKatello
         s("author", _("Puppet module's author to search by")),
         s("uuid", _("Puppet module's UUID to search by"))
       ],
-      :content_view_version => [
-        s("version", _("Content view version number")),
-        s("content_view_id", _("Content view to search by"))
-      ]
+      :content_view_version => [s("version", _("Content view version number"))]
     }.freeze
 
     DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))].freeze
@@ -101,6 +98,18 @@ module HammerCLIKatello
       if options[key_names].any?
         find_resources(:repositories, options)
           .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
+      end
+    end
+
+    def content_view_version_ids(options)
+      key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
+      if options['option_versions'] && options[key_content_view_id]
+        options[key_content_view_id] ||= search_and_rescue(:content_view_id,
+                                                           "content_view", options)
+        id_strings = options['option_versions'].map do |version|
+          content_view_version_id(options.merge('option_version' => version))
+        end
+        id_strings.join(',')
       end
     end
 
