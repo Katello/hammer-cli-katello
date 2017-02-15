@@ -21,7 +21,8 @@ module HammerCLIForeman
 
         result = run_cmd(@cmd + params)
         expected_fields = [['Lifecycle Environment', 'Library'],
-                           ['Content View', 'Default Organization View']]
+                           ['Content View', 'Default Organization View'],
+                           ['Content Source', 'foreman.example.com']]
         expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
         expected_results.each { |expected|  assert_cmd(expected, result) }
       end

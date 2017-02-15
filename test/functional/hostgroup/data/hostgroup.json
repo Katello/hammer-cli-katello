@@ -1,6 +1,6 @@
 {
-	"content_source_id":null,
-	"content_source_name":null,
+	"content_source_id":1,
+	"content_source_name":"foreman.example.com",
 	"content_view_id":1,
 	"content_view_name":"Default Organization View",
 	"lifecycle_environment_id":1,

@@ -53,6 +53,7 @@ module HammerCLIKatello
       output do
         field :content_view_name, _('Content View')
         field :lifecycle_environment_name, _('Lifecycle Environment')
+        field :content_source_name, _('Content Source')
       end
     end
   end
