@@ -3,21 +3,21 @@ require_relative '../organization/organization_helpers'
 require 'hammer_cli_katello/repository'
 
 module HammerCLIKatello
-  describe Repository::RemoveContentCommand do
+  describe Repository::UpdateCommand do
     include OrganizationHelpers
 
     it 'allows minimal options' do
-      api_expects(:repositories, :remove_content) do |p|
-        p['id'] == '1' && p['ids'] == %w(20 21 22)
+      api_expects(:repositories, :update) do |p|
+        p['id'] == '1' && p['name'] == 'rep1'
       end
 
-      run_cmd(%w(repository remove-content --id 1 --ids 20,21,22))
+      run_cmd(%w(repository update --id 1 --new-name rep1))
     end
 
     describe 'resolves repository ID' do
       it 'by requiring product' do
         api_expects_no_call
-        result = run_cmd(%w(repository remove-content --name repo1 --ids 20,21,22))
+        result = run_cmd(%w(repository update --name repo1 --new-name rep1))
         assert(result.err[/--product, --product-id is required/], 'Incorrect error message')
       end
 
@@ -27,18 +27,18 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        api_expects(:repositories, :update) do |p|
+          p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository remove-content --name repo1 --product-id 3 --ids 20,21,22))
+        run_cmd(%w(repository update --name repo1 --product-id 3 --new-name rep1))
       end
     end
 
     describe 'resolves product ID' do
       it 'by requiring organization options' do
         api_expects_no_call
-        result = run_cmd(%w(repository remove-content --name repo1 --product prod1 --ids 20,21,22))
+        result = run_cmd(%w(repository update --name repo1 --product prod1 --new-name rep1))
         assert(result.err[/--organization-id, --organization, --organization-label is required/],
                "Organization option requirements must be validated")
       end
@@ -54,12 +54,12 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        api_expects(:repositories, :update) do |p|
+          p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository remove-content --name repo1 --product prod3 --organization-id 5
-                   --ids 20,21,22))
+        run_cmd(%w(repository update --name repo1 --product prod3 --organization-id 5
+                   --new-name rep1))
       end
 
       it 'by organization name' do
@@ -75,12 +75,12 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        api_expects(:repositories, :update) do |p|
+          p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository remove-content --name repo1 --product prod3 --organization org5
-                   --ids 20,21,22))
+        run_cmd(%w(repository update --name repo1 --product prod3 --organization org5
+                   --new-name rep1))
       end
 
       it 'by organization label' do
@@ -96,12 +96,12 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        api_expects(:repositories, :update) do |p|
+          p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository remove-content --name repo1 --product prod3 --organization-label org5
-                   --ids 20,21,22))
+        run_cmd(%w(repository update --name repo1 --product prod3 --organization-label org5
+                   --new-name rep1))
       end
     end
   end
