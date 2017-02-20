@@ -3,21 +3,25 @@ require_relative '../organization/organization_helpers'
 require 'hammer_cli_katello/repository'
 
 module HammerCLIKatello
-  describe Repository::RemoveContentCommand do
+  describe Repository::ExportCommand do
+    include ForemanTaskHelpers
     include OrganizationHelpers
 
     it 'allows minimal options' do
-      api_expects(:repositories, :remove_content) do |p|
-        p['id'] == '1' && p['ids'] == %w(20 21 22)
+      ex = api_expects(:repositories, :export) do |p|
+        p['id'] == '1'
       end
+      ex.returns(id: 2)
 
-      run_cmd(%w(repository remove-content --id 1 --ids 20,21,22))
+      expect_foreman_task('2')
+
+      run_cmd(%w(repository export --id 1))
     end
 
     describe 'resolves repository ID' do
       it 'by requiring product' do
         api_expects_no_call
-        result = run_cmd(%w(repository remove-content --name repo1 --ids 20,21,22))
+        result = run_cmd(%w(repository export --name repo1))
         assert(result.err[/--product, --product-id is required/], 'Incorrect error message')
       end
 
@@ -27,18 +31,21 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        ex = api_expects(:repositories, :export) do |p|
+          p['id'] == 1
         end
+        ex.returns(id: 2)
 
-        run_cmd(%w(repository remove-content --name repo1 --product-id 3 --ids 20,21,22))
+        expect_foreman_task('2')
+
+        run_cmd(%w(repository export --name repo1 --product-id 3))
       end
     end
 
     describe 'resolves product ID' do
       it 'by requiring organization options' do
         api_expects_no_call
-        result = run_cmd(%w(repository remove-content --name repo1 --product prod1 --ids 20,21,22))
+        result = run_cmd(%w(repository export --name repo1 --product prod1))
         assert(result.err[/--organization-id, --organization, --organization-label is required/],
                "Organization option requirements must be validated")
       end
@@ -54,12 +61,14 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        ex = api_expects(:repositories, :export) do |p|
+          p['id'] == 1
         end
+        ex.returns(id: 2)
 
-        run_cmd(%w(repository remove-content --name repo1 --product prod3 --organization-id 5
-                   --ids 20,21,22))
+        expect_foreman_task('2')
+
+        run_cmd(%w(repository export --name repo1 --product prod3 --organization-id 5))
       end
 
       it 'by organization name' do
@@ -75,12 +84,14 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        ex = api_expects(:repositories, :export) do |p|
+          p['id'] == 1
         end
+        ex.returns(id: 2)
 
-        run_cmd(%w(repository remove-content --name repo1 --product prod3 --organization org5
-                   --ids 20,21,22))
+        expect_foreman_task('2')
+
+        run_cmd(%w(repository export --name repo1 --product prod3 --organization org5))
       end
 
       it 'by organization label' do
@@ -96,12 +107,14 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 1}]))
 
-        api_expects(:repositories, :remove_content) do |p|
-          p['id'] == 1 && p['ids'] == %w(20 21 22)
+        ex = api_expects(:repositories, :export) do |p|
+          p['id'] == 1
         end
+        ex.returns(id: 2)
 
-        run_cmd(%w(repository remove-content --name repo1 --product prod3 --organization-label org5
-                   --ids 20,21,22))
+        expect_foreman_task('2')
+
+        run_cmd(%w(repository export --name repo1 --product prod3 --organization-label org5))
       end
     end
   end

@@ -158,9 +158,19 @@ module HammerCLIKatello
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       include RepositoryScopedToProduct
+      include OrganizationOptions
 
       success_message _("Repository updated")
       failure_message _("Could not update the repository")
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
+      end
 
       build_options(:without => [:unprotected]) do |o|
         o.expand.including(:products)
@@ -311,25 +321,50 @@ module HammerCLIKatello
     end
 
     class RemoveContentCommand < HammerCLIKatello::SingleResourceCommand
-      resource :repositories, :remove_content
+      include RepositoryScopedToProduct
+      include OrganizationOptions
+
+      action :remove_content
       command_name "remove-content"
       desc _("Remove content from a repository")
 
       success_message _("Repository content removed")
       failure_message _("Could not remove content")
 
-      build_options
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
+      end
+
+      build_options do |o|
+        o.expand.including(:products)
+      end
     end
 
     class ExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include RepositoryScopedToProduct
+      include OrganizationOptions
 
       action :export
       command_name "export"
+      desc _("Export content from a repository to the configured directory")
 
       success_message _("Repository is being exported in task %{id}")
       failure_message _("Could not export the repository")
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
+      end
 
       build_options do |o|
         o.expand.including(:products)
