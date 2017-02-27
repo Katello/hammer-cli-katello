@@ -164,10 +164,16 @@ module HammerCLIKatello
 
       def request_params
         params = super
+
+        host_collection_id = resolver.host_collection_id(
+          'option_id' => option_host_collection_id,
+          'option_name' => option_host_collection_name,
+          'option_organization_id' => params['organization_id']
+        )
+
         params['content'] = content
         params['content_type'] = content_type
-        params['included'] = { search: "host_collection_id=\"#{option_host_collection_id}\"" }
-        params.delete('id')
+        params['included'] = { search: "host_collection_id=\"#{host_collection_id}\"" }
         params
       end
 
