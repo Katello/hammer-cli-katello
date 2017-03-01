@@ -62,6 +62,19 @@ module HammerCLIKatello
       end
     end
 
+    class RepublishRepositoriesCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
+      action :republish_repositories
+      command_name "republish-repositories"
+
+      success_message _("Content View Version is being republished with task %{id}")
+      failure_message _("Could not republish the Content View")
+      build_options do |o|
+        o.expand(:all).including(:content_views, :organizations)
+      end
+    end
+
     class PromoteCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
 
