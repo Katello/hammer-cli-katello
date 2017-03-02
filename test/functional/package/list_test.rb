@@ -1,47 +1,118 @@
 require_relative '../test_helper'
+require_relative '../repository/repository_helpers'
+require_relative '../product/product_helpers'
+require_relative '../organization/organization_helpers'
 require 'hammer_cli_katello/package'
 
 module HammerCLIKatello
   describe PackageCommand::ListCommand do
+    include OrganizationHelpers
+    include RepositoryHelpers
+    include ProductHelpers
+
     it 'allows minimal options' do
       api_expects(:packages, :index)
 
       run_cmd(%w(package list))
     end
 
-    describe 'organization options' do
-      it 'can be provided by organization ID' do
+    describe 'repository options' do
+      it 'may be specified by ID' do
         api_expects(:packages, :index) do |params|
-          params['organization_id'] == 1
+          params['repository_id'] == 1
         end
 
-        run_cmd(%w(package list --organization-id 1))
+        run_cmd(%w(package list --repository-id 1))
       end
 
-      it 'can be provided by organization name' do
-        ex = api_expects(:organizations, :index) do |params|
-          params[:search] == "name = \"org1\""
-        end
-        ex.at_least_once.returns(index_response([{'id' => 1}]))
+      it 'require product ID when given repository name' do
+        api_expects_no_call
 
-        api_expects(:packages, :index) do |params|
-          params['organization_id'] == 1
-        end
-
-        run_cmd(%w(package list --organization org1))
+        r = run_cmd(%w(package list --repository repo1))
+        assert(r.err.include?("--product-id, --product is required"), "Invalid error message")
       end
 
-      it 'can be provided by organization label' do
-        ex = api_expects(:organizations, :index) do |params|
-          params[:search] == "label = \"org1\""
-        end
-        ex.at_least_once.returns(index_response([{'id' => 1}]))
+      it 'may be specified by name and product ID' do
+        expect_repository_search(2, 'repo1', 1)
 
         api_expects(:packages, :index) do |params|
-          params['organization_id'] == 1
+          params['repository_id'] == 1
         end
 
-        run_cmd(%w(package list --organization-label org1))
+        run_cmd(%w(package list --repository repo1 --product-id 2))
+      end
+    end
+
+    describe 'product options' do
+      it 'may be specified by ID' do
+        ex = api_expects(:repositories, :index) do |p|
+          p['product_id'] == 1
+        end
+        ex.returns(index_response([{'id' => 2}]))
+
+        api_expects(:packages, :index) do |p|
+          p['repository_id'] = 2
+        end
+
+        run_cmd(%w(package list --product-id 1))
+      end
+
+      it 'fail if more than one repository is found' do
+        ex = api_expects(:repositories, :index) do |p|
+          p['product_id'] == 1
+        end
+        ex.returns(index_response([{'id' => 2}, {'id' => 3}]))
+
+        r = run_cmd(%w(package list --product-id 1))
+        assert(r.err.include?("found more than one repository"), "Invalid error message")
+      end
+
+      it 'requires organization options to resolve ID by name' do
+        api_expects_no_call
+
+        r = run_cmd(%w(package list --product product1))
+        expected_error = "--organization-id, --organization, --organization-label is required"
+        assert(r.err.include?(expected_error), "Invalid error message")
+      end
+
+      it 'allows organization ID when resolving ID by name' do
+        expect_product_search(3, 'product1', 1)
+
+        expect_repository_search(1, nil, 2)
+
+        api_expects(:packages, :index) do |p|
+          p['repository_id'] = 2
+        end
+
+        run_cmd(%w(package list --product product1 --organization-id 3))
+      end
+
+      it 'allows organization name when resolving ID by name' do
+        expect_organization_search('org3', 3)
+
+        expect_product_search(3, 'product1', 1)
+
+        expect_repository_search(1, nil, 2)
+
+        api_expects(:packages, :index) do |p|
+          p['repository_id'] = 2
+        end
+
+        run_cmd(%w(package list --product product1 --organization org3))
+      end
+
+      it 'allows organization label when resolving ID by name' do
+        expect_organization_search('org3', 3, field: 'label')
+
+        expect_product_search(3, 'product1', 1)
+
+        expect_repository_search(1, nil, 2)
+
+        api_expects(:packages, :index) do |p|
+          p['repository_id'] = 2
+        end
+
+        run_cmd(%w(package list --product product1 --organization-label org3))
       end
     end
   end

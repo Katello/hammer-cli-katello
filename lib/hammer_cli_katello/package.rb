@@ -9,10 +9,22 @@ module HammerCLIKatello
         field :sourcerpm, _("Source RPM")
       end
 
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+        product_options = [:option_product_id, :option_product_name]
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
+
+        if option(:option_repository_name).exist?
+          any(*product_options).required
+        end
+      end
+
       build_options do |o|
-        o.without(:repository_id)
-        o.expand.except(:repositories)
-        o.expand.including(:products, :organizations, :content_views)
+        o.expand.including(:products)
       end
     end
 
