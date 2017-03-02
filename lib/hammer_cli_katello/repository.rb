@@ -337,7 +337,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand.including(:products)
+        o.expand.including(:products, :organizations)
       end
     end
 
