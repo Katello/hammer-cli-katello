@@ -1,3 +1,6 @@
+require 'hammer_cli_katello/content_override'
+require 'hammer_cli_katello/product_content'
+
 module HammerCLIKatello
   class HostSubscription < HammerCLIKatello::Command
     desc "Manage subscription information on your hosts"
@@ -89,6 +92,28 @@ module HammerCLIKatello
       build_options do |o|
         o.expand.except(:subscriptions)
         o.without(:subscriptions)
+      end
+    end
+
+    class ProductContentCommand < HammerCLIKatello::ProductContentBase::ProductContentCommand
+      resource :host_subscriptions, :product_content
+      setup
+    end
+
+    class ContentOverrideCommand < ::HammerCLIKatello::ContentOverrideBase::ContentOverrideCommand
+      resource :host_subscriptions, :content_override
+      setup
+
+      def request_params
+        super.tap do |opts|
+          opts.delete('value')
+          opts.delete('content_label')
+        end
+      end
+
+      build_options do |o|
+        o.expand.except(:content_overrides, :content_label, :value)
+        o.without(:content_overrides, :content_label, :value)
       end
     end
 
