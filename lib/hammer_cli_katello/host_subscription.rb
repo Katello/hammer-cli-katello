@@ -92,6 +92,39 @@ module HammerCLIKatello
       end
     end
 
+    class ContentOverrideCommand < HammerCLIKatello::SingleResourceCommand
+      resource :host_subscriptions, :content_override
+
+      desc _("Override product content defaults")
+      command_name "content-override"
+
+      success_message _("Updated content override")
+      failure_message _("Could not update content override")
+
+      option "--content-label", "CONTENT_LABEL", _("Label of the content"),
+             :attribute_name => :option_content_label, :required => true
+
+      option "--value", "VALUE", _("Override to yes/no, or ‘default’." \
+                                   " Possible value(s): 'yes', 'no', 'default'"),
+             :attribute_name => :option_value, :required => true
+
+      def request_params
+        params = super
+        params[:content_overrides] = [
+          {
+            :content_label => option_content_label,
+            :value => option_value
+          }
+        ]
+        params
+      end
+
+      build_options do |o|
+        o.expand.except(:content_overrides)
+        o.without(:content_overrides)
+      end
+    end
+
     autoload_subcommands
   end
 end
