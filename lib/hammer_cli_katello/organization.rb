@@ -22,6 +22,7 @@ module HammerCLIKatello
         field :label, _("Label")
         field :description, _("Description")
         field :redhat_repository_url, _("Red Hat Repository URL")
+        field :service_levels, _("Service Levels"), Fields::List
       end
 
       build_options
