@@ -10,15 +10,13 @@ module HammerCLIKatello
       }
     end
 
-    def all_options
-      result = super.clone
-      if result['option_composite_content_view_name'] &&
-         result['option_composite_content_view_id'].nil?
-        options = composite_content_view_resolve_options(result)
-        result['option_composite_content_view_id'] = resolver.content_view_id(options)
-        @all_options = result
+    def options
+      if super['option_composite_content_view_name'] &&
+         super['option_composite_content_view_id'].nil?
+        options = composite_content_view_resolve_options(super)
+        super['option_composite_content_view_id'] = resolver.content_view_id(options)
       end
-      result
+      super
     end
 
     def self.included(base)

@@ -9,13 +9,11 @@ module HammerCLIKatello
     end
 
     def all_options
-      result = super.clone
-      if result['option_content_view_name'] && result['option_content_view_id'].nil?
-        result['option_content_view_id'] = resolver.content_view_id(
-          content_view_resolve_options(result))
-        @all_options = result
+      if super['option_content_view_name'] && super['option_content_view_id'].nil?
+        super['option_content_view_id'] = resolver.content_view_id(
+          content_view_resolve_options(super))
       end
-      result
+      super
     end
   end
 end

@@ -3,12 +3,11 @@ require 'hammer_cli_foreman/hostgroup'
 module HammerCLIKatello
   module PuppetEnvironmentNameResolvable
     def all_options
-      options = super
-      if options['option_environment_name']
-        options['option_environment_id'] ||= resolver.puppet_environment_id(
-          resolver.scoped_options('environment', options))
+      if super['option_environment_name']
+        super['option_environment_id'] ||= resolver.puppet_environment_id(
+          resolver.scoped_options('environment', super))
       end
-      options
+      super
     end
   end
 
