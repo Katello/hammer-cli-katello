@@ -1,3 +1,6 @@
+require 'hammer_cli_katello/content_override'
+require 'hammer_cli_katello/product_content'
+
 module HammerCLIKatello
   class ActivationKeyCommand < HammerCLIKatello::Command
     resource :activation_keys
@@ -191,38 +194,18 @@ module HammerCLIKatello
       failure_message _("Could not remove subscription from activation key")
     end
 
-    class ProductContentCommand < HammerCLIKatello::ListCommand
-      action :product_content
-
-      desc _("List associated products")
-      command_name "product-content"
-
-      output do
-        from :content do
-          field :id, _("ID")
-          field :name, _("Name")
-          field :type, _("Type")
-          field :contentUrl, _("URL")
-          field :gpgUrl, _("GPG Key")
-          field :label, _("Label")
-        end
-        field :enabled, _("Enabled?"), Fields::Boolean
-        field :override, _("Override")
-      end
-
-      build_options
+    class ProductContentCommand < HammerCLIKatello::ProductContentBase::ProductContentCommand
+      resource :activation_keys, :product_content
+      setup
     end
 
-    class ContentOverrideCommand < HammerCLIKatello::SingleResourceCommand
-      action :content_override
+    class ContentOverrideCommand < ::HammerCLIKatello::ContentOverrideBase::ContentOverrideCommand
+      resource :activation_keys, :content_override
+      setup
 
-      desc _("Override product content defaults")
-      command_name "content-override"
-
-      build_options
-
-      success_message _("Updated content override")
-      failure_message _("Could not update content override")
+      build_options do |o|
+        o.without(:content_overrides)
+      end
     end
 
     class HostCollectionsCommand < HammerCLIKatello::ListCommand
