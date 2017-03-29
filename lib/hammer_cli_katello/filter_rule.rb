@@ -54,10 +54,9 @@ module HammerCLIKatello
 
       option '--names', 'NAMES', _('Package and package group names')
 
-      def all_options
-        options = super
-        options['option_name'] ||= options['option_names'].split(',') if options['option_names']
-        options
+      def options
+        super['option_name'] ||= super['option_names'].split(',') if super['option_names']
+        super
       end
 
       build_options
