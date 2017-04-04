@@ -1,8 +1,14 @@
+require_relative '../search_helpers'
+
 module ContentViewHelpers
+  include SearchHelpers
+
   def expect_content_view_search(org_id, name, id)
-    ex = api_expects(:content_views, :index, 'Find the content view') do |par|
-      par['name'] == name && par['organization_id'] == org_id
-    end
-    ex.returns(index_response([{'id' => id}]))
+    expect_generic_content_view_search(params: {'name' => name, 'organization_id' => org_id},
+                                       returns: {'id' => id})
+  end
+
+  def expect_generic_content_view_search(args)
+    expect_generic_search(:content_views, args)
   end
 end

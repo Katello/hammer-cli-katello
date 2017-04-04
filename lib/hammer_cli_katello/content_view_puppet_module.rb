@@ -53,22 +53,7 @@ module HammerCLIKatello
       success_message _("Puppet module removed from content view")
       failure_message _("Couldn't remove puppet module from the content view")
 
-      def resolve_puppet_module_id_from_uuid(options)
-        uuid = options.delete HammerCLI.option_accessor_name("id")
-        options[HammerCLI.option_accessor_name("uuid")] = uuid
-        resolver.content_view_puppet_module_id(options)
-      end
-
-      def all_options
-        if super['option_id']
-          super.merge(HammerCLI.option_accessor_name("id") =>
-                      resolve_puppet_module_id_from_uuid(super))
-        else
-          super
-        end
-      end
-
-      build_options :without => :uuid
+      build_options
     end
 
     autoload_subcommands
