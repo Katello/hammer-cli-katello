@@ -58,6 +58,32 @@ module HammerCLIKatello
       build_options
     end
 
+    class RepoDiscoverCommand < HammerCLIForemanTasks::AsyncCommand
+      resource :organizations, :repo_discover
+      identifiers :url
+
+      desc _("Perform Repository Discovery.")
+      command_name "repo-discover"
+
+      success_message _("Repository Discovery started.")
+      failure_message _("Repository Discovery failed.")
+
+      apipie_options
+    end
+
+    class CancelRepoDiscoverCommand < HammerCLIForemanTasks::AsyncCommand
+      resource :organizations, :cancel_repo_discover
+      identifiers :url
+
+      desc _("Cancel Repository Discovery.")
+      command_name "cancel-repo-discover"
+
+      success_message _("Repository Discovery cancelled.")
+      failure_message _("Repository Discovery cancellation failed.")
+
+      apipie_options
+    end
+
     autoload_subcommands
   end
 end
