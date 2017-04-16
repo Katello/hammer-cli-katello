@@ -108,6 +108,16 @@ module HammerCLIKatello
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       include KatelloEnvironmentNameResolvable
       action :update
+
+      def request_params
+        if options.key? "option_id"
+          # super for grandparent
+          ::HammerCLI::Apipie::Command.instance_method(:request_params).bind(self).call
+        else
+          super
+        end
+      end
+
       success_message _("Activation key updated")
       failure_message _("Could not update the activation key")
 
