@@ -8,23 +8,7 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-begin
-  require 'rubocop/rake_task'
-  RuboCop::RakeTask.new
-
-  desc "Runs Rubocop style checker with xml output for Jenkins"
-  task 'rubocop:jenkins' do
-    system("bundle exec rubocop \
-            --require rubocop/formatter/checkstyle_formatter \
-            --format Rubocop::Formatter::CheckstyleFormatter \
-            --no-color --out rubocop.xml")
-  end
-rescue => _
-  puts "Rubocop not loaded."
-end
-
 task :default do
-  Rake::Task['rubocop'].execute
   Rake::Task['test'].execute
 end
 
