@@ -92,13 +92,6 @@ module HammerCLIKatello
              _("Name of the target environment"), :attribute_name => :option_to_environment_name
       option "--to-lifecycle-environment-id", "TO_ENVIRONMENT_ID",
              _("Id of the target environment"), :attribute_name => :option_to_environment_id
-      option "--from-lifecycle-environment", "FROM_ENVIRONMENT_ID",
-             _("Environment name from where to promote its version from (if version is unknown)"),
-             :attribute_name => :option_from_environment_name
-      option "--from-lifecycle-environment-id", "FROM_ENVIRONMENT_ID",
-             _(["Id of the environment from where to promote its version ",
-                "from (if version is unknown)"].join),
-               :attribute_name => :option_from_environment_id
 
       def environment_search_options
         {
