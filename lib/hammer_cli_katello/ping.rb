@@ -44,7 +44,12 @@ module HammerCLIKatello
     def execute
       d = send_request
       print_data d
-      d['status'] != _("FAIL") ? HammerCLI::EX_OK : 1
+      service_statuses = d['services'].values.map { |v| v['status'] }
+      if d['status'] == _("FAIL") || service_statuses.include?(_("FAIL"))
+        1
+      else
+        HammerCLI::EX_OK
+      end
     end
 
     def send_request
