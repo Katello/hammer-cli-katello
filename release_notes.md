@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+### 0.10.1 (2017-05-02)
+- 7a88622 - Fixes #19262 - Return 1 if any service fails ping (#498) (2017-04-24 16:21:00 -0400) *Andrew Kofink*
+- ac9868b - Fixes #19184 - Test commands used in sat-clone (#497) (2017-04-19 20:02:23 -0400) *Andrew Kofink*
+- 954a560 - Fixes #18923 - Allow ID in puppet module remove (#496) (2017-04-07 09:38:06 -0400) *Andrew Kofink*
+
 ### 0.10.0 (2017-03-30)
 - 9f0a7b0 - fixes [#18846](http://projects.theforeman.org/issues/18846) - params for content overrides (#489) (2017-03-29 18:18:06 -0400) *Partha Aji*
 - c073fe9 - Fixes [#19079](http://projects.theforeman.org/issues/19079) - Update options overrides (#494) (2017-03-29 17:28:38 -0400) *Andrew Kofink*
