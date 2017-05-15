@@ -1,6 +1,9 @@
 Release Notes
 =============
 
+### 0.10.2 (2017-05-15)
+(no changes)
+
 ### 0.10.1 (2017-05-02)
 - 7a88622 - Fixes #19262 - Return 1 if any service fails ping (#498) (2017-04-24 16:21:00 -0400) *Andrew Kofink*
 - ac9868b - Fixes #19184 - Test commands used in sat-clone (#497) (2017-04-19 20:02:23 -0400) *Andrew Kofink*
