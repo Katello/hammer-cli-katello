@@ -41,6 +41,7 @@ module HammerCLIKatello
         from :substitutions do
           field :basearch, _("Arch")
           field :releasever, _("Release")
+          field :containerver, _("Container Version")
         end
         field :registry_name, _("Registry Name")
         field :enabled, _("Enabled"), Fields::Boolean
