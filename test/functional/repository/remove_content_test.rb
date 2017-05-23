@@ -104,5 +104,21 @@ module HammerCLIKatello
                    --ids 20,21,22))
       end
     end
+
+    it 'does not resolves repository id without product details' do
+      api_expects_no_call
+      result = run_cmd(%w(repository remove-content --ids 1 --name repo1))
+      assert_includes(result.err, 'At least one of options --product, --product-id is required')
+    end
+
+    it 'does not resolves repository id without organization details' do
+      api_expects_no_call
+      result = run_cmd(%w(repository remove-content --ids 1 --name repo1 --product product1))
+      assert_includes <<STR, result.err
+Could not remove content:
+  Error: At least one of options --organization-id, --organization, --organization-label is required
+  \n  See: 'hammer repository remove-content --help'
+STR
+    end
   end
 end
