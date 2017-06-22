@@ -5,8 +5,7 @@ describe 'content-view filter create' do
   include RepositoryHelpers
   before do
     @cmd = %w(content-view filter create)
-    @base_params = ["--organization-id=#{org_id}", "--name=#{filter_name}", \
-                    "--content-view-id=#{content_view_id}", "--type=rpm"]
+    @base_params = ["--name=#{filter_name}", "--content-view-id=#{content_view_id}", "--type=rpm"]
   end
 
   let(:org_id) { 1 }
@@ -26,12 +25,9 @@ describe 'content-view filter create' do
     ids = repo_ids.join(',')
     params = %W(--repository-ids=#{ids})
 
-    ex = api_expects(:content_view_filters, :create, 'Create content-view filter') do |par|
-      par['name'] == filter_name && par['repository_ids'] == repo_ids
-      true
-    end
-
-    ex.returns({})
+    api_expects(:content_view_filters, :create, 'Create content-view filter')
+      .with_params('name' => filter_name, 'repository_ids' => repo_ids.map(&:to_s))
+      .returns({})
 
     expected_result = success_result("Filter created\n")
     result = run_cmd(@cmd + @base_params + params)
@@ -39,25 +35,23 @@ describe 'content-view filter create' do
   end
 
   it 'creates a content-view filter with repository names' do
-    params = %W(--repositories=#{repo_names.join(',')})
+    params = %W(--repositories=#{repo_names.join(',')} --product-id 3)
 
-    expect_repositories_search(org_id.to_s, repo_names, repo_ids)
+    expect_generic_repositories_search({'names' => repo_names, 'product_id' => 3}, repositories)
 
-    api_expects(:content_view_filters, :create, "Create content-view filter") do |par|
-      par['name'] == filter_name && par['repository_ids'] == repo_ids &&
-        par['type'] == 'rpm'
-    end
+    api_expects(:content_view_filters, :create, "Create content-view filter")
+      .with_params('name' => filter_name, 'repository_ids' => repo_ids, 'type' => 'rpm')
 
     expected_result = success_result("Filter created\n")
     result = run_cmd(@cmd + @base_params + params)
     assert_cmd(expected_result, result)
   end
 
-  it 'should fail with no organization specified' do
+  it 'should fail with no product specified' do
     ids = repo_ids.join(',')
     params = ["--repositories=#{ids}", "--name=#{filter_name}", \
               "--content-view-id=#{content_view_id}", "--type=rpm"]
     result = run_cmd(@cmd + params)
-    assert(result.err[/--organization-id, --organization, --organization-label is required/])
+    assert(result.err[/--product-id, --product is required/])
   end
 end

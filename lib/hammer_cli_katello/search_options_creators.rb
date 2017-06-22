@@ -4,27 +4,15 @@ module HammerCLIKatello
   module SearchOptionsCreators
     include HammerCLIKatello::ForemanSearchOptionsCreators
 
-    def create_repository_search_options(options)
-      name = options[HammerCLI.option_accessor_name("name")]
-      organization_id = options[HammerCLI.option_accessor_name("organization_id")]
-
-      search_options = {}
-      search_options['name'] = name if name
-      search_options['organization_id'] = organization_id if organization_id
-      search_options
-    end
-
     def create_repositories_search_options(options)
       name = options[HammerCLI.option_accessor_name("name")]
       names = options[HammerCLI.option_accessor_name("names")]
       product_id = options[HammerCLI.option_accessor_name("product_id")]
-      organization_id = options[HammerCLI.option_accessor_name("organization_id")]
 
       search_options = {}
       search_options['name'] = name if name
       search_options['names'] = names if names
       search_options['product_id'] = product_id if product_id
-      search_options['organization_id'] = organization_id if organization_id
       search_options
     end
 
