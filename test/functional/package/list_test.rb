@@ -16,11 +16,36 @@ module HammerCLIKatello
       run_cmd(%w(package list))
     end
 
+    describe 'content view options' do
+      it 'may be specified by ID' do
+        api_expects(:content_view_versions, :index)
+          .with_params('content_view_id' => 1, 'version' => '2.1')
+          .returns(index_response([{'id' => 5}]))
+        api_expects(:packages, :index).with_params('content_view_version_id' => 5)
+
+        run_cmd(%w(package list --content-view-id 1 --content-view-version 2.1))
+      end
+
+      it 'requires organization ID when given content view name' do
+        api_expects_no_call
+
+        r = run_cmd(%w(package list --content-view cv1 --content-view-version 2.1))
+        expected_error = "--organization-id, --organization, --organization-label is required"
+        assert(r.err.include?(expected_error), "Invalid error message")
+      end
+
+      it 'requires content view ID when given content view version name' do
+        api_expects_no_call
+
+        r = run_cmd(%w(package list --content-view-version cvv1))
+        assert(r.err.include?("--content-view-id, --content-view is required"),
+               "Invalid error message")
+      end
+    end
+
     describe 'repository options' do
       it 'may be specified by ID' do
-        api_expects(:packages, :index) do |params|
-          params['repository_id'] == 1
-        end
+        api_expects(:packages, :index).with_params('repository_id' => 1)
 
         run_cmd(%w(package list --repository-id 1))
       end
@@ -35,9 +60,7 @@ module HammerCLIKatello
       it 'may be specified by name and product ID' do
         expect_repository_search(2, 'repo1', 1)
 
-        api_expects(:packages, :index) do |params|
-          params['repository_id'] == 1
-        end
+        api_expects(:packages, :index).with_params('repository_id' => 1)
 
         run_cmd(%w(package list --repository repo1 --product-id 2))
       end
@@ -45,23 +68,19 @@ module HammerCLIKatello
 
     describe 'product options' do
       it 'may be specified by ID' do
-        ex = api_expects(:repositories, :index) do |p|
-          p['product_id'] == 1
-        end
-        ex.returns(index_response([{'id' => 2}]))
+        api_expects(:repositories, :index)
+          .with_params('product_id' => 1)
+          .returns(index_response([{'id' => 2}]))
 
-        api_expects(:packages, :index) do |p|
-          p['repository_id'] = 2
-        end
+        api_expects(:packages, :index).with_params('repository_id' => 2)
 
         run_cmd(%w(package list --product-id 1))
       end
 
       it 'fail if more than one repository is found' do
-        ex = api_expects(:repositories, :index) do |p|
-          p['product_id'] == 1
-        end
-        ex.returns(index_response([{'id' => 2}, {'id' => 3}]))
+        api_expects(:repositories, :index)
+          .with_params('product_id' => 1)
+          .returns(index_response([{'id' => 2}, {'id' => 3}]))
 
         r = run_cmd(%w(package list --product-id 1))
         assert(r.err.include?("found more than one repository"), "Invalid error message")
@@ -80,9 +99,7 @@ module HammerCLIKatello
 
         expect_repository_search(1, nil, 2)
 
-        api_expects(:packages, :index) do |p|
-          p['repository_id'] = 2
-        end
+        api_expects(:packages, :index).with_params('repository_id' => 2)
 
         run_cmd(%w(package list --product product1 --organization-id 3))
       end
@@ -94,9 +111,7 @@ module HammerCLIKatello
 
         expect_repository_search(1, nil, 2)
 
-        api_expects(:packages, :index) do |p|
-          p['repository_id'] = 2
-        end
+        api_expects(:packages, :index).with_params('repository_id' => 2)
 
         run_cmd(%w(package list --product product1 --organization org3))
       end
@@ -108,9 +123,7 @@ module HammerCLIKatello
 
         expect_repository_search(1, nil, 2)
 
-        api_expects(:packages, :index) do |p|
-          p['repository_id'] = 2
-        end
+        api_expects(:packages, :index).with_params('repository_id' => 2)
 
         run_cmd(%w(package list --product product1 --organization-label org3))
       end
