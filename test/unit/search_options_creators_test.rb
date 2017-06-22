@@ -20,20 +20,6 @@ describe HammerCLIKatello::SearchOptionsCreators do
     resource.stubs(:singular_name).returns('')
   end
 
-  describe '#create_repository_search_options' do
-    it 'handles a repository' do
-      search_options_creators.create_repository_search_options(
-        'option_name' => 'repo1'
-      )['name'].must_equal 'repo1'
-    end
-
-    it 'handles an organization_id' do
-      search_options_creators.create_repository_search_options(
-        'option_organization_id' => 2
-      )['organization_id'].must_equal 2
-    end
-  end
-
   describe '#create_repositories_search_options' do
     it 'handles an array of names' do
       search_options_creators.create_repositories_search_options(
@@ -51,12 +37,6 @@ describe HammerCLIKatello::SearchOptionsCreators do
       search_options_creators.create_repositories_search_options(
         'option_product_id' => 3
       )['product_id'].must_equal 3
-    end
-
-    it 'handles an organization_id' do
-      search_options_creators.create_repositories_search_options(
-        'option_organization_id' => 4
-      )['organization_id'].must_equal 4
     end
   end
 

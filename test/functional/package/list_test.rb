@@ -97,7 +97,7 @@ module HammerCLIKatello
       it 'allows organization ID when resolving ID by name' do
         expect_product_search(3, 'product1', 1)
 
-        expect_repository_search(1, nil, 2)
+        expect_generic_repositories_search({'product_id' => 1}, [{'id' => 2}])
 
         api_expects(:packages, :index).with_params('repository_id' => 2)
 
@@ -109,7 +109,7 @@ module HammerCLIKatello
 
         expect_product_search(3, 'product1', 1)
 
-        expect_repository_search(1, nil, 2)
+        expect_generic_repositories_search({'product_id' => 1}, [{'id' => 2}])
 
         api_expects(:packages, :index).with_params('repository_id' => 2)
 
@@ -121,7 +121,7 @@ module HammerCLIKatello
 
         expect_product_search(3, 'product1', 1)
 
-        expect_repository_search(1, nil, 2)
+        expect_generic_repositories_search({'product_id' => 1}, [{'id' => 2}])
 
         api_expects(:packages, :index).with_params('repository_id' => 2)
 

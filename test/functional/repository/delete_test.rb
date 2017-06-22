@@ -16,10 +16,9 @@ module HammerCLIKatello
       end
 
       it 'can be specified via product id' do
-        ex = api_expects(:repositories, :index) do |p|
-          p['product_id'] == 3 && p['name'] == 'repo1'
-        end
-        ex.returns(index_response([{'id' => 1}]))
+        api_expects(:repositories, :index)
+          .with_params('product_id' => 3, 'name' => 'repo1')
+          .returns(index_response([{'id' => 1}]))
 
         api_expects(:repositories, :destroy) { |p| p['id'] == 1 }
 
@@ -27,15 +26,13 @@ module HammerCLIKatello
       end
 
       it 'can be specified via product name' do
-        ex = api_expects(:products, :index) do |p|
-          p['organization_id'] == '6' && p['name'] == 'product3'
-        end
-        ex.returns(index_response([{'id' => 3}]))
+        api_expects(:products, :index)
+          .with_params('organization_id' => '6', 'name' => 'product3')
+          .returns(index_response([{'id' => 3}]))
 
-        ex = api_expects(:repositories, :index) do |p|
-          p['product_id'] == 3 && p['name'] == 'repo1' && p['organization_id'] == '6'
-        end
-        ex.returns(index_response([{'id' => 1}]))
+        api_expects(:repositories, :index)
+          .with_params('product_id' => 3, 'name' => 'repo1')
+          .returns(index_response([{'id' => 1}]))
 
         api_expects(:repositories, :destroy) { |p| p['id'] == 1 }
 
@@ -44,31 +41,31 @@ module HammerCLIKatello
 
       describe 'organization options' do
         it 'can be specified by organization id' do
-          ex = api_expects(:repositories, :index) do |p|
-            p['product_id'] == 3 && p['name'] == 'repo1' && p['organization_id'] == '6'
-          end
-          ex.returns(index_response([{'id' => 1}]))
+          api_expects(:products, :index)
+            .with_params('organization_id' => '6', 'name' => 'product3')
+            .returns(index_response([{'id' => 3}]))
+
+          api_expects(:repositories, :index)
+            .with_params('product_id' => 3, 'name' => 'repo1')
+            .returns(index_response([{'id' => 1}]))
 
           api_expects(:repositories, :destroy) { |p| p['id'] == 1 }
 
-          run_cmd(%w(repository delete --name repo1 --product-id 3 --organization-id 6))
+          run_cmd(%w(repository delete --name repo1 --product product3 --organization-id 6))
         end
 
         it 'can be specified by organization name' do
-          ex = api_expects(:organizations, :index) do |p|
-            p[:search] == "name = \"org6\""
-          end
-          ex.returns(index_response([{'id' => 6}]))
+          api_expects(:organizations, :index)
+            .with_params(:search => "name = \"org6\"")
+            .returns(index_response([{'id' => 6}]))
 
-          ex = api_expects(:products, :index) do |p|
-            p['organization_id'] == 6 && p['name'] == 'product3'
-          end
-          ex.returns(index_response([{'id' => 3}]))
+          api_expects(:products, :index)
+            .with_params('organization_id' => 6, 'name' => 'product3')
+            .returns(index_response([{'id' => 3}]))
 
-          ex = api_expects(:repositories, :index) do |p|
-            p['product_id'] == 3 && p['name'] == 'repo1'
-          end
-          ex.returns(index_response([{'id' => 1}]))
+          api_expects(:repositories, :index)
+            .with_params('product_id' => 3, 'name' => 'repo1')
+            .returns(index_response([{'id' => 1}]))
 
           api_expects(:repositories, :destroy) { |p| p['id'] == 1 }
 
@@ -76,20 +73,17 @@ module HammerCLIKatello
         end
 
         it 'can be specified by organization label' do
-          ex = api_expects(:organizations, :index) do |p|
-            p[:search] == "label = \"org6\""
-          end
-          ex.returns(index_response([{'id' => 6}]))
+          api_expects(:organizations, :index)
+            .with_params(:search => "label = \"org6\"")
+            .returns(index_response([{'id' => 6}]))
 
-          ex = api_expects(:products, :index) do |p|
-            p['organization_id'] == 6 && p['name'] == 'product3'
-          end
-          ex.returns(index_response([{'id' => 3}]))
+          api_expects(:products, :index)
+            .with_params('organization_id' => 6, 'name' => 'product3')
+            .returns(index_response([{'id' => 3}]))
 
-          ex = api_expects(:repositories, :index) do |p|
-            p['product_id'] == 3 && p['name'] == 'repo1'
-          end
-          ex.returns(index_response([{'id' => 1}]))
+          api_expects(:repositories, :index)
+            .with_params('product_id' => 3, 'name' => 'repo1')
+            .returns(index_response([{'id' => 1}]))
 
           api_expects(:repositories, :destroy) { |p| p['id'] == 1 }
 
