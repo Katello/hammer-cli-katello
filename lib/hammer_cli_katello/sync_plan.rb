@@ -31,7 +31,8 @@ module HammerCLIKatello
              )
 
       option "--sync-date", "SYNC_DATE",
-             _("start date and time of the synchronization defaults to now"),
+             _("Start date and time for the sync plan." \
+               "Time is optional, if kept blank current system time will be considered"),
              :format => HammerCLI::Options::Normalizers::DateTime.new
 
       success_message _("Sync plan created")
