@@ -1,6 +1,12 @@
 Release Notes
 =============
 
+### 0.11.0 (2017-08-21)
+- [59ab740](https://github.com/Katello/hammer-cli-katello/commit/59ab740) - Update help text for --sync-date (#504) (2017-08-17 12:47:57 -0400) *Ashish Humbe*
+- [a137840](https://github.com/Katello/hammer-cli-katello/commit/a137840) - katello commands use searchables from foreman (#503) (2017-07-28 10:02:01 -0400) *Tomas Strachota*
+- [ead760f](https://github.com/Katello/hammer-cli-katello/commit/ead760f) - Require product to resolve repo (2017-07-12 10:39:46 -0400) *Andrew Kofink*
+- [48f6935](https://github.com/Katello/hammer-cli-katello/commit/48f6935) - Allow content view options (#501) (2017-07-11 16:19:02 -0400) *Andrew Kofink*
+
 ### 0.10.2 (2017-05-15)
 (no changes)
 
