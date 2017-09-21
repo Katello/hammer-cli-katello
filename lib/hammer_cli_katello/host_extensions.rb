@@ -21,6 +21,7 @@ module HammerCLIKatello
           from :content_facet_attributes do
             field :content_view_name, _('Content View')
             field :lifecycle_environment_name, _('Lifecycle Environment')
+            field :content_source_name, _('Content Source')
             field :applicable_package_count, _('Applicable Packages')
             field :upgradable_package_count, _('Upgradable Packages')
 
