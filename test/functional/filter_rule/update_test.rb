@@ -1,8 +1,11 @@
 require_relative '../test_helper'
 require 'hammer_cli_katello/filter_rule'
+require 'hammer_cli_katello/filter_rule'
 
 module HammerCLIKatello
   describe FilterRule::UpdateCommand do
+    include FilterRuleHelpers
+
     it 'allows minimal options' do
       api_expects(:content_view_filter_rules, :update) do |p|
         p['content_view_filter_id'] == 1 && p['id'] == '9'
@@ -11,10 +14,7 @@ module HammerCLIKatello
     end
 
     it 'resolves rule ID from rule name and filter ID' do
-      ex = api_expects(:content_view_filter_rules, :index) do |p|
-        p['content_view_filter_id'] == 1 && p['name'] == 'rule9'
-      end
-      ex.returns(index_response([{'id' => 9}]))
+      expect_filter_rule_search('rule9', 1, 9)
 
       api_expects(:content_view_filter_rules, :update) do |p|
         p['content_view_filter_id'] == 1 && p['id'] == 9

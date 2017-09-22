@@ -4,6 +4,10 @@ module HammerCLIKatello
   module SearchOptionsCreators
     include HammerCLIKatello::ForemanSearchOptionsCreators
 
+    def create_content_view_filter_rules_search_options(options)
+      create_search_options_without_katello_api(options, api.resource(:content_view_filter_rules))
+    end
+
     def create_repositories_search_options(options)
       name = options[HammerCLI.option_accessor_name("name")]
       names = options[HammerCLI.option_accessor_name("names")]
