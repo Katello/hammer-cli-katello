@@ -19,6 +19,8 @@ describe 'host info' do
     expected_fields = [['Lifecycle Environment', 'Library'],
                        ['Content View', 'Default Organization View'],
                        ['Release Version', '7Server'],
+                       ['Repository', 'Rhel 7'],
+                       ['Content Source', 'capsule'],
                        ['Bug Fix', '0'],
                        ['Name', 'my host collection'],
                        ['Applicable Packages', '5'],
