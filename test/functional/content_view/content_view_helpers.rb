@@ -11,4 +11,8 @@ module ContentViewHelpers
   def expect_generic_content_view_search(args)
     expect_generic_search(:content_views, args)
   end
+
+  def expect_content_view_version_search(params, returns)
+    expect_generic_search(:content_view_versions, params: params, returns: returns)
+  end
 end

@@ -7,6 +7,9 @@ module HammerCLIKatello
       :capsule =>               [s_name(_("Capsule name to search by"))],
       :content_view =>          [s_name(_("Content view name to search by"))],
       :content_view_component => [],
+      :file_unit =>             [s_name(_("File name to search by")),
+                                 s("content_view_version_id", _("Content View Version ID")),
+                                 s("repository_id", _("Repository ID"))],
       :gpg =>                   [s_name(_("Gpg key name to search by"))],
       :host_collection =>       [s_name(_("Host collection name to search by"))],
       :lifecycle_environment => [s_name(_("Lifecycle environment name to search by"))],
@@ -39,12 +42,21 @@ module HammerCLIKatello
     end
   end
 
+  # rubocop:disable ClassLength
   class IdResolver < HammerCLIForeman::IdResolver
     include HammerCLIKatello::SearchOptionsCreators
 
     # alias_method_chain :create_search_options, :katello_api
     alias_method :create_search_options_without_katello_api, :create_search_options
     alias_method :create_search_options, :create_search_options_with_katello_api
+
+    def file_unit_id(options)
+      if options['option_content_view_version_version']
+        options['option_content_view_version_id'] ||=
+          content_view_version_id(scoped_options('content_view_version', options))
+      end
+      get_id(:file_units, options)
+    end
 
     def capsule_content_id(options)
       smart_proxy_id(options)

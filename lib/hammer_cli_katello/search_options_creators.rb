@@ -4,6 +4,11 @@ module HammerCLIKatello
   module SearchOptionsCreators
     include HammerCLIKatello::ForemanSearchOptionsCreators
 
+    def create_file_units_search_options(options)
+      create_search_options_without_katello_api(options, api.resource(:file_units))
+        .merge(create_search_options(options, api.resource(:file_units)))
+    end
+
     def create_content_view_filter_rules_search_options(options)
       create_search_options_without_katello_api(options, api.resource(:content_view_filter_rules))
     end
