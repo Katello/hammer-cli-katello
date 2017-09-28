@@ -30,7 +30,7 @@ describe 'upload repository' do
     params = ["--id=#{repo_id}", "--path=#{path}"]
 
     ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id.to_s
+      par[:repository_id] == repo_id
     end
 
     ex.returns(upload_response)
@@ -42,14 +42,14 @@ describe 'upload repository' do
         :size => 0,
         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       }
-      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
         par[:publish_repository] == true
     end
 
     ex2.returns("")
 
     ex3 = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id.to_s
+      par[:id] == upload_id && par[:repository_id] == repo_id
     end
 
     ex3.returns("")
@@ -105,7 +105,7 @@ describe 'upload repository' do
     params = ["--id=#{repo_id}", "--path={test}.[r{1}]pm"]
 
     ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id.to_s
+      par[:repository_id] == repo_id
     end
 
     ex.returns(upload_response)
@@ -117,14 +117,14 @@ describe 'upload repository' do
         :size => 0,
         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       }
-      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
         par[:publish_repository] == true
     end
 
     ex2.returns("")
 
     ex3 = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id.to_s
+      par[:id] == upload_id && par[:repository_id] == repo_id
     end
 
     ex3.returns("")
@@ -143,7 +143,7 @@ describe 'upload repository' do
     # Begin first upload cycle
 
     ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id.to_s
+      par[:repository_id] == repo_id
     end
 
     ex.returns(upload_response)
@@ -155,14 +155,14 @@ describe 'upload repository' do
         :size => 0,
         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       }
-      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == false &&
+      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == false &&
         par[:publish_repository] == false
     end
 
     ex.returns("")
 
     ex = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id.to_s
+      par[:id] == upload_id && par[:repository_id] == repo_id
     end
 
     ex.returns("")
@@ -170,7 +170,7 @@ describe 'upload repository' do
     # Begin second upload cycle
 
     ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id.to_s
+      par[:repository_id] == repo_id
     end
 
     ex.returns(upload_response)
@@ -182,14 +182,14 @@ describe 'upload repository' do
         :size => 0,
         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       }
-      par[:id] == repo_id.to_s && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
         par[:publish_repository] == true
     end
 
     ex.returns("")
 
     ex = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id.to_s
+      par[:id] == upload_id && par[:repository_id] == repo_id
     end
 
     ex.returns("")

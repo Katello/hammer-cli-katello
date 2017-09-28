@@ -13,7 +13,7 @@ module HammerCLIKatello
     end
 
     it 'allows minimal options' do
-      expect_module_destroy(params: {'content_view_id' => 1, 'id' => '2'})
+      expect_module_destroy(params: {'content_view_id' => 1, 'id' => 2})
 
       run_cmd(%w(content-view puppet-module remove --content-view-id 1 --id 2))
     end
@@ -29,7 +29,7 @@ module HammerCLIKatello
 
     it 'resolves content view ID from name' do
       expect_content_view_search('3', 'cv1', 1)
-      expect_module_destroy(params: {'content_view_id' => 1, 'id' => '2'})
+      expect_module_destroy(params: {'content_view_id' => 1, 'id' => 2})
 
       run_cmd(%w(content-view puppet-module remove --content-view cv1 --organization-id 3 --id 2))
     end
@@ -37,7 +37,7 @@ module HammerCLIKatello
     it 'resolves organization ID from name' do
       expect_organization_search('org3', 3)
       expect_content_view_search(3, 'cv1', 1)
-      expect_module_destroy(params: {'content_view_id' => 1, 'id' => '2'})
+      expect_module_destroy(params: {'content_view_id' => 1, 'id' => 2})
 
       run_cmd(%w(content-view puppet-module remove --content-view cv1 --organization org3 --id 2))
     end
@@ -45,7 +45,7 @@ module HammerCLIKatello
     it 'resolves organization ID from label' do
       expect_organization_search('org3', 3, field: 'label')
       expect_content_view_search(3, 'cv1', 1)
-      expect_module_destroy(params: {'content_view_id' => 1, 'id' => '2'})
+      expect_module_destroy(params: {'content_view_id' => 1, 'id' => 2})
 
       run_cmd(%w(content-view puppet-module remove --content-view cv1 --organization-label
                  org3 --id 2))

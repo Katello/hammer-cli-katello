@@ -18,7 +18,7 @@ describe "get repository info" do
     params = ["--id=#{repo_id}"]
 
     ex = api_expects(:repositories, :show, "Get info") do |par|
-      par["id"] == repo_id.to_s
+      par["id"] == repo_id
     end
 
     ex.returns({})
