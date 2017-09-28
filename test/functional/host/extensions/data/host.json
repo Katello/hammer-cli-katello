@@ -74,6 +74,10 @@
       "content_view_name":"Default Organization View",
       "lifecycle_environment_id":1,
       "lifecycle_environment_name":"Library",
+      "content_source_id":2,
+      "content_source_name":"capsule",
+      "kickstart_repository_id":10000,
+      "kickstart_repository_name":"Rhel 7",
       "content_view":{
          "id":1,
          "name":"Default Organization View"
