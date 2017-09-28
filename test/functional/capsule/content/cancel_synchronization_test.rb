@@ -15,7 +15,7 @@ describe 'capsule content cancel-synchronization' do
     params = ['--id=3']
 
     ex = api_expects(:capsule_content, :cancel_sync, 'Cancel sync') do |par|
-      par['id'] == '3'
+      par['id'] == 3
     end
     ex.returns("message" => MESSAGE)
 
@@ -27,10 +27,10 @@ describe 'capsule content cancel-synchronization' do
     params = ['--name=capsule1']
 
     ex = api_expects(:capsule_content, :cancel_sync, 'Cancel sync') do |par|
-      par['id'] == '3'
+      par['id'] == 3
     end
     ex.returns("message" => MESSAGE)
-    expect_capsule_search('capsule1', '3')
+    expect_capsule_search('capsule1', 3)
 
     run_cmd(@cmd + params)
   end

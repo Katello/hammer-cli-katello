@@ -14,7 +14,7 @@ describe 'capsule content synchronization_status' do
     before do
       @sync_status = load_json('./data/sync_status.json', __FILE__)
       ex = api_expects(:capsule_content, :sync_status, 'Get sync info') do |par|
-        par['id'] == '3'
+        par['id'] == 3
       end
       ex.returns(@sync_status)
     end
@@ -93,9 +93,9 @@ describe 'capsule content synchronization_status' do
     params = ['--name=capsule1']
 
     api_expects(:capsule_content, :sync_status, 'Get sync info') do |par|
-      par['id'] == '3'
+      par['id'] == 3
     end
-    expect_capsule_search('capsule1', '3')
+    expect_capsule_search('capsule1', 3)
 
     run_cmd(@cmd + params)
   end
