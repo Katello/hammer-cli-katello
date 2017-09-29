@@ -3,10 +3,11 @@ require 'hammer_cli_katello/host_collection'
 
 module HammerCLIKatello
   describe HostCollection::ListCommand do
-    it 'does not require organization options' do
-      api_expects(:host_collections, :index)
+    it 'requires organization options' do
+      api_expects_no_call
 
-      run_cmd(%w(host-collection list))
+      result = run_cmd(%w(host-collection list))
+      assert(result.err.include?("Could not find organization"), "Organization is required")
     end
 
     it 'allows organization id' do
@@ -44,7 +45,7 @@ module HammerCLIKatello
         par['host_id'] == 1
       end
 
-      run_cmd(%w(host-collection list --host-id 1))
+      run_cmd(%w(host-collection list --host-id 1 --organization-id 1))
     end
 
     it 'allows host name' do
@@ -57,7 +58,7 @@ module HammerCLIKatello
         par['host_id'] == 1
       end
 
-      run_cmd(%w(host-collection list --host host1))
+      run_cmd(%w(host-collection list --host host1 --organization-id 1))
     end
   end
 end
