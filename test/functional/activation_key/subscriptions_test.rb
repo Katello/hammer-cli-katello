@@ -49,7 +49,7 @@ module HammerCLIKatello
 
     it 'allows subscriptions to be added to an activation key' do
       api_expects(:activation_keys, :add_subscriptions) do |p|
-        p['id'] == '1' && p['subscription_id'] == '3'
+        p['id'] == 1 && p['subscription_id'] == '3'
       end
       run_cmd(%w(activation-key add-subscription --id 1 --subscription-id 3))
     end

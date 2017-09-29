@@ -8,7 +8,7 @@ module HammerCLIKatello
 
     it 'allows minimal options' do
       api_expects(:content_view_filter_rules, :update) do |p|
-        p['content_view_filter_id'] == 1 && p['id'] == '9'
+        p['content_view_filter_id'] == 1 && p['id'] == 9
       end
       run_cmd(%w(content-view filter rule update --content-view-filter-id 1 --id 9))
     end
@@ -29,7 +29,7 @@ module HammerCLIKatello
       ex.returns(index_response([{'id' => 1}]))
 
       api_expects(:content_view_filter_rules, :update) do |p|
-        p['content_view_filter_id'] == 1 && p['id'] == '9'
+        p['content_view_filter_id'] == 1 && p['id'] == 9
       end
       run_cmd(%w(content-view filter rule update --content-view-filter cvf1 --content-view-id 3
                  --id 9))
@@ -48,7 +48,7 @@ module HammerCLIKatello
         ex.returns(index_response([{'id' => 1}]))
 
         api_expects(:content_view_filter_rules, :update) do |p|
-          p['content_view_filter_id'] == 1 && p['id'] == '9'
+          p['content_view_filter_id'] == 1 && p['id'] == 9
         end
         run_cmd(%w(content-view filter rule update --content-view-filter cvf1 --organization-id 6
                    --content-view cv3 --id 9))
@@ -71,7 +71,7 @@ module HammerCLIKatello
         ex.returns(index_response([{'id' => 1}]))
 
         api_expects(:content_view_filter_rules, :update) do |p|
-          p['content_view_filter_id'] == 1 && p['id'] == '9'
+          p['content_view_filter_id'] == 1 && p['id'] == 9
         end
         run_cmd(%w(content-view filter rule update --content-view-filter cvf1 --organization org6
                    --content-view cv3 --id 9))
@@ -94,7 +94,7 @@ module HammerCLIKatello
         ex.returns(index_response([{'id' => 1}]))
 
         api_expects(:content_view_filter_rules, :update) do |p|
-          p['content_view_filter_id'] == 1 && p['id'] == '9'
+          p['content_view_filter_id'] == 1 && p['id'] == 9
         end
         run_cmd(%w(content-view filter rule update --content-view-filter cvf1 --organization-label
                    org6 --content-view cv3 --id 9))
