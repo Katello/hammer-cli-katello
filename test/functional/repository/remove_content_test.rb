@@ -8,7 +8,7 @@ module HammerCLIKatello
 
     it 'allows minimal options' do
       api_expects(:repositories, :remove_content) do |p|
-        p['id'] == '1' && p['ids'] == %w(20 21 22)
+        p['id'] == 1 && p['ids'] == %w(20 21 22)
       end
 
       run_cmd(%w(repository remove-content --id 1 --ids 20,21,22))

@@ -35,9 +35,9 @@ module HammerCLIKatello
 
         api_expects(:content_view_components, :add_components) do |p|
           component = p['components'].first
-          p['composite_content_view_id'].to_s == @composite.id.to_s &&
+          p['composite_content_view_id'] == @composite.id &&
             component[:latest] == latest &&
-            component[:content_view_id].to_s == @component.id.to_s
+            component[:content_view_id] == @component.id.to_s
         end
         run_cmd(@cmd + params)
       end
@@ -49,9 +49,9 @@ module HammerCLIKatello
 
         api_expects(:content_view_components, :add_components) do |p|
           component = p['components'].first
-          p['composite_content_view_id'].to_s == @composite.id.to_s &&
+          p['composite_content_view_id'] == @composite.id &&
             component[:latest] == latest &&
-            component[:content_view_version_id].to_s == @component_version.id.to_s
+            component[:content_view_version_id] == @component_version.id.to_s
         end
         run_cmd(@cmd + params)
       end
@@ -72,9 +72,9 @@ module HammerCLIKatello
 
         api_expects(:content_view_components, :add_components) do |p|
           component = p['components'].first
-          p['composite_content_view_id'].to_s == @composite.id.to_s &&
+          p['composite_content_view_id'] == @composite.id &&
             component[:latest] == latest &&
-            component[:content_view_id].to_s == @component.id.to_s
+            component[:content_view_id] == @component.id.to_s
         end
         run_cmd(@cmd + params)
       end
@@ -87,9 +87,9 @@ module HammerCLIKatello
 
         api_expects(:content_view_components, :add_components) do |p|
           component = p['components'].first
-          p['composite_content_view_id'].to_s == @composite.id.to_s &&
+          p['composite_content_view_id'] == @composite.id &&
             component[:latest] == latest &&
-            component[:content_view_version_id].to_s == @component_version.id.to_s
+            component[:content_view_version_id] == @component_version.id.to_s
         end
         run_cmd(@cmd + params)
       end
@@ -106,9 +106,9 @@ module HammerCLIKatello
         setup_content_view_expectations(@component)
         api_expects(:content_view_components, :add_components) do |p|
           component = p['components'].first
-          p['composite_content_view_id'].to_s == @composite.id.to_s &&
+          p['composite_content_view_id'] == @composite.id &&
             component[:latest] == latest &&
-            component[:content_view_id].to_s == @component.id.to_s
+            component[:content_view_id] == @component.id
         end
         run_cmd(@cmd + params)
       end
@@ -118,7 +118,7 @@ module HammerCLIKatello
       before do
         cvv_expect = api_expects(:content_view_versions, :index) do |p|
           p['content_view_id'].to_s == @component.id.to_s &&
-            p["version"].to_s == @component.content_view_version.version.to_s
+            p["version"] == @component.content_view_version.version
         end
         cvv_expect.at_least_once.
           returns(index_response([{'id' => @component.content_view_version.id}]))
@@ -138,10 +138,10 @@ module HammerCLIKatello
 
         api_expects(:content_view_components, :add_components) do |p|
           component = p['components'].first
-          p['composite_content_view_id'].to_s == @composite.id.to_s &&
+          p['composite_content_view_id'] == @composite.id &&
             component[:latest] == latest &&
-            component[:content_view_id].to_s == @component.id.to_s &&
-            component[:content_view_version_id].to_s == @component.content_view_version.id.to_s
+            component[:content_view_id] == @component.id.to_s &&
+            component[:content_view_version_id] == @component.content_view_version.id
         end
         run_cmd(@cmd + params)
       end
@@ -165,10 +165,10 @@ module HammerCLIKatello
         setup_content_view_expectations(@composite)
         api_expects(:content_view_components, :add_components) do |p|
           component = p['components'].first
-          p['composite_content_view_id'].to_s == @composite.id.to_s &&
+          p['composite_content_view_id'] == @composite.id &&
             component[:latest] == latest &&
-            component[:content_view_id].to_s == @component.id.to_s &&
-            component[:content_view_version_id].to_s == @component.content_view_version.id.to_s
+            component[:content_view_id] == @component.id &&
+            component[:content_view_version_id] == @component.content_view_version.id
         end
         run_cmd(@cmd + params)
       end

@@ -4,7 +4,7 @@ require 'hammer_cli_katello/repository'
 module HammerCLIKatello
   describe Repository::DeleteCommand do
     it 'allows minimal parameters' do
-      api_expects(:repositories, :destroy) { |p| p['id'] == '1' }
+      api_expects(:repositories, :destroy) { |p| p['id'] == 1 }
       run_cmd(%w(repository delete --id 1))
     end
 

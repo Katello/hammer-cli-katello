@@ -7,8 +7,8 @@ describe 'activation-key content-override' do
   end
   it "attaches a content label" do
     label = "foo"
-    value = 'default'
-    id = '20'
+    value = '1'
+    id = 20
     params = ["--id=#{id}", "--content-label=#{label}", "--value=#{value}"]
     ex = api_expects(:activation_keys, :content_override) do |par|
       par['id'] == id && par["content_overrides"][0]['content_label'] == label &&
@@ -26,7 +26,7 @@ describe 'activation-key content-override' do
   it "attaches a content label with name" do
     label = "foo"
     value = '1'
-    id = '20'
+    id = 20
     name = 'protected'
     params = ["--id=#{id}", "--content-label=#{label}", "--value=#{value}", "--name=#{name}"]
     ex = api_expects(:activation_keys, :content_override) do |par|
@@ -44,7 +44,7 @@ describe 'activation-key content-override' do
 
   it "removes override" do
     label = "foo"
-    id = '20'
+    id = 20
     params = ["--id=#{id}", "--content-label=#{label}", "--remove"]
     ex = api_expects(:activation_keys, :content_override) do |par|
       par['id'] == id && par["content_overrides"][0]['content_label'] == label &&
@@ -61,7 +61,7 @@ describe 'activation-key content-override' do
 
   it "removes override with name" do
     label = "foo"
-    id = '20'
+    id = 20
     name = 'protected'
     params = ["--id=#{id}", "--content-label=#{label}", "--name=#{name}", "--remove"]
     ex = api_expects(:activation_keys, :content_override) do |par|
@@ -80,7 +80,7 @@ describe 'activation-key content-override' do
   it "validation fails on no override value or remove" do
     api_expects_no_call
     label = "foo"
-    id = '20'
+    id = 20
     name = 'protected'
     params = ["--id=#{id}", "--content-label=#{label}", "--name=#{name}"]
     result = run_cmd(@cmd + params)

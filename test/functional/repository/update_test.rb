@@ -8,7 +8,7 @@ module HammerCLIKatello
 
     it 'allows minimal options' do
       api_expects(:repositories, :update) do |p|
-        p['id'] == '1' && p['name'] == 'rep1'
+        p['id'] == 1 && p['name'] == 'rep1'
       end
 
       run_cmd(%w(repository update --id 1 --new-name rep1))
