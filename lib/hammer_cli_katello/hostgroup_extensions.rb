@@ -1,4 +1,6 @@
 require 'hammer_cli_foreman/hostgroup'
+require 'hammer_cli_katello/host_kickstart_repository_options'
+require 'hammer_cli_katello/host_content_source_options'
 
 module HammerCLIKatello
   module PuppetEnvironmentNameResolvable
@@ -39,6 +41,8 @@ module HammerCLIKatello
       include HammerCLIKatello::PuppetEnvironmentNameResolvable
       include HammerCLIKatello::ContentViewNameResolvable
       include HammerCLIKatello::QueryOrganizationOptions
+      include HammerCLIKatello::HostContentSourceOptions
+      include HammerCLIKatello::HostKickstartRepositoryOptions
     end
 
     ::HammerCLIForeman::Hostgroup::UpdateCommand.instance_eval do
@@ -46,6 +50,8 @@ module HammerCLIKatello
       include HammerCLIKatello::PuppetEnvironmentNameResolvable
       include HammerCLIKatello::ContentViewNameResolvable
       include HammerCLIKatello::QueryOrganizationOptions
+      include HammerCLIKatello::HostContentSourceOptions
+      include HammerCLIKatello::HostKickstartRepositoryOptions
     end
 
     ::HammerCLIForeman::Hostgroup::InfoCommand.instance_eval do
