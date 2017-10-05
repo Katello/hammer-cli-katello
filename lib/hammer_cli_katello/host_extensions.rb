@@ -3,9 +3,23 @@ require 'hammer_cli_katello/host_errata'
 require 'hammer_cli_katello/host_subscription'
 require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
+require 'hammer_cli_katello/host_kickstart_repository_options'
+require 'hammer_cli_katello/host_content_source_options'
 
 module HammerCLIKatello
   module HostExtensions
+    ::HammerCLIForeman::Host::CreateCommand.instance_eval do
+      include HammerCLIKatello::ResolverCommons
+      include HammerCLIKatello::HostContentSourceOptions
+      include ::HammerCLIKatello::HostKickstartRepositoryOptions
+    end
+
+    ::HammerCLIForeman::Host::UpdateCommand.instance_eval do
+      include HammerCLIKatello::ResolverCommons
+      include HammerCLIKatello::HostContentSourceOptions
+      include ::HammerCLIKatello::HostKickstartRepositoryOptions
+    end
+
     ::HammerCLIForeman::Host::ListCommand.instance_eval do
       output do
         from :content_facet_attributes do
