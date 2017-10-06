@@ -1,9 +1,11 @@
 module ProductHelpers
+  def expect_generic_product_search(params = {}, returns = {})
+    api_expects(:products, :index, 'Find the Product')
+      .with_params(params).returns(index_response([returns]))
+  end
+
   def expect_product_search(org_id, name, id)
-    ex = api_expects(:products, :index, 'Find the Product') do |par|
-      par['name'] == name && par['organization_id'] == org_id
-    end
-    ex.returns(index_response([{'id' => id}]))
+    expect_generic_product_search({'name' => name, 'organization_id' => org_id}, 'id' => id)
   end
 
   def expect_product_show(options = {})

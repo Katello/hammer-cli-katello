@@ -121,6 +121,11 @@ module HammerCLIKatello
                                          'hammer_cli_katello/ostree_branch'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("file", _("Manipulate files"),
+                                         'HammerCLIKatello::FileCommand',
+                                         'hammer_cli_katello/file'
+                                        )
+
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
   require 'hammer_cli_katello/hostgroup'

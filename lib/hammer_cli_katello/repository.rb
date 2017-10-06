@@ -16,6 +16,7 @@ module HammerCLIKatello
       build_options
     end
 
+    # rubocop:disable ClassLength
     class InfoCommand < HammerCLIKatello::InfoCommand
       include RepositoryScopedToProduct
 
@@ -70,6 +71,7 @@ module HammerCLIKatello
           field :docker_manifest_total, _("Docker Manifests"), Fields::Field, :hide_blank => true
           field :docker_tag_total, _("Docker Tags"), Fields::Field, :hide_blank => true
           field :ostree_branch_total, _("OSTree Branches"), Fields::Field, :hide_blank => true
+          field :file_total, _("Files"), Fields::Field, :hide_blank => true
         end
       end
 
@@ -113,6 +115,8 @@ module HammerCLIKatello
           data["puppet_total"] = content_counts["puppet_module"]
         when "ostree"
           data["ostree_branch_total"] = content_counts["ostree_branch"]
+        when "file"
+          data["file_total"] = content_counts["file"]
         end
       end
 
@@ -129,6 +133,7 @@ module HammerCLIKatello
         o.expand.including(:products, :organizations)
       end
     end
+    # rubocop:enable ClassLength
 
     class SyncCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
