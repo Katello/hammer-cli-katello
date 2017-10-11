@@ -3,6 +3,39 @@ require 'hammer_cli_katello/host_collection'
 
 module HammerCLIKatello
   describe HostCollection::RemoveHostCommand do
+    describe 'handles individual host errors' do
+      it 'for successful results' do
+        api_expects(:host_collections, :remove_hosts)
+          .with_params('id' => 1, 'host_ids' => %w(2 3))
+          .returns("displayMessages" => {"success" => ["Successfully removed 2 Host(s)."],
+                                         "error" => []})
+        result = run_cmd(%w(host-collection remove-host --id 1 --host-ids 2,3))
+        assert_match("The host(s) has been removed", result.out)
+      end
+
+      it 'for mixed results' do
+        api_expects(:host_collections, :remove_hosts)
+          .with_params('id' => 1, 'host_ids' => %w(2 3))
+          .returns("displayMessages" => {"success" => ["Successfully removed 1 Host(s)."],
+                                         "error" => ["Host with ID 3 not found."]})
+        result = run_cmd(%w(host-collection remove-host --id 1 --host-ids 2,3))
+        assert_match("Could not remove host(s)", result.out)
+        assert_match("Host with ID 3 not found.", result.out)
+      end
+
+      it 'for errored results' do
+        api_expects(:host_collections, :remove_hosts)
+          .with_params('id' => 1, 'host_ids' => %w(2 3))
+          .returns("displayMessages" => {"success" => [], "error" => [
+            "Host with ID 1 does not exist in the host collection.",
+            "Host with ID 3 not found."]})
+        result = run_cmd(%w(host-collection remove-host --id 1 --host-ids 2,3))
+        assert_match("Could not remove host(s)", result.out)
+        assert_match("Host with ID 1 does not exist in the host collection.", result.out)
+        assert_match("Host with ID 3 not found.", result.out)
+      end
+    end
+
     it 'does not require organization options if id is specified' do
       api_expects(:host_collections, :remove_hosts)
       run_cmd(%w(host-collection remove-host --id 1))

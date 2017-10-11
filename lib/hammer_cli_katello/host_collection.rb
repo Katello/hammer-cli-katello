@@ -9,6 +9,20 @@ module HammerCLIKatello
       end
     end
 
+    module HostCollectionUpdateHostsErrorHandler
+      def execute
+        response = send_request
+        if response['error'].any?
+          print_message(failure_message)
+          puts response['error'].join("\n")
+          HammerCLI::EX_CANTCREAT
+        else
+          print_data(response)
+          HammerCLI::EX_OK
+        end
+      end
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
       include LimitFieldDataExtension
       resource :host_collections, :index
@@ -129,6 +143,8 @@ module HammerCLIKatello
     end
 
     class AddHostCommand < HammerCLIKatello::SingleResourceCommand
+      include HostCollectionUpdateHostsErrorHandler
+
       command_name 'add-host'
       action :add_hosts
 
@@ -139,6 +155,8 @@ module HammerCLIKatello
     end
 
     class RemoveHostCommand < HammerCLIKatello::SingleResourceCommand
+      include HostCollectionUpdateHostsErrorHandler
+
       command_name 'remove-host'
       action :remove_hosts
 
