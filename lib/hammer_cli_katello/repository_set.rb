@@ -59,7 +59,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class EnableCommand < HammerCLIKatello::UpdateCommand
+    class EnableCommand < HammerCLIKatello::Command
       resource :repository_sets, :enable
       command_name "enable"
 
@@ -69,7 +69,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class DisableCommand < HammerCLIKatello::UpdateCommand
+    class DisableCommand < HammerCLIKatello::Command
       resource :repository_sets, :disable
       command_name "disable"
 
