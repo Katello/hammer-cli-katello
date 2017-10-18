@@ -9,7 +9,7 @@ module HammerCLIKatello
         include CapsuleContentHelpers
 
         it 'allows minimal options' do
-          expect_lifecycle_environments_list(params: {'id' => 1}, returns: {})
+          expect_lifecycle_environments_list(params: {'id' => '1'}, returns: {})
 
           run_cmd(%w(capsule content lifecycle-environments --id 1))
         end
