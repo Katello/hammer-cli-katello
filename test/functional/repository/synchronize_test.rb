@@ -25,12 +25,12 @@ describe 'Synchronize a repository' do
     params = ["--id=#{repo_id}"]
 
     ex = api_expects(:repositories, :sync, 'Repository is synced') do |par|
-      par['id'] == repo_id.to_s
+      par['id'] == repo_id
     end
 
     ex.returns(sync_response)
 
-    expect_foreman_task('3')
+    expect_foreman_task(3)
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
@@ -49,7 +49,7 @@ describe 'Synchronize a repository' do
 
     ex.returns(sync_response)
 
-    expect_foreman_task('3')
+    expect_foreman_task(3)
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)

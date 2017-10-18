@@ -9,11 +9,11 @@ module HammerCLIKatello
 
     it 'allows minimal options' do
       ex = api_expects(:repositories, :export) do |p|
-        p['id'] == '1'
+        p['id'] == 1
       end
       ex.returns(id: 2)
 
-      expect_foreman_task('2')
+      expect_foreman_task(2)
 
       run_cmd(%w(repository export --id 1))
     end
@@ -36,7 +36,7 @@ module HammerCLIKatello
         end
         ex.returns(id: 2)
 
-        expect_foreman_task('2')
+        expect_foreman_task(2)
 
         run_cmd(%w(repository export --name repo1 --product-id 3))
       end
@@ -66,7 +66,7 @@ module HammerCLIKatello
         end
         ex.returns(id: 2)
 
-        expect_foreman_task('2')
+        expect_foreman_task(2)
 
         run_cmd(%w(repository export --name repo1 --product prod3 --organization-id 5))
       end
@@ -89,7 +89,7 @@ module HammerCLIKatello
         end
         ex.returns(id: 2)
 
-        expect_foreman_task('2')
+        expect_foreman_task(2)
 
         run_cmd(%w(repository export --name repo1 --product prod3 --organization org5))
       end
@@ -112,7 +112,7 @@ module HammerCLIKatello
         end
         ex.returns(id: 2)
 
-        expect_foreman_task('2')
+        expect_foreman_task(2)
 
         run_cmd(%w(repository export --name repo1 --product prod3 --organization-label org5))
       end

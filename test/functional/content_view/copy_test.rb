@@ -10,7 +10,7 @@ module HammerCLIKatello
 
     it 'allows minimal options' do
       api_expects(:content_views, :copy) do |p|
-        p['id'] == '2' && p['name'] == 'cv2-dup'
+        p['id'] == 2 && p['name'] == 'cv2-dup'
       end
       run_cmd(%w(content-view copy --id 2 --new-name cv2-dup))
     end

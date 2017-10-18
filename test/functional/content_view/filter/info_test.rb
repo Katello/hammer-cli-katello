@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), '../../test_helper')
 require File.join(File.dirname(__FILE__), '../content_view_helpers')
 require File.join(File.dirname(__FILE__), '../../organization/organization_helpers')
 
-module HammerCLIForeman
-  describe InfoCommand do
+module HammerCLIKatello
+  describe 'Filter::InfoCommand' do
     include ContentViewHelpers
     include OrganizationHelpers
 
@@ -15,7 +15,7 @@ module HammerCLIForeman
       params = ['--id=1']
 
       api_expects(:content_view_filters, :show) do |par|
-        par['id'] == '1'
+        par['id'] == 1
       end
 
       run_cmd(@cmd + params)
