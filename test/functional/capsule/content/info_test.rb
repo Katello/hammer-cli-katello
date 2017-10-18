@@ -16,7 +16,7 @@ describe 'capsule content info' do
     ]
 
     ex = api_expects(:capsule_content, :sync_status, 'Get sync info') do |par|
-      par['id'] == 3
+      par['id'] == '3'
     end
     ex.returns(@sync_status)
 
@@ -48,9 +48,9 @@ describe 'capsule content info' do
     params = ['--name=capsule1']
 
     api_expects(:capsule_content, :sync_status, 'Get sync info') do |par|
-      par['id'] == 3
+      par['id'] == '3'
     end
-    expect_capsule_search('capsule1', 3)
+    expect_capsule_search('capsule1', '3')
 
     run_cmd(@cmd + params)
   end
