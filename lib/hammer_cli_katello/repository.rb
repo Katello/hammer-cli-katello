@@ -65,6 +65,7 @@ module HammerCLIKatello
 
         label _("Content Counts") do
           field :package_total, _("Packages"), Fields::Field, :hide_blank => true
+          field :srpm_total, _("Source RPMS"), Fields::Field, :hide_blank => true
           field :package_group_total, _("Package Groups"), Fields::Field, :hide_blank => true
           field :errata_total, _("Errata"), Fields::Field, :hide_blank => true
           field :puppet_total, _("Puppet Modules"), Fields::Field, :hide_blank => true
@@ -106,6 +107,7 @@ module HammerCLIKatello
         case data["content_type"]
         when "yum"
           data["package_total"] = content_counts["rpm"]
+          data["srpm_total"] = content_counts["srpm"]
           data["package_group_total"] = content_counts["package_group"]
           data["errata_total"] = content_counts["erratum"]
         when "docker"
