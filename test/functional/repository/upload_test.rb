@@ -149,13 +149,7 @@ describe 'upload repository' do
     ex.returns(upload_response)
 
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      upload = {
-        :id => '1234',
-        :name => 'test1.rpm',
-        :size => 0,
-        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-      }
-      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == false &&
+      par[:id] == repo_id && par[:uploads].one? && par[:sync_capsule] == false &&
         par[:publish_repository] == false
     end
 
@@ -176,13 +170,7 @@ describe 'upload repository' do
     ex.returns(upload_response)
 
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      upload = {
-        :id => '1234',
-        :name => 'test2.rpm',
-        :size => 0,
-        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-      }
-      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
+      par[:id] == repo_id && par[:uploads].one? && par[:sync_capsule] == true &&
         par[:publish_repository] == true
     end
 
