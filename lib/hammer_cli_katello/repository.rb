@@ -68,6 +68,8 @@ module HammerCLIKatello
           field :package_group_total, _("Package Groups"), Fields::Field, :hide_blank => true
           field :errata_total, _("Errata"), Fields::Field, :hide_blank => true
           field :puppet_total, _("Puppet Modules"), Fields::Field, :hide_blank => true
+          field :docker_manifest_list_total, _("Docker Manifest Lists"),
+                                           Fields::Field, :hide_blank => true
           field :docker_manifest_total, _("Docker Manifests"), Fields::Field, :hide_blank => true
           field :docker_tag_total, _("Docker Tags"), Fields::Field, :hide_blank => true
           field :ostree_branch_total, _("OSTree Branches"), Fields::Field, :hide_blank => true
@@ -109,6 +111,7 @@ module HammerCLIKatello
           data["package_group_total"] = content_counts["package_group"]
           data["errata_total"] = content_counts["erratum"]
         when "docker"
+          data["docker_manifest_list_total"] = content_counts["docker_manifest_list"]
           data["docker_manifest_total"] = content_counts["docker_manifest"]
           data["docker_tag_total"] = content_counts["docker_tag"]
         when "puppet"
