@@ -200,6 +200,7 @@ module HammerCLIKatello
       end
     end
 
+    # rubocop:disable ClassLength
     class UploadContentCommand < HammerCLIKatello::InfoCommand
       include RepositoryScopedToProduct
       include HammerCLIForemanTasks::Helper
@@ -245,6 +246,28 @@ module HammerCLIKatello
 
       def content_upload_resource
         ::HammerCLIForeman.foreman_resource(:content_uploads)
+      end
+
+      validate_options do
+        organization_options = [:option_organization_id, :option_organization_name,
+                                :option_organization_label]
+        product_options = [:option_product_id, :option_product_name]
+        repository_options = [:option_id, :option_name]
+
+        any(*repository_options).required
+
+        if option(:option_name).exist?
+          any(*product_options).required
+        end
+
+        if option(:option_id).exist?
+          any(*product_options).rejected(
+            msg: _("Cannot specify both product options and repository ID."))
+        end
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
       end
 
       success_message _("Repository content uploaded")
@@ -323,6 +346,7 @@ module HammerCLIKatello
         resource.call(:import_uploads, params)
       end
     end
+    # rubocop:enable ClassLength
 
     class RemoveContentCommand < HammerCLIKatello::SingleResourceCommand
       include RepositoryScopedToProduct
