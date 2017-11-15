@@ -196,4 +196,34 @@ describe 'upload repository' do
     assert_equal "Could not find any files matching PATH\n", result.err
     assert_equal HammerCLI::EX_NOINPUT, result.exit_code
   end
+
+  describe 'requires' do
+    it 'repository options' do
+      api_expects_no_call
+      error = run_cmd(@cmd + %W(--path #{path})).err
+      assert error.include?('--id, --name is required'), "Actual result: #{error}"
+    end
+
+    it 'product options when repository name is specified' do
+      api_expects_no_call
+      error = run_cmd(@cmd + %W(--name repo1 --path #{path})).err
+      assert(error.include?('--product, --product-id is required'), "Actual result: #{error}")
+    end
+
+    it 'organization options when product name is specified' do
+      api_expects_no_call
+      error = run_cmd(@cmd + %W(--name repo1 --product product2 --path #{path})).err
+      assert(error.include?('--organization-id, --organization, --organization-label is required'),
+             "Actual result: #{error}")
+    end
+  end
+
+  describe 'disallows' do
+    it 'product options when repository ID is specified' do
+      api_expects_no_call
+      error = run_cmd(@cmd + %W(--id 1 --product product2 --path #{path})).err
+      assert(error.include?('Cannot specify both product options and repository ID'),
+             "Actual result: #{error}")
+    end
+  end
 end
