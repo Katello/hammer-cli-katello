@@ -1,5 +1,5 @@
 require_relative '../test_helper'
-require 'hammer_cli_katello/filter_rule'
+require_relative 'filter_rule_helpers'
 require 'hammer_cli_katello/filter_rule'
 
 module HammerCLIKatello
