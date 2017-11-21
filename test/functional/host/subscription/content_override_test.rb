@@ -32,7 +32,8 @@ describe 'host subscription content-override' do
     value = '1'
     id = '20'
     name = 'protected'
-    params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}", "--name=#{name}"]
+    params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}",
+              "--override-name=#{name}"]
     ex = api_expects(:host_subscriptions, :content_override, "content override") do |par|
       par['host_id'].to_s == id && par["content_overrides"][0]['content_label'] == label &&
         par['content_overrides'][0]['value'] == value &&
@@ -67,7 +68,7 @@ describe 'host subscription content-override' do
     label = "foo"
     id = '20'
     name = 'protected'
-    params = ["--host-id=#{id}", "--content-label=#{label}", "--name=#{name}", "--remove"]
+    params = ["--host-id=#{id}", "--content-label=#{label}", "--override-name=#{name}", "--remove"]
     ex = api_expects(:host_subscriptions, :content_override, "content override") do |par|
       par['host_id'].to_s == id && par["content_overrides"][0]['content_label'] == label &&
         par['content_overrides'][0]['remove'] == true &&
@@ -86,7 +87,7 @@ describe 'host subscription content-override' do
     label = "foo"
     id = '20'
     name = 'protected'
-    params = ["--host-id=#{id}", "--content-label=#{label}", "--name=#{name}"]
+    params = ["--host-id=#{id}", "--content-label=#{label}", "--override-name=#{name}"]
     result = run_cmd(@cmd + params)
 
     assert(result.err[/At least one of options --remove, --value is required/],
