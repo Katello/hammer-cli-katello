@@ -11,10 +11,10 @@ module HammerCLIKatello
         option "--content-label", "CONTENT_LABEL", _("Label of the content"),
                :attribute_name => :option_content_label, :required => true
 
-        option "--name", "NAME", _("Name/Key to override. " \
-                                   "To enable or disable a repo select 'enabled'." \
+        option "--override-name", "OVERRIDE_NAME", _("Override parameter key or name.\n" \
+                                   "To enable or disable a repo select 'enabled'.\n" \
                                    "Default value: enabled"),
-               :attribute_name => :option_name, :default => "enabled"
+               :attribute_name => :option_override_name, :default => "enabled"
 
         option "--value", "VALUE", _("Override value. " \
                                      "Note for repo enablement you can use a boolean value"),
@@ -39,7 +39,7 @@ module HammerCLIKatello
           override = { 'content_label' => option_content_label }
           override['value'] = option_value if option_value
           override['remove'] = true if option_remove?
-          override['name'] = option_name
+          override['name'] = option_override_name
           opts['content_overrides'] = [override]
         end
       end
