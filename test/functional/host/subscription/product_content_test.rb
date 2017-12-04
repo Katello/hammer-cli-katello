@@ -8,9 +8,9 @@ describe 'listing available product content' do
   let(:host_id) { 1 }
   let(:empty_response_table) do
     <<eostring
----|------|------|-----|---------|-------|----------|---------
-ID | NAME | TYPE | URL | GPG KEY | LABEL | ENABLED? | OVERRIDE
----|------|------|-----|---------|-------|----------|---------
+---|------|------|-----|---------|-------|------------------|---------
+ID | NAME | TYPE | URL | GPG KEY | LABEL | DEFAULT ENABLED? | OVERRIDE
+---|------|------|-----|---------|-------|------------------|---------
 eostring
   end
 
