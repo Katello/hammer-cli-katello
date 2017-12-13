@@ -36,6 +36,10 @@ module HammerCLIKatello
         field :full_path, _("Published At")
         field :relative_path, _("Relative Path")
         field :download_policy, _("Download Policy"), Fields::Field, :hide_blank => true
+        field :ostree_upstream_sync_policy, _("OSTree Upstream Sync Policy"),
+              Fields::Field, :hide_blank => true
+        field :_ostree_upstream_sync_depth, _("OSTree Upstream Sync Depth"),
+              Fields::Field, :hide_blank => true
         field :docker_upstream_name, _("Upstream Repository Name"),
               Fields::Field, :hide_blank => true
         field :container_repository_name, _("Container Repository Name"),
@@ -119,9 +123,17 @@ module HammerCLIKatello
         when "puppet"
           data["puppet_total"] = content_counts["puppet_module"]
         when "ostree"
-          data["ostree_branch_total"] = content_counts["ostree_branch"]
+          setup_ostree(data)
         when "file"
           data["file_total"] = content_counts["file"]
+        end
+      end
+
+      def setup_ostree(data)
+        content_counts = data["content_counts"]
+        data["ostree_branch_total"] = content_counts["ostree_branch"]
+        if data["ostree_upstream_sync_policy"] == "custom"
+          data["_ostree_upstream_sync_depth"] = data["ostree_upstream_sync_depth"]
         end
       end
 
