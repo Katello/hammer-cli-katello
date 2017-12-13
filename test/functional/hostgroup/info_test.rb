@@ -20,10 +20,11 @@ module HammerCLIForeman
         ex.returns(JSON.parse(File.read(json_file)))
 
         result = run_cmd(@cmd + params)
-        expected_fields = [['Lifecycle Environment', 'Library'],
-                           ['Content View', 'Default Organization View'],
-                           ['Content Source', 'foreman.example.com'],
-                           ['Repository', 'Rhel 7']]
+        # rubocop:disable Style/WordArray
+        expected_fields = [['Name', 'Library'],
+                           ['Name', 'Default Organization View'],
+                           ['Name', 'foreman.example.com'],
+                           ['Name', 'Rhel 7']]
         expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
         expected_results.each { |expected|  assert_cmd(expected, result) }
       end

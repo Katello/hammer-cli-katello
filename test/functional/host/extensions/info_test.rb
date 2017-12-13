@@ -15,12 +15,12 @@ describe 'host info' do
     ex.returns(JSON.parse(File.read(json_file)))
 
     result = run_cmd(@cmd + params)
-
-    expected_fields = [['Lifecycle Environment', 'Library'],
-                       ['Content View', 'Default Organization View'],
+    # rubocop:disable Style/WordArray
+    expected_fields = [['Name', 'Library'],
+                       ['Name', 'Default Organization View'],
                        ['Release Version', '7Server'],
-                       ['Repository', 'Rhel 7'],
-                       ['Content Source', 'capsule'],
+                       ['Name', 'Rhel 7'],
+                       ['Name', 'capsule'],
                        ['Bug Fix', '0'],
                        ['Name', 'my host collection'],
                        ['Applicable Packages', '5'],

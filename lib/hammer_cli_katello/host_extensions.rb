@@ -33,10 +33,26 @@ module HammerCLIKatello
       output do
         label _('Content Information') do
           from :content_facet_attributes do
-            field :content_view_name, _('Content View')
-            field :lifecycle_environment_name, _('Lifecycle Environment')
-            field :content_source_name, _('Content Source')
-            field :kickstart_repository_name, _('Repository')
+            label _("Content View") do
+              field :content_view_id, _("ID")
+              field :content_view_name, _("Name")
+            end
+
+            label _("Lifecycle Environment") do
+              field :lifecycle_environment_id, _("ID")
+              field :lifecycle_environment_name, _("Name")
+            end
+
+            label _("Content Source") do
+              field :content_source_id, _("ID")
+              field :content_source_name, _("Name")
+            end
+
+            label _("Kickstart Repository") do
+              field :kickstart_repository_id, _("ID")
+              field :kickstart_repository_name, _("Name")
+            end
+
             field :applicable_package_count, _('Applicable Packages')
             field :upgradable_package_count, _('Upgradable Packages')
 
