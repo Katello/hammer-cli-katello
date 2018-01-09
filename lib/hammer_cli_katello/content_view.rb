@@ -225,6 +225,18 @@ module HammerCLIKatello
       build_options
     end
 
+    class CVEnvParamsSource
+      def initialize(command)
+        @command = command
+      end
+  
+      def get_options(defined_options, result)
+        result['option_content_view_id'] = @command.option_id
+        result['option_lifecycle_environment_names'] = result['option_environment_names']
+        result
+      end
+    end
+    
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include OrganizationOptions
@@ -235,15 +247,17 @@ module HammerCLIKatello
       command_name "remove"
 
       option ["--content-view-version-ids"], "VERSION_IDS",
-             _("Comma separated list of version ids to remove")
+             _("Version ids to remove"),
+            :format => HammerCLI::Options::Normalizers::List.new
       option ["--environment-ids"], "ENVIRONMENT_IDS",
-             _("Comma separated list of environment ids to remove")
+             _("Environment ids to remove"),
+            :format => HammerCLI::Options::Normalizers::List.new
 
-      def all_options
-        opts = super
-        opts['option_content_view_id'] = option_id
-        opts['option_lifecycle_environment_names'] = opts['option_environment_names']
-        opts
+      def option_sources
+        sources = super
+        idx = sources.index { |s| s.class == HammerCLIForeman::OptionSources::IdParams }
+        sources.insert(idx, CVEnvParamsSource.new(self))
+        sources
       end
 
       def request_params
@@ -253,7 +267,7 @@ module HammerCLIKatello
           end
         end
       end
-
+      
       success_message _("Content view objects are being removed task %{id}")
       failure_message _("Could not remove objects from content view")
 

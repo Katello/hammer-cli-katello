@@ -26,7 +26,6 @@ module HammerCLIKatello
 
       expect_organization_search('pkd', 1)
       expect_content_view_search(1, 'darkly', 1)
-      expect_content_view_search(1, 'darkly', 1) # redmine #15930
 
       ex = api_expects(:content_view_filters, :index, 'Content view filters list') do |par|
         par['content_view_id'] == 1 && par['name'] == 'scanner'
@@ -45,7 +44,6 @@ module HammerCLIKatello
 
       expect_organization_search('pkd', 1, field: 'label')
       expect_content_view_search(1, 'darkly', 1)
-      expect_content_view_search(1, 'darkly', 1) # redmine #15930
 
       ex = api_expects(:content_view_filters, :index, 'Content view filters list') do |par|
         par['content_view_id'] == 1 && par['name'] == 'scanner'
@@ -63,7 +61,6 @@ module HammerCLIKatello
       params = ['--name=scanner', '--content-view=darkly', '--organization-id=1']
 
       expect_content_view_search('1', 'darkly', 1)
-      expect_content_view_search('1', 'darkly', 1) # redmine #15930
 
       ex = api_expects(:content_view_filters, :index, 'Content view filters list') do |par|
         par['content_view_id'] == 1 && par['name'] == 'scanner'

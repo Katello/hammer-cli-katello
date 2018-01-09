@@ -118,12 +118,15 @@ module HammerCLIKatello
     def content_view_version_ids(options)
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
       if options['option_versions'] && options[key_content_view_id]
+        # FIXME: options[key_content_view_id] can not be false in this branch
         options[key_content_view_id] ||= search_and_rescue(:content_view_id,
                                                            "content_view", options)
         id_strings = options['option_versions'].map do |version|
-          content_view_version_id(options.merge('option_version' => version))
+          cvv_options = {'option_version' => version}
+          cvv_options['option_id'] = nil if options['option_id'] # hide irrelevant id
+          content_view_version_id(options.merge(cvv_options))
         end
-        id_strings.join(',')
+        id_strings.join(',') # FIXME: why we join to split later?
       end
     end
 
@@ -136,6 +139,7 @@ module HammerCLIKatello
       return options[key_id] if options[key_id]
 
       if options[key_environment_id]
+        # FIXME: ???
         options[key_environment_id] ||= search_and_rescue(
           :lifecycle_environment_id, "environment", options)
       end
