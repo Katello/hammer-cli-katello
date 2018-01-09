@@ -42,7 +42,6 @@ module HammerCLIKatello
     end
   end
 
-  # rubocop:disable ClassLength
   class IdResolver < HammerCLIForeman::IdResolver
     include HammerCLIKatello::SearchOptionsCreators
 
@@ -117,32 +116,23 @@ module HammerCLIKatello
 
     def content_view_version_ids(options)
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
+      options[key_content_view_id] ||= search_and_rescue(:content_view_id, "content_view", options)
       if options['option_versions'] && options[key_content_view_id]
-        # FIXME: options[key_content_view_id] can not be false in this branch
-        options[key_content_view_id] ||= search_and_rescue(:content_view_id,
-                                                           "content_view", options)
         id_strings = options['option_versions'].map do |version|
           cvv_options = {'option_version' => version}
           cvv_options['option_id'] = nil if options['option_id'] # hide irrelevant id
           content_view_version_id(options.merge(cvv_options))
         end
-        id_strings.join(',') # FIXME: why we join to split later?
+        id_strings.join(',')
       end
     end
 
     def content_view_version_id(options)
       key_id = HammerCLI.option_accessor_name("id")
-      key_environment_id = HammerCLI.option_accessor_name("environment_id")
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
       from_environment_id = HammerCLI.option_accessor_name("from_environment_id")
 
       return options[key_id] if options[key_id]
-
-      if options[key_environment_id]
-        # FIXME: ???
-        options[key_environment_id] ||= search_and_rescue(
-          :lifecycle_environment_id, "environment", options)
-      end
 
       options[key_content_view_id] ||= search_and_rescue(:content_view_id, "content_view", options)
 

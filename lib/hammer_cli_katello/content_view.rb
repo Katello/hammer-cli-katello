@@ -229,14 +229,14 @@ module HammerCLIKatello
       def initialize(command)
         @command = command
       end
-  
-      def get_options(defined_options, result)
+
+      def get_options(_defined_options, result)
         result['option_content_view_id'] = @command.option_id
         result['option_lifecycle_environment_names'] = result['option_environment_names']
         result
       end
     end
-    
+
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include OrganizationOptions
@@ -267,7 +267,7 @@ module HammerCLIKatello
           end
         end
       end
-      
+
       success_message _("Content view objects are being removed task %{id}")
       failure_message _("Could not remove objects from content view")
 

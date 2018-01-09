@@ -38,7 +38,7 @@ module HammerCLIKatello
       search_options
     end
 
-    def create_lifecycle_environments_search_options(options, mode=nil)
+    def create_lifecycle_environments_search_options(options, mode = nil)
       search_options = {}
       if mode != :multi
         name = options[HammerCLI.option_accessor_name("name")]
