@@ -4,16 +4,16 @@ module HammerCLIKatello
   module SearchOptionsCreators
     include HammerCLIKatello::ForemanSearchOptionsCreators
 
-    def create_file_units_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:file_units))
-        .merge(create_search_options(options, api.resource(:file_units)))
+    def create_file_units_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:file_units), mode)
+        .merge(create_search_options(options, api.resource(:file_units), mode))
     end
 
-    def create_content_view_filter_rules_search_options(options)
-      create_search_options_without_katello_api(options, api.resource(:content_view_filter_rules))
+    def create_content_view_filter_rules_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:content_view_filter_rules), mode)
     end
 
-    def create_repositories_search_options(options)
+    def create_repositories_search_options(options, mode = nil)
       name = options[HammerCLI.option_accessor_name("name")]
       names = options[HammerCLI.option_accessor_name("names")]
       product_id = options[HammerCLI.option_accessor_name("product_id")]
@@ -25,7 +25,7 @@ module HammerCLIKatello
       search_options
     end
 
-    def create_content_views_search_options(options)
+    def create_content_views_search_options(options, mode = nil)
       name = options[HammerCLI.option_accessor_name('name')]
       organization_id = options[HammerCLI.option_accessor_name("organization_id")] ||
                         organization_id(scoped_options('organization', options, :single))
@@ -52,7 +52,7 @@ module HammerCLIKatello
       search_options
     end
 
-    def create_content_view_versions_search_options(options)
+    def create_content_view_versions_search_options(options, mode = nil)
       environment_id = options[HammerCLI.option_accessor_name("environment_id")]
       content_view_id = options[HammerCLI.option_accessor_name("content_view_id")]
       version = options[HammerCLI.option_accessor_name("version")]
@@ -65,18 +65,18 @@ module HammerCLIKatello
       search_options
     end
 
-    def create_host_collections_search_options(options)
+    def create_host_collections_search_options(options, mode = nil)
       options[HammerCLI.option_accessor_name("organization_id")] ||= organization_id(
-        scoped_options("organization", options)
+        scoped_options("organization", options, :single)
       )
       search_options = create_search_options_with_katello_api(
-        options, api.resource(:host_collections)
+        options, api.resource(:host_collections), mode
       ) || {}
       search_options['organization_id'] ||= options['option_organization_id']
       search_options
     end
 
-    def create_search_options_with_katello_api(options, resource)
+    def create_search_options_with_katello_api(options, resource, mode = nil)
       search_options = {}
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
