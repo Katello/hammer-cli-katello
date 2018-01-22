@@ -24,8 +24,7 @@ module HammerCLIKatello
 
     it 'requires organization with host collection name' do
       result = run_cmd(%w(host-collection hosts --name collection))
-      expected_error = "Error: Could not find organization, please set one of options " \
-                       "--organization, --organization-label, --organization-id."
+      expected_error = "Missing options to search organization"
       assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
       assert_equal(expected_error, result.err[/#{expected_error}/])
     end

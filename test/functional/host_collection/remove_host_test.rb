@@ -43,9 +43,9 @@ module HammerCLIKatello
 
     it 'requires organization options if name is specified' do
       result = run_cmd(%w(host-collection remove-host --name hc1))
-      expected_error = "Could not find organization"
-      assert_equal(result.exit_code, HammerCLI::EX_SOFTWARE)
-      assert_equal(result.err[/#{expected_error}/], expected_error)
+      expected_error = "Missing options to search organization"
+      assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
+      assert_equal(expected_error, result.err[/#{expected_error}/])
     end
 
     it 'allows organization id' do
