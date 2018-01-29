@@ -192,6 +192,13 @@ module HammerCLIKatello
         if option(:option_product_name).exist?
           any(*organization_options).required
         end
+
+        if option(:option_docker_tag).exist? != option(:option_docker_digest).exist?
+          option(:option_docker_tag).rejected(
+            :msg => _('--docker-digest required with --docker-tag'))
+          option(:option_docker_digest).rejected(
+            :msg => _('--docker-tag required with --docker-digest'))
+        end
       end
 
       build_options(:without => [:unprotected]) do |o|
@@ -200,6 +207,58 @@ module HammerCLIKatello
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
+      option "--docker-tag", "TAG", _("Docker tag")
+      option "--docker-digest", "DIGEST", _("Docker manifest digest")
+
+      def execute
+        @failure = false
+
+        if option_docker_tag
+          upload_tag(option_docker_tag, option_docker_digest)
+        else
+          super
+        end
+
+        @failure ? HammerCLI::EX_DATAERR : HammerCLI::EX_OK
+      end
+
+      def content_upload_resource
+        ::HammerCLIForeman.foreman_resource(:content_uploads)
+      end
+
+      def upload_tag(tag, digest)
+        upload_id = create_content_upload
+        import_uploads([
+          {
+            id: upload_id,
+            name: tag,
+            digest: digest
+          }
+        ], last_file: true)
+        print_message _("Repository updated")
+      rescue
+        @failure = true
+        output.print_error _("Failed to upload tag '%s' to repository.") % tag
+      ensure
+        content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
+      end
+
+      def create_content_upload
+        response = content_upload_resource.call(:create, :repository_id => get_identifier)
+
+        response["upload_id"]
+      end
+
+      def import_uploads(uploads, opts = {})
+        publish_repository = opts.fetch(:last_file, false)
+        sync_capsule = opts.fetch(:last_file, false)
+        params = {:id => get_identifier,
+                  :uploads => uploads,
+                  publish_repository: publish_repository,
+                  sync_capsule: sync_capsule
+        }
+        resource.call(:import_uploads, params)
+      end
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
@@ -308,7 +367,7 @@ module HammerCLIKatello
         file.rewind
         content = file.read
 
-        import_uploads([
+        results = import_uploads([
           {
             id: upload_id,
             name: filename,
@@ -317,7 +376,7 @@ module HammerCLIKatello
           }
         ], opts)
 
-        print_message _("Successfully uploaded file '%s'.") % filename
+        print_results(filename, results)
       rescue
         @failure = true
         output.print_error _("Failed to upload file '%s' to repository. Please check "\
@@ -358,6 +417,27 @@ module HammerCLIKatello
                   sync_capsule: sync_capsule
         }
         resource.call(:import_uploads, params)
+      end
+
+      def print_results(name, results)
+        if results.empty?
+          print_message _("Successfully uploaded file '%{name}'") % {
+            :name => name
+          }
+        else
+          upload_results = results.dig('output', 'upload_results') || []
+          upload_results.each do |result|
+            if result['type'] == 'docker_manifest'
+              print_message(
+                _("Successfully uploaded manifest file '%{name}' with digest '%{digest}'") % {
+                  :name => name, :digest => result['digest'] })
+            else
+              print_message _("Successfully uploaded file '%{name}'") % {
+                :name => name
+              }
+            end
+          end
+        end
       end
     end
     # rubocop:enable ClassLength

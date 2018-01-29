@@ -59,6 +59,40 @@ describe 'upload repository' do
     File.delete("test.rpm")
   end
 
+  it "uploads a docker image" do
+    File.new("test.rpm", "w")
+
+    params = ["--id=#{repo_id}", "--path=#{path}"]
+
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params(:repository_id => repo_id)
+
+    ex.returns(upload_response)
+
+    # rubocop:disable LineLength
+    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+                       :uploads => [{
+                         :id => '1234',
+                         :name => 'test.rpm',
+                         :size => 0,
+                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                       }]
+                      )
+    # rubocop:enable LineLength
+    ex2.returns('output' => {'upload_results' => [{'type' => 'docker_manifest',
+                                                   'digest' => 'sha256:1234'}]})
+
+    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+          .with_params(:id => upload_id, :repository_id => repo_id)
+
+    ex3.returns("")
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 0)
+    File.delete("test.rpm")
+  end
+
   it "uploads a package with an organization-id" do
     File.new("test.rpm", "w")
 
