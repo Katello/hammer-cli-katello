@@ -14,7 +14,7 @@ module HammerCLIKatello
             field :gpgUrl, _("GPG Key")
             field :label, _("Label")
           end
-          field :enabled, _("Enabled?"), Fields::Boolean
+          field :enabled, _("Default Enabled?"), Fields::Boolean
           field :override_description, _("Override")
         end
         build_options
