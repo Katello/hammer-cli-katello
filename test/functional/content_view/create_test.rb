@@ -91,7 +91,7 @@ describe 'content-view create' do
 
     expected_result = usage_error_result(
       @cmd,
-      'At least one of options --product-id, --product is required',
+      'At least one of options --product-id, --product is required.',
       error_heading
     )
 
@@ -105,7 +105,7 @@ describe 'content-view create' do
 
     expected_result = usage_error_result(
       @cmd,
-      "You can't set any of options --product-id, --product",
+      "You can't set any of options --product-id, --product.",
       error_heading
     )
 

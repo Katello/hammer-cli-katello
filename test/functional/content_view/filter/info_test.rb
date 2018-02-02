@@ -79,7 +79,7 @@ module HammerCLIKatello
       expected_result = usage_error_result(
         @cmd,
         'At least one of options --organization-id, --organization, --organization-label ' \
-        'is required'
+        'is required.'
       )
       api_expects_no_call
       result = run_cmd(@cmd + params)

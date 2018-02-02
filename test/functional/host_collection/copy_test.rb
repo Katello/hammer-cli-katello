@@ -5,7 +5,7 @@ module HammerCLIKatello
   describe HostCollection::CopyCommand do
     it 'requires a new name' do
       result = run_cmd(%w(host-collection copy --id 1))
-      expected_error = "option '--new-name' is required"
+      expected_error = "Option '--new-name' is required."
       assert_equal(result.exit_code, HammerCLI::EX_USAGE)
       assert_equal(result.err[/#{expected_error}/], expected_error)
     end

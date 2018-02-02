@@ -89,7 +89,7 @@ FILTER ID | NAME | TYPE | INCLUSION
     params = ["--content-view=#{cv_name}"]
     expected_result = usage_error_result(
       @cmd,
-      'At least one of options --organization-id, --organization, --organization-label is required'
+      'At least one of options --organization-id, --organization, --organization-label is required.'
     )
     api_expects_no_call
     result = run_cmd(@cmd + params)
