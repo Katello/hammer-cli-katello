@@ -79,7 +79,7 @@ module HammerCLIKatello
       expected_result = usage_error_result(
         @cmd,
         'At least one of options --organization-id, --organization, --organization-label ' \
-          'is required',
+        'is required.',
         'Could not delete the filter'
       )
       api_expects_no_call

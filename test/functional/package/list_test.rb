@@ -83,7 +83,7 @@ module HammerCLIKatello
           .returns(index_response([{'id' => 2}, {'id' => 3}]))
 
         r = run_cmd(%w(package list --product-id 1))
-        assert(r.err.include?("found more than one repository"), "Invalid error message")
+        assert(r.err.include?("Found more than one repository"), "Invalid error message: #{r.err}")
       end
 
       it 'requires organization options to resolve ID by name' do

@@ -79,7 +79,7 @@ module HammerCLIKatello
       params = ["--name=high-castle"]
       expected_result = usage_error_result(
         @cmd,
-        'At least one of options --content-view-id, --content-view is required',
+        'At least one of options --content-view-id, --content-view is required.',
         'Could not update the filter'
       )
       api_expects_no_call
