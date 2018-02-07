@@ -8,18 +8,9 @@ module HammerCLIKatello
       def get_options(_defined_options, result)
         if result['option_environment_name'] && result['option_environment_id'].nil?
           result['option_environment_id'] = @command.resolver.lifecycle_environment_id(
-              lifecycle_environment_resolve_options(result))
+              @command.resolver.scoped_options('environment', result, :single))
         end
         result
-      end
-
-      def lifecycle_environment_resolve_options(options)
-        {
-        HammerCLI.option_accessor_name("name") => options['option_environment_name'],
-        HammerCLI.option_accessor_name("id") => options['option_environment_id'],
-        HammerCLI.option_accessor_name("organization_id") => options["option_organization_id"],
-        HammerCLI.option_accessor_name("organization_name") => options["option_organization_name"]
-        }
       end
     end
 

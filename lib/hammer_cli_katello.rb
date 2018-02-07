@@ -12,7 +12,7 @@ module HammerCLIKatello
 
   require 'hammer_cli_katello/output/fields'
   require 'hammer_cli_katello/output/formatters'
-  require 'hammer_cli_katello/katello_environment_name_resolvable'
+  require 'hammer_cli_katello/lifecycle_environment_name_mapping'
   require 'hammer_cli_katello/lifecycle_environment_name_resolvable'
   require 'hammer_cli_katello/content_view_name_resolvable'
   require 'hammer_cli_katello/composite_content_view_name_resolvable'
