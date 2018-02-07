@@ -4,7 +4,6 @@ require 'hammer_cli_katello/host_content_source_options'
 
 module HammerCLIKatello
   module PuppetEnvironmentNameResolvable
-
     class PuppetEnvParamSource
       def initialize(command)
         @command = command
