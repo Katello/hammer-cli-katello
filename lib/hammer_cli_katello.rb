@@ -28,7 +28,7 @@ module HammerCLIKatello
   require 'hammer_cli_katello/id_name_options_validator'
 
   # commands
-  HammerCLI::MainCommand.lazy_subcommand("activation-key", _("Manipulate activation keys."),
+  HammerCLI::MainCommand.lazy_subcommand("activation-key", _("Manipulate activation keys"),
                                          'HammerCLIKatello::ActivationKeyCommand',
                                          'hammer_cli_katello/activation_key'
                                         )
@@ -54,12 +54,12 @@ module HammerCLIKatello
                                          'hammer_cli_katello/ping'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("product", _("Manipulate products."),
+  HammerCLI::MainCommand.lazy_subcommand("product", _("Manipulate products"),
                                          'HammerCLIKatello::Product',
                                          'hammer_cli_katello/product'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("puppet-module", _("View Puppet Module details."),
+  HammerCLI::MainCommand.lazy_subcommand("puppet-module", _("View Puppet Module details"),
                                          'HammerCLIKatello::PuppetModule',
                                          'hammer_cli_katello/puppet_module'
                                         )
@@ -75,7 +75,7 @@ module HammerCLIKatello
                                          'hammer_cli_katello/repository_set'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("subscription", _("Manipulate subscriptions."),
+  HammerCLI::MainCommand.lazy_subcommand("subscription", _("Manipulate subscriptions"),
                                          'HammerCLIKatello::SubscriptionCommand',
                                          'hammer_cli_katello/subscription'
                                         )
@@ -90,7 +90,7 @@ module HammerCLIKatello
                                          'hammer_cli_katello/host_collection'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("content-view", _("Manipulate content views."),
+  HammerCLI::MainCommand.lazy_subcommand("content-view", _("Manipulate content views"),
                                          'HammerCLIKatello::ContentView',
                                          'hammer_cli_katello/content_view'
                                         )
@@ -101,7 +101,7 @@ module HammerCLIKatello
                                          'hammer_cli_foreman/smart_proxy'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("package", _("Manipulate packages."),
+  HammerCLI::MainCommand.lazy_subcommand("package", _("Manipulate packages"),
                                          'HammerCLIKatello::PackageCommand',
                                          'hammer_cli_katello/package'
                                         )

@@ -9,7 +9,7 @@ module HammerCLIKatello
       resource :host_subscriptions, :destroy
       command_name "unregister"
 
-      success_message _("Host unregistered")
+      success_message _("Host unregistered.")
       failure_message _("Could not unregister the host")
 
       build_options
@@ -21,7 +21,7 @@ module HammerCLIKatello
 
       resource :host_subscriptions, :create
       command_name "register"
-      success_message _("Host successfully registered")
+      success_message _("Host successfully registered.")
       failure_message _("Failed to register host")
 
       build_options do |o|
@@ -33,7 +33,7 @@ module HammerCLIKatello
     class AddSubscriptions < HammerCLIKatello::SingleResourceCommand
       resource :host_subscriptions, :add_subscriptions
       command_name "attach"
-      success_message _("Subscription attached to the host successfully")
+      success_message _("Subscription attached to the host successfully.")
       failure_message _("Failed to attach subscriptions to the host")
 
       option "--subscription-id", "SUBSCRIPTION_ID", _("ID of subscription"),
@@ -62,7 +62,7 @@ module HammerCLIKatello
     class AutoAttachSubscriptions < HammerCLIKatello::SingleResourceCommand
       resource :host_subscriptions, :auto_attach
       command_name "auto-attach"
-      success_message _("Auto attached subscriptions to the host successfully")
+      success_message _("Auto attached subscriptions to the host successfully.")
       failure_message _("Failed to auto attach subscriptions to the host")
 
       build_options
@@ -71,7 +71,7 @@ module HammerCLIKatello
     class RemoveSubscriptions < HammerCLIKatello::SingleResourceCommand
       resource :host_subscriptions, :remove_subscriptions
       command_name "remove"
-      success_message _("Subscription removed from the host successfully")
+      success_message _("Subscription removed from the host successfully.")
       failure_message _("Failed to remove subscriptions from the host")
 
       option "--subscription-id", "SUBSCRIPTION_ID", _("ID of subscription"),

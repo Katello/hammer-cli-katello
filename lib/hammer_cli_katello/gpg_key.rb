@@ -35,7 +35,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message _("GPG Key created")
+      success_message _("GPG Key created.")
       failure_message _("Could not create GPG Key")
 
       build_options :without => [:content]
@@ -46,7 +46,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message _("GPG Key updated")
+      success_message _("GPG Key updated.")
       failure_message _("Could not update GPG Key")
 
       build_options :without => [:content]
@@ -56,7 +56,7 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message _("GPG Key deleted")
+      success_message _("GPG Key deleted.")
       failure_message _("Could not delete the GPG Key")
 
       build_options

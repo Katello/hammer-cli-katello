@@ -16,7 +16,7 @@ describe 'host subscription attach' do
     ex.returns({})
 
     expected_result = success_result(
-      'Subscription attached to the host successfully
+      'Subscription attached to the host successfully.
 '
     )
 
@@ -33,7 +33,7 @@ describe 'host subscription attach' do
     ex.returns({})
 
     expected_result = success_result(
-      'Subscription attached to the host successfully
+      'Subscription attached to the host successfully.
 '
     )
 

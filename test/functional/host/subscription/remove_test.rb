@@ -15,7 +15,7 @@ describe 'host subscription remove' do
     ex.returns({})
 
     expected_result = success_result(
-      'Subscription removed from the host successfully
+      'Subscription removed from the host successfully.
 '
     )
 
@@ -32,7 +32,7 @@ describe 'host subscription remove' do
     ex.returns({})
 
     expected_result = success_result(
-      'Subscription removed from the host successfully
+      'Subscription removed from the host successfully.
 '
     )
 

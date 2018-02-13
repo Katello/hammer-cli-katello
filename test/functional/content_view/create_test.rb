@@ -30,7 +30,7 @@ describe 'content-view create' do
         par['organization_id'] == org_id
     end
 
-    expected_result = success_result("Content view created\n")
+    expected_result = success_result("Content view created.\n")
     result = run_cmd(@cmd + @base_params + params)
     assert_cmd(expected_result, result)
   end
@@ -53,7 +53,7 @@ describe 'content-view create' do
         par['repository_ids'] == ids
     end
 
-    expected_result = success_result("Content view created\n")
+    expected_result = success_result("Content view created.\n")
     result = run_cmd(@cmd + @base_params + params)
     assert_cmd(expected_result, result)
   end
@@ -81,7 +81,7 @@ describe 'content-view create' do
         par['repository_ids'] == ids
     end
 
-    expected_result = success_result("Content view created\n")
+    expected_result = success_result("Content view created.\n")
     result = run_cmd(@cmd + @base_params + params)
     assert_cmd(expected_result, result)
   end

@@ -57,7 +57,7 @@ module HammerCLIKatello
         {:content_type => 'multipart/form-data', :multipart => true}
       end
 
-      success_message _("Manifest is being uploaded in task %{id}")
+      success_message _("Manifest is being uploaded in task %{id}.")
       failure_message _("Manifest upload failed")
 
       build_options :without => [:content]
@@ -72,7 +72,7 @@ module HammerCLIKatello
       resource :subscriptions, :delete_manifest
       command_name "delete-manifest"
 
-      success_message _("Manifest is being deleted in task %{id}")
+      success_message _("Manifest is being deleted in task %{id}.")
       failure_message _("Manifest deletion failed")
 
       build_options(&:expand)
@@ -84,7 +84,7 @@ module HammerCLIKatello
       resource :subscriptions, :refresh_manifest
       command_name "refresh-manifest"
 
-      success_message _("Manifest is being refreshed in task %{id}")
+      success_message _("Manifest is being refreshed in task %{id}.")
       failure_message _("Manifest refresh failed")
 
       build_options

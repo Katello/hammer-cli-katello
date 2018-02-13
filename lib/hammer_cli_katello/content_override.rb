@@ -5,7 +5,7 @@ module HammerCLIKatello
         desc _("Override product content defaults")
         command_name "content-override"
 
-        success_message _("Updated content override")
+        success_message _("Updated content override.")
         failure_message _("Could not update content override")
 
         option "--content-label", "CONTENT_LABEL", _("Label of the content"),

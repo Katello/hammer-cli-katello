@@ -20,7 +20,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message _("Product created")
+      success_message _("Product created.")
       failure_message _("Could not create the product")
 
       build_options
@@ -69,14 +69,14 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message _("Product updated")
+      success_message _("Product updated.")
       failure_message _("Could not update the product")
 
       build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message _("Product destroyed")
+      success_message _("Product destroyed.")
       failure_message _("Could not destroy the product")
 
       build_options
@@ -88,18 +88,18 @@ module HammerCLIKatello
       action :sync
       command_name "synchronize"
 
-      success_message _("Product repositories are being synchronized in task %{id}")
+      success_message _("Product repositories are being synchronized in task %{id}.")
       failure_message _("Could not synchronize the product repositories")
 
       build_options
     end
 
     class SetSyncPlanCommand < HammerCLIKatello::UpdateCommand
-      desc _("Assign sync plan to product.")
+      desc _("Assign sync plan to product")
       command_name "set-sync-plan"
 
       success_message _("Synchronization plan assigned.")
-      failure_message _("Could not assign synchronization plan.")
+      failure_message _("Could not assign synchronization plan")
 
       resource :products, :update
 
@@ -107,11 +107,11 @@ module HammerCLIKatello
     end
 
     class RemoveSyncPlanCommand < HammerCLIKatello::UpdateCommand
-      desc _("Delete assignment sync plan and product.")
+      desc _("Delete assignment sync plan and product")
       command_name "remove-sync-plan"
 
       success_message _("Synchronization plan removed.")
-      failure_message _("Could not remove synchronization plan.")
+      failure_message _("Could not remove synchronization plan")
 
       resource :products, :update
 

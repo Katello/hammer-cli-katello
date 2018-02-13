@@ -33,7 +33,7 @@ module HammerCLIKatello
           validator.any(:option_repository_id, :option_repository_name).required
         end
 
-        success_message _("The repository has been associated")
+        success_message _("The repository has been associated.")
         failure_message _("Could not add repository")
       end
 
@@ -49,7 +49,7 @@ module HammerCLIKatello
           validator.any(:option_repository_id, :option_repository_name).required
         end
 
-        success_message _("The repository has been removed")
+        success_message _("The repository has been removed.")
         failure_message _("Could not remove repository")
       end
     end
@@ -61,7 +61,7 @@ module HammerCLIKatello
         command_name 'add-host-collection'
         associated_resource :host_collections
 
-        success_message _("The host collection has been associated")
+        success_message _("The host collection has been associated.")
         failure_message _("Could not add host collection")
       end
 
@@ -69,7 +69,7 @@ module HammerCLIKatello
         command_name 'remove-host-collection'
         associated_resource :host_collections
 
-        success_message _("The host collection has been removed")
+        success_message _("The host collection has been removed.")
         failure_message _("Could not remove host collection")
       end
     end
@@ -81,7 +81,7 @@ module HammerCLIKatello
         command_name 'add-host'
         associated_resource :hosts
 
-        success_message _("The host has been added")
+        success_message _("The host has been added.")
         failure_message _("Could not add host")
       end
 
@@ -89,7 +89,7 @@ module HammerCLIKatello
         command_name 'remove-host'
         associated_resource :hosts
 
-        success_message _("The host has been removed")
+        success_message _("The host has been removed.")
         failure_message _("Could not remove host")
       end
     end

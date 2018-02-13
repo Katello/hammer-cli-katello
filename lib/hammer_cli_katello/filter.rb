@@ -61,7 +61,7 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       include OrganizationOptions
 
-      success_message _("Filter created")
+      success_message _("Filter created.")
       failure_message _("Could not create the filter")
 
       validate_options do
@@ -87,7 +87,7 @@ module HammerCLIKatello
       include OrganizationOptions
       extend IdNameOptionsValidator
 
-      success_message _("Filter updated")
+      success_message _("Filter updated.")
       failure_message _("Could not update the filter")
 
       build_options :without => [:content_view_id]
@@ -99,7 +99,7 @@ module HammerCLIKatello
       include OrganizationOptions
       extend IdNameOptionsValidator
 
-      success_message _("Filter deleted")
+      success_message _("Filter deleted.")
       failure_message _("Could not delete the filter")
 
       build_options :without => [:content_view_id]

@@ -68,7 +68,7 @@ module HammerCLIKatello
       action :republish_repositories
       command_name "republish-repositories"
 
-      success_message _("Content View Version is being republished with task %{id}")
+      success_message _("Content View Version is being republished with task %{id}.")
       failure_message _("Could not republish the Content View")
       build_options do |o|
         o.expand(:all).including(:content_views, :organizations)
@@ -81,7 +81,7 @@ module HammerCLIKatello
       action :promote
       command_name "promote"
 
-      success_message _("Content view is being promoted with task %{id}")
+      success_message _("Content view is being promoted with task %{id}.")
       failure_message _("Could not promote the content view")
 
       option "--force",
@@ -129,7 +129,7 @@ module HammerCLIKatello
       action :destroy
       command_name "delete"
 
-      success_message _("Content view is being deleted with task %{id}")
+      success_message _("Content view is being deleted with task %{id}.")
       failure_message _("Could not delete the content view")
 
       build_options do |o|
@@ -251,7 +251,7 @@ module HammerCLIKatello
       action :export
       command_name "export"
 
-      success_message _("Content view is being exported in task %{id}")
+      success_message _("Content view is being exported in task %{id}.")
       failure_message _("Could not export the content view")
 
       build_options do |o|

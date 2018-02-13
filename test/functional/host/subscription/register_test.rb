@@ -22,7 +22,7 @@ describe 'host subscription register' do
     ex.returns({})
 
     expected_result = success_result(
-      'Host successfully registered
+      'Host successfully registered.
 '
     )
 
@@ -44,7 +44,7 @@ describe 'host subscription register' do
     expect_lifecycle_environment_search(3, 'someenv', 2)
 
     expected_result = success_result(
-      'Host successfully registered
+      'Host successfully registered.
 '
     )
     result = run_cmd(@cmd + params)

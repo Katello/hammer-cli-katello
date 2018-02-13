@@ -15,7 +15,7 @@ describe 'host subscription auto-attach' do
     ex.returns({})
 
     expected_result = success_result(
-      'Auto attached subscriptions to the host successfully
+      'Auto attached subscriptions to the host successfully.
 '
     )
 

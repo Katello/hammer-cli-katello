@@ -29,7 +29,7 @@ describe 'content-view filter create' do
       .with_params('name' => filter_name, 'repository_ids' => repo_ids.map(&:to_s))
       .returns({})
 
-    expected_result = success_result("Filter created\n")
+    expected_result = success_result("Filter created.\n")
     result = run_cmd(@cmd + @base_params + params)
     assert_cmd(expected_result, result)
   end
@@ -42,7 +42,7 @@ describe 'content-view filter create' do
     api_expects(:content_view_filters, :create, "Create content-view filter")
       .with_params('name' => filter_name, 'repository_ids' => repo_ids, 'type' => 'rpm')
 
-    expected_result = success_result("Filter created\n")
+    expected_result = success_result("Filter created.\n")
     result = run_cmd(@cmd + @base_params + params)
     assert_cmd(expected_result, result)
   end

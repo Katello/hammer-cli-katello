@@ -47,7 +47,7 @@ module HammerCLIKatello
         end
       end
 
-      success_message _("Host collection created")
+      success_message _("Host collection created.")
       failure_message _("Could not create the host collection")
 
       build_options
@@ -113,7 +113,7 @@ module HammerCLIKatello
 
       option "--new-name", "NEW_NAME", _("New host collection name"), required: true
 
-      success_message _("New host collection created")
+      success_message _("New host collection created.")
       failure_message _("Could not create the new host collection")
 
       def request_params
@@ -127,7 +127,7 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message _("Host collection updated")
+      success_message _("Host collection updated.")
       failure_message _("Could not update the the host collection")
 
       build_options { |o| o.expand(:all).including(:organizations) }
@@ -136,7 +136,7 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       resource :host_collections, :destroy
 
-      success_message _("Host collection deleted")
+      success_message _("Host collection deleted.")
       failure_message _("Could not delete the host collection")
 
       build_options { |o| o.expand(:all).including(:organizations) }
@@ -148,7 +148,7 @@ module HammerCLIKatello
       command_name 'add-host'
       action :add_hosts
 
-      success_message _("The host(s) has been added")
+      success_message _("The host(s) has been added.")
       failure_message _("Could not add host(s)")
 
       build_options { |o| o.expand(:all).including(:organizations) }
@@ -160,7 +160,7 @@ module HammerCLIKatello
       command_name 'remove-host'
       action :remove_hosts
 
-      success_message _("The host(s) has been removed")
+      success_message _("The host(s) has been removed.")
       failure_message _("Could not remove host(s)")
 
       build_options { |o| o.expand(:all).including(:organizations) }
