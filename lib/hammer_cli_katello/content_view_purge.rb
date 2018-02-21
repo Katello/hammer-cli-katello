@@ -32,11 +32,24 @@ module HammerCLIKatello
       HammerCLIForeman.foreman_resource(:content_view_versions)
     end
 
-    def all_options
-      if super['option_id'].nil? && super['option_name']
-        super['option_id'] = resolver.content_view_id(super)
+    class ContentViewIdParamSource
+      def initialize(command)
+        @command = command
       end
-      super
+
+      def get_options(_defined_options, result)
+        if result['option_id'].nil? && result['option_name']
+          result['option_id'] = @command.resolver.content_view_id(result)
+        end
+        result
+      end
+    end
+
+    def option_sources
+      sources = super
+      idx = sources.index { |s| s.class == HammerCLIForeman::OptionSources::IdParams }
+      sources.insert(idx, ContentViewIdParamSource.new(self))
+      sources
     end
 
     def execute

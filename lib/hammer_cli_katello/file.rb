@@ -58,10 +58,6 @@ module HammerCLIKatello
         end
       end
 
-      def all_options
-        super.merge(options)
-      end
-
       build_options do |o|
         o.expand.including(:products, :organizations, :content_views, :content_view_versions)
       end
