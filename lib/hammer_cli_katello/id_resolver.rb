@@ -114,19 +114,6 @@ module HammerCLIKatello
       end
     end
 
-    def content_view_version_ids(options)
-      key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
-      options[key_content_view_id] ||= search_and_rescue(:content_view_id, "content_view", options)
-      if options['option_versions'] && options[key_content_view_id]
-        id_strings = options['option_versions'].map do |version|
-          cvv_options = {'option_version' => version}
-          cvv_options['option_id'] = nil if options['option_id'] # hide irrelevant id
-          content_view_version_id(options.merge(cvv_options))
-        end
-        id_strings.join(',')
-      end
-    end
-
     def content_view_version_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
