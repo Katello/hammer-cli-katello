@@ -57,8 +57,15 @@ module HammerCLIKatello
       environment_id = options[HammerCLI.option_accessor_name("environment_id")]
       content_view_id = options[HammerCLI.option_accessor_name("content_view_id")]
       version = options[HammerCLI.option_accessor_name("version")]
+      versions = options[HammerCLI.option_accessor_name("versions")]
 
       search_options = {}
+
+      if versions
+        search_options.merge!(
+          create_search_options_without_katello_api(options, api.resource(:content_view_versions))
+        )
+      end
 
       search_options['content_view_id'] = content_view_id if content_view_id
       search_options['environment_id'] = environment_id if environment_id && content_view_id
