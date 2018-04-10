@@ -18,16 +18,17 @@ module HammerCLIKatello
       end
 
       it 'allows removing versions by version number' do
-        %w(6.0 7.0 8.0).each do |version|
-          ex = api_expects(:content_view_versions, :index) do |p|
-            p['version'] == version && p['content_view_id'] == 1
-          end
-          ex.returns(index_response('id' => version.to_i))
-        end
-        ex = api_expects(:content_views, :remove) do |p|
-          p['id'] == 1 && p['content_view_version_ids'] == %w(6 7 8)
-        end
-        ex.returns(id: 9)
+        versions = %w(6.0 7.0 8.0)
+        ids = [6, 7, 8]
+
+        api_expects(:content_view_versions, :index).with_params(
+          'search' => %(version = "#{versions.join('" or version = "')}"),
+          'content_view_id' => 1
+        ).returns(index_response(ids.map { |v| { 'id' => v } }))
+
+        api_expects(:content_views, :remove).with_params(
+          'id' => 1, 'content_view_version_ids' => ids
+        ).returns(id: 9)
 
         expect_foreman_task('9')
 
