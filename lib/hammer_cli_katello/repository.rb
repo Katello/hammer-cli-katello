@@ -44,6 +44,7 @@ module HammerCLIKatello
               Fields::Field, :hide_blank => true
         field :container_repository_name, _("Container Repository Name"),
               Fields::Field, :hide_blank => true
+        field :ignorable_content, _("Ignorable Content Units"), Fields::List, :hide_blank => true
 
         label _("Product") do
           from :product do
