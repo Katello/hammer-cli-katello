@@ -154,7 +154,7 @@ module HammerCLIKatello
                   field :content_hosts, _('Hosts')
                   field :products, _('Products')
                   field :yum_repositories, _('Yum repos')
-                  field :docker_repositories, _('Docker repos')
+                  field :docker_repositories, _('Container Image repos')
                   field :packages, _('Packages')
                   field :package_groups, _('Package groups')
                   field :errata, _('Errata')

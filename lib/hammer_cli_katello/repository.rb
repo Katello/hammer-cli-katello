@@ -74,10 +74,11 @@ module HammerCLIKatello
           field :package_group_total, _("Package Groups"), Fields::Field, :hide_blank => true
           field :errata_total, _("Errata"), Fields::Field, :hide_blank => true
           field :puppet_total, _("Puppet Modules"), Fields::Field, :hide_blank => true
-          field :docker_manifest_list_total, _("Docker Manifest Lists"),
+          field :docker_manifest_list_total, _("Container Image Manifest Lists"),
                                            Fields::Field, :hide_blank => true
-          field :docker_manifest_total, _("Docker Manifests"), Fields::Field, :hide_blank => true
-          field :docker_tag_total, _("Docker Tags"), Fields::Field, :hide_blank => true
+          field :docker_manifest_total, _("Container Image Manifests"), Fields::Field,
+                                           :hide_blank => true
+          field :docker_tag_total, _("Container Image Tags"), Fields::Field, :hide_blank => true
           field :ostree_branch_total, _("OSTree Branches"), Fields::Field, :hide_blank => true
           field :file_total, _("Files"), Fields::Field, :hide_blank => true
         end
@@ -208,8 +209,8 @@ module HammerCLIKatello
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--docker-tag", "TAG", _("Docker tag")
-      option "--docker-digest", "DIGEST", _("Docker manifest digest")
+      option "--docker-tag", "TAG", _("Container Image tag")
+      option "--docker-digest", "DIGEST", _("Container Image manifest digest")
 
       def execute
         @failure = false
