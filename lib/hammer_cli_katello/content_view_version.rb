@@ -143,7 +143,7 @@ module HammerCLIKatello
       action :incremental_update
       command_name "incremental-update"
 
-      success_message _("Incremental update is being performed with task %{id}")
+      success_message _("Incremental update is being performed with task %{id}.")
       failure_message _("An error occurred incrementally updating the content view")
 
       option('--lifecycle-environment-ids',

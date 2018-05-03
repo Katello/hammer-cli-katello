@@ -5,7 +5,7 @@ module HammerCLIKatello
 
     class InstallCommand < HammerCLIKatello::HostCollection::InstallContentBaseCommand
       desc _("Install errata on content hosts contained within a host collection")
-      success_message _("Successfully scheduled installation of errata")
+      success_message _("Successfully scheduled installation of errata.")
       failure_message _("Could not schedule installation of errata")
 
       option('--errata',
