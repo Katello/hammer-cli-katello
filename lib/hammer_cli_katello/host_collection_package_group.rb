@@ -21,21 +21,21 @@ module HammerCLIKatello
     class InstallCommand < HammerCLIKatello::HostCollection::InstallContentBaseCommand
       include PackageGroupContentType
       desc _("Install package-groups on content hosts contained within a host collection")
-      success_message _("Successfully scheduled installation of package-group(s)")
+      success_message _("Successfully scheduled installation of package-group(s).")
       failure_message _("Could not schedule installation of package-group(s)")
     end
 
     class UpdateCommand < HammerCLIKatello::HostCollection::UpdateContentBaseCommand
       include PackageGroupContentType
       desc _("Update package-groups on content hosts contained within a host collection")
-      success_message _("Successfully scheduled update of package-groups(s)")
+      success_message _("Successfully scheduled update of package-groups(s).")
       failure_message _("Could not schedule update of package-group(s)")
     end
 
     class RemoveCommand < HammerCLIKatello::HostCollection::RemoveContentBaseCommand
       include PackageGroupContentType
       desc _("Remove package-groups on content hosts contained within a host collection")
-      success_message _("Successfully scheduled removal of package-groups(s)")
+      success_message _("Successfully scheduled removal of package-groups(s).")
       failure_message _("Could not schedule removal of package-group(s)")
     end
 
