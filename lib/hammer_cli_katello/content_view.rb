@@ -44,7 +44,7 @@ module HammerCLIKatello
           field :label, _("Label")
         end
 
-        collection :_docker_repositories, _("Docker Repositories") do
+        collection :_docker_repositories, _("Container Image Repositories") do
           field :id, _("ID")
           field :name, _("Name")
           field :label, _("Label")
