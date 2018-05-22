@@ -29,14 +29,14 @@ describe 'capsule content info' do
       "        Composite:      no",
       "        Last Published: 2016/01/08 15:44:10",
       "        Content:",
-      "            Hosts:          0",
-      "            Products:       3",
-      "            Yum repos:      1",
-      "            Docker repos:   0",
-      "            Packages:       32",
-      "            Package groups: 2",
-      "            Errata:         4",
-      "            Puppet modules: 0"
+      "            Hosts:                 0",
+      "            Products:              3",
+      "            Yum repos:             1",
+      "            Container Image repos: 0",
+      "            Packages:              32",
+      "            Package groups:        2",
+      "            Errata:                4",
+      "            Puppet modules:        0"
     ])
     expected_result = success_result(output)
 
