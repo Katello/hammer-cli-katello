@@ -16,7 +16,7 @@ describe 'Synchronize a repository' do
   let(:product_id) { 3 }
   let(:sync_response) do
     {
-      'id' => repo_id,
+      'id' => repo_id.to_s,
       'state' => 'planned'
     }
   end
@@ -30,7 +30,7 @@ describe 'Synchronize a repository' do
 
     ex.returns(sync_response)
 
-    expect_foreman_task(3)
+    expect_foreman_task('3')
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
@@ -49,7 +49,7 @@ describe 'Synchronize a repository' do
 
     ex.returns(sync_response)
 
-    expect_foreman_task(3)
+    expect_foreman_task('3')
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)

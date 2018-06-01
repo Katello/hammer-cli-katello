@@ -11,7 +11,7 @@ describe 'apply an errata' do
 
   let(:errata_id) { "RHEA-1111:1111" }
   let(:host_id) { 1 }
-  let(:task_id) { 5 }
+  let(:task_id) { '5' }
   let(:response) do
     {
       'id' => task_id,
