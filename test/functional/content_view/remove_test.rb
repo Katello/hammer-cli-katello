@@ -10,7 +10,7 @@ module HammerCLIKatello
         ex = api_expects(:content_views, :remove) do |p|
           p['id'] == 1 && p['content_view_version_ids'] == %w(6 7 8)
         end
-        ex.returns(id: 9)
+        ex.returns(id: '9')
 
         expect_foreman_task('9')
 
@@ -28,7 +28,7 @@ module HammerCLIKatello
 
         api_expects(:content_views, :remove).with_params(
           'id' => 1, 'content_view_version_ids' => ids
-        ).returns(id: 9)
+        ).returns(id: '9')
 
         expect_foreman_task('9')
 
@@ -41,7 +41,7 @@ module HammerCLIKatello
         ex = api_expects(:content_views, :remove) do |p|
           p['id'] == 1 && p['environment_ids'] == %w(6 7 8)
         end
-        ex.returns(id: 9)
+        ex.returns(id: '9')
 
         expect_foreman_task('9')
 
@@ -68,7 +68,7 @@ module HammerCLIKatello
         ex = api_expects(:content_views, :remove) do |p|
           p['id'] == 1 && p['environment_ids'] == environment_ids
         end
-        ex.returns(id: 9)
+        ex.returns(id: '9')
 
         expect_foreman_task('9')
 
