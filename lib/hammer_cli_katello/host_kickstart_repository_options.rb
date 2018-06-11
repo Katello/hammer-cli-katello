@@ -34,9 +34,9 @@ module HammerCLIKatello
     def fetch_repo_id(cv_id, env_id, repo_name)
       repo_resource = HammerCLIForeman.foreman_resource(:repositories)
       index_options = {
-        "content_view_id" => cv_id,
-        "environment_id" => env_id,
-        "name" => repo_name
+        :content_view_id => cv_id,
+        :environment_id => env_id,
+        :name => repo_name
       }
       repos = repo_resource.call(:index, index_options)["results"]
       if repos.empty?
