@@ -51,7 +51,7 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       include OrganizationOptions
 
-      success_message _("Filter rule created")
+      success_message _("Filter rule created.")
       failure_message _("Could not create the filter rule")
 
       option '--names', 'NAMES', _('Package and package group names')
@@ -67,7 +67,7 @@ module HammerCLIKatello
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       include OrganizationOptions
 
-      success_message _("Filter rule updated")
+      success_message _("Filter rule updated.")
       failure_message _("Could not update the filter rule")
 
       build_options
@@ -76,7 +76,7 @@ module HammerCLIKatello
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       include OrganizationOptions
 
-      success_message _("Filter rule deleted")
+      success_message _("Filter rule deleted.")
       failure_message _("Could not delete the filter rule")
 
       build_options

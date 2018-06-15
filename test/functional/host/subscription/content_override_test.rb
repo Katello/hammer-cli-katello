@@ -21,7 +21,7 @@ describe 'host subscription content-override' do
     end
     ex.returns({})
 
-    expected_result = success_result("Updated content override\n")
+    expected_result = success_result("Updated content override.\n")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
@@ -41,7 +41,7 @@ describe 'host subscription content-override' do
     end
     ex.returns({})
 
-    expected_result = success_result("Updated content override\n")
+    expected_result = success_result("Updated content override.\n")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
@@ -58,7 +58,7 @@ describe 'host subscription content-override' do
     end
     ex.returns({})
 
-    expected_result = success_result("Updated content override\n")
+    expected_result = success_result("Updated content override.\n")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
@@ -76,7 +76,7 @@ describe 'host subscription content-override' do
     end
     ex.returns({})
 
-    expected_result = success_result("Updated content override\n")
+    expected_result = success_result("Updated content override.\n")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)

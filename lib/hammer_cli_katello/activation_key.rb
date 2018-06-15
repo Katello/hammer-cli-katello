@@ -83,7 +83,7 @@ module HammerCLIKatello
       include LifecycleEnvironmentNameMapping
       include LifecycleEnvironmentNameResolvable
       action :create
-      success_message _("Activation key created")
+      success_message _("Activation key created.")
       failure_message _("Could not create the activation key")
 
       option "--unlimited-hosts", :flag, "Set hosts max to unlimited"
@@ -105,7 +105,7 @@ module HammerCLIKatello
 
       build_options
 
-      success_message _("Activation key copied")
+      success_message _("Activation key copied.")
       failure_message _("Could not copy the activation key")
     end
 
@@ -113,7 +113,7 @@ module HammerCLIKatello
       include LifecycleEnvironmentNameMapping
       include LifecycleEnvironmentNameResolvable
       action :update
-      success_message _("Activation key updated")
+      success_message _("Activation key updated.")
       failure_message _("Could not update the activation key")
 
       option "--unlimited-hosts", :flag, "set hosts max to unlimited"
@@ -129,7 +129,7 @@ module HammerCLIKatello
       include LifecycleEnvironmentNameMapping
       include LifecycleEnvironmentNameResolvable
       action :destroy
-      success_message _("Activation key deleted")
+      success_message _("Activation key deleted.")
       failure_message _("Could not delete the activation key")
 
       build_options
@@ -178,7 +178,7 @@ module HammerCLIKatello
         o.without(:subscriptions)
       end
 
-      success_message _("Subscription added to activation key")
+      success_message _("Subscription added to activation key.")
       failure_message _("Could not add subscription to activation key")
     end
 
@@ -196,7 +196,7 @@ module HammerCLIKatello
         o.without(:subscriptions)
       end
 
-      success_message _("Subscription removed from activation key")
+      success_message _("Subscription removed from activation key.")
       failure_message _("Could not remove subscription from activation key")
     end
 

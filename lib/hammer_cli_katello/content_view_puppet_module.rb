@@ -31,7 +31,7 @@ module HammerCLIKatello
 
       command_name "add"
 
-      success_message _("Puppet module added to content view")
+      success_message _("Puppet module added to content view.")
       failure_message _("Could not add the puppet module")
 
       build_options
@@ -49,7 +49,7 @@ module HammerCLIKatello
 
       command_name "remove"
 
-      success_message _("Puppet module removed from content view")
+      success_message _("Puppet module removed from content view.")
       failure_message _("Couldn't remove puppet module from the content view")
 
       build_options

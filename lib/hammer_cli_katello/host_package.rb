@@ -16,7 +16,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :host_packages, :install
       command_name "install"
-      success_message "Packages install successfully"
+      success_message "Packages install successfully."
       failure_message "Could not install packages"
 
       validate_options do
@@ -30,7 +30,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :host_packages, :upgrade
       command_name "upgrade"
-      success_message "Packages upgraded successfully"
+      success_message "Packages upgraded successfully."
       failure_message "Could not upgrade packages"
 
       build_options
@@ -40,7 +40,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :host_packages, :upgrade_all
       command_name "upgrade-all"
-      success_message "All packages upgraded successfully"
+      success_message "All packages upgraded successfully."
       failure_message "Could not upgrade all packages"
 
       build_options
@@ -50,7 +50,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :host_packages, :remove
       command_name "remove"
-      success_message "Packages removed successfully"
+      success_message "Packages removed successfully."
       failure_message "Could not remove packages"
 
       validate_options do

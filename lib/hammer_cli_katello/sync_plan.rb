@@ -40,7 +40,7 @@ module HammerCLIKatello
                "Time is optional, if kept blank current system time will be considered"),
              :format => HammerCLI::Options::Normalizers::DateTime.new
 
-      success_message _("Sync plan created")
+      success_message _("Sync plan created.")
       failure_message _("Could not create the sync plan")
 
       build_options :without => [:interval, :sync_date]
@@ -54,14 +54,14 @@ module HammerCLIKatello
       option "--sync-date", "SYNC_DATE", _("start date and time of the synchronization"),
              :format => HammerCLI::Options::Normalizers::DateTime.new
 
-      success_message _("Sync plan updated")
+      success_message _("Sync plan updated.")
       failure_message _("Could not update the sync plan")
 
       build_options :without => [:interval, :sync_date]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message _("Sync plan destroyed")
+      success_message _("Sync plan destroyed.")
       failure_message _("Could not destroy the sync plan")
 
       build_options

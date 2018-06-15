@@ -6,7 +6,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :host_packages, :install
       command_name "install"
-      success_message "Package-groups installed successfully"
+      success_message "Package-groups installed successfully."
       failure_message "Could not install package-groups"
 
       validate_options do
@@ -20,7 +20,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :host_packages, :remove
       command_name "remove"
-      success_message "Package-groups removed successfully"
+      success_message "Package-groups removed successfully."
       failure_message "Could not remove package-groups"
 
       validate_options do

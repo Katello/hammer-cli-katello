@@ -32,7 +32,7 @@ module HammerCLIKatello
       include HammerCLIKatello::ResolverCommons
       resource :organizations, :update
 
-      success_message _("Organization updated")
+      success_message _("Organization updated.")
       failure_message _("Could not update the organization")
 
       build_options
@@ -41,7 +41,7 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       resource :organizations, :create
 
-      success_message _("Organization created")
+      success_message _("Organization created.")
       failure_message _("Could not create the organization")
 
       build_options
@@ -52,7 +52,7 @@ module HammerCLIKatello
       include HammerCLIForemanTasks::Async
       resource :organizations, :destroy
 
-      success_message _("Organization deleted")
+      success_message _("Organization deleted.")
       failure_message _("Could not delete the organization")
 
       build_options

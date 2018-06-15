@@ -43,7 +43,7 @@ module HammerCLIKatello
         resource :capsule_content, :add_lifecycle_environment
         command_name 'add-lifecycle-environment'
 
-        success_message _("Lifecycle environment successfully added to the capsule")
+        success_message _("Lifecycle environment successfully added to the capsule.")
         failure_message _("Could not add the lifecycle environment to the capsule")
 
         option "--organization-id", "ID", _("Organization ID"),
@@ -58,7 +58,7 @@ module HammerCLIKatello
         resource :capsule_content, :remove_lifecycle_environment
         command_name 'remove-lifecycle-environment'
 
-        success_message _("Lifecycle environment successfully removed from the capsule")
+        success_message _("Lifecycle environment successfully removed from the capsule.")
         failure_message _("Could not remove the lifecycle environment from the capsule")
 
         option "--organization-id", "ID", _("Organization ID"),
@@ -74,7 +74,7 @@ module HammerCLIKatello
         resource :capsule_content, :sync
         command_name "synchronize"
 
-        success_message _("Capsule content is being synchronized in task %{id}")
+        success_message _("Capsule content is being synchronized in task %{id}.")
         failure_message _("Could not synchronize capsule content")
 
         option "--organization-id", "ID", _("Organization ID"),

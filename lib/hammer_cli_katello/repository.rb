@@ -161,7 +161,7 @@ module HammerCLIKatello
       action :sync
       command_name "synchronize"
 
-      success_message _("Repository is being synchronized in task %{id}")
+      success_message _("Repository is being synchronized in task %{id}.")
       failure_message _("Could not synchronize the repository")
 
       build_options do |o|
@@ -170,7 +170,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message _("Repository created")
+      success_message _("Repository created.")
       failure_message _("Could not create the repository")
 
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
@@ -184,7 +184,7 @@ module HammerCLIKatello
       include RepositoryScopedToProduct
       include OrganizationOptions
 
-      success_message _("Repository updated")
+      success_message _("Repository updated.")
       failure_message _("Could not update the repository")
 
       validate_options do
@@ -267,7 +267,7 @@ module HammerCLIKatello
       include RepositoryScopedToProduct
       include OrganizationOptions
 
-      success_message _("Repository deleted")
+      success_message _("Repository deleted.")
       failure_message _("Could not delete the Repository")
 
       build_options do |o|
@@ -345,7 +345,7 @@ module HammerCLIKatello
         end
       end
 
-      success_message _("Repository content uploaded")
+      success_message _("Repository content uploaded.")
       failure_message _("Could not upload the content")
 
       build_options(:without => [:content]) do |o|
@@ -353,7 +353,7 @@ module HammerCLIKatello
       end
       option "--path", "PATH", _("Upload file, directory of files, or glob of files " \
                                  "as content for a repository.\n" \
-                                 "Globs must be escaped by single or double quotes."),
+                                 "Globs must be escaped by single or double quotes"),
              :attribute_name => :option_content,
              :required => true, :format => BinaryPath.new
 
@@ -452,7 +452,7 @@ module HammerCLIKatello
       command_name "remove-content"
       desc _("Remove content from a repository")
 
-      success_message _("Repository content removed")
+      success_message _("Repository content removed.")
       failure_message _("Could not remove content")
 
       validate_options do
@@ -478,7 +478,7 @@ module HammerCLIKatello
       command_name "export"
       desc _("Export content from a repository to the configured directory")
 
-      success_message _("Repository is being exported in task %{id}")
+      success_message _("Repository is being exported in task %{id}.")
       failure_message _("Could not export the repository")
 
       validate_options do

@@ -16,7 +16,7 @@ describe 'host subscription unregister' do
     ex.returns({})
 
     expected_result = success_result(
-      'Host unregistered
+      'Host unregistered.
 '
     )
 

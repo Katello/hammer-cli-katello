@@ -76,21 +76,21 @@ module HammerCLIKatello
     class CreateCommand < HammerCLIKatello::CreateCommand
       include PriorIdResolvable
 
-      success_message _("Environment created")
+      success_message _("Environment created.")
       failure_message _("Could not create environment")
 
       build_options
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message _("Environment updated")
+      success_message _("Environment updated.")
       failure_message _("Could not update environment")
 
       build_options
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message _("Environment deleted")
+      success_message _("Environment deleted.")
       failure_message _("Could not delete environment")
 
       build_options

@@ -128,7 +128,7 @@ module HammerCLIKatello
         end
       end
 
-      success_message _("Component added to content view")
+      success_message _("Component added to content view.")
       failure_message _("Could not add the component")
 
       build_options do |o|
@@ -141,7 +141,7 @@ module HammerCLIKatello
       action :update
       command_name "update"
 
-      success_message _("Content view component updated")
+      success_message _("Content view component updated.")
       failure_message _("Could not update the content view component")
 
       def update_id(opts)
@@ -187,7 +187,7 @@ module HammerCLIKatello
          _("Array of component content view identfiers to remove. Comma separated list of values"),
          :attribute_name => :option_component_content_view_ids
 
-      success_message _("Components removed from content view")
+      success_message _("Components removed from content view.")
       failure_message _("Could not remove the components")
 
       def component_content_view_names

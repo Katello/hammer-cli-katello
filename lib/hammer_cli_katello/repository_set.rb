@@ -63,7 +63,7 @@ module HammerCLIKatello
       resource :repository_sets, :enable
       command_name "enable"
 
-      success_message _("Repository enabled")
+      success_message _("Repository enabled.")
       failure_message _("Could not enable repository")
 
       build_options
@@ -73,7 +73,7 @@ module HammerCLIKatello
       resource :repository_sets, :disable
       command_name "disable"
 
-      success_message _("Repository disabled")
+      success_message _("Repository disabled.")
       failure_message _("Could not disable repository")
 
       build_options
