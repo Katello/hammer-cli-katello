@@ -33,6 +33,12 @@ describe HammerCLIKatello::SearchOptionsCreators do
       )['name'].must_equal 'repo1'
     end
 
+    it 'handles multiple parameters' do
+      search_options_creators.create_repositories_search_options(
+        'option_names' => ['repo1'], 'option_name' => 'repo2'
+      )['name'].must_equal(nil)
+    end
+
     it 'handles a single value product_id' do
       search_options_creators.create_repositories_search_options(
         'option_product_id' => 3

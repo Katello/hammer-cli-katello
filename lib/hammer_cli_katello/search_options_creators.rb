@@ -20,8 +20,11 @@ module HammerCLIKatello
       product_id = options[HammerCLI.option_accessor_name("product_id")]
 
       search_options = {}
-      search_options['name'] = name if name
-      search_options['names'] = names if names
+      if names
+        search_options['names'] = names
+      elsif name
+        search_options['name'] = name
+      end
       search_options['product_id'] = product_id if product_id
       search_options
     end
