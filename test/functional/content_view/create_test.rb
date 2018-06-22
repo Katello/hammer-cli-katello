@@ -43,7 +43,9 @@ describe 'content-view create' do
 
     api_repositories = api_expects(:repositories, :index,
                                    'Find repositories belonging to product') do |par|
-      par['product_id'] == product['id']
+      par['product_id'] == product['id'] &&
+        par['names'] == names &&
+        !par.key?('name')
     end
     api_repositories.returns(repositories)
 
@@ -71,7 +73,9 @@ describe 'content-view create' do
 
     api_repositories = api_expects(:repositories, :index,
                                    'Find repositories belonging to product') do |par|
-      par['product_id'] == product['id']
+      par['product_id'] == product['id'] &&
+        par['names'] == names &&
+        !par.key?('name')
     end
     api_repositories.returns(repositories)
 
