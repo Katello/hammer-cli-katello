@@ -1,31 +1,9 @@
 require 'hammer_cli_foreman/hostgroup'
+require 'hammer_cli_katello/puppet_environment_name_resolvable'
 require 'hammer_cli_katello/host_kickstart_repository_options'
 require 'hammer_cli_katello/host_content_source_options'
 
 module HammerCLIKatello
-  module PuppetEnvironmentNameResolvable
-    class PuppetEnvParamSource
-      def initialize(command)
-        @command = command
-      end
-
-      def get_options(_defined_options, result)
-        if result['option_environment_id'].nil? && result['option_environment_name']
-          result['option_environment_id'] = @command.resolver.puppet_environment_id(
-            @command.resolver.scoped_options('environment', result, :single))
-        end
-        result
-      end
-    end
-
-    def option_sources
-      sources = super
-      idx = sources.index { |s| s.class == HammerCLIForeman::OptionSources::IdParams }
-      sources.insert(idx, PuppetEnvParamSource.new(self))
-      sources
-    end
-  end
-
   module QueryOrganizationOptions
     def self.included(base)
       base.option '--query-organization-id', 'ORGANIZATION_ID',
