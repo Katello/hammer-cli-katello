@@ -67,5 +67,9 @@ module HammerCLIKatello
     def create_realms_search_options(options, mode = nil)
       create_search_options_without_katello_api(options, api.resource(:realms), mode)
     end
+
+    def create_packages_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:packages), mode)
+    end
   end
 end
