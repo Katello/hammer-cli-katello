@@ -88,4 +88,21 @@ describe 'content-view version incremental-update' do
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
   end
+
+  it "performs incremental update with packages" do
+    params = ['--content-view-version-id=5', '--packages=bla', '--lifecycle-environment-ids=1']
+
+    expect_generic_search(
+      :packages, params: {search: "name = \"bla\""}, returns: {'id' => 15}
+    )
+
+    ex = api_expects(:content_view_versions, :incremental_update, 'Incremental Update') do |par|
+      par[:content_view_version_environments][0][:content_view_version_id] == 5 &&
+        par["add_content"]["package_ids"] == [15]
+    end
+    ex.returns('id' => '3', 'state' => 'stopped')
+    expect_foreman_task('3')
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 0)
+  end
 end
