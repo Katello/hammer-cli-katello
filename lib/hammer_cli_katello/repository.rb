@@ -238,8 +238,9 @@ module HammerCLIKatello
           }
         ], last_file: true)
         print_message _("Repository updated")
-      rescue
+      rescue => e
         @failure = true
+        logger.error e
         output.print_error _("Failed to upload tag '%s' to repository.") % tag
       ensure
         content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
@@ -282,7 +283,7 @@ module HammerCLIKatello
 
       resource :repositories, :upload_content
       command_name "upload-content"
-      CONTENT_CHUNK_SIZE = 4_000_000 # bytes
+      CONTENT_CHUNK_SIZE = 2_500_000 # bytes to make sure it's lower than django's default 2621440
 
       class BinaryPath < HammerCLI::Options::Normalizers::File
         def format(path)
@@ -379,8 +380,9 @@ module HammerCLIKatello
         ], opts)
 
         print_results(filename, results)
-      rescue
+      rescue => e
         @failure = true
+        logger.error e
         output.print_error _("Failed to upload file '%s' to repository. Please check "\
                              "the file and try again.") % filename
       ensure
@@ -405,7 +407,11 @@ module HammerCLIKatello
             :multipart => true
           }
 
-          content_upload_resource.call(:update, params, request_headers)
+          # To workaround rest-client bug with false negative warnings,
+          # see https://github.com/rest-client/rest-client/pull/670 for more details
+          silence_warnings do
+            content_upload_resource.call(:update, params, request_headers)
+          end
           offset += CONTENT_CHUNK_SIZE
         end
       end
@@ -439,6 +445,16 @@ module HammerCLIKatello
               }
             end
           end
+        end
+      end
+
+      def silence_warnings
+        original_verbose = $VERBOSE
+        $VERBOSE = nil
+        begin
+          yield
+        ensure
+          $VERBOSE = original_verbose
         end
       end
     end
