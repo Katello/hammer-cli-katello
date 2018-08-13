@@ -87,12 +87,15 @@ module HammerCLIKatello
       search_options
     end
 
-    def create_search_options_with_katello_api(options, resource, _mode = nil)
+    def create_search_options_with_katello_api(options, resource, mode = nil)
       search_options = {}
       searchables(resource).each do |s|
         value = options[HammerCLI.option_accessor_name(s.name.to_s)]
-        if value
+        values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
+        if value && [:single, nil].include?(mode)
           search_options.update(s.name.to_s => value.to_s)
+        elsif values && [:multi, nil].include?(mode)
+          values.each { |v| search_options.update(s.name.to_s => v.to_s) }
         end
       end
       search_options
