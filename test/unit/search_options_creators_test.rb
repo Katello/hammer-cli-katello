@@ -118,9 +118,12 @@ describe HammerCLIKatello::SearchOptionsCreators do
   end # describe 'without the katello api'
 
   describe '#create_search_options_with_katello_api' do
+    let(:searchable1) { HammerCLIForeman::Searchable.new('one', '') }
+    let(:searchable2) { HammerCLIForeman::Searchable.new('two', '') }
+
     it 'translates all searchable fields from options' do
       search_options_creators.stubs(:searchables).
-        returns([search_options_creators.method(:one), search_options_creators.method(:two)])
+        returns([searchable1, searchable2])
 
       search_options_creators.create_search_options_with_katello_api(
         {'option_one' => 1, 'option_two' => 2}, resource
