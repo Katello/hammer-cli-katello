@@ -10,6 +10,8 @@ module HammerCLIKatello
       :file_unit =>             [s_name(_("File name to search by")),
                                  s("content_view_version_id", _("Content View Version ID")),
                                  s("repository_id", _("Repository ID"))],
+      :module_stream =>         [s_name(_("Module stream name to search by")),
+                                 s("repository_id", _("Repository ID"))],
       :gpg =>                   [s_name(_("Gpg key name to search by"))],
       :host_collection =>       [s_name(_("Host collection name to search by"))],
       :lifecycle_environment => [s_name(_("Lifecycle environment name to search by"))],

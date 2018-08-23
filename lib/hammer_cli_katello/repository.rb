@@ -18,7 +18,9 @@ module HammerCLIKatello
 
     # rubocop:disable ClassLength
     class InfoCommand < HammerCLIKatello::InfoCommand
-      include RepositoryScopedToProduct
+      extend RepositoryScopedToProduct
+
+      validate_repo_name_requires_product_options
 
       output do
         field :id, _("ID")
@@ -83,6 +85,7 @@ module HammerCLIKatello
           field :docker_tag_total, _("Container Image Tags"), Fields::Field, :hide_blank => true
           field :ostree_branch_total, _("OSTree Branches"), Fields::Field, :hide_blank => true
           field :file_total, _("Files"), Fields::Field, :hide_blank => true
+          field :module_stream_total, _("Module Streams"), Fields::Field, :hide_blank => true
         end
       end
 
@@ -120,6 +123,7 @@ module HammerCLIKatello
           data["srpm_total"] = content_counts["srpm"]
           data["package_group_total"] = content_counts["package_group"]
           data["errata_total"] = content_counts["erratum"]
+          data["module_stream_total"] = content_counts["module_stream"]
         when "docker"
           data["docker_manifest_list_total"] = content_counts["docker_manifest_list"]
           data["docker_manifest_total"] = content_counts["docker_manifest"]
@@ -158,7 +162,9 @@ module HammerCLIKatello
 
     class SyncCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
-      include RepositoryScopedToProduct
+      extend RepositoryScopedToProduct
+
+      validate_repo_name_requires_product_options
 
       action :sync
       command_name "synchronize"
@@ -183,7 +189,9 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      include RepositoryScopedToProduct
+      extend RepositoryScopedToProduct
+
+      validate_repo_name_requires_product_options
       include OrganizationOptions
 
       success_message _("Repository updated.")
@@ -267,9 +275,10 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      include RepositoryScopedToProduct
+      extend RepositoryScopedToProduct
       include OrganizationOptions
 
+      validate_repo_name_requires_product_options
       success_message _("Repository deleted.")
       failure_message _("Could not delete the Repository")
 
@@ -280,9 +289,10 @@ module HammerCLIKatello
 
     # rubocop:disable ClassLength
     class UploadContentCommand < HammerCLIKatello::InfoCommand
-      include RepositoryScopedToProduct
+      extend RepositoryScopedToProduct
       include HammerCLIForemanTasks::Helper
 
+      validate_repo_name_requires_product_options
       resource :repositories, :upload_content
       command_name "upload-content"
       CONTENT_CHUNK_SIZE = 2_500_000 # bytes to make sure it's lower than django's default 2621440
@@ -463,9 +473,10 @@ module HammerCLIKatello
     # rubocop:enable ClassLength
 
     class RemoveContentCommand < HammerCLIKatello::SingleResourceCommand
-      include RepositoryScopedToProduct
+      extend RepositoryScopedToProduct
       include OrganizationOptions
 
+      validate_repo_name_requires_product_options
       action :remove_content
       command_name "remove-content"
       desc _("Remove content from a repository")
@@ -489,9 +500,10 @@ module HammerCLIKatello
 
     class ExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
-      include RepositoryScopedToProduct
       include OrganizationOptions
+      extend RepositoryScopedToProduct
 
+      validate_repo_name_requires_product_options
       action :export
       command_name "export"
       desc _("Export content from a repository to the configured directory")
