@@ -23,8 +23,10 @@ module HammerCLIKatello
 
       class AddRepositoryCommand < HammerCLIKatello::AddAssociatedCommand
         extend AddProductOptions
-        include RepositoryScopedToProduct
+        extend RepositoryScopedToProduct
         include OrganizationOptions
+
+        validate_repo_name_requires_product_options
         command_name 'add-repository'
         associated_resource :repositories
 
@@ -39,8 +41,10 @@ module HammerCLIKatello
 
       class RemoveRepositoryCommand < HammerCLIKatello::RemoveAssociatedCommand
         extend AddProductOptions
-        include RepositoryScopedToProduct
+        extend RepositoryScopedToProduct
         include OrganizationOptions
+
+        validate_repo_name_requires_product_options
         command_name 'remove-repository'
         associated_resource :repositories
 

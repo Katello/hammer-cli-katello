@@ -5,6 +5,7 @@ require 'hammer_cli_foreman/commands'
 require 'hammer_cli_foreman/output/fields'
 require 'hammer_cli_foreman_tasks'
 
+# rubocop:disable Metrics/ModuleLength
 module HammerCLIKatello
   def self.exception_handler_class
     HammerCLIKatello::ExceptionHandler
@@ -126,7 +127,13 @@ module HammerCLIKatello
                                          'hammer_cli_katello/file'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("module-stream", _("View Module Streams"),
+                                         'HammerCLIKatello::ModuleStreamCommand',
+                                         'hammer_cli_katello/module_stream'
+                                        )
+
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
   require 'hammer_cli_katello/hostgroup'
 end
+# rubocop:enable Metrics/ModuleLength

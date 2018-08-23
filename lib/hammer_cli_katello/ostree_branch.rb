@@ -3,6 +3,10 @@ module HammerCLIKatello
     resource :ostree_branches
 
     class ListCommand < HammerCLIKatello::ListCommand
+      extend RepositoryScopedToProduct
+
+      validate_repo_name_requires_product_options(:option_repository_name)
+
       output do
         field :id, _("ID")
         field :name, _("Name")
