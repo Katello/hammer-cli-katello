@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.authors = [
     "Adam Price",
     "Adam Ruzicka",
+    "Anand Agrawal",
     "Andrew Kofink",
     "Brad Buckingham",
     "Bryan Kearney",
@@ -26,8 +27,10 @@ Gem::Specification.new do |gem|
     "Og Maciel",
     "Partha Aji",
     "Pavel Moravec",
+    "Rahul Bajaj",
     "Roman Plevka",
     "Stephen Benjamin",
+    "Shira Maximov",
     "Tomas Strachota",
     "Tom McKay",
     "Walden Raines",
