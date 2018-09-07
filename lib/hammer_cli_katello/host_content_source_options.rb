@@ -20,6 +20,9 @@ module HammerCLIKatello
           resource_hash["content_source_id"] = resolver.smart_proxy_id(proxy_options)
         end
       end
+    rescue HammerCLIForeman::ResolverError => e
+      e.message.gsub!('smart_proxy', _('Content Source'))
+      raise e
     end
   end
 end
