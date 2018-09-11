@@ -9,6 +9,7 @@ module HammerCLIKatello
         field :sync_date, _("Start Date"), Fields::Date
         field :interval, _("Interval")
         field :enabled, _("Enabled"), Fields::Boolean
+        field :cron_expression, _("Cron Expression")
       end
 
       build_options
@@ -30,10 +31,9 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      option "--interval", "INTERVAL", _("how often synchronization should run"),
-             :format => HammerCLI::Options::Normalizers::Enum.new(
-               %w(hourly daily weekly)
-             )
+      option "--interval", "INTERVAL", _("how often synchronization should run")
+
+      option "--cron-expression", "CRON EXPRESSION", _("set this when interval is custom cron")
 
       option "--sync-date", "SYNC_DATE",
              _("Start date and time for the sync plan." \
@@ -47,10 +47,8 @@ module HammerCLIKatello
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      option "--interval", "INTERVAL", _("how often synchronization should run"),
-             :format => HammerCLI::Options::Normalizers::Enum.new(
-               %w(hourly daily weekly)
-             )
+      option "--interval", "INTERVAL", _("how often synchronization should run")
+
       option "--sync-date", "SYNC_DATE", _("start date and time of the synchronization"),
              :format => HammerCLI::Options::Normalizers::DateTime.new
 
