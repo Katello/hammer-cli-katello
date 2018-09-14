@@ -13,3 +13,6 @@ Metrics/AbcSize:
 # Offense count: 1
 Metrics/PerceivedComplexity:
   Max: 8
+
+Style/FrozenStringLiteralComment:
+  Enabled: False

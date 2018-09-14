@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module HammerCLIKatello
   class ContentViewVersion < HammerCLIKatello::Command
     resource :content_view_versions
@@ -245,17 +247,141 @@ module HammerCLIKatello
       end
     end
 
-    class ExportCommand < HammerCLIKatello::SingleResourceCommand
+    class LegacyExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
+      desc 'Export a content view (deprecated)'
 
       action :export
-      command_name "export"
+      command_name "export-legacy"
 
       success_message _("Content view is being exported in task %{id}.")
       failure_message _("Could not export the content view")
 
       build_options do |o|
         o.expand(:all).including(:environments, :content_views, :organizations)
+      end
+    end
+
+    class ExportCommand < HammerCLIForeman::Command
+      include HammerCLI::Messages
+      include HammerCLIKatello::LocalHelper
+      include HammerCLIKatello::ApipieHelper
+
+      PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
+
+      desc 'Export a content view version'
+
+      command_name "export"
+
+      success_message _("Content view export is available in %{directory}.")
+      failure_message _("Could not export the content view")
+
+      option "--id", "ID", _("Content View Version numeric identifier")
+      option '--export-dir', 'EXPORT_DIR', _("Directory to put content view version export into.")
+
+      validate_options do
+        option(:option_export_dir).required
+      end
+
+      build_options
+
+      class ContentViewIdParamSource
+        def initialize(command)
+          @command = command
+        end
+
+        def get_options(_defined_options, result)
+          if result['option_id'].nil? && result['option_name']
+            result['option_id'] = @command.resolver.content_view_id(result)
+          end
+          result
+        end
+      end
+
+      def option_sources
+        super << ContentViewIdParamSource.new(self)
+      end
+
+      def execute
+        cvv = show(:content_view_versions, 'id' => options['option_id'])
+        repositories = cvv['repositories'].collect do |repo|
+          show(:repositories, 'id' => repo['id'])
+        end
+
+        check_repo_download_policy(repositories)
+
+        repositories.each do |repo|
+          repo['packages'] = index(:packages, 'repository_id' => repo['id'])
+          repo['errata'] = index(:errata, 'repository_id' => repo['id'])
+        end
+
+        json = export_json(cvv, repositories)
+        create_tar(cvv, repositories, json)
+        return HammerCLI::EX_OK
+      end
+
+      def create_tar(cvv, repositories, json)
+        export_prefix = "export-#{cvv['id']}"
+        export_file = "#{export_prefix}.json"
+        export_repos_tar = "#{export_prefix}-repos.tar"
+        export_tar = "#{export_prefix}.tar"
+
+        Dir.mkdir("#{options['option_export_dir']}/#{export_prefix}")
+
+        Dir.chdir(PUBLISHED_REPOS_DIR) do
+          repositories.each do |repo|
+            repo_tar = "#{options['option_export_dir']}/#{export_prefix}/#{export_repos_tar}"
+            `tar cvfh #{repo_tar} #{repo['relative_path']}`
+          end
+        end
+
+        Dir.chdir("#{options['option_export_dir']}/#{export_prefix}") do
+          File.open(export_file, 'w') do |file|
+            file.write(JSON.pretty_generate(json))
+          end
+        end
+
+        Dir.chdir(options['option_export_dir']) do
+          `tar cf #{export_tar} #{export_prefix}`
+          FileUtils.rm_rf(export_prefix)
+        end
+      end
+
+      def check_repo_download_policy(repositories)
+        on_demand = repositories.select do |repo|
+          show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] == 'on_demand'
+        end
+        return true if on_demand.empty?
+
+        on_demand_names = repositories.collect { |repo| repo['name'] }
+        raise <<~MSG
+          All exported repositories must be set to an immediate download policy and re-synced.
+          The following repositories need action:
+            #{on_demand_names.join('\n')}
+        MSG
+      end
+
+      def export_json(content_view_version, repositories)
+        json = {
+          "name" => content_view_version['content_view']['name'],
+          "major" => content_view_version['major'],
+          "minor" => content_view_version['minor']
+        }
+
+        json["repositories"] = repositories.collect do |repo|
+          {
+            "id" => repo['id'],
+            "label" => repo['label'],
+            "content_type" => repo['content_type'],
+            "backend_identifier" => repo['backend_identifier'],
+            "relative_path" => repo['relative_path'],
+            "on_disk_path" => "#{PUBLISHED_REPOS_DIR}/#{repo['relative_path']}",
+            "rpm_filenames" => repo['packages'].collect { |package| package['filename'] },
+            "errata_ids" => repo['errata'].collect { |errata| errata['errata_id'] }
+          }
+        end
+
+        json
       end
     end
 

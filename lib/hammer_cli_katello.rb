@@ -27,6 +27,8 @@ module HammerCLIKatello
   require 'hammer_cli_katello/id_resolver'
   require 'hammer_cli_katello/capsule'
   require 'hammer_cli_katello/id_name_options_validator'
+  require 'hammer_cli_katello/local_helper'
+  require 'hammer_cli_katello/apipie_helper'
 
   # commands
   HammerCLI::MainCommand.lazy_subcommand("activation-key", _("Manipulate activation keys"),
