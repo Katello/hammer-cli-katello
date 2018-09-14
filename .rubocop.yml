@@ -1,6 +1,9 @@
 # TODO: remove this
 inherit_from: .rubocop_todo.yml
 
+AllCops:
+  TargetRubyVersion: 2.3
+
 MethodLength:
   Description: 'Avoid methods longer than 30 lines of code.'
   Max: 30 # default is 10

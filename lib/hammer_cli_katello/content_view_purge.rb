@@ -53,7 +53,7 @@ module HammerCLIKatello
     end
 
     def execute
-      if option_count < 0
+      if option_count.negative?
         output.print_error _("Invalid value for --count option: value must be 0 or greater.")
         return HammerCLI::EX_USAGE
       end
