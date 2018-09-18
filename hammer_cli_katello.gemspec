@@ -34,11 +34,11 @@ Gem::Specification.new do |gem|
     "Zach Huntington-Meath"
   ]
   gem.email = ['katello@lists.fedorahosted.org']
-  gem.license = "GPL-3"
+  gem.license = "GPL-3.0-only"
   gem.description = 'Hammer-CLI-Katello is a plugin for Hammer to provide' \
     ' connectivity to a Katello server.'
   gem.summary = 'Katello commands for Hammer'
-  gem.homepage = 'http://github.com/theforeman/hammer-cli-katello'
+  gem.homepage = 'https://github.com/Katello/hammer-cli-katello'
 
   gem.files = Dir['config/**/*', 'lib/**/*.rb', 'locale/**/**']
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split($ORS)
