@@ -34,6 +34,7 @@ module HammerCLIKatello
         from :prior do
           field :name, _("Prior")
         end
+        field :registry_name_pattern, _("Registry Name Pattern")
       end
 
       build_options
@@ -68,6 +69,7 @@ module HammerCLIKatello
         from :prior do
           field :name, _("Prior Lifecycle Environment")
         end
+        field :registry_name_pattern, _("Registry Name Pattern")
       end
 
       build_options
