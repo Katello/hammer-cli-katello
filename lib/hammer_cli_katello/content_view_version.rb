@@ -249,7 +249,7 @@ module HammerCLIKatello
 
     class LegacyExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
-      desc 'Export a content view (deprecated)'
+      desc _('Export a content view (deprecated)')
 
       action :export
       command_name "export-legacy"
@@ -263,13 +263,12 @@ module HammerCLIKatello
     end
 
     class ExportCommand < HammerCLIForeman::Command
-      include HammerCLI::Messages
       include HammerCLIKatello::LocalHelper
       include HammerCLIKatello::ApipieHelper
 
       PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
 
-      desc 'Export a content view version'
+      desc _('Export a content view version')
 
       command_name "export"
 
@@ -281,26 +280,10 @@ module HammerCLIKatello
 
       validate_options do
         option(:option_export_dir).required
+        option(:option_id).required
       end
 
       build_options
-
-      class ContentViewIdParamSource
-        def initialize(command)
-          @command = command
-        end
-
-        def get_options(_defined_options, result)
-          if result['option_id'].nil? && result['option_name']
-            result['option_id'] = @command.resolver.content_view_id(result)
-          end
-          result
-        end
-      end
-
-      def option_sources
-        super << ContentViewIdParamSource.new(self)
-      end
 
       def execute
         cvv = show(:content_view_versions, 'id' => options['option_id'])
@@ -358,11 +341,12 @@ module HammerCLIKatello
         return true if on_demand.empty?
 
         on_demand_names = repositories.collect { |repo| repo['name'] }
-        raise <<~MSG
+        msg = <<~MSG
           All exported repositories must be set to an immediate download policy and re-synced.
           The following repositories need action:
             #{on_demand_names.join('\n')}
         MSG
+        raise _(msg)
       end
 
       def export_json(content_view_version, repositories)
@@ -386,6 +370,128 @@ module HammerCLIKatello
         end
 
         json
+      end
+    end
+
+    class ImportCommand < HammerCLIForeman::Command
+      include HammerCLIForemanTasks::Async
+      include HammerCLIKatello::LocalHelper
+      include HammerCLIKatello::ApipieHelper
+
+      attr_accessor :export_tar_dir, :export_tar_file, :export_tar_prefix
+
+      desc _('Import a content view version')
+
+      command_name "import"
+
+      success_message _("Content view imported.")
+      failure_message _("Could not import the content view.")
+
+      option "--organization-id", "ORGANIZATION_ID", _("Organization numeric identifier")
+      option(
+        '--export-tar',
+        'EXPORT_TAR',
+        _("Location of export tar on disk")
+      )
+
+      validate_options do
+        option(:option_export_tar).required
+        option(:option_organization_id).required
+      end
+
+      build_options
+
+      def execute
+        unless File.exist?(options['option_export_tar'])
+          raise _("Export tar #{options['option_export_tar']} does not exist.")
+        end
+
+        self.export_tar_file = File.basename(options['option_export_tar'])
+        self.export_tar_prefix = @export_tar_file.gsub('.tar', '')
+        self.export_tar_dir = File.dirname(options['option_export_tar'])
+        untar_export
+
+        export_json = read_json
+
+        cv = content_view(export_json['name'], options['option_organization_id'])
+        sync_repositories(export_json['repositories'], options['option_organization_id'])
+
+        publish(
+          cv['id'],
+          export_json['major'],
+          export_json['minor'],
+          repos_units(export_json['repositories'])
+        )
+        return HammerCLI::EX_OK
+      end
+
+      def untar_export
+        Dir.chdir(@export_tar_dir) do
+          `tar -xf #{@export_tar_file}`
+        end
+
+        Dir.chdir("#{@export_tar_dir}/#{@export_tar_prefix}") do
+          if File.exist?(@export_tar_file.gsub('.tar', '-repos.tar'))
+            `tar -xf #{@export_tar_file.gsub('.tar', '-repos.tar')}`
+          else
+            raise _("Export repos tar file is missing.")
+          end
+        end
+      end
+
+      def read_json
+        json_file = @export_tar_file.gsub('tar', 'json')
+        json_file = "#{@export_tar_dir}/#{@export_tar_prefix}/#{json_file}"
+        json_file = File.read(json_file)
+        JSON.parse(json_file)
+      end
+
+      def sync_repositories(repositories, organization_id)
+        repositories.each do |repo|
+          library_repos = index(
+            :repositories,
+            'organization_id' => organization_id,
+            'library' => true
+          )
+
+          library_repo = library_repos.select do |candidate_repo|
+            candidate_repo['label'] == repo['label']
+          end
+
+          library_repo = library_repo.first
+
+          if library_repo.nil?
+            msg = _("Unable to sync repositories, no library repository found for %s")
+            raise msg % repo['label']
+          end
+
+          synchronize(
+            library_repo['id'],
+            "file://#{@export_tar_dir}/#{@export_tar_prefix}/#{repo['relative_path']}"
+          )
+        end
+      end
+
+      def repos_units(repositories)
+        repositories.collect do |repo|
+          {
+            'label' => repo['label'],
+            'rpm_filenames' => repo['rpm_filenames']
+          }
+        end
+      end
+
+      def content_view(name, organization_id)
+        index(:content_views, 'name' => name, 'organization_id' => organization_id).first
+      end
+
+      def synchronize(id, source_url)
+        task_progress(call(:sync, :repositories, 'id' => id, 'source_url' => source_url))
+      end
+
+      def publish(id, major, minor, repos_units)
+        params = {'id' => id, 'major' => major, 'minor' => minor, 'repos_units' => repos_units}
+        task_progress(call(:publish, :content_views, params))
       end
     end
 
