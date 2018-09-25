@@ -48,7 +48,7 @@ Gem::Specification.new do |gem|
   gem.version = HammerCLIKatello.version
 
   gem.add_dependency 'hammer_cli_foreman', '~> 0.13.0'
-  gem.add_dependency 'hammer_cli_foreman_tasks', '>= 0.0.12'
+  gem.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.12.0'
   gem.add_dependency 'hammer_cli_foreman_bootdisk'
   gem.add_dependency 'hammer_cli_foreman_docker'
 
