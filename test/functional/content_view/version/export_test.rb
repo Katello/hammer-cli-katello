@@ -46,7 +46,7 @@ describe 'content-view version export' do
     Dir.expects(:chdir).with('/tmp/exports/export-5').returns(0)
 
     result = run_cmd(@cmd + params)
-    assert_equal(0, result.exit_code)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
   end
 
   it "fails export if any repository is set to on_demand" do
@@ -82,6 +82,6 @@ describe 'content-view version export' do
     File.expects(:exist?).with('/usr/share/foreman').returns(true)
 
     result = run_cmd(@cmd + params)
-    assert_equal(70, result.exit_code)
+    assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
   end
 end

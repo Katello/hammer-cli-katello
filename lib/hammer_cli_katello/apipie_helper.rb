@@ -8,7 +8,7 @@ module HammerCLIKatello
       call(:index, resource, options)['results']
     end
 
-    def call(action, resource, options)
+    def call(action, resource, options = {})
       HammerCLIForeman.foreman_resource(resource).call(action, options)
     end
   end
