@@ -43,6 +43,13 @@ module HammerCLIKatello
 
   class ListCommand < HammerCLIForeman::ListCommand
     include HammerCLIKatello::ResolverCommons
+
+    def self.build_options(builder_params = {}, &block)
+      # remove --sort-by and --sort-order in favor of the Foreman's --order
+      builder_params[:without] ||= []
+      builder_params[:without] += %i(sort_by sort_order)
+      super(builder_params, &block)
+    end
   end
 
   class InfoCommand < HammerCLIForeman::InfoCommand
