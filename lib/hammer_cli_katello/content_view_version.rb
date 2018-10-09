@@ -305,14 +305,14 @@ module HammerCLIKatello
       def execute
         cvv = show(:content_view_versions, 'id' => options['option_id'])
         repositories = cvv['repositories'].collect do |repo|
-          show(:repositories, 'id' => repo['id'])
+          show(:repositories, 'id' => repo['id'], :full_result => true)
         end
 
         check_repo_download_policy(repositories)
 
         repositories.each do |repo|
-          repo['packages'] = index(:packages, 'repository_id' => repo['id'])
-          repo['errata'] = index(:errata, 'repository_id' => repo['id'])
+          repo['packages'] = index(:packages, 'repository_id' => repo['id'], :full_result => true)
+          repo['errata'] = index(:errata, 'repository_id' => repo['id'], :full_result => true)
         end
 
         json = export_json(cvv, repositories)
@@ -329,10 +329,14 @@ module HammerCLIKatello
         Dir.mkdir("#{options['option_export_dir']}/#{export_prefix}")
 
         Dir.chdir(PUBLISHED_REPOS_DIR) do
+          repo_tar = "#{options['option_export_dir']}/#{export_prefix}/#{export_repos_tar}"
+          repo_dirs = []
+
           repositories.each do |repo|
-            repo_tar = "#{options['option_export_dir']}/#{export_prefix}/#{export_repos_tar}"
-            `tar cvfh #{repo_tar} #{repo['relative_path']}`
+            repo_dirs.push(repo['relative_path'])
           end
+
+          `tar cvfh #{repo_tar} #{repo_dirs.join(" ")}`
         end
 
         Dir.chdir("#{options['option_export_dir']}/#{export_prefix}") do
