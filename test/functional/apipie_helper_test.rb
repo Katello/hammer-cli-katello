@@ -19,6 +19,11 @@ describe 'apipie helper' do
     assert @apipie_helper.index(:repositories, 'name' => 'foo')
   end
 
+  it "calls destroy method apipie resource" do
+    api_expects(:repositories, :destroy).with_params('id' => '1').returns({})
+    assert @apipie_helper.destroy(:repositories, 'id' => '1')
+  end
+
   it "call method for apipie resources works" do
     api_expects(:repositories, :index).with_params('name' => 'foo').returns('results' => [])
     assert @apipie_helper.call(:index, :repositories, 'name' => 'foo')
