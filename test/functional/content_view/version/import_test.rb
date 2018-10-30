@@ -14,6 +14,7 @@ describe 'content-view version import' do
     ]
 
     File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
 
     File.expects(:exist?).with("/tmp/exports/export-2.tar").returns(true)
     Dir.expects(:chdir).with('/tmp/exports').returns(0)
@@ -73,6 +74,115 @@ describe 'content-view version import' do
     assert_equal(HammerCLI::EX_OK, result.exit_code)
   end
 
+  it "performs composite import" do
+    params = [
+      '--export-tar=/tmp/exports/export-999.tar',
+      '--organization-id=1'
+    ]
+
+    File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
+
+    File.expects(:exist?).with("/tmp/exports/export-999.tar").returns(true)
+    Dir.expects(:chdir).with('/tmp/exports').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-999').returns(0)
+    File.expects(:read).with("/tmp/exports/export-999/export-999.json").returns(
+      JSON.dump(
+        'name' => 'Foo Composite View',
+        'major' => '10',
+        'minor' => '0',
+        'composite_components' => ["berbere 55.32"]
+      )
+    )
+
+    ex = api_expects(:content_views, :index)
+    ex = ex.with_params('name' => 'berbere', 'organization_id' => '1')
+    ex.returns(
+      'results' => [{'versions' => [{'version' => '10.0', 'id' => '654'},
+                                    {'version' => '55.32', 'id' => '876'}]
+                    }]
+    )
+
+    ex = api_expects(:content_views, :index)
+    ex = ex.with_params('name' => 'Foo Composite View', 'organization_id' => '1')
+    ex.returns(
+      'results' => [{
+        'id' => '5',
+        'repositories' => [{'id' => '2', 'label' => 'foo'}],
+        'content_view' => {'name' => 'cv'}
+      }]
+    )
+
+    ex = api_expects(:content_views, :update)
+    ex = ex.with_params(
+      'id' => '5',
+      'component_ids' => ['876']
+    )
+    ex.returns('id' => '5', 'state' => 'planned')
+
+    ex = api_expects(:content_views, :publish)
+    ex = ex.with_params(
+      'id' => '5',
+      'major' => '10',
+      'minor' => '0'
+    )
+    ex.returns('id' => '2', 'state' => 'planned')
+
+    expect_foreman_task('3')
+
+    result = run_cmd(@cmd + params)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
+
+  it "performs composite import, component not found" do
+    params = [
+      '--export-tar=/tmp/exports/export-999.tar',
+      '--organization-id=1'
+    ]
+
+    File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
+
+    File.expects(:exist?).with("/tmp/exports/export-999.tar").returns(true)
+    Dir.expects(:chdir).with('/tmp/exports').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-999').returns(0)
+    File.expects(:read).with("/tmp/exports/export-999/export-999.json").returns(
+      JSON.dump(
+        'name' => 'Foo Composite View',
+        'major' => '10',
+        'minor' => '0',
+        'composite_components' => ["berbere 55.32", "unicorn 99.99"]
+      )
+    )
+
+    ex = api_expects(:content_views, :index)
+    ex = ex.with_params('name' => 'berbere', 'organization_id' => '1')
+    ex.returns(
+      'results' => [{'versions' => [{'version' => '10.0', 'id' => '654'},
+                                    {'version' => '55.32', 'id' => '876'}]
+                    }]
+    )
+
+    ex = api_expects(:content_views, :index)
+    ex = ex.with_params('name' => 'unicorn', 'organization_id' => '1')
+    ex.returns(
+      'results' => []
+    )
+
+    ex = api_expects(:content_views, :index)
+    ex = ex.with_params('name' => 'Foo Composite View', 'organization_id' => '1')
+    ex.returns(
+      'results' => [{
+        'id' => '5',
+        'repositories' => [{'id' => '2', 'label' => 'foo'}],
+        'content_view' => {'name' => 'cv'}
+      }]
+    )
+
+    result = run_cmd(@cmd + params)
+    assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
+  end
+
   it "fails import if any repository does not exist" do
     params = [
       '--export-tar=/tmp/exports/export-2.tar',
@@ -80,6 +190,7 @@ describe 'content-view version import' do
     ]
 
     File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
 
     File.expects(:exist?).with("/tmp/exports/export-2.tar").returns(true)
     Dir.expects(:chdir).with('/tmp/exports').returns(0)

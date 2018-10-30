@@ -265,6 +265,7 @@ module HammerCLIKatello
     class ExportCommand < HammerCLIForeman::Command
       include HammerCLIKatello::LocalHelper
       include HammerCLIKatello::ApipieHelper
+      include HammerCLIKatello::CVImportExportHelper
 
       PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
 
@@ -287,18 +288,29 @@ module HammerCLIKatello
 
       def execute
         cvv = show(:content_view_versions, 'id' => options['option_id'])
-        repositories = cvv['repositories'].collect do |repo|
-          show(:repositories, 'id' => repo['id'], :full_result => true)
+        cv = show(:content_views, 'id' => cvv['content_view_id'])
+
+        composite = cv["composite"]
+        export_json_options = { :cvv => cvv }
+
+        if composite
+          components = cv['components']
+          export_json_options[:component_cvvs] = components.collect do |component|
+            component['name']
+          end
+          export_json_options[:repositories] = []
+        else
+          repositories = fetch_cvv_repositories(cvv)
+          check_repo_download_policy(repositories)
+
+          repositories.each do |repo|
+            repo['packages'] = index(:packages, 'repository_id' => repo['id'], :full_result => true)
+            repo['errata'] = index(:errata, 'repository_id' => repo['id'], :full_result => true)
+          end
+          export_json_options[:repositories] = repositories
         end
 
-        check_repo_download_policy(repositories)
-
-        repositories.each do |repo|
-          repo['packages'] = index(:packages, 'repository_id' => repo['id'], :full_result => true)
-          repo['errata'] = index(:errata, 'repository_id' => repo['id'], :full_result => true)
-        end
-
-        json = export_json(cvv, repositories)
+        json = export_json(export_json_options)
         create_tar(cvv, repositories, json)
         return HammerCLI::EX_OK
       end
@@ -311,15 +323,17 @@ module HammerCLIKatello
 
         Dir.mkdir("#{options['option_export_dir']}/#{export_prefix}")
 
-        Dir.chdir(PUBLISHED_REPOS_DIR) do
-          repo_tar = "#{options['option_export_dir']}/#{export_prefix}/#{export_repos_tar}"
-          repo_dirs = []
+        if repositories
+          Dir.chdir(PUBLISHED_REPOS_DIR) do
+            repo_tar = "#{options['option_export_dir']}/#{export_prefix}/#{export_repos_tar}"
+            repo_dirs = []
 
-          repositories.each do |repo|
-            repo_dirs.push(repo['relative_path'])
+            repositories.each do |repo|
+              repo_dirs.push(repo['relative_path'])
+            end
+
+            `tar cvfh #{repo_tar} #{repo_dirs.join(" ")}`
           end
-
-          `tar cvfh #{repo_tar} #{repo_dirs.join(" ")}`
         end
 
         Dir.chdir("#{options['option_export_dir']}/#{export_prefix}") do
@@ -348,35 +362,13 @@ module HammerCLIKatello
         MSG
         raise _(msg)
       end
-
-      def export_json(content_view_version, repositories)
-        json = {
-          "name" => content_view_version['content_view']['name'],
-          "major" => content_view_version['major'],
-          "minor" => content_view_version['minor']
-        }
-
-        json["repositories"] = repositories.collect do |repo|
-          {
-            "id" => repo['id'],
-            "label" => repo['label'],
-            "content_type" => repo['content_type'],
-            "backend_identifier" => repo['backend_identifier'],
-            "relative_path" => repo['relative_path'],
-            "on_disk_path" => "#{PUBLISHED_REPOS_DIR}/#{repo['relative_path']}",
-            "rpm_filenames" => repo['packages'].collect { |package| package['filename'] },
-            "errata_ids" => repo['errata'].collect { |errata| errata['errata_id'] }
-          }
-        end
-
-        json
-      end
     end
 
     class ImportCommand < HammerCLIForeman::Command
       include HammerCLIForemanTasks::Async
       include HammerCLIKatello::LocalHelper
       include HammerCLIKatello::ApipieHelper
+      include HammerCLIKatello::CVImportExportHelper
 
       attr_accessor :export_tar_dir, :export_tar_file, :export_tar_prefix
 
@@ -389,8 +381,7 @@ module HammerCLIKatello
 
       option "--organization-id", "ORGANIZATION_ID", _("Organization numeric identifier")
       option(
-        '--export-tar',
-        'EXPORT_TAR',
+        '--export-tar', 'EXPORT_TAR',
         _("Location of export tar on disk")
       )
 
@@ -406,47 +397,35 @@ module HammerCLIKatello
           raise _("Export tar #{options['option_export_tar']} does not exist.")
         end
 
-        self.export_tar_file = File.basename(options['option_export_tar'])
-        self.export_tar_prefix = @export_tar_file.gsub('.tar', '')
-        self.export_tar_dir = File.dirname(options['option_export_tar'])
-        untar_export
+        import_tar_params = obtain_export_params(options['option_export_tar'])
+        untar_export(import_tar_params)
 
-        export_json = read_json
-
+        export_json = read_json(import_tar_params)
         cv = content_view(export_json['name'], options['option_organization_id'])
-        sync_repositories(export_json['repositories'], options['option_organization_id'])
 
-        publish(
-          cv['id'],
-          export_json['major'],
-          export_json['minor'],
-          repos_units(export_json['repositories'])
-        )
+        if export_json['composite_components']
+          composite_version_ids = export_json['composite_components'].map do |component|
+            find_local_component_id(component)
+          end
+
+          update(:content_views, 'id' => cv['id'], 'component_ids' => composite_version_ids)
+          publish(cv['id'], export_json['major'], export_json['minor'])
+        else
+          sync_repositories(export_json['repositories'], options['option_organization_id'],
+                            import_tar_params)
+
+          publish(
+            cv['id'], export_json['major'],
+            export_json['minor'], repos_units(export_json['repositories'])
+          )
+        end
         return HammerCLI::EX_OK
       end
 
-      def untar_export
-        Dir.chdir(@export_tar_dir) do
-          `tar -xf #{@export_tar_file}`
-        end
+      def sync_repositories(repositories, organization_id, options)
+        export_tar_dir =  options[:dirname]
+        export_tar_prefix = options[:prefix]
 
-        Dir.chdir("#{@export_tar_dir}/#{@export_tar_prefix}") do
-          if File.exist?(@export_tar_file.gsub('.tar', '-repos.tar'))
-            `tar -xf #{@export_tar_file.gsub('.tar', '-repos.tar')}`
-          else
-            raise _("Export repos tar file is missing.")
-          end
-        end
-      end
-
-      def read_json
-        json_file = @export_tar_file.gsub('tar', 'json')
-        json_file = "#{@export_tar_dir}/#{@export_tar_prefix}/#{json_file}"
-        json_file = File.read(json_file)
-        JSON.parse(json_file)
-      end
-
-      def sync_repositories(repositories, organization_id)
         repositories.each do |repo|
           library_repos = index(
             :repositories,
@@ -467,7 +446,7 @@ module HammerCLIKatello
 
           synchronize(
             library_repo['id'],
-            "file://#{@export_tar_dir}/#{@export_tar_prefix}/#{repo['relative_path']}"
+            "file://#{export_tar_dir}/#{export_tar_prefix}/#{repo['relative_path']}"
           )
         end
       end
@@ -489,8 +468,9 @@ module HammerCLIKatello
         task_progress(call(:sync, :repositories, 'id' => id, 'source_url' => source_url))
       end
 
-      def publish(id, major, minor, repos_units)
-        params = {'id' => id, 'major' => major, 'minor' => minor, 'repos_units' => repos_units}
+      def publish(id, major, minor, repos_units = nil)
+        params = {'id' => id, 'major' => major, 'minor' => minor }
+        params['repos_units'] = repos_units if repos_units
         task_progress(call(:publish, :content_views, params))
       end
     end
