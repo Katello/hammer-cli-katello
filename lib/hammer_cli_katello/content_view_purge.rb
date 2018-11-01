@@ -1,6 +1,7 @@
 module HammerCLIKatello
   class ContentViewPurgeCommand < HammerCLIKatello::Command
     include HammerCLIForemanTasks::Async
+    include HammerCLIKatello::ApipieHelper
     include OrganizationOptions
 
     command_name "purge"
@@ -23,14 +24,6 @@ module HammerCLIKatello
     end
 
     build_options
-
-    def resource_content_views
-      HammerCLIForeman.foreman_resource(:content_views)
-    end
-
-    def resource_content_view_versions
-      HammerCLIForeman.foreman_resource(:content_view_versions)
-    end
 
     class ContentViewIdParamSource
       def initialize(command)
@@ -74,31 +67,26 @@ module HammerCLIKatello
 
     private def purge_version(v)
       if option_async?
-        task = resource_content_view_versions.call(:destroy, 'id' => v["id"])
+        task = destroy(:content_view_versions, 'id' => v["id"])
         print_message _("Version '%{version}' of content view '%{view}' scheduled "\
                         "for deletion in task '%{task_id}'.") %
-                      {version: v["version"], view: content_view["name"], task_id: task['id']}
+                      {version: v["version"], view: v["content_view"]["name"], task_id: task['id']}
       else
-        task_progress(resource_content_view_versions.call(:destroy, 'id' => v["id"]))
+        task_progress(call(:destroy, :content_view_versions, 'id' => v["id"]))
         print_message _("Version '%{version}' of content view '%{view}' deleted.") %
-                      {version: v["version"], view: content_view["name"]}
+                      {version: v["version"], view: v["content_view"]["name"]}
       end
-    end
-
-    private def content_view
-      @content_view ||= resource_content_views.call(:show, 'id' => options['option_id'])
     end
 
     private def old_unused_versions
       return @old_unused_versions if @old_unused_versions
 
-      all_versions = content_view['versions'].sort_by do |version|
-        [version[:major], version[:minor]]
-      end
-
-      # Keep only versions which are not used
+      all_versions = index(:content_view_versions, :content_view_id => options['option_id'])
+      all_versions.sort_by! { |v| [v['major'], v['minor']] }
       @old_unused_versions = all_versions.select do |v|
-        v["environment_ids"].empty?
+        v["environments"].empty? &&
+          v["composite_content_views"].empty? &&
+          v["composite_content_view_versions"].empty?
       end
     end
   end

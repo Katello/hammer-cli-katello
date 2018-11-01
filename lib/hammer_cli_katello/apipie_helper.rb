@@ -12,6 +12,10 @@ module HammerCLIKatello
       call(:update, resource, options)['results']
     end
 
+    def destroy(resource, options = {})
+      call(:destroy, resource, options)
+    end
+
     def call(action, resource, options = {})
       HammerCLIForeman.foreman_resource(resource).call(action, options)
     end
