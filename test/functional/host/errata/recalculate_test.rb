@@ -21,11 +21,9 @@ describe 'recalculate errata' do
   it "recalculates errata for a host" do
     params = ["--host-id=#{host_id}"]
 
-    ex = api_expects(:host_errata, :applicability, 'Host errata recalculate') do |par|
-      par['host_id'] == host_id
-    end
-
-    ex.returns(response)
+    api_expects(:host_errata, :applicability, 'Host errata recalculate')
+      .with_params('host_id' => host_id)
+      .returns(response)
 
     expect_foreman_task(task_id)
 
@@ -35,11 +33,9 @@ describe 'recalculate errata' do
   it "applies an errata to a host with async flag" do
     params = ["--host-id=#{host_id}", "--async"]
 
-    ex = api_expects(:host_errata, :applicability, 'Host errata recalculate') do |par|
-      par['host_id'] == host_id
-    end
-
-    ex.returns(response)
+    api_expects(:host_errata, :applicability, 'Host errata recalculate')
+      .with_params('host_id' => host_id)
+      .returns(response)
 
     run_cmd(@cmd + params)
   end
