@@ -68,6 +68,8 @@ module HammerCLIKatello
         from :prior do
           field :name, _("Prior Lifecycle Environment")
         end
+        field :registry_unauthenticated_pull, _("Unauthenticated Pull")
+        field :registry_name_pattern, _("Registry Name Pattern")
       end
 
       build_options
