@@ -146,12 +146,18 @@ module HammerCLIKatello
         field :id, _("ID")
         field :product_name, _("Name")
         field :format_consumed, _("Attached")
-        field :amount, _("Quantity")
+        field :quantity_attached, _("Quantity")
         field :start_date, _("Start Date"), Fields::Date
         field :end_date, _("End Date"), Fields::Date
         field :support_level, _("Support")
         field :contract_number, _("Contract")
         field :account_number, _("Account")
+      end
+
+      def extend_data(data)
+        data["format_consumed"] = _("#{data['consumed']} out of "\
+				    "#{data['quantity'] == -1 ? 'Unlimited' : data['quantity']}")
+        data
       end
 
       option '--id', "ACTIVATION_KEY_ID", _("ID of the activation key"),
