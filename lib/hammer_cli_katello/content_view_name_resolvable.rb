@@ -1,6 +1,6 @@
 module HammerCLIKatello
   module ContentViewNameResolvable
-    class ContentViewParamSource
+    class ContentViewParamSource < HammerCLI::Options::Sources::Base
       def initialize(command)
         @command = command
       end
@@ -16,8 +16,11 @@ module HammerCLIKatello
 
     def option_sources
       sources = super
-      idx = sources.index { |s| s.class == HammerCLIForeman::OptionSources::IdParams }
-      sources.insert(idx, ContentViewParamSource.new(self))
+      sources.find_by_name('IdResolution').insert_relative(
+        :after,
+        'IdParams',
+        ContentViewParamSource.new(self)
+      )
       sources
     end
   end

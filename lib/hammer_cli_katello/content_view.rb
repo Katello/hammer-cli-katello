@@ -109,7 +109,7 @@ module HammerCLIKatello
         end
       end
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         product_options = [:option_product_id, :option_product_name]
         if option(:option_repository_ids).exist?
           any(*product_options).rejected
@@ -138,7 +138,7 @@ module HammerCLIKatello
       option "--new-name", "NEW_NAME", _("New content view name"),
              :attribute_name => :option_new_name
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 
@@ -165,7 +165,7 @@ module HammerCLIKatello
       success_message _("Content view updated.")
       failure_message _("Could not update the content view")
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 
@@ -187,7 +187,7 @@ module HammerCLIKatello
       success_message _("Content view is being deleted with task %{id}.")
       failure_message _("Could not delete the content view")
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 
@@ -227,7 +227,7 @@ module HammerCLIKatello
       build_options
     end
 
-    class CVEnvParamsSource
+    class CVEnvParamsSource < HammerCLI::Options::Sources::Base
       def initialize(command)
         @command = command
       end
@@ -257,8 +257,11 @@ module HammerCLIKatello
 
       def option_sources
         sources = super
-        idx = sources.index { |s| s.class == HammerCLIForeman::OptionSources::IdParams }
-        sources.insert(idx, CVEnvParamsSource.new(self))
+        sources.find_by_name('IdResolution').insert_relative(
+          :after,
+          'IdParams',
+          CVEnvParamsSource.new(self)
+        )
         sources
       end
 
@@ -282,7 +285,7 @@ module HammerCLIKatello
       command_name 'add-version'
       desc _('Add a content view version to a composite view')
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         if option(:option_content_view_version_version).exist?
           any(:option_content_view_id, :option_content_view_name).required
         end
@@ -292,7 +295,7 @@ module HammerCLIKatello
         plural ? "components" : "component"
       end
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 
@@ -317,7 +320,7 @@ module HammerCLIKatello
       command_name 'remove-version'
       desc _('Remove a content view version from a composite view')
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         if option(:option_content_view_version_version).exist?
           any(:option_content_view_id, :option_content_view_name).required
         end
@@ -327,7 +330,7 @@ module HammerCLIKatello
         plural ? "components" : "component"
       end
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 

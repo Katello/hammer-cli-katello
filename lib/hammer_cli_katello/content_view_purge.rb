@@ -12,7 +12,7 @@ module HammerCLIKatello
     option "--count", "COUNT", _("count of unused versions to keep"),
            default: 3, format: HammerCLI::Options::Normalizers::Number.new
 
-    validate_options do
+    validate_options :before, 'IdResolution' do
       organization_options = [:option_organization_id, :option_organization_name, \
                               :option_organization_label]
 
@@ -25,7 +25,7 @@ module HammerCLIKatello
 
     build_options
 
-    class ContentViewIdParamSource
+    class ContentViewIdParamSource < HammerCLI::Options::Sources::Base
       def initialize(command)
         @command = command
       end
@@ -40,8 +40,11 @@ module HammerCLIKatello
 
     def option_sources
       sources = super
-      idx = sources.index { |s| s.class == HammerCLIForeman::OptionSources::IdParams }
-      sources.insert(idx, ContentViewIdParamSource.new(self))
+      sources.find_by_name('IdResolution').insert_relative(
+        :after,
+        'IdParams',
+        ContentViewIdParamSource.new(self)
+      )
       sources
     end
 

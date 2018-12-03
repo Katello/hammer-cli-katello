@@ -18,7 +18,7 @@ module HammerCLIKatello
       child_options = IdNameOptionsValidator.build_child_options(record_name)
       parent_options = IdNameOptionsValidator.build_parent_options(parent)
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         any(*child_options).required if required
 
         if (name_option = child_options.detect { |opt| opt.end_with?('_name') }) &&

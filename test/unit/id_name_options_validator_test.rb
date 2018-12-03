@@ -6,7 +6,7 @@ module HammerCLIKatello
     before(:each) do
       @cmd = Object.new
       @cmd.extend(IdNameOptionsValidator)
-      @cmd.class.send(:define_method, :validate_options) do |&block|
+      @cmd.class.send(:define_method, :validate_options) do |*_args, &block|
         block.call
       end
     end

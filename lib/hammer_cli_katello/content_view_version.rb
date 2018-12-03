@@ -185,7 +185,7 @@ module HammerCLIKatello
              :format => HammerCLI::Options::Normalizers::List.new
             )
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name]
 
         if option(:option_lifecycle_environment_ids).exist?

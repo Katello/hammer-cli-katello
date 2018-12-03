@@ -9,7 +9,7 @@ module HammerCLIKatello
           "PRIOR",
           _("Name of the prior environment")
         )
-        base.validate_options do
+        base.validate_options :before, 'IdResolution' do
           any(:option_prior, :option_prior_id).required
         end
       end
