@@ -26,7 +26,8 @@ describe 'content-view version export' do
     ex = api_expects(:content_views, :show)
     ex.returns(
       'id' => '4321',
-      'composite' => false
+      'composite' => false,
+      'label' => 'cv'
     )
 
     ex = api_expects(:repositories, :show).with_params('id' => '2')
@@ -50,9 +51,9 @@ describe 'content-view version export' do
     File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
 
     Dir.expects(:chdir).with("/var/lib/pulp/published/yum/https/repos/").returns(true)
-    Dir.expects(:mkdir).with('/tmp/exports/export-5').returns(0)
+    Dir.expects(:mkdir).with('/tmp/exports/export-cv-5').returns(0)
     Dir.expects(:chdir).with('/tmp/exports').returns(0)
-    Dir.expects(:chdir).with('/tmp/exports/export-5').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-cv-5').returns(0)
 
     result = run_cmd(@cmd + params)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
@@ -78,16 +79,17 @@ describe 'content-view version export' do
     ex.returns(
       'id' => '4321',
       'composite' => true,
-      'components' => [{ 'name' => "injera 95.5" }, {'name' => 'carrot wot 87.0'}]
+      'components' => [{ 'name' => "injera 95.5" }, {'name' => 'carrot wot 87.0'}],
+      'label' => 'cv'
     )
 
     File.expects(:exist?).with('/usr/share/foreman').returns(true)
     File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
 
     Dir.expects(:chdir).with("/var/lib/pulp/published/yum/https/repos/").never
-    Dir.expects(:mkdir).with('/tmp/exports/export-999').returns(0)
+    Dir.expects(:mkdir).with('/tmp/exports/export-cv-999').returns(0)
     Dir.expects(:chdir).with('/tmp/exports').returns(0)
-    Dir.expects(:chdir).with('/tmp/exports/export-999').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-cv-999').returns(0)
 
     result = run_cmd(@cmd + params)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
