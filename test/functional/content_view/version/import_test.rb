@@ -183,6 +183,23 @@ describe 'content-view version import' do
     assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
   end
 
+  it "fails import if the directory can not be read by apache" do
+    params = [
+      '--export-tar=/root/export-2.tar',
+      '--organization-id=1'
+    ]
+
+    File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
+
+    File.expects(:exist?).with("/root/export-2.tar").returns(true)
+    Dir.expects(:chdir).with('/root').returns(70)
+    Dir.expects(:chdir).with('/root/export-2').returns(70)
+
+    result = run_cmd(@cmd + params)
+    assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
+  end
+
   it "fails import if any repository does not exist" do
     params = [
       '--export-tar=/tmp/exports/export-2.tar',

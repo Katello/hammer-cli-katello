@@ -332,7 +332,7 @@ module HammerCLIKatello
               repo_dirs.push(repo['relative_path'])
             end
 
-            `tar cvfh #{repo_tar} #{repo_dirs.join(" ")}`
+            `tar cvfh #{repo_tar} #{repo_dirs.join(" ")} --selinux`
           end
         end
 

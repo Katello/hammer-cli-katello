@@ -1,6 +1,11 @@
 module HammerCLIKatello
   module CVImportExportHelper
     PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
+    USER_EXECUTE   = 0b001000000
+    GROUP_EXECUTE  = 0b000001000
+    OTHERS_EXECUTE = 0b000000001
+    APACHE_UID = 48
+    APACHE_GID = 48
 
     def fetch_cvv_repositories(cvv)
       cvv['repositories'].collect do |repo|
@@ -22,13 +27,35 @@ module HammerCLIKatello
       found_composite_version.first['id']
     end
 
+    # rubocop:disable Metrics/CyclomaticComplexity
+    def check_fs_perms
+      directory = options[:dirname]
+
+      begin
+        while  directory != "/"
+          dirmode = File.stat(directory).mode
+          has_apache_owner = File.stat(directory).uid == APACHE_UID
+          has_apache_group = File.stat(directory).gid == APACHE_GID
+          raise _("Apache does not not have permissions to access #{directory}") unless
+          (dirmode & OTHERS_EXECUTE).nonzero? ||
+          (dirmode & GROUP_EXECUTE && has_apache_group).nonzero? ||
+          (dirmode & USER_EXECUTE && has_apache_owner).nonzero?
+          directory = File.dirname(directory)
+        end
+      rescue Errno::EACCES
+        puts "unable to access #{directory} to determine file permissions, continuing"
+      end
+      untar_export
+    end
+    # rubocop:enable Metrics/CyclomaticComplexity
+
     def untar_export(options)
       export_tar_file = options[:filename]
       export_tar_dir =  options[:dirname]
       export_tar_prefix = options[:prefix]
 
       Dir.chdir(export_tar_dir) do
-        `tar -xf #{export_tar_file}`
+        `tar --selinux -xf #{export_tar_file}`
       end
 
       Dir.chdir("#{export_tar_dir}/#{export_tar_prefix}") do
