@@ -10,6 +10,7 @@ module HammerCLIKatello
         field :interval, _("Interval")
         field :enabled, _("Enabled"), Fields::Boolean
         field :cron_expression, _("Cron Expression")
+        field :foreman_tasks_recurring_logic_id, _("Recurring Logic ID")
       end
 
       build_options
