@@ -73,7 +73,7 @@ module HammerCLIKatello
       option "--name", "HOST_COLLECTION_NAME", _("Host Collection Name"),
              :attribute_name => :option_host_collection_name
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         host_collection_options = [:option_host_collection_id, :option_host_collection_name]
         any(*host_collection_options).required
       end

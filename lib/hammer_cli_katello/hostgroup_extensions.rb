@@ -13,7 +13,7 @@ module HammerCLIKatello
       base.option '--query-organization-label', 'ORGANIZATION_LABEL',
         _('Organization label to search by'), attribute_name: :option_organization_label
 
-      base.validate_options do
+      base.validate_options :before, 'IdResolution' do
         organization_options = [
           :option_organization_id, :option_organization_name, :option_organization_label
         ]

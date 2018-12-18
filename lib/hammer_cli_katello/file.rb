@@ -13,7 +13,7 @@ module HammerCLIKatello
         field :path, _("Path")
       end
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name,
                                 :option_organization_label]
         if any(:option_product_name, :option_content_view_name).exist?
@@ -35,7 +35,7 @@ module HammerCLIKatello
         field :checksum, _("Checksum")
       end
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name,
                                 :option_organization_label]
         product_options = [:option_product_id, :option_product_name]

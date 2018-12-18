@@ -197,7 +197,7 @@ module HammerCLIKatello
       success_message _("Repository updated.")
       failure_message _("Could not update the repository")
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 
@@ -336,7 +336,7 @@ module HammerCLIKatello
         ::HammerCLIForeman.foreman_resource(:content_uploads)
       end
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name,
                                 :option_organization_label]
         product_options = [:option_product_id, :option_product_name]
@@ -484,7 +484,7 @@ module HammerCLIKatello
       success_message _("Repository content removed.")
       failure_message _("Could not remove content")
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 
@@ -511,7 +511,7 @@ module HammerCLIKatello
       success_message _("Repository is being exported in task %{id}.")
       failure_message _("Could not export the repository")
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 

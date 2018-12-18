@@ -90,7 +90,7 @@ module HammerCLIKatello
 
       option "--unlimited-hosts", :flag, "Set hosts max to unlimited"
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         all(:option_unlimited_hosts, :option_max_hosts).rejected
       end
 
@@ -165,7 +165,7 @@ module HammerCLIKatello
       option '--name', "ACTIVATION_KEY_NAME", _("Activation key name to search by"),
         attribute_name: :option_activation_key_name
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         any(:option_activation_key_id, :option_activation_key_name).required
       end
 
@@ -238,7 +238,7 @@ module HammerCLIKatello
       option "--name", "NAME", _("Name of activation key"),
              :attribute_name => :option_activation_key_name
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         any(:option_activation_key_id, :option_activation_key_name).required
       end
 

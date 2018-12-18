@@ -64,7 +64,7 @@ module HammerCLIKatello
       success_message _("Filter created.")
       failure_message _("Could not create the filter")
 
-      validate_options do
+      validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
         product_options = [:option_product_id, :option_product_name]
