@@ -402,6 +402,15 @@ module HammerCLIKatello
 
         export_json = read_json(import_tar_params)
         cv = content_view(export_json['name'], options['option_organization_id'])
+        if cv.nil?
+          repo_labels = export_json['repositories'].map { |repo| repo['label'] }
+          repository_ids = repo_labels.map { |repo_label| find_library_repo(repo_label, options['option_organization_id'])['id'] }
+
+          call(:create, :content_views, 'name' =>export_json['name'], 'composite' => !export_json['composite_components'].nil?,
+               'organization_id' => options['option_organization_id'], 'repository_ids' => repository_ids)
+
+          cv = content_view(export_json['name'], options['option_organization_id'])
+        end
 
         if export_json['composite_components']
           composite_version_ids = export_json['composite_components'].map do |component|
@@ -422,22 +431,27 @@ module HammerCLIKatello
         return HammerCLI::EX_OK
       end
 
+      def find_library_repo(repo_label, organization_id)
+        library_repos = index(
+          :repositories,
+          'organization_id' => organization_id,
+          'library' => true
+        )
+
+        library_repo = library_repos.select do |candidate_repo|
+          candidate_repo['label'] == repo_label
+        end
+
+        library_repo.first
+      end
+
       def sync_repositories(repositories, organization_id, options)
         export_tar_dir =  options[:dirname]
         export_tar_prefix = options[:prefix]
 
         repositories.each do |repo|
-          library_repos = index(
-            :repositories,
-            'organization_id' => organization_id,
-            'library' => true
-          )
 
-          library_repo = library_repos.select do |candidate_repo|
-            candidate_repo['label'] == repo['label']
-          end
-
-          library_repo = library_repo.first
+          library_repo = find_library_repo(repo['label'], organization_id)
 
           if library_repo.nil?
             msg = _("Unable to sync repositories, no library repository found for %s")
