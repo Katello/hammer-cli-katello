@@ -101,7 +101,7 @@ module HammerCLIKatello
       end
 
       def setup_booleans(data)
-        data["_redhat_repo"] = data["product_type"] == "redhat" ? _("yes") : _("no")
+        data["_redhat_repo"] = data.dig("product", "redhat") ? _("yes") : _("no")
         data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
         data["_mirror_on_sync"] = data["mirror_on_sync"] ? _("yes") : _("no")
       end
