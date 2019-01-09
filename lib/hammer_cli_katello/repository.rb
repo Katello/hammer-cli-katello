@@ -219,7 +219,8 @@ module HammerCLIKatello
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--docker-tag", "TAG", _("Container Image tag")
+      option "--docker-tag", "TAG",
+              _("Optional custom Container Image tag to specify the value of the Docker digest")
       option "--docker-digest", "DIGEST", _("Container Image manifest digest")
 
       def execute
