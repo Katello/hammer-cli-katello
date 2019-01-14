@@ -1,3 +1,5 @@
+require 'hammer_cli_katello/erratum_info_command'
+
 module HammerCLIKatello
   class ErratumCommand < HammerCLIKatello::Command
     resource :errata
@@ -28,20 +30,8 @@ module HammerCLIKatello
       end
     end
 
-    class InfoCommand < HammerCLIKatello::InfoCommand
-      output do
-        field :id, _("ID")
-        field :errata_id, _("Errata ID")
-        field :title, _("Title")
-        field :type, _("Type")
-        field :severity, _("Severity")
-        field :issued, _("Issued")
-        field :updated, _("Updated")
-        field :description, _("Description")
-        field :summary, _("Summary")
-        field :solution, _("Solution")
-      end
-
+    class InfoCommand < HammerCLIKatello::ErratumInfoCommand
+      resource :errata
       build_options
     end
 
