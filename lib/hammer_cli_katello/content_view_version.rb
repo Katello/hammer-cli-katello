@@ -320,12 +320,13 @@ module HammerCLIKatello
         export_file = "#{export_prefix}.json"
         export_repos_tar = "#{export_prefix}-repos.tar"
         export_tar = "#{export_prefix}.tar"
+        export_dir = File.expand_path(options['option_export_dir'].to_s)
 
-        Dir.mkdir("#{options['option_export_dir']}/#{export_prefix}")
+        Dir.mkdir("#{export_dir}/#{export_prefix}")
 
         if repositories
           Dir.chdir(PUBLISHED_REPOS_DIR) do
-            repo_tar = "#{options['option_export_dir']}/#{export_prefix}/#{export_repos_tar}"
+            repo_tar = "#{export_dir}/#{export_prefix}/#{export_repos_tar}"
             repo_dirs = []
 
             repositories.each do |repo|
@@ -336,13 +337,13 @@ module HammerCLIKatello
           end
         end
 
-        Dir.chdir("#{options['option_export_dir']}/#{export_prefix}") do
+        Dir.chdir("#{export_dir}/#{export_prefix}") do
           File.open(export_file, 'w') do |file|
             file.write(JSON.pretty_generate(json))
           end
         end
 
-        Dir.chdir(options['option_export_dir']) do
+        Dir.chdir(export_dir) do
           `tar cf #{export_tar} #{export_prefix}`
           FileUtils.rm_rf(export_prefix)
         end
