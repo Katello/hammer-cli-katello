@@ -31,8 +31,8 @@ module HammerCLIKatello
       def get_subscription_type(data)
         if !data["virt_only"]
           _("Physical")
-        elsif data["host"]
-          _("Guests of %s" % data['host']['name'])
+        elsif data["hypervisor"]
+          _("Guests of %s" % data['hypervisor']['name'])
         elsif data["unmapper_guest"]
           _("Temporary")
         else
