@@ -110,6 +110,12 @@ describe HammerCLIKatello::SearchOptionsCreators do
       end
     end
 
+    describe '#create_compute_profiles_search_options(options, mode = nil)' do
+      it 'does not use the katello api' do
+        search_options_creators.create_compute_profiles_search_options(:anything)
+      end
+    end
+
     describe '#create_search_options_with_katello_api(options, resource)' do
       it 'does not use the katello api' do
         search_options_creators.create_organizations_search_options(:anything)

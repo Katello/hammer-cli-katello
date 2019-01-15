@@ -76,6 +76,10 @@ module HammerCLIKatello
       create_search_options_without_katello_api(options, api.resource(:compute_resources), mode)
     end
 
+    def create_compute_profiles_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:compute_profiles), mode)
+    end
+
     def create_images_search_options(options, mode = nil)
       create_search_options_without_katello_api(options, api.resource(:images), mode)
     end
