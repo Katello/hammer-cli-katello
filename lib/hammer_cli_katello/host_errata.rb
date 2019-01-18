@@ -1,3 +1,5 @@
+require 'hammer_cli_katello/erratum_info_command'
+
 module HammerCLIKatello
   class HostErrata < HammerCLIKatello::Command
     desc "Manage errata on your hosts"
@@ -27,25 +29,8 @@ module HammerCLIKatello
       build_options
     end
 
-    class InfoCommand < HammerCLIKatello::InfoCommand
+    class InfoCommand < HammerCLIKatello::ErratumInfoCommand
       resource :host_errata, :show
-      command_name "info"
-
-      output do
-        field :title, _("Title")
-        field :version, _("Version")
-        field :description, _("Description")
-        field :status, _("Status")
-        field :id, _("ID")
-        field :errata_id, _("Errata ID")
-        field :reboot_suggested, _("Reboot Suggested")
-        field :updated, _("Updated")
-        field :issued, _("Issued")
-        field :release, _("Release")
-        field :solution, _("Solution")
-        field :packages, _("Packages"), Fields::List
-      end
-
       build_options
     end
 
