@@ -84,13 +84,8 @@ module ErratumHelpers
 
   def verify_no_modules_packages_with_orphan_packages(result)
     result_out = result.out
-    module_streams_out = result_out.slice(result_out.index("Module Streams")..-1)
-    package_out = result_out.slice(0..result_out.index("Module Streams"))
-
-    refute_includes(module_streams_out, "Name")
-    refute_includes(module_streams_out, packages.first)
-
-    assert_includes(package_out, packages.first)
-    assert_includes(package_out, packages.last)
+    refute_includes(result_out, "Module Streams")
+    assert_includes(result_out, packages.first)
+    assert_includes(result_out, packages.last)
   end
 end
