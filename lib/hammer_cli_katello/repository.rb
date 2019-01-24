@@ -90,6 +90,10 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
+        if data["content_type"] != "docker"
+          data.delete("docker_tags_whitelist")
+        end
+
         if data["content_type"] == "yum" && data["gpg_key"]
           data["gpg_key_name"] = data["gpg_key"]["name"]
         end
