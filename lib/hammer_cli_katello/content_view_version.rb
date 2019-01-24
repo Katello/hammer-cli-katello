@@ -378,7 +378,7 @@ module HammerCLIKatello
       command_name "import"
 
       success_message _("Content view imported.")
-      failure_message _("Could not import the content view.")
+      failure_message _("Could not import the content view")
 
       option "--organization-id", "ORGANIZATION_ID", _("Organization numeric identifier")
       option(
@@ -393,6 +393,7 @@ module HammerCLIKatello
 
       build_options
 
+      # rubocop:disable Metrics/AbcSize
       def execute
         unless File.exist?(options['option_export_tar'])
           raise _("Export tar #{options['option_export_tar']} does not exist.")
@@ -403,6 +404,11 @@ module HammerCLIKatello
 
         export_json = read_json(import_tar_params)
         cv = content_view(export_json['name'], options['option_organization_id'])
+
+        if cv.nil?
+          raise _("The Content View '#{export_json['name']}' is not present on this server,"\
+          " please create the Content View and try the import again.")
+        end
 
         if export_json['composite_components']
           composite_version_ids = export_json['composite_components'].map do |component|
@@ -422,6 +428,7 @@ module HammerCLIKatello
         end
         return HammerCLI::EX_OK
       end
+      # rubocop:enable Metrics/AbcSize
 
       def sync_repositories(repositories, organization_id, options)
         export_tar_dir =  options[:dirname]
