@@ -404,23 +404,19 @@ module HammerCLIKatello
 
         export_json = read_json(import_tar_params)
         cv = content_view(export_json['name'], options['option_organization_id'])
-
-        if cv.nil?
-          raise _("The Content View '#{export_json['name']}' is not present on this server,"\
-          " please create the Content View and try the import again.")
-        end
+        major = export_json['major'].to_s
+        minor = export_json['minor'].to_s
+        import_checks(export_json, cv, major, minor)
 
         if export_json['composite_components']
           composite_version_ids = export_json['composite_components'].map do |component|
             find_local_component_id(component)
           end
-
           update(:content_views, 'id' => cv['id'], 'component_ids' => composite_version_ids)
           publish(cv['id'], export_json['major'], export_json['minor'])
         else
           sync_repositories(export_json['repositories'], options['option_organization_id'],
                             import_tar_params)
-
           publish(
             cv['id'], export_json['major'],
             export_json['minor'], repos_units(export_json['repositories'])
@@ -429,6 +425,21 @@ module HammerCLIKatello
         return HammerCLI::EX_OK
       end
       # rubocop:enable Metrics/AbcSize
+
+      def import_checks(cv, import_cv, major, minor)
+        version = "#{major}.#{minor}".to_f
+
+        if import_cv.nil?
+          raise _("The Content View #{cv['name']} is not present on this server,"\
+          " please create the Content View and try the import again.")
+        end
+
+        if import_cv['latest_version'].to_f >= version
+          raise _("The latest version (#{import_cv['latest_version']}) of"\
+          " the Content View '#{cv['name']}'"\
+          " is greater or equal to the version you are trying to import (#{version})")
+        end
+      end
 
       def sync_repositories(repositories, organization_id, options)
         export_tar_dir =  options[:dirname]
