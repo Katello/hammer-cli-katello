@@ -426,21 +426,6 @@ module HammerCLIKatello
       end
       # rubocop:enable Metrics/AbcSize
 
-      def import_checks(cv, import_cv, major, minor)
-        version = "#{major}.#{minor}".to_f
-
-        if import_cv.nil?
-          raise _("The Content View #{cv['name']} is not present on this server,"\
-          " please create the Content View and try the import again.")
-        end
-
-        if import_cv['latest_version'].to_f >= version
-          raise _("The latest version (#{import_cv['latest_version']}) of"\
-          " the Content View '#{cv['name']}'"\
-          " is greater or equal to the version you are trying to import (#{version})")
-        end
-      end
-
       def sync_repositories(repositories, organization_id, options)
         export_tar_dir =  options[:dirname]
         export_tar_prefix = options[:prefix]

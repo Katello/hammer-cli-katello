@@ -22,6 +22,33 @@ module HammerCLIKatello
       found_composite_version.first['id']
     end
 
+    def import_checks(cv, import_cv, major, minor)
+      version = "#{major}.#{minor}".to_f
+
+      if import_cv.nil?
+        raise _("The Content View #{cv['name']} is not present on this server,"\
+        " please create the Content View and try the import again.")
+      end
+
+      if import_cv['latest_version'].to_f >= version
+        raise _("The latest version (#{import_cv['latest_version']}) of"\
+        " the Content View '#{cv['name']}'"\
+        " is greater or equal to the version you are trying to import (#{version})")
+      end
+
+      unless import_cv['repository_ids'].nil?
+        repositories = import_cv['repository_ids'].collect do |repo_id|
+          show(:repositories, 'id' => repo_id)
+        end
+        repositories.each do |repo|
+          if repo['mirror_on_sync'] == true
+            raise _("The Repository '#{repo['name']}' is set with Mirror-on-Sync to YES."\
+            " Please change Mirror-on-Sync to NO and try the import again.")
+          end
+        end
+      end
+    end
+
     def untar_export(options)
       export_tar_file = options[:filename]
       export_tar_dir =  options[:dirname]
