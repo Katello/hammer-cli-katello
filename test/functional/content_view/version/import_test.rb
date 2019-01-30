@@ -209,6 +209,40 @@ describe 'content-view version import' do
     assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
   end
 
+  it "fails import if repo is set to mirror-on-sync" do
+    params = [
+      '--export-tar=/tmp/exports/export-2.tar',
+      '--organization-id=1'
+    ]
+
+    File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
+
+    File.expects(:exist?).with("/tmp/exports/export-2.tar").returns(true)
+    Dir.expects(:chdir).with('/tmp/exports').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-2').returns(0)
+    File.expects(:read).with("/tmp/exports/export-2/export-2.json").returns(
+      JSON.dump(
+        'name' => 'Foo View',
+        'major' => '2',
+        'minor' => '1'
+      )
+    )
+
+    ex = api_expects(:content_views, :index)
+    ex = ex.with_params('name' => 'Foo View', 'organization_id' => '1')
+    ex.returns(
+      'results' => [{
+        'id' => '5',
+        'repositories' => [{'id' => '2', 'label' => 'foo', 'mirror_on_sync' => 'true'}],
+        'content_view' => {'name' => 'cv'}
+      }]
+    )
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 70)
+  end
+
   it "fails import if cv version already exists" do
     params = [
       '--export-tar=/tmp/exports/export-2.tar',
