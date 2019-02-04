@@ -33,6 +33,8 @@ module HammerCLIKatello
           _("Physical")
         elsif data["host"]
           _("Guests of %s" % data['host']['name'])
+        elsif data["hypervisor"]
+          _("Guests of %s" % data['hypervisor']['name'])
         elsif data["unmapper_guest"]
           _("Temporary")
         else
