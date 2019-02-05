@@ -182,4 +182,43 @@ describe 'content-view version export' do
     result = run_cmd(@cmd + params)
     assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
   end
+
+  it "fails export if any repository is not yum" do
+    params = [
+      '--id=5',
+      '--export-dir=/tmp/exports'
+    ]
+
+    ex = api_expects(:content_view_versions, :show)
+    ex.returns(
+      'id' => '5',
+      'repositories' => [{'id' => '2'}],
+      'major' => 1,
+      'minor' => 0,
+      'content_view' => {'name' => 'cv'},
+      'content_view_id' => 4321
+    )
+
+    ex = api_expects(:content_views, :show)
+    ex.returns(
+      'id' => '4321',
+      'composite' => false
+    )
+
+    ex = api_expects(:repositories, :show).with_params('id' => '2')
+    ex.returns(
+      'id' => '2',
+      'label' => 'Test_Repo',
+      'content_type' => 'file',
+      'backend_identifier' => 'Default_Organization-Library-Test_Repo',
+      'relative_path' => 'Default_Organization/Library/Test_Repo',
+      'library_instance_id' => '1'
+    )
+
+    File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 70)
+  end
 end
