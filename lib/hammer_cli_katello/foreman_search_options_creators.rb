@@ -83,5 +83,9 @@ module HammerCLIKatello
     def create_images_search_options(options, mode = nil)
       create_search_options_without_katello_api(options, api.resource(:images), mode)
     end
+
+    def create_users_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:users), mode)
+    end
   end
 end
