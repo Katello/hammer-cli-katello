@@ -172,9 +172,22 @@ module HammerCLIKatello
         if option(:option_name).exist?
           any(*organization_options).required
         end
+
+        product_options = [:option_product_id, :option_product_name]
+        if option(:option_repository_ids).exist?
+          any(*product_options).rejected
+          option(:option_repository_names).rejected
+        end
+
+        if option(:option_repository_names).exist?
+          any(*product_options).required
+        end
+
       end
 
-      build_options
+      build_options do |o|
+        o.expand.including(:products)
+      end
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
