@@ -182,7 +182,6 @@ module HammerCLIKatello
         if option(:option_repository_names).exist?
           any(*product_options).required
         end
-
       end
 
       build_options do |o|
