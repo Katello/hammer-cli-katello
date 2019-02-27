@@ -301,6 +301,7 @@ module HammerCLIKatello
           export_json_options[:repositories] = []
         else
           repositories = fetch_cvv_repositories(cvv)
+          puppet_check(cvv)
           check_repo_type(repositories)
           check_repo_download_policy(repositories)
 
@@ -348,32 +349,6 @@ module HammerCLIKatello
           `tar cf #{export_tar} #{export_prefix}`
           FileUtils.rm_rf(export_prefix)
         end
-      end
-
-      def check_repo_type(repositories)
-        repositories.select do |repo|
-          if repo['content_type'] != 'yum'
-            raise _("The Repository '#{repo['name']}' is a non-yum repository."\
-            " Only Yum is supported at this time."\
-            " Please remove the repository from the Content View,"\
-            " republish and try the export again.")
-          end
-        end
-      end
-
-      def check_repo_download_policy(repositories)
-        non_immediate = repositories.select do |repo|
-          show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] != 'immediate'
-        end
-        return true if non_immediate.empty?
-
-        non_immediate_names = repositories.collect { |repo| repo['name'] }
-        msg = <<~MSG
-          All exported repositories must be set to an immediate download policy and re-synced.
-          The following repositories need action:
-            #{non_immediate_names.join(', ')}
-        MSG
-        raise _(msg)
       end
     end
 
