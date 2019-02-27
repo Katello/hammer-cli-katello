@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/ModuleLength
 module HammerCLIKatello
   module CVImportExportHelper
     PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
@@ -20,6 +21,41 @@ module HammerCLIKatello
                 "is already imported." % {'cvv' => component_from_export})
       end
       found_composite_version.first['id']
+    end
+
+    def puppet_check(cvv)
+      unless cvv['puppet_modules'].empty?
+        raise _("The Content View '#{cvv['content_view']['label']}'"\
+        " contains Puppet modules, this is not supported at this time."\
+        " Please remove the modules, publish a new version"\
+        " and try the export again.")
+      end
+    end
+
+    def check_repo_type(repositories)
+      repositories.select do |repo|
+        if repo['content_type'] != 'yum'
+          raise _("The Repository '#{repo['name']}' is a non-yum repository."\
+          " Only Yum is supported at this time."\
+          " Please remove the repository from the Content View,"\
+          " republish and try the export again.")
+        end
+      end
+    end
+
+    def check_repo_download_policy(repositories)
+      non_immediate = repositories.select do |repo|
+        show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] != 'immediate'
+      end
+      unless non_immediate.empty?
+        non_immediate_names = repositories.collect { |repo| repo['name'] }
+        msg = <<~MSG
+          All exported repositories must be set to an immediate download policy and re-synced.
+          The following repositories need action:
+            #{non_immediate_names.join(', ')}
+        MSG
+        raise _(msg)
+      end
     end
 
     def import_checks(cv, import_cv, major, minor)
