@@ -169,7 +169,7 @@ module HammerCLIKatello
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
 
-        if option(:option_name).exist?
+        if option(:option_name).exist? || option(:option_product_name).exist?
           any(*organization_options).required
         end
 
