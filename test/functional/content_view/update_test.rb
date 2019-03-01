@@ -48,6 +48,32 @@ module HammerCLIKatello
         end
         run_cmd(%w(content-view update --name cv2 --organization-label org1))
       end
+
+      it 'requires organization if product name is supplied along with repository' do
+        id = 122
+        repo_id = 100
+        product_name = "foo"
+        api_expects_no_call
+        cmd = %W(content-view update --id=#{id}\
+                 --repository-ids=#{repo_id} --product=#{product_name})
+        result = run_cmd(cmd)
+        expected_error = "--organization-id, --organization, --organization-label is required"
+        assert(result.err.include?(expected_error),
+               "Invalid Error Message")
+      end
+
+      it 'requires product if repository names are provided' do
+        id = 122
+        repo_id = 100
+        organization_id = 5
+        api_expects_no_call
+        cmd = %W(content-view update --id=#{id}\
+                 --repositories=#{repo_id} --organization-id=#{organization_id})
+        result = run_cmd(cmd)
+        expected_error = "--product-id, --product is required"
+        assert(result.err.include?(expected_error),
+               "Invalid Error Message")
+      end
     end
   end
 end
