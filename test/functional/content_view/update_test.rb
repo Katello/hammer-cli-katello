@@ -57,7 +57,8 @@ module HammerCLIKatello
         cmd = %W(content-view update --id=#{id}\
                  --repository-ids=#{repo_id} --product=#{product_name})
         result = run_cmd(cmd)
-        assert(result.err[/--organization-id, --organization, --organization-label is required/],
+        expected_error = "--organization-id, --organization, --organization-label is required"
+        assert(result.err.include?(expected_error),
                "Organization option requirements are validated")
       end
 
@@ -69,7 +70,8 @@ module HammerCLIKatello
         cmd = %W(content-view update --id=#{id}\
                  --repositories=#{repo_id} --organization-id=#{organization_id})
         result = run_cmd(cmd)
-        assert(result.err[/--product-id, --product is required/],
+        expected_error = "--product-id, --product is required"
+        assert(result.err.include?(expected_error),
                "Product option requirements are validated")
       end
     end
