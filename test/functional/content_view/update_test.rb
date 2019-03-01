@@ -59,7 +59,7 @@ module HammerCLIKatello
         result = run_cmd(cmd)
         expected_error = "--organization-id, --organization, --organization-label is required"
         assert(result.err.include?(expected_error),
-               "Organization option requirements are validated")
+               "Invalid Error Message")
       end
 
       it 'requires product if repository names are provided' do
@@ -72,7 +72,7 @@ module HammerCLIKatello
         result = run_cmd(cmd)
         expected_error = "--product-id, --product is required"
         assert(result.err.include?(expected_error),
-               "Product option requirements are validated")
+               "Invalid Error Message")
       end
     end
   end
