@@ -53,9 +53,9 @@ describe 'content-view version export' do
     File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
 
     Dir.expects(:chdir).with("/var/lib/pulp/published/yum/https/repos/").returns(true)
-    Dir.expects(:mkdir).with('/tmp/exports/export-cv-5').returns(0)
+    Dir.expects(:mkdir).with('/tmp/exports/export-cv-1.0').returns(0)
     Dir.expects(:chdir).with('/tmp/exports').returns(0)
-    Dir.expects(:chdir).with('/tmp/exports/export-cv-5').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-cv-1.0').returns(0)
 
     result = run_cmd(@cmd + params)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
@@ -89,9 +89,9 @@ describe 'content-view version export' do
     File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
 
     Dir.expects(:chdir).with("/var/lib/pulp/published/yum/https/repos/").never
-    Dir.expects(:mkdir).with('/tmp/exports/export-cv-999').returns(0)
+    Dir.expects(:mkdir).with('/tmp/exports/export-cv-1.0').returns(0)
     Dir.expects(:chdir).with('/tmp/exports').returns(0)
-    Dir.expects(:chdir).with('/tmp/exports/export-cv-999').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-cv-1.0').returns(0)
 
     result = run_cmd(@cmd + params)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
