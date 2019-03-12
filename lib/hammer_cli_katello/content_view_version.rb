@@ -317,7 +317,7 @@ module HammerCLIKatello
       end
 
       def create_tar(cv, cvv, repositories, json)
-        export_prefix = "export-#{cv['label']}-#{cvv['id']}"
+        export_prefix = "export-#{cv['label']}-#{cvv['major']}.#{cvv['minor']}"
         export_file = "#{export_prefix}.json"
         export_repos_tar = "#{export_prefix}-repos.tar"
         export_tar = "#{export_prefix}.tar"
