@@ -55,6 +55,7 @@ module HammerCLIKatello
         field :license, _("License")
         field :relativepath, _("Relative Path")
         field :description, _("Description")
+        field :modular, _("Modular"), Fields::Boolean
       end
 
       build_options
