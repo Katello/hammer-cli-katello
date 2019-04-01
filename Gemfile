@@ -12,6 +12,8 @@ group :test do
   gem 'minitest-spec-context'
   gem 'mocha'
   gem 'coveralls', require: false
+  gem 'rubocop', '0.42'
+  gem 'rubocop-checkstyle_formatter'
 end
 
 # load local gemfile
