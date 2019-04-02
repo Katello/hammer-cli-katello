@@ -8,7 +8,6 @@ module HammerCLIKatello
 
       output do
         field :label, _("Label")
-        field :description, _("Description")
       end
 
       build_options
