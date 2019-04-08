@@ -58,6 +58,26 @@ module HammerCLIKatello
       end
     end
 
+    def collect_packages(repositories)
+      repositories.each do |repo|
+        per_page = 50
+        repo['packages'] = []
+        repo['errata'] = []
+        repo_packages = repo['content_counts']['rpm']
+        errata_count = repo['content_counts']['erratum']
+        pkg_pages = (repo_packages / per_page.to_f).ceil
+        errata_pages = (errata_count / per_page.to_f).ceil
+        (1..pkg_pages).each do |page|
+          repo['packages'] += index(:packages, 'repository_id' => repo['id'],
+                                               :page => page, :per_page => 50)
+        end
+        (1..errata_pages).each do |page|
+          repo['errata'] += index(:errata, 'repository_id' => repo['id'],
+                                           :page => page, :per_page => 50)
+        end
+      end
+    end
+
     def import_checks(cv, import_cv, major, minor)
       version = "#{major}.#{minor}".to_f
 

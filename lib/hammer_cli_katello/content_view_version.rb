@@ -291,6 +291,7 @@ module HammerCLIKatello
         cv = show(:content_views, 'id' => cvv['content_view_id'])
 
         composite = cv["composite"]
+
         export_json_options = { :cvv => cvv }
 
         if composite
@@ -304,11 +305,8 @@ module HammerCLIKatello
           puppet_check(cvv)
           check_repo_type(repositories)
           check_repo_download_policy(repositories)
+          collect_packages(repositories)
 
-          repositories.each do |repo|
-            repo['packages'] = index(:packages, 'repository_id' => repo['id'], :full_result => true)
-            repo['errata'] = index(:errata, 'repository_id' => repo['id'], :full_result => true)
-          end
           export_json_options[:repositories] = repositories
         end
 
