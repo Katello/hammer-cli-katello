@@ -22,7 +22,6 @@ describe 'content-view version export' do
       'content_view' => {'name' => 'cv'},
       'content_view_id' => 4321,
       'puppet_modules' => []
-
     )
 
     ex = api_expects(:content_views, :show)
@@ -39,7 +38,11 @@ describe 'content-view version export' do
       'content_type' => 'yum',
       'backend_identifier' => 'Default_Organization-Library-Test_Repo',
       'relative_path' => 'Default_Organization/Library/Test_Repo',
-      'library_instance_id' => '1'
+      'library_instance_id' => '1',
+      'content_counts' => {
+        'rpm' => 1,
+        'erratum' => 1
+      }
     )
 
     api_expects(:repositories, :show).with_params('id' => '1').returns(
