@@ -24,7 +24,6 @@ module HammerCLIKatello
         field :name, _("Name")
         field :version, _("Version")
         field :commit, _("Commit")
-        field :version_date, _("Date")
       end
 
       build_options
