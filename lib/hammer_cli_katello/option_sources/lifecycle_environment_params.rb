@@ -1,6 +1,6 @@
 module HammerCLIKatello
-  module LifecycleEnvironmentNameResolvable
-    class LifecycleEnvironmentParamSource < HammerCLI::Options::Sources::Base
+  module OptionSources
+    class LifecycleEnvironmentParams < HammerCLI::Options::Sources::Base
       def initialize(command)
         @command = command
       end
@@ -12,16 +12,6 @@ module HammerCLIKatello
         end
         result
       end
-    end
-
-    def option_sources
-      sources = super
-      sources.find_by_name('IdResolution').insert_relative(
-        :before,
-        'IdParams',
-        LifecycleEnvironmentParamSource.new(self)
-      )
-      sources
     end
   end
 end

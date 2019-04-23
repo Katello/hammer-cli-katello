@@ -10,6 +10,10 @@ module HammerCLIKatello
         mapping[:environment] = :lifecycle_environment
         mapping
       end
+
+      def resource_alias_name_mapping
+        HammerCLIKatello::RESOURCE_ALIAS_NAME_MAPPING
+      end
     end
   end
 end

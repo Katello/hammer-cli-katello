@@ -10,7 +10,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
+
       output do
         field :id, _("Content View ID")
         field :name, _("Name")
@@ -21,6 +21,8 @@ module HammerCLIKatello
       end
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -226,7 +228,6 @@ module HammerCLIKatello
 
     class RemoveFromEnvironmentCommand < HammerCLIKatello::SingleResourceCommand
       include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
       include HammerCLIForemanTasks::Async
       include OrganizationOptions
 
@@ -237,6 +238,8 @@ module HammerCLIKatello
       failure_message _("Could not remove the content view from environment")
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class CVEnvParamsSource < HammerCLI::Options::Sources::Base

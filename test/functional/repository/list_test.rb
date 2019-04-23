@@ -59,10 +59,10 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
 
     ex.returns(empty_response)
 
-    expected_result = success_result("---|------|---------|--------------|----
+    expected_result = CommandExpectation.new("---|------|---------|--------------|----
 ID | NAME | PRODUCT | CONTENT TYPE | URL
 ---|------|---------|--------------|----
-")
+", "Warning: Option --environment is deprecated. Use --lifecycle-environment instead\n")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)

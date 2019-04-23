@@ -1,6 +1,10 @@
 module HammerCLIKatello
   RESOURCE_NAME_MAPPING = {}.freeze
 
+  RESOURCE_ALIAS_NAME_MAPPING = {
+    environment: :lifecycle_environment
+  }.freeze
+
   def self.api_connection
     if HammerCLI.context[:api_connection]
       HammerCLI.context[:api_connection].get("foreman")
