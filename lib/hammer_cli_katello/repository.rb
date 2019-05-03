@@ -3,6 +3,8 @@ module HammerCLIKatello
     resource :repositories
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include LifecycleEnvironmentNameResolvable
+
       output do
         field :id, _("Id")
         field :name, _("Name")
