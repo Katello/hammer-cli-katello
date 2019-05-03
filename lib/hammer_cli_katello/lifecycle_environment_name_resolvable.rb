@@ -17,7 +17,7 @@ module HammerCLIKatello
     def option_sources
       sources = super
       sources.find_by_name('IdResolution').insert_relative(
-        :after,
+        :before,
         'IdParams',
         LifecycleEnvironmentParamSource.new(self)
       )
