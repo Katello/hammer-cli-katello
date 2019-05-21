@@ -2,8 +2,8 @@ module HammerCLIKatello
   module Output
     module Formatters
       class ChecksumFormatter < HammerCLI::Output::Formatters::FieldFormatter
-        def tags
-          [:screen]
+        def required_features
+          [:rich_text]
         end
 
         def format(items, _ = {})
