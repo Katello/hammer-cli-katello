@@ -39,8 +39,6 @@ module HammerCLIKatello
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      include LifecycleEnvironmentNameMapping
-
       action :show
 
       def request_params
@@ -81,8 +79,6 @@ module HammerCLIKatello
       end
 
       build_options
-
-      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
@@ -104,8 +100,6 @@ module HammerCLIKatello
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
-      include LifecycleEnvironmentNameMapping
-
       action :copy
 
       desc _("Copy an activation key")
@@ -115,8 +109,6 @@ module HammerCLIKatello
 
       success_message _("Activation key copied.")
       failure_message _("Could not copy the activation key")
-
-      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
@@ -138,14 +130,11 @@ module HammerCLIKatello
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      include LifecycleEnvironmentNameMapping
-
       action :destroy
       success_message _("Activation key deleted.")
       failure_message _("Could not delete the activation key")
 
       build_options
-      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class SubscriptionsCommand < HammerCLIKatello::ListCommand
