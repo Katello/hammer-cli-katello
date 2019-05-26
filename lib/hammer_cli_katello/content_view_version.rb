@@ -87,6 +87,7 @@ module HammerCLIKatello
 
     class PromoteCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
+      include LifecycleEnvironmentNameMapping
 
       action :promote
       command_name "promote"
@@ -109,6 +110,10 @@ module HammerCLIKatello
              _(["Id of the environment from where to promote its version ",
                 "from (if version is unknown)"].join),
                :attribute_name => :option_from_environment_id
+      option "--environment-ids", "ENVIRONMENT_IDS", _("Identifiers for Lifecycle Environment"),
+            format: HammerCLI::Options::Normalizers::List.new,
+            attribute_name: :option_environment_ids,
+            deprecated: { '--environment-ids' => _('Use --lifecycle-environment-ids instead') }
 
       def environment_search_options
         {
@@ -131,6 +136,8 @@ module HammerCLIKatello
         o.expand(:all).except(:environments).including(:content_views, :organizations)
         o.without(:environment_id)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironments.new(only: :option_sources))
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand

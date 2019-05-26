@@ -2,7 +2,8 @@ module HammerCLIKatello
   RESOURCE_NAME_MAPPING = {}.freeze
 
   RESOURCE_ALIAS_NAME_MAPPING = {
-    environment: :lifecycle_environment
+    environment: :lifecycle_environment,
+    environments: :lifecycle_environments
   }.freeze
 
   def self.api_connection

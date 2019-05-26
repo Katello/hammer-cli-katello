@@ -67,6 +67,10 @@ module HammerCLIKatello
       lifecycle_environment_id(options)
     end
 
+    def lifecycle_environment_ids(options)
+      environment_ids(options)
+    end
+
     def environment_ids(options)
       unless options['option_lifecycle_environment_ids'].nil?
         return options['option_lifecycle_environment_ids']
