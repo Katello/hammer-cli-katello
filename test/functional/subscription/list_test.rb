@@ -36,7 +36,7 @@ module HammerCLIKatello
       result = run_cmd(@cmd + params)
 
       fields = ['ID', 'UUID', 'NAME', 'TYPE', 'CONTRACT', 'ACCOUNT', 'SUPPORT',
-                'END DATE', 'QUANTITY', 'CONSUMED']
+                'START DATE', 'END DATE', 'QUANTITY', 'CONSUMED']
       expected_result = success_result(IndexMatcher.new([fields, []]))
       assert_cmd(expected_result, result)
     end
