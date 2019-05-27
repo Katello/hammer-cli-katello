@@ -14,6 +14,8 @@ module HammerCLIKatello
         field :errata_id, _("Errata ID")
         field :type, _("Type")
         field :title, _("Title")
+        field :issued, _("Issued")
+        field :updated, _("Updated")
       end
 
       validate_options :before, 'IdResolution' do
