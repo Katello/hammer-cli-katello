@@ -15,6 +15,7 @@ module HammerCLIKatello
         field :contract_number, _("Contract")
         field :account_number, _("Account")
         field :support_level, _("Support")
+        field :start_date, _("Start Date"), Fields::Date
         field :end_date, _("End Date"), Fields::Date
         field :format_quantity, _("Quantity")
         field :consumed, _("Consumed")
