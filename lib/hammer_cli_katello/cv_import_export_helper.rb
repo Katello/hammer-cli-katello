@@ -45,10 +45,10 @@ module HammerCLIKatello
 
     def check_repo_download_policy(repositories)
       non_immediate = repositories.select do |repo|
-        show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] != 'immediate'
+        show(:repositories, 'id' => repo['id']) if repo['download_policy'] != 'immediate'
       end
       unless non_immediate.empty?
-        non_immediate_names = repositories.collect { |repo| repo['name'] }
+        non_immediate_names = non_immediate.collect { |repo| repo['name'] }
         msg = <<~MSG
           All exported repositories must be set to an immediate download policy and re-synced.
           The following repositories need action:
