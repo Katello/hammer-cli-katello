@@ -178,13 +178,7 @@ module HammerCLIKatello
       desc "Add subscription"
       command_name "add-subscription"
 
-      option "--subscription-id", "SUBSCRIPTION_ID", _("ID of subscription"),
-             :attribute_name => :option_subscription_id, :required => true
-
-      build_options do |o|
-        o.expand.except(:subscriptions)
-        o.without(:subscriptions)
-      end
+      build_options
 
       success_message _("Subscription added to activation key.")
       failure_message _("Could not add subscription to activation key")
