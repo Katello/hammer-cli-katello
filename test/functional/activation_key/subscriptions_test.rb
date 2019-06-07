@@ -51,7 +51,7 @@ module HammerCLIKatello
       api_expects(:activation_keys, :add_subscriptions) do |p|
         p['id'] == 1 && p['subscription_id'] == 3
       end
-      run_cmd(%w[activation-key add-subscription --id 1 --subscription-id 3])
+      run_cmd(%w(activation-key add-subscription --id 1 --subscription-id 3))
     end
 
     it 'allows a subscription to be added by name to an activation key' do
@@ -60,14 +60,14 @@ module HammerCLIKatello
       api_expects(:activation_keys, :add_subscriptions) do |p|
         p['id'] == 1 && p['subscription_id'] == 3
       end
-      run_cmd(%w[activation-key add-subscription --id 1 --subscription sub --organization-id 1])
+      run_cmd(%w(activation-key add-subscription --id 1 --subscription sub --organization-id 1))
     end
 
     it 'allows multiple subscriptions to be added to an activation key' do
       api_expects(:activation_keys, :add_subscriptions) do |p|
         p['id'] == 1 && p['subscriptions'] == [{'id' => '3'}, {'id' => '4'}]
       end
-      run_cmd(%w[activation-key add-subscription --id 1 --subscriptions id=3,id=4])
+      run_cmd(%w(activation-key add-subscription --id 1 --subscriptions id=3,id=4))
     end
   end
 end
