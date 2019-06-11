@@ -385,7 +385,6 @@ module HammerCLIKatello
         upload_id = create_content_upload
         repo_id = get_identifier
         filename = File.basename(file.path)
-
         update_content_upload(upload_id, repo_id, file)
 
         file.rewind
@@ -443,7 +442,8 @@ module HammerCLIKatello
         params = {:id => get_identifier,
                   :uploads => uploads,
                   publish_repository: publish_repository,
-                  sync_capsule: sync_capsule
+                  sync_capsule: sync_capsule,
+                  content_type: option_content_type
         }
         resource.call(:import_uploads, params)
       end
