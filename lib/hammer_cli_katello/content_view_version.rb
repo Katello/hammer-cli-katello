@@ -324,7 +324,7 @@ module HammerCLIKatello
 
         Dir.mkdir("#{export_dir}/#{export_prefix}")
 
-        if !repositories.empty?
+        if repositories.any?
           Dir.chdir(PUBLISHED_REPOS_DIR) do
             repo_tar = "#{export_dir}/#{export_prefix}/#{export_repos_tar}"
             repo_dirs = []
@@ -336,7 +336,7 @@ module HammerCLIKatello
             `tar cvfh #{repo_tar} #{repo_dirs.join(" ")}`
           end
         else
-          puts "Ensure the content view '#{cvv['name']}' has atleast one repository."
+          puts "Ensure the content view '#{cvv['name']}' has at least one repository."
         end
 
         Dir.chdir("#{export_dir}/#{export_prefix}") do
