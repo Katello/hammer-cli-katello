@@ -324,7 +324,7 @@ module HammerCLIKatello
 
         Dir.mkdir("#{export_dir}/#{export_prefix}")
 
-        if repositories.any?
+        if repositories&.any?
           Dir.chdir(PUBLISHED_REPOS_DIR) do
             repo_tar = "#{export_dir}/#{export_prefix}/#{export_repos_tar}"
             repo_dirs = []
