@@ -322,9 +322,9 @@ module HammerCLIKatello
         export_tar = "#{export_prefix}.tar"
         export_dir = File.expand_path(options['option_export_dir'].to_s)
 
-        Dir.mkdir("#{export_dir}/#{export_prefix}")
 
         if repositories&.any?
+          Dir.mkdir("#{export_dir}/#{export_prefix}")
           Dir.chdir(PUBLISHED_REPOS_DIR) do
             repo_tar = "#{export_dir}/#{export_prefix}/#{export_repos_tar}"
             repo_dirs = []
@@ -335,19 +335,22 @@ module HammerCLIKatello
 
             `tar cvfh #{repo_tar} #{repo_dirs.join(" ")}`
           end
-        else
-          puts "Ensure the content view '#{cvv['name']}' has at least one repository."
-        end
 
-        Dir.chdir("#{export_dir}/#{export_prefix}") do
-          File.open(export_file, 'w') do |file|
-            file.write(JSON.pretty_generate(json))
+          Dir.chdir("#{export_dir}/#{export_prefix}") do
+            File.open(export_file, 'w') do |file|
+              file.write(JSON.pretty_generate(json))
+            end
           end
-        end
 
-        Dir.chdir(export_dir) do
-          `tar cf #{export_tar} #{export_prefix}`
-          FileUtils.rm_rf(export_prefix)
+          Dir.chdir(export_dir) do
+            `tar cf #{export_tar} #{export_prefix}`
+            FileUtils.rm_rf(export_prefix)
+          end
+
+        elsif cv['composite']
+          puts "Cannot export composite content view."
+        else
+          puts "Ensure the content view version '#{cvv['name']}' has at least one repository."
         end
       end
     end
