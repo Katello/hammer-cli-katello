@@ -322,7 +322,6 @@ module HammerCLIKatello
         export_tar = "#{export_prefix}.tar"
         export_dir = File.expand_path(options['option_export_dir'].to_s)
 
-
         if repositories&.any?
           Dir.mkdir("#{export_dir}/#{export_prefix}")
           Dir.chdir(PUBLISHED_REPOS_DIR) do
