@@ -101,6 +101,13 @@ module HammerCLIKatello
       output do
         field :id, _("ID")
         field :name, _("Name")
+        from :content_facet_attributes do
+          from :errata_counts do
+            field :security, _("Security"), nil, :sets => ['ALL']
+            field :bugfix, _("Bugfix"), nil, :sets => ['ALL']
+            field :enhancement, _("Enhancement"), nil, :sets => ['ALL']
+          end
+        end
       end
 
       build_options { |o| o.expand(:all).including(:organizations) }
