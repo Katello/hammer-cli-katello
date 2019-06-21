@@ -28,6 +28,15 @@ module HammerCLIKatello
         from :content_facet_attributes do
           field :content_view_name, _('Content View')
           field :lifecycle_environment_name, _('Lifecycle Environment')
+          from :errata_counts do
+            field :security, _("Security")
+          end
+          from :errata_counts do
+            field :bugfix, _("Bugfix")
+          end
+          from :errata_counts do
+            field :enhancement, _("Enhancement")
+          end
         end
       end
     end
