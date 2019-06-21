@@ -311,7 +311,7 @@ module HammerCLIKatello
         end
 
         json = export_json(export_json_options)
-        if repositories&.any? or cv['composite']
+        if repositories&.any? || cv['composite']
           create_tar(cv, cvv, repositories, json)
         else
           puts "Ensure the content view version '#{cvv['name']}' has at least one repository."
@@ -328,8 +328,8 @@ module HammerCLIKatello
 
         Dir.mkdir("#{export_dir}/#{export_prefix}")
 
-        if repositories
-          
+        if repositories&.any?
+
           Dir.chdir(PUBLISHED_REPOS_DIR) do
             repo_tar = "#{export_dir}/#{export_prefix}/#{export_repos_tar}"
             repo_dirs = []
@@ -352,7 +352,6 @@ module HammerCLIKatello
           `tar cf #{export_tar} #{export_prefix}`
           FileUtils.rm_rf(export_prefix)
         end
-
       end
     end
 

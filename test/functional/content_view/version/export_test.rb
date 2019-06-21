@@ -90,7 +90,7 @@ describe 'content-view version export' do
 
     File.expects(:exist?).with('/usr/share/foreman').returns(true)
     File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
-    
+
     Dir.expects(:chdir).with("/var/lib/pulp/published/yum/https/repos/").never
     Dir.expects(:mkdir).with('/tmp/exports/export-cv-1.0').returns(0)
     Dir.expects(:chdir).with('/tmp/exports').returns(0)
