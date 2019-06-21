@@ -30,11 +30,7 @@ module HammerCLIKatello
           field :lifecycle_environment_name, _('Lifecycle Environment')
           from :errata_counts do
             field :security, _("Security"), nil, :sets => ['ALL']
-          end
-          from :errata_counts do
             field :bugfix, _("Bugfix"), nil, :sets => ['ALL']
-          end
-          from :errata_counts do
             field :enhancement, _("Enhancement"), nil, :sets => ['ALL']
           end
         end
