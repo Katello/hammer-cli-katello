@@ -217,7 +217,7 @@ describe 'content-view version export' do
       'content_type' => 'yum',
       'backend_identifier' => 'Default_Organization-Library-Test_Repo',
       'relative_path' => 'Default_Organization/Library/Test_Repo',
-      'library_instance_id' => '1'      
+      'library_instance_id' => '1'
     )
 
     api_expects(:repositories, :show).with_params('id' => '3').returns(
@@ -227,7 +227,7 @@ describe 'content-view version export' do
       'content_type' => 'yum',
       'backend_identifier' => 'Default_Organization-Library-Test_Repo_3',
       'relative_path' => 'Default_Organization/Library/Test_Repo_3',
-      'library_instance_id' => '4'     
+      'library_instance_id' => '4'
     )
 
     api_expects(:repositories, :show).with_params('id' => '1').returns(
@@ -241,13 +241,14 @@ describe 'content-view version export' do
 
     File.expects(:exist?).with('/usr/share/foreman').returns(true)
     File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
- 
+
     result = run_cmd(@cmd + params)
     assert_equal(result.err, "Could not export the content view:\n" \
-                                "  Error: All exported repositories must be set to an immediate download policy and re-synced.\n" \
+                                "  Error: All exported repositories must be set to an "\
+                                "immediate download policy and re-synced.\n" \
                                 "  The following repositories need action:\n" \
                                 "    Test_Repo\n" \
-                                )
+                )
     assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
   end
 
