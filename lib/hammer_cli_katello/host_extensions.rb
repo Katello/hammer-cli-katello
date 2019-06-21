@@ -29,13 +29,13 @@ module HammerCLIKatello
           field :content_view_name, _('Content View')
           field :lifecycle_environment_name, _('Lifecycle Environment')
           from :errata_counts do
-            field :security, _("Security")
+            field :security, _("Security"), :sets => ['ALL']
           end
           from :errata_counts do
-            field :bugfix, _("Bugfix")
+            field :bugfix, _("Bugfix"), :sets => ['ALL']
           end
           from :errata_counts do
-            field :enhancement, _("Enhancement")
+            field :enhancement, _("Enhancement"), :sets => ['ALL']
           end
         end
       end
