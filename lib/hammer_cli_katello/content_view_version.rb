@@ -314,7 +314,10 @@ module HammerCLIKatello
         if repositories&.any? || cv['composite']
           create_tar(cv, cvv, repositories, json)
         else
-          puts "Ensure the content view version '#{cvv['name']}' has at least one repository."
+          msg = <<~MSG
+            Ensure the content view version '#{cvv['name']}' has at least one repository.
+          MSG
+          raise _(msg)
         end
         return HammerCLI::EX_OK
       end
