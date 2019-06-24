@@ -290,4 +290,38 @@ describe 'content-view version export' do
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 70)
   end
+
+  it "fails export if content view version has no repository" do
+    params = [
+      '--id=5',
+      '--export-dir=/tmp/exports'
+    ]
+
+    ex = api_expects(:content_view_versions, :show)
+    ex.returns(
+      'id' => '5',
+      'name' => 'Test_version',
+      'repositories' => [],
+      'major' => 1,
+      'minor' => 0,
+      'content_view' => {'name' => 'cv'},
+      'content_view_id' => 4321,
+      'puppet_modules' => []
+    )
+
+    ex = api_expects(:content_views, :show)
+    ex.returns(
+      'id' => '4321',
+      'composite' => false
+    )
+
+    File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.err, "Could not export the content view:\n"\
+                             "  Error: Ensure the content view version 'Test_version'"\
+                             " has at least one repository.\n")
+    assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
+  end
 end
