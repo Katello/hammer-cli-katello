@@ -45,7 +45,9 @@ module HammerCLIKatello
 
     def check_repo_download_policy(repositories)
       non_immediate = repositories.select do |repo|
-        show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] != 'immediate'
+        unless repo['library_instance_id'].nil?
+          show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] != 'immediate'
+        end
       end
       unless non_immediate.empty?
         non_immediate_names = non_immediate.collect { |repo| repo['name'] }
