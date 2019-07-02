@@ -43,6 +43,15 @@ module HammerCLIKatello
       end
     end
 
+    def check_default_org_view(repositories)
+      repositories.select do |repo|
+        if repo['library_instance_id'].nil?
+          raise _("The Repositories for Default Organization "\
+          "view can not be exported.")
+        end
+      end
+    end
+
     def check_repo_download_policy(repositories)
       non_immediate = repositories.select do |repo|
         show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] != 'immediate'

@@ -304,6 +304,7 @@ module HammerCLIKatello
           repositories = fetch_cvv_repositories(cvv)
           puppet_check(cvv)
           check_repo_type(repositories)
+          check_default_org_view(repositories)
           check_repo_download_policy(repositories)
           collect_packages(repositories)
 
