@@ -37,9 +37,9 @@ describe 'listing content view filters' do
     end
     ex.returns(empty_response)
 
-    expected_result = success_result("----------|------|------|----------
-FILTER ID | NAME | TYPE | INCLUSION
-----------|------|------|----------
+    expected_result = success_result("----------|------|-------------|------|----------
+FILTER ID | NAME | DESCRIPTION | TYPE | INCLUSION
+----------|------|-------------|------|----------
 ")
 
     result = run_cmd(@cmd + params)
@@ -56,9 +56,9 @@ FILTER ID | NAME | TYPE | INCLUSION
     end
     ex.returns(empty_response)
 
-    expected_result = success_result("----------|------|------|----------
-FILTER ID | NAME | TYPE | INCLUSION
-----------|------|------|----------
+    expected_result = success_result("----------|------|-------------|------|----------
+FILTER ID | NAME | DESCRIPTION | TYPE | INCLUSION
+----------|------|-------------|------|----------
 ")
 
     result = run_cmd(@cmd + params)
@@ -76,9 +76,9 @@ FILTER ID | NAME | TYPE | INCLUSION
     end
     ex.returns(empty_response)
 
-    expected_result = success_result("----------|------|------|----------
-FILTER ID | NAME | TYPE | INCLUSION
-----------|------|------|----------
+    expected_result = success_result("----------|------|-------------|------|----------
+FILTER ID | NAME | DESCRIPTION | TYPE | INCLUSION
+----------|------|-------------|------|----------
 ")
 
     result = run_cmd(@cmd + params)
