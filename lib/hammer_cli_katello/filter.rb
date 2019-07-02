@@ -13,6 +13,7 @@ module HammerCLIKatello
       output do
         field :id, _("Filter ID")
         field :name, _("Name")
+        field :description, _("Description")
         field :type, _("Type")
         field :inclusion, _("Inclusion")
       end
