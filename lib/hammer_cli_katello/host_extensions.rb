@@ -5,19 +5,16 @@ require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
 require 'hammer_cli_katello/host_kickstart_repository_options'
 require 'hammer_cli_katello/host_content_source_options'
-require 'hammer_cli_katello/puppet_environment_name_resolvable'
 
 module HammerCLIKatello
   module HostExtensions
     ::HammerCLIForeman::Host::CreateCommand.instance_eval do
-      include HammerCLIKatello::PuppetEnvironmentNameResolvable
       include HammerCLIKatello::ResolverCommons
       include HammerCLIKatello::HostContentSourceOptions
       include ::HammerCLIKatello::HostKickstartRepositoryOptions
     end
 
     ::HammerCLIForeman::Host::UpdateCommand.instance_eval do
-      include HammerCLIKatello::PuppetEnvironmentNameResolvable
       include HammerCLIKatello::ResolverCommons
       include HammerCLIKatello::HostContentSourceOptions
       include ::HammerCLIKatello::HostKickstartRepositoryOptions

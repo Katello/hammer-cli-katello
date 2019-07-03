@@ -10,7 +10,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
+
       output do
         field :id, _("Content View ID")
         field :name, _("Name")
@@ -21,6 +21,8 @@ module HammerCLIKatello
       end
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
@@ -226,7 +228,6 @@ module HammerCLIKatello
 
     class RemoveFromEnvironmentCommand < HammerCLIKatello::SingleResourceCommand
       include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
       include HammerCLIForemanTasks::Async
       include OrganizationOptions
 
@@ -237,6 +238,8 @@ module HammerCLIKatello
       failure_message _("Could not remove the content view from environment")
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class CVEnvParamsSource < HammerCLI::Options::Sources::Base
@@ -254,6 +257,7 @@ module HammerCLIKatello
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include OrganizationOptions
+      include LifecycleEnvironmentNameMapping
 
       # command to remove content view environments and versions from a content view.
       # corresponds to the UI screen.
@@ -263,7 +267,7 @@ module HammerCLIKatello
       option ["--content-view-version-ids"], "VERSION_IDS",
              _("Version ids to remove"),
             :format => HammerCLI::Options::Normalizers::List.new
-      option ["--environment-ids"], "ENVIRONMENT_IDS",
+      option ["--lifecycle-environment-ids"], "LIFECYCLE_ENVIRONMENT_IDS",
              _("Environment ids to remove"),
             :format => HammerCLI::Options::Normalizers::List.new
 
@@ -289,6 +293,8 @@ module HammerCLIKatello
       failure_message _("Could not remove objects from content view")
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironments.new)
     end
 
     class AddContentViewVersionCommand < HammerCLIKatello::AddAssociatedCommand
