@@ -137,7 +137,9 @@ module HammerCLIKatello
         o.without(:environment_id)
       end
 
-      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironments.new(only: :option_sources))
+      extend_with(
+        HammerCLIKatello::CommandExtensions::LifecycleEnvironments.new(only: :option_sources)
+      )
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
