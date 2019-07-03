@@ -7,7 +7,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
+
       action :index
 
       output do
@@ -34,11 +34,11 @@ module HammerCLIKatello
       end
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
-      include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
       action :show
 
       def request_params
@@ -83,7 +83,7 @@ module HammerCLIKatello
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
+
       action :create
       success_message _("Activation key created.")
       failure_message _("Could not create the activation key")
@@ -95,11 +95,11 @@ module HammerCLIKatello
       end
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class CopyCommand < HammerCLIKatello::CreateCommand
-      include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
       action :copy
 
       desc _("Copy an activation key")
@@ -113,7 +113,7 @@ module HammerCLIKatello
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
+
       action :update
       success_message _("Activation key updated.")
       failure_message _("Could not update the activation key")
@@ -125,11 +125,11 @@ module HammerCLIKatello
       end
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      include LifecycleEnvironmentNameMapping
-      include LifecycleEnvironmentNameResolvable
       action :destroy
       success_message _("Activation key deleted.")
       failure_message _("Could not delete the activation key")

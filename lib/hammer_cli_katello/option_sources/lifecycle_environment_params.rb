@@ -1,6 +1,6 @@
 module HammerCLIKatello
-  module LifecycleEnvironmentNameResolvable
-    class LifecycleEnvironmentParamSource < HammerCLI::Options::Sources::Base
+  module OptionSources
+    class LifecycleEnvironmentParams < HammerCLI::Options::Sources::Base
       def initialize(command)
         @command = command
       end
@@ -10,18 +10,12 @@ module HammerCLIKatello
           result['option_environment_id'] = @command.resolver.lifecycle_environment_id(
             @command.resolver.scoped_options('environment', result, :single))
         end
+        if result['option_environment_names'] && result['option_environment_ids'].nil?
+          result['option_environment_ids'] = @command.resolver.lifecycle_environment_ids(
+            @command.resolver.scoped_options('environment', result, :multi))
+        end
         result
       end
-    end
-
-    def option_sources
-      sources = super
-      sources.find_by_name('IdResolution').insert_relative(
-        :before,
-        'IdParams',
-        LifecycleEnvironmentParamSource.new(self)
-      )
-      sources
     end
   end
 end

@@ -39,7 +39,8 @@ module HammerCLIKatello
       end
 
       class AddLifecycleEnvironmentCommand < HammerCLIKatello::Command
-        include LifecycleEnvironmentNameResolvable
+        include LifecycleEnvironmentNameMapping
+
         resource :capsule_content, :add_lifecycle_environment
         command_name 'add-lifecycle-environment'
 
@@ -51,10 +52,13 @@ module HammerCLIKatello
         option "--organization", "NAME", _("Organization name"),
                :attribute_name => :option_organization_name
         build_options
+
+        extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
       end
 
       class RemoveLifecycleEnvironmentCommand < HammerCLIKatello::Command
-        include LifecycleEnvironmentNameResolvable
+        include LifecycleEnvironmentNameMapping
+
         resource :capsule_content, :remove_lifecycle_environment
         command_name 'remove-lifecycle-environment'
 
@@ -66,11 +70,14 @@ module HammerCLIKatello
         option "--organization", "NAME", _("Organization name"),
                :attribute_name => :option_organization_name
         build_options
+
+        extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
       end
 
       class SyncCommand < HammerCLIKatello::SingleResourceCommand
         include HammerCLIForemanTasks::Async
-        include LifecycleEnvironmentNameResolvable
+        include LifecycleEnvironmentNameMapping
+
         resource :capsule_content, :sync
         command_name "synchronize"
 
@@ -82,6 +89,8 @@ module HammerCLIKatello
         option "--organization", "NAME", _("Organization name"),
                :attribute_name => :option_organization_name
         build_options
+
+        extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
       end
 
       class SyncStatusCommand < HammerCLIKatello::InfoCommand
