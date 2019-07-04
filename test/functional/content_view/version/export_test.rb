@@ -324,4 +324,58 @@ describe 'content-view version export' do
                              " has at least one repository.\n")
     assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
   end
+
+  it "performs export for default organization view" do
+    params = [
+      '--id=1',
+      '--export-dir=/tmp/exports'
+    ]
+
+    ex = api_expects(:content_view_versions, :show)
+    ex.returns(
+      'id' => '1',
+      'repositories' => [{'id' => '2'}],
+      'major' => 1,
+      'minor' => 0,
+      'content_view' => {'name' => 'Default Organization View'},
+      'content_view_id' => 1,
+      'puppet_modules' => []
+    )
+
+    ex = api_expects(:content_views, :show)
+    ex.returns(
+      'id' => '1',
+      'composite' => false,
+      'label' => 'Default_Organization_View'
+    )
+
+    ex = api_expects(:repositories, :show).with_params('id' => '2')
+    ex.returns(
+      'id' => '2',
+      'download_policy' => 'immediate',
+      'label' => 'Test_Repo',
+      'content_type' => 'yum',
+      'backend_identifier' => 'Default_Organization-Library-Test_Repo',
+      'relative_path' => 'Default_Organization/Library/Test_Repo',
+      'library_instance_id' => '1',
+      'content_counts' => {
+        'rpm' => 1,
+        'erratum' => 1
+      }
+    )
+
+    api_expects(:packages, :index).returns('results' => [])
+    api_expects(:errata, :index).returns('results' => [])
+
+    File.expects(:exist?).with('/usr/share/foreman').returns(true)
+    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
+
+    Dir.expects(:chdir).with("/var/lib/pulp/published/yum/https/repos/").returns(true)
+    Dir.expects(:mkdir).with('/tmp/exports/export-Default_Organization_View-1.0').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports').returns(0)
+    Dir.expects(:chdir).with('/tmp/exports/export-Default_Organization_View-1.0').returns(0)
+
+    result = run_cmd(@cmd + params)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
 end
