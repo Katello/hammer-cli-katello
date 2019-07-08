@@ -21,8 +21,9 @@ module HammerCLIKatello
       run_cmd(@cmd + params)
     end
 
-    it 'accepts filter name, content view name, and org name' do
-      params = ['--name=scanner', '--content-view=darkly', '--organization=pkd', '--new-name=ubik']
+    it 'accepts filter name, content view name, description , and org name' do
+      params = ['--name=scanner', '--content-view=darkly', '--organization=pkd', '--new-name=ubik',
+                '--description=zoo']
 
       expect_organization_search('pkd', 1)
       expect_content_view_search(1, 'darkly', 1)
@@ -33,7 +34,7 @@ module HammerCLIKatello
       ex.returns(index_response([{'id' => '1'}]))
 
       api_expects(:content_view_filters, :update) do |par|
-        par['id'] == '1' && par['name'] == 'ubik'
+        par['id'] == '1' && par['name'] == 'ubik' && par['description'] == 'zoo'
       end
 
       run_cmd(@cmd + params)
