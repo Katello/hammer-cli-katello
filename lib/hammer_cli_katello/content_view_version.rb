@@ -270,7 +270,7 @@ module HammerCLIKatello
     class LegacyExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include LifecycleEnvironmentNameMapping
-      desc _('Export a content view (deprecated)')
+      desc _('Export a content view (legacy method)')
 
       action :export
       command_name "export-legacy"
