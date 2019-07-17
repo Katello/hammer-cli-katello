@@ -24,7 +24,10 @@ describe 'host info' do
                        ['Bug Fix', '0'],
                        ['Name', 'my host collection'],
                        ['Applicable Packages', '5'],
-                       ['Upgradable Packages', '4']]
+                       ['Upgradable Packages', '4'],
+                       ['Purpose Usage', 'Production'],
+                       ['Purpose Role', 'Role'],
+                       ['Purpose Addons', 'Test Addon1, Test Addon2']]
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
     expected_results.each { |expected|  assert_cmd(expected, result) }
   end

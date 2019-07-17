@@ -75,13 +75,18 @@ module HammerCLIKatello
           from :subscription_facet_attributes do
             field :uuid, _('UUID')
             field :last_checkin, _('Last Checkin')
-            field :service_level, _('Service Level')
             field :release_version, _('Release Version')
             field :autoheal, _('Autoheal')
             field :registered_through, _('Registered To')
             field :registered_at, _('Registered At')
             collection :activation_keys, _('Registered by Activation Keys'), :hide_blank => true do
               custom_field Fields::Reference
+            end
+            label _('System Purpose') do
+              field :service_level, _('Service Level')
+              field :purpose_usage, _('Purpose Usage')
+              field :purpose_role, _('Purpose Role')
+              field :purpose_addons, _('Purpose Addons'), Fields::List
             end
           end
         end
