@@ -57,8 +57,8 @@ module HammerCLIKatello
         field :description, _("Description")
         field :format_limit, _("Host Limit")
         field :auto_attach, _("Auto Attach")
-        field :service_level, _("Service Level")
         field :release_version, _("Release Version")
+
         from :environment do
           field :name, _("Lifecycle Environment")
         end
@@ -69,6 +69,13 @@ module HammerCLIKatello
         collection :host_collections, _("Host Collections") do
           field :id, _("ID")
           field :name, _("Name")
+        end
+
+        label _("System Purpose") do
+          field :service_level, _('Service Level')
+          field :purpose_usage, _('Purpose Usage')
+          field :purpose_role, _('Purpose Role')
+          field :purpose_addons, _('Purpose Addons'), Fields::List
         end
       end
 
