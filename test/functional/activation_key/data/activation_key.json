@@ -1,0 +1,17 @@
+{
+  "service_level": null,
+  "id": "1",
+  "organization_id": "1",
+  "name": "test key2",
+  "description": "Activation key",
+  "unlimited_hosts": true,
+  "auto_attach": true,
+  "release_version": null,
+  "purpose_usage": "Usage",
+  "purpose_role": "Role",
+  "environment": {
+    "name": "Library",
+    "id": 1
+  },
+  "purpose_addons": "Test Addon1, Test Addon2"
+}
