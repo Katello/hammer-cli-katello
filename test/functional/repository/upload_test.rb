@@ -29,34 +29,101 @@ describe 'upload repository' do
 
     params = ["--id=#{repo_id}", "--path=#{path}"]
 
-    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id
-    end
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params('repository_id' => repo_id)
 
     ex.returns(upload_response)
 
-    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      upload = {
-        :id => '1234',
-        :name => 'test.rpm',
-        :size => 0,
-        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-      }
-      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
-        par[:publish_repository] == true
-    end
+    # rubocop:disable LineLength
+    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+                       :uploads => [{
+                         :id => '1234',
+                         :name => 'test.rpm',
+                         :size => 0,
+                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                       }]
+                      )
+    # rubocop:enable LineLength
 
     ex2.returns("")
 
-    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id
-    end
+    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+          .with_params('id' => upload_id, 'repository_id' => repo_id)
 
     ex3.returns("")
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
+  end
+
+  it "uploads srpm with content-type" do
+    File.new("test.src.rpm", "w")
+
+    params = ["--id=#{repo_id}", '--path=./test.src.rpm', '--content-type=srpm']
+
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params('repository_id' => repo_id)
+
+    ex.returns(upload_response)
+
+    # rubocop:disable LineLength
+    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :content_type => 'srpm',
+                       :uploads => [{
+                         :id => '1234',
+                         :name => 'test.src.rpm',
+                         :size => 0,
+                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                       }]
+                      )
+
+    # rubocop:enable LineLength
+    ex2.returns("")
+
+    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+          .with_params(:id => upload_id, :repository_id => repo_id)
+
+    ex3.returns("")
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 0)
+    File.delete("test.src.rpm")
+  end
+
+  it 'fails upload of srpm with no content-type' do
+    File.new("test.src.rpm", "w")
+
+    params = ["--id=#{repo_id}", '--path=./test.src.rpm']
+
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params('repository_id' => repo_id)
+
+    ex.returns(upload_response)
+
+    # rubocop:disable LineLength
+    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+                       :uploads => [{
+                         :id => '1234',
+                         :name => 'test.src.rpm',
+                         :size => 0,
+                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                       }]
+                      )
+    # rubocop:enable LineLength
+
+    ex2.returns(400)
+
+    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+          .with_params(:id => upload_id, :repository_id => repo_id)
+
+    ex3.returns("")
+
+    result = run_cmd(@cmd + params)
+    assert_equal(result.exit_code, 65)
+    File.delete("test.src.rpm")
   end
 
   it "uploads a docker image" do
@@ -103,28 +170,27 @@ describe 'upload repository' do
 
     expect_repository_search(product_id, 'test_repo', repo_id)
 
-    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id
-    end
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params(:repository_id => repo_id)
 
     ex.returns(upload_response)
 
-    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      upload = {
-        :id => '1234',
-        :name => 'test.rpm',
-        :size => 0,
-        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-      }
-      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
-        par[:publish_repository] == true
-    end
+    # rubocop:disable LineLength
+    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+                       :uploads => [{
+                         :id => '1234',
+                         :name => 'test.rpm',
+                         :size => 0,
+                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                       }]
+                      )
+    # rubocop:enable LineLength
 
     ex2.returns("")
 
-    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id
-    end
+    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+          .with_params(:id => upload_id, :repository_id => repo_id)
 
     ex3.returns("")
 
@@ -138,28 +204,27 @@ describe 'upload repository' do
 
     params = ["--id=#{repo_id}", "--path={test}.[r{1}]pm"]
 
-    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id
-    end
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params(:repository_id => repo_id)
 
     ex.returns(upload_response)
 
-    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      upload = {
-        :id => '1234',
-        :name => 'test.rpm',
-        :size => 0,
-        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-      }
-      par[:id] == repo_id && par[:uploads] == [upload] && par[:sync_capsule] == true &&
-        par[:publish_repository] == true
-    end
+    # rubocop:disable LineLength
+    ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+                       :uploads => [{
+                         :id => '1234',
+                         :name => 'test.rpm',
+                         :size => 0,
+                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                       }]
+                      )
+    # rubocop:enable LineLength
 
     ex2.returns("")
 
-    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id
-    end
+    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+          .with_params(:id => upload_id, :repository_id => repo_id)
 
     ex3.returns("")
 
@@ -176,43 +241,53 @@ describe 'upload repository' do
 
     # Begin first upload cycle
 
-    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id
-    end
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params(:repository_id => repo_id)
 
     ex.returns(upload_response)
 
-    ex = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      par[:id] == repo_id && par[:uploads].one? && par[:sync_capsule] == false &&
-        par[:publish_repository] == false
-    end
+    # rubocop:disable LineLength
+    ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
+         .with_params(:id => repo_id, :sync_capsule => false, :publish_repository => false,
+                      :uploads => [{
+                        :id => '1234',
+                        :name => 'test1.rpm',
+                        :size => 0,
+                        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                      }]
+                     )
+    # rubocop:enable LineLength
 
     ex.returns("")
 
-    ex = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id
-    end
+    ex = api_expects(:content_uploads, :destroy, "Delete the upload")
+         .with_params(:id => upload_id, :repository_id => repo_id)
 
     ex.returns("")
 
     # Begin second upload cycle
 
-    ex = api_expects(:content_uploads, :create, "Create upload for content") do |par|
-      par[:repository_id] == repo_id
-    end
+    ex = api_expects(:content_uploads, :create, "Create upload for content")
+         .with_params(:repository_id => repo_id)
 
     ex.returns(upload_response)
 
-    ex = api_expects(:repositories, :import_uploads, 'Take in an upload') do |par|
-      par[:id] == repo_id && par[:uploads].one? && par[:sync_capsule] == true &&
-        par[:publish_repository] == true
-    end
+    # rubocop:disable LineLength
+    ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
+         .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+                      :uploads => [{
+                        :id => '1234',
+                        :name => 'test2.rpm',
+                        :size => 0,
+                        :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+                      }]
+                     )
+    # rubocop:enable LineLength
 
     ex.returns("")
 
-    ex = api_expects(:content_uploads, :destroy, "Delete the upload") do |par|
-      par[:id] == upload_id && par[:repository_id] == repo_id
-    end
+    ex = api_expects(:content_uploads, :destroy, "Delete the upload")
+         .with_params(:id => upload_id, :repository_id => repo_id)
 
     ex.returns("")
 

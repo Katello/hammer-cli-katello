@@ -443,7 +443,8 @@ module HammerCLIKatello
         params = {:id => get_identifier,
                   :uploads => uploads,
                   publish_repository: publish_repository,
-                  sync_capsule: sync_capsule
+                  sync_capsule: sync_capsule,
+                  content_type: option_content_type
         }
         resource.call(:import_uploads, params)
       end
