@@ -277,9 +277,6 @@ module HammerCLIKatello
 
       command_name "export-default"
 
-      success_message _("Default content view export is available in %{directory}.")
-      failure_message _("Could not export the content view.")
-
       option '--export-dir', 'EXPORT_DIR', _("Directory to put content view version export into.")
 
       validate_options do
@@ -291,8 +288,15 @@ module HammerCLIKatello
       def execute
         export_dir = options['option_export_dir']
 
-        `rsync -avL #{PUBLISHED_REPOS_DIR} #{export_dir}`
-        return HammerCLI::EX_OK
+        Dir.mkdir(export_dir) unless Dir.exist?(export_dir)
+        result = Kernel.system("rsync -aL #{PUBLISHED_REPOS_DIR} #{export_dir}")
+        if result == true
+          output.print_message _("Default content view export is available at #{export_dir}")
+          HammerCLI::EX_OK
+        else
+          output.print_error _("Could not export the default content view at #{export_dir}")
+          HammerCLI::EX_CANTCREAT
+        end
       end
     end
 
