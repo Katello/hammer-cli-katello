@@ -267,6 +267,39 @@ module HammerCLIKatello
       end
     end
 
+    class ExportDefaultCommand < HammerCLIForeman::Command
+      include HammerCLIKatello::LocalHelper
+      include HammerCLIKatello::ApipieHelper
+
+      PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
+
+      desc _('Export the library default content view')
+
+      command_name "export-default"
+
+      option '--export-dir', 'EXPORT_DIR', _("Directory to put content view version export into.")
+
+      validate_options do
+        option(:option_export_dir).required
+      end
+
+      build_options
+
+      def execute
+        export_dir = options['option_export_dir']
+
+        Dir.mkdir(export_dir) unless Dir.exist?(export_dir)
+        result = Kernel.system("rsync -aL #{PUBLISHED_REPOS_DIR} #{export_dir}")
+        if result == true
+          output.print_message _("Default content view export is available at #{export_dir}")
+          HammerCLI::EX_OK
+        else
+          output.print_error _("Could not export the default content view at #{export_dir}")
+          HammerCLI::EX_CANTCREAT
+        end
+      end
+    end
+
     class LegacyExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include LifecycleEnvironmentNameMapping
