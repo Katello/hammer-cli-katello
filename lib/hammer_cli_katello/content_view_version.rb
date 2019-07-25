@@ -7,6 +7,8 @@ module HammerCLIKatello
     desc 'View and manage content view versions'
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include LifecycleEnvironmentNameMapping
+
       output do
         field :id, _("ID")
         field :name, _("Name")
@@ -22,9 +24,13 @@ module HammerCLIKatello
       build_options do |o|
         o.expand(:all).including(:organizations)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
+      include LifecycleEnvironmentNameMapping
+
       resource :content_view_versions, :show
 
       output do
@@ -62,6 +68,8 @@ module HammerCLIKatello
       build_options do |o|
         o.expand(:all).including(:environments, :content_views, :organizations)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class RepublishRepositoriesCommand < HammerCLIKatello::SingleResourceCommand
@@ -79,6 +87,7 @@ module HammerCLIKatello
 
     class PromoteCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
+      include LifecycleEnvironmentNameMapping
 
       action :promote
       command_name "promote"
@@ -101,6 +110,10 @@ module HammerCLIKatello
              _(["Id of the environment from where to promote its version ",
                 "from (if version is unknown)"].join),
                :attribute_name => :option_from_environment_id
+      option "--environment-ids", "ENVIRONMENT_IDS", _("Identifiers for Lifecycle Environment"),
+            format: HammerCLI::Options::Normalizers::List.new,
+            attribute_name: :option_environment_ids,
+            deprecated: { '--environment-ids' => _('Use --lifecycle-environment-ids instead') }
 
       def environment_search_options
         {
@@ -123,10 +136,15 @@ module HammerCLIKatello
         o.expand(:all).except(:environments).including(:content_views, :organizations)
         o.without(:environment_id)
       end
+
+      extend_with(
+        HammerCLIKatello::CommandExtensions::LifecycleEnvironments.new(only: :option_sources)
+      )
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       include HammerCLIForemanTasks::Async
+      include LifecycleEnvironmentNameMapping
 
       action :destroy
       command_name "delete"
@@ -137,6 +155,8 @@ module HammerCLIKatello
       build_options do |o|
         o.expand(:all).including(:environments, :content_views, :organizations)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class IncrementalUpdate < HammerCLIKatello::Command
@@ -249,6 +269,7 @@ module HammerCLIKatello
 
     class LegacyExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
+      include LifecycleEnvironmentNameMapping
       desc _('Export a content view (deprecated)')
 
       action :export
@@ -260,6 +281,8 @@ module HammerCLIKatello
       build_options do |o|
         o.expand(:all).including(:environments, :content_views, :organizations)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class ExportCommand < HammerCLIForeman::Command

@@ -14,6 +14,7 @@ module HammerCLIKatello
                                  s("repository_id", _("Repository ID"))],
       :gpg =>                   [s_name(_("Gpg key name to search by"))],
       :host_collection =>       [s_name(_("Host collection name to search by"))],
+      :environment =>           [s_name(_("Lifecycle environment name to search by"))],
       :lifecycle_environment => [s_name(_("Lifecycle environment name to search by"))],
       :organization =>          [s_name(_("Organization name to search by")),
                                  s("label", _("Organization label to search by"),
@@ -62,12 +63,12 @@ module HammerCLIKatello
       smart_proxy_id(options)
     end
 
-    def puppet_environment_id(options)
-      get_id(:environments, options)
-    end
-
     def environment_id(options)
       lifecycle_environment_id(options)
+    end
+
+    def lifecycle_environment_ids(options)
+      environment_ids(options)
     end
 
     def environment_ids(options)

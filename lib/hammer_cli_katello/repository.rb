@@ -3,6 +3,8 @@ module HammerCLIKatello
     resource :repositories
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include LifecycleEnvironmentNameMapping
+
       output do
         field :id, _("Id")
         field :name, _("Name")
@@ -14,6 +16,8 @@ module HammerCLIKatello
       end
 
       build_options
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     # rubocop:disable ClassLength

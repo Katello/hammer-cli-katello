@@ -16,7 +16,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::SingleResourceCommand
-      include LifecycleEnvironmentNameResolvable
+      include LifecycleEnvironmentNameMapping
       include OrganizationOptions
 
       resource :host_subscriptions, :create
@@ -28,6 +28,8 @@ module HammerCLIKatello
         o.expand(:all).except(:products)
         o.without(:facts, :installed_products)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class AddSubscriptions < HammerCLIKatello::SingleResourceCommand
