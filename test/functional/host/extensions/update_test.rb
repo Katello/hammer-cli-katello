@@ -27,11 +27,13 @@ module HammerCLIForeman
 
         api_expects(:hosts, :update).
           with_params('id' => host_id.to_s,
+                      'organization_id' => organization_id,
                       'host' => {
-                        'organization_id' => organization_id,
+                        'puppetclass_ids' => [],
+                        'compute_attributes' => {},
                         'content_facet_attributes' => {
-                          'lifecycle_environment_id' => env_id,
                           'content_view_id' => cv_id,
+                          'lifecycle_environment_id' => env_id,
                           'kickstart_repository_id' => repo_id
                         }
                       })
