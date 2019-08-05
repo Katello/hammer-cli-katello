@@ -136,6 +136,11 @@ module HammerCLIKatello
                                          'hammer_cli_katello/module_stream'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("srpm", _("Manipulate source RPMs"),
+                                        'HammerCLIKatello::SrpmCommand',
+                                        'hammer_cli_katello/srpm'
+                                        )
+
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
   require 'hammer_cli_katello/hostgroup'
