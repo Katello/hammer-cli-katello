@@ -12,6 +12,7 @@ Gem::Specification.new do |gem|
     "Bryan Kearney",
     "Chris Duryee",
     "Christine Fouant",
+    "Chris Roberts",
     "Daniel Lobato García",
     "David Davis",
     "Dustin Tsang",
@@ -47,7 +48,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version = HammerCLIKatello.version
 
-  gem.add_dependency 'hammer_cli_foreman'
+  gem.add_dependency 'hammer_cli_foreman', '~> 0.18.0'
   gem.add_dependency 'hammer_cli_foreman_tasks'
   gem.add_dependency 'hammer_cli_foreman_bootdisk'
   gem.add_dependency 'hammer_cli_foreman_docker'
