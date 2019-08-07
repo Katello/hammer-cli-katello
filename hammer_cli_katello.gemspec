@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
     "Brad Buckingham",
     "Bryan Kearney",
     "Chris Duryee",
+    "Chris Roberts",
     "Christine Fouant",
     "Daniel Lobato García",
     "David Davis",
