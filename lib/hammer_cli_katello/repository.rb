@@ -382,12 +382,12 @@ module HammerCLIKatello
       private
 
       def upload_file(file, opts = {})
-        upload_id = create_content_upload
+        total_size = File.size(file)
+        upload_id = create_content_upload(total_size)
         repo_id = get_identifier
         filename = File.basename(file.path)
 
         update_content_upload(upload_id, repo_id, file)
-
         file.rewind
         content = file.read
 
@@ -410,9 +410,12 @@ module HammerCLIKatello
         content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
       end
 
-      def create_content_upload
-        response = content_upload_resource.call(:create, :repository_id => get_identifier)
-
+      def create_content_upload(size)
+        params = {
+          :repository_id => get_identifier,
+          :size => size
+        }
+        response = content_upload_resource.call(:create, params)
         response["upload_id"]
       end
 
@@ -424,10 +427,10 @@ module HammerCLIKatello
             :offset => offset,
             :id => upload_id,
             :content => content,
+            :size => file.size,
             :repository_id => repo_id,
             :multipart => true
           }
-
           # To workaround rest-client bug with false negative warnings,
           # see https://github.com/rest-client/rest-client/pull/670 for more details
           silence_warnings do
