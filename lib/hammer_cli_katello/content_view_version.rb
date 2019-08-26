@@ -13,6 +13,7 @@ module HammerCLIKatello
         field :id, _("ID")
         field :name, _("Name")
         field :version, _("Version")
+        field :description, _("Description")
         field :environments, _("Lifecycle Environments"), Fields::List
       end
 
@@ -151,6 +152,20 @@ module HammerCLIKatello
 
       success_message _("Content view is being deleted with task %{id}.")
       failure_message _("Could not delete the content view")
+
+      build_options do |o|
+        o.expand(:all).including(:environments, :content_views, :organizations)
+      end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
+    end
+
+    class UpdateCommand < HammerCLIKatello::UpdateCommand
+      action :update
+      command_name "update"
+
+      success_message _("Content view version updated.")
+      failure_message _("Could not update the content view version")
 
       build_options do |o|
         o.expand(:all).including(:environments, :content_views, :organizations)
