@@ -35,6 +35,7 @@ module HammerCLIKatello
         field :composite, _("Composite")
         field :description, _("Description")
         field :content_host_count, _("Content Host Count")
+        field :force_puppet_environment, _("Force Puppet")
         field :solve_dependencies, _("Solve Dependencies")
 
         from :organization do
