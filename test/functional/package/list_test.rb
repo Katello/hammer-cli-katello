@@ -2,11 +2,14 @@ require_relative '../test_helper'
 require_relative '../repository/repository_helpers'
 require_relative '../product/product_helpers'
 require_relative '../organization/organization_helpers'
+require_relative '../lifecycle_environment/lifecycle_environment_helpers'
 require 'hammer_cli_katello/package'
 
+# rubocop:disable ModuleLength
 module HammerCLIKatello
   describe PackageCommand::ListCommand do
     include OrganizationHelpers
+    include LifecycleEnvironmentHelpers
     include RepositoryHelpers
     include ProductHelpers
 
@@ -63,6 +66,28 @@ module HammerCLIKatello
         api_expects(:packages, :index).with_params('repository_id' => 1)
 
         run_cmd(%w(package list --repository repo1 --product-id 2))
+      end
+    end
+
+    describe 'environment options' do
+      it 'may be specified environment name' do
+        org_id = 2
+        env_name = "dev"
+        expected_id = 6
+        expect_lifecycle_environment_search(org_id, env_name, expected_id)
+
+        api_expects(:packages, :index).with_params("organization_id" => org_id,
+                                                   "environment_id" => expected_id,
+                                                   "page" => 1, "per_page" => 1000)
+
+        run_cmd(%W(package list --environment=#{env_name} --organization-id=#{org_id}))
+      end
+
+      it 'may be specified environment name no org fails' do
+        api_expects_no_call
+        r = run_cmd(%w(package list --environment Library))
+        expected_error = "--organization, --organization-label, --organization-id"
+        assert(r.err.include?(expected_error), "Invalid error message")
       end
     end
 
