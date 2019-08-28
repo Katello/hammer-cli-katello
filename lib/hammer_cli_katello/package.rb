@@ -3,6 +3,9 @@ module HammerCLIKatello
     resource :packages
 
     class ListCommand < HammerCLIKatello::ListCommand
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
+      include LifecycleEnvironmentNameMapping
+
       output do
         field :id, _("ID")
         field :filename, _("Filename")
@@ -34,7 +37,6 @@ module HammerCLIKatello
               :option_environment_name).required
         end
       end
-
       build_options do |o|
         o.expand.including(:products, :content_views)
       end
