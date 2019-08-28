@@ -443,9 +443,9 @@ module HammerCLIKatello
         params = {:id => get_identifier,
                   :uploads => uploads,
                   publish_repository: publish_repository,
-                  sync_capsule: sync_capsule,
-                  content_type: option_content_type
+                  sync_capsule: sync_capsule
         }
+        params[:content_type] = options["option_content_type"] if options["option_content_type"]
         resource.call(:import_uploads, params)
       end
 
