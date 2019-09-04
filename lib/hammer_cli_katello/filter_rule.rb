@@ -61,7 +61,10 @@ module HammerCLIKatello
         super
       end
 
-      build_options
+      build_options do |o|
+        o.expand.except(:module_streams)
+        o.without(:module_streams)
+      end
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
