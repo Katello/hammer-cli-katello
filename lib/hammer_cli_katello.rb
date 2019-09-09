@@ -54,11 +54,6 @@ module HammerCLIKatello
                                          'hammer_cli_katello/lifecycle_environment'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("ping", _("Get the status of the server"),
-                                         'HammerCLIKatello::PingCommand',
-                                         'hammer_cli_katello/ping'
-                                        )
-
   HammerCLI::MainCommand.lazy_subcommand("product", _("Manipulate products"),
                                          'HammerCLIKatello::Product',
                                          'hammer_cli_katello/product'
@@ -144,5 +139,7 @@ module HammerCLIKatello
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
   require 'hammer_cli_katello/hostgroup'
+  require 'hammer_cli_katello/ping'
+  require 'hammer_cli_katello/status'
 end
 # rubocop:enable Metrics/ModuleLength
