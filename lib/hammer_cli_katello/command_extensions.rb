@@ -2,3 +2,4 @@
 
 require 'hammer_cli_katello/command_extensions/lifecycle_environment'
 require 'hammer_cli_katello/command_extensions/lifecycle_environments'
+require 'hammer_cli_katello/command_extensions/ping'

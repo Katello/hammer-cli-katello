@@ -14,6 +14,6 @@ describe 'ping' do
       }
     )
 
-    run_cmd(%w(ping))
+    run_cmd(%w(ping katello))
   end
 end

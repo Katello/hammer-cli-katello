@@ -1,3 +1,5 @@
+require 'hammer_cli_foreman/ping'
+
 module HammerCLIKatello
   class PingCommand < HammerCLIKatello::Command
     resource :ping, :index
@@ -54,19 +56,11 @@ module HammerCLIKatello
 
     def send_request
       super.tap do |data|
+        data['services'] ||= {}
         data['services'].each do |_, service|
-          service['_response'] = get_server_response(service)
+          service['_response'] =
+            HammerCLIKatello::CommandExtensions::Ping.get_server_response(service)
         end
-      end
-    end
-
-    private
-
-    def get_server_response(service_hash)
-      if service_hash['duration_ms']
-        _("Duration: %sms") % service_hash['duration_ms']
-      elsif service_hash['message']
-        _("Message: %s") % service_hash['message']
       end
     end
 
@@ -74,4 +68,11 @@ module HammerCLIKatello
       { with_authentication: false }
     end
   end # class PingCommand
+
+  HammerCLIForeman::PingCommand.subcommand 'katello',
+                                            HammerCLIKatello::PingCommand.desc,
+                                            HammerCLIKatello::PingCommand
+  HammerCLIForeman::PingCommand::ForemanCommand.extend_with(
+    HammerCLIKatello::CommandExtensions::Ping.new
+  )
 end # module HammerCLIKatello
