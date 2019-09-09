@@ -283,6 +283,11 @@ module HammerCLIKatello
       command_name 'add-version'
       desc _('Add a content view version to a composite view')
 
+      option "--content-view-id", "CONTENT_VIEW_ID",
+        _("Content view numeric identifier to search by"),
+        attribute_name: :option_content_view_id,
+        format: HammerCLI::Options::Normalizers::Number.new
+
       validate_options :before, 'IdResolution' do
         if option(:option_content_view_version_version).exist?
           any(:option_content_view_id, :option_content_view_name).required
