@@ -16,12 +16,11 @@ describe 'content-view version export' do
     ex = api_expects(:content_view_versions, :show)
     ex.returns(
       'id' => '5',
-      'repositories' => [{'id' => '2'}],
+      'repositories' => [{'id' => '2', 'content_type' => 'yum'}],
       'major' => 1,
       'minor' => 0,
       'content_view' => {'name' => 'cv'},
-      'content_view_id' => 4321,
-      'puppet_modules' => []
+      'content_view_id' => 4321
     )
 
     ex = api_expects(:content_views, :show)
@@ -36,6 +35,7 @@ describe 'content-view version export' do
       'id' => '2',
       'label' => 'Test_Repo',
       'content_type' => 'yum',
+      'download_policy' => 'immediate',
       'backend_identifier' => 'Default_Organization-Library-Test_Repo',
       'relative_path' => 'Default_Organization/Library/Test_Repo',
       'library_instance_id' => '1',
@@ -98,197 +98,6 @@ describe 'content-view version export' do
 
     result = run_cmd(@cmd + params)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
-  end
-
-  it "fails export if any repository is set to background" do
-    params = [
-      '--id=5',
-      '--export-dir=/tmp/exports'
-    ]
-
-    ex = api_expects(:content_view_versions, :show)
-    ex.returns(
-      'id' => '5',
-      'repositories' => [{'id' => '2'}],
-      'major' => 1,
-      'minor' => 0,
-      'content_view' => {'name' => 'cv'},
-      'content_view_id' => 4321,
-      'puppet_modules' => []
-    )
-
-    ex = api_expects(:content_views, :show)
-    ex.returns(
-      'id' => '4321',
-      'composite' => false
-    )
-
-    ex = api_expects(:repositories, :show).with_params('id' => '2')
-    ex.returns(
-      'id' => '2',
-      'label' => 'Test_Repo',
-      'content_type' => 'yum',
-      'backend_identifier' => 'Default_Organization-Library-Test_Repo',
-      'relative_path' => 'Default_Organization/Library/Test_Repo',
-      'library_instance_id' => '1'
-    )
-
-    api_expects(:repositories, :show).with_params('id' => '1').returns(
-      'id' => '1',
-      'download_policy' => 'background'
-    )
-
-    File.expects(:exist?).with('/usr/share/foreman').returns(true)
-    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
-
-    result = run_cmd(@cmd + params)
-    assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
-  end
-
-  it "fails export if cvv contains puppet module" do
-    params = [
-      '--id=5',
-      '--export-dir=/tmp/exports'
-    ]
-
-    ex = api_expects(:content_view_versions, :show)
-    ex.returns(
-      'id' => '5',
-      'repositories' => [{'id' => '2'}],
-      'major' => 1,
-      'minor' => 0,
-      'content_view' => {'name' => 'cv'},
-      'content_view_id' => 4321,
-      'puppet_modules' => [{'id' => '1'}]
-    )
-
-    ex = api_expects(:content_views, :show)
-    ex.returns(
-      'id' => '4321',
-      'composite' => false,
-      'puppet_modules' => [{'id' => '1'}]
-    )
-
-    ex = api_expects(:repositories, :show).with_params('id' => '2')
-    ex.returns(
-      'id' => '2',
-      'label' => 'Test_Repo',
-      'content_type' => 'yum',
-      'backend_identifier' => 'Default_Organization-Library-Test_Repo',
-      'relative_path' => 'Default_Organization/Library/Test_Repo',
-      'library_instance_id' => '1'
-    )
-
-    File.expects(:exist?).with('/usr/share/foreman').returns(true)
-    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
-
-    result = run_cmd(@cmd + params)
-    assert_equal(result.exit_code, 70)
-  end
-
-  it "fails export if any repository is set to on_demand" do
-    params = [
-      '--id=5',
-      '--export-dir=/tmp/exports'
-    ]
-
-    ex = api_expects(:content_view_versions, :show)
-    ex.returns(
-      'id' => '5',
-      'repositories' => [{'id' => '2'}, {'id' => '3'}],
-      'major' => 1,
-      'minor' => 0,
-      'content_view' => {'name' => 'cv'},
-      'content_view_id' => 4321,
-      'puppet_modules' => []
-    )
-
-    ex = api_expects(:content_views, :show)
-    ex.returns(
-      'id' => '4321',
-      'composite' => false
-    )
-
-    ex = api_expects(:repositories, :show).with_params('id' => '2')
-    ex.returns(
-      'id' => '2',
-      'label' => 'Test_Repo',
-      'name' => 'Test_Repo',
-      'content_type' => 'yum',
-      'backend_identifier' => 'Default_Organization-Library-Test_Repo',
-      'relative_path' => 'Default_Organization/Library/Test_Repo',
-      'library_instance_id' => '1'
-    )
-
-    api_expects(:repositories, :show).with_params('id' => '3').returns(
-      'id' => '3',
-      'label' => 'Test_Repo_3',
-      'name' => 'Test_Repo_3',
-      'content_type' => 'yum',
-      'backend_identifier' => 'Default_Organization-Library-Test_Repo_3',
-      'relative_path' => 'Default_Organization/Library/Test_Repo_3',
-      'library_instance_id' => '4'
-    )
-
-    api_expects(:repositories, :show).with_params('id' => '1').returns(
-      'id' => '1',
-      'download_policy' => 'on_demand'
-    )
-    api_expects(:repositories, :show).with_params('id' => '4').returns(
-      'id' => '4',
-      'download_policy' => 'immediate'
-    )
-
-    File.expects(:exist?).with('/usr/share/foreman').returns(true)
-    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
-
-    result = run_cmd(@cmd + params)
-    assert_equal(result.err, "Could not export the content view:\n" \
-                                "  Error: All exported repositories must be set to an "\
-                                "immediate download policy and re-synced.\n" \
-                                "  The following repositories need action:\n" \
-                                "    Test_Repo\n" \
-                )
-    assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
-  end
-
-  it "fails export if any repository is not yum" do
-    params = [
-      '--id=5',
-      '--export-dir=/tmp/exports'
-    ]
-
-    ex = api_expects(:content_view_versions, :show)
-    ex.returns(
-      'id' => '5',
-      'repositories' => [{'id' => '2'}],
-      'major' => 1,
-      'minor' => 0,
-      'content_view' => {'name' => 'cv'},
-      'content_view_id' => 4321
-    )
-
-    ex = api_expects(:content_views, :show)
-    ex.returns(
-      'id' => '4321',
-      'composite' => false
-    )
-
-    ex = api_expects(:repositories, :show).with_params('id' => '2')
-    ex.returns(
-      'id' => '2',
-      'label' => 'Test_Repo',
-      'content_type' => 'file',
-      'backend_identifier' => 'Default_Organization-Library-Test_Repo',
-      'relative_path' => 'Default_Organization/Library/Test_Repo',
-      'library_instance_id' => '1'
-    )
-
-    File.expects(:exist?).with('/usr/share/foreman').returns(true)
-    File.stubs(:exist?).with('/var/log/hammer/hammer.log._copy_').returns(false)
-
-    result = run_cmd(@cmd + params)
-    assert_equal(result.exit_code, 70)
   end
 
   it "fails export if content view version has no repository" do
