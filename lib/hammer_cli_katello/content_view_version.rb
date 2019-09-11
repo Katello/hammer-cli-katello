@@ -372,10 +372,7 @@ module HammerCLIKatello
           end
           export_json_options[:repositories] = []
         else
-          repositories = fetch_cvv_repositories(cvv)
-          puppet_check(cvv)
-          check_repo_type(repositories)
-          check_repo_download_policy(repositories)
+          repositories = fetch_exportable_cvv_repositories(cvv)
           collect_packages(repositories)
 
           export_json_options[:repositories] = repositories
@@ -480,11 +477,14 @@ module HammerCLIKatello
           publish(cv['id'], export_json['major'], export_json['minor'])
         else
           sync_repositories(export_json['repositories'], options['option_organization_id'],
-                            import_tar_params)
-          publish(
-            cv['id'], export_json['major'],
-            export_json['minor'], repos_units(export_json['repositories'])
-          )
+            import_tar_params)
+
+          unless cv['default']
+            publish(
+              cv['id'], export_json['major'],
+              export_json['minor'], repos_units(export_json['repositories'])
+            )
+          end
         end
         return HammerCLI::EX_OK
       end
@@ -498,8 +498,7 @@ module HammerCLIKatello
           library_repos = index(
             :repositories,
             'organization_id' => organization_id,
-            'library' => true,
-            'label' => repo['label']
+            'library' => true
           )
 
           library_repo = library_repos.select do |candidate_repo|

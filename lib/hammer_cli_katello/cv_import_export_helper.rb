@@ -3,10 +3,32 @@ module HammerCLIKatello
   module CVImportExportHelper
     PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
 
-    def fetch_cvv_repositories(cvv)
-      cvv['repositories'].collect do |repo|
-        show(:repositories, 'id' => repo['id'], :full_result => true)
+    def fetch_exportable_cvv_repositories(cvv)
+      immediate = []
+      non_immediate_names = []
+
+      cvv['repositories'].each do |repo|
+        next unless repo['content_type'] == 'yum'
+
+        api_repo = show(:repositories, 'id' => repo['id'], :full_result => true)
+
+        download_policy = if api_repo['library_instance_id']
+                            library = show(:repositories, 'id' => api_repo['library_instance_id'])
+                            library['download_policy']
+                          else
+                            api_repo['download_policy']
+                          end
+
+        if download_policy == 'immediate'
+          immediate << api_repo
+        else
+          non_immediate_names << api_repo['name']
+        end
       end
+
+      warn_repo_download_policy(non_immediate_names)
+
+      return immediate
     end
 
     def find_local_component_id(component_from_export)
@@ -23,41 +45,15 @@ module HammerCLIKatello
       found_composite_version.first['id']
     end
 
-    def puppet_check(cvv)
-      unless cvv['puppet_modules'].empty?
-        raise _("The Content View '#{cvv['content_view']['label']}'"\
-        " contains Puppet modules, this is not supported at this time."\
-        " Please remove the modules, publish a new version"\
-        " and try the export again.")
-      end
-    end
+    def warn_repo_download_policy(repository_names)
+      return if repository_names.empty?
 
-    def check_repo_type(repositories)
-      repositories.select do |repo|
-        if repo['content_type'] != 'yum'
-          raise _("The Repository '#{repo['name']}' is a non-yum repository."\
-          " Only Yum is supported at this time."\
-          " Please remove the repository from the Content View,"\
-          " republish and try the export again.")
-        end
-      end
-    end
-
-    def check_repo_download_policy(repositories)
-      non_immediate = repositories.select do |repo|
-        unless repo['library_instance_id'].nil?
-          show(:repositories, 'id' => repo['library_instance_id'])['download_policy'] != 'immediate'
-        end
-      end
-      unless non_immediate.empty?
-        non_immediate_names = non_immediate.collect { |repo| repo['name'] }
-        msg = <<~MSG
-          All exported repositories must be set to an immediate download policy and re-synced.
-          The following repositories need action:
-            #{non_immediate_names.join(', ')}
-        MSG
-        raise _(msg)
-      end
+      msg = <<~MSG
+        The following repositories could not be exported due to the download policy
+        not being set to 'immediate':
+          #{repository_names.join(', ')}
+      MSG
+      print_message msg
     end
 
     def collect_packages(repositories)
@@ -88,10 +84,12 @@ module HammerCLIKatello
         " please create the Content View and try the import again.")
       end
 
-      if import_cv['latest_version'].to_f >= version
-        raise _("The latest version (#{import_cv['latest_version']}) of"\
-        " the Content View '#{cv['name']}'"\
-        " is greater or equal to the version you are trying to import (#{version})")
+      unless import_cv['default']
+        if import_cv['latest_version'].to_f >= version
+          raise _("The latest version (#{import_cv['latest_version']}) of"\
+          " the Content View '#{cv['name']}'"\
+          " is greater or equal to the version you are trying to import (#{version})")
+        end
       end
 
       unless import_cv['repository_ids'].nil?
