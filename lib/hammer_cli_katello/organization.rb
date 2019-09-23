@@ -37,7 +37,8 @@ module HammerCLIKatello
       build_options
     end
 
-    class CreateCommand < HammerCLIKatello::CreateCommand
+    class CreateCommand < HammerCLIForeman::Organization::CreateCommand
+      include HammerCLIKatello::ResolverCommons
       resource :organizations, :create
 
       success_message _("Organization created.")
