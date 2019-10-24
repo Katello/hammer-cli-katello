@@ -5,7 +5,7 @@ module HammerCLIKatello
   describe ActivationKeyCommand::SubscriptionsCommand do
     it 'requires organization options' do
       expected_error = "Could not find organization"
-      result = run_cmd(%w(activation-key subscriptions --id 1))
+      result = run_cmd(%w(activation-key subscriptions --name test))
       assert_equal(result.err[/#{expected_error}/], expected_error)
     end
 
@@ -55,12 +55,10 @@ module HammerCLIKatello
     end
 
     it 'allows a subscription to be added by name to an activation key' do
-      api_expects(:subscriptions, :index) { |p| p['organization_id'] == 1 }
-        .returns(index_response([{'id' => 3}]))
-      api_expects(:activation_keys, :add_subscriptions) do |p|
-        p['id'] == 1 && p['subscription_id'] == 3
-      end
-      run_cmd(%w(activation-key add-subscription --id 1 --subscription sub --organization-id 1))
+      api_expects(:subscriptions, :index) { |p| p['name'] == 'sub' }
+        .returns(index_response([{'name' => 'sub'}]))
+      api_expects(:activation_keys, :add_subscriptions) { |p| p['id'] == 1 }
+      run_cmd(%w(activation-key add-subscription --id 1 --subscription sub))
     end
 
     it 'allows multiple subscriptions to be added to an activation key' do

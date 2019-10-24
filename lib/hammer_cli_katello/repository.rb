@@ -212,13 +212,6 @@ module HammerCLIKatello
         if option(:option_product_name).exist?
           any(*organization_options).required
         end
-
-        if option(:option_docker_tag).exist? != option(:option_docker_digest).exist?
-          option(:option_docker_tag).rejected(
-            :msg => _('--docker-digest required with --docker-tag'))
-          option(:option_docker_digest).rejected(
-            :msg => _('--docker-tag required with --docker-digest'))
-        end
       end
 
       build_options(:without => [:unprotected]) do |o|
@@ -227,59 +220,11 @@ module HammerCLIKatello
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--docker-tag", "TAG",
-              _("Optional custom Container Image tag to specify the value of the Docker digest")
-      option "--docker-digest", "DIGEST", _("Container Image manifest digest")
 
       def execute
         @failure = false
-
-        if option_docker_tag
-          upload_tag(option_docker_tag, option_docker_digest)
-        else
-          super
-        end
-
+        super
         @failure ? HammerCLI::EX_DATAERR : HammerCLI::EX_OK
-      end
-
-      def content_upload_resource
-        ::HammerCLIForeman.foreman_resource(:content_uploads)
-      end
-
-      def upload_tag(tag, digest)
-        upload_id = create_content_upload
-        import_uploads([
-          {
-            id: upload_id,
-            name: tag,
-            digest: digest
-          }
-        ], last_file: true)
-        print_message _("Repository updated")
-      rescue => e
-        @failure = true
-        logger.error e
-        output.print_error _("Failed to upload tag '%s' to repository.") % tag
-      ensure
-        content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
-      end
-
-      def create_content_upload
-        response = content_upload_resource.call(:create, :repository_id => get_identifier)
-
-        response["upload_id"]
-      end
-
-      def import_uploads(uploads, opts = {})
-        publish_repository = opts.fetch(:last_file, false)
-        sync_capsule = opts.fetch(:last_file, false)
-        params = {:id => get_identifier,
-                  :uploads => uploads,
-                  publish_repository: publish_repository,
-                  sync_capsule: sync_capsule
-        }
-        resource.call(:import_uploads, params)
       end
     end
 
@@ -383,40 +328,40 @@ module HammerCLIKatello
 
       def upload_file(file, opts = {})
         total_size = File.size(file)
-        upload_id = create_content_upload(total_size)
-        repo_id = get_identifier
+        checksum = Digest::SHA256.hexdigest(File.read(file))
+        content_type = options["option_content_type"] ? options["option_content_type"] : nil
         filename = File.basename(file.path)
-
-        update_content_upload(upload_id, repo_id, file)
-        file.rewind
-        content = file.read
-
+        upload_create_response = create_content_upload(total_size, checksum, content_type)
+        upload_id = upload_create_response["upload_id"] || "duplicate"
+        content_unit_id = upload_create_response["content_unit_href"]
+        unless content_unit_id
+          repo_id = get_identifier
+          update_content_upload(upload_id, repo_id, file)
+        end
         results = import_uploads([
           {
             id: upload_id,
+            content_unit_id: content_unit_id,
             name: filename,
             size: file.size,
-            checksum: Digest::SHA256.hexdigest(content)
-          }
-        ], opts)
-
+            checksum: checksum
+          }], opts)
         print_results(filename, results)
-      rescue => e
-        @failure = true
-        logger.error e
-        output.print_error _("Failed to upload file '%s' to repository. Please check "\
-                             "the file and try again.") % filename
       ensure
-        content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
+        if upload_id
+          content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
+        end
       end
 
-      def create_content_upload(size)
+      def create_content_upload(size, checksum, content_type)
         params = {
           :repository_id => get_identifier,
-          :size => size
+          :size => size,
+          :checksum => checksum,
+          :content_type => content_type
         }
         response = content_upload_resource.call(:create, params)
-        response["upload_id"]
+        response
       end
 
       def update_content_upload(upload_id, repo_id, file)
@@ -453,7 +398,7 @@ module HammerCLIKatello
       end
 
       def print_results(name, results)
-        if results.empty?
+        if results.empty? || results.dig('output', 'upload_results').empty?
           print_message _("Successfully uploaded file '%{name}'") % {
             :name => name
           }
