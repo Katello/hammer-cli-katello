@@ -41,12 +41,6 @@ module HammerCLIKatello
       assert_cmd(expected_result, result)
     end
 
-    it 'requires organization options' do
-      expected_error = "Could not find organization"
-      result = run_cmd(%w(subscription list))
-      assert_equal(expected_error, result.err[/#{expected_error}/])
-    end
-
     it 'allows organization name' do
       api_expects(:organizations, :index) { |par| par[:search] == "name = \"org1\"" }
         .returns(index_response([{'id' => 1}]))
