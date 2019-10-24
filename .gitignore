@@ -16,6 +16,7 @@ Gemfile.lock
 Gemfile.local
 Gemfile.local.rb
 rubocop.xml
+pizza.txt
 
 # YARD artifacts
 .yardoc
