@@ -1,5 +1,5 @@
 Release Notes
-=============
+==============
 
 ### 0.11.0 (2017-08-21)
 - [59ab740](https://github.com/Katello/hammer-cli-katello/commit/59ab740) - Update help text for --sync-date (#504) (2017-08-17 12:47:57 -0400) *Ashish Humbe*
