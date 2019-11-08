@@ -15,6 +15,8 @@ module HammerCLIKatello
     end
 
     class ListCommand < HammerCLIKatello::ListCommand
+      include OrganizationOptions
+      include LifecycleEnvironmentNameMapping
       resource :host_errata, :index
       command_name "list"
 
@@ -27,6 +29,7 @@ module HammerCLIKatello
       end
 
       build_options
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class InfoCommand < HammerCLIKatello::ErratumInfoCommand
