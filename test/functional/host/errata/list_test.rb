@@ -27,7 +27,6 @@ describe 'host errata listing' do
     }
   end
 
-
   it "lists the host errata belonging to a lifecycle-environment by name" do
     params = ["--host-id=#{host_id}", "--organization-id=#{org_id}", '--lifecycle-environment=test']
 
@@ -39,12 +38,10 @@ describe 'host errata listing' do
     end
 
     ex.returns(empty_response)
-    expected_result = success_result(
-"---|------------|------|-------|------------
+    expected_result = success_result("---|------------|------|-------|------------
 ID | ERRATUM ID | TYPE | TITLE | INSTALLABLE
 ---|------------|------|-------|------------
 ")
-
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
   end
