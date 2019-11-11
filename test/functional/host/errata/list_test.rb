@@ -32,10 +32,11 @@ describe 'host errata listing' do
 
     expect_lifecycle_environment_search(org_id.to_s, 'test', lifecycle_env_id)
 
-    ex = api_expects(:host_errata, :index, 'host errata list') do |par|
-      par['host_id'] == host_id && par['environment_id'] == lifecycle_env_id &&
-        par['page'] == 1 && par['per_page'] == 1000
-    end
+    ex = api_expects(:host_errata, :index, 'host errata list').
+         with_params('host_id': host_id,
+                     'environment_id': lifecycle_env_id,
+                     'page': 1,
+                     'per_page': 1000)
 
     ex.returns(empty_response)
     expected_result = success_result("---|------------|------|-------|------------
