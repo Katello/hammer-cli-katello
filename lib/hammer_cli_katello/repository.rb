@@ -54,6 +54,13 @@ module HammerCLIKatello
               Fields::Field, :hide_blank => true
         field :ignorable_content, _("Ignorable Content Units"), Fields::List, :hide_blank => true
 
+        label _("Http Proxy") do
+          from :http_proxy do
+            field :id, _("ID"), Fields::Field, :hide_blank => true
+            field :name, _("Name"), Fields::Field, :hide_blank => true
+          end
+        end
+
         label _("Product") do
           from :product do
             field :id, _("ID")
