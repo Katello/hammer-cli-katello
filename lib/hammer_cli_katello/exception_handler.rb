@@ -31,14 +31,21 @@ module HammerCLIKatello
     end
 
     def handle_katello_error(e)
-      response = JSON.parse(e.response)
-      response = HammerCLIForeman.record_to_common_format(response)
-      # Check multiple possible keys that can contain error message:
-      # - displayMessage for katello specific messages
-      # - full_messages for for messages that come from rails
-      # - message for foreman specific messages
-      print_error response["displayMessage"] || response["full_messages"] || response["message"]
-      log_full_error e
+      begin
+        response = JSON.parse(e.response)
+        response = HammerCLIForeman.record_to_common_format(response)
+        # Check multiple possible keys that can contain error message:
+        # - displayMessage for katello specific messages
+        # - full_messages for for messages that come from rails
+        # - message for foreman specific messages
+        msg = response["displayMessage"] || response["full_messages"] || response["message"]
+      rescue JSON::ParserError
+        msg = e.message
+      ensure
+        msg ||= e.message
+      end
+      print_error(msg)
+      log_full_error(e)
     end
   end
 end
