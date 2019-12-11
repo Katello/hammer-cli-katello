@@ -66,6 +66,7 @@ module HammerCLIKatello
             field :id, _("ID")
             field :name, _("Name")
           end
+          field :http_proxy_policy, _("Http Proxy Policy")
         end
 
         label _("GPG Key") do
