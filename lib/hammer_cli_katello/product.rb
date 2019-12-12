@@ -75,6 +75,22 @@ module HammerCLIKatello
       build_options
     end
 
+    class UpdateProxyCommand < HammerCLIKatello::SingleResourceCommand
+      desc _("Updates an HTTP Proxy for a product")
+      resource :products_bulk_actions, :update_http_proxy
+      command_name 'update-proxy'
+
+      success_message _("Product proxy updated.")
+      failure_message _("Could not update the product HTTP Proxy.")
+
+      validate_options do
+        option(:option_ids).required
+        option(:option_http_proxy_policy).required
+      end
+
+      build_options
+    end
+
     class DeleteCommand < HammerCLIKatello::DeleteCommand
       success_message _("Product destroyed.")
       failure_message _("Could not destroy the product")
