@@ -43,9 +43,20 @@ module HammerCLIKatello
                                           'hammer_cli_katello/organization'
                                          )
 
-  HammerCLI::MainCommand.lazy_subcommand("gpg", _("Manipulate GPG Key actions on the server"),
+  HammerCLI::MainCommand.lazy_subcommand("gpg",
+                                         _("Manipulate GPG Key actions on the server"),
                                          'HammerCLIKatello::GpgKeyCommand',
-                                         'hammer_cli_katello/gpg_key'
+                                         'hammer_cli_katello/gpg_key',
+                                         :warning =>
+  _('The gpg sub-command is deprecated and will be removed in one of the future versions.' \
+    ' Please use the content-credentials command instead.')
+                                        )
+
+  HammerCLI::MainCommand.lazy_subcommand("content-credentials",
+                                         _("Manipulate content credentials (i.e. GPG Keys)' \
+                                          'on the server"),
+                                         'HammerCLIKatello::ContentCredentialCommand',
+                                         'hammer_cli_katello/content_credential'
                                         )
 
   HammerCLI::MainCommand.lazy_subcommand("lifecycle-environment",
