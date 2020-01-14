@@ -2,6 +2,7 @@ require_relative '../test_helper'
 require_relative '../repository/repository_helpers'
 require_relative '../product/product_helpers'
 require_relative '../organization/organization_helpers'
+require 'hammer_cli_katello/package'
 require 'hammer_cli_katello/srpm'
 
 module HammerCLIKatello
