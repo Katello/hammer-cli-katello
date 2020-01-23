@@ -33,8 +33,10 @@ module HammerCLIKatello
         field :label, _("Label")
         field :description, _("Description")
 
+        field :sync_state_aggregated, _("Sync State (all)")
+
         from :sync_status do
-          field :state, _("Sync State")
+          field :state, _("Sync State (last)")
         end
 
         field :sync_plan_id, _("Sync Plan ID")
