@@ -351,8 +351,8 @@ module HammerCLIKatello
       option '--export-dir', 'EXPORT_DIR', _("Directory to put content view version export into.")
       option '--skip-rpms',
         :flag,
-        _("Do not include RPMs in export (content must be synchronized " + 
-          "prior to import)")
+        _("Do not include RPMs in export (content must be synchronized \
+prior to import)")
 
       validate_options do
         option(:option_export_dir).required
