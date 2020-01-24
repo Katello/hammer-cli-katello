@@ -21,6 +21,7 @@ module HammerCLIKatello
         field :description, _("Description")
         field :created_at, _("Created at"), Fields::Date
         field :updated_at, _("Updated at"), Fields::Date
+        field :next_sync, _("Next Sync"), Fields::Date
 
         collection :products, _("Products") do
           field :id, _("ID")
