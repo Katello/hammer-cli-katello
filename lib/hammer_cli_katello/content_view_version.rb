@@ -349,6 +349,7 @@ module HammerCLIKatello
 
       option "--id", "ID", _("Content View Version numeric identifier")
       option '--export-dir', 'EXPORT_DIR', _("Directory to put content view version export into.")
+      option '--skip-rpms', :flag, _("Do not include RPMs in export (content must be synchronized to destination prior to import)")
 
       validate_options do
         option(:option_export_dir).required
@@ -399,7 +400,7 @@ module HammerCLIKatello
 
         Dir.mkdir("#{export_dir}/#{export_prefix}")
 
-        if repositories&.any?
+        if repositories&.any? && ! options['option_skip_rpms']
 
           Dir.chdir(PUBLISHED_REPOS_DIR) do
             repo_tar = "#{export_dir}/#{export_prefix}/#{export_repos_tar}"
@@ -446,6 +447,7 @@ module HammerCLIKatello
         '--export-tar', 'EXPORT_TAR',
         _("Location of export tar on disk")
       )
+      option '--skip-rpms', :flag, _("Skip import of RPMs (content must be synchronized prior to import)")
 
       validate_options do
         option(:option_export_tar).required
@@ -477,7 +479,7 @@ module HammerCLIKatello
           publish(cv['id'], export_json['major'], export_json['minor'])
         else
           sync_repositories(export_json['repositories'], options['option_organization_id'],
-            import_tar_params)
+            import_tar_params) unless options['option_skip_rpms']
 
           unless cv['default']
             publish(
