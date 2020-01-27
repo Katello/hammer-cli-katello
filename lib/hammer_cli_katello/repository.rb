@@ -54,10 +54,11 @@ module HammerCLIKatello
               Fields::Field, :hide_blank => true
         field :ignorable_content, _("Ignorable Content Units"), Fields::List, :hide_blank => true
 
-        label _("Http Proxy") do
+        label _("HTTP Proxy") do
           from :http_proxy do
             field :id, _("ID"), Fields::Field, :hide_blank => true
             field :name, _("Name"), Fields::Field, :hide_blank => true
+            field :policy, _("HTTP Proxy Policy"), Fields::Field, :hide_blank => true
           end
         end
 
@@ -66,7 +67,6 @@ module HammerCLIKatello
             field :id, _("ID")
             field :name, _("Name")
           end
-          field :http_proxy_policy, _("Http Proxy Policy")
         end
 
         label _("GPG Key") do
