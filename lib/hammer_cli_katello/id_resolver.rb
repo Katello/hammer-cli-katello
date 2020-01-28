@@ -17,6 +17,7 @@ module HammerCLIKatello
       :environment =>           [s_name(_("Lifecycle environment name to search by"))],
       :lifecycle_environment => [s_name(_("Lifecycle environment name to search by"))],
       :organization =>          [s_name(_("Organization name to search by")),
+                                 s("title", _("Organization title")),
                                  s("label", _("Organization label to search by"),
                                    :editable => false)
                                 ],
