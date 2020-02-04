@@ -222,7 +222,16 @@ module HammerCLIKatello
         params["ssl_client_key_id"] ||= get_gpg_key_id("ssl_client_key") if option_ssl_client_key
         params["ssl_ca_cert_id"] ||= get_gpg_key_id("ssl_ca_cert") if option_ssl_ca_cert
 
+        dep_warning
+
         params
+      end
+
+      def dep_warning
+        content = options.clone
+        if content['option_content_type'] == 'puppet' || content['option_content_type'] == 'ostree'
+          print_message _('Puppet and OSTree will no longer be supported in Katello 3.16')
+        end
       end
 
       def get_gpg_key_id(ssl_type)
