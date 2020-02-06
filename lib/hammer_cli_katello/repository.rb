@@ -165,7 +165,7 @@ module HammerCLIKatello
         sync_states = {
           "failed" => _("Failed"), "success" => _("Success"), "finished" => _("Finished"),
           "error" => _("Error"), "running" => _("Running"), "waiting" => _("Waiting"),
-          "canceled" => _("Canceled"), "not_synced" => _("Not Synced")
+          "canceled" => _("Canceled"), "not_synced" => _("Not Synced"), "warning" => _("Warning")
         }
         sync_states[state]
       end
