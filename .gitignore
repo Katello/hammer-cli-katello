@@ -3,6 +3,7 @@
 .bundle
 .config
 .idea
+.vendor
 coverage
 InstalledFiles
 lib/bundler/man
