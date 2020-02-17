@@ -88,6 +88,10 @@ module HammerCLIKatello
       create_search_options_without_katello_api(options, api.resource(:users), mode)
     end
 
+    def create_usergroups_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:usergroups), mode)
+    end
+
     def create_http_proxies_search_options(options, mode = nil)
       create_search_options_without_katello_api(options, api.resource(:http_proxies), mode)
     end
