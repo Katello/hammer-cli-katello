@@ -29,13 +29,13 @@ module HammerCLIForeman
           with_params('id' => host_id.to_s,
                       'organization_id' => organization_id,
                       'host' => {
-                        'puppetclass_ids' => [],
                         'compute_attributes' => {},
                         'content_facet_attributes' => {
                           'content_view_id' => cv_id,
                           'lifecycle_environment_id' => env_id,
                           'kickstart_repository_id' => repo_id
-                        }
+                        },
+                        'subscription_facet_attributes' => {}
                       })
 
         cmd = "host update --id=#{host_id}"\
