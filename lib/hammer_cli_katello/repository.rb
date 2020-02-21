@@ -316,7 +316,7 @@ module HammerCLIKatello
 
       def execute
         @failure = false
-        files = option_content
+        files = option_content.sort
 
         if files.length.zero?
           output.print_error _("Could not find any files matching PATH")
