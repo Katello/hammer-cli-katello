@@ -111,10 +111,6 @@ module HammerCLIKatello
              _(["Id of the environment from where to promote its version ",
                 "from (if version is unknown)"].join),
                :attribute_name => :option_from_environment_id
-      option "--environment-ids", "ENVIRONMENT_IDS", _("Identifiers for Lifecycle Environment"),
-            format: HammerCLI::Options::Normalizers::List.new,
-            attribute_name: :option_environment_ids,
-            deprecated: { '--environment-ids' => _('Use --lifecycle-environment-ids instead') }
 
       def environment_search_options
         {
@@ -128,14 +124,14 @@ module HammerCLIKatello
 
       def request_params
         params = super
-        params['environment_id'] = resolver.lifecycle_environment_id(environment_search_options)
+        params['environment_ids'] = [resolver.lifecycle_environment_id(environment_search_options)]
         params['force'] = option_force?
         params
       end
 
       build_options do |o|
         o.expand(:all).except(:environments).including(:content_views, :organizations)
-        o.without(:environment_id)
+        o.without(:environment_ids, :environment_id)
       end
 
       extend_with(
