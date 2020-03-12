@@ -25,7 +25,7 @@ module HammerCLIKatello
       ex.returns(index_response([{'id' => 9}]))
 
       api_expects(:content_view_versions, :promote) do |p|
-        p['id'] == 6 && p['environment_id'] == 9
+        p['id'] == 6 && p['environment_ids'] == [9]
       end
 
       run_cmd(%w(content-view version promote --organization org1 --content-view cv
