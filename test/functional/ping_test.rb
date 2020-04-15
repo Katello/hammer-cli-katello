@@ -8,7 +8,9 @@ describe 'ping' do
         'foreman_tasks' => {'status' => 'ok', 'duration_ms' => '34'},
         'foreman_auth' => {'status' => 'ok', 'duration_ms' => '34'},
         'candlepin' => {'status' => 'ok', 'duration_ms' => '34'},
+        'candlepin_events' => {'status' => 'ok', 'message' => '0 messages', 'duration_ms' => '34'},
         'candlepin_auth' => {'status' => 'ok', 'duration_ms' => '34'},
+        'katello_events' => {'status' => 'ok', 'message' => '0 messages', 'duration_ms' => '34'},
         'pulp' => {'status' => 'ok', 'duration_ms' => '34'},
         'pulp_auth' => {'status' => 'ok', 'duration_ms' => '34'}
       }
