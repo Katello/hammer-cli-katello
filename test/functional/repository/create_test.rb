@@ -48,36 +48,4 @@ describe "create repository" do
 
     assert_equal(0, run_cmd(command).exit_code)
   end
-
-  it 'shows deprecation warning on puppet content type' do
-    dep_warning = "Puppet and OSTree will no longer be supported in Katello 3.16\nRepository created.\n" # rubocop:disable LineLength
-
-    api_expects(:repositories, :create)
-      .with_params(
-        name: name,
-        product_id: product_id,
-        content_type: "puppet")
-
-    result = run_cmd(%w(repository create --organization-id 1 --product-id 2
-                        --content-type puppet --name repo1))
-
-    assert_equal(dep_warning, result.out)
-    assert_equal(HammerCLI::EX_OK, result.exit_code)
-  end
-
-  it 'shows deprecation warning on ostree content type' do
-    dep_warning = "Puppet and OSTree will no longer be supported in Katello 3.16\nRepository created.\n" # rubocop:disable LineLength
-
-    api_expects(:repositories, :create)
-      .with_params(
-        name: name,
-        product_id: product_id,
-        content_type: "ostree")
-
-    result = run_cmd(%w(repository create --organization-id 1 --product-id 2
-                        --content-type ostree --name repo1))
-
-    assert_equal(dep_warning, result.out)
-    assert_equal(HammerCLI::EX_OK, result.exit_code)
-  end
 end
