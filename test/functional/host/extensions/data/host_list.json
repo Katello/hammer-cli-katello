@@ -74,6 +74,8 @@
          "errata_status_label":"Could not calculate errata status, ensure host is registered and katello-agent is installed",
          "subscription_status":0,
          "subscription_status_label":"Fully entitled",
+         "traces_status":0,
+         "traces_status_label":"updated",
          "name":"robot.example.com",
          "id":1,
          "hostgroup_name":null,

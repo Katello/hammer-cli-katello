@@ -4,6 +4,7 @@ require 'hammer_cli_katello/host_errata'
 require 'hammer_cli_katello/host_subscription'
 require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
+require 'hammer_cli_katello/host_traces'
 
 module HammerCLIKatello
   HammerCLIForeman::Host.subcommand "errata",
@@ -21,4 +22,8 @@ module HammerCLIKatello
   HammerCLIForeman::Host.subcommand "subscription",
                                     HammerCLIKatello::HostSubscription.desc,
                                     HammerCLIKatello::HostSubscription
+
+  HammerCLIForeman::Host.subcommand "traces",
+                                    HammerCLIKatello::HostTraces.desc,
+                                    HammerCLIKatello::HostTraces
 end

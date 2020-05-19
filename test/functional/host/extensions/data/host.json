@@ -100,6 +100,7 @@
       "applicable_package_count": 5,
       "upgradable_package_count": 4
    },
+   "traces_status_label":"Updated",
    "subscription_facet_attributes":{
       "id":2,
       "uuid":"179834bf-779a-457f-a1fa-b06ae0acb21a",
