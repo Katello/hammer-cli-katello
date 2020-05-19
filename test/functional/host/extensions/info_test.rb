@@ -27,7 +27,8 @@ describe 'host info' do
                        ['Upgradable Packages', '4'],
                        ['Purpose Usage', 'Production'],
                        ['Purpose Role', 'Role'],
-                       ['Purpose Addons', 'Test Addon1, Test Addon2']]
+                       ['Purpose Addons', 'Test Addon1, Test Addon2'],
+                       ['Trace Status', 'Updated']]
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
     expected_results.each { |expected|  assert_cmd(expected, result) }
   end
