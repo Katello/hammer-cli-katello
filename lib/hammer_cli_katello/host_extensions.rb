@@ -5,6 +5,7 @@ require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
 require 'hammer_cli_katello/host_kickstart_repository_options'
 require 'hammer_cli_katello/host_content_source_options'
+require 'hammer_cli_katello/host_traces'
 
 module HammerCLIKatello
   module HostExtensions
@@ -31,6 +32,7 @@ module HammerCLIKatello
             field :enhancement, _("Enhancement"), nil, :sets => ['ALL']
           end
         end
+        field :traces_status_label, _('Trace Status')
       end
     end
 
@@ -90,6 +92,8 @@ module HammerCLIKatello
             end
           end
         end
+
+        field :traces_status_label, _('Trace Status')
 
         collection :host_collections, _('Host Collections') do
           field :id, _('Id')
