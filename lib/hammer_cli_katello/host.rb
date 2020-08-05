@@ -3,6 +3,7 @@ require 'hammer_cli_katello/host_extensions'
 require 'hammer_cli_katello/host_errata'
 require 'hammer_cli_katello/host_subscription'
 require 'hammer_cli_katello/host_package'
+require 'hammer_cli_katello/host_deb'
 require 'hammer_cli_katello/host_package_group'
 require 'hammer_cli_katello/host_traces'
 
@@ -14,6 +15,10 @@ module HammerCLIKatello
   HammerCLIForeman::Host.subcommand "package",
                                     HammerCLIKatello::HostPackage.desc,
                                     HammerCLIKatello::HostPackage
+
+  HammerCLIForeman::Host.subcommand "deb-package",
+                                    HammerCLIKatello::HostDebPackage.desc,
+                                    HammerCLIKatello::HostDebPackage
 
   HammerCLIForeman::Host.subcommand "package-group",
                                     HammerCLIKatello::HostPackageGroup.desc,
