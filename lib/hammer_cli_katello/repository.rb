@@ -30,6 +30,7 @@ module HammerCLIKatello
         field :id, _("ID")
         field :name, _("Name")
         field :label, _("Label")
+        field :description, _("Description")
         from :organization do
           field :name, _("Organization")
         end
