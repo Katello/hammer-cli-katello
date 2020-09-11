@@ -2,7 +2,7 @@ require_relative '../test_helper'
 require_relative '../organization/organization_helpers'
 require 'hammer_cli_katello/repository'
 
-module HammerCLIKatello
+module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
   describe Repository::UpdateCommand do
     include OrganizationHelpers
 
@@ -12,6 +12,46 @@ module HammerCLIKatello
       end
 
       run_cmd(%w(repository update --id 1 --new-name rep1))
+    end
+
+    describe 'tags docker images' do
+      let(:repo_id) { 3 }
+      let(:tag_name) { "latest" }
+      let(:digest) { "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" }
+      let(:upload_id) { "1234" }
+      let(:_href) { "/pulp/api/v2/content/uploads/#{upload_id}" }
+      let(:upload_response) do
+        {
+          "upload_id" => upload_id,
+          "_href" => _href
+        }
+      end
+      it "adds a tag to an image" do
+        ex = api_expects(:content_uploads, :create)
+             .with_params('repository_id' => repo_id, :size => 0)
+
+        ex.returns(upload_response)
+        ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
+              .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+                           :uploads => [{
+                             :id => '1234',
+                             :name => tag_name,
+                             :digest => digest
+                           }],
+                           :content_type => "docker_tag"
+                          )
+
+        ex2.returns("")
+
+        ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+              .with_params('id' => upload_id, 'repository_id' => repo_id)
+
+        ex3.returns("")
+        # rubocop:disable LineLength
+        result = run_cmd(%W(repository update --id #{repo_id} --docker-tag #{tag_name} --docker-digest #{digest}))
+        # rubocop:enable LineLength
+        assert_equal(result.exit_code, 0)
+      end
     end
 
     describe 'resolves repository ID' do
