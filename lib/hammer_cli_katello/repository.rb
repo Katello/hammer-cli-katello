@@ -249,6 +249,13 @@ module HammerCLIKatello
         if option(:option_product_name).exist?
           any(*organization_options).required
         end
+
+        if option(:option_docker_tag).exist? != option(:option_docker_digest).exist?
+          option(:option_docker_tag).rejected(
+            :msg => _('--docker-digest required with --docker-tag'))
+          option(:option_docker_digest).rejected(
+            :msg => _('--docker-tag required with --docker-digest'))
+        end
       end
 
       build_options(:without => [:unprotected]) do |o|
@@ -257,11 +264,62 @@ module HammerCLIKatello
       option "--publish-via-http", "ENABLE", _("Publish Via HTTP"),
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
+      option "--docker-tag", "TAG", _("Container Image tag")
+      option "--docker-digest", "DIGEST", _("Container Image manifest digest")
 
       def execute
         @failure = false
-        super
+
+        if option_docker_tag
+          upload_tag(option_docker_tag, option_docker_digest)
+        else
+          super
+        end
+
         @failure ? HammerCLI::EX_DATAERR : HammerCLI::EX_OK
+      end
+
+      def content_upload_resource
+        ::HammerCLIForeman.foreman_resource(:content_uploads)
+      end
+
+      def upload_tag(tag, digest)
+        upload_id = create_content_upload
+        import_uploads([
+          {
+            id: upload_id,
+            name: tag,
+            digest: digest
+          }
+        ], last_file: true)
+        print_message _("Repository updated")
+      rescue => e
+        @failure = true
+        logger.error e
+        output.print_error _("Failed to upload tag '%s' to repository.") % tag
+      ensure
+        content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
+      end
+
+      def create_content_upload
+        response = content_upload_resource.call(:create,
+                                                :repository_id => get_identifier,
+                                                :size => 0
+                                               )
+
+        response["upload_id"]
+      end
+
+      def import_uploads(uploads, opts = {})
+        publish_repository = opts.fetch(:last_file, false)
+        sync_capsule = opts.fetch(:last_file, false)
+        params = {:id => get_identifier,
+                  :uploads => uploads,
+                  publish_repository: publish_repository,
+                  sync_capsule: sync_capsule,
+                  content_type: "docker_tag"
+        }
+        resource.call(:import_uploads, params)
       end
     end
 
