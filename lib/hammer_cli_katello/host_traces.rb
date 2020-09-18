@@ -14,6 +14,23 @@ module HammerCLIKatello
       end
       build_options
     end
+
+    class ResolveCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+      resource :host_tracer, :resolve
+      command_name "resolve"
+
+      success_message _("Traces are being resolved with task %{id}.")
+      failure_message _("Could not resolve traces")
+
+      validate_options do
+        option(:option_trace_ids).required
+        option(:option_host_id).required
+      end
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
