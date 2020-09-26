@@ -53,8 +53,7 @@ module HammerCLIKatello
                                         )
 
   HammerCLI::MainCommand.lazy_subcommand("content-credentials",
-                                         _("Manipulate content credentials (i.e. GPG Keys)' \
-                                          'on the server"),
+                                         _("Manipulate content credentials on the server"),
                                          'HammerCLIKatello::ContentCredentialCommand',
                                          'hammer_cli_katello/content_credential'
                                         )
