@@ -29,7 +29,6 @@ module HammerCLIForeman
           with_params('id' => host_id.to_s,
                       'organization_id' => organization_id,
                       'host' => {
-                        'compute_attributes' => {},
                         'content_facet_attributes' => {
                           'content_view_id' => cv_id,
                           'lifecycle_environment_id' => env_id,
