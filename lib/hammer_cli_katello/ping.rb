@@ -36,15 +36,22 @@ module HammerCLIKatello
           end
         end
 
-        label "pulp" do
+        label "pulp", :hide_blank => true do
           from "pulp" do
-            field "status", _("Status")
-            field "_response", _("Server Response")
+            field "status", _("Status"), Fields::Field, :hide_blank => true
+            field "_response", _("Server Response"), Fields::Field, :hide_blank => true
           end
         end
 
         label "pulp_auth", :hide_blank => true do
           from "pulp_auth" do
+            field "status", _("Status"), Fields::Field, :hide_blank => true
+            field "_response", _("Server Response"), Fields::Field, :hide_blank => true
+          end
+        end
+
+        label "pulp3", :hide_blank => true do
+          from "pulp3" do
             field "status", _("Status"), Fields::Field, :hide_blank => true
             field "_response", _("Server Response"), Fields::Field, :hide_blank => true
           end
