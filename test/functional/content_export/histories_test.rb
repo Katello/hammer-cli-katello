@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '../../test_helper')
-require 'hammer_cli_katello/content_view_version'
+require 'hammer_cli_katello/content_export'
 
-describe 'content-view version export-histories' do
+describe 'content-export histories' do
   let(:empty_response) do
     {
       "total" => 0,
@@ -19,7 +19,7 @@ describe 'content-view version export-histories' do
   end
 
   it 'allows minimal options' do
-    ex = api_expects(:content_view_versions, :export_histories)
+    ex = api_expects(:content_exports, :export_histories)
 
     ex.returns(empty_response)
     # rubocop:disable LineLength
@@ -28,7 +28,7 @@ ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID 
 ---|--------------------|------|----------------------|-------------------------|------------|-----------
 ')
     # rubocop:enable LineLength
-    result = run_cmd(%w(content-view version export-histories))
+    result = run_cmd(%w(content-export histories))
     assert_cmd(expected_result, result)
   end
 end
