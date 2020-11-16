@@ -278,24 +278,6 @@ module HammerCLIKatello
       end
     end
 
-    class ExportHistoriesCommand < HammerCLIKatello::ListCommand
-      desc "View content view export histories"
-      command_name "export-histories"
-      action :export_histories
-
-      output do
-        field :id, _('ID')
-        field :destination_server, _('Destination Server')
-        field :path, _('Path')
-        field :content_view_version, _('Content View Version')
-        field :content_view_version_id, _('Content View Version ID')
-        field :created_at, _('Created at')
-        field :updated_at, _('Updated at'), Fields::Field, :hide_blank => true
-      end
-
-      build_options
-    end
-
     class ExportDefaultCommand < HammerCLIForeman::Command
       include HammerCLIKatello::LocalHelper
       include HammerCLIKatello::ApipieHelper
