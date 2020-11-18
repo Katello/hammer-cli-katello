@@ -1,0 +1,27 @@
+name: Ruby-2.3
+
+on: [push, pull_request]
+
+env:
+  RUBY_VERSION: 2.3.8
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.3.8
+        run: |
+          sudo apt-add-repository -y ppa:rael-gc/rvm
+          sudo apt-get update
+          sudo apt-get -y install rvm
+          source /etc/profile.d/rvm.sh
+          rvm install ${{ env.RUBY_VERSION }}
+      - name: Configure RVM and test
+        run: |
+          source /etc/profile.d/rvm.sh
+          rvm use ${{ env.RUBY_VERSION }}
+          echo "gem 'hammer_cli_foreman', :git => 'https://github.com/theforeman/hammer-cli-foreman.git'" > Gemfile.local
+          echo "gem 'hammer_cli', :git => 'https://github.com/theforeman/hammer-cli.git'" >> Gemfile.local
+          gem update bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rake
