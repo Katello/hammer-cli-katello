@@ -17,8 +17,11 @@ module HammerCLIKatello
         o.expand(:all).including(:content_views, :organizations)
       end
 
+      option "--version", "VERSION", _("Filter versions by version number."),
+                 :attribute_name => :option_version,
+                 :required => false
+
       def execute
-        # rubocop:disable LineLength
         response = super
         if option_async? || response != HammerCLI::EX_OK
           response
@@ -41,6 +44,12 @@ module HammerCLIKatello
         task
       end
 
+      def request_params
+        super.tap do |opts|
+          opts["id"] = resolver.content_view_version_id(options)
+        end
+      end
+
       private
 
       def fetch_export_history
@@ -56,12 +65,11 @@ module HammerCLIKatello
           File.write(metadata_path, metadata_json)
           output.print_message _("Generated #{metadata_path}")
         rescue SystemCallError
-          t = Tempfile.new("metadata.json")
-          t.write(metadata_json)
-          t.close
-          output.print_message _("Unable to access/write to #{export_history['path']}."\
-                                 " Generated #{t.path} instead. You would need this file for importing.")
-
+          filename = "metadata-#{export_history['id']}.json"
+          File.write(filename, metadata_json)
+          output.print_message _("Unable to access/write to '#{export_history['path']}'. "\
+                                 "Generated '#{Dir.pwd}/#{filename}' instead. "\
+                                 "You would need this file for importing.")
         end
       end
     end

@@ -141,9 +141,16 @@ module HammerCLIKatello
                                          'hammer_cli_katello/file'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("content-export", _("Prepare content for export to a disconnected Katello"), # rubocop:disable LineLength
+  HammerCLI::MainCommand.lazy_subcommand("content-export",
+                                          _("Prepare content for export to a disconnected Katello"),
                                          'HammerCLIKatello::ContentExport',
                                          'hammer_cli_katello/content_export'
+                                        )
+
+  HammerCLI::MainCommand.lazy_subcommand("content-import",
+                                         _("Import content from an upstream archive."),
+                                         'HammerCLIKatello::ContentImport',
+                                         'hammer_cli_katello/content_import'
                                         )
 
   HammerCLI::MainCommand.lazy_subcommand("module-stream", _("View Module Streams"),
