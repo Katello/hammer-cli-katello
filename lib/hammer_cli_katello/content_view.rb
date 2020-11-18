@@ -106,10 +106,12 @@ module HammerCLIKatello
       failure_message _("Could not create the content view")
 
       option ["--composite"], :flag, _("Create a composite content view")
-
+      option ["--import-only"], :flag, _("Designate this Content View for "\
+                                         "importing from upstream servers only.")
       def request_params
         super.tap do |opts|
           opts['composite'] = option_composite? || false
+          opts['import_only'] = option_import_only? || false
         end
       end
 
