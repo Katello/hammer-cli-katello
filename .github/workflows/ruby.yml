@@ -1,0 +1,26 @@
+name: Ruby-2.3
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup unsecure actions env variable
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      with:
+        ruby-version: 2.3
+    - name: Install dependencies
+      run: bundle install
+    - name: Run tests
+      run: bundle exec rake
