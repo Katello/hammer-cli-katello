@@ -1,11 +1,11 @@
-require_relative '../test_helper'
+require File.join(File.dirname(__FILE__), '../../../test_helper')
 require 'hammer_cli_katello/content_export'
 
-describe 'content-export version' do
+describe 'content-export incremental version' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(content-export version)
+    @cmd = %w(content-export incremental version)
   end
 
   let(:task_id) { '5' }
@@ -40,7 +40,7 @@ describe 'content-export version' do
       '--async'
     ]
 
-    ex = api_expects(:content_exports, :version)
+    ex = api_expects(:content_export_incrementals, :version)
     ex.returns(response)
 
     result = run_cmd(@cmd + params)
@@ -55,12 +55,12 @@ describe 'content-export version' do
       '--destination-server=foo'
     ]
 
-    ex = api_expects(:content_exports, :version)
+    ex = api_expects(:content_export_incrementals, :version)
     ex.returns(response)
 
     expect_foreman_task(task_id).at_least_once
 
-    HammerCLIKatello::ContentExport::VersionCommand.
+    HammerCLIKatello::ContentExportIncremental::VersionCommand.
       any_instance.
       expects(:fetch_export_history).
       returns(export_history)
@@ -96,7 +96,7 @@ describe 'content-export version' do
     cvv_expect.at_least_once.
       returns(index_response([{'id' => content_view_version_id}]))
 
-    ex = api_expects(:content_exports, :version) do |p|
+    ex = api_expects(:content_export_incrementals, :version) do |p|
       assert_equal p['id'], content_view_version_id
       assert_equal p["destination_server"], destination_server
     end
