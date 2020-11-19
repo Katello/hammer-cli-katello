@@ -1,4 +1,4 @@
-name: Ruby-2.4
+name: Ruby-2.3
 
 on:
   push:
@@ -10,13 +10,16 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: [2.3, 2.4, 2.5]
 
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
       with:
-        ruby-version: 2.4
+        ruby-version: ${{ matrix.ruby }}
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     - name: Add hammer-cli-foreman to local gem file
@@ -28,4 +31,4 @@ jobs:
     - name: Bundle update
       run: gem update bundler
     - name: Run tests
-      run: bundle exec rake
+      run: COVERALLS_REPO_TOKEN=${{ secrets.COVERALLS_REPO_TOKEN }} bundle exec rake
