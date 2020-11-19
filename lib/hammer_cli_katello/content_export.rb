@@ -1,77 +1,25 @@
+require 'hammer_cli_katello/content_export_incremental'
+require 'hammer_cli_katello/content_export_helper'
+
 module HammerCLIKatello
   class ContentExport < HammerCLIKatello::Command
     desc "Prepare content for export to a disconnected Katello"
     resource :content_exports
 
     class VersionCommand < HammerCLIKatello::SingleResourceCommand
-      include HammerCLIForemanTasks::Async
       desc _('Performs a full export a content view version')
-      action :version
-
       command_name "version"
 
-      success_message _("Content view version is being exported in task %{id}.")
-      failure_message _("Could not export the content view version")
+      include HammerCLIForemanTasks::Async
+      include ContentExportHelper
+    end
 
-      build_options do |o|
-        o.expand(:all).including(:content_views, :organizations)
-      end
+    class LibraryCommand < HammerCLIKatello::SingleResourceCommand
+      desc _("Performs a full export of the organization's library environment")
+      command_name "library"
 
-      option "--version", "VERSION", _("Filter versions by version number."),
-                 :attribute_name => :option_version,
-                 :required => false
-
-      def execute
-        response = super
-        if option_async? || response != HammerCLI::EX_OK
-          response
-        else
-          export_history = fetch_export_history
-          if export_history
-            generate_metadata_json(export_history)
-            HammerCLI::EX_OK
-          else
-            history_id = export_history_id["id"]
-            output.print_error _("Could not fetch the export history for id = '#{history_id}'")
-            HammerCLI::EX_CANTCREAT
-          end
-        end
-      end
-
-      def send_request
-        task = super
-        @task_id = task['id']
-        task
-      end
-
-      def request_params
-        super.tap do |opts|
-          opts["id"] = resolver.content_view_version_id(options)
-        end
-      end
-
-      private
-
-      def fetch_export_history
-        task = load_task(@task_id)
-        export_history_id = task["output"]["export_history_id"]
-        resource.call(:index, :id => export_history_id)["results"].first if export_history_id
-      end
-
-      def generate_metadata_json(export_history)
-        metadata_json = export_history["metadata"].to_json
-        begin
-          metadata_path = "#{export_history['path']}/metadata.json"
-          File.write(metadata_path, metadata_json)
-          output.print_message _("Generated #{metadata_path}")
-        rescue SystemCallError
-          filename = "metadata-#{export_history['id']}.json"
-          File.write(filename, metadata_json)
-          output.print_message _("Unable to access/write to '#{export_history['path']}'. "\
-                                 "Generated '#{Dir.pwd}/#{filename}' instead. "\
-                                 "You would need this file for importing.")
-        end
-      end
+      include HammerCLIForemanTasks::Async
+      include ContentExportHelper
     end
 
     class ListCommand < HammerCLIKatello::ListCommand
@@ -90,5 +38,9 @@ module HammerCLIKatello
     end
 
     autoload_subcommands
+
+    subcommand HammerCLIKatello::ContentExportIncremental.command_name,
+               HammerCLIKatello::ContentExportIncremental.desc,
+               HammerCLIKatello::ContentExportIncremental
   end
 end
