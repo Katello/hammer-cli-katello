@@ -11,6 +11,8 @@ module HammerCLIKatello
     HammerCLIKatello::ExceptionHandler
   end
 
+  puts "i am cool"
+
   require 'hammer_cli_katello/output/fields'
   require 'hammer_cli_katello/output/formatters'
   require 'hammer_cli_katello/lifecycle_environment_name_mapping'
