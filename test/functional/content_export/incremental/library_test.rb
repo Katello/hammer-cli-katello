@@ -21,15 +21,17 @@ describe 'content-export incremental library' do
     }
   end
 
+  let(:export_history_id) { 1000 }
+
   let(:export_history) do
     {
-      "id": 1000,
+      "id": export_history_id,
       "path": "/tmp",
       "metadata": {}
     }
   end
 
-  let(:organization_id) { '77' }
+  let(:organization_id) { 77 }
   let(:organization_name) { 'Foo' }
   let(:destination_server) { "dream.example.com" }
 
@@ -56,6 +58,30 @@ describe 'content-export incremental library' do
 
     ex = api_expects(:content_export_incrementals, :library)
     ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+
+    HammerCLIKatello::ContentExportIncremental::LibraryCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(export_history)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Generated .*metadata.*json/, result.out)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
+
+  it "performs export with history id" do
+    params = [
+      "--organization-id=#{organization_id}",
+      "--destination-server=#{destination_server}",
+      "--from-history-id=#{export_history_id}"
+    ]
+    api_expects(:content_export_incrementals, :library)
+      .with_params('organization_id' => organization_id,
+                   'destination_server' => destination_server,
+                   'from_history_id' => export_history_id)
+      .returns(response)
 
     expect_foreman_task(task_id).at_least_once
 
