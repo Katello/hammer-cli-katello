@@ -10,10 +10,10 @@ module HammerCLIKatello
       validate_repo_name_requires_product_options(:option_repository_name)
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Module Stream Name")
         field :stream, _("Stream")
-        field :uuid, _("UUID")
+        field :uuid, _("Uuid")
         field :version, _("Version")
         field :arch, _("Architecture")
         field :context, _("Context")
@@ -30,30 +30,30 @@ module HammerCLIKatello
       validate_repo_name_requires_product_options(:option_repository_name)
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Module Stream Name")
         field :stream, _("Stream")
-        field :uuid, _("UUID")
+        field :uuid, _("Uuid")
         field :version, _("Version")
         field :arch, _("Architecture")
         field :context, _("Context")
 
         collection :repositories, _("Repositories") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
         collection :artifacts, _("Artifacts") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
         end
 
         collection :profiles, _("Profiles") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           collection :rpms, _("RPMs") do
-            field :id, _("ID")
+            field :id, _("Id")
             field :name, _("Name")
           end
         end

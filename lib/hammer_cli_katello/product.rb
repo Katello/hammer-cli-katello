@@ -4,7 +4,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :description, _("Description")
 
@@ -28,7 +28,7 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :label, _("Label")
         field :description, _("Description")
@@ -61,7 +61,7 @@ module HammerCLIKatello
         collection :product_content, _("Content") do
           from :content do
             field :name, _("Repo Name")
-            field :contentUrl, _("URL")
+            field :contentUrl, _("Url")
             field :type, _("Content Type")
           end
         end

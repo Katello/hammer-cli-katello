@@ -7,7 +7,7 @@ module HammerCLIKatello
       include LifecycleEnvironmentNameMapping
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :filename, _("Filename")
       end
 
@@ -43,9 +43,9 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :pulp_id, _("Pulp ID")
-        field :uuid, _("UUID")
+        field :uuid, _("Uuid")
         field :name, _("Name")
         field :version, _("Version")
         field :checksum, _("checksum")

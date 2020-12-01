@@ -4,7 +4,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :sync_date, _("Start Date"), Fields::Date
         field :interval, _("Interval")
@@ -24,7 +24,7 @@ module HammerCLIKatello
         field :next_sync, _("Next Sync"), Fields::Date
 
         collection :products, _("Products") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
         end
       end

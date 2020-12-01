@@ -12,7 +12,7 @@ module HammerCLIKatello
           field :name, _("Product")
         end
         field :content_type, _("Content Type")
-        field :url, _("URL")
+        field :url, _("Url")
       end
 
       build_options
@@ -27,7 +27,7 @@ module HammerCLIKatello
       validate_repo_name_requires_product_options
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :label, _("Label")
         field :description, _("Description")
@@ -38,7 +38,7 @@ module HammerCLIKatello
         field :content_type, _("Content Type")
         field :checksum_type, _("Checksum Type"), Fields::Field, :hide_blank => true
         field :_mirror_on_sync, _("Mirror on Sync")
-        field :url, _("URL")
+        field :url, _("Url")
         field :_publish_via_http, _("Publish Via HTTP")
         field :full_path, _("Published At")
         field :relative_path, _("Relative Path")
@@ -57,7 +57,7 @@ module HammerCLIKatello
 
         label _("HTTP Proxy") do
           from :http_proxy do
-            field :id, _("ID"), Fields::Field, :hide_blank => true
+            field :id, _("Id"), Fields::Field, :hide_blank => true
             field :name, _("Name"), Fields::Field, :hide_blank => true
             field :policy, _("HTTP Proxy Policy"), Fields::Field, :hide_blank => true
           end
@@ -65,14 +65,14 @@ module HammerCLIKatello
 
         label _("Product") do
           from :product do
-            field :id, _("ID")
+            field :id, _("Id")
             field :name, _("Name")
           end
         end
 
         label _("GPG Key") do
           from :gpg_key do
-            field :id, _("ID"), Fields::Field, :hide_blank => true
+            field :id, _("Id"), Fields::Field, :hide_blank => true
             field :name, _("Name"), Fields::Field, :hide_blank => true
           end
         end

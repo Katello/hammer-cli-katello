@@ -7,7 +7,7 @@ module HammerCLIKatello
       include LifecycleEnvironmentNameMapping
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :filename, _("Filename")
         field :sourcerpm, _("Source RPM")
       end
@@ -44,9 +44,9 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :pulp_id, _("Pulp ID")
-        field :uuid, _("UUID")
+        field :uuid, _("Uuid")
         field :name, _("Name")
         field :version, _("Version")
         field :arch, _("Architecture")
@@ -55,7 +55,7 @@ module HammerCLIKatello
         field :author, _("Author")
         field :filename, _("Filename")
         field :sourcerpm, _("Source rpm")
-        field :nvrea, _("nvrea")
+        field :nvrea, _("Nvrea")
         field :buildhost, _("Build Host")
         field :hosts_available_count, _("Available Host Count")
         field :hosts_applicable_count, _("Applicable Host Count")
@@ -65,7 +65,7 @@ module HammerCLIKatello
         field :relativepath, _("Relative Path")
         field :description, _("Description")
         field :summary, _("Summary")
-        field :url, _("URL")
+        field :url, _("Url")
         field :build_time, _("Build Time")
         field :group, _("Group")
         field :requires, _("Requires")

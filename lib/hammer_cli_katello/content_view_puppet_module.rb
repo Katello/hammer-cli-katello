@@ -8,7 +8,7 @@ module HammerCLIKatello
       include OrganizationOptions
 
       output do
-        field :uuid, _("UUID")
+        field :uuid, _("Uuid")
         field :name, _("Name")
         field :author, _("Author")
         field :version, _("Version")

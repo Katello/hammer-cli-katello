@@ -41,22 +41,22 @@ module HammerCLIKatello
         label _('Content Information') do
           from :content_facet_attributes do
             label _("Content View") do
-              field :content_view_id, _("ID")
+              field :content_view_id, _("Id")
               field :content_view_name, _("Name")
             end
 
             label _("Lifecycle Environment") do
-              field :lifecycle_environment_id, _("ID")
+              field :lifecycle_environment_id, _("Id")
               field :lifecycle_environment_name, _("Name")
             end
 
             label _("Content Source") do
-              field :content_source_id, _("ID")
+              field :content_source_id, _("Id")
               field :content_source_name, _("Name")
             end
 
             label _("Kickstart Repository") do
-              field :kickstart_repository_id, _("ID")
+              field :kickstart_repository_id, _("Id")
               field :kickstart_repository_name, _("Name")
             end
 
@@ -75,7 +75,7 @@ module HammerCLIKatello
 
         label _('Subscription Information') do
           from :subscription_facet_attributes do
-            field :uuid, _('UUID')
+            field :uuid, _('Uuid')
             field :last_checkin, _('Last Checkin')
             field :release_version, _('Release Version')
             field :autoheal, _('Autoheal')

@@ -7,7 +7,7 @@ module HammerCLIKatello
       field :version, _("Version")
       field :description, _("Description")
       field :status, _("Status")
-      field :id, _("ID")
+      field :id, _("Id")
       field :errata_id, _("Errata ID")
       field :reboot_suggested, _("Reboot Suggested")
       field :updated, _("Updated")

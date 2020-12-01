@@ -11,7 +11,7 @@ module HammerCLIKatello
       action :index
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :format_consumed, _("Host Limit")
         from :environment do
@@ -53,7 +53,7 @@ module HammerCLIKatello
 
       output do
         field :name, _("Name")
-        field :id, _("ID")
+        field :id, _("Id")
         field :description, _("Description")
         field :format_limit, _("Host Limit")
         field :auto_attach, _("Auto Attach")
@@ -67,7 +67,7 @@ module HammerCLIKatello
         end
 
         collection :host_collections, _("Host Collections") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
         end
 
@@ -150,7 +150,7 @@ module HammerCLIKatello
       command_name "subscriptions"
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :product_name, _("Name")
         field :format_consumed, _("Attached")
         field :quantity_attached, _("Quantity")
@@ -230,7 +230,7 @@ module HammerCLIKatello
       command_name "host-collections"
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
       end
 

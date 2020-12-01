@@ -8,7 +8,7 @@ module HammerCLIKatello
       validate_repo_name_requires_product_options(:option_repository_name)
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :version, _("version")
       end
@@ -20,7 +20,7 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :version, _("Version")
         field :commit, _("Commit")

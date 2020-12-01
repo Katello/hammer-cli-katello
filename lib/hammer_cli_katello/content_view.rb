@@ -29,7 +29,7 @@ module HammerCLIKatello
       include OrganizationOptions
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :label, _("Label")
         field :composite, _("Composite")
@@ -43,43 +43,43 @@ module HammerCLIKatello
         end
 
         collection :_yum_repositories, _("Yum Repositories") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
         collection :_docker_repositories, _("Container Image Repositories") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
         collection :_ostree_repositories, _("OSTree Repositories") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
         collection :puppet_modules, _("Puppet Modules") do
-          field :id, _("ID")
-          field :uuid, _("UUID"), Fields::Field, :hide_blank => true
+          field :id, _("Id")
+          field :uuid, _("Uuid"), Fields::Field, :hide_blank => true
           field :name, _("Name")
           field :author, _("Author")
         end
 
         collection :environments, _("Lifecycle Environments") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
         end
 
         collection :versions, _("Versions") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :version, _("Version")
           field :published, _("Published"), Fields::Date
         end
 
         collection :components, _("Components") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
         end
 

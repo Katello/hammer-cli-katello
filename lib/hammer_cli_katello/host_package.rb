@@ -6,7 +6,7 @@ module HammerCLIKatello
       resource :host_packages, :index
 
       output do
-        field :nvra, _("NVRA")
+        field :nvra, _("Nvra")
       end
 
       build_options
