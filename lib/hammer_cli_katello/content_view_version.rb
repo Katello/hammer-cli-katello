@@ -10,7 +10,7 @@ module HammerCLIKatello
       include LifecycleEnvironmentNameMapping
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :version, _("Version")
         field :description, _("Description")
@@ -35,7 +35,7 @@ module HammerCLIKatello
       resource :content_view_versions, :show
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :version, _("Version")
         field :description, _("Description")
@@ -47,19 +47,19 @@ module HammerCLIKatello
         end
 
         collection :environments, _("Lifecycle Environments") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
         collection :repositories, _("Repositories") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
         collection :puppet_modules, _("Puppet Modules") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :author, _("Author")
           field :version, _("Version")

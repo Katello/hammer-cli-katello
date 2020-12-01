@@ -8,10 +8,10 @@ module HammerCLIKatello
       validate_repo_name_requires_product_options(:option_repository_name)
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Package Group Name")
         field :repo_name, _("Repository Name")
-        field :uuid, _("UUID")
+        field :uuid, _("Uuid")
       end
 
       def extend_data(data)
@@ -26,10 +26,10 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Package Group Name")
         field :repo_name, _("Repository Name")
-        field :uuid, _("UUID")
+        field :uuid, _("Uuid")
         field :description, _("Description")
         field :default_package_names, _("Default Packages"), Fields::List
         field :mandatory_package_names, _("Mandatory Packages"), Fields::List

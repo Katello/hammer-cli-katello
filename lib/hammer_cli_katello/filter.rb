@@ -34,13 +34,13 @@ module HammerCLIKatello
         field :description, _("Description")
 
         collection :repositories, _("Repositories") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
         collection :rules, _("Rules") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name"), Fields::Field, :hide_blank => true
           field :version, _("Version"), Fields::Field, :hide_blank => true
           field :min_version, _("Minimum Version"), Fields::Field, :hide_blank => true

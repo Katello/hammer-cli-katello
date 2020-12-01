@@ -6,10 +6,9 @@ module HammerCLIKatello
   class SubscriptionCommand < HammerCLI::AbstractCommand
     class ListCommand < HammerCLIKatello::ListCommand
       resource :subscriptions, :index
-
       output do
-        field :id, _("ID")
-        field :cp_id, _("UUID")
+        field :id, _("Id")
+        field :cp_id, _("Uuid")
         field :product_name, _("Name")
         field :subscription_type, _("Type")
         field :contract_number, _("Contract")

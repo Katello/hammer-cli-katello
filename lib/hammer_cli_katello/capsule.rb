@@ -13,7 +13,7 @@ module HammerCLIKatello
         command_name 'lifecycle-environments'
 
         output do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           from :organization do
             field :name, _("Organization")
@@ -28,7 +28,7 @@ module HammerCLIKatello
         command_name 'available-lifecycle-environments'
 
         output do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
           from :organization do
             field :name, _("Organization")

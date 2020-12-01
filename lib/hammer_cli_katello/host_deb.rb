@@ -6,7 +6,7 @@ module HammerCLIKatello
       resource :host_debs, :index
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :version, _("Version")
         field :architecture, _("Arch")

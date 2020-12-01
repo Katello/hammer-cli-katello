@@ -28,7 +28,7 @@ module HammerCLIKatello
       resource :host_collections, :index
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :_limit, _("Limit")
         field :description, _("Description")
@@ -99,7 +99,7 @@ module HammerCLIKatello
       end
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         from :content_facet_attributes do
           from :errata_counts do

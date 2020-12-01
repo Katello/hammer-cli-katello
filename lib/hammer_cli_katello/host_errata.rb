@@ -21,7 +21,7 @@ module HammerCLIKatello
       command_name "list"
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :errata_id, _("Erratum ID")
         field :type, _("Type")
         field :title, _("Title")

@@ -10,7 +10,7 @@ module HammerCLIKatello
       validate_repo_name_requires_product_options(:option_repository_name)
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :errata_id, _("Errata ID")
         field :type, _("Type")
         field :title, _("Title")

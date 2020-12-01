@@ -7,10 +7,10 @@ module HammerCLIKatello
 
         output do
           from :content do
-            field :id, _("ID")
+            field :id, _("Id")
             field :name, _("Name")
             field :type, _("Type")
-            field :contentUrl, _("URL")
+            field :contentUrl, _("Url")
             field :gpgUrl, _("GPG Key")
             field :label, _("Label")
           end

@@ -18,7 +18,7 @@ module HammerCLIKatello
       resource :repository_sets, :index
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :type, _("Type")
         field :name, _("Name"), nil, :max_width => 300
       end
@@ -37,15 +37,15 @@ module HammerCLIKatello
       extend Validations
 
       output do
-        field :id, _("ID")
+        field :id, _("Id")
         field :name, _("Name")
         field :type, _("Type")
-        field :contentUrl, _("URL")
+        field :contentUrl, _("Url")
         field :gpgUrl, _("GPG Key")
         field :label, _("Label")
 
         collection :repositories, _("Enabled Repositories") do
-          field :id, _("ID")
+          field :id, _("Id")
           field :name, _("Name")
         end
       end
