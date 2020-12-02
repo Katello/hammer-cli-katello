@@ -46,7 +46,7 @@ describe "get repository info" do
     )
     result = run_cmd(@cmd + params)
     # rubocop:disable Style/WordArray
-    expected_fields = [['ID', '1'],
+    expected_fields = [['Id', '1'],
                        ['Name', 'Test Repo'],
                        ['Label', 'Test_Repo'],
                        ['Description', 'hammertime'],
@@ -59,7 +59,7 @@ describe "get repository info" do
                        ['Download Policy', 'immediate'],
                        ['HTTP Proxy', ''],
                        ['Product', ''],
-                       ['ID', '79'],
+                       ['Id', '79'],
                        ['Name', 'test'],
                        ['GPG Key', ''],
                        ['Sync', ''],
@@ -122,7 +122,7 @@ describe "get repository info" do
     )
     result = run_cmd(@cmd + params)
     # rubocop:disable Style/WordArray
-    expected_fields = [['ID', '1'],
+    expected_fields = [['Id', '1'],
                        ['Name', 'Test Repo'],
                        ['Label', 'Test_Repo'],
                        ['Description', 'hammertime'],
@@ -135,7 +135,7 @@ describe "get repository info" do
                        ['Download Policy', 'immediate'],
                        ['HTTP Proxy', ''],
                        ['Product', ''],
-                       ['ID', '79'],
+                       ['Id', '79'],
                        ['Name', 'Test_Product'],
                        ['GPG Key', ''],
                        ['Sync', ''],
