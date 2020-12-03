@@ -1,11 +1,11 @@
-require_relative '../test_helper'
-require 'hammer_cli_katello/content_export'
+require File.join(File.dirname(__FILE__), '../../../test_helper')
+require 'hammer_cli_katello/content_export_complete'
 
-describe 'content-export version' do
+describe 'content-export complete version' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(content-export version)
+    @cmd = %w(content-export complete version)
   end
 
   let(:task_id) { '5' }
@@ -60,7 +60,7 @@ describe 'content-export version' do
 
     expect_foreman_task(task_id).at_least_once
 
-    HammerCLIKatello::ContentExport::VersionCommand.
+    HammerCLIKatello::ContentExportComplete::VersionCommand.
       any_instance.
       expects(:fetch_export_history).
       returns(export_history)
