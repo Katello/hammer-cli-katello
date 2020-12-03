@@ -1,13 +1,13 @@
-require_relative '../test_helper'
-require_relative '../organization/organization_helpers'
-require 'hammer_cli_katello/content_export'
+require File.join(File.dirname(__FILE__), '../../../test_helper')
+require_relative '../../organization/organization_helpers'
+require 'hammer_cli_katello/content_export_complete'
 
-describe 'content-export library' do
+describe 'content-export complete library' do
   include ForemanTaskHelpers
   include OrganizationHelpers
 
   before do
-    @cmd = %w(content-export library)
+    @cmd = %w(content-export complete library)
   end
 
   let(:task_id) { '5' }
@@ -59,7 +59,7 @@ describe 'content-export library' do
 
     expect_foreman_task(task_id).at_least_once
 
-    HammerCLIKatello::ContentExport::LibraryCommand.
+    HammerCLIKatello::ContentExportComplete::LibraryCommand.
       any_instance.
       expects(:fetch_export_history).
       returns(export_history)
