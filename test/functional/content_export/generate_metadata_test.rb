@@ -21,7 +21,7 @@ describe('content-export generate-metadata') do
 
   describe('given an export history id') do
     it('loads export history by id') do
-      @params = ["--export-history-id=#{@export_history_id}"]
+      @params = ["--id=#{@export_history_id}"]
 
       HammerCLIKatello::ContentExport::GenerateMetadataCommand.
         any_instance.
@@ -57,7 +57,7 @@ describe('content-export generate-metadata') do
   describe('given no arguments') do
     it('tells the user to verify the arguments') do
       expected = "Error: No export history was found. Verify the value given for "\
-        + "--task-id or --export-history-id\n"
+        + "--task-id or --id\n"
       assert_equal(expected, result.err)
     end
   end

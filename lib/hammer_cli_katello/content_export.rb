@@ -20,7 +20,7 @@ module HammerCLIKatello
              :attribute_name => :option_task_id,
              :required => false
 
-      option "--export-history-id", "EXPORT_HISTORY_ID",
+      option "--id", "ID",
              _("Generate metadata based on specified export history"),
              :attribute_name => :option_export_id,
              :required => false
@@ -35,7 +35,7 @@ module HammerCLIKatello
 
         unless export_history
           raise _("No export history was found. Verify the value given for "\
-            + "--task-id or --export-history-id")
+            + "--task-id or --id")
         end
 
         generate_metadata_json(export_history)
