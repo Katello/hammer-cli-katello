@@ -45,7 +45,9 @@ describe 'content-export complete library' do
 
     result = run_cmd(@cmd + params)
 
-    assert_equal("Library environment is being exported in task #{task_id}.\n", result.out)
+    assert_equal("Library environment is being exported in task #{task_id}.\n"\
+      + "Once the task completes the export metadata must be generated with the "\
+      + "command: hammer content-export generate-metadata --task-id #{task_id}\n", result.out)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
   end
 

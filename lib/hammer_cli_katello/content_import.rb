@@ -17,6 +17,8 @@ module HammerCLIKatello
         end
 
         base.validate_options do
+          option(:option_path).required
+
           metadata_file = option(:option_metadata_file).value ||
                           File.join(option(:option_path).value, "metadata.json")
           unless File.exist?(metadata_file)

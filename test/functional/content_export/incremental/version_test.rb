@@ -47,7 +47,9 @@ describe 'content-export incremental version' do
 
     result = run_cmd(@cmd + params)
 
-    assert_equal("Content view version is being exported in task #{task_id}.\n", result.out)
+    assert_equal("Content view version is being exported in task #{task_id}.\n"\
+      + "Once the task completes the export metadata must be generated with the "\
+      + "command: hammer content-export generate-metadata --task-id #{task_id}\n", result.out)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
   end
 
