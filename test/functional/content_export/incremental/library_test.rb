@@ -1,10 +1,12 @@
 require File.join(File.dirname(__FILE__), '../../../test_helper')
 require_relative '../../organization/organization_helpers'
+require_relative '../content_export_helpers'
 require 'hammer_cli_katello/content_export'
 
 describe 'content-export incremental library' do
   include ForemanTaskHelpers
   include OrganizationHelpers
+  include ContentExportHelpers
 
   before do
     @cmd = %w(content-export incremental library)
@@ -41,7 +43,7 @@ describe 'content-export incremental library' do
       '--destination-server=foo',
       '--async'
     ]
-
+    expects_repositories_in_library(organization_id)
     ex = api_expects(:content_export_incrementals, :library)
     ex.returns(response)
 
@@ -57,7 +59,7 @@ describe 'content-export incremental library' do
     params = [
       "--organization-id=#{organization_id}"
     ]
-
+    expects_repositories_in_library(organization_id)
     ex = api_expects(:content_export_incrementals, :library)
     ex.returns(response)
 
@@ -79,6 +81,7 @@ describe 'content-export incremental library' do
       "--destination-server=#{destination_server}",
       "--from-history-id=#{export_history_id}"
     ]
+    expects_repositories_in_library(organization_id)
     api_expects(:content_export_incrementals, :library)
       .with_params('organization_id' => organization_id,
                    'destination_server' => destination_server,
@@ -112,7 +115,7 @@ describe 'content-export incremental library' do
   it 'correctly resolves organization id from name' do
     params = ["--organization=#{organization_name}",
               "--async"]
-
+    expects_repositories_in_library(organization_id)
     expect_organization_search(organization_name, organization_id)
 
     ex = api_expects(:content_export_incrementals, :library) do |p|
@@ -121,5 +124,49 @@ describe 'content-export incremental library' do
     ex.returns(response)
 
     run_cmd(@cmd + params)
+  end
+
+  it 'warns of lazy repositories' do
+    params = ["--organization-id=#{organization_id}"]
+    expects_repositories_in_library(organization_id, [{id: 200}])
+
+    ex = api_expects(:content_export_incrementals, :library)
+    ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+
+    HammerCLIKatello::ContentExportIncremental::LibraryCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(export_history)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Unable to fully export this organization's library/, result.out)
+    assert_match(/200/, result.out)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
+
+  it 'Errors out on lazy repositories if --fail-on-missing-content' do
+    params = ["--organization-id=#{organization_id}",
+              "--fail-on-missing-content"]
+    expects_repositories_in_library(organization_id, [{id: 200}])
+
+    ex = api_expects(:content_export_incrementals, :library)
+    ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+
+    HammerCLIKatello::ContentExportIncremental::LibraryCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(export_history)
+
+    HammerCLIKatello::ContentExportIncremental::LibraryCommand.
+      any_instance.
+      expects(:exit).with(HammerCLI::EX_SOFTWARE)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Unable to fully export this organization's library/, result.out)
+    assert_match(/200/, result.out)
   end
 end
