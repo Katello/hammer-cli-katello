@@ -1,12 +1,18 @@
 module HammerCLIKatello
   module ContentExportHelper
     include ApipieHelper
+
     def execute
       response = super
-      if option_async? || response != HammerCLI::EX_OK
+      if option_async?
+        output.print_message _("Once the task completes the export metadata must be generated "\
+          + "with the command:")
+        output.print_message(" hammer content-export generate-metadata --task-id #{@task['id']}")
+        HammerCLI::EX_OK
+      elsif response != HammerCLI::EX_OK
         response
       else
-        export_history = fetch_export_history(@task)
+        export_history = fetch_export_history_from_task(@task)
         if export_history
           generate_metadata_json(export_history)
           HammerCLI::EX_OK
@@ -17,9 +23,8 @@ module HammerCLIKatello
       end
     end
 
-    def task_progress(task_or_id)
-      super
-      @task = reload_task(task_or_id)
+    def send_request
+      @task = super
     end
 
     def reload_task(task)
@@ -31,9 +36,18 @@ module HammerCLIKatello
       show(:foreman_tasks, id: task_id)
     end
 
-    def fetch_export_history(task)
-      export_history_id = task["output"]["export_history_id"]
-      index(:content_exports, :id => export_history_id).first if export_history_id
+    def fetch_export_history(export_history_id)
+      resource.call(:index, :id => export_history_id)["results"].first if export_history_id
+    end
+
+    def fetch_export_history_from_task(task)
+      # checking this here implies the task object was loaded recently
+      if %w(error warning).include?(task['result'])
+        raise _("Can not fetch export history from an unfinished task")
+      end
+
+      export_history_id = task.dig('output', 'export_history_id')
+      fetch_export_history(export_history_id)
     end
 
     def generate_metadata_json(export_history)
@@ -47,7 +61,7 @@ module HammerCLIKatello
         File.write(filename, metadata_json)
         output.print_message _("Unable to access/write to '#{export_history['path']}'. "\
                                "Generated '#{Dir.pwd}/#{filename}' instead. "\
-                               "You would need this file for importing.")
+                               "This file is necessary to perform an import.")
       end
     end
 
