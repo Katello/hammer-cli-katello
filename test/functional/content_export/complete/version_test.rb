@@ -1,8 +1,10 @@
 require File.join(File.dirname(__FILE__), '../../../test_helper')
+require_relative '../content_export_helpers'
 require 'hammer_cli_katello/content_export_complete'
 
 describe 'content-export complete version' do
   include ForemanTaskHelpers
+  include ContentExportHelpers
 
   before do
     @cmd = %w(content-export complete version)
@@ -35,11 +37,11 @@ describe 'content-export complete version' do
 
   it "performs export with required options and async" do
     params = [
-      '--id=2',
+      "--id=#{content_view_version_id}",
       '--destination-server=foo',
       '--async'
     ]
-
+    expects_repositories_in_version(content_view_version_id)
     ex = api_expects(:content_exports, :version)
     ex.returns(response)
 
@@ -53,10 +55,10 @@ describe 'content-export complete version' do
 
   it "performs export with required options" do
     params = [
-      '--id=2',
+      "--id=#{content_view_version_id}",
       '--destination-server=foo'
     ]
-
+    expects_repositories_in_version(content_view_version_id)
     ex = api_expects(:content_exports, :version)
     ex.returns(response)
 
@@ -84,6 +86,35 @@ describe 'content-export complete version' do
     assert_equal(result.err[/#{expected_error}/], expected_error)
   end
 
+  it 'fails on missing content-view name/id' do
+    params = []
+
+    result = run_cmd(@cmd + params)
+    expected_error = "At least one of options --id, --content-view, --content-view-id is required"
+
+    assert_equal(result.exit_code, HammerCLI::EX_USAGE)
+    assert_match(/#{expected_error}/, result.err)
+  end
+
+  it 'fails on missing content-view version' do
+    params = ["--content-view-id=2"]
+    result = run_cmd(@cmd + params)
+    expected_error = "Option --version is required"
+
+    assert_equal(result.exit_code, HammerCLI::EX_USAGE)
+    assert_match(/#{expected_error}/, result.err)
+  end
+
+  it 'fails on missing content-view missing org' do
+    params = ["--content-view=lol", "--version=4.0"]
+    result = run_cmd(@cmd + params)
+    expected_error = "At least one of options --organization-id, "\
+                    "--organization, --organization-label is required."
+
+    assert_equal(result.exit_code, HammerCLI::EX_USAGE)
+    assert_match(/#{expected_error}/, result.err)
+  end
+
   it 'correctly resolves content-view-id and content view version number' do
     params = ["--content-view-id=#{content_view_id}",
               "--version=#{version}",
@@ -104,6 +135,51 @@ describe 'content-export complete version' do
     end
     ex.returns(response)
 
+    expects_repositories_in_version(content_view_version_id)
     run_cmd(@cmd + params)
+  end
+
+  it 'warns of lazy repositories' do
+    params = ["--id=#{content_view_version_id}"]
+    expects_repositories_in_version(content_view_version_id, [{id: 200}])
+
+    ex = api_expects(:content_exports, :version)
+    ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+
+    HammerCLIKatello::ContentExportComplete::VersionCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(export_history)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Unable to fully export this version because/, result.out)
+    assert_match(/200/, result.out)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
+
+  it 'Errors out on lazy repositories if --fail-on-missing-content' do
+    params = ["--id=#{content_view_version_id}",
+              "--fail-on-missing-content"]
+    expects_repositories_in_version(content_view_version_id, [{id: 200}])
+
+    ex = api_expects(:content_exports, :version)
+    ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+
+    HammerCLIKatello::ContentExportComplete::VersionCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(export_history)
+
+    HammerCLIKatello::ContentExportComplete::VersionCommand.
+      any_instance.
+      expects(:exit).with(HammerCLI::EX_SOFTWARE)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Unable to fully export this version because/, result.out)
+    assert_match(/200/, result.out)
   end
 end
