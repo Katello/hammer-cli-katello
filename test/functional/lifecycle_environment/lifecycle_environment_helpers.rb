@@ -4,7 +4,7 @@ module LifecycleEnvironmentHelpers
   include SearchHelpers
 
   def expect_lifecycle_environment_search(org_id, name, id)
-    expect_generic_search(:lifecycle_environments,
+    expect_lenient_search(:lifecycle_environments,
                           params: {'name' => name, 'organization_id' => org_id},
                           returns: {'id' => id})
   end
