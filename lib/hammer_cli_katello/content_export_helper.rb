@@ -134,6 +134,25 @@ module HammerCLIKatello
 
     def self.setup_version(base)
       base.action(:version)
+      setup_version_options(base)
+      base.success_message _("Content view version is being exported in task %{id}.")
+      base.failure_message _("Could not export the content view version")
+
+      base.extend_with(
+        HammerCLIKatello::CommandExtensions::LifecycleEnvironments.new(only: :option_sources)
+      )
+      base.include(LifecycleEnvironmentNameMapping)
+
+      base.class_eval do
+        def request_params
+          super.tap do |opts|
+            opts["id"] = resolver.content_view_version_id(options)
+          end
+        end
+      end
+    end
+
+    def self.setup_version_options(base)
       base.option "--fail-on-missing-content", :flag,
                     _("Fails if any of the repositories belonging"\
                       " to this version are unexportable.")
@@ -143,27 +162,17 @@ module HammerCLIKatello
                  :required => false
 
       base.build_options do |o|
-        o.expand(:all).including(:content_views, :organizations)
+        o.expand(:all).including(:content_views, :organizations, :environments)
+        o.without(:environment_ids, :environment_id)
       end
 
       base.validate_options do
         unless option(:option_id).exist?
           any(:option_id, :option_content_view_name, :option_content_view_id).required
-          option(:option_version).required
+          any(:option_version, :option_environment_id, :option_environment_name).required
           unless option(:option_content_view_id).exist?
             any(:option_organization_id, :option_organization_name, \
                                 :option_organization_label).required
-          end
-        end
-      end
-
-      base.success_message _("Content view version is being exported in task %{id}.")
-      base.failure_message _("Could not export the content view version")
-
-      base.class_eval do
-        def request_params
-          super.tap do |opts|
-            opts["id"] = resolver.content_view_version_id(options)
           end
         end
       end

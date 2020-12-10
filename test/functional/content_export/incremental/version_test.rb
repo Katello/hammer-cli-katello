@@ -1,10 +1,14 @@
-require File.join(File.dirname(__FILE__), '../../../test_helper')
-require_relative '../content_export_helpers'
+require_relative '../../test_helper'
 require 'hammer_cli_katello/content_export'
+require_relative '../../lifecycle_environment/lifecycle_environment_helpers'
+require_relative '../../content_view/content_view_helpers'
+require_relative '../content_export_helpers'
 
 describe 'content-export incremental version' do
   include ForemanTaskHelpers
   include ContentExportHelpers
+  include ContentViewHelpers
+  include LifecycleEnvironmentHelpers
 
   before do
     @cmd = %w(content-export incremental version)
@@ -151,8 +155,8 @@ describe 'content-export incremental version' do
   it 'fails on missing content-view version' do
     params = ["--content-view-id=2"]
     result = run_cmd(@cmd + params)
-    expected_error = "Option --version is required"
 
+    expected_error = "--version, --lifecycle-environment-id, --lifecycle-environment is required."
     assert_equal(result.exit_code, HammerCLI::EX_USAGE)
     assert_match(/#{expected_error}/, result.err)
   end
@@ -232,5 +236,33 @@ describe 'content-export incremental version' do
     result = run_cmd(@cmd + params)
     assert_match(/Unable to fully export this version because/, result.out)
     assert_match(/200/, result.out)
+  end
+
+  it 'should accept content view and lifecycle environment and get the right version' do
+    env = "foo"
+    org_id = '100'
+    env_id = '223'
+    params = ["--content-view-id=#{content_view_id}",
+              "--lifecycle-environment=#{env}",
+              "--organization-id=#{org_id}"]
+    expect_lifecycle_environment_search(org_id, env, env_id)
+    expect_content_view_version_search({'environment_id' => env_id,
+                                        'content_view_id' => content_view_id},
+                                       'id' => content_view_version_id).at_least_once
+
+    expects_repositories_in_version(content_view_version_id)
+    ex = api_expects(:content_export_incrementals, :version)
+    ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+
+    HammerCLIKatello::ContentExportIncremental::VersionCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(export_history)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Generated .*metadata.*json/, result.out)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
   end
 end
