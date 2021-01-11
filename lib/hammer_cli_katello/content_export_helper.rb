@@ -40,7 +40,7 @@ module HammerCLIKatello
     end
 
     def fetch_export_history(export_history_id)
-      resource.call(:index, :id => export_history_id)["results"].first if export_history_id
+      index(:content_exports, :id => export_history_id).first if export_history_id
     end
 
     def fetch_export_history_from_task(task)
