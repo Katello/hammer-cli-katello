@@ -31,4 +31,34 @@ ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID 
     result = run_cmd(%w(content-export list))
     assert_cmd(expected_result, result)
   end
+
+  it 'works with content-view-id only' do
+    api_expects(:content_view_versions, :index).returns(empty_response)
+
+    ex = api_expects(:content_exports, :index)
+
+    ex.returns(empty_response)
+    # rubocop:disable LineLength
+    expected_result = success_result('---|--------------------|------|----------------------|-------------------------|------------|-----------
+ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
+---|--------------------|------|----------------------|-------------------------|------------|-----------
+')
+    # rubocop:enable LineLength
+    result = run_cmd(%w(content-export list --content-view-id=1))
+    assert_cmd(expected_result, result)
+  end
+
+  it 'works with content-view-version-id only' do
+    ex = api_expects(:content_exports, :index)
+
+    ex.returns(empty_response)
+    # rubocop:disable LineLength
+    expected_result = success_result('---|--------------------|------|----------------------|-------------------------|------------|-----------
+ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
+---|--------------------|------|----------------------|-------------------------|------------|-----------
+')
+    # rubocop:enable LineLength
+    result = run_cmd(%w(content-export list --content-view-version-id=1))
+    assert_cmd(expected_result, result)
+  end
 end
