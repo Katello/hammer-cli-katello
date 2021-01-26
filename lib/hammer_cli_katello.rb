@@ -164,6 +164,12 @@ module HammerCLIKatello
                                         'hammer_cli_katello/srpm'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("simple-content-access",
+                                         _("Simple content access commands"),
+                                         'HammerCLIKatello::SimpleContentAccess',
+                                         'hammer_cli_katello/simple_content_access'
+                                        )
+
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
   require 'hammer_cli_katello/hostgroup'
