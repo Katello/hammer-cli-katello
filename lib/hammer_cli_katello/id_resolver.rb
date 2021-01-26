@@ -117,6 +117,7 @@ module HammerCLIKatello
       end
     end
 
+    # rubocop:disable Style/EmptyElse
     def content_view_version_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
@@ -129,6 +130,8 @@ module HammerCLIKatello
       results = find_resources(:content_view_versions, options)
       options[from_environment_id] ||= from_lifecycle_environment_id(options)
 
+      return pick_result(results, @api.resource(:content_view_versions))['id'] if results.size == 1
+
       if results.size > 1 && options[from_environment_id]
         results_in_from_environment = results.select do |version|
           member_of_environment_ids = version['environments'].map { |env| env['id'].to_s }
@@ -137,9 +140,10 @@ module HammerCLIKatello
         results_in_from_environment
           .sort { |a, b| a['version'].to_f <=> b['version'].to_f }.last['id']
       else
-        pick_result(results, @api.resource(:content_view_versions))['id']
+        nil
       end
     end
+    # rubocop:enable Style/EmptyElse
 
     private
 
