@@ -11,8 +11,6 @@ describe 'ping' do
         'candlepin_events' => {'status' => 'ok', 'message' => '0 messages', 'duration_ms' => '34'},
         'candlepin_auth' => {'status' => 'ok', 'duration_ms' => '34'},
         'katello_events' => {'status' => 'ok', 'message' => '0 messages', 'duration_ms' => '34'},
-        'pulp' => {'status' => 'ok', 'duration_ms' => '34'},
-        'pulp_auth' => {'status' => 'ok', 'duration_ms' => '34'},
         'pulp3' => {'status' => 'ok', 'duration_ms' => '34'}
       }
     )

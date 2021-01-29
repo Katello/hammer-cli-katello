@@ -17,6 +17,7 @@ Gemfile.lock
 Gemfile.local
 Gemfile.local.rb
 rubocop.xml
+*.json
 
 # YARD artifacts
 .yardoc
