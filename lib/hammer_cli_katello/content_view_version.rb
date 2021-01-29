@@ -57,13 +57,6 @@ module HammerCLIKatello
           field :name, _("Name")
           field :label, _("Label")
         end
-
-        collection :puppet_modules, _("Puppet Modules") do
-          field :id, _("Id")
-          field :name, _("Name")
-          field :author, _("Author")
-          field :version, _("Version")
-        end
       end
 
       build_options do |o|
@@ -309,24 +302,6 @@ module HammerCLIKatello
           HammerCLI::EX_CANTCREAT
         end
       end
-    end
-
-    class LegacyExportCommand < HammerCLIKatello::SingleResourceCommand
-      include HammerCLIForemanTasks::Async
-      include LifecycleEnvironmentNameMapping
-      desc _('Export a content view (legacy method)')
-
-      action :export
-      command_name "export-legacy"
-
-      success_message _("Content view is being exported in task %{id}.")
-      failure_message _("Could not export the content view")
-
-      build_options do |o|
-        o.expand(:all).including(:environments, :content_views, :organizations)
-      end
-
-      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class ExportCommand < HammerCLIForeman::Command

@@ -1,7 +1,5 @@
 require File.join(File.dirname(__FILE__), '../../test_helper')
 
-require 'hammer_cli_katello/content_view_puppet_module'
-
 describe 'apply an errata' do
   include ForemanTaskHelpers
 

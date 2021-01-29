@@ -18,8 +18,6 @@
         "packages": 32,
         "package_groups": 2,
         "errata": 4,
-        "puppet_repositories": 0,
-        "puppet_modules": 0,
         "docker_repositories": 0,
         "docker_images": 0
     },
@@ -37,8 +35,6 @@
                 "packages": 32,
                 "package_groups": 2,
                 "errata": 4,
-                "puppet_repositories": 0,
-                "puppet_modules": 0,
                 "docker_repositories": 0,
                 "docker_images": 0
             }
