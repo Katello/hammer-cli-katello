@@ -202,35 +202,7 @@ module HammerCLIKatello
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
 
-      option "--ssl-client-cert", "SSL_CLIENT_CERT",
-             _("Name of content credential containing client certificate"),
-             :attribute_name => :option_ssl_client_cert
-
-      option "--ssl-client-key", "SSL_CLIENT_KEY",
-             _("Name of content credential containing client key"),
-             :attribute_name => :option_ssl_client_key
-
-      option "--ssl-ca-cert", "SSL_CA_CERT",
-             _("Name of content credential containing CA certificate"),
-             :attribute_name => :option_ssl_ca_cert
-
       build_options :without => [:unprotected]
-
-      def request_params
-        params = super
-
-        params["ssl_client_cert_id"] ||= get_gpg_key_id("ssl_client_cert") if option_ssl_client_cert
-        params["ssl_client_key_id"] ||= get_gpg_key_id("ssl_client_key") if option_ssl_client_key
-        params["ssl_ca_cert_id"] ||= get_gpg_key_id("ssl_ca_cert") if option_ssl_ca_cert
-
-        params
-      end
-
-      def get_gpg_key_id(ssl_type)
-        options_clone = options.clone
-        options_clone["option_gpg_key_name"] = self.send("option_#{ssl_type}")
-        resolver.gpg_key_id(resolver.scoped_options("gpg_key", options_clone))
-      end
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
