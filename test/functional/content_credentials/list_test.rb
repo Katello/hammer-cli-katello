@@ -38,9 +38,9 @@ describe 'listing content credentials' do
 
     ex.returns(empty_response)
 
-    expected_result = success_result("---|-----
-ID | NAME
----|-----
+    expected_result = success_result("---|------|-------------
+ID | NAME | CONTENT TYPE
+---|------|-------------
 ")
 
     result = run_cmd(@cmd + params)
@@ -57,9 +57,9 @@ ID | NAME
 
     ex.returns(empty_response)
 
-    expected_result = CommandExpectation.new("---|-----
-ID | NAME
----|-----
+    expected_result = CommandExpectation.new("---|------|-------------
+ID | NAME | CONTENT TYPE
+---|------|-------------
 ")
 
     result = run_cmd(@cmd + params)
