@@ -1,8 +1,6 @@
 require File.join(File.dirname(__FILE__), '../test_helper')
 require File.join(File.dirname(__FILE__), '../lifecycle_environment/lifecycle_environment_helpers')
 
-require 'hammer_cli_katello/content_view_puppet_module'
-
 describe 'listing content-views' do
   include LifecycleEnvironmentHelpers
 

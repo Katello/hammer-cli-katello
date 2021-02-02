@@ -28,11 +28,6 @@ module HammerCLIKatello
       :subscription =>          [s_name(_("Subscription name to search by"))],
       :sync_plan =>             [s_name(_("Sync plan name to search by"))],
       :task =>                  [s_name(_("Task name to search by"))],
-      :content_view_puppet_module => [
-        s_name(_("Puppet module name to search by")),
-        s("author", _("Puppet module's author to search by")),
-        s("uuid", _("Puppet module's UUID to search by"))
-      ],
       :content_view_version => [s("version", _("Content view version number"))]
     }.freeze
 

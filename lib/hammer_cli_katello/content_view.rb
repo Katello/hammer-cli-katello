@@ -1,4 +1,3 @@
-require 'hammer_cli_katello/content_view_puppet_module'
 require 'hammer_cli_katello/content_view_purge'
 require 'hammer_cli_katello/filter'
 require 'hammer_cli_katello/content_view_version'
@@ -35,7 +34,6 @@ module HammerCLIKatello
         field :composite, _("Composite")
         field :description, _("Description")
         field :content_host_count, _("Content Host Count")
-        field :force_puppet_environment, _("Force Puppet")
         field :solve_dependencies, _("Solve Dependencies")
 
         from :organization do
@@ -58,13 +56,6 @@ module HammerCLIKatello
           field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
-        end
-
-        collection :puppet_modules, _("Puppet Modules") do
-          field :id, _("Id")
-          field :uuid, _("Uuid"), Fields::Field, :hide_blank => true
-          field :name, _("Name")
-          field :author, _("Author")
         end
 
         collection :environments, _("Lifecycle Environments") do
@@ -357,10 +348,6 @@ module HammerCLIKatello
     HammerCLIKatello::AssociatingCommands::Repository.extend_command(self)
 
     autoload_subcommands
-
-    subcommand 'puppet-module',
-               HammerCLIKatello::ContentViewPuppetModule.desc,
-               HammerCLIKatello::ContentViewPuppetModule
 
     subcommand HammerCLIKatello::Filter.command_name,
                HammerCLIKatello::Filter.desc,

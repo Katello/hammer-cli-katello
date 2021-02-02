@@ -1,8 +1,7 @@
 require_relative '../../test_helper'
-require 'hammer_cli_katello/content_view_puppet_module'
 
 module HammerCLIKatello
-  describe ContentViewPuppetModule do
+  describe ContentViewVersion::PromoteCommand do
     it 'allows promoting a content view' do
       ex = api_expects(:organizations, :index) do |p|
         p[:search] == "name = \"org1\""
