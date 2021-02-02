@@ -237,13 +237,6 @@ module HammerCLIKatello
       action :remove
       command_name "remove"
 
-      option ["--content-view-version-ids"], "VERSION_IDS",
-             _("Version ids to remove"),
-            :format => HammerCLI::Options::Normalizers::List.new
-      option ["--lifecycle-environment-ids"], "LIFECYCLE_ENVIRONMENT_IDS",
-             _("Environment ids to remove"),
-            :format => HammerCLI::Options::Normalizers::List.new
-
       def option_sources
         sources = super
         sources.find_by_name('IdResolution').insert_relative(
@@ -276,10 +269,15 @@ module HammerCLIKatello
       command_name 'add-version'
       desc _('Add a content view version to a composite view')
 
-      option "--content-view-id", "CONTENT_VIEW_ID",
-        _("Content view numeric identifier to search by"),
-        attribute_name: :option_content_view_id,
-        format: HammerCLI::Options::Normalizers::Number.new
+      option_family do
+        parent "--content-view-id", "CONTENT_VIEW_ID",
+               _("Content view id to search by"),
+               attribute_name: :option_content_view_id,
+               format: HammerCLI::Options::Normalizers::Number.new
+        child "--content-view", "CONTENT_VIEW_NAME",
+              _("Content view name to search by"),
+              attribute_name: :option_content_view_name
+      end
 
       validate_options :before, 'IdResolution' do
         if option(:option_content_view_version_version).exist?
