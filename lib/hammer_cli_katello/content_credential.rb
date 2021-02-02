@@ -4,8 +4,9 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       output do
-        field :id, _("Id")
-        field :name, _("Name")
+        field :id, _('Id')
+        field :name, _('Name')
+        field :content_type, _('Content Type')
       end
 
       build_options
@@ -13,51 +14,51 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       output do
-        field :id, _("Id")
-        field :name, _("Name")
+        field :id, _('Id')
+        field :name, _('Name')
         from :organization do
-          field :name, _("Organization")
+          field :name, _('Organization')
         end
 
-        collection :repositories, "Repositories" do
-          field :id, _("Id")
-          field :name, _("Name")
-          field :content_type, _("Content Type")
+        collection :repositories, 'Repositories' do
+          field :id, _('Id')
+          field :name, _('Name')
+          field :content_type, _('Content Type')
           from :product do
-            field :name, _("Product")
+            field :name, _('Product')
           end
         end
 
-        field :content, _("Content"), Fields::LongText
+        field :content, _('Content'), Fields::LongText
       end
 
       build_options
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
-      success_message _("Content credential created.")
-      failure_message _("Could not create GPG key")
+      success_message _('Content Credential created.')
+      failure_message _('Could not create Content Credential')
 
       build_options :without => [:content]
-      option "--key", "GPG_KEY_FILE", _("GPG Key file"),
+      option '--path', 'KEY_FILE', _('Key file'),
              :attribute_name => :option_content,
              :required => true,
              :format => HammerCLI::Options::Normalizers::File.new
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
-      success_message _("GPG Key updated.")
-      failure_message _("Could not update GPG Key")
+      success_message _('Content Credential updated.')
+      failure_message _('Could not update Content Credential')
 
       build_options :without => [:content]
-      option "--key", "GPG_KEY_FILE", _("GPG Key file"),
+      option '--path', 'KEY_FILE', _('Key file'),
              :attribute_name => :option_content,
              :format => HammerCLI::Options::Normalizers::File.new
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand
-      success_message _("GPG Key deleted.")
-      failure_message _("Could not delete the GPG Key")
+      success_message _('Content Credential deleted.')
+      failure_message _('Could not delete the Content Credential')
 
       build_options
     end
