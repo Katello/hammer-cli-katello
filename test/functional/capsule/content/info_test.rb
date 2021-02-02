@@ -35,8 +35,7 @@ describe 'capsule content info' do
       "            Container Image repos: 0",
       "            Packages:              32",
       "            Package groups:        2",
-      "            Errata:                4",
-      "            Puppet modules:        0"
+      "            Errata:                4"
     ])
     expected_result = success_result(output)
 

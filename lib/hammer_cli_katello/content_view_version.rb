@@ -57,13 +57,6 @@ module HammerCLIKatello
           field :name, _("Name")
           field :label, _("Label")
         end
-
-        collection :puppet_modules, _("Puppet Modules") do
-          field :id, _("Id")
-          field :name, _("Name")
-          field :author, _("Author")
-          field :version, _("Version")
-        end
       end
 
       build_options do |o|

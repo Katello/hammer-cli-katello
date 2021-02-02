@@ -167,7 +167,6 @@ module HammerCLIKatello
                   field :packages, _('Packages')
                   field :package_groups, _('Package groups')
                   field :errata, _('Errata')
-                  field :puppet_modules, _('Puppet modules')
                 end
               end
             end
