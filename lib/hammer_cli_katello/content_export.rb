@@ -50,6 +50,7 @@ module HammerCLIKatello
         field :id, _('ID')
         field :destination_server, _('Destination Server')
         field :path, _('Path')
+        field :type, _('Type')
         field :content_view_version, _('Content View Version')
         field :content_view_version_id, _('Content View Version ID')
         field :created_at, _('Created at')

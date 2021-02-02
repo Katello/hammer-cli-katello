@@ -23,9 +23,9 @@ describe 'content-export list' do
 
     ex.returns(empty_response)
     # rubocop:disable LineLength
-    expected_result = success_result('---|--------------------|------|----------------------|-------------------------|------------|-----------
-ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
----|--------------------|------|----------------------|-------------------------|------------|-----------
+    expected_result = success_result('---|--------------------|------|------|----------------------|-------------------------|------------|-----------
+ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
+---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ')
     # rubocop:enable LineLength
     result = run_cmd(%w(content-export list))
@@ -39,9 +39,9 @@ ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID 
 
     ex.returns(empty_response)
     # rubocop:disable LineLength
-    expected_result = success_result('---|--------------------|------|----------------------|-------------------------|------------|-----------
-ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
----|--------------------|------|----------------------|-------------------------|------------|-----------
+    expected_result = success_result('---|--------------------|------|------|----------------------|-------------------------|------------|-----------
+ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
+---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ')
     # rubocop:enable LineLength
     result = run_cmd(%w(content-export list --content-view-id=1))
@@ -53,9 +53,9 @@ ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID 
 
     ex.returns(empty_response)
     # rubocop:disable LineLength
-    expected_result = success_result('---|--------------------|------|----------------------|-------------------------|------------|-----------
-ID | DESTINATION SERVER | PATH | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
----|--------------------|------|----------------------|-------------------------|------------|-----------
+    expected_result = success_result('---|--------------------|------|------|----------------------|-------------------------|------------|-----------
+ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
+---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ')
     # rubocop:enable LineLength
     result = run_cmd(%w(content-export list --content-view-version-id=1))
