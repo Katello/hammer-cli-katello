@@ -15,6 +15,7 @@ module HammerCLIKatello
 
     class EnableCommand < HammerCLIKatello::SingleResourceCommand
       include EligibleCheck
+      include HammerCLIForemanTasks::Async
       resource :simple_content_access, :enable
       command_name "enable"
 
@@ -26,6 +27,7 @@ module HammerCLIKatello
 
     class DisableCommand < HammerCLIKatello::SingleResourceCommand
       include EligibleCheck
+      include HammerCLIForemanTasks::Async
       resource :simple_content_access, :disable
       command_name "disable"
 
