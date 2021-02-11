@@ -21,7 +21,17 @@ module HammerCLIKatello
         field :label, _("Label")
         field :description, _("Description")
         field :redhat_repository_url, _("Red Hat Repository URL")
+        field :simple_content_access_label, _("Simple Content Access")
         field :service_levels, _("Service Levels"), Fields::List
+      end
+
+      def extend_data(data)
+        data["simple_content_access_label"] = if data["simple_content_access"]
+                                                _("Enabled")
+                                              else
+                                                _("Disabled")
+                                              end
+        data
       end
 
       build_options
