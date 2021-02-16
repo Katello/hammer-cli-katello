@@ -6,8 +6,23 @@ module HammerCLIKatello
 
     output do
       from "services" do
+        label "katello_agent", hide_blank: true do
+          from "katello_agent" do
+            field "status", _("Status"), Fields::Field, hide_blank: true
+            field "message", _("message"), Fields::Field, hide_blank: true
+            field "_response", _("Server Response"), Fields::Field, hide_blank: true
+          end
+        end
+
         label "candlepin" do
           from "candlepin" do
+            field "status", _("Status")
+            field "_response", _("Server Response")
+          end
+        end
+
+        label "candlepin_auth" do
+          from "candlepin_auth" do
             field "status", _("Status")
             field "_response", _("Server Response")
           end
@@ -17,13 +32,6 @@ module HammerCLIKatello
           from "candlepin_events" do
             field "status", _("Status")
             field "message", _("message")
-            field "_response", _("Server Response")
-          end
-        end
-
-        label "candlepin_auth" do
-          from "candlepin_auth" do
-            field "status", _("Status")
             field "_response", _("Server Response")
           end
         end
