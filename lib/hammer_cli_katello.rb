@@ -30,7 +30,6 @@ module HammerCLIKatello
   require 'hammer_cli_katello/id_name_options_validator'
   require 'hammer_cli_katello/local_helper'
   require 'hammer_cli_katello/apipie_helper'
-  require 'hammer_cli_katello/cv_import_export_helper'
   require 'hammer_cli_katello/content_export_helper'
 
   # commands
