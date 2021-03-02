@@ -1195,31 +1195,6 @@ msgstr ""
 msgid "Unable to sync repositories, no library repository found for %s"
 msgstr ""
 
-#: ../lib/hammer_cli_katello/cv_import_export_helper.rb:19
-msgid ""
-"Unable to find CV version %{cvv} on system. Please ensure it is already import"
-"ed."
-msgstr ""
-
-#: ../lib/hammer_cli_katello/cv_import_export_helper.rb:29
-msgid ""
-"The Content View #{cv['name']} is not present on this server, please create th"
-"e Content View and try the import again."
-msgstr ""
-
-#: ../lib/hammer_cli_katello/cv_import_export_helper.rb:34
-msgid ""
-"The latest version (#{import_cv['latest_version']}) of the Content View '#{cv["
-"'name']}' is greater or equal to the version you are trying to import (#{versi"
-"on})"
-msgstr ""
-
-#: ../lib/hammer_cli_katello/cv_import_export_helper.rb:45
-msgid ""
-"The Repository '#{repo['name']}' is set with Mirror-on-Sync to YES. Please cha"
-"nge Mirror-on-Sync to NO and try the import again."
-msgstr ""
-
 #: ../lib/hammer_cli_katello/erratum.rb:14
 #: ../lib/hammer_cli_katello/erratum_info_command.rb:11
 #: ../lib/hammer_cli_katello/filter.rb:47
