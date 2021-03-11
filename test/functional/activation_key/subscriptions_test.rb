@@ -54,11 +54,14 @@ module HammerCLIKatello
       run_cmd(%w(activation-key add-subscription --id 1 --subscription-id 3))
     end
 
-    it 'allows a subscription to be added by name to an activation key' do
+    it 'allows a subscription to be added by name to an activation key with org label' do
+      api_expects(:organizations, :index) { |par| par[:search] == "label = \"org1\"" }
+        .returns(index_response([{'id' => 1}]))
       api_expects(:subscriptions, :index) { |p| p['name'] == 'sub' }
         .returns(index_response([{'name' => 'sub'}]))
       api_expects(:activation_keys, :add_subscriptions) { |p| p['id'] == 1 }
-      run_cmd(%w(activation-key add-subscription --id 1 --subscription sub))
+      run_cmd(%w(activation-key add-subscription --id 1 --subscription sub
+                 --organization-label org1))
     end
 
     it 'allows multiple subscriptions to be added to an activation key' do
