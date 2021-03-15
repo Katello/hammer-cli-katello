@@ -452,14 +452,6 @@ module HammerCLIKatello
 
       build_options
 
-      def fail_msg_import
-        _("This command is not supported with Pulp 3. Use `hammer content-import` instead.")
-      end
-
-      def fail_msg_export
-        _("This command is not supported with Pulp 3. Use `hammer content-export` instead.")
-      end
-
       # rubocop:disable Metrics/AbcSize
       def execute
         validate_pulp3_not_enabled(fail_msg_import)

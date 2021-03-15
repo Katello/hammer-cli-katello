@@ -163,6 +163,14 @@ module HammerCLIKatello
       json
     end
 
+    def fail_msg_import
+      _("This command is not supported with Pulp 3. Use `hammer content-import` instead.")
+    end
+
+    def fail_msg_export
+      _("This command is not supported with Pulp 3. Use `hammer content-export` instead.")
+    end
+
     def validate_pulp3_not_enabled(failure_message)
       pulp3_enabled = HammerCLIForeman
                       .foreman_api_connection
