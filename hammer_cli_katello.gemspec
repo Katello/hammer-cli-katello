@@ -50,7 +50,6 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'hammer_cli_foreman'
   gem.add_dependency 'hammer_cli_foreman_tasks'
-  gem.add_dependency 'hammer_cli_foreman_bootdisk'
   gem.add_dependency 'hammer_cli_foreman_docker'
 
   gem.add_development_dependency 'rake'
