@@ -8,8 +8,10 @@ describe 'content-view version export' do
   end
 
   it "performs export" do
-    HammerCLIKatello::ContentViewVersion::ExportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ExportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--id=5',
       '--export-dir=/tmp/exports'
@@ -67,8 +69,10 @@ describe 'content-view version export' do
   end
 
   it "performs composite export" do
-    HammerCLIKatello::ContentViewVersion::ExportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ExportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--id=999',
       '--export-dir=/tmp/exports'
@@ -105,8 +109,10 @@ describe 'content-view version export' do
   end
 
   it "fails export if content view version has no repository" do
-    HammerCLIKatello::ContentViewVersion::ExportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ExportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--id=5',
       '--export-dir=/tmp/exports'

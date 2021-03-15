@@ -8,8 +8,10 @@ describe 'content-view version import' do
   end
 
   it "performs import" do
-    HammerCLIKatello::ContentViewVersion::ImportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ImportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--export-tar=/tmp/exports/export-2.tar',
       '--organization-id=1'
@@ -77,8 +79,10 @@ describe 'content-view version import' do
   end
 
   it "performs composite import" do
-    HammerCLIKatello::ContentViewVersion::ImportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ImportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--export-tar=/tmp/exports/export-999.tar',
       '--organization-id=1'
@@ -139,8 +143,10 @@ describe 'content-view version import' do
   end
 
   it "performs composite import, component not found" do
-    HammerCLIKatello::ContentViewVersion::ImportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ImportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--export-tar=/tmp/exports/export-999.tar',
       '--organization-id=1'
@@ -190,8 +196,10 @@ describe 'content-view version import' do
   end
 
   it "fails import if cv has not been created" do
-    HammerCLIKatello::ContentViewVersion::ImportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ImportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--export-tar=/tmp/exports/export-2.tar',
       '--organization-id=1'
@@ -218,8 +226,10 @@ describe 'content-view version import' do
   end
 
   it "fails import if repo is set to mirror-on-sync" do
-    HammerCLIKatello::ContentViewVersion::ImportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ImportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--export-tar=/tmp/exports/export-2.tar',
       '--organization-id=1'
@@ -254,8 +264,10 @@ describe 'content-view version import' do
   end
 
   it "fails import if cv version already exists" do
-    HammerCLIKatello::ContentViewVersion::ImportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ImportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--export-tar=/tmp/exports/export-2.tar',
       '--organization-id=1'
@@ -290,8 +302,10 @@ describe 'content-view version import' do
   end
 
   it "fails import if any repository does not exist" do
-    HammerCLIKatello::ContentViewVersion::ImportCommand.any_instance
-      .expects(:validate_pulp3_not_enabled).returns(true)
+    HammerCLIKatello::ContentViewVersion::ImportCommand
+      .any_instance
+      .expects(:validate_pulp3_not_enabled)
+      .returns(true)
     params = [
       '--export-tar=/tmp/exports/export-2.tar',
       '--organization-id=1'
