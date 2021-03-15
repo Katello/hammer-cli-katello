@@ -291,9 +291,7 @@ module HammerCLIKatello
       build_options
 
       def execute
-        validate_pulp3_not_enabled(_(
-          "This command is not supported with Pulp 3. Use `hammer content-export` instead."
-          ))
+        validate_pulp3_not_enabled(fail_msg_export)
         export_dir = options['option_export_dir']
 
         Dir.mkdir(export_dir) unless Dir.exist?(export_dir)
@@ -326,9 +324,7 @@ module HammerCLIKatello
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
 
       def request_params
-        validate_pulp3_not_enabled(_(
-          "This command is not supported with Pulp 3. Use `hammer content-export` instead."
-          ))
+        validate_pulp3_not_enabled(fail_msg_export)
         super
       end
     end
@@ -361,9 +357,7 @@ module HammerCLIKatello
         cvv = show(:content_view_versions, 'id' => options['option_id'])
         cv = show(:content_views, 'id' => cvv['content_view_id'])
 
-        validate_pulp3_not_enabled(_(
-          "This command is not supported with Pulp 3. Use `hammer content-export` instead."
-          ))
+        validate_pulp3_not_enabled(fail_msg_export)
 
         composite = cv["composite"]
 
@@ -458,11 +452,17 @@ module HammerCLIKatello
 
       build_options
 
+      def fail_msg_import
+        _("This command is not supported with Pulp 3. Use `hammer content-import` instead.")
+      end
+
+      def fail_msg_export
+        _("This command is not supported with Pulp 3. Use `hammer content-export` instead.")
+      end
+
       # rubocop:disable Metrics/AbcSize
       def execute
-        validate_pulp3_not_enabled(_(
-          "This command is not supported with Pulp 3. Use `hammer content-import` instead."
-          ))
+        validate_pulp3_not_enabled(fail_msg_import)
 
         unless File.exist?(options['option_export_tar'])
           raise _("Export tar #{options['option_export_tar']} does not exist.")

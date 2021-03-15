@@ -165,14 +165,15 @@ module HammerCLIKatello
 
     def validate_pulp3_not_enabled(failure_message)
       pulp3_enabled = HammerCLIForeman
-        .foreman_api_connection
-        .resource(:content_exports)
-        .call(:api_status)['api_usable']
+                      .foreman_api_connection
+                      .resource(:content_exports)
+                      .call(:api_status)['api_usable']
       if pulp3_enabled
         raise failure_message
       end
     rescue NoMethodError
       # if the api endpoint isn't there, the validation passes
+      true
     end
   end
 end
