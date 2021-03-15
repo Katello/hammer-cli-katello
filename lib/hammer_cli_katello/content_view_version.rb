@@ -274,6 +274,7 @@ module HammerCLIKatello
     class ExportDefaultCommand < HammerCLIForeman::Command
       include HammerCLIKatello::LocalHelper
       include HammerCLIKatello::ApipieHelper
+      include HammerCLIKatello::CVImportExportHelper
 
       PUBLISHED_REPOS_DIR = "/var/lib/pulp/published/yum/https/repos/".freeze
 
@@ -290,6 +291,7 @@ module HammerCLIKatello
       build_options
 
       def execute
+        validate_pulp3_not_enabled(fail_msg_export)
         export_dir = options['option_export_dir']
 
         Dir.mkdir(export_dir) unless Dir.exist?(export_dir)
@@ -307,6 +309,7 @@ module HammerCLIKatello
     class LegacyExportCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include LifecycleEnvironmentNameMapping
+      include HammerCLIKatello::CVImportExportHelper
       desc _('Export a content view (legacy method)')
 
       action :export
@@ -314,12 +317,16 @@ module HammerCLIKatello
 
       success_message _("Content view is being exported in task %{id}.")
       failure_message _("Could not export the content view")
-
       build_options do |o|
         o.expand(:all).including(:environments, :content_views, :organizations)
       end
 
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
+
+      def request_params
+        validate_pulp3_not_enabled(fail_msg_export)
+        super
+      end
     end
 
     class ExportCommand < HammerCLIForeman::Command
@@ -349,6 +356,8 @@ module HammerCLIKatello
       def execute
         cvv = show(:content_view_versions, 'id' => options['option_id'])
         cv = show(:content_views, 'id' => cvv['content_view_id'])
+
+        validate_pulp3_not_enabled(fail_msg_export)
 
         composite = cv["composite"]
 
@@ -445,6 +454,8 @@ module HammerCLIKatello
 
       # rubocop:disable Metrics/AbcSize
       def execute
+        validate_pulp3_not_enabled(fail_msg_import)
+
         unless File.exist?(options['option_export_tar'])
           raise _("Export tar #{options['option_export_tar']} does not exist.")
         end
