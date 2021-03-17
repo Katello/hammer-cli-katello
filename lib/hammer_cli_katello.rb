@@ -156,6 +156,11 @@ module HammerCLIKatello
                                          'hammer_cli_katello/simple_content_access'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("docker", _("Manipulate docker content"),
+                                         'HammerCLIKatello::DockerCommand',
+                                         'hammer_cli_katello/docker'
+                                        )
+
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
   require 'hammer_cli_katello/hostgroup'
