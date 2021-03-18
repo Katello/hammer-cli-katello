@@ -494,7 +494,8 @@ module HammerCLIKatello
           library_repos = index(
             :repositories,
             'organization_id' => organization_id,
-            'library' => true
+            'library' => true,
+            'label' => repo['label']
           )
 
           library_repo = library_repos.select do |candidate_repo|
