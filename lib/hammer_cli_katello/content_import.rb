@@ -58,6 +58,21 @@ module HammerCLIKatello
       include ContentImportCommon
     end
 
+    class ListCommand < HammerCLIKatello::ListCommand
+      desc "View content view import histories"
+      output do
+        field :id, _('ID')
+        field :path, _('Path')
+        field :type, _('Type')
+        field :content_view_version, _('Content View Version')
+        field :content_view_version_id, _('Content View Version ID')
+        field :created_at, _('Created at')
+        field :updated_at, _('Updated at'), Fields::Field, :hide_blank => true
+      end
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
