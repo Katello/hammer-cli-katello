@@ -13,7 +13,7 @@ module HammerCLIKatello
                  :required => false
 
         base.build_options do |o|
-          o.expand(:all).including(:content_views, :organizations).except(:metadata)
+          o.expand(:all).including(:organizations).except(:metadata)
         end
 
         base.validate_options do
