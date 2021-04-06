@@ -25,16 +25,16 @@ describe 'content-import version' do
     JSON.parse(File.read("#{path}/metadata.json"))
   end
 
-  let(:content_view_id) { 3 }
+  let(:organization_id) { 3 }
 
   it "performs import with required options and async" do
     params = [
-      "--content-view-id=#{content_view_id}",
+      "--organization-id=#{organization_id}",
       "--path=#{path}",
       '--async'
     ]
     api_expects(:content_imports, :version)
-      .with_params('content_view_id' => content_view_id, 'path' => path, 'metadata' => metadata)
+      .with_params('organization_id' => organization_id, 'path' => path, 'metadata' => metadata)
       .returns(response)
 
     result = run_cmd(@cmd + params)
@@ -45,12 +45,12 @@ describe 'content-import version' do
 
   it "performs import with required options" do
     params = [
-      "--content-view-id=#{content_view_id}",
+      "--organization-id=#{organization_id}",
       "--path=#{path}"
     ]
 
     api_expects(:content_imports, :version)
-      .with_params('content_view_id' => content_view_id, 'path' => path, 'metadata' => metadata)
+      .with_params('organization_id' => organization_id, 'path' => path, 'metadata' => metadata)
       .returns(response)
 
     expect_foreman_task(task_id)
@@ -74,7 +74,7 @@ describe 'content-import version' do
   it 'fails on missing metadata.json' do
     bad_path = "/nosuchdir"
     params = [
-      "--content-view-id=#{content_view_id}",
+      "--organization-id=#{organization_id}",
       "--path=#{bad_path}"
     ]
     result = run_cmd(@cmd + params)
