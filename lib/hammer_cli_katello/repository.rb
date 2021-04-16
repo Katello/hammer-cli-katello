@@ -2,6 +2,25 @@ module HammerCLIKatello
   class Repository < HammerCLIKatello::Command
     resource :repositories
 
+    module AnsibleCollectionRequirementsHelper
+      def self.included(base)
+        base.option "--ansible-collection-requirements-file",
+                    "REQUIREMENTS_FILE", _("Location of the ansible collections "\
+                                         "requirements.yml file. "),
+                    :attribute_name => :option_ansible_collection_requirements_file,
+                    :required => false
+      end
+
+      def request_params
+        super.tap do |opts|
+          requirements_file = option_ansible_collection_requirements_file
+          if requirements_file
+            opts["ansible_collection_requirements"] = File.read(requirements_file)
+          end
+        end
+      end
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
       include LifecycleEnvironmentNameMapping
 
@@ -192,6 +211,7 @@ module HammerCLIKatello
     end
 
     class CreateCommand < HammerCLIKatello::CreateCommand
+      include AnsibleCollectionRequirementsHelper
       success_message _("Repository created.")
       failure_message _("Could not create the repository")
 
@@ -204,6 +224,7 @@ module HammerCLIKatello
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
       extend RepositoryScopedToProduct
+      include AnsibleCollectionRequirementsHelper
 
       validate_repo_name_requires_product_options
       include OrganizationOptions
