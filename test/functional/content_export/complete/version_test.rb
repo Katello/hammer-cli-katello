@@ -143,6 +143,41 @@ describe 'content-export complete version' do
     run_cmd(@cmd + params)
   end
 
+  it 'correctly resolves chunk-size-gb' do
+    chunk_size = 1000
+    params = ["--id=#{content_view_version_id}",
+              "--chunk-size-gb=#{chunk_size}",
+              "--organization-id=99"]
+
+    expects_repositories_in_version(content_view_version_id)
+
+    ex = api_expects(:content_exports, :version) do |p|
+      assert_equal p["chunk_size_gb"], chunk_size
+    end
+    ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+
+    HammerCLIKatello::ContentExportComplete::VersionCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(export_history)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Generated .*metadata.*json/, result.out)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
+
+  it 'fails on invalid chunk-size-gb value' do
+    params = ["--id=#{content_view_version_id}",
+              "--chunk-size-gb=0.5",
+              "--organization-id=99"]
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Error: Option '--chunk-size-gb': Numeric value is required/, result.err)
+    assert_equal(HammerCLI::EX_USAGE, result.exit_code)
+  end
+
   it 'warns of lazy repositories' do
     params = ["--id=#{content_view_version_id}"]
     expects_repositories_in_version(content_view_version_id, [{id: 200}])
