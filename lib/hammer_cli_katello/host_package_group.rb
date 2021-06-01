@@ -14,6 +14,14 @@ module HammerCLIKatello
       end
 
       build_options :without => [:packages]
+
+      def execute
+        warn "This command uses katello agent and will be removed in favor of remote execution " \
+          "in a future release."
+        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
+          "katello_group_install`."
+        super
+      end
     end
 
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
@@ -28,6 +36,14 @@ module HammerCLIKatello
       end
 
       build_options :without => [:packages]
+
+      def execute
+        warn "This command uses katello agent and will be removed in favor of remote execution " \
+          "in a future release."
+        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
+          "katello_group_remove`."
+        super
+      end
     end
 
     autoload_subcommands
