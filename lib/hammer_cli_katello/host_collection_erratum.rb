@@ -15,6 +15,16 @@ module HammerCLIKatello
         :format => HammerCLI::Options::Normalizers::List.new,
         :attribute_name => :content)
 
+      def execute
+        warn "This command uses katello agent and will be removed in favor of remote execution " \
+          "in a future release."
+        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
+          "katello_errata_install`. Specify the host collection with the --search-query " \
+          "parameter, e.g. `--search-query \"host_collection = MyCollection\"` or " \
+          "`--search-query \"host_collection_id=6\"`."
+        super
+      end
+
       def content_type
         'errata'
       end
