@@ -12,6 +12,14 @@ module HammerCLIKatello
       failure_message _("Could not apply errata")
 
       build_options
+
+      def execute
+        warn "This command uses katello agent and will be removed in favor of remote execution " \
+          "in a future release."
+        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
+          "katello_errata_install`."
+        super
+      end
     end
 
     class ListCommand < HammerCLIKatello::ListCommand

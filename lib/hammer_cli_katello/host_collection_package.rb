@@ -23,6 +23,16 @@ module HammerCLIKatello
       desc _("Install packages on content hosts contained within a host collection")
       success_message _("Successfully scheduled installation of package(s).")
       failure_message _("Could not schedule installation of package(s)")
+
+      def execute
+        warn "This command uses katello agent and will be removed in favor of remote execution " \
+          "in a future release."
+        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
+          "katello_package_install`. Specify the host collection with the --search-query " \
+          "parameter, e.g. `--search-query \"host_collection = MyCollection\"` or " \
+          "`--search-query \"host_collection_id=6\"`."
+        super
+      end
     end
 
     class UpdateCommand < HammerCLIKatello::HostCollection::UpdateContentBaseCommand
@@ -30,6 +40,16 @@ module HammerCLIKatello
       desc _("Update packages on content hosts contained within a host collection")
       success_message _("Successfully scheduled update of package(s).")
       failure_message _("Could not schedule update of package(s)")
+
+      def execute
+        warn "This command uses katello agent and will be removed in favor of remote execution " \
+          "in a future release."
+        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
+          "katello_package_update`. Specify the host collection with the --search-query " \
+          "parameter, e.g. `--search-query \"host_collection = MyCollection\"` or " \
+          "`--search-query \"host_collection_id=6\"`."
+        super
+      end
     end
 
     class RemoveCommand < HammerCLIKatello::HostCollection::RemoveContentBaseCommand
@@ -37,6 +57,16 @@ module HammerCLIKatello
       desc _("Remove packages on content hosts contained within a host collection")
       success_message _("Successfully scheduled removal of package(s).")
       failure_message _("Could not schedule removal of package(s)")
+
+      def execute
+        warn "This command uses katello agent and will be removed in favor of remote execution " \
+          "in a future release."
+        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
+          "katello_package_remove`. Specify the host collection with the --search-query " \
+          "parameter, e.g. `--search-query \"host_collection = MyCollection\"` or " \
+          "`--search-query \"host_collection_id=6\"`."
+        super
+      end
     end
 
     autoload_subcommands
