@@ -50,6 +50,8 @@ module HammerCLIKatello
       success_message _("Host collection created.")
       failure_message _("Could not create the host collection")
 
+      option "--unlimited-hosts", :flag, "Set hosts max to unlimited"
+
       build_options
     end
 
