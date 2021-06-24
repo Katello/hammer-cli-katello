@@ -52,6 +52,10 @@ module HammerCLIKatello
 
       option "--unlimited-hosts", :flag, "Set hosts max to unlimited"
 
+      validate_options :before, 'IdResolution' do
+        all(:option_unlimited_hosts, :option_max_hosts).rejected
+      end
+
       build_options
     end
 
