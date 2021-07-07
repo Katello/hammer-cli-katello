@@ -541,33 +541,6 @@ module HammerCLIKatello
       end
     end
 
-    class ExportCommand < HammerCLIKatello::SingleResourceCommand
-      include HammerCLIForemanTasks::Async
-      include OrganizationOptions
-      extend RepositoryScopedToProduct
-
-      validate_repo_name_requires_product_options
-      action :export
-      command_name "export"
-      desc _("Export content from a repository to the configured directory")
-
-      success_message _("Repository is being exported in task %{id}.")
-      failure_message _("Could not export the repository")
-
-      validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
-
-        if option(:option_product_name).exist?
-          any(*organization_options).required
-        end
-      end
-
-      build_options do |o|
-        o.expand.including(:products)
-      end
-    end
-
     autoload_subcommands
   end
 end
