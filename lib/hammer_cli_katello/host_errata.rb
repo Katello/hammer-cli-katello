@@ -11,7 +11,7 @@ module HammerCLIKatello
       success_message _("Errata is being applied with task %{id}.")
       failure_message _("Could not apply errata")
 
-      build_options
+      build_options(without: ['ids'])
 
       def execute
         warn "This command uses katello agent and will be removed in favor of remote execution " \
