@@ -3,23 +3,25 @@ require 'hammer_cli_katello/host_errata'
 require 'hammer_cli_katello/host_subscription'
 require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
-require 'hammer_cli_katello/host_kickstart_repository_options'
-require 'hammer_cli_katello/host_content_source_options'
 require 'hammer_cli_katello/host_traces'
 
 module HammerCLIKatello
   module HostExtensions
     ::HammerCLIForeman::Host::CreateCommand.instance_eval do
       include HammerCLIKatello::ResolverCommons
-      include HammerCLIKatello::HostContentSourceOptions
-      include ::HammerCLIKatello::HostKickstartRepositoryOptions
     end
+    ::HammerCLIForeman::Host::CreateCommand.extend_with(
+      HammerCLIKatello::CommandExtensions::ContentSource.new,
+      HammerCLIKatello::CommandExtensions::KickstartRepository.new
+    )
 
     ::HammerCLIForeman::Host::UpdateCommand.instance_eval do
       include HammerCLIKatello::ResolverCommons
-      include HammerCLIKatello::HostContentSourceOptions
-      include ::HammerCLIKatello::HostKickstartRepositoryOptions
     end
+    ::HammerCLIForeman::Host::UpdateCommand.extend_with(
+      HammerCLIKatello::CommandExtensions::ContentSource.new,
+      HammerCLIKatello::CommandExtensions::KickstartRepository.new
+    )
 
     ::HammerCLIForeman::Host::ListCommand.instance_eval do
       output do

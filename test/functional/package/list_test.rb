@@ -86,7 +86,7 @@ module HammerCLIKatello
       it 'may be specified environment name no org fails' do
         api_expects_no_call
         r = run_cmd(%w(package list --environment Library))
-        expec_err = "--organization, --organization-title, --organization-label, --organization-id"
+        expec_err = "--organization-id, --organization, --organization-title, --organization-label"
         puts r.err
         assert(r.err.include?(expec_err), "Invalid error message")
       end

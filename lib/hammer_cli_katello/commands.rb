@@ -36,7 +36,7 @@ module HammerCLIKatello
       end
 
       def resource_name_mapping
-        HammerCLIKatello::RESOURCE_NAME_MAPPING.dup
+        super.merge(HammerCLIKatello::RESOURCE_NAME_MAPPING.dup)
       end
     end
   end
