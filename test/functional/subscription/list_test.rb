@@ -60,7 +60,7 @@ module HammerCLIKatello
     end
 
     it 'allows host id' do
-      api_expects(:subscriptions, :index) { |par| par['host_id'] == 1 }
+      api_expects(:subscriptions, :index) { |par| par['host_id'] == '1' }
       run_cmd(%w(subscription list --organization-id 1 --host-id 1))
     end
 
@@ -72,7 +72,7 @@ module HammerCLIKatello
     end
 
     it 'allows activation key id' do
-      api_expects(:subscriptions, :index) { |par| par['activation_key_id'] == 1 }
+      api_expects(:subscriptions, :index) { |par| par['activation_key_id'] == '1' }
       run_cmd(%w(subscription list --organization-id 1 --activation-key-id 1))
     end
 

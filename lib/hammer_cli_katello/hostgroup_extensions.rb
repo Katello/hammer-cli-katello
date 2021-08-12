@@ -1,16 +1,19 @@
 require 'hammer_cli_foreman/hostgroup'
-require 'hammer_cli_katello/host_kickstart_repository_options'
-require 'hammer_cli_katello/host_content_source_options'
 
 module HammerCLIKatello
   module QueryOrganizationOptions
     def self.included(base)
-      base.option '--query-organization-id', 'ORGANIZATION_ID',
-        _('Organization ID to search by'), attribute_name: :option_organization_id
-      base.option '--query-organization', 'ORGANIZATION_NAME',
-        _('Organization name to search by'), attribute_name: :option_organization_name
-      base.option '--query-organization-label', 'ORGANIZATION_LABEL',
-        _('Organization label to search by'), attribute_name: :option_organization_label
+      base.option_family do
+        parent '--query-organization-id', 'ORGANIZATION_ID',
+               _('Organization ID to search by'),
+               attribute_name: :option_organization_id
+        child '--query-organization', 'ORGANIZATION_NAME',
+              _('Organization name to search by'),
+              attribute_name: :option_organization_name
+        child '--query-organization-label', 'ORGANIZATION_LABEL',
+              _('Organization label to search by'),
+              attribute_name: :option_organization_label
+      end
 
       base.validate_options :before, 'IdResolution' do
         organization_options = [
@@ -30,17 +33,21 @@ module HammerCLIKatello
       include HammerCLIKatello::ResolverCommons
       include HammerCLIKatello::ContentViewNameResolvable
       include HammerCLIKatello::QueryOrganizationOptions
-      include HammerCLIKatello::HostContentSourceOptions
-      include HammerCLIKatello::HostKickstartRepositoryOptions
     end
+    ::HammerCLIForeman::Hostgroup::CreateCommand.extend_with(
+      HammerCLIKatello::CommandExtensions::ContentSource.new,
+      HammerCLIKatello::CommandExtensions::KickstartRepository.new
+    )
 
     ::HammerCLIForeman::Hostgroup::UpdateCommand.instance_eval do
       include HammerCLIKatello::ResolverCommons
       include HammerCLIKatello::ContentViewNameResolvable
       include HammerCLIKatello::QueryOrganizationOptions
-      include HammerCLIKatello::HostContentSourceOptions
-      include HammerCLIKatello::HostKickstartRepositoryOptions
     end
+    ::HammerCLIForeman::Hostgroup::UpdateCommand.extend_with(
+      HammerCLIKatello::CommandExtensions::ContentSource.new,
+      HammerCLIKatello::CommandExtensions::KickstartRepository.new
+    )
 
     ::HammerCLIForeman::Hostgroup::InfoCommand.instance_eval do
       output do

@@ -15,7 +15,7 @@ module HammerCLIKatello
         .returns(index_response([{'id' => 1}]))
 
       api_expects(:module_streams, :show)
-        .with_params(repository_id: "1", id: 1)
+        .with_params(repository_id: 1, id: 1)
 
       run_cmd(%w(module-stream info --name duck --repository-id 1))
     end

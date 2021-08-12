@@ -44,7 +44,9 @@ module HammerCLIKatello
       success_message _("Organization updated.")
       failure_message _("Could not update the organization")
 
-      build_options
+      build_options do |o|
+        o.expand(:all).except(:environments)
+      end
     end
 
     class CreateCommand < HammerCLIForeman::Organization::CreateCommand
@@ -54,7 +56,9 @@ module HammerCLIKatello
       success_message _("Organization created.")
       failure_message _("Could not create the organization")
 
-      build_options
+      build_options do |o|
+        o.expand(:all).except(:environments)
+      end
     end
 
     class DeleteCommand < HammerCLIForeman::Organization::DeleteCommand

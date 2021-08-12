@@ -36,7 +36,7 @@ module HammerCLIKatello
     end
 
     it 'lists subscriptions used by the activation key' do
-      api_expects(:subscriptions, :index) { |p| p['activation_key_id'] == 1 }
+      api_expects(:subscriptions, :index) { |p| p['activation_key_id'] == '1' }
       run_cmd(%w(activation-key subscriptions --organization-id 1 --id 1))
     end
 
