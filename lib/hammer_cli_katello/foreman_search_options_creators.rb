@@ -48,6 +48,18 @@ module HammerCLIKatello
       create_search_options_without_katello_api(options, api.resource(:ptables), mode)
     end
 
+    def create_puppet_ca_proxies_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:puppet_ca_proxies), mode)
+    end
+
+    def create_puppet_proxies_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:puppet_proxies), mode)
+    end
+
+    def create_puppetclasses_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:puppetclasses), mode)
+    end
+
     def create_subnets_search_options(options, mode = nil)
       create_search_options_without_katello_api(options, api.resource(:subnets), mode)
     end
