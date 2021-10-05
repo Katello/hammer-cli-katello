@@ -46,10 +46,9 @@ module HammerCLIKatello
     end
 
     class RecalculateCommand < HammerCLIKatello::SingleResourceCommand
-      include HammerCLIForemanTasks::Async
       resource :host_errata, :applicability
       command_name "recalculate"
-      success_message _("Errata recalculated with task %{id}.")
+      success_message _("Errata recalculation started.")
       failure_message _("Could not recalculate errata")
 
       build_options
