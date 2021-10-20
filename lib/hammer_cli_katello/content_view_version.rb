@@ -60,7 +60,7 @@ module HammerCLIKatello
       end
 
       build_options do |o|
-        o.expand(:all).including(:environments, :content_views, :organizations)
+        o.expand(:all).including(:lifecycle_environments, :content_views, :organizations)
       end
 
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
@@ -143,7 +143,7 @@ module HammerCLIKatello
       failure_message _("Could not delete the content view")
 
       build_options do |o|
-        o.expand(:all).including(:environments, :content_views, :organizations)
+        o.expand(:all).including(:lifecycle_environments, :content_views, :organizations)
       end
 
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
@@ -157,7 +157,7 @@ module HammerCLIKatello
       failure_message _("Could not update the content view version")
 
       build_options do |o|
-        o.expand(:all).including(:environments, :content_views, :organizations)
+        o.expand(:all).including(:lifecycle_environments, :content_views, :organizations)
       end
 
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)

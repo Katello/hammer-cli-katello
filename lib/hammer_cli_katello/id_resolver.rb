@@ -74,12 +74,15 @@ module HammerCLIKatello
         return options['option_lifecycle_environment_ids']
       end
 
-      key_names = HammerCLI.option_accessor_name 'lifecycle_environment_names'
+      names = options[HammerCLI.option_accessor_name('lifecycle_environment_names')] ||
+              options[HammerCLI.option_accessor_name('environment_names')] ||
+              options[HammerCLI.option_accessor_name('names')]
       key_organization_id = HammerCLI.option_accessor_name 'organization_id'
       options[key_organization_id] ||= organization_id(scoped_options('organization', options))
 
+      options['option_lifecycle_environment_names'] = names
       find_resources(:lifecycle_environments, options)
-        .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
+        .select { |repo| names.include? repo['name'] }.map { |repo| repo['id'] }
     end
 
     def repository_id(options)

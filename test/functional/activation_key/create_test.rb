@@ -4,7 +4,7 @@ require 'hammer_cli_katello/activation_key'
 module HammerCLIKatello
   describe ActivationKeyCommand do
     describe CreateCommand do
-      it 'allows promoting a content view' do
+      it 'allows activation key creation' do
         ex = api_expects(:organizations, :index) do |p|
           p[:search] == "name = \"org1\""
         end

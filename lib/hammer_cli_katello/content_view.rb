@@ -197,6 +197,17 @@ module HammerCLIKatello
       failure_message _("Could not publish the content view")
 
       build_options
+
+      option_family associate: 'lifecycle_environment' do
+        child '--lifecycle-environments', 'LIFECYCLE_ENVIRONMENT_NAMES',
+              _('Names for Lifecycle Environment'),
+              format: HammerCLI::Options::Normalizers::List.new,
+              attribute_name: :option_environment_names
+      end
+
+      extend_with(
+        HammerCLIKatello::CommandExtensions::LifecycleEnvironments.new(only: :option_sources)
+      )
     end
 
     class RemoveFromEnvironmentCommand < HammerCLIKatello::SingleResourceCommand

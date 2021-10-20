@@ -162,14 +162,18 @@ module HammerCLIKatello
                  :required => false
 
       base.build_options do |o|
-        o.expand(:all).including(:content_views, :organizations, :environments)
+        o.expand(:all).including(:content_views, :organizations, :lifecycle_environments)
         o.without(:environment_ids, :environment_id)
       end
 
       base.validate_options do
         unless option(:option_id).exist?
           any(:option_id, :option_content_view_name, :option_content_view_id).required
-          any(:option_version, :option_environment_id, :option_environment_name).required
+          any(
+            :option_version,
+            :option_lifecycle_environment_id,
+            :option_lifecycle_environment_name
+          ).required
           unless option(:option_content_view_id).exist?
             any(:option_organization_id, :option_organization_name, \
                                 :option_organization_label).required
