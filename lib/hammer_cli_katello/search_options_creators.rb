@@ -57,7 +57,8 @@ module HammerCLIKatello
     def create_lifecycle_environments_search_options(options, mode = nil)
       search_options = {}
       if mode != :multi
-        name = options[HammerCLI.option_accessor_name("name")]
+        name = options[HammerCLI.option_accessor_name("environment_name")] ||
+               options[HammerCLI.option_accessor_name("name")]
         search_options['name'] = name if name
       end
       organization_id = organization_id(scoped_options('organization', options, :single))
