@@ -15,6 +15,8 @@ describe 'ping' do
       'katello_events' =>
         {'status' => 'ok', 'message' => '0 Processed, 0 Failed', 'duration_ms' => '34'},
       'pulp3' =>
+        {'status' => 'ok', 'duration_ms' => '34'},
+      'pulp3_content' =>
         {'status' => 'ok', 'duration_ms' => '34'}
     }
   end
@@ -26,7 +28,7 @@ describe 'ping' do
   end
   let(:standard_response_keys) do
     %w(katello_agent foreman_tasks candlepin candlepin_events
-       candlepin_auth katello_events pulp3).sort
+       candlepin_auth katello_events pulp3 pulp3_content).sort
   end
   let(:hammer_ping) { %w(ping katello) }
 

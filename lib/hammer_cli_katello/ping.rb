@@ -51,6 +51,13 @@ module HammerCLIKatello
           end
         end
 
+        label "pulp3_content", :hide_blank => true do
+          from "pulp3_content" do
+            field "status", _("Status"), Fields::Field, :hide_blank => true
+            field "_response", _("Server Response"), Fields::Field, :hide_blank => true
+          end
+        end
+
         label "foreman_tasks" do
           from "foreman_tasks" do
             field "status", _("Status")
