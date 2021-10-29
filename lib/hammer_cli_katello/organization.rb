@@ -20,9 +20,17 @@ module HammerCLIKatello
       output do
         field :label, _("Label")
         field :description, _("Description")
-        field :redhat_repository_url, _("Red Hat Repository URL")
         field :simple_content_access_label, _("Simple Content Access")
         field :service_levels, _("Service Levels"), Fields::List
+        from :cdn_configuration do
+          label "CDN configuration", hide_blank: true do
+            field :url, _("URL"), Fields::Field, hide_blank: true
+            field :upstream_organization_label, _("Upstream Organization"),
+                                               Fields::Field, hide_blank: true
+            field :username, _("Username"), Fields::Field, hide_blank: true
+            field :ssl_ca_credential_id, _("SSL CA Credential ID"), Fields::Field, hide_blank: true
+          end
+        end
       end
 
       def extend_data(data)
@@ -70,6 +78,19 @@ module HammerCLIKatello
       failure_message _("Could not delete the organization")
 
       build_options
+    end
+
+    class ConfigureCdnCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIKatello::ResolverCommons
+      resource :organizations, :cdn_configuration
+      command_name "configure-cdn"
+      success_message _("Updated CDN configuration.")
+      failure_message _("Could not update CDN configuration.")
+
+      build_options do |o|
+        o.expand(:all).except(:organizations, :locations)
+        o.without(:organization_id, :location_id)
+      end
     end
 
     autoload_subcommands
