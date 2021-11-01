@@ -62,10 +62,6 @@ module HammerCLIKatello
         field :full_path, _("Published At")
         field :relative_path, _("Relative Path")
         field :download_policy, _("Download Policy"), Fields::Field, :hide_blank => true
-        field :ostree_upstream_sync_policy, _("OSTree Upstream Sync Policy"),
-              Fields::Field, :hide_blank => true
-        field :_ostree_upstream_sync_depth, _("OSTree Upstream Sync Depth"),
-              Fields::Field, :hide_blank => true
         field :docker_upstream_name, _("Upstream Repository Name"),
               Fields::Field, :hide_blank => true
         field :docker_tags_whitelist, _("Container Image Tags Filter"),
@@ -403,6 +399,12 @@ module HammerCLIKatello
       build_options(:without => [:content]) do |o|
         o.expand.including(:products, :organizations)
       end
+
+      option "--ostree-repository-name", "OSTREE REPOSITORY NAME",
+        _("Name of OSTree repository in archive."),
+        :attribute_name => :option_ostree_repository_name,
+        :required => false
+
       option "--path", "PATH", _("Upload file, directory of files, or glob of files " \
                                  "as content for a repository.\n" \
                                  "Globs must be escaped by single or double quotes"),
@@ -423,6 +425,7 @@ module HammerCLIKatello
           repo_id = get_identifier
           update_content_upload(upload_id, repo_id, file)
         end
+        opts[:ostree_repository_name] = options["option_ostree_repository_name"]
         results = import_uploads([
           {
             id: upload_id,
@@ -479,6 +482,9 @@ module HammerCLIKatello
                   sync_capsule: sync_capsule
         }
         params[:content_type] = options["option_content_type"] if options["option_content_type"]
+        if options["option_ostree_repository_name"]
+          params[:ostree_repository_name] = options["option_ostree_repository_name"]
+        end
         resource.call(:import_uploads, params)
       end
 
