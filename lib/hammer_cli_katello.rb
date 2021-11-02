@@ -122,6 +122,11 @@ module HammerCLIKatello
                                          'hammer_cli_katello/file'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("content-units", _("Manipulate content units"),
+                                         'HammerCLIKatello::ContentUnitsCommand',
+                                         'hammer_cli_katello/content_units'
+                                        )
+
   HammerCLI::MainCommand.lazy_subcommand("content-export",
                                           _("Prepare content for export to a disconnected Katello"),
                                          'HammerCLIKatello::ContentExport',
