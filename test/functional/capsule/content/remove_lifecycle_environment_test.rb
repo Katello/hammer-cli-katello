@@ -4,6 +4,7 @@ require_relative '../../lifecycle_environment/lifecycle_environment_helpers'
 require_relative '../../organization/organization_helpers'
 require 'hammer_cli_katello/capsule'
 
+# rubocop:disable LineLength
 module HammerCLIKatello
   module Capsule
     class Content
@@ -15,14 +16,14 @@ module HammerCLIKatello
         it 'allows minimal options' do
           expect_lifecycle_environment_remove('id' => 1, 'environment_id' => 2)
 
-          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --environment-id 2))
+          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --lifecycle-environment-id 2))
         end
 
         it 'resolves environment ID from name' do
           expect_lifecycle_environment_search('3', 'env2', 2)
           expect_lifecycle_environment_remove('id' => 1, 'environment_id' => 2)
 
-          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --environment env2
+          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --lifecycle-environment env2
                      --organization-id 3))
         end
 
@@ -31,10 +32,11 @@ module HammerCLIKatello
           expect_lifecycle_environment_search(3, 'env2', 2)
           expect_lifecycle_environment_remove('id' => 1, 'environment_id' => 2)
 
-          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --environment env2
+          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --lifecycle-environment env2
                      --organization org3))
         end
       end
     end
   end
 end
+# rubocop:enable LineLength

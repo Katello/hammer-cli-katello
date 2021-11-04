@@ -3,7 +3,6 @@ require_relative 'capsule_content_helpers'
 require_relative '../../lifecycle_environment/lifecycle_environment_helpers'
 require_relative '../../organization/organization_helpers'
 require 'hammer_cli_katello/capsule'
-
 module HammerCLIKatello
   module Capsule
     class Content

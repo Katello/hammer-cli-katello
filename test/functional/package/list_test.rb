@@ -72,23 +72,15 @@ module HammerCLIKatello
     describe 'environment options' do
       it 'may be specified environment name' do
         org_id = 2
-        env_name = "dev"
+        env_id = 3
         expected_id = 6
-        expect_lifecycle_environment_search(org_id, env_name, expected_id)
+        expect_lifecycle_environment_search(org_id, env_id, expected_id)
 
         api_expects(:packages, :index).with_params("organization_id" => org_id,
                                                    "environment_id" => expected_id,
                                                    "page" => 1, "per_page" => 1000)
 
-        run_cmd(%W(package list --environment=#{env_name} --organization-id=#{org_id}))
-      end
-
-      it 'may be specified environment name no org fails' do
-        api_expects_no_call
-        r = run_cmd(%w(package list --environment Library))
-        expec_err = "--organization-id, --organization, --organization-title, --organization-label"
-        puts r.err
-        assert(r.err.include?(expec_err), "Invalid error message")
+        run_cmd(%W(package list --lifecycle-environment=#{env_id} --organization-id=#{org_id}))
       end
     end
 

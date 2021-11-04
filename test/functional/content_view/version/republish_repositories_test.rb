@@ -5,7 +5,7 @@ module HammerCLIKatello
     include ForemanTaskHelpers
     include OrganizationHelpers
 
-    it 'allows republishing repositories on  a content view version' do
+    it 'allows republishing repositories on a content view version' do
       expect_organization_search('org1', 1)
 
       ex = api_expects(:content_views, :index) do |p|
@@ -26,7 +26,7 @@ module HammerCLIKatello
       expect_foreman_task('3')
 
       result = run_cmd(%w(content-view version republish-repositories --organization org1
-                          --content-view cv --version 1))
+                          --content-view cv --version 1 --force true))
 
       assert_equal(result.exit_code, 0)
     end

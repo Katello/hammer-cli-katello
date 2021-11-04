@@ -31,8 +31,7 @@ module HammerCLIKatello
         if any(*content_view_options).exist?
           any(:option_content_view_version_id,
               :option_content_view_version_version,
-              :option_environment_id,
-              :option_environment_name).required
+              :option_environment_id).required
         end
       end
 

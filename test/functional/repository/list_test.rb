@@ -46,7 +46,7 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
   end
 
   it "lists the repositories belonging to a lifecycle-environment by name" do
-    params = ['--organization-id=1', '--environment=test']
+    params = ['--organization-id=1', '--lifecycle-environment=test']
 
     expect_lifecycle_environment_search(org_id, 'test', lifecycle_env_id)
 
@@ -60,7 +60,7 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
     expected_result = CommandExpectation.new("---|------|---------|--------------|----
 ID | NAME | PRODUCT | CONTENT TYPE | URL
 ---|------|---------|--------------|----
-", "Warning: Option --environment is deprecated. Use --lifecycle-environment instead\n")
+")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
