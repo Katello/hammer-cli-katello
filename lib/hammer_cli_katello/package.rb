@@ -3,7 +3,6 @@ module HammerCLIKatello
     resource :packages
 
     class ListCommand < HammerCLIKatello::ListCommand
-      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
       include LifecycleEnvironmentNameMapping
 
       output do
@@ -40,6 +39,8 @@ module HammerCLIKatello
       build_options do |o|
         o.expand.including(:products, :content_views)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand

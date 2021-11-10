@@ -6,7 +6,7 @@ require 'hammer_cli_katello/package'
 require 'hammer_cli_katello/srpm'
 
 module HammerCLIKatello
-  describe PackageCommand::ListCommand do
+  describe SrpmCommand::ListCommand do
     include OrganizationHelpers
     include RepositoryHelpers
     include ProductHelpers

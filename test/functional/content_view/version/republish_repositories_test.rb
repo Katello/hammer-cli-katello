@@ -26,7 +26,7 @@ module HammerCLIKatello
       expect_foreman_task('3')
 
       result = run_cmd(%w(content-view version republish-repositories --organization org1
-                          --content-view cv --version 1))
+                          --content-view cv --version 1 --force true))
 
       assert_equal(result.exit_code, 0)
     end
