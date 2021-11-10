@@ -24,7 +24,9 @@ module HammerCLIKatello
         api_expects(:content_view_versions, :index)
           .with_params('content_view_id' => 1, 'version' => '2.1')
           .returns(index_response([{'id' => 5}]))
-        api_expects(:packages, :index).with_params('content_view_version_id' => 5)
+        api_expects(:packages, :index)
+          .with_params('content_view_version_id' => 5)
+          .returns(index_response([{'id' => 1}, {'id' => 2}]))
 
         run_cmd(%w(package list --content-view-id 1 --content-view-version 2.1))
       end
@@ -86,7 +88,7 @@ module HammerCLIKatello
       it 'may be specified environment name no org fails' do
         api_expects_no_call
         r = run_cmd(%w(package list --environment Library))
-        expec_err = "--organization-id, --organization, --organization-title, --organization-label"
+        expec_err = "Missing options to search organization"
         puts r.err
         assert(r.err.include?(expec_err), "Invalid error message")
       end
