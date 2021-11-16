@@ -117,11 +117,6 @@ module HammerCLIKatello
                                          'hammer_cli_katello/erratum'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("ostree-branch", _("Manipulate ostree branches"),
-                                         'HammerCLIKatello::OstreeBranchCommand',
-                                         'hammer_cli_katello/ostree_branch'
-                                        )
-
   HammerCLI::MainCommand.lazy_subcommand("file", _("Manipulate files"),
                                          'HammerCLIKatello::FileCommand',
                                          'hammer_cli_katello/file'
