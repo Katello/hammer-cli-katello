@@ -110,7 +110,6 @@ module HammerCLIKatello
           field :docker_manifest_total, _("Container Image Manifests"), Fields::Field,
                                            :hide_blank => true
           field :docker_tag_total, _("Container Image Tags"), Fields::Field, :hide_blank => true
-          field :ostree_branch_total, _("OSTree Branches"), Fields::Field, :hide_blank => true
           field :file_total, _("Files"), Fields::Field, :hide_blank => true
           field :module_stream_total, _("Module Streams"), Fields::Field, :hide_blank => true
         end
@@ -159,18 +158,8 @@ module HammerCLIKatello
           data["docker_manifest_list_total"] = content_counts["docker_manifest_list"]
           data["docker_manifest_total"] = content_counts["docker_manifest"]
           data["docker_tag_total"] = content_counts["docker_tag"]
-        when "ostree"
-          setup_ostree(data)
         when "file"
           data["file_total"] = content_counts["file"]
-        end
-      end
-
-      def setup_ostree(data)
-        content_counts = data["content_counts"]
-        data["ostree_branch_total"] = content_counts["ostree_branch"]
-        if data["ostree_upstream_sync_policy"] == "custom"
-          data["_ostree_upstream_sync_depth"] = data["ostree_upstream_sync_depth"]
         end
       end
 
