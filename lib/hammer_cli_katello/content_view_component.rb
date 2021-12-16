@@ -84,16 +84,16 @@ module HammerCLIKatello
       include OrganizationOptions
       include CompositeContentViewNameResolvable
       output do
-        field :id, _("Id")
+        field :content_view_id, _("Content View Id")
         field :content_view_name, _("Name")
         field :version, _("Version")
+        field :id, _("Component Id")
         field :current_version, _("Current Version")
         field :version_id, _("Version Id")
       end
 
       def extend_data(mod)
         if mod['latest']
-          mod['content_view_name'] = mod["content_view"]["name"]
           mod['version'] = _("Latest")
           if mod['content_view_version']
             mod['current_version'] = mod['content_view_version']['version']
@@ -102,10 +102,11 @@ module HammerCLIKatello
             mod['current_version'] = _("No Published Version")
           end
         else
-          mod['content_view_name'] = mod["content_view"]["name"]
           mod['version'] = mod['content_view_version']['version']
           mod['version_id'] = mod['content_view_version']['id']
         end
+        mod['content_view_name'] = mod["content_view"]["name"]
+        mod['content_view_id'] = mod["content_view"]["id"]
         mod
       end
 
