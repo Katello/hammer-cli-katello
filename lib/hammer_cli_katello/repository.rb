@@ -389,6 +389,8 @@ module HammerCLIKatello
         o.expand.including(:products, :organizations)
       end
 
+      option "--async", :flag, _("Do not wait for the task.")
+
       option "--ostree-repository-name", "OSTREE REPOSITORY NAME",
         _("Name of OSTree repository in archive."),
         :attribute_name => :option_ostree_repository_name,
@@ -415,6 +417,7 @@ module HammerCLIKatello
           update_content_upload(upload_id, repo_id, file)
         end
         opts[:ostree_repository_name] = options["option_ostree_repository_name"]
+        opts[:filename] = filename
         results = import_uploads([
           {
             id: upload_id,
@@ -423,7 +426,7 @@ module HammerCLIKatello
             size: file.size,
             checksum: checksum
           }], opts)
-        print_results(filename, results)
+        print_results(filename, results, options["option_async"])
       ensure
         if upload_id
           content_upload_resource.call(:destroy, :repository_id => get_identifier, :id => upload_id)
@@ -468,35 +471,54 @@ module HammerCLIKatello
         params = {:id => get_identifier,
                   :uploads => uploads,
                   publish_repository: publish_repository,
-                  sync_capsule: sync_capsule
+                  sync_capsule: sync_capsule,
+                  async: true
         }
         params[:content_type] = options["option_content_type"] if options["option_content_type"]
         if options["option_ostree_repository_name"]
           params[:ostree_repository_name] = options["option_ostree_repository_name"]
         end
-        resource.call(:import_uploads, params)
+        results = if options["option_async"]
+                    resource.call(:import_uploads, params)
+                  else
+                    task_progress(resource.call(:import_uploads, params))
+                  end
+        results
       end
 
-      def print_results(name, results)
-        if results.empty? || results.dig('output', 'upload_results').empty?
-          print_message _("Successfully uploaded file '%{name}'") % {
-            :name => name
-          }
-        else
+      def task_progress(task_or_id)
+        super
+        task_id = task_or_id.is_a?(Hash) ? task_or_id['id'] : task_or_id
+        load_task(task_id)
+      end
+
+      # rubocop:disable CyclomaticComplexity
+      # rubocop:disable PerceivedComplexity
+      def print_results(name, results, async)
+        if !%w(error warning).include?(results) && !async # task successful && no async flag used
           upload_results = results.dig('output', 'upload_results') || []
-          upload_results.each do |result|
-            if result['type'] == 'docker_manifest'
-              print_message(
-                _("Successfully uploaded manifest file '%{name}' with digest '%{digest}'") % {
-                  :name => name, :digest => result['digest'] })
-            else
-              print_message _("Successfully uploaded file '%{name}'") % {
-                :name => name
-              }
+
+          if upload_results.empty?
+            print_message _("Successfully uploaded file %s" % name)
+          else
+            upload_results.each do |result|
+              if result['type'] == 'docker_manifest'
+                print_message(
+                  _("Successfully uploaded manifest file '%{name}' with digest '%{digest}'") % {
+                    :name => name, :digest => result['digest'] })
+              else
+                print_message _("Successfully uploaded file %s" % name)
+              end
             end
           end
+        elsif results&.dig('id') && async # async flag used
+          print_message _("Content is being uploaded in task #{results['id']}.")
+        else
+          print_message _("Could not upload the content.")
         end
       end
+      # rubocop:enable CyclomaticComplexity
+      # rubocop:enable PerceivedComplexity
 
       def silence_warnings
         original_verbose = $VERBOSE
