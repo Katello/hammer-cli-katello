@@ -17,10 +17,16 @@ describe 'upload repository' do
   let(:path) { "./test.rpm" }
   let(:upload_id) { "1234" }
   let(:_href) { "/pulp/api/v2/content/uploads/#{upload_id}" }
+  let(:task_id) { "2ea4f" }
   let(:upload_response) do
     {
       "upload_id" => upload_id,
-      "_href" => _href
+      "href" => _href
+    }
+  end
+  let(:import_uploads_response) do
+    {
+      "id" => task_id
     }
   end
 
@@ -36,7 +42,7 @@ describe 'upload repository' do
 
     # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
-          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
                          :id => '1234',
                          :name => 'test.rpm',
@@ -47,14 +53,16 @@ describe 'upload repository' do
                       )
     # rubocop:enable LineLength
 
-    ex2.returns("")
+    ex2.returns(import_uploads_response)
+    expect_foreman_task(task_id)
+    expect_foreman_task(task_id)
 
     ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
           .with_params('id' => upload_id, 'repository_id' => repo_id)
 
     ex3.returns("")
-
     result = run_cmd(@cmd + params)
+
     assert_equal(result.exit_code, 0)
     File.delete("test.rpm")
   end
@@ -70,7 +78,7 @@ describe 'upload repository' do
 
     # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
-          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :content_type => 'srpm',
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :content_type => 'srpm', :async => true,
                        :uploads => [{
                          :id => '1234',
                          :name => 'test.src.rpm',
@@ -79,9 +87,11 @@ describe 'upload repository' do
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
                       )
-
     # rubocop:enable LineLength
-    ex2.returns("")
+
+    ex2.returns(import_uploads_response)
+    expect_foreman_task(task_id)
+    expect_foreman_task(task_id)
 
     ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
           .with_params(:id => upload_id, :repository_id => repo_id)
@@ -105,7 +115,7 @@ describe 'upload repository' do
 
     # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
-          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
                          :id => '1234',
                          :name => 'test.src.rpm',
@@ -140,7 +150,7 @@ describe 'upload repository' do
 
     # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
-          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
                          :id => '1234',
                          :name => 'test.rpm',
@@ -150,13 +160,20 @@ describe 'upload repository' do
                        }]
                       )
     # rubocop:enable LineLength
-    ex2.returns('output' => {'upload_results' => [{'type' => 'docker_manifest',
-                                                   'digest' => 'sha256:1234'}]})
 
-    ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
+    ex2.returns(import_uploads_response)
+    expect_foreman_task(task_id)
+
+    ex3 = api_expects(:foreman_tasks, :show, 'Show task')
+    ex3.returns('id' => task_id, 'state' => 'stopped', 'progress' => 1,
+                'humanized' => {'output' => {'upload_results' => [{'type' => 'docker_manifest',
+                                                                   'digest' => 'sha256:1234'}]},
+                                'errors' => ''})
+
+    ex4 = api_expects(:content_uploads, :destroy, "Delete the upload")
           .with_params(:id => upload_id, :repository_id => repo_id)
 
-    ex3.returns("")
+    ex4.returns("")
 
     result = run_cmd(@cmd + params)
     assert_equal(result.exit_code, 0)
@@ -180,7 +197,7 @@ describe 'upload repository' do
 
     # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
-          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
                          :id => '1234',
                          :name => 'test.rpm',
@@ -191,7 +208,9 @@ describe 'upload repository' do
                       )
     # rubocop:enable LineLength
 
-    ex2.returns("")
+    ex2.returns(import_uploads_response)
+    expect_foreman_task(task_id)
+    expect_foreman_task(task_id)
 
     ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
           .with_params(:id => upload_id, :repository_id => repo_id)
@@ -212,10 +231,9 @@ describe 'upload repository' do
          .with_params(:repository_id => repo_id, :size => file.size)
 
     ex.returns(upload_response)
-
     # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
-          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
                          :id => '1234',
                          :name => 'test.rpm',
@@ -225,8 +243,9 @@ describe 'upload repository' do
                        }]
                       )
     # rubocop:enable LineLength
-
-    ex2.returns("")
+    ex2.returns(import_uploads_response)
+    expect_foreman_task(task_id)
+    expect_foreman_task(task_id)
 
     ex3 = api_expects(:content_uploads, :destroy, "Delete the upload")
           .with_params(:id => upload_id, :repository_id => repo_id)
@@ -253,7 +272,7 @@ describe 'upload repository' do
 
     # rubocop:disable LineLength
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
-         .with_params(:id => repo_id, :sync_capsule => false, :publish_repository => false,
+         .with_params(:id => repo_id, :sync_capsule => false, :publish_repository => false, :async => true,
                       :uploads => [{
                         :id => '1234',
                         :name => 'test1.rpm',
@@ -264,7 +283,9 @@ describe 'upload repository' do
                      )
     # rubocop:enable LineLength
 
-    ex.returns("")
+    ex.returns(import_uploads_response)
+    expect_foreman_task(task_id)
+    expect_foreman_task(task_id)
 
     ex = api_expects(:content_uploads, :destroy, "Delete the upload")
          .with_params(:id => upload_id, :repository_id => repo_id)
@@ -280,7 +301,7 @@ describe 'upload repository' do
 
     # rubocop:disable LineLength
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
-         .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true,
+         .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                       :uploads => [{
                         :id => '1234',
                         :name => 'test2.rpm',
@@ -291,7 +312,9 @@ describe 'upload repository' do
                      )
     # rubocop:enable LineLength
 
-    ex.returns("")
+    ex.returns(import_uploads_response)
+    expect_foreman_task(task_id)
+    expect_foreman_task(task_id)
 
     ex = api_expects(:content_uploads, :destroy, "Delete the upload")
          .with_params(:id => upload_id, :repository_id => repo_id)
