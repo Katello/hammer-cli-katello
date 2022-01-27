@@ -20,6 +20,14 @@ module HammerCLIKatello
       include ContentExportHelper
     end
 
+    class RepositoryCommand < HammerCLIKatello::SingleResourceCommand
+      desc _("Performs a full export of a repository")
+      command_name "repository"
+
+      include HammerCLIForemanTasks::Async
+      include ContentExportHelper
+    end
+
     autoload_subcommands
   end
 end

@@ -29,8 +29,9 @@ module HammerCLIKatello
       :sync_plan =>             [s_name(_("Sync plan name to search by"))],
       :task =>                  [s_name(_("Task name to search by"))],
       :content_view_version => [s("version", _("Content view version number"))],
-      :content_export       => [],
-      :content_import       => []
+      :content_export => [],
+      :content_export_incremental => [],
+      :content_import => []
     }.freeze
 
     DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))].freeze
