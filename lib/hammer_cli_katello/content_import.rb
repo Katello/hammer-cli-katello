@@ -58,6 +58,15 @@ module HammerCLIKatello
       include ContentImportCommon
     end
 
+    class RepositoryCommand < HammerCLIKatello::SingleResourceCommand
+      desc _("Imports a repository")
+      action :repository
+      command_name "repository"
+
+      include HammerCLIForemanTasks::Async
+      include ContentImportCommon
+    end
+
     class ListCommand < HammerCLIKatello::ListCommand
       desc "View content view import histories"
       output do

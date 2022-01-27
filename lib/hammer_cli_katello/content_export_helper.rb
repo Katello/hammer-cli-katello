@@ -1,4 +1,5 @@
 require 'hammer_cli_katello/repository'
+
 # rubocop:disable ModuleLength
 module HammerCLIKatello
   module ContentExportHelper
@@ -40,7 +41,8 @@ module HammerCLIKatello
     end
 
     def fetch_export_history(export_history_id)
-      index(:content_exports, :id => export_history_id).first if export_history_id
+      return unless export_history_id
+      index(:content_exports, :id => export_history_id).first
     end
 
     def fetch_export_history_from_task(task)
@@ -48,7 +50,6 @@ module HammerCLIKatello
       if %w(error warning).include?(task['result'])
         raise _("Can not fetch export history from an unfinished task")
       end
-
       export_history_id = task.dig('output', 'export_history_id')
       fetch_export_history(export_history_id)
     end
@@ -72,7 +73,16 @@ module HammerCLIKatello
       self.class.command_name.first.to_sym == :version
     end
 
+    def repository_command?
+      self.class.command_name.first.to_sym == :repository
+    end
+
     def fetch_repositories
+      if repository_command?
+        resp = show(:repositories, id: resolver.repository_id(options))
+        return resp["download_policy"] == "immediate" ? [] : [resp]
+      end
+
       repo_options = {
         library: true,
         content_type: 'yum',
@@ -95,6 +105,10 @@ module HammerCLIKatello
             " Update the download policy and sync affected repositories."\
             " Once synced republish the content view"\
             " and export the generated version.")
+        elsif repository_command?
+          output.print_message _("NOTE: Unable to fully export this repository because"\
+            " it does not have the 'immediate' download policy."\
+            " Update the download policy, sync the repository and export.")
         else
           output.print_message _("NOTE: Unable to fully export this organization's library because"\
             " it contains repositories without the 'immediate' download policy."\
@@ -107,7 +121,7 @@ module HammerCLIKatello
           "--download-policy='immediate'"
         output.print_message ""
         print_record(::HammerCLIKatello::Repository::ListCommand.output_definition, repos)
-        exit(HammerCLI::EX_SOFTWARE) if option_fail_on_missing_content?
+        exit(HammerCLI::EX_SOFTWARE) if repository_command? || option_fail_on_missing_content?
       end
     end
 
@@ -116,6 +130,44 @@ module HammerCLIKatello
         setup_version(base)
       elsif base.command_name.first.to_sym == :library
         setup_library(base)
+      elsif base.command_name.first.to_sym == :repository
+        setup_repository(base)
+      end
+    end
+
+    def self.setup_repository(base)
+      base.action(:repository)
+      base.success_message _("Repository is being exported in task %{id}.")
+      base.failure_message _("Could not export the repository")
+
+      base.option "--name", "NAME", _("Filter repositories by name."),
+                 :attribute_name => :option_name,
+                 :required => false
+
+      base.build_options do |o|
+        o.expand(:all).including(:products, :organizations)
+      end
+
+      base.validate_options do
+        any(:option_id, :option_name).required
+        unless option(:option_id).exist?
+          any(
+            :option_product_id,
+            :option_product_name
+          ).required
+          unless option(:option_product_id).exist?
+            any(:option_organization_id, :option_organization_name, \
+                                :option_organization_label).required
+          end
+        end
+      end
+
+      base.class_eval do
+        def request_params
+          super.tap do |opts|
+            opts["id"] = resolver.repository_id(options)
+          end
+        end
       end
     end
 
