@@ -86,7 +86,7 @@ module HammerCLIKatello
         end
 
         label _("GPG Key") do
-          from :gpg_key do
+          from :content_credential do
             field :id, _("Id"), Fields::Field, :hide_blank => true
             field :name, _("Name"), Fields::Field, :hide_blank => true
           end

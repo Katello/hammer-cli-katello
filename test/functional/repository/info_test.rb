@@ -42,6 +42,10 @@ describe "get repository info" do
         'package_group' => 0,
         'erratum' => 1,
         'module_stream' => 0
+      },
+      'content_credential' => {
+        'id' => 1,
+        'name' => 'pizza'
       }
     )
     result = run_cmd(@cmd + params)
@@ -62,6 +66,8 @@ describe "get repository info" do
                        ['Id', '79'],
                        ['Name', 'test'],
                        ['GPG Key', ''],
+                       ['Id', '1'],
+                       ['Name', 'pizza'],
                        ['Sync', ''],
                        ['Status', 'Not Synced'],
                        ['Last Sync Date', '3 minutes'],
