@@ -56,7 +56,7 @@ module HammerCLIKatello
         field :_redhat_repo, _("Red Hat Repository")
         field :content_type, _("Content Type")
         field :checksum_type, _("Checksum Type"), Fields::Field, :hide_blank => true
-        field :_mirror_on_sync, _("Mirror on Sync")
+        field :_mirroring_policy, _("Mirroring Policy"), Fields::Field, :hide_blank => true
         field :url, _("Url")
         field :_publish_via_http, _("Publish Via HTTP")
         field :full_path, _("Published At")
@@ -126,6 +126,7 @@ module HammerCLIKatello
 
         setup_sync_state(data)
         setup_booleans(data)
+        setup_mirroring_policy(data)
         setup_content_counts(data) if data["content_counts"]
         data
       end
@@ -133,7 +134,16 @@ module HammerCLIKatello
       def setup_booleans(data)
         data["_redhat_repo"] = data.dig("product", "redhat") ? _("yes") : _("no")
         data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
-        data["_mirror_on_sync"] = data["mirror_on_sync"] ? _("yes") : _("no")
+      end
+
+      def setup_mirroring_policy(data)
+        policies = {
+          'additive' => _("Additive"),
+          'mirror_content_only' => _("Content Only"),
+          'mirror_complete' => _("Complete Mirroring")
+        }
+        mirroring_policy = data["mirroring_policy"]
+        data["_mirroring_policy"] = policies[mirroring_policy]
       end
 
       def setup_sync_state(data)
