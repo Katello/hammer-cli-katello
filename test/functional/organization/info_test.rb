@@ -7,6 +7,10 @@ describe HammerCLIKatello::Organization::InfoCommand do
     @cmd = %w(organization info)
   end
 
+  let(:cdn_configuration) do
+    { "type" => 'network_sync' }
+  end
+
   it "includes simple content access attributes" do
     org_id = 2
     params = ["--id=#{org_id}"]
@@ -14,7 +18,8 @@ describe HammerCLIKatello::Organization::InfoCommand do
 
     api_expects(:organizations, :show)
       .with_params('id' => org_id.to_s)
-      .returns("simple_content_access" => true, "id" => org_id)
+      .returns("simple_content_access" => true, "id" => org_id,
+               "cdn_configuration" => cdn_configuration)
     result = run_cmd(@cmd + params)
     expected = success_result(FieldMatcher.new('Simple Content Access', 'Enabled'))
     assert_cmd(expected, result)
@@ -26,7 +31,8 @@ describe HammerCLIKatello::Organization::InfoCommand do
     api_expects(:organizations, :index).returns(index_response([{'id' => org_id}]))
 
     cdn_configuration = {
-      "url" => "https://cdn.redhat.com"
+      "url" => "https://cdn.redhat.com",
+      "type" => "redhat_cdn"
     }
 
     api_expects(:organizations, :show)
