@@ -16,7 +16,7 @@ describe HammerCLIKatello::Organization::ConfigureCdnCommand do
     username = "foo"
     url = "https://goo.com"
     upstream_label = "GreatOrg"
-    type = 'upstream_server'
+    type = 'network_sync'
     params = ["--label=#{org_label}",
               "--url=#{url}",
               "--username=#{username}",
