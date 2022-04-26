@@ -24,6 +24,7 @@ module HammerCLIKatello
         field :service_levels, _("Service Levels"), Fields::List
         from :cdn_configuration do
           label "CDN configuration", hide_blank: true do
+            field :type_label, _("Type"), Fields::Field
             field :url, _("URL"), Fields::Field, hide_blank: true
             field :upstream_organization_label, _("Upstream Organization"),
                                                Fields::Field, hide_blank: true
@@ -39,7 +40,17 @@ module HammerCLIKatello
                                               else
                                                 _("Disabled")
                                               end
+        setup_cdn_type(data)
         data
+      end
+
+      def setup_cdn_type(data)
+        types = {
+          'export_sync' => _("Export Sync"),
+          'network_sync' => _("Network Sync"),
+          'redhat_cdn' => _("Red Hat CDN")
+        }
+        data["cdn_configuration"].merge!("type_label" => types[data["cdn_configuration"]["type"]])
       end
 
       build_options
