@@ -567,6 +567,33 @@ module HammerCLIKatello
       end
     end
 
+    class RepublishCommand < HammerCLIKatello::SingleResourceCommand
+      extend RepositoryScopedToProduct
+      include HammerCLIForemanTasks::Async
+      include OrganizationOptions
+
+      validate_repo_name_requires_product_options
+      action :republish
+      command_name "republish"
+      desc _("Forces a republish of the specified repository.")
+
+      success_message _("Repository republished.")
+      failure_message _("Could not republish the repository.")
+
+      validate_options :before, 'IdResolution' do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
+      end
+
+      build_options do |o|
+        o.expand.including(:products)
+      end
+    end
+
     class ReclaimSpaceCommand < HammerCLIKatello::SingleResourceCommand
       extend RepositoryScopedToProduct
       include HammerCLIForemanTasks::Async
