@@ -143,6 +143,8 @@ module HammerCLIKatello
       success_message _("Host collection updated.")
       failure_message _("Could not update the the host collection")
 
+      option "--unlimited-hosts", :flag, "Set hosts max to unlimited"
+
       build_options { |o| o.expand(:all).including(:organizations) }
     end
 
