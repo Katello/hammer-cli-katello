@@ -43,6 +43,11 @@ module HammerCLIKatello
                                           'hammer_cli_katello/organization'
                                          )
 
+  HammerCLI::MainCommand.lazy_subcommand!("alternate-content-sources", _("Manipulate alternate content sources"), # rubocop:disable LineLength
+                                         'HammerCLIKatello::AcsCommand',
+                                         'hammer_cli_katello/acs'
+                                         )
+
   HammerCLI::MainCommand.lazy_subcommand("content-credentials",
                                          _("Manipulate content credentials on the server"),
                                          'HammerCLIKatello::ContentCredentialCommand',
