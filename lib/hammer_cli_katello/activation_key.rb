@@ -54,10 +54,10 @@ module HammerCLIKatello
       output do
         field :name, _("Name")
         field :id, _("Id")
-        field :description, _("Description")
+        field :description, _("Description"), Fields::Field, :hide_blank => true
         field :format_limit, _("Host Limit")
         field :auto_attach, _("Auto Attach")
-        field :release_version, _("Release Version")
+        field :release_version, _("Release Version"), Fields::Field, :hide_blank => true
 
         from :environment do
           field :name, _("Lifecycle Environment")
@@ -69,6 +69,12 @@ module HammerCLIKatello
         collection :host_collections, _("Host Collections") do
           field :id, _("Id")
           field :name, _("Name")
+        end
+
+        collection :content_overrides, _("Content Overrides") do
+          field :content_label, _("Content Label")
+          field :name, _("Name")
+          field :value, _("Value")
         end
 
         label _("System Purpose") do
