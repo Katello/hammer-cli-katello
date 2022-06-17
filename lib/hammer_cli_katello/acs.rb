@@ -34,14 +34,17 @@ module HammerCLIKatello
           field nil, _('')
         end
 
+        collection :products, _('Products') do
+          field :id, _('Id')
+          field :organization_id, _('Organization ID')
+          field :name, _('Name')
+          field :label, _('Label')
+        end
+
         collection :smart_proxies, _('Smart proxies') do
           field :id, _('Id')
           field :name, _('Name')
           field :url, _('URL')
-          field :created_at, _('Created at')
-          field :updated_at, _('Updated at')
-          field :expired_logs, _('Expired logs')
-          field :puppet_path, _('Puppet path'), Fields::Field, :hide_blank => true
           field :download_policy, _('Download policy')
         end
       end

@@ -7,7 +7,7 @@ describe 'delete an acs' do
     api_expects(:alternate_content_sources, :destroy, 'delete acs').
       with_params('id' => id)
 
-    command = %W(alternate-content-sources delete --id #{id})
+    command = %W(alternate-content-source delete --id #{id})
     assert_equal(0, run_cmd(command).exit_code)
   end
 end

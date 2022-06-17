@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 describe 'listing acs' do
   before do
-    @cmd = %w(alternate-content-sources update)
+    @cmd = %w(alternate-content-source update)
   end
 
   let(:id) { 1 }
