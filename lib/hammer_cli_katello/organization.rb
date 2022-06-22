@@ -28,6 +28,10 @@ module HammerCLIKatello
             field :url, _("URL"), Fields::Field, hide_blank: true
             field :upstream_organization_label, _("Upstream Organization"),
                                                Fields::Field, hide_blank: true
+            field :upstream_lifecycle_environment_label,
+                  _("Upstream Lifecycle Environment"), Fields::Field, hide_blank: true
+            field :upstream_content_view_label, _("Upstream Content View"),
+                  Fields::Field, hide_blank: true
             field :username, _("Username"), Fields::Field, hide_blank: true
             field :ssl_ca_credential_id, _("SSL CA Credential ID"), Fields::Field, hide_blank: true
           end
