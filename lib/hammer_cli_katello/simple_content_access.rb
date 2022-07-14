@@ -13,6 +13,16 @@ module HammerCLIKatello
       end
     end
 
+    class StatusCommand < HammerCLIKatello::ListCommand
+      resource :simple_content_access, :status
+      command_name "status"
+      output do
+        field :simple_content_access, _('Simple Content Access'), Fields::Boolean
+      end
+
+      build_options
+    end
+
     class EnableCommand < HammerCLIKatello::SingleResourceCommand
       include EligibleCheck
       include HammerCLIForemanTasks::Async
