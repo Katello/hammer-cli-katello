@@ -27,9 +27,9 @@ describe 'content-export complete version' do
 
   let(:export_history) do
     {
-      "id": 1000,
-      "path": "/tmp",
-      "metadata": {}
+      "id" => 1000,
+      "path" =>  "/tmp",
+      "metadata" => {}
     }
   end
 
@@ -57,6 +57,24 @@ describe 'content-export complete version' do
     assert_equal(HammerCLI::EX_OK, result.exit_code)
   end
 
+  it "performs export with required options and async for syncable format" do
+    params = [
+      "--id=#{content_view_version_id}",
+      '--format=syncable',
+      '--async'
+    ]
+    expects_repositories_in_version(content_view_version_id)
+    ex = api_expects(:content_exports, :version)
+    ex.returns(response)
+
+    result = run_cmd(@cmd + params)
+
+    assert_equal("Content view version is being exported in task #{task_id}.\n"\
+      + "Once the task completes the listing files may be generated with the command:"\
+      + "\n hammer content-export generate-listing --task-id #{task_id}\n", result.out)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
+
   it "performs export with required options" do
     params = [
       "--id=#{content_view_version_id}",
@@ -75,6 +93,33 @@ describe 'content-export complete version' do
 
     result = run_cmd(@cmd + params)
     assert_match(/Generated .*metadata.*json/, result.out)
+    assert_equal(HammerCLI::EX_OK, result.exit_code)
+  end
+
+  it "performs export with format" do
+    params = [
+      "--id=#{content_view_version_id}",
+      '--format=syncable'
+    ]
+    expects_repositories_in_version(content_view_version_id)
+    ex = api_expects(:content_exports, :version)
+    ex.returns(response)
+
+    expect_foreman_task(task_id).at_least_once
+    path = "/foo/bar"
+    syncable_export_history = {
+      "id" => 1000,
+      "path" => path,
+      "metadata" => {"format" => "syncable"}
+    }
+    HammerCLIKatello::ContentExportComplete::VersionCommand.
+      any_instance.
+      expects(:fetch_export_history).
+      returns(syncable_export_history)
+
+    result = run_cmd(@cmd + params)
+    assert_match(/Generated/, result.out)
+    assert_match(path, result.out)
     assert_equal(HammerCLI::EX_OK, result.exit_code)
   end
 
