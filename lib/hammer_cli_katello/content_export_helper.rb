@@ -1,23 +1,23 @@
 require 'hammer_cli_katello/repository'
-
+require 'find'
 # rubocop:disable ModuleLength
 module HammerCLIKatello
   module ContentExportHelper
     include ApipieHelper
-
     def execute
       warn_unexportable_repositories
       response = super
       if option_async?
-        output.print_message _("Once the task completes the export metadata must be generated "\
-          + "with the command:")
-        output.print_message(" hammer content-export generate-metadata --task-id #{@task['id']}")
+        emit_async_info
         HammerCLI::EX_OK
       elsif response != HammerCLI::EX_OK
         response
       else
         export_history = fetch_export_history_from_task(reload_task(@task))
-        if export_history
+        if syncable?
+          make_listing_files(export_history)
+          HammerCLI::EX_OK
+        elsif export_history
           generate_metadata_json(export_history)
           HammerCLI::EX_OK
         else
@@ -25,6 +25,22 @@ module HammerCLIKatello
           HammerCLI::EX_CANTCREAT
         end
       end
+    end
+
+    def emit_async_info
+      if syncable?
+        output.print_message _("Once the task completes the listing files may be generated "\
+            + "with the command:")
+        output.print_message(" hammer content-export generate-listing --task-id #{@task['id']}")
+      else
+        output.print_message _("Once the task completes the export metadata must be generated "\
+            + "with the command:")
+        output.print_message(" hammer content-export generate-metadata --task-id #{@task['id']}")
+      end
+    end
+
+    def syncable?
+      options.key?("option_format") && option_format == 'syncable'
     end
 
     def send_request
@@ -52,6 +68,43 @@ module HammerCLIKatello
       end
       export_history_id = task.dig('output', 'export_history_id')
       fetch_export_history(export_history_id)
+    end
+
+    def make_listing_files(export_history)
+      unless export_history["metadata"]["format"] == "syncable"
+        raise _("Cannot generate listing files for this export since "\
+          + "it is not syncable. It was not generated with --format=syncable.")
+      end
+
+      raise _("Export History does not have the path specified."\
+        + " The task may have errored out.") unless export_history["path"]
+
+      output.print_message _("Generated #{export_history['path']}")
+
+      begin
+        # export history path may look like
+        # "/var/lib/pulp/exports/export-12803/apple/3.0//2022-06-30T17-23-06-00-00"
+        # Generate listing files for all sub directories of
+        # /var/lib/pulp/exports/export-12803/apple/3.0/$date/$org/Library/
+        ignorables = Dir.glob("#{export_history['path']}/content/**/repodata").map do |path|
+          File.dirname(path)
+        end
+
+        paths = Find.find("#{export_history['path']}/content").select do |path|
+          File.directory?(path) &&
+            ignorables.none? { |ignorable| path.start_with?(ignorable) }
+        end
+
+        paths.each do |dir|
+          directories = Dir.chdir(dir) { Dir['*'] }
+          File.write("#{dir}/listing", directories.join("\n"))
+        end
+      rescue SystemCallError
+        output.print_message _("Unable to access/write listing files"\
+                               + " to '#{export_history['path']}'." \
+                               + " To generate listing files run the command below as a root user ")
+        output.print_message(" hammer content-export generate-listing --id #{export_history['id']}")
+      end
     end
 
     def generate_metadata_json(export_history)
