@@ -70,7 +70,7 @@ module HammerCLIKatello
       fetch_export_history(export_history_id)
     end
 
-    def make_listing_files(export_history)
+    def check_export_history_syncable!(export_history)
       unless export_history["metadata"]["format"] == "syncable"
         raise _("Cannot generate listing files for this export since "\
           + "it is not syncable. It was not generated with --format=syncable.")
@@ -78,8 +78,13 @@ module HammerCLIKatello
 
       raise _("Export History does not have the path specified."\
         + " The task may have errored out.") unless export_history["path"]
+    end
 
+    def make_listing_files(export_history)
+      check_export_history_syncable!(export_history)
       output.print_message _("Generated #{export_history['path']}")
+
+      return unless Dir.exist?("#{export_history['path']}/content")
 
       begin
         # export history path may look like
