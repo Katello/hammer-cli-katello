@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 describe 'create content-credentials' do
   before do
-    @cmd = %w(alternate-content-sources create)
+    @cmd = %w(alternate-content-source create)
   end
 
   let(:name) { 'pizza' }

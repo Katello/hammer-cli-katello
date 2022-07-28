@@ -43,7 +43,7 @@ module HammerCLIKatello
                                           'hammer_cli_katello/organization'
                                          )
 
-  HammerCLI::MainCommand.lazy_subcommand!("alternate-content-sources", _("Manipulate alternate content sources"), # rubocop:disable LineLength
+  HammerCLI::MainCommand.lazy_subcommand!("alternate-content-source", _("Manipulate alternate content sources"), # rubocop:disable LineLength
                                          'HammerCLIKatello::AcsCommand',
                                          'hammer_cli_katello/acs'
                                          )
