@@ -102,6 +102,38 @@ module HammerCLIKatello
       setup
     end
 
+    class EnabledRepositoriesCommand < HammerCLIKatello::ListCommand
+      resource :host_subscriptions, :enabled_repositories
+      command_name 'enabled-repositories'
+
+      output do
+        field :id, _('ID')
+        field :name, _('Name')
+        field :label, _('Label')
+        field :content_type, _('Content type')
+        field :checksum, _("Checksum")
+
+        from :content_view do
+          field :id, _('Content View id')
+          field :name, _("Content View name")
+        end
+
+        from :content_view_version do
+          field :name, _("Content View version")
+        end
+
+        from :kt_environment do
+          field :name, _("Environment name")
+        end
+
+        from :product do
+          field :name, _("Product name")
+        end
+      end
+
+      build_options
+    end
+
     class ContentOverrideCommand < ::HammerCLIKatello::ContentOverrideBase::ContentOverrideCommand
       resource :host_subscriptions, :content_override
       setup
