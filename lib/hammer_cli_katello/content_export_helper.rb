@@ -138,7 +138,7 @@ module HammerCLIKatello
     def fetch_repositories
       if repository_command?
         resp = show(:repositories, id: resolver.repository_id(options))
-        return resp["download_policy"] == "immediate" ? [] : [resp]
+        return resp["content_type"] != "yum" || resp["download_policy"] == "immediate" ? [] : [resp]
       end
 
       repo_options = {
