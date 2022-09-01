@@ -65,4 +65,42 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
   end
+
+  it "lists the repositories with a certain repository type" do
+    params = ['--organization-id=1', '--content-type=yum']
+
+    ex = api_expects(:repositories, :index, 'yum repositories list') do |par|
+      par['organization_id'] == org_id && par['page'] == 1 &&
+        par['per_page'] == 1000
+    end
+
+    ex.returns(empty_response)
+
+    expected_result = CommandExpectation.new("---|------|---------|--------------|----
+ID | NAME | PRODUCT | CONTENT TYPE | URL
+---|------|---------|--------------|----
+")
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it "lists the repositories with a certain content unit type" do
+    params = ['--organization-id=1', '--with-content=srpm']
+
+    ex = api_expects(:repositories, :index, 'yum repositories list') do |par|
+      par['organization_id'] == org_id && par['page'] == 1 &&
+        par['per_page'] == 1000
+    end
+
+    ex.returns(empty_response)
+
+    expected_result = CommandExpectation.new("---|------|---------|--------------|----
+ID | NAME | PRODUCT | CONTENT TYPE | URL
+---|------|---------|--------------|----
+")
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(expected_result, result)
+  end
 end

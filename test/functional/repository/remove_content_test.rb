@@ -31,7 +31,8 @@ module HammerCLIKatello
           p['id'] == 1 && p['ids'] == %w(20 21 22)
         end
 
-        run_cmd(%w(repository remove-content --name repo1 --product-id 3 --ids 20,21,22))
+        run_cmd(%w(repository remove-content --name repo1 --product-id 3 --ids 20,21,22
+                   --content-type rpm))
       end
     end
 
