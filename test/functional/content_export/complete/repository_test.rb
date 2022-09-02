@@ -178,7 +178,9 @@ describe 'content-export complete repository' do
 
   it 'Errors out on lazy repositories' do
     params = ["--id=#{repository_id}"]
-    expects_repository(repository_id, "download_policy" => "on_demand", "id" => repository_id)
+    expects_repository(repository_id, "content_type" => 'yum',
+                                      "download_policy" => "on_demand",
+                                      "id" => repository_id)
 
     ex = api_expects(:content_exports, :repository)
     ex.returns(response)
