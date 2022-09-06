@@ -34,6 +34,18 @@ module HammerCLIKatello
         field :url, _("Url")
       end
 
+      content_type_msg = _("Limit the repository type to return." \
+        " View available types with \"hammer repository types\"")
+      option "--content-type", "CONTENT TYPE",
+             content_type_msg,
+             :attribute_name => :option_content_type
+
+      with_content_msg = _("Limit the repository type to return." \
+        " View available types with \"hammer repository types\"")
+      option "--with-content", "WITH CONTENT",
+             with_content_msg,
+             :attribute_name => :option_with_content
+
       build_options
 
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
@@ -214,6 +226,12 @@ module HammerCLIKatello
              :attribute_name => :option_unprotected,
              :format => HammerCLI::Options::Normalizers::Bool.new
 
+      content_type_msg = _("Type of repository to create." \
+        " View available types with \"hammer repository types\"")
+      option "--content-type", "CONTENT TYPE",
+             content_type_msg,
+             :attribute_name => :option_content_type
+
       build_options :without => [:unprotected]
     end
 
@@ -321,6 +339,22 @@ module HammerCLIKatello
       end
     end
 
+    class RepositoryTypesCommand < HammerCLIKatello::InfoCommand
+      resource :repositories, :repository_types
+      command_name "types"
+
+      output do
+        field :name, _("Name")
+        collection :content_types, _('Content types') do
+          field :label, _('Type')
+          field :generic, _('Generic?')
+          field :removable, _('Removable?')
+          field :uploadable, _('Uploadable?')
+          field :indexed, _('Indexed?')
+        end
+      end
+    end
+
     # rubocop:disable ClassLength
     class UploadContentCommand < HammerCLIKatello::InfoCommand
       extend RepositoryScopedToProduct
@@ -330,6 +364,12 @@ module HammerCLIKatello
       resource :repositories, :upload_content
       command_name "upload-content"
       CONTENT_CHUNK_SIZE = 2_500_000 # bytes to make sure it's lower than django's default 2621440
+
+      content_type_msg = _("The type of content unit to upload (srpm, file, etc.)." \
+        " View uploadable types with \"hammer repository types\"")
+      option "--content-type", "CONTENT TYPE",
+             content_type_msg,
+             :attribute_name => :option_content_type
 
       class BinaryPath < HammerCLI::Options::Normalizers::File
         def format(path)
@@ -561,6 +601,12 @@ module HammerCLIKatello
           any(*organization_options).required
         end
       end
+
+      content_type_msg = _("The type of content unit to remove (srpm, docker_manifest, etc.)." \
+        " View removable types with \"hammer repository types\"")
+      option "--content-type", "CONTENT TYPE",
+             content_type_msg,
+             :attribute_name => :option_content_type
 
       build_options do |o|
         o.expand.including(:products)
