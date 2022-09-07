@@ -78,7 +78,7 @@ module HammerCLIKatello
         end
 
         make_listing_files(export_history)
-
+        output.print_message _("Generated #{export_history['path']}")
         HammerCLI::EX_OK
       end
     end
