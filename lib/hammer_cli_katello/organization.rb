@@ -52,7 +52,8 @@ module HammerCLIKatello
         types = {
           'export_sync' => _("Export Sync"),
           'network_sync' => _("Network Sync"),
-          'redhat_cdn' => _("Red Hat CDN")
+          'redhat_cdn' => _("Red Hat CDN"),
+          'custom_cdn' => _("Custom CDN")
         }
         data["cdn_configuration"].merge!("type_label" => types[data["cdn_configuration"]["type"]])
       end
