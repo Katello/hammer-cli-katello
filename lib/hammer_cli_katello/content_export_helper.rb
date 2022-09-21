@@ -14,10 +14,9 @@ module HammerCLIKatello
         response
       else
         export_history = fetch_export_history_from_task(reload_task(@task))
-        if syncable?
-          make_listing_files(export_history)
-          HammerCLI::EX_OK
-        elsif export_history
+
+        if export_history
+          make_listing_files(export_history) if syncable?
           generate_metadata_json(export_history)
           HammerCLI::EX_OK
         else
@@ -82,8 +81,6 @@ module HammerCLIKatello
 
     def make_listing_files(export_history)
       check_export_history_syncable!(export_history)
-      output.print_message _("Generated #{export_history['path']}")
-
       return unless Dir.exist?("#{export_history['path']}/content")
 
       begin
