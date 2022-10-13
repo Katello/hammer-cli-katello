@@ -1,3 +1,4 @@
+require 'open-uri'
 module HammerCLIKatello
   class ContentImport < HammerCLIKatello::Command
     desc "Import content from a content archive"
@@ -18,10 +19,11 @@ module HammerCLIKatello
 
         base.validate_options do
           option(:option_path).required
-
           metadata_file = option(:option_metadata_file).value ||
                           File.join(option(:option_path).value, "metadata.json")
-          unless File.exist?(metadata_file)
+          begin
+            URI.open(metadata_file)
+          rescue Errno::ENOENT
             msg = _("Unable to find '#{metadata_file}'. "\
                      "If the metadata.json file is at a different location "\
                      "provide it to the --metadata-file option ")
@@ -32,10 +34,18 @@ module HammerCLIKatello
         base.failure_message _("Could not import the archive.")
       end
 
+      def fetch_metadata_from_url(metadata_file:, url:)
+        if metadata_file.nil?
+          metadata_file = "/tmp/metadata.json"
+          IO.copy_stream(URI.open(url), metadata_file)
+        end
+        metadata_file
+      end
+
       def request_params
         super.tap do |opts|
           metadata_file = option_metadata_file || File.join(option_path, "metadata.json")
-          opts["metadata"] = JSON.parse(File.read(metadata_file))
+          opts["metadata"] = JSON.parse(URI.open(metadata_file).read)
         end
       end
     end
