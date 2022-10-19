@@ -1,10 +1,8 @@
 if RUBY_VERSION > "2.2"
   # Coverage - Keep these two lines at the top of this file
   require 'simplecov'
-  require 'coveralls'
   require 'simplecov-lcov'
   SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter,
-                          Coveralls::SimpleCov::Formatter,
                           SimpleCov::Formatter::LcovFormatter]
   SimpleCov.start do
     minimum_coverage 70
