@@ -2,12 +2,19 @@ if RUBY_VERSION > "2.2"
   # Coverage - Keep these two lines at the top of this file
   require 'simplecov'
   require 'coveralls'
-  SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
+  require 'simplecov-lcov'
+  SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter,
+                          Coveralls::SimpleCov::Formatter,
+                          SimpleCov::Formatter::LcovFormatter]
   SimpleCov.start do
     minimum_coverage 70
     maximum_coverage_drop 0.1
     track_files "lib/**/*.rb"
     add_filter '/test/'
+  end
+  SimpleCov::Formatter::LcovFormatter.config do |c|
+    c.report_with_single_file = true
+    c.single_report_path = 'coverage/lcov.info'
   end
 end
 
