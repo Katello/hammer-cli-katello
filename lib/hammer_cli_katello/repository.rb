@@ -353,6 +353,8 @@ module HammerCLIKatello
           field :indexed, _('Indexed?')
         end
       end
+
+      build_options
     end
 
     # rubocop:disable ClassLength
