@@ -1,4 +1,5 @@
 require_relative '../test_helper'
+require_relative './organization_helpers'
 require 'hammer_cli_katello/organization'
 require 'hammer_cli_katello/associating_commands'
 
