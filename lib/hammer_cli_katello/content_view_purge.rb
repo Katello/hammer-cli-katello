@@ -84,7 +84,18 @@ module HammerCLIKatello
     private def old_unused_versions
       return @old_unused_versions if @old_unused_versions
 
-      all_versions = index(:content_view_versions, :content_view_id => options['option_id'])
+      all_versions = []
+      per_page = 100
+      page = 1
+
+      loop do
+        versions = index(:content_view_versions, :content_view_id => options['option_id'],
+                                                 :per_page => per_page, :page => page)
+        all_versions << versions
+        break if versions.count < per_page
+        page += 1
+      end
+      all_versions.flatten!
       all_versions.sort_by! { |v| [v['major'], v['minor']] }
       @old_unused_versions = all_versions.select do |v|
         v["environments"].empty? &&
