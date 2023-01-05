@@ -16,7 +16,10 @@ module HammerCLIKatello
       success_message _('Alternate Content Source created.')
       failure_message _('Could not create the Alternate Content Source.')
 
-      build_options
+      build_options do |o|
+        o.expand(:all).except(:products)
+        o.without(:product_name)
+      end
     end
 
     class InfoCommand < HammerCLIKatello::InfoCommand
