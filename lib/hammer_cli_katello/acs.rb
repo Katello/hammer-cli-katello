@@ -32,6 +32,21 @@ module HammerCLIKatello
         field :content_type, _('Content type')
         field :alternate_content_source_type, _('Alternate content source type')
         field :upstream_username, _('Upstream username'), Fields::Field, :hide_blank => true
+        field :verify_ssl, _('Verify SSL'), Fields::Field, :hide_blank => true
+        collection :ssl_ca_cert, _('SSL CA Cert') do
+          field :id, _('Id'), Fields::Field, :hide_blank => true
+          field :name, _('Name'), Fields::Field, :hide_blank => true
+        end
+
+        collection :ssl_client_cert, _('SSL Client Cert') do
+          field :id, _('Id'), Fields::Field, :hide_blank => true
+          field :name, _('Name'), Fields::Field, :hide_blank => true
+        end
+
+        collection :ssl_client_key, _('SSL Client Key') do
+          field :id, _('Id'), Fields::Field, :hide_blank => true
+          field :name, _('Name'), Fields::Field, :hide_blank => true
+        end
 
         collection :subpaths, _('Subpaths') do
           field nil, _('')

@@ -16,6 +16,18 @@ describe 'get acs info' do
       'base_url' => 'https://proxy.example.com',
       'content_type' => 'yum',
       'alternate_content_source_type' => 'custom',
+      'ssl_ca_cert' => {
+        'id' => 1,
+        'name' => 'CA'
+      },
+      "ssl_client_cert" => {
+        "id" => 3,
+        "name" => "cert"
+      },
+      "ssl_client_key" => {
+        "id" => 2,
+        "name" => "KEY"
+      },
       'subpaths' => [
         'test/repo1'
       ],
@@ -34,6 +46,15 @@ describe 'get acs info' do
                        ['Base URL', 'https://proxy.example.com'],
                        ['Content type', 'yum'],
                        ['Alternate content source type', 'custom'],
+                       ['SSL CA Cert', ''],
+                       ['Id', '1'],
+                       ['Name', 'CA'],
+                       ['SSL Client Cert', ''],
+                       ['Id', '1'],
+                       ['Name', 'cert'],
+                       ['SSL Client Key', ''],
+                       ['Id', '1'],
+                       ['Name', 'KEY'],
                        ['Subpaths', ''],
                        ['', 'test/repo1'],
                        ['Smart proxies', ''],
