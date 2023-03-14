@@ -68,6 +68,18 @@ module HammerCLIKatello
       success_message _("Organization updated.")
       failure_message _("Could not update the organization")
 
+      def request_params
+        params = super
+        # This is so Hammer doesn't say "Nothing to update" when toggling SCA.
+        # (see hammer-cli-foreman)
+        # Rails will safely ignore the extra parameter.
+        if params.key?('simple_content_access')
+          params["organization"] = params.fetch('organization', {}).merge(
+            "_simple_content_access" => params['simple_content_access'])
+        end
+        params
+      end
+
       build_options do |o|
         o.expand(:all).except(:environments)
       end
