@@ -55,7 +55,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :id, _("Id")
         field :description, _("Description"), Fields::Field, :hide_blank => true
-        field :format_limit, _("Host Limit")
+        field :format_consumed, _("Host Limit")
         field :auto_attach, _("Auto Attach")
         field :release_version, _("Release Version"), Fields::Field, :hide_blank => true
 
@@ -64,6 +64,11 @@ module HammerCLIKatello
         end
         from :content_view do
           field :name, _("Content View")
+        end
+
+        collection :hosts, _("Associated Hosts") do
+          field :id, _('Id')
+          field :name, _("Name")
         end
 
         collection :host_collections, _("Host Collections") do
@@ -86,8 +91,13 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
-        data["format_limit"] =
-          data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
+        limit = data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
+
+        data["format_consumed"] = _("%{consumed} of %{limit}") %
+                                  {
+                                    :consumed => data["usage_count"],
+                                    :limit => limit
+                                  }
         data
       end
 
