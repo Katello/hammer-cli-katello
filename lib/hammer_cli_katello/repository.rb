@@ -76,6 +76,7 @@ module HammerCLIKatello
         field :full_path, _("Published At")
         field :relative_path, _("Relative Path")
         field :download_policy, _("Download Policy"), Fields::Field, :hide_blank => true
+        field :metadata_expire, _("Metadata Expiration"), Fields::Field, :hide_blank => true
         field :docker_upstream_name, _("Upstream Repository Name"),
               Fields::Field, :hide_blank => true
         field :docker_tags_whitelist, _("Container Image Tags Filter"),
