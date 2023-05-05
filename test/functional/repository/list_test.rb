@@ -36,13 +36,13 @@ describe 'listing repositories' do
 
     ex.returns(empty_response)
 
-    expected_result = success_result("---|------|---------|--------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | URL
----|------|---------|--------------|----
+    expected = success_result("---|------|---------|--------------|---------------|----
+ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|--------------|---------------|----
 ")
 
     result = run_cmd(@cmd + params)
-    assert_cmd(expected_result, result)
+    assert_cmd(expected, result)
   end
 
   it "lists the repositories belonging to a lifecycle-environment by name" do
@@ -57,13 +57,13 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
 
     ex.returns(empty_response)
 
-    expected_result = CommandExpectation.new("---|------|---------|--------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | URL
----|------|---------|--------------|----
+    expected = CommandExpectation.new("---|------|---------|--------------|---------------|----
+ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|--------------|---------------|----
 ", "Warning: Option --environment is deprecated. Use --lifecycle-environment instead\n")
 
     result = run_cmd(@cmd + params)
-    assert_cmd(expected_result, result)
+    assert_cmd(expected, result)
   end
 
   it "lists the repositories with a certain repository type" do
@@ -76,13 +76,13 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
 
     ex.returns(empty_response)
 
-    expected_result = CommandExpectation.new("---|------|---------|--------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | URL
----|------|---------|--------------|----
+    expected = CommandExpectation.new("---|------|---------|--------------|---------------|----
+ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|--------------|---------------|----
 ")
 
     result = run_cmd(@cmd + params)
-    assert_cmd(expected_result, result)
+    assert_cmd(expected, result)
   end
 
   it "lists the repositories with a certain content unit type" do
@@ -95,12 +95,12 @@ ID | NAME | PRODUCT | CONTENT TYPE | URL
 
     ex.returns(empty_response)
 
-    expected_result = CommandExpectation.new("---|------|---------|--------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | URL
----|------|---------|--------------|----
+    expected = CommandExpectation.new("---|------|---------|--------------|---------------|----
+ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|--------------|---------------|----
 ")
 
     result = run_cmd(@cmd + params)
-    assert_cmd(expected_result, result)
+    assert_cmd(expected, result)
   end
 end
