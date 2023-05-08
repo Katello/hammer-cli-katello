@@ -31,6 +31,7 @@ module HammerCLIKatello
           field :name, _("Product")
         end
         field :content_type, _("Content Type")
+        field :content_label, _("Content Label")
         field :url, _("Url")
       end
 
@@ -67,6 +68,7 @@ module HammerCLIKatello
         end
         field :_redhat_repo, _("Red Hat Repository")
         field :content_type, _("Content Type")
+        field :content_label, _("Content Label")
         field :checksum_type, _("Checksum Type"), Fields::Field, :hide_blank => true
         field :_mirroring_policy, _("Mirroring Policy"), Fields::Field, :hide_blank => true
         field :url, _("Url")
