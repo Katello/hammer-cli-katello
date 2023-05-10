@@ -1,5 +1,4 @@
-# hammer-cli-katello [![Build Status](https://travis-ci.org/Katello/hammer-cli-katello.svg?branch=master)](https://travis-ci.org/Katello/hammer-cli-katello) [![Coverage Status](https://coveralls.io/repos/github/Katello/hammer-cli-katello/badge.svg?branch=master)](https://coveralls.io/github/Katello/hammer-cli-katello?branch=master)
-
+# hammer-cli-katello
 Next-gen CLI tool for [Katello](http://katello.org) (Katello-specific commands)
 
 hammer-cli development docs for [help](https://github.com/theforeman/hammer-cli/blob/master/doc/developer_docs.md#hammer-development-docs)
@@ -7,7 +6,7 @@ hammer-cli development docs for [help](https://github.com/theforeman/hammer-cli/
 ## Development setup
 
 The easiest way to set up a hammer development environment is to use the centos7-hammer-devel box in
-[forklift](https://github.com/theforeman/forklift/blob/master/docs/development.md#hammer-development).
+[forklift](https://github.com/theforeman/forklift).
 
 ## Configuration
 
