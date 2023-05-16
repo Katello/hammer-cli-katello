@@ -32,8 +32,6 @@ module HammerCLIKatello
     class InfoCommand < HammerCLIKatello::InfoCommand
       include LifecycleEnvironmentNameMapping
 
-      resource :content_view_versions, :show
-
       output do
         field :id, _("Id")
         field :name, _("Name")
@@ -56,6 +54,17 @@ module HammerCLIKatello
           field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
+        end
+
+        field :filters_applied, _("Has Applied Filters"), Fields::Boolean, hide_blank: true
+        from :applied_filters do
+          collection :applied_filters, _("Applied Filters"), hide_blank: true, hide_empty: true do
+            from :filter do
+              field :id, _("Id")
+              field :name, _("Name")
+            end
+          end
+          field :dependency_solving, _("Dependency Solving"), Fields::Field, :hide_blank => true
         end
       end
 
