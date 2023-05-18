@@ -1,0 +1,1747 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-katello package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-katello 0.18.pre.master\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2017-09-11 13:28+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
+"Language-Team: Georgian (https://app.transifex.com/foreman/teams/114/ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Manipulate activation keys"
+msgstr "აქტივაცის გასაღებების მართვა"
+
+msgid "Manipulate organizations"
+msgstr "ორგანიზაციების მართვა"
+
+msgid "Manipulate GPG Key actions on the server"
+msgstr "სერვერზე GPG გასაღებების ქმედებების მართვა"
+
+msgid "Manipulate lifecycle_environments on the server"
+msgstr "სერვერზე lifecycle_environments -ის შეცვლა"
+
+msgid "Get the status of the server"
+msgstr "სერვერის სტატუსის მიღება"
+
+msgid "Manipulate products"
+msgstr "პროდუქტების მართვა"
+
+msgid "View Puppet Module details"
+msgstr "Puppet-ის მოდულის დეტალების ნახვა"
+
+msgid "Manipulate repositories"
+msgstr "რეპოზიტორიების მართვა"
+
+msgid "Manipulate repository sets on the server"
+msgstr "სერვერის რეპოზიტორიების სეტების მართვა"
+
+msgid "Manipulate subscriptions"
+msgstr "გამოწერების მართვა"
+
+msgid "Manipulate sync plans"
+msgstr "სინქრონიზაციის გეგმების მართვა"
+
+msgid "Manipulate host collections"
+msgstr "ჰოსტების კოლექციების მართვა"
+
+msgid "Manipulate content views"
+msgstr "შემცველობის ხედების მართვა"
+
+msgid "Manipulate capsule"
+msgstr "კაფსულის მართვა"
+
+msgid "Manipulate packages"
+msgstr "პაკეტების მართვა"
+
+msgid "Manipulate package groups"
+msgstr "პაკეტების ჯგუფის მართვა"
+
+msgid "Manipulate errata"
+msgstr "მორჩენილი შეცდომების მართვა"
+
+msgid "Manipulate ostree branches"
+msgstr "OSTree-ის ბრენჩების მართვა"
+
+msgid "Manipulate files"
+msgstr "ფაილების მართვა"
+
+msgid "View Module Streams"
+msgstr "მოდულის ნაკადების ნახვა"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "სახელი"
+
+msgid "Host Limit"
+msgstr "ჰოსტის ლიმიტი"
+
+msgid "Lifecycle Environment"
+msgstr "ცხოვრების ციკლის გარემო"
+
+msgid "Content View"
+msgstr "სარჩევი ხედი"
+
+msgid "Unlimited"
+msgstr "შეუზღუდავი"
+
+msgid "%{consumed} of %{limit}"
+msgstr "%{consumed} %{limit}-დან"
+
+msgid "Description"
+msgstr "აღწერა"
+
+msgid "Auto Attach"
+msgstr "ავტომატური მიბმა"
+
+msgid "Service Level"
+msgstr "სერვისის დონე"
+
+msgid "Release Version"
+msgstr "რელიზის ვერსია"
+
+msgid "Host Collections"
+msgstr "ჰოსტების კოლექციები"
+
+msgid "Activation key created."
+msgstr "აქტივაციის გასაღები შეიქმნა."
+
+msgid "Could not create the activation key"
+msgstr "აქტივაციის გასაღების შექმნის შეცდომა"
+
+msgid "Copy an activation key"
+msgstr "აქტივაციის გასაღების კოპირება"
+
+msgid "Activation key copied."
+msgstr "აქტივაციის გასაღები დაკოპირდა."
+
+msgid "Could not copy the activation key"
+msgstr "აქტივაციის გასაღების კოპირების შეცდომა"
+
+msgid "Activation key updated."
+msgstr "აქტივაციის გასაღები განახლდა."
+
+msgid "Could not update the activation key"
+msgstr "აქტივაციის გასაღების განახლების შეცდომა"
+
+msgid "Activation key deleted."
+msgstr "აქტივაციის გასაღები წაიშალა."
+
+msgid "Could not delete the activation key"
+msgstr "აქტივაციის გასაღების წაშლა შეუძლებელია"
+
+msgid "List associated subscriptions"
+msgstr "ასოცირებული გამოწერების სია"
+
+msgid "Attached"
+msgstr "მიმაგრებული"
+
+msgid "Quantity"
+msgstr "რაოდენობა"
+
+msgid "Start Date"
+msgstr "დაწყების თარიღი"
+
+msgid "End Date"
+msgstr "დასასრული თარიღი"
+
+msgid "Support"
+msgstr "მხარდაჭერა"
+
+msgid "Contract"
+msgstr "კონტრაქტი"
+
+msgid "Account"
+msgstr "ანგარიში"
+
+msgid ""
+"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : data['quan"
+"tity']}"
+msgstr ""
+"#{data['consumed']} #{data['quantity'] == -1 ? 'Unlimited' : data['quantity']}"
+"-დან"
+
+msgid "ID of the activation key"
+msgstr "აქტივაციის გასაღების ID"
+
+msgid "Activation key name to search by"
+msgstr "მოსაძებნი აქტივაციის გასაღების სახელი"
+
+msgid "ID of subscription"
+msgstr "გამოწერის ID"
+
+msgid "Subscription added to activation key."
+msgstr "აქტივაციის გასაღებს გამოწერა დაემატა."
+
+msgid "Could not add subscription to activation key"
+msgstr "აქტივაციის გასაღებზე გამოწერის დამატების შეცდომა"
+
+msgid "Remove subscription"
+msgstr "გამოწერის წაშლა"
+
+msgid "Subscription removed from activation key."
+msgstr "აქტივაციის გასაღებისდან გამოწერა გაუქმებულია."
+
+msgid "Could not remove subscription from activation key"
+msgstr "აქტივაციის გასაღებიდან გამოწერის წაშლის შეცდომა"
+
+msgid "List associated host collections"
+msgstr "ჰოსტების ასოცირებული კოლექციების სია"
+
+msgid "ID of activation key"
+msgstr "აქტივაციის გასაღების ID"
+
+msgid "Name of activation key"
+msgstr "აქტივაციის გასაღების სახელი"
+
+msgid "The repository has been associated."
+msgstr "რეპოზიტორია დამატებულია."
+
+msgid "Could not add repository"
+msgstr "რეპოზიტორიის დამატების შეცდომა"
+
+msgid "The repository has been removed."
+msgstr "რეპოზიტორია წაშლილია."
+
+msgid "Could not remove repository"
+msgstr "რეპოზიტორიის წაშლის შეცდომა"
+
+msgid "The host collection has been associated."
+msgstr "ჰოსტების კოლექცია დამატებულია."
+
+msgid "Could not add host collection"
+msgstr "ჰოსტების კოლექციის დამატების შეცდომა"
+
+msgid "The host collection has been removed."
+msgstr "ჰოსტების კოლექცია წაშლილია."
+
+msgid "Could not remove host collection"
+msgstr "ჰოსტების კოლექციის წაშლის შეცდომა"
+
+msgid "The host has been added."
+msgstr "ჰოსტი დამატებულია."
+
+msgid "Could not add host"
+msgstr "ჰოსტის დამატების შეცდომა"
+
+msgid "The host has been removed."
+msgstr "ჰოსტი წაიშალა."
+
+msgid "Could not remove host"
+msgstr "ჰოსტის წაშლის სეცდომა"
+
+msgid "Manage the capsule content"
+msgstr "კაფსულის შემცველობის მართვა"
+
+msgid "Organization"
+msgstr "ორგანიზაცია"
+
+msgid "Lifecycle environment successfully added to the capsule."
+msgstr "ცხოვრების ციკლის გარემო კაფსულას წარმატებით დაემატა."
+
+msgid "Could not add the lifecycle environment to the capsule"
+msgstr "კაფსულაში ცხოვრების ციკლის გარემოს ჩამატების შეცდომა"
+
+msgid "Organization ID"
+msgstr "ორგანზაციის ID"
+
+msgid "Organization name"
+msgstr "ორგანიზაციის სახელი"
+
+msgid "Lifecycle environment successfully removed from the capsule."
+msgstr "ცხოვრების ციკლის გარემო წარმატებით წაიშალა კაფსულიდან."
+
+msgid "Could not remove the lifecycle environment from the capsule"
+msgstr "კაფსულიდან ცხოვრების ციკლის გარემოს წაშლის შეცდომა"
+
+msgid "Capsule content is being synchronized in task %{id}."
+msgstr "კაფსულის შემცველობა სინქრონიზდება %{id} დავალებაში."
+
+msgid "Could not synchronize capsule content"
+msgstr "კაფსულის შემცველობის სინქრონიზაციის შეცდომა"
+
+msgid "Last sync"
+msgstr "ბოლო სინქრონიზაცია"
+
+msgid "Status"
+msgstr "სტატუსი"
+
+msgid "Currently running sync tasks"
+msgstr "ამჟამად გაშვებული სინქრონიზაციის ამოცანები"
+
+msgid "Task id"
+msgstr "ამოცანის ID"
+
+msgid "Progress"
+msgstr "პროგრესი"
+
+msgid "Last failure"
+msgstr "ბოლო შეცდომა"
+
+msgid "Messages"
+msgstr "შეტყობინებები"
+
+msgid "Capsule is synchronized"
+msgstr "კაფსულა სინქრონიზებულია"
+
+msgid "%{count} environment(s) can be synchronized: %{names}"
+msgstr "შესაძლებელია %{count} გარემოს სინქრონიზაცია: %{names}"
+
+msgid "Lifecycle Environments"
+msgstr "ცხოვრების ციკლის გარემოები"
+
+msgid "Content Views"
+msgstr "შემცველობის ხედები"
+
+msgid "Composite"
+msgstr "კომპოზიტი"
+
+msgid "Last Published"
+msgstr "ბოლო გამოქვეყნება"
+
+msgid "Content"
+msgstr "შემცველობა"
+
+msgid "Hosts"
+msgstr "ჰოსტები"
+
+msgid "Products"
+msgstr "პროდუქტები"
+
+msgid "Yum repos"
+msgstr "Yum-ის რეპოზიტორიები"
+
+msgid "Container Image repos"
+msgstr "კონტეინერის ასლების რეპოზიტორიები"
+
+msgid "Packages"
+msgstr "პაკეტები"
+
+msgid "Package groups"
+msgstr "პაკეტის ჯგუფები"
+
+msgid "Errata"
+msgstr "მორჩენილი შეცდომები"
+
+msgid "Puppet modules"
+msgstr "Puppet-ის მოდულები"
+
+msgid "Name of the composite content view"
+msgstr "კომპოზიტური შემცველობის ხედის სახელი"
+
+msgid "Override product content defaults"
+msgstr "პროდუქტის შემცველობის ნაგულისხმები პარამეტრების გადაფარვა"
+
+msgid "Updated content override."
+msgstr "შემცველობს გადაფარვა განახლდა."
+
+msgid "Could not update content override"
+msgstr "შემცველობის გადაფარვის განახლების შეცდომა"
+
+msgid "Label of the content"
+msgstr "შემცველობის ჭდე"
+
+msgid ""
+"Override parameter key or name.\n"
+"To enable or disable a repo select 'enabled'.\n"
+"Default value: enabled"
+msgstr ""
+"პარამეტრის გასაღების ან სახელის გადაფარვა.\n"
+"რეპოს ჩასართავად ან გამოსართავად დააყენეთ 'ჩართული'.\n"
+"ნაგულისხმები მნიშვნელობა: ჩართული"
+
+msgid "Override value. Note for repo enablement you can use a boolean value"
+msgstr ""
+"მნიშვნელობის გადაფარვა. დაიმახსოვრეთ, რომ რეპოზიტორიის ჩასართავად ლოგიკური მნი"
+"შვნელობა შეგიძლიათ გამოიყენოთ"
+
+msgid "Remove a content override"
+msgstr "შემცველობის გადაფარვის წაშლა"
+
+msgid "Content View ID"
+msgstr "შემცველობის ხედის id"
+
+msgid "Label"
+msgstr "ჭდე"
+
+msgid "Repository IDs"
+msgstr "რეპოზიტორიების ID-ები"
+
+msgid "Content Host Count"
+msgstr "შემცველობის ჰოსტების რაოდენობა"
+
+msgid "Yum Repositories"
+msgstr "Yum-ის რეპოზიტორიები"
+
+msgid "Container Image Repositories"
+msgstr "კონტეინერის ასლების რეპოზიტორიები"
+
+msgid "OSTree Repositories"
+msgstr "OSTree-ის რეპოზიტორიები"
+
+msgid "Puppet Modules"
+msgstr "Puppet-ის მოდულები"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "Author"
+msgstr "ავტორი"
+
+msgid "Versions"
+msgstr "ვერსიები"
+
+msgid "Version"
+msgstr "ვერსია"
+
+msgid "Published"
+msgstr "გამოქვეყნებულია"
+
+msgid "Components"
+msgstr "კომპონენტები"
+
+msgid "Activation Keys"
+msgstr "აქტივაცის გასაღებები"
+
+msgid "Content view created."
+msgstr "შემცველობის ხედი შექმნილია."
+
+msgid "Could not create the content view"
+msgstr "შემცველობის ხედის შექმნის შეცდომა"
+
+msgid "Create a composite content view"
+msgstr "კომპოზიტური შემცველობის ხედის შექმნა"
+
+msgid "Copy a content view"
+msgstr "შემცველობის ხედის კოპირება"
+
+msgid "Content view name to search by"
+msgstr "მოსაძებნი შემცველობის ხედის სახელი"
+
+msgid "New content view name"
+msgstr "შემცველობის ახალი ხედის სახელი"
+
+msgid "Content view copied."
+msgstr "შემცველობის ხედი დაკოპირდა."
+
+msgid "Could not copy the content view"
+msgstr "შემცველობის ხედის კოპირების შეცდომა"
+
+msgid "Content view updated."
+msgstr "შემცველობის ხედი განახლდა."
+
+msgid "Could not update the content view"
+msgstr "შემცველობის ხედისგანახლების შეცდომა"
+
+msgid "Content view is being deleted with task %{id}."
+msgstr "კაფსულის შემცველობა იშლება დავალებით %{id}."
+
+msgid "Could not delete the content view"
+msgstr "შემცველობის ხედის წაშლის შეცდომა"
+
+msgid "Content view is being published with task %{id}."
+msgstr "კაფსულის შემცველობა გამოქვეყნდება %{id} დავალებაში."
+
+msgid "Could not publish the content view"
+msgstr "შემცველობის ხედის გამოქვეყნების შეცდომა"
+
+msgid "Content view is being removed from environment with task %{id}."
+msgstr "შინაარსის ხედი იშლება გარემოდან დავალებით %{id}."
+
+msgid "Could not remove the content view from environment"
+msgstr "გარემოდან შემცველობის ხედის წაშლის შეცდომა"
+
+msgid "Version ids to remove"
+msgstr "ვერსიის წასაშლელი ID-ები"
+
+msgid "Environment ids to remove"
+msgstr "გარემოს წასაშლელი ID-ები"
+
+msgid "Content view objects are being removed task %{id}."
+msgstr "მიმდინარეობს შემცველობის ხედის ობიექტების წაშლა ამოცანიდან %{id}."
+
+msgid "Could not remove objects from content view"
+msgstr "შემცველობის ხედიდან ობიექტების წაშლის შეცდომა"
+
+msgid "Add a content view version to a composite view"
+msgstr "კომპოზიტურ ხედზე შემცველობის ხედის ვერსიის დამატება"
+
+msgid "The component version has been added."
+msgstr "კომპონენტის ვერსია დამატებულია."
+
+msgid "Could not add version"
+msgstr "ვერსიის დამატების შეცდომა"
+
+msgid "Remove a content view version from a composite view"
+msgstr "კომპოზიტური ხედიდან შემცველობის ხედის ვერსიის წაშლა"
+
+msgid "The component version has been removed."
+msgstr "კომპონენტის ვერსია წაშლილია."
+
+msgid "Could not remove version"
+msgstr "ვერსიის წაშლის შეცდომა"
+
+msgid "Content View identifier of the component who's latest version is desired"
+msgstr ""
+"შემცველობის ხედის იდენტიფიკატორი კომპონენტისთვის, რომლის უახლესი ვერსიაც გნება"
+"ვთ"
+
+msgid "Content View name of the component who's latest version is desired"
+msgstr "შემცველობის ხედის სახელი კომპონენტისთვის, რომლის უახლესი ვერსიაც გნებავთ"
+
+msgid "Content View Version identifier of the component"
+msgstr "კომპონენტის შემცველობის ხედის ვერსიის იდენტიფიკატორი"
+
+msgid ""
+"Content View Version number of the component. Either use this or --component-c"
+"ontent-view-version-id option"
+msgstr ""
+"კომპონენტის შემცველობის ხედის ვერსიის ნომერი. გამოიყენეთ ან ეს, ან პარამეტრი -"
+"-component-content-view-version-id"
+
+msgid "Select the latest version of the components content view is desired"
+msgstr "აირიეთ სასურველი კომპონენტის შემცველობის უკანასკნელი ვერსია"
+
+msgid "Please provide --component-content-view-id"
+msgstr "მიუთითეთ --component-content-view-id"
+
+msgid ""
+"Please provide --component-content-view-version-id or --component-content-view"
+"-version or --latest for the latest version"
+msgstr ""
+"ბოლო ვერსიისთვის მიუთითეთ --component-content-view-version-id, --component-con"
+"tent-view-version ან --latest"
+
+msgid "Id"
+msgstr "ID"
+
+msgid "Current Version"
+msgstr "მიმდინარე ვერსია"
+
+msgid "Version Id"
+msgstr "ვერსიის ID"
+
+msgid "Latest"
+msgstr "ბოლო"
+
+msgid "No Published Version"
+msgstr "გამოქვეყნებული ვერსიის გარეშე"
+
+msgid "Component added to content view."
+msgstr "კომპონენტი დამატებულია შემცველობის ხედზე."
+
+msgid "Could not add the component"
+msgstr "კომპონენტის დამატების შეცდომა"
+
+msgid "Content view component updated."
+msgstr "შემცველობის ხედის კომპონენტი განახლდა."
+
+msgid "Could not update the content view component"
+msgstr "შემცველობის ხედის კომპონენტის განახლების შეცდომა"
+
+msgid ""
+"Array of component content view names to remove. Comma separated list of value"
+"s"
+msgstr ""
+"წასაშლელი კომპონენტის შემცველობის ხედის სახელების მასივი. მნიშვნელობების მძიმი"
+"თ გამოყოფილი ჩამონათვალი"
+
+msgid ""
+"Array of component content view identfiers to remove. Comma separated list of "
+"values"
+msgstr ""
+"წასაშლელი კომპონენტის შემცველობის ხედის იდენტიფიკატორების მასივი. მნიშვნელობებ"
+"ის მძიმით გამოყოფილი ჩამონათვალი"
+
+msgid "Components removed from content view."
+msgstr "შინაარსის ხედიდან ამოღებული კომპონენტები."
+
+msgid "Could not remove the components"
+msgstr "კომპონენტების წაშლის შეცდომა"
+
+msgid "Latest(Currently %s)"
+msgstr "უახლესი(მიმდინარე %s)"
+
+msgid "Puppet module added to content view."
+msgstr "Puppet-ის მოდული შემცველობის ხედში წარმატებით ჩაემატა."
+
+msgid "Could not add the puppet module"
+msgstr "Puppet-ის მოდულის დამატების შეცდომა"
+
+msgid "Puppet module removed from content view."
+msgstr "Puppet-ის მოდული წაშლილია შემცველობის ხედიდან."
+
+msgid "Couldn't remove puppet module from the content view"
+msgstr "შემცველობის ხედიდან Puppet-ის მოდულის წაშლის შეცდომა"
+
+msgid "Content View numeric identifier"
+msgstr "შემცველობის ხედის იდენტიფიკატორი"
+
+msgid "Content View name"
+msgstr "შემცველობის ხედის სახელი"
+
+msgid "count of unused versions to keep"
+msgstr "დატოვებული გამოუყენებელი ვერსიების რაოდენობა"
+
+msgid "Invalid value for --count option: value must be 0 or greater."
+msgstr "--count -ის მნიშვნელობა არასწორია. უნდა იყოს 0 ან მეტი."
+
+msgid "No versions to delete."
+msgstr "წასაშლელი ვერსიების გარეშე."
+
+msgid ""
+"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
+"'%{task_id}'."
+msgstr ""
+"შემცველობის ხედის ('%{view}') ვერსიის ('%{version}') წაშლა დაგეგმილია ამოცანაშ"
+"ი: '%{task_id}'."
+
+msgid "Version '%{version}' of content view '%{view}' deleted."
+msgstr "შემცველობის ხედის '%{view}' ვერსია'%{version}' წაშლილია."
+
+msgid "Content View Name"
+msgstr "შემცველობის ხედის სახელი"
+
+msgid "Content View Label"
+msgstr "შემცველობის ხედის ჭდე"
+
+msgid "Repositories"
+msgstr "საცავები"
+
+msgid "Content View Version is being republished with task %{id}."
+msgstr "მიმდინარეობს შემცველობის ხედის ვერსიის თავიდან გამოცემა ამოცანით %{id}."
+
+msgid "Could not republish the Content View"
+msgstr "შემცველობის ხედის თავიდან გამოქვეყნების შეცდომა"
+
+msgid "Content view is being promoted with task %{id}."
+msgstr "მიმდინარეობს შემცველობის ხედის წახალისება დავალებით %{id}"
+
+msgid "Could not promote the content view"
+msgstr "შემცველობის ხედის წახალისების შეცდომა"
+
+msgid "force content view promotion and bypass lifecycle environment restriction"
+msgstr ""
+"შემცველობის ხედის ძალით დაწინაურება და სიცოცხლის ციკლის გარემოს შეზღუდვების გა"
+"მოტოვება"
+
+msgid "Name of the target environment"
+msgstr "სამიზნე გარემოს სახელი"
+
+msgid "Id of the target environment"
+msgstr "სამიზნე გარემოს ID"
+
+msgid ""
+"Environment name from where to promote its version from (if version is unknown"
+")"
+msgstr "გარემოს სახელი, საიდანაც მისი ვერსიის წახალისება მოხდება (თუ ვერსია უცნობია)"
+
+msgid "Id of the environment from where to promote its version "
+msgstr "გარემოს ID, საიდანაც მისი ვერსიის წახალისება მოხდება "
+
+msgid "Incremental update is being performed with task %{id}."
+msgstr "ამოცანასთან %{id} ერთად ინკრემენტული განახლებაც ხორციელდება."
+
+msgid "An error occurred incrementally updating the content view"
+msgstr "შემცველობის ხედის ინკრემენტული განახლების შეცდომა"
+
+msgid "list of lifecycle environment IDs to update the content view version in"
+msgstr ""
+"შემცველობის ხედის ვერსიის განსაახლებელი სიცოცხლის ციკლის გარემოს ID-ების ჩამონ"
+"ათვალი"
+
+msgid "list of lifecycle environment names to update the content view version in"
+msgstr ""
+"შემცველობის ხედის ვერსიის განსაახლებელი სიცოცხლის ციკლის გარემოს სახელების ჩამ"
+"ონათვალი"
+
+msgid "Organization name for resolving lifecycle environment names"
+msgstr "ორგანიზაციის სახელი სიცოცხლის ციკლის გარემოს სახელების ამოსახსნელად"
+
+msgid "Organization id for resolving lifecycle environment names"
+msgstr "ორგანიზაციის ID ცხოვრების ციკლის გარემოს სახელების ამოსახსნელად"
+
+msgid ""
+"Update all editable and applicable hosts within the specified Content View and"
+" \\\n"
+"               Lifecycle Environments"
+msgstr ""
+"მითითებულ შემცველობის ხედებში და სიცოცხლის ციკლის გარემოებში \\\n"
+"                 არსებული შესაბამისი და ჩასწორებადი ჰოსტების განახლება"
+
+msgid "IDs of hosts to update"
+msgstr "განსაახლებელი ჰოსტების ID-ები"
+
+msgid "Export a content view (deprecated)"
+msgstr "შემცველობის ხედის გატანა (მოძველებული)"
+
+msgid "Content view is being exported in task %{id}."
+msgstr "დავალებაში %{id} შემცველობის ხედის გატანა მიმდინარეობს."
+
+msgid "Could not export the content view"
+msgstr "შემცველობის ხედის გატანის შეცდომა"
+
+msgid "Export a content view version"
+msgstr "შემცველობის ხედის ვერსიის გატანა"
+
+msgid "Content view export is available in %{directory}."
+msgstr "გატანილი შემცველობის ხედი ხელმისაწვდომია საქაღალდეში %{directory}."
+
+msgid "Content View Version numeric identifier"
+msgstr "შემცველობის ხედვის ვერსიის რიცხვითი იდენტიფიკატორი"
+
+msgid "Directory to put content view version export into."
+msgstr "საქაღალდე, რომელშიც შემცველობის ხედის ვერსიის გატანა მოხდება."
+
+msgid ""
+"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is supporte"
+"d at this time. Please remove the repository from the Content View, republish "
+"and try the export again."
+msgstr ""
+"რეპოზიტორია '#{repo['name']}' yum-ის რეპოზიტორია არაა. ამჟამად მხოლოდ Yum-ია მ"
+"ხარდაჭერილი. წაშალეთ რეპოზიტორია შემცველობის ხედიდან, თავიდან გამოაქვეყნეთ ის,"
+" და გატანა თავიდან სცადეთ."
+
+msgid "Import a content view version"
+msgstr "შემცველობის ხედის ვერსიის შემოტანა"
+
+msgid "Content view imported."
+msgstr "შემცველობის ხედი შემოტანილია."
+
+msgid "Could not import the content view"
+msgstr "შემცველობის ხედის შემოტანის შეცდომა"
+
+msgid "Organization numeric identifier"
+msgstr "ორგანიზაციის რიცხვითი იდენტიფიკატორი"
+
+msgid "Location of export tar on disk"
+msgstr "გატანილი tar ფალის მდებარეობა დისკზე"
+
+msgid "Export tar #{options['option_export_tar']} does not exist."
+msgstr "გატანილი tar ფაილი #{options['option_export_tar']} არ არსებობს."
+
+msgid "Unable to sync repositories, no library repository found for %s"
+msgstr ""
+"რეპოზიტორიების სინქრონიზაცია შეუძლებელია. ბიბლიოთეკების რეპოზიტორიების პოვნა %"
+"s-სთვის შეუძლებელია"
+
+msgid "Errata ID"
+msgstr "მორჩენილი შეცდომის ID"
+
+msgid "Type"
+msgstr "ტიპი"
+
+msgid "Title"
+msgstr "სათაური"
+
+msgid "Reboot Suggested"
+msgstr "სჯობს გადატვირთოთ"
+
+msgid "Updated"
+msgstr "განახლდა"
+
+msgid "Issued"
+msgstr "გამოშვება"
+
+msgid "Release"
+msgstr "გამოცემა"
+
+msgid "Solution"
+msgstr "ამოხსნა"
+
+msgid "Module Streams"
+msgstr "მოდულის ნაკადები"
+
+msgid "Stream"
+msgstr "ნაკადი"
+
+msgid "Path"
+msgstr "კონტური"
+
+msgid "Checksum"
+msgstr "საკონტროლო რიცხვი"
+
+msgid "Filter ID"
+msgstr "ფილტრის ID"
+
+msgid "Inclusion"
+msgstr "ჩასმა"
+
+msgid "Rules"
+msgstr "წესები"
+
+msgid "Minimum Version"
+msgstr "მინიმალური ვერსია"
+
+msgid "Maximum Version"
+msgstr "მაქსიმალური ვერსია"
+
+msgid "Types"
+msgstr "ტიპები"
+
+msgid "Created"
+msgstr "შექმნილია"
+
+msgid "Filter created."
+msgstr "ფილტრი შეიქმნა."
+
+msgid "Could not create the filter"
+msgstr "ფილტრის შექმნა შეუძლებელია"
+
+msgid "Filter updated."
+msgstr "ფილტრი განახლდა."
+
+msgid "Could not update the filter"
+msgstr "ფილტრის განახლების შეცდომა"
+
+msgid "Filter deleted."
+msgstr "ფილტრი წაიშალა."
+
+msgid "Could not delete the filter"
+msgstr "ფილტრის წაშლის შეცდომა"
+
+msgid "Rule ID"
+msgstr "წესის ID"
+
+msgid "Architecture"
+msgstr "არქიტექტურა"
+
+msgid "Date Type"
+msgstr "თარიღის ტიპი"
+
+msgid "Filter rule created."
+msgstr "ფილტრის წესი შეიქმნა."
+
+msgid "Could not create the filter rule"
+msgstr "ფილტრის წესის შექმნა შეუძლებელია"
+
+msgid "Package and package group names"
+msgstr "პაკეტებისა და პაკეტების ჯგუფების სახელები"
+
+msgid "Filter rule updated."
+msgstr "ფილტრი წესი განახლდა."
+
+msgid "Could not update the filter rule"
+msgstr "ფილტრის წესის განახლება შეუძლებელია"
+
+msgid "Filter rule deleted."
+msgstr "ფილტრის წესი წაშლილია."
+
+msgid "Could not delete the filter rule"
+msgstr "ფილტრის წესის წაშლის შეცდომა"
+
+msgid "Content Type"
+msgstr "შემცველობის ტიპი"
+
+msgid "Product"
+msgstr "პროდუქტი"
+
+msgid "GPG Key created."
+msgstr "GPG გასაღები შეიქმნა."
+
+msgid "Could not create GPG Key"
+msgstr "GPG გასაღების შექმნის შეცდომა"
+
+msgid "GPG Key file"
+msgstr "GPG გასაღების ფაილი"
+
+msgid "GPG Key updated."
+msgstr "GPG გასაღები განახლდა."
+
+msgid "Could not update GPG Key"
+msgstr "GPG გასაღების განახლების შეცდომა"
+
+msgid "GPG Key deleted."
+msgstr "GPG გასაღები წაშლილია."
+
+msgid "Could not delete the GPG Key"
+msgstr "GPG გასაღების წაშლის შეცდომა"
+
+msgid "Limit"
+msgstr "ზღვარი"
+
+msgid "Host collection created."
+msgstr "ჰოსტის კოლექცია შექმნილია."
+
+msgid "Could not create the host collection"
+msgstr "ჰოსტის ახალი კოლექციის შექმნის შეცდომა"
+
+msgid "Total Hosts"
+msgstr "ჰოსტების ჯამური რაოდენობა"
+
+msgid "Host Collection ID"
+msgstr "ჰოსტის კოლექციის ID"
+
+msgid "Host Collection Name"
+msgstr "ჰოსტის კოლექციის სახელი"
+
+msgid "Copy a host collection"
+msgstr "ჰოსის კოლექციის კოპირება"
+
+msgid "New host collection name"
+msgstr "ჰოსტის ახალი კოლექციის სახელი"
+
+msgid "New host collection created."
+msgstr "ჰოსტის ახალი კოლექცია შეიქმნა."
+
+msgid "Could not create the new host collection"
+msgstr "ჰოსტის ახალი კოლექციის შექმნის შეცდომა"
+
+msgid "Host collection updated."
+msgstr "ჰოსტის კოლექცია განახლდა."
+
+msgid "Could not update the the host collection"
+msgstr "ჰოსტის კოლექციის განახლების შეცდომა"
+
+msgid "Host collection deleted."
+msgstr "ჰოსტის კოლექია წაშლილია."
+
+msgid "Could not delete the host collection"
+msgstr "ჰოსტის კოლექციის წაშლის შეცდომა"
+
+msgid "The host(s) has been added."
+msgstr "ჰოსტები დაემატა."
+
+msgid "Could not add host(s)"
+msgstr "ჰოსტების დამატების შეცდომა"
+
+msgid "The host(s) has been removed."
+msgstr "ჰოსტები წაიშალა."
+
+msgid "Could not remove host(s)"
+msgstr "ჰოსტის წაშლის შეცდომა"
+
+msgid "Manipulate errata for a host collection"
+msgstr "ჰოსტის კოლექციის მორჩენილი პაჩების ჩასწორება"
+
+msgid "Install errata on content hosts contained within a host collection"
+msgstr ""
+"მორჩენილი პაჩების დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შ"
+"ეიცავს"
+
+msgid "Successfully scheduled installation of errata."
+msgstr "მორჩენილი პაჩების დაყენება წარმატებით დაიგეგმა."
+
+msgid "Could not schedule installation of errata"
+msgstr "მორჩენილი პაჩების დაყენებს დაგეგმვის შეცდომა"
+
+msgid "List of Errata to install"
+msgstr "დასაყენებელი მორჩენილი პაჩების სია"
+
+msgid "Manipulate packages for a host collection"
+msgstr "ჰოსტის კოლექციის პაკეტების ჩასწორება"
+
+msgid "comma-separated list of packages to install"
+msgstr "დასაყენებელი პაკეტების მძიმით გამოყოფილი სია"
+
+msgid "Install packages on content hosts contained within a host collection"
+msgstr "პაკეტების დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
+
+msgid "Successfully scheduled installation of package(s)."
+msgstr "პაკეტების დაყენება წარმატებით დაიგეგმა."
+
+msgid "Could not schedule installation of package(s)"
+msgstr "პაკეტების დაყენების განრიგში ჩასმა შეუძლებელია"
+
+msgid "Update packages on content hosts contained within a host collection"
+msgstr "პაკეტების განახლება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
+
+msgid "Successfully scheduled update of package(s)."
+msgstr "პაკეტების დაყენება განრიგში წარმატებით ჩაემატა."
+
+msgid "Could not schedule update of package(s)"
+msgstr "განრიგში პაკეტების განახლების ჩამატების შეცდომა"
+
+msgid "Remove packages on content hosts contained within a host collection"
+msgstr "პაკეტების წაშლა შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
+
+msgid "Successfully scheduled removal of package(s)."
+msgstr "პაკეტების წაშლა განრიგში წარმატებით ჩაემატა."
+
+msgid "Could not schedule removal of package(s)"
+msgstr "განრიგში პაკეტების წაშლის ჩამატების შეცდომა"
+
+msgid "Manipulate package-groups for a host collection"
+msgstr "ჰოსტის კოლექციის პაკეტებს ჯგუფის მართვა"
+
+msgid "comma-separated list of package-groups to install"
+msgstr "დასაყენებელი პაკეტების მძიმით გამოყოფილი ჯგუფების სია"
+
+msgid "Install package-groups on content hosts contained within a host collection"
+msgstr ""
+"პაკეტების ჯგუფის დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შე"
+"იცავს"
+
+msgid "Successfully scheduled installation of package-group(s)."
+msgstr "პაკეტების ჯგუფის დაყენება განრიგში წარმატებით ჩაემატა."
+
+msgid "Could not schedule installation of package-group(s)"
+msgstr "განრიგში პაკეტების ჯგუფის ჩამატების შეცდომა"
+
+msgid "Update package-groups on content hosts contained within a host collection"
+msgstr ""
+"პაკეტების ჯგუფის განახლება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შ"
+"ეიცავს"
+
+msgid "Successfully scheduled update of package-groups(s)."
+msgstr "პაკეტის ჯგუფების განახლება განრიგში წარმატებით ჩაემატა."
+
+msgid "Could not schedule update of package-group(s)"
+msgstr "პაკეტის ჯგუფების განახლების განრიგში ჩამატების შეცდომა"
+
+msgid "Remove package-groups on content hosts contained within a host collection"
+msgstr ""
+"პაკეტების ჯგუფის წაშლა შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცა"
+"ვს"
+
+msgid "Successfully scheduled removal of package-groups(s)."
+msgstr "განრიგში პაკეტის ჯგუფების დაყენება წარმატებით ჩაემატა."
+
+msgid "Could not schedule removal of package-group(s)"
+msgstr "განრიგში პაკეტის ჯგუფების წაშლის ჩამატების შეცდომა"
+
+msgid "Content Source name "
+msgstr "შემცველობის წყაროს სახელი "
+
+msgid "Content Source"
+msgstr "შემცველობის წყარო"
+
+msgid "Errata is being applied with task %{id}."
+msgstr "მიმდინარეობს მორჩენილი პაჩების გადატარება დავალებით %{id}"
+
+msgid "Could not apply errata"
+msgstr "მორჩენილი პაჩების გადატარების შეცდომა"
+
+msgid "Erratum ID"
+msgstr "შემორჩენილი პაჩის ID"
+
+msgid "Installable"
+msgstr "დაყენებადი"
+
+msgid "Errata recalculated with task %{id}."
+msgstr "მორჩენილი პაჩები გადათვლილია დავალებით %{id}"
+
+msgid "Could not recalculate errata"
+msgstr "მორჩენილი პაჩების გადათვლის შეცდომა"
+
+msgid "Content Information"
+msgstr "ინფორმაცია შემცველობის შესახებ"
+
+msgid "Kickstart Repository"
+msgstr "Kickstart-ის რეპოზიტორია"
+
+msgid "Applicable Packages"
+msgstr "ხელმისაწვდომი პაკეტები"
+
+msgid "Upgradable Packages"
+msgstr "განახლებადი პაკეტები"
+
+msgid "Applicable Errata"
+msgstr "განკუთვნილი მორჩენილი პაჩები"
+
+msgid "Enhancement"
+msgstr "გაფართოება"
+
+msgid "Bug Fix"
+msgstr "შეცდომების გასწორება"
+
+msgid "Security"
+msgstr "უსაფრთხოება"
+
+msgid "Subscription Information"
+msgstr "გამოწერის ინფორმაცია"
+
+msgid "Last Checkin"
+msgstr "ბოლო მომართვა"
+
+msgid "Autoheal"
+msgstr "ავტომატური განკურნვა"
+
+msgid "Registered To"
+msgstr "რეგისტრირებულია"
+
+msgid "Registered At"
+msgstr "რეგისტრაციის დრო"
+
+msgid "Registered by Activation Keys"
+msgstr "რეგისტრირებულია აქტივაციის გასაღებებით"
+
+msgid "Kickstart repository name "
+msgstr "Kickstart-ის რეპოზიტორიის სახელი "
+
+msgid "Please provide --lifecycle-environment-id"
+msgstr "მიუთითეთ --lifecycle-environment-id"
+
+msgid "Please provide --content-view-id"
+msgstr "მიუთითეთ --content-view-id"
+
+msgid ""
+"No such repository with name %{name}, in lifecycle environment %{environment_i"
+"d} and content view %{content_view_id}"
+msgstr ""
+"სიცოცხლის ციკლის გარემოში %{environment_id} და შემცველობის ხედში %{content_vie"
+"w_id} რეპოზიტორია სახელად %{name} არ არსებობს"
+
+msgid "NVRA"
+msgstr "NVRA"
+
+msgid "Host unregistered."
+msgstr "ჰოსტის რეგისტრაცია მოხსნილია."
+
+msgid "Could not unregister the host"
+msgstr "ჰოსტის რეგისტრაციის მოხსნის შეცდომა"
+
+msgid "Host successfully registered."
+msgstr "ჰოსტის უკვე რეგისტრირებულია."
+
+msgid "Failed to register host"
+msgstr "ჰოსტის რეგისტრაციის შეცდომა"
+
+msgid "Subscription attached to the host successfully."
+msgstr "ჰოსტზე გამოწერის მიმაგრება წარმატებულად დასრულდა."
+
+msgid "Failed to attach subscriptions to the host"
+msgstr "ჰოსტზე გამოწერების მიმაგრების შეცდომა"
+
+msgid "Quantity of this subscriptions to add. Defaults to 1"
+msgstr "გამოწერების მისამაგრებელი რაოდენობა. ნაგულისხმები - 1"
+
+msgid "Auto attached subscriptions to the host successfully."
+msgstr "ჰოსტზე გამოწერის ავტომატური მიბაგრება წარმატებულია."
+
+msgid "Failed to auto attach subscriptions to the host"
+msgstr "ჰოსტზე ავტომატური გამოწერის მიმაგრების შეცდომა"
+
+msgid "Subscription removed from the host successfully."
+msgstr "ჰოსტიდან გამოწერა წარმატებით წაიშალა."
+
+msgid "Failed to remove subscriptions from the host"
+msgstr "ჰოსტიდან გამოწერების წაშლის შეცდომა"
+
+msgid "Remove the first instance of a subscription with matching id and quantity"
+msgstr "შესაბამისი ID-ის და რაოდენობის მქონე გამოწერის პირველი გაშვებული ასლის წაშლა"
+
+msgid "Organization ID to search by"
+msgstr "მოსაძებნი ორგანიზაციის ID"
+
+msgid "Organization name to search by"
+msgstr "მოსაძებნი ორგანიზაციის სახელი"
+
+msgid "Organization label to search by"
+msgstr "მოსაძებნი ორგანიზაციის ჭდის სახელი"
+
+msgid "Capsule name to search by"
+msgstr "მოსაძებნი კაფსულის სახელი"
+
+msgid "File name to search by"
+msgstr "მოსაძებნი ფაილის სახელი"
+
+msgid "Content View Version ID"
+msgstr "შემცველობის ხედის ვერსიის"
+
+msgid "Repository ID"
+msgstr "რეპოზიტორიის ID"
+
+msgid "Module stream name to search by"
+msgstr "მოდულის მოსაძებნი ნაკადის სახელი"
+
+msgid "Gpg key name to search by"
+msgstr "მოსაძებნი GPG გასაღები სახელი"
+
+msgid "Host collection name to search by"
+msgstr "ჰოსტის მოსაძებნი კოლექციის სახელი"
+
+msgid "Lifecycle environment name to search by"
+msgstr "ცხოვრების ციკლის სახელის მხიედვით ძებნა"
+
+msgid "Product name to search by"
+msgstr "პროდუქტის სახელით ძებნა"
+
+msgid "Operating system title"
+msgstr "ოპერაციული სისტემის სათაური"
+
+msgid "Repository name to search by"
+msgstr "მოსაძებნი რეპოზიტორიის სახელი"
+
+msgid "Repository set name to search by"
+msgstr "მოსაძებნი რეპოზიტორიების ნაკრების სახელი"
+
+msgid "Subscription name to search by"
+msgstr "მოსაძებნი გამოწერის სახელი"
+
+msgid "Sync plan name to search by"
+msgstr "მოსაძებნი სინქის გეგმის სახელი"
+
+msgid "Task name to search by"
+msgstr "მოსაძებნი ამოცანის სახელი"
+
+msgid "Puppet module name to search by"
+msgstr "Puppet-ის მოსაძებნი მოდულის სახელი"
+
+msgid "Puppet module's author to search by"
+msgstr "Puppet-ის მოდულის ავტორით ძებნა"
+
+msgid "Puppet module's UUID to search by"
+msgstr "Puppet-ის მოდულის UUID-ით ძებნა"
+
+msgid "Content view version number"
+msgstr "შემცველობის ხედის ვერსიის ნომერი"
+
+msgid "Name to search by"
+msgstr "სახელით ძებნა"
+
+msgid "Name of the prior environment"
+msgstr "წინა გარემოს სახელი"
+
+msgid "Prior"
+msgstr "პრიორიტეტი"
+
+msgid "Lifecycle Path"
+msgstr "ცხოვრების ციკლის ბილიკი"
+
+msgid "Library"
+msgstr "ბიბლიოთეკა"
+
+msgid "Prior Lifecycle Environment"
+msgstr "ცხოვრების ციკლის წინა გარემო"
+
+msgid "Unauthenticated Pull"
+msgstr "არაავთენტიფიცირებული პული"
+
+msgid "Registry Name Pattern"
+msgstr "რეესტრის სახელის საბლონი"
+
+msgid "Environment created."
+msgstr "გარემო შეიქმნა."
+
+msgid "Could not create environment"
+msgstr "გარემოს შექმნის შეცდომა"
+
+msgid "Environment updated."
+msgstr "გარემო განახლდა."
+
+msgid "Could not update environment"
+msgstr "გარემოს განახლების შეცდომა"
+
+msgid "Environment deleted."
+msgstr "გარემო წაიშალა."
+
+msgid "Could not delete environment"
+msgstr "გარემოს წაშლის შეცდომა"
+
+msgid "Module Stream Name"
+msgstr "მოდულის ნაკადის სახელი"
+
+msgid "Context"
+msgstr "კონტექსტი"
+
+msgid "Artifacts"
+msgstr "არტეფაქტები"
+
+msgid "Profiles"
+msgstr "პროფილები"
+
+msgid "RPMs"
+msgstr "RPM-ები"
+
+msgid "Red Hat Repository URL"
+msgstr "Red Hat-ის რეპოზიტორიის URL"
+
+msgid "Service Levels"
+msgstr "მომსახურების დონეები"
+
+msgid "Organization updated."
+msgstr "ორგანიზაცია განახლდა."
+
+msgid "Could not update the organization"
+msgstr "ორგანიზაციის განახლების შეცდომა"
+
+msgid "Organization created."
+msgstr "ორგანიზაცია შეიქმნა."
+
+msgid "Could not create the organization"
+msgstr "ორგანიზაციის შექმნის შეცდომა"
+
+msgid "Organization deleted."
+msgstr "ორგანიზაცია წაიშალა."
+
+msgid "Could not delete the organization"
+msgstr "ორგანიზაციის წაშლის შეცდომა"
+
+msgid "version"
+msgstr "ვერსია"
+
+msgid "Commit"
+msgstr "გადაცემა"
+
+msgid "Date"
+msgstr "თარიღი"
+
+msgid "%s  %s"
+msgstr "%s  %s"
+
+msgid "Filename"
+msgstr "ფაილის სახელი"
+
+msgid "Source RPM"
+msgstr "წყაროს RPM"
+
+msgid "Epoch"
+msgstr "ეპოქა"
+
+msgid "Build Host"
+msgstr "აგების ჰოსტი"
+
+msgid "Vendor"
+msgstr "მომწოდებელი"
+
+msgid "License"
+msgstr "ლიცენზია"
+
+msgid "Relative Path"
+msgstr "შეფარდებითი ბილიკი"
+
+msgid "Package Group Name"
+msgstr "პაკეტების ჯგუფის სახელი"
+
+msgid "Repository Name"
+msgstr "რეპოზიტორიის სახელი"
+
+msgid "Default Packages"
+msgstr "ნაგულისხმები პაკეტები"
+
+msgid "Mandatory Packages"
+msgstr "აუცილებელი პაკეტები"
+
+msgid "Conditional Packages"
+msgstr "თითქმის ყოველთვის საჭირო პაკეტები"
+
+msgid "Optional Packages"
+msgstr "არასავალდებული პაკეტები"
+
+msgid "Server Response"
+msgstr "სერვერის პასუხი"
+
+msgid "FAIL"
+msgstr "შეცდომა"
+
+msgid "Duration: %sms"
+msgstr "ხანგრძლოვობა: %sმწმ"
+
+msgid "Message: %s"
+msgstr "შეტყობინება: %s"
+
+msgid "Sync State"
+msgstr "სინქის მდგომარეობა"
+
+msgid "Product created."
+msgstr "პროდუქტი შეიქმნა."
+
+msgid "Could not create the product"
+msgstr "პროდუქტის შექმნის შეცდომა"
+
+msgid "Sync Plan ID"
+msgstr "სინქის გეგმის ID"
+
+msgid "GPG"
+msgstr "GPG"
+
+msgid "GPG Key ID"
+msgstr "GPG გასაღების ID"
+
+msgid "GPG Key"
+msgstr "GPG გასაღები"
+
+msgid "Readonly"
+msgstr "მხოლოდ წასაკითხად"
+
+msgid "Deletable"
+msgstr "წაშლადი"
+
+msgid "Repo Name"
+msgstr "რეპოს სახელი"
+
+msgid "URL"
+msgstr "ბმული"
+
+msgid "Product updated."
+msgstr "პროდუქტი განახლდა."
+
+msgid "Could not update the product"
+msgstr "პროდუქტის განახლები შეცდომა"
+
+msgid "Product destroyed."
+msgstr "პროდუქტი განადგურებულია."
+
+msgid "Could not destroy the product"
+msgstr "პროდუქტის განადგურების შეცდომა"
+
+msgid "Product repositories are being synchronized in task %{id}."
+msgstr "დავალებაში %{id} მიმდინარეობს პროდუქტის რეპოზიტორიების სინქრონიზაცია."
+
+msgid "Could not synchronize the product repositories"
+msgstr "პროდუქტის რეპოზიტორიების სინქრონიზაციის შეცდომა"
+
+msgid "Assign sync plan to product"
+msgstr "სინქის გეგმის პროდუქტისთვის მიბმა"
+
+msgid "Synchronization plan assigned."
+msgstr "სინქრონიზაციის გეგმა მიბმულია."
+
+msgid "Could not assign synchronization plan"
+msgstr "სინქრონიზაციის გეგმის მიბმის შეცდომა"
+
+msgid "Delete assignment sync plan and product"
+msgstr "სინქრონიზაციის გეგმის მიბმისა და პროდუქტის მინიჭების წაშლა"
+
+msgid "Synchronization plan removed."
+msgstr "სინქრონიზაციის გეგმა წაიშალა."
+
+msgid "Could not remove synchronization plan"
+msgstr "სინქრონიზაციის გეგმის წაშლის შეცდომა"
+
+msgid "List associated products"
+msgstr "ასოცირებული პროექტების სია"
+
+msgid "Default Enabled?"
+msgstr "ჩავრთო ნაგულისხმებები?"
+
+msgid "Override"
+msgstr "გადაფარვა"
+
+msgid "Uuid"
+msgstr "Uuid"
+
+msgid "Summary"
+msgstr "შეჯამება"
+
+msgid "Project Page"
+msgstr "პროექტის გვერდი"
+
+msgid "Source"
+msgstr "წყარო"
+
+msgid "Dependencies"
+msgstr "დამოკიდებულებები"
+
+msgid "File checksums"
+msgstr "ფაილის საკონტროლო ჯამები"
+
+msgid "Tag List"
+msgstr "ჭდეების სია"
+
+msgid "Red Hat Repository"
+msgstr "Red Hat-ის რეპოზიტორია"
+
+msgid "Checksum Type"
+msgstr "საკონტროლო ჯამის ტიპი"
+
+msgid "Mirror on Sync"
+msgstr "სინქრონიზაციისას სარკის შექმნა"
+
+msgid "Publish Via HTTP"
+msgstr "HTTP-ით გამოქვეყნება"
+
+msgid "Published At"
+msgstr "გამოქვეყნების დრო"
+
+msgid "Download Policy"
+msgstr "გადმოწერის წესები"
+
+msgid "OSTree Upstream Sync Policy"
+msgstr "OSTree -ის აღმავლის სინქრონიზაციის წესი"
+
+msgid "OSTree Upstream Sync Depth"
+msgstr "OSTree -ის აღმავლის სინქრონიზაციის სიღრმე"
+
+msgid "Upstream Repository Name"
+msgstr "აღმავლის რეპოზიტორიის სახელი"
+
+msgid "Container Image Tags Filter"
+msgstr "კონტეინერის ასლის ჭდის ფილტრი"
+
+msgid "Container Repository Name"
+msgstr "კონტენერის რეპოზიტორიის სახელი"
+
+msgid "Ignorable Content Units"
+msgstr "შემცველობის იგნორირებადი ერთეულები"
+
+msgid "Sync"
+msgstr "სინქრონიზაცია"
+
+msgid "Last Sync Date"
+msgstr "ბოლო სინქრონიზაცის თარიღი"
+
+msgid "Content Counts"
+msgstr "შემცველობის რაოდენობა"
+
+msgid "Source RPMS"
+msgstr "წყარო RPM-ები"
+
+msgid "Package Groups"
+msgstr "პაკეტის ჯგუფები"
+
+msgid "Container Image Manifest Lists"
+msgstr "კონტეინერის ასლების მანიფესტების სია"
+
+msgid "Container Image Manifests"
+msgstr "კონტეინერის ასლების მანიფესტები"
+
+msgid "Container Image Tags"
+msgstr "კონტეინერის ასლის ჭდეები"
+
+msgid "OSTree Branches"
+msgstr "OSTree-ის ბრენჩები"
+
+msgid "Files"
+msgstr "ფაილები"
+
+msgid "yes"
+msgstr "დიახ"
+
+msgid "no"
+msgstr "არა"
+
+msgid "Not Synced"
+msgstr "სინქრონიზაცია არ მომხდარა"
+
+msgid "Failed"
+msgstr "შეცდომა"
+
+msgid "Success"
+msgstr "წარმატება"
+
+msgid "Finished"
+msgstr "დასრულებულია"
+
+msgid "Error"
+msgstr "შეცდომა"
+
+msgid "Running"
+msgstr "მიმდინარეობს შესრულება"
+
+msgid "Waiting"
+msgstr "მოლოდინი"
+
+msgid "Canceled"
+msgstr "გაუქმებულია"
+
+msgid "Repository is being synchronized in task %{id}."
+msgstr "დავალებაში %{id} მიმდინარეობს რეპოზიტორიის სინქრონიზაცია."
+
+msgid "Could not synchronize the repository"
+msgstr "რეპოზიტორიის სინქრონიზაცია შეუძლებელია"
+
+msgid "Repository created."
+msgstr "რეპოზიტორია შეიქმნა."
+
+msgid "Could not create the repository"
+msgstr "რეპოზიტორიის შექმნის შეცდომა"
+
+msgid "Repository updated."
+msgstr "რეპოზიტორია განახლდა."
+
+msgid "Could not update the repository"
+msgstr "რეპოზიტორიის განახლების შეცდომა"
+
+msgid "--docker-digest required with --docker-tag"
+msgstr "--docker-tag -თან ერთად საჭიროა --docker-digest -ის მითითება"
+
+msgid "--docker-tag required with --docker-digest"
+msgstr "--docker-digest -თან ერთად საჭიროა --docker-tag -ის მითითება"
+
+msgid "Optional custom Container Image tag to specify the value of the Docker digest"
+msgstr ""
+"Docker-ის დაიჯესტის მნიშვნელობაში მისათითებელი არასავალდებულო ხელით მითითებული"
+" კონტეინერის ასლის ჭდე"
+
+msgid "Container Image manifest digest"
+msgstr "კონტეინერის ასლის მანიფესტის დაიჯესტი"
+
+msgid "Repository updated"
+msgstr "რეპოზიტორია განახლდა"
+
+msgid "Failed to upload tag '%s' to repository."
+msgstr "ჭდის რეპოზიტორიაში ატვირთვის შეცდომა: %s."
+
+msgid "Repository deleted."
+msgstr "რეპოზიტორია წაიშალა."
+
+msgid "Could not delete the Repository"
+msgstr "რეპოზიტორიის წაშლის შეცდომა"
+
+msgid "Could not find any files matching PATH"
+msgstr "ფაილების პოვნა, რომლებიც ემთხვევა PATH-ს, შეუძლებელია"
+
+msgid "Cannot specify both product options and repository ID."
+msgstr "პროდუქტის პარამეტრების და რეპოზიტორიის ID-ის ერთდროულად მითითება აკრძალულია."
+
+msgid "Repository content uploaded."
+msgstr "რეპოზიტორიის შემცველობა ატვირთულია."
+
+msgid "Could not upload the content"
+msgstr "შემცველობის ატვირთვის შეცდომა"
+
+msgid ""
+"Upload file, directory of files, or glob of files as content for a repository."
+"\n"
+"Globs must be escaped by single or double quotes"
+msgstr ""
+"ატვირთეთ ფაილი, ფაილებიან საქაღალდე ან ფაილების გლობი, როგორც რეპოზიტორიის შემ"
+"ცველობა.\n"
+"გლობები ერთ ან ორმაგი ბრჭყალებით უნდა იყოს გამოყოფილი"
+
+msgid "Failed to upload file '%s' to repository. Please check the file and try again."
+msgstr "ფალის (%s) რეპოზიტორიაში ატვირთვის შეცდომა. შეამოწმეთ ფაილი და თავიდან სცადეთ."
+
+msgid "Successfully uploaded file '%{name}'"
+msgstr "ფაილი წარმატებით აიტვირთა: '%{name}'"
+
+msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
+msgstr "მანიფეტის ფაილი სახელით '%{name}' დაიჯესტით '%{digest}' წარმატებით აიტვირთა"
+
+msgid "Remove content from a repository"
+msgstr "რეპოზიტორიიდან შემცველობის ნაწილის წაშლა"
+
+msgid "Repository content removed."
+msgstr "შემცველობის ნაწილი წაშლილია."
+
+msgid "Could not remove content"
+msgstr "შემცველობის ნაწილის წაშლის შეცდომა"
+
+msgid "Export content from a repository to the configured directory"
+msgstr "რეპოზიტორიიდან შემცველობის მითითებულ საქაღალდეში გატანა"
+
+msgid "Repository is being exported in task %{id}."
+msgstr "ამოცანაში %{id} მიმდინარეობს რეპოზიტორიის გატანა."
+
+msgid "Could not export the repository"
+msgstr "რეპოზიტორიის გატანის შეცდომა"
+
+msgid "Enabled Repositories"
+msgstr "ჩართული რეპოზიტორიები"
+
+msgid "Arch"
+msgstr "არქიტექტურა"
+
+msgid "Registry Name"
+msgstr "რეესტრის სახელი"
+
+msgid "Enabled"
+msgstr "ჩართულია"
+
+msgid "Repository enabled."
+msgstr "რეპოზიტორია ჩაირთო."
+
+msgid "Could not enable repository"
+msgstr "რეპოზიტორიის ჩართვის შეცდომა"
+
+msgid "Repository disabled."
+msgstr "რეპოზიტორია გაითიშა."
+
+msgid "Could not disable repository"
+msgstr "რეპოზიტორიის გათიშვის შეცდომა"
+
+msgid "Consumed"
+msgstr "მოხმარებულია"
+
+msgid "Physical"
+msgstr "ფიზიკური"
+
+msgid "Guests of %s"
+msgstr "%s-ის სტუმრები"
+
+msgid "Temporary"
+msgstr "დროებითი"
+
+msgid "Virtual"
+msgstr "ვირტუალური"
+
+msgid "Manifest is being uploaded in task %{id}."
+msgstr "ამოცანაში %{id} მიმდინარეობს მანიფესტის ატვირთვა."
+
+msgid "Manifest upload failed"
+msgstr "მანიფესტის ატვირთვის შეცდომა"
+
+msgid "Subscription manifest file"
+msgstr "გამოწერის მანიფესტის ფაილი"
+
+msgid "Manifest is being deleted in task %{id}."
+msgstr "ამოცანაში %{id} მიმდინარეობს მანიფესტის წაშლა."
+
+msgid "Manifest deletion failed"
+msgstr "მანიფესტის წაშლის შეცდომა"
+
+msgid "Manifest is being refreshed in task %{id}."
+msgstr "ამოცანაში %{id} მიმდინარეობს მანიფესტის განახლება."
+
+msgid "Manifest refresh failed"
+msgstr "მანიფესტის განახლების შეცდომა"
+
+msgid "Status Message"
+msgstr "სტატუსის შეტყობინება"
+
+msgid "Time"
+msgstr "დრო"
+
+msgid "Interval"
+msgstr "ინტერვალი"
+
+msgid "Cron Expression"
+msgstr "Cron-ის გამოსახულება"
+
+msgid "Recurring Logic ID"
+msgstr "განმეორებადი ლოგიკის ID"
+
+msgid "Created at"
+msgstr "შექმნის დრო"
+
+msgid "Updated at"
+msgstr "განახლების დრო"
+
+msgid "how often synchronization should run"
+msgstr "სინქრონიზაციის გაშვების სიხშირე"
+
+msgid "set this when interval is custom cron"
+msgstr "ხელით მითითებული კრონის ინტერვალის დაყენება"
+
+msgid ""
+"Start date and time for the sync plan.Time is optional, if kept blank current "
+"system time will be considered"
+msgstr ""
+"სინქის გეგმის დაწყების თარიღი და დრო. გაითვალისწინეთ, რომ დროის მითითება არასა"
+"ვალდებულოა. თუ ცარიელს დატოვებთ, სისტემური დრო იქნება გამოყენებული"
+
+msgid "Sync plan created."
+msgstr "სინქრონიზაციის გეგმის შეიქმნა."
+
+msgid "Could not create the sync plan"
+msgstr "სინქრონიზაციის გეგმის შექმნის შეცდომა"
+
+msgid "start date and time of the synchronization"
+msgstr "სინქრონიზაციის დაწყების თარიღი და დრო"
+
+msgid "Sync plan updated."
+msgstr "სინქის გეგმა განახლდა."
+
+msgid "Could not update the sync plan"
+msgstr "სინქის გეგმის განახლების შეცდომა"
+
+msgid "Sync plan destroyed."
+msgstr "სინქის გეგმა წაიშალა."
+
+msgid "Could not destroy the sync plan"
+msgstr "სინქის გეგმის წაშლის შეცდომა"

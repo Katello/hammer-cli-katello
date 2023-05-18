@@ -16,13 +16,73 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Manipulate activation keys"
+msgstr ""
+
+msgid "Manipulate organizations"
+msgstr ""
+
+msgid "Manipulate GPG Key actions on the server"
+msgstr ""
+
+msgid "Manipulate lifecycle_environments on the server"
+msgstr ""
+
+msgid "Get the status of the server"
+msgstr ""
+
+msgid "Manipulate products"
+msgstr ""
+
+msgid "View Puppet Module details"
+msgstr ""
+
+msgid "Manipulate repositories"
+msgstr ""
+
+msgid "Manipulate repository sets on the server"
+msgstr ""
+
+msgid "Manipulate subscriptions"
+msgstr ""
+
+msgid "Manipulate sync plans"
+msgstr ""
+
+msgid "Manipulate host collections"
+msgstr ""
+
+msgid "Manipulate content views"
+msgstr ""
+
+msgid "Manipulate capsule"
+msgstr ""
+
+msgid "Manipulate packages"
+msgstr ""
+
+msgid "Manipulate package groups"
+msgstr ""
+
+msgid "Manipulate errata"
+msgstr ""
+
+msgid "Manipulate ostree branches"
+msgstr ""
+
+msgid "Manipulate files"
+msgstr ""
+
+msgid "View Module Streams"
+msgstr ""
+
 msgid "ID"
 msgstr ""
 
 msgid "Name"
 msgstr ""
 
-msgid "Consumed"
+msgid "Host Limit"
 msgstr ""
 
 msgid "Lifecycle Environment"
@@ -31,31 +91,49 @@ msgstr ""
 msgid "Content View"
 msgstr ""
 
-msgid "%{consumed} of %{limit}"
+msgid "Unlimited"
 msgstr ""
 
-msgid "Unlimited"
+msgid "%{consumed} of %{limit}"
 msgstr ""
 
 msgid "Description"
 msgstr ""
 
+msgid "Auto Attach"
+msgstr ""
+
+msgid "Service Level"
+msgstr ""
+
+msgid "Release Version"
+msgstr ""
+
 msgid "Host Collections"
 msgstr ""
 
-msgid "Activation key created"
+msgid "Activation key created."
 msgstr ""
 
 msgid "Could not create the activation key"
 msgstr ""
 
-msgid "Activation key updated"
+msgid "Copy an activation key"
+msgstr ""
+
+msgid "Activation key copied."
+msgstr ""
+
+msgid "Could not copy the activation key"
+msgstr ""
+
+msgid "Activation key updated."
 msgstr ""
 
 msgid "Could not update the activation key"
 msgstr ""
 
-msgid "Activation key deleted"
+msgid "Activation key deleted."
 msgstr ""
 
 msgid "Could not delete the activation key"
@@ -64,16 +142,42 @@ msgstr ""
 msgid "List associated subscriptions"
 msgstr ""
 
-msgid "resource ID"
+msgid "Attached"
 msgstr ""
 
-msgid "subscription ID"
+msgid "Quantity"
 msgstr ""
 
-msgid "subscription quantity"
+msgid "Start Date"
 msgstr ""
 
-msgid "Subscription added to activation key"
+msgid "End Date"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "Contract"
+msgstr ""
+
+msgid "Account"
+msgstr ""
+
+msgid ""
+"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : data['quan"
+"tity']}"
+msgstr ""
+
+msgid "ID of the activation key"
+msgstr ""
+
+msgid "Activation key name to search by"
+msgstr ""
+
+msgid "ID of subscription"
+msgstr ""
+
+msgid "Subscription added to activation key."
 msgstr ""
 
 msgid "Could not add subscription to activation key"
@@ -82,7 +186,7 @@ msgstr ""
 msgid "Remove subscription"
 msgstr ""
 
-msgid "Subscription removed from activation key"
+msgid "Subscription removed from activation key."
 msgstr ""
 
 msgid "Could not remove subscription from activation key"
@@ -91,58 +195,46 @@ msgstr ""
 msgid "List associated host collections"
 msgstr ""
 
-msgid "Manipulate activation keys."
+msgid "ID of activation key"
 msgstr ""
 
-msgid "The repository has been associated"
+msgid "Name of activation key"
+msgstr ""
+
+msgid "The repository has been associated."
 msgstr ""
 
 msgid "Could not add repository"
 msgstr ""
 
-msgid "The repository has been removed"
+msgid "The repository has been removed."
 msgstr ""
 
 msgid "Could not remove repository"
 msgstr ""
 
-msgid "The host collection has been associated"
+msgid "The host collection has been associated."
 msgstr ""
 
 msgid "Could not add host collection"
 msgstr ""
 
-msgid "The host collection has been removed"
+msgid "The host collection has been removed."
 msgstr ""
 
 msgid "Could not remove host collection"
 msgstr ""
 
-msgid "The content host has been added"
+msgid "The host has been added."
 msgstr ""
 
-msgid "Could not add content host"
+msgid "Could not add host"
 msgstr ""
 
-msgid "The content host has been removed"
+msgid "The host has been removed."
 msgstr ""
 
-msgid "Could not remove content host"
-msgstr ""
-
-msgid "Id"
-msgstr ""
-
-msgid "URL"
-msgstr ""
-
-msgid "Features"
-msgstr ""
-
-msgid "Created at"
-msgstr ""
-
-msgid "Updated at"
+msgid "Could not remove host"
 msgstr ""
 
 msgid "Manage the capsule content"
@@ -151,61 +243,121 @@ msgstr ""
 msgid "Organization"
 msgstr ""
 
-msgid "Lifecycle environment successfully added to the capsule"
+msgid "Lifecycle environment successfully added to the capsule."
 msgstr ""
 
 msgid "Could not add the lifecycle environment to the capsule"
 msgstr ""
 
-msgid "Lifecycle environment successfully removed from the capsule"
+msgid "Organization ID"
+msgstr ""
+
+msgid "Organization name"
+msgstr ""
+
+msgid "Lifecycle environment successfully removed from the capsule."
 msgstr ""
 
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr ""
 
-msgid "Capsule content is being synchronized in task %{id}"
+msgid "Capsule content is being synchronized in task %{id}."
 msgstr ""
 
 msgid "Could not synchronize capsule content"
 msgstr ""
 
-msgid "Manipulate capsule"
+msgid "Last sync"
 msgstr ""
 
-msgid "ID of the content host"
+msgid "Status"
 msgstr ""
 
-msgid "Location"
+msgid "Currently running sync tasks"
 msgstr ""
 
-msgid "Entitlement Status"
+msgid "Task id"
 msgstr ""
 
-msgid "Release Version"
+msgid "Progress"
 msgstr ""
 
-msgid "Autoheal"
+msgid "Last failure"
 msgstr ""
 
-msgid "Content host created"
+msgid "Messages"
 msgstr ""
 
-msgid "Could not create content host"
+msgid "Capsule is synchronized"
 msgstr ""
 
-msgid "Content host updated"
+msgid "%{count} environment(s) can be synchronized: %{names}"
 msgstr ""
 
-msgid "Could not update content host"
+msgid "Lifecycle Environments"
 msgstr ""
 
-msgid "Content host deleted"
+msgid "Content Views"
 msgstr ""
 
-msgid "Could not delete content host"
+msgid "Composite"
 msgstr ""
 
-msgid "manipulate content hosts on the server"
+msgid "Last Published"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Products"
+msgstr ""
+
+msgid "Yum repos"
+msgstr ""
+
+msgid "Container Image repos"
+msgstr ""
+
+msgid "Packages"
+msgstr ""
+
+msgid "Package groups"
+msgstr ""
+
+msgid "Errata"
+msgstr ""
+
+msgid "Puppet modules"
+msgstr ""
+
+msgid "Name of the composite content view"
+msgstr ""
+
+msgid "Override product content defaults"
+msgstr ""
+
+msgid "Updated content override."
+msgstr ""
+
+msgid "Could not update content override"
+msgstr ""
+
+msgid "Label of the content"
+msgstr ""
+
+msgid ""
+"Override parameter key or name.\n"
+"To enable or disable a repo select 'enabled'.\n"
+"Default value: enabled"
+msgstr ""
+
+msgid "Override value. Note for repo enablement you can use a boolean value"
+msgstr ""
+
+msgid "Remove a content override"
 msgstr ""
 
 msgid "Content View ID"
@@ -214,13 +366,19 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-msgid "Composite"
-msgstr ""
-
 msgid "Repository IDs"
 msgstr ""
 
-msgid "Repositories"
+msgid "Content Host Count"
+msgstr ""
+
+msgid "Yum Repositories"
+msgstr ""
+
+msgid "Container Image Repositories"
+msgstr ""
+
+msgid "OSTree Repositories"
 msgstr ""
 
 msgid "Puppet Modules"
@@ -230,15 +388,6 @@ msgid "UUID"
 msgstr ""
 
 msgid "Author"
-msgstr ""
-
-msgid "Created"
-msgstr ""
-
-msgid "Updated"
-msgstr ""
-
-msgid "Environments"
 msgstr ""
 
 msgid "Versions"
@@ -253,7 +402,10 @@ msgstr ""
 msgid "Components"
 msgstr ""
 
-msgid "Content view created"
+msgid "Activation Keys"
+msgstr ""
+
+msgid "Content view created."
 msgstr ""
 
 msgid "Could not create the content view"
@@ -262,70 +414,179 @@ msgstr ""
 msgid "Create a composite content view"
 msgstr ""
 
-msgid "Content view updated"
+msgid "Copy a content view"
+msgstr ""
+
+msgid "Content view name to search by"
+msgstr ""
+
+msgid "New content view name"
+msgstr ""
+
+msgid "Content view copied."
+msgstr ""
+
+msgid "Could not copy the content view"
+msgstr ""
+
+msgid "Content view updated."
 msgstr ""
 
 msgid "Could not update the content view"
 msgstr ""
 
-msgid "Content view is being deleted with task %{id}"
+msgid "Content view is being deleted with task %{id}."
 msgstr ""
 
 msgid "Could not delete the content view"
 msgstr ""
 
-msgid "Content view is being published with task %{id}"
+msgid "Content view is being published with task %{id}."
 msgstr ""
 
 msgid "Could not publish the content view"
 msgstr ""
 
-msgid "Content view is being removed from environment with task %{id}"
+msgid "Content view is being removed from environment with task %{id}."
 msgstr ""
 
 msgid "Could not remove the content view from environment"
 msgstr ""
 
-msgid "Comma separated list of version ids to remove"
+msgid "Version ids to remove"
 msgstr ""
 
-msgid "Comma separated list of environment ids to remove"
+msgid "Environment ids to remove"
 msgstr ""
 
-msgid "Content view objects are being removed task %{id}"
+msgid "Content view objects are being removed task %{id}."
 msgstr ""
 
 msgid "Could not remove objects from content view"
 msgstr ""
 
-msgid "The component version has been added"
+msgid "Add a content view version to a composite view"
+msgstr ""
+
+msgid "The component version has been added."
 msgstr ""
 
 msgid "Could not add version"
 msgstr ""
 
-msgid "The component version has been removed"
+msgid "Remove a content view version from a composite view"
+msgstr ""
+
+msgid "The component version has been removed."
 msgstr ""
 
 msgid "Could not remove version"
 msgstr ""
 
-msgid "Manipulate content views."
+msgid "Content View identifier of the component who's latest version is desired"
+msgstr ""
+
+msgid "Content View name of the component who's latest version is desired"
+msgstr ""
+
+msgid "Content View Version identifier of the component"
+msgstr ""
+
+msgid ""
+"Content View Version number of the component. Either use this or --component-c"
+"ontent-view-version-id option"
+msgstr ""
+
+msgid "Select the latest version of the components content view is desired"
+msgstr ""
+
+msgid "Please provide --component-content-view-id"
+msgstr ""
+
+msgid ""
+"Please provide --component-content-view-version-id or --component-content-view"
+"-version or --latest for the latest version"
+msgstr ""
+
+msgid "Id"
+msgstr ""
+
+msgid "Current Version"
+msgstr ""
+
+msgid "Version Id"
+msgstr ""
+
+msgid "Latest"
+msgstr ""
+
+msgid "No Published Version"
+msgstr ""
+
+msgid "Component added to content view."
+msgstr ""
+
+msgid "Could not add the component"
+msgstr ""
+
+msgid "Content view component updated."
+msgstr ""
+
+msgid "Could not update the content view component"
+msgstr ""
+
+msgid ""
+"Array of component content view names to remove. Comma separated list of value"
+"s"
+msgstr ""
+
+msgid ""
+"Array of component content view identfiers to remove. Comma separated list of "
+"values"
+msgstr ""
+
+msgid "Components removed from content view."
+msgstr ""
+
+msgid "Could not remove the components"
 msgstr ""
 
 msgid "Latest(Currently %s)"
 msgstr ""
 
-msgid "Puppet module added to content view"
+msgid "Puppet module added to content view."
 msgstr ""
 
 msgid "Could not add the puppet module"
 msgstr ""
 
-msgid "Puppet module removed from content view"
+msgid "Puppet module removed from content view."
 msgstr ""
 
 msgid "Couldn't remove puppet module from the content view"
+msgstr ""
+
+msgid "Content View numeric identifier"
+msgstr ""
+
+msgid "Content View name"
+msgstr ""
+
+msgid "count of unused versions to keep"
+msgstr ""
+
+msgid "Invalid value for --count option: value must be 0 or greater."
+msgstr ""
+
+msgid "No versions to delete."
+msgstr ""
+
+msgid ""
+"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
+"'%{task_id}'."
+msgstr ""
+
+msgid "Version '%{version}' of content view '%{view}' deleted."
 msgstr ""
 
 msgid "Content View Name"
@@ -334,16 +595,150 @@ msgstr ""
 msgid "Content View Label"
 msgstr ""
 
-msgid "Content view is being promoted with task %{id}"
+msgid "Repositories"
+msgstr ""
+
+msgid "Content View Version is being republished with task %{id}."
+msgstr ""
+
+msgid "Could not republish the Content View"
+msgstr ""
+
+msgid "Content view is being promoted with task %{id}."
 msgstr ""
 
 msgid "Could not promote the content view"
 msgstr ""
 
-msgid "Filter ID"
+msgid "force content view promotion and bypass lifecycle environment restriction"
+msgstr ""
+
+msgid "Name of the target environment"
+msgstr ""
+
+msgid "Id of the target environment"
+msgstr ""
+
+msgid ""
+"Environment name from where to promote its version from (if version is unknown"
+")"
+msgstr ""
+
+msgid "Id of the environment from where to promote its version "
+msgstr ""
+
+msgid "Incremental update is being performed with task %{id}."
+msgstr ""
+
+msgid "An error occurred incrementally updating the content view"
+msgstr ""
+
+msgid "list of lifecycle environment IDs to update the content view version in"
+msgstr ""
+
+msgid "list of lifecycle environment names to update the content view version in"
+msgstr ""
+
+msgid "Organization name for resolving lifecycle environment names"
+msgstr ""
+
+msgid "Organization id for resolving lifecycle environment names"
+msgstr ""
+
+msgid ""
+"Update all editable and applicable hosts within the specified Content View and"
+" \\\n"
+"               Lifecycle Environments"
+msgstr ""
+
+msgid "IDs of hosts to update"
+msgstr ""
+
+msgid "Export a content view (deprecated)"
+msgstr ""
+
+msgid "Content view is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the content view"
+msgstr ""
+
+msgid "Export a content view version"
+msgstr ""
+
+msgid "Content view export is available in %{directory}."
+msgstr ""
+
+msgid "Content View Version numeric identifier"
+msgstr ""
+
+msgid "Directory to put content view version export into."
+msgstr ""
+
+msgid ""
+"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is supporte"
+"d at this time. Please remove the repository from the Content View, republish "
+"and try the export again."
+msgstr ""
+
+msgid "Import a content view version"
+msgstr ""
+
+msgid "Content view imported."
+msgstr ""
+
+msgid "Could not import the content view"
+msgstr ""
+
+msgid "Organization numeric identifier"
+msgstr ""
+
+msgid "Location of export tar on disk"
+msgstr ""
+
+msgid "Export tar #{options['option_export_tar']} does not exist."
+msgstr ""
+
+msgid "Unable to sync repositories, no library repository found for %s"
+msgstr ""
+
+msgid "Errata ID"
 msgstr ""
 
 msgid "Type"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Reboot Suggested"
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Issued"
+msgstr ""
+
+msgid "Release"
+msgstr ""
+
+msgid "Solution"
+msgstr ""
+
+msgid "Module Streams"
+msgstr ""
+
+msgid "Stream"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Checksum"
+msgstr ""
+
+msgid "Filter ID"
 msgstr ""
 
 msgid "Inclusion"
@@ -358,31 +753,25 @@ msgstr ""
 msgid "Maximum Version"
 msgstr ""
 
-msgid "Errata ID"
-msgstr ""
-
-msgid "Start Date"
-msgstr ""
-
-msgid "End Date"
-msgstr ""
-
 msgid "Types"
 msgstr ""
 
-msgid "Filter created"
+msgid "Created"
+msgstr ""
+
+msgid "Filter created."
 msgstr ""
 
 msgid "Could not create the filter"
 msgstr ""
 
-msgid "Filter updated"
+msgid "Filter updated."
 msgstr ""
 
 msgid "Could not update the filter"
 msgstr ""
 
-msgid "Filter deleted"
+msgid "Filter deleted."
 msgstr ""
 
 msgid "Could not delete the filter"
@@ -391,19 +780,28 @@ msgstr ""
 msgid "Rule ID"
 msgstr ""
 
-msgid "Filter rule created"
+msgid "Architecture"
+msgstr ""
+
+msgid "Date Type"
+msgstr ""
+
+msgid "Filter rule created."
 msgstr ""
 
 msgid "Could not create the filter rule"
 msgstr ""
 
-msgid "Filter rule updated"
+msgid "Package and package group names"
+msgstr ""
+
+msgid "Filter rule updated."
 msgstr ""
 
 msgid "Could not update the filter rule"
 msgstr ""
 
-msgid "Filter rule deleted"
+msgid "Filter rule deleted."
 msgstr ""
 
 msgid "Could not delete the filter rule"
@@ -415,10 +813,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-msgid "Content"
-msgstr ""
-
-msgid "GPG Key created"
+msgid "GPG Key created."
 msgstr ""
 
 msgid "Could not create GPG Key"
@@ -427,76 +822,294 @@ msgstr ""
 msgid "GPG Key file"
 msgstr ""
 
-msgid "GPG Key updated"
+msgid "GPG Key updated."
 msgstr ""
 
 msgid "Could not update GPG Key"
 msgstr ""
 
-msgid "GPG Key deleted"
+msgid "GPG Key deleted."
 msgstr ""
 
 msgid "Could not delete the GPG Key"
 msgstr ""
 
-msgid "manipulate GPG Key actions on the server"
-msgstr ""
-
-msgid "Array of system ids to replace the content hosts in host collection"
-msgstr ""
-
 msgid "Limit"
 msgstr ""
 
-msgid "Host collection created"
+msgid "Host collection created."
 msgstr ""
 
 msgid "Could not create the host collection"
 msgstr ""
 
-msgid "Total Content Hosts"
+msgid "Total Hosts"
 msgstr ""
 
-msgid "Max Content Hosts"
+msgid "Host Collection ID"
 msgstr ""
 
-msgid "Host collection updated"
+msgid "Host Collection Name"
+msgstr ""
+
+msgid "Copy a host collection"
+msgstr ""
+
+msgid "New host collection name"
+msgstr ""
+
+msgid "New host collection created."
+msgstr ""
+
+msgid "Could not create the new host collection"
+msgstr ""
+
+msgid "Host collection updated."
 msgstr ""
 
 msgid "Could not update the the host collection"
 msgstr ""
 
-msgid "Host collection deleted"
+msgid "Host collection deleted."
 msgstr ""
 
 msgid "Could not delete the host collection"
 msgstr ""
 
-msgid "The content host(s) has been added"
+msgid "The host(s) has been added."
 msgstr ""
 
-msgid "Could not add content host(s)"
+msgid "Could not add host(s)"
 msgstr ""
 
-msgid "The content host(s) has been removed"
+msgid "The host(s) has been removed."
 msgstr ""
 
-msgid "Could not remove content host(s)"
+msgid "Could not remove host(s)"
 msgstr ""
 
-msgid "Manipulate host collections"
+msgid "Manipulate errata for a host collection"
 msgstr ""
 
-msgid "Activation key name to search by"
+msgid "Install errata on content hosts contained within a host collection"
+msgstr ""
+
+msgid "Successfully scheduled installation of errata."
+msgstr ""
+
+msgid "Could not schedule installation of errata"
+msgstr ""
+
+msgid "List of Errata to install"
+msgstr ""
+
+msgid "Manipulate packages for a host collection"
+msgstr ""
+
+msgid "comma-separated list of packages to install"
+msgstr ""
+
+msgid "Install packages on content hosts contained within a host collection"
+msgstr ""
+
+msgid "Successfully scheduled installation of package(s)."
+msgstr ""
+
+msgid "Could not schedule installation of package(s)"
+msgstr ""
+
+msgid "Update packages on content hosts contained within a host collection"
+msgstr ""
+
+msgid "Successfully scheduled update of package(s)."
+msgstr ""
+
+msgid "Could not schedule update of package(s)"
+msgstr ""
+
+msgid "Remove packages on content hosts contained within a host collection"
+msgstr ""
+
+msgid "Successfully scheduled removal of package(s)."
+msgstr ""
+
+msgid "Could not schedule removal of package(s)"
+msgstr ""
+
+msgid "Manipulate package-groups for a host collection"
+msgstr ""
+
+msgid "comma-separated list of package-groups to install"
+msgstr ""
+
+msgid "Install package-groups on content hosts contained within a host collection"
+msgstr ""
+
+msgid "Successfully scheduled installation of package-group(s)."
+msgstr ""
+
+msgid "Could not schedule installation of package-group(s)"
+msgstr ""
+
+msgid "Update package-groups on content hosts contained within a host collection"
+msgstr ""
+
+msgid "Successfully scheduled update of package-groups(s)."
+msgstr ""
+
+msgid "Could not schedule update of package-group(s)"
+msgstr ""
+
+msgid "Remove package-groups on content hosts contained within a host collection"
+msgstr ""
+
+msgid "Successfully scheduled removal of package-groups(s)."
+msgstr ""
+
+msgid "Could not schedule removal of package-group(s)"
+msgstr ""
+
+msgid "Content Source name "
+msgstr ""
+
+msgid "Content Source"
+msgstr ""
+
+msgid "Errata is being applied with task %{id}."
+msgstr ""
+
+msgid "Could not apply errata"
+msgstr ""
+
+msgid "Erratum ID"
+msgstr ""
+
+msgid "Installable"
+msgstr ""
+
+msgid "Errata recalculated with task %{id}."
+msgstr ""
+
+msgid "Could not recalculate errata"
+msgstr ""
+
+msgid "Content Information"
+msgstr ""
+
+msgid "Kickstart Repository"
+msgstr ""
+
+msgid "Applicable Packages"
+msgstr ""
+
+msgid "Upgradable Packages"
+msgstr ""
+
+msgid "Applicable Errata"
+msgstr ""
+
+msgid "Enhancement"
+msgstr ""
+
+msgid "Bug Fix"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Subscription Information"
+msgstr ""
+
+msgid "Last Checkin"
+msgstr ""
+
+msgid "Autoheal"
+msgstr ""
+
+msgid "Registered To"
+msgstr ""
+
+msgid "Registered At"
+msgstr ""
+
+msgid "Registered by Activation Keys"
+msgstr ""
+
+msgid "Kickstart repository name "
+msgstr ""
+
+msgid "Please provide --lifecycle-environment-id"
+msgstr ""
+
+msgid "Please provide --content-view-id"
+msgstr ""
+
+msgid ""
+"No such repository with name %{name}, in lifecycle environment %{environment_i"
+"d} and content view %{content_view_id}"
+msgstr ""
+
+msgid "NVRA"
+msgstr ""
+
+msgid "Host unregistered."
+msgstr ""
+
+msgid "Could not unregister the host"
+msgstr ""
+
+msgid "Host successfully registered."
+msgstr ""
+
+msgid "Failed to register host"
+msgstr ""
+
+msgid "Subscription attached to the host successfully."
+msgstr ""
+
+msgid "Failed to attach subscriptions to the host"
+msgstr ""
+
+msgid "Quantity of this subscriptions to add. Defaults to 1"
+msgstr ""
+
+msgid "Auto attached subscriptions to the host successfully."
+msgstr ""
+
+msgid "Failed to auto attach subscriptions to the host"
+msgstr ""
+
+msgid "Subscription removed from the host successfully."
+msgstr ""
+
+msgid "Failed to remove subscriptions from the host"
+msgstr ""
+
+msgid "Remove the first instance of a subscription with matching id and quantity"
+msgstr ""
+
+msgid "Organization ID to search by"
+msgstr ""
+
+msgid "Organization name to search by"
+msgstr ""
+
+msgid "Organization label to search by"
 msgstr ""
 
 msgid "Capsule name to search by"
 msgstr ""
 
-msgid "Content host name to search by"
+msgid "File name to search by"
 msgstr ""
 
-msgid "Content view name to search by"
+msgid "Content View Version ID"
+msgstr ""
+
+msgid "Repository ID"
+msgstr ""
+
+msgid "Module stream name to search by"
 msgstr ""
 
 msgid "Gpg key name to search by"
@@ -508,13 +1121,10 @@ msgstr ""
 msgid "Lifecycle environment name to search by"
 msgstr ""
 
-msgid "Organization name to search by"
-msgstr ""
-
-msgid "Organization label to search by"
-msgstr ""
-
 msgid "Product name to search by"
+msgstr ""
+
+msgid "Operating system title"
 msgstr ""
 
 msgid "Repository name to search by"
@@ -532,9 +1142,6 @@ msgstr ""
 msgid "Task name to search by"
 msgstr ""
 
-msgid "User name to search by"
-msgstr ""
-
 msgid "Puppet module name to search by"
 msgstr ""
 
@@ -544,7 +1151,13 @@ msgstr ""
 msgid "Puppet module's UUID to search by"
 msgstr ""
 
+msgid "Content view version number"
+msgstr ""
+
 msgid "Name to search by"
+msgstr ""
+
+msgid "Name of the prior environment"
 msgstr ""
 
 msgid "Prior"
@@ -559,55 +1172,118 @@ msgstr ""
 msgid "Prior Lifecycle Environment"
 msgstr ""
 
-msgid "Environment created"
+msgid "Unauthenticated Pull"
+msgstr ""
+
+msgid "Registry Name Pattern"
+msgstr ""
+
+msgid "Environment created."
 msgstr ""
 
 msgid "Could not create environment"
 msgstr ""
 
-msgid "Environment updated"
+msgid "Environment updated."
 msgstr ""
 
 msgid "Could not update environment"
 msgstr ""
 
-msgid "Environment deleted"
+msgid "Environment deleted."
 msgstr ""
 
 msgid "Could not delete environment"
 msgstr ""
 
-msgid "manipulate lifecycle_environments on the server"
+msgid "Module Stream Name"
+msgstr ""
+
+msgid "Context"
+msgstr ""
+
+msgid "Artifacts"
+msgstr ""
+
+msgid "Profiles"
+msgstr ""
+
+msgid "RPMs"
 msgstr ""
 
 msgid "Red Hat Repository URL"
 msgstr ""
 
-msgid "Organization updated"
+msgid "Service Levels"
+msgstr ""
+
+msgid "Organization updated."
 msgstr ""
 
 msgid "Could not update the organization"
 msgstr ""
 
-msgid "Organization created"
+msgid "Organization created."
 msgstr ""
 
 msgid "Could not create the organization"
 msgstr ""
 
-msgid "Organization deleted"
+msgid "Organization deleted."
 msgstr ""
 
 msgid "Could not delete the organization"
 msgstr ""
 
-msgid "Manipulate organizations"
+msgid "version"
+msgstr ""
+
+msgid "Commit"
+msgstr ""
+
+msgid "Date"
 msgstr ""
 
 msgid "%s  %s"
 msgstr ""
 
-msgid "Status"
+msgid "Filename"
+msgstr ""
+
+msgid "Source RPM"
+msgstr ""
+
+msgid "Epoch"
+msgstr ""
+
+msgid "Build Host"
+msgstr ""
+
+msgid "Vendor"
+msgstr ""
+
+msgid "License"
+msgstr ""
+
+msgid "Relative Path"
+msgstr ""
+
+msgid "Package Group Name"
+msgstr ""
+
+msgid "Repository Name"
+msgstr ""
+
+msgid "Default Packages"
+msgstr ""
+
+msgid "Mandatory Packages"
+msgstr ""
+
+msgid "Conditional Packages"
+msgstr ""
+
+msgid "Optional Packages"
 msgstr ""
 
 msgid "Server Response"
@@ -622,13 +1298,10 @@ msgstr ""
 msgid "Message: %s"
 msgstr ""
 
-msgid "get the status of the server"
-msgstr ""
-
 msgid "Sync State"
 msgstr ""
 
-msgid "Product created"
+msgid "Product created."
 msgstr ""
 
 msgid "Could not create the product"
@@ -655,46 +1328,58 @@ msgstr ""
 msgid "Repo Name"
 msgstr ""
 
-msgid "Product updated"
+msgid "URL"
+msgstr ""
+
+msgid "Product updated."
 msgstr ""
 
 msgid "Could not update the product"
 msgstr ""
 
-msgid "Product destroyed"
+msgid "Product destroyed."
 msgstr ""
 
 msgid "Could not destroy the product"
 msgstr ""
 
-msgid "Assign sync plan to product."
+msgid "Product repositories are being synchronized in task %{id}."
+msgstr ""
+
+msgid "Could not synchronize the product repositories"
+msgstr ""
+
+msgid "Assign sync plan to product"
 msgstr ""
 
 msgid "Synchronization plan assigned."
 msgstr ""
 
-msgid "Could not assign synchronization plan."
+msgid "Could not assign synchronization plan"
 msgstr ""
 
-msgid "plan numeric identifier"
-msgstr ""
-
-msgid "Delete assignment sync plan and product."
+msgid "Delete assignment sync plan and product"
 msgstr ""
 
 msgid "Synchronization plan removed."
 msgstr ""
 
-msgid "Could not remove synchronization plan."
+msgid "Could not remove synchronization plan"
 msgstr ""
 
-msgid "Manipulate products."
+msgid "List associated products"
+msgstr ""
+
+msgid "Default Enabled?"
+msgstr ""
+
+msgid "Override"
+msgstr ""
+
+msgid "Uuid"
 msgstr ""
 
 msgid "Summary"
-msgstr ""
-
-msgid "License"
 msgstr ""
 
 msgid "Project Page"
@@ -715,10 +1400,37 @@ msgstr ""
 msgid "Red Hat Repository"
 msgstr ""
 
+msgid "Checksum Type"
+msgstr ""
+
+msgid "Mirror on Sync"
+msgstr ""
+
 msgid "Publish Via HTTP"
 msgstr ""
 
 msgid "Published At"
+msgstr ""
+
+msgid "Download Policy"
+msgstr ""
+
+msgid "OSTree Upstream Sync Policy"
+msgstr ""
+
+msgid "OSTree Upstream Sync Depth"
+msgstr ""
+
+msgid "Upstream Repository Name"
+msgstr ""
+
+msgid "Container Image Tags Filter"
+msgstr ""
+
+msgid "Container Repository Name"
+msgstr ""
+
+msgid "Ignorable Content Units"
 msgstr ""
 
 msgid "Sync"
@@ -730,19 +1442,34 @@ msgstr ""
 msgid "Content Counts"
 msgstr ""
 
-msgid "Packages"
+msgid "Source RPMS"
 msgstr ""
 
 msgid "Package Groups"
 msgstr ""
 
-msgid "Errata"
+msgid "Container Image Manifest Lists"
+msgstr ""
+
+msgid "Container Image Manifests"
+msgstr ""
+
+msgid "Container Image Tags"
+msgstr ""
+
+msgid "OSTree Branches"
+msgstr ""
+
+msgid "Files"
 msgstr ""
 
 msgid "yes"
 msgstr ""
 
 msgid "no"
+msgstr ""
+
+msgid "Not Synced"
 msgstr ""
 
 msgid "Failed"
@@ -766,49 +1493,91 @@ msgstr ""
 msgid "Canceled"
 msgstr ""
 
-msgid "Not Synced"
-msgstr ""
-
-msgid "Repository is being synchronized in task %{id}"
+msgid "Repository is being synchronized in task %{id}."
 msgstr ""
 
 msgid "Could not synchronize the repository"
 msgstr ""
 
-msgid "Repository created"
+msgid "Repository created."
 msgstr ""
 
 msgid "Could not create the repository"
 msgstr ""
 
-msgid "Repository updated"
+msgid "Repository updated."
 msgstr ""
 
 msgid "Could not update the repository"
 msgstr ""
 
-msgid "Repository deleted"
+msgid "--docker-digest required with --docker-tag"
+msgstr ""
+
+msgid "--docker-tag required with --docker-digest"
+msgstr ""
+
+msgid "Optional custom Container Image tag to specify the value of the Docker digest"
+msgstr ""
+
+msgid "Container Image manifest digest"
+msgstr ""
+
+msgid "Repository updated"
+msgstr ""
+
+msgid "Failed to upload tag '%s' to repository."
+msgstr ""
+
+msgid "Repository deleted."
 msgstr ""
 
 msgid "Could not delete the Repository"
 msgstr ""
 
-msgid "Repository content uploaded"
+msgid "Could not find any files matching PATH"
+msgstr ""
+
+msgid "Cannot specify both product options and repository ID."
+msgstr ""
+
+msgid "Repository content uploaded."
 msgstr ""
 
 msgid "Could not upload the content"
 msgstr ""
 
-msgid "Upload file or directory of files as content for a repository"
-msgstr ""
-
-msgid "Successfully uploaded file '%s'."
+msgid ""
+"Upload file, directory of files, or glob of files as content for a repository."
+"\n"
+"Globs must be escaped by single or double quotes"
 msgstr ""
 
 msgid "Failed to upload file '%s' to repository. Please check the file and try again."
 msgstr ""
 
-msgid "Manipulate repositories"
+msgid "Successfully uploaded file '%{name}'"
+msgstr ""
+
+msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
+msgstr ""
+
+msgid "Remove content from a repository"
+msgstr ""
+
+msgid "Repository content removed."
+msgstr ""
+
+msgid "Could not remove content"
+msgstr ""
+
+msgid "Export content from a repository to the configured directory"
+msgstr ""
+
+msgid "Repository is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the repository"
 msgstr ""
 
 msgid "Enabled Repositories"
@@ -817,43 +1586,40 @@ msgstr ""
 msgid "Arch"
 msgstr ""
 
-msgid "Release"
+msgid "Registry Name"
 msgstr ""
 
 msgid "Enabled"
 msgstr ""
 
-msgid "Repository enabled"
+msgid "Repository enabled."
 msgstr ""
 
 msgid "Could not enable repository"
 msgstr ""
 
-msgid "Repository disabled"
+msgid "Repository disabled."
 msgstr ""
 
 msgid "Could not disable repository"
 msgstr ""
 
-msgid "manipulate repository sets on the server"
+msgid "Consumed"
 msgstr ""
 
-msgid "Contract"
+msgid "Physical"
 msgstr ""
 
-msgid "Account"
+msgid "Guests of %s"
 msgstr ""
 
-msgid "Support"
+msgid "Temporary"
 msgstr ""
 
-msgid "Quantity"
+msgid "Virtual"
 msgstr ""
 
-msgid "Attached"
-msgstr ""
-
-msgid "Manifest is being uploaded in task %{id}"
+msgid "Manifest is being uploaded in task %{id}."
 msgstr ""
 
 msgid "Manifest upload failed"
@@ -862,13 +1628,13 @@ msgstr ""
 msgid "Subscription manifest file"
 msgstr ""
 
-msgid "Manifest is being deleted in task %{id}"
+msgid "Manifest is being deleted in task %{id}."
 msgstr ""
 
 msgid "Manifest deletion failed"
 msgstr ""
 
-msgid "Manifest is being refreshed in task %{id}"
+msgid "Manifest is being refreshed in task %{id}."
 msgstr ""
 
 msgid "Manifest refresh failed"
@@ -880,19 +1646,33 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-msgid "Manipulate subscriptions."
+msgid "Interval"
 msgstr ""
 
-msgid "Interval"
+msgid "Cron Expression"
+msgstr ""
+
+msgid "Recurring Logic ID"
+msgstr ""
+
+msgid "Created at"
+msgstr ""
+
+msgid "Updated at"
 msgstr ""
 
 msgid "how often synchronization should run"
 msgstr ""
 
-msgid "start date and time of the synchronization defaults to now"
+msgid "set this when interval is custom cron"
 msgstr ""
 
-msgid "Sync plan created"
+msgid ""
+"Start date and time for the sync plan.Time is optional, if kept blank current "
+"system time will be considered"
+msgstr ""
+
+msgid "Sync plan created."
 msgstr ""
 
 msgid "Could not create the sync plan"
@@ -901,17 +1681,14 @@ msgstr ""
 msgid "start date and time of the synchronization"
 msgstr ""
 
-msgid "Sync plan updated"
+msgid "Sync plan updated."
 msgstr ""
 
 msgid "Could not update the sync plan"
 msgstr ""
 
-msgid "Sync plan destroyed"
+msgid "Sync plan destroyed."
 msgstr ""
 
 msgid "Could not destroy the sync plan"
-msgstr ""
-
-msgid "Manipulate sync plans"
 msgstr ""

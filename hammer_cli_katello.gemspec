@@ -3,6 +3,20 @@ $LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
 
 require 'hammer_cli_katello/version'
 
+# rubocop:disable Layout/LineLength
+begin
+  Dir["locale/**/*.po"].each do |po|
+    mo = po.sub(/hammer-cli-katello\.po$/, "LC_MESSAGES/hammer-cli-katello.mo")
+    STDERR.puts "WARNING: File #{mo} does not exist, generate with 'make all-mo'!" unless File.exist?(mo)
+    STDERR.puts "WARNING: File #{mo} outdated, regenerate with 'make all-mo'" if File.mtime(po) > File.mtime(mo)
+    # Adding this so you can actually build the gem and the warnings come out, without this
+    # we get an error when making the gem and it fails as well as a ruby error if the mo files don't exist
+  end
+rescue => e
+  puts "#{e} not found"
+end
+# rubocop:enable Layout/LineLength
+
 Gem::Specification.new do |gem|
   gem.authors = [
     "Adam Price",
@@ -22,11 +36,13 @@ Gem::Specification.new do |gem|
     "Jason Montleon",
     "John Mitsch",
     "Justin Sherrill",
+    "Lucy Fu",
     "Martin Bačovský",
     "Michaux Kelley",
     "Og Maciel",
     "Partha Aji",
     "Pavel Moravec",
+    "Quinn James",
     "Roman Plevka",
     "Stephen Benjamin",
     "Tomas Strachota",

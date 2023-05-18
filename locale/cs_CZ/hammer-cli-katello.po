@@ -1,69 +1,72 @@
-# hpeters <hpeters@redhat.com>, 2015. #zanata
-# jdimanos <jdimanos@redhat.com>, 2015. #zanata
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-katello package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# mhulan <mhulan@redhat.com>, 2017
+# Pavel Borecki <pavel.borecki@gmail.com>, 2020
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 0.0.7.6\n"
+"Project-Id-Version: hammer-cli-katello 0.18.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-04-27 11:53+0000\n"
-"Last-Translator: hpeters <hpeters@redhat.com>\n"
-"Language-Team: German\n"
-"Language: de\n"
+"PO-Revision-Date: 2017-09-11 13:28+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2020\n"
+"Language-Team: Czech (Czech Republic) (https://app.transifex.com/foreman/teams"
+"/114/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 3.6.0\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= "
+"4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#, fuzzy
 msgid "Manipulate activation keys"
-msgstr "Aktivierungsschlüssel bearbeiten."
+msgstr ""
 
 msgid "Manipulate organizations"
-msgstr "Organisationen bearbeiten"
+msgstr "Manipulovat s organizacemi"
 
-#, fuzzy
 msgid "Manipulate GPG Key actions on the server"
-msgstr "GPG-Schlüssel"
+msgstr ""
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr ""
 
 msgid "Get the status of the server"
-msgstr ""
+msgstr "Získat stav serveru"
 
-#, fuzzy
 msgid "Manipulate products"
-msgstr "Produkte bearbeiten."
+msgstr ""
 
 msgid "View Puppet Module details"
-msgstr ""
+msgstr "Zobrazit podrobnosti o puppet modulu"
 
 msgid "Manipulate repositories"
-msgstr "Repositorys bearbeiten"
+msgstr "Manipulovat repozitáře"
 
 msgid "Manipulate repository sets on the server"
 msgstr ""
 
-#, fuzzy
 msgid "Manipulate subscriptions"
-msgstr "Subskriptionen bearbeiten."
+msgstr ""
 
 msgid "Manipulate sync plans"
-msgstr "Synchronisationspläne bearbeiten"
+msgstr ""
 
 msgid "Manipulate host collections"
-msgstr "Hostsammlungen bearbeiten"
+msgstr ""
 
-#, fuzzy
 msgid "Manipulate content views"
-msgstr "Inhaltsansichten bearbeiten."
+msgstr ""
 
 msgid "Manipulate capsule"
-msgstr "Capsule bearbeiten"
+msgstr ""
 
-#, fuzzy
 msgid "Manipulate packages"
-msgstr "Capsule bearbeiten"
+msgstr ""
 
 msgid "Manipulate package groups"
 msgstr ""
@@ -74,251 +77,223 @@ msgstr ""
 msgid "Manipulate ostree branches"
 msgstr ""
 
-#, fuzzy
 msgid "Manipulate files"
-msgstr "Capsule bearbeiten"
+msgstr ""
 
 msgid "View Module Streams"
 msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr "Identifikátor"
 
 msgid "Name"
-msgstr "Name"
+msgstr "Název"
 
-#, fuzzy
 msgid "Host Limit"
-msgstr "Grenze"
+msgstr "Limit strojů"
 
 msgid "Lifecycle Environment"
-msgstr "Lebenszyklusumgebung"
+msgstr "Prostředí životního cyklu"
 
 msgid "Content View"
-msgstr "Inhaltsansicht"
+msgstr ""
 
 msgid "Unlimited"
-msgstr "Unbegrenzt"
+msgstr "Neomezený"
 
 msgid "%{consumed} of %{limit}"
-msgstr "%{consumed} von %{limit}"
+msgstr "%{consumed} z %{limit}"
 
 msgid "Description"
-msgstr "Beschreibung"
+msgstr "Popis"
 
 msgid "Auto Attach"
-msgstr ""
+msgstr "Automaticky připojit"
 
 msgid "Service Level"
-msgstr ""
+msgstr "Úroveň služby"
 
 msgid "Release Version"
-msgstr "Release-Version"
+msgstr "Verze vydání"
 
 msgid "Host Collections"
-msgstr "Hostsammlungen"
-
-#, fuzzy
-msgid "Activation key created."
-msgstr "Aktivierungsschlüssel erstellt"
-
-msgid "Could not create the activation key"
-msgstr "Aktivierungsschlüssel konnte nicht erstellt werden"
-
-msgid "Copy an activation key"
 msgstr ""
 
-#, fuzzy
+msgid "Activation key created."
+msgstr "Aktivační klíč vytvořen."
+
+msgid "Could not create the activation key"
+msgstr "Nepodařilo se vytvořit aktivační klíč"
+
+msgid "Copy an activation key"
+msgstr "Zkopírovat aktivační klíč"
+
 msgid "Activation key copied."
-msgstr "Aktivierungsschlüssel erstellt"
+msgstr "Aktivační klíč zkopírován."
 
-#, fuzzy
 msgid "Could not copy the activation key"
-msgstr "Aktivierungsschlüssel konnte nicht erstellt werden"
+msgstr "Aktivační klíč se nedaří zkopírovat"
 
-#, fuzzy
 msgid "Activation key updated."
-msgstr "Aktivierungsschlüssel aktualisiert"
+msgstr "Aktivační klíč aktualizován."
 
 msgid "Could not update the activation key"
-msgstr "Aktivierungsschlüssel konnte nicht aktualisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Activation key deleted."
-msgstr "Aktivierungsschlüssel gelöscht"
+msgstr "Aktivační klíč smazán."
 
 msgid "Could not delete the activation key"
-msgstr "Aktivierungsschlüssel konnte nicht gelöscht werden"
+msgstr ""
 
 msgid "List associated subscriptions"
-msgstr "Verknüpfte Subskriptionen anzeigen"
+msgstr ""
 
 msgid "Attached"
-msgstr "Verknüpft"
+msgstr "Připojeno"
 
 msgid "Quantity"
-msgstr "Anzahl"
+msgstr "Množství"
 
 msgid "Start Date"
-msgstr "Startdatum"
+msgstr "Datum zahájení"
 
 msgid "End Date"
-msgstr "Enddatum"
+msgstr "Datum skončení"
 
 msgid "Support"
-msgstr "Support"
+msgstr "Podpora"
 
 msgid "Contract"
-msgstr "Vertrag"
+msgstr "Smlouva"
 
 msgid "Account"
-msgstr "Account"
+msgstr "Účet"
 
-#, fuzzy
 msgid ""
 "#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : data['quan"
 "tity']}"
-msgstr "Unbegrenzt"
+msgstr ""
 
-#, fuzzy
 msgid "ID of the activation key"
-msgstr "ID"
+msgstr "Identifikátor aktivačního klíče"
 
 msgid "Activation key name to search by"
-msgstr "Name des zu suchenden Aktivierungsschlüssels"
+msgstr "Název aktivačního klíče podle kterého hledat"
 
-#, fuzzy
 msgid "ID of subscription"
-msgstr "Subskription entfernen"
+msgstr "Identifikátor předplatného"
 
-#, fuzzy
 msgid "Subscription added to activation key."
-msgstr "Subskription zum Aktivierungsschlüssel hinzugefügt"
+msgstr "Aktivačnímu klíči přiděleno předplatné."
 
 msgid "Could not add subscription to activation key"
-msgstr "Subskription konnte nicht zum Aktivierungsschlüssel hinzugefügt werden"
+msgstr ""
 
 msgid "Remove subscription"
-msgstr "Subskription entfernen"
+msgstr "Odebrat předplatné"
 
-#, fuzzy
 msgid "Subscription removed from activation key."
-msgstr "Subskription vom Aktivierungsschlüssel entfernt"
+msgstr "Aktivačnímu klíči odebráno předplatné."
 
 msgid "Could not remove subscription from activation key"
-msgstr "Subskription konnte nicht vom Aktivierungsschlüssel entfernt werden"
+msgstr "Nedaří se odebrat předplatné z aktivačního klíče"
 
 msgid "List associated host collections"
-msgstr "Verknüpfte Hostsammlungen anzeigen"
+msgstr ""
 
-#, fuzzy
 msgid "ID of activation key"
-msgstr "ID"
+msgstr "Identifikátor aktivačního klíče"
 
-#, fuzzy
 msgid "Name of activation key"
-msgstr "Name"
+msgstr "Název aktivačního klíče"
 
-#, fuzzy
 msgid "The repository has been associated."
-msgstr "Repository wurde verknüpft"
+msgstr "Repozitář byl přiřazen."
 
 msgid "Could not add repository"
-msgstr "Repository konnte nicht hinzugefügt werden"
+msgstr "Repozitář se nedaří přidat"
 
-#, fuzzy
 msgid "The repository has been removed."
-msgstr "Repository wurde entfernt"
+msgstr "Repozitář byl odebrán."
 
 msgid "Could not remove repository"
-msgstr "Repository konnte nicht entfernt werden"
+msgstr "Repozitář se nedaří odebrat"
 
-#, fuzzy
 msgid "The host collection has been associated."
-msgstr "Hostsammlung wurde verknüpft"
+msgstr ""
 
 msgid "Could not add host collection"
-msgstr "Hostsammlung konnte nicht hinzugefügt werden"
+msgstr ""
 
-#, fuzzy
 msgid "The host collection has been removed."
-msgstr "Hostsammlung wurde entfernt"
+msgstr "Sada strojů odebrána."
 
 msgid "Could not remove host collection"
-msgstr "Hostsammlung konnte nicht entfernt werden"
+msgstr ""
 
-#, fuzzy
 msgid "The host has been added."
-msgstr "Inhaltshost wurde hinzugefügt"
+msgstr "Stroj byl přidán."
 
-#, fuzzy
 msgid "Could not add host"
-msgstr "Version konnte nicht hinzugefügt werden"
+msgstr "Stroj se nedaří přidat"
 
-#, fuzzy
 msgid "The host has been removed."
-msgstr "Repository wurde entfernt"
+msgstr "Stroj byl odebrán."
 
-#, fuzzy
 msgid "Could not remove host"
-msgstr "Version konnte nicht entfernt werden"
+msgstr "Stroj se nedaří odebrat"
 
 msgid "Manage the capsule content"
-msgstr "Capsule-Inhalte verwalten"
+msgstr ""
 
 msgid "Organization"
-msgstr "Organisation"
+msgstr "Organizace"
 
-#, fuzzy
 msgid "Lifecycle environment successfully added to the capsule."
-msgstr "Lebenszyklusumgebung erfolgreich zur Capsule hinzugefügt"
+msgstr "Prostředí životního cyklu úspěšně přidáno do kapsle."
 
 msgid "Could not add the lifecycle environment to the capsule"
-msgstr "Lebenszyklusumgebung konnte nicht zur Capsule hinzugefügt werden"
+msgstr ""
 
-#, fuzzy
 msgid "Organization ID"
-msgstr "Organisation"
+msgstr "Identifikátor organizace"
 
-#, fuzzy
 msgid "Organization name"
-msgstr "Organisation"
+msgstr "Název organizace"
 
-#, fuzzy
 msgid "Lifecycle environment successfully removed from the capsule."
-msgstr "Lebenszyklusumgebung erfolgreich von Capsule entfernt"
+msgstr "Prostředí životního cyklu úspěšně odebráno z kapsle."
 
 msgid "Could not remove the lifecycle environment from the capsule"
-msgstr "Lebenszyklusumgebung konnte nicht von Capsule entfernt werden"
+msgstr ""
 
-#, fuzzy
 msgid "Capsule content is being synchronized in task %{id}."
-msgstr "Capsule-Inhalte werden synchronisiert in Task %{id}"
+msgstr ""
 
 msgid "Could not synchronize capsule content"
-msgstr "Capsule-Inhalte konnten nicht synchronisiert werden"
+msgstr ""
 
 msgid "Last sync"
-msgstr ""
+msgstr "Poslední synchronizace"
 
 msgid "Status"
-msgstr "Status"
+msgstr "Stav"
 
 msgid "Currently running sync tasks"
-msgstr ""
+msgstr "Nyní spuštěné úlohy synchronizace"
 
 msgid "Task id"
-msgstr ""
+msgstr "Identifikátor úlohy"
 
 msgid "Progress"
-msgstr ""
+msgstr "Postup"
 
 msgid "Last failure"
-msgstr ""
+msgstr "Poslední nezdar."
 
-#, fuzzy
 msgid "Messages"
-msgstr "Meldung: %s"
+msgstr "Zprávy"
 
 msgid "Capsule is synchronized"
 msgstr ""
@@ -326,69 +301,59 @@ msgstr ""
 msgid "%{count} environment(s) can be synchronized: %{names}"
 msgstr ""
 
-#, fuzzy
 msgid "Lifecycle Environments"
-msgstr "Lebenszyklusumgebung"
+msgstr "Prostředí životního cyklu"
 
-#, fuzzy
 msgid "Content Views"
-msgstr "Inhaltsansicht"
+msgstr ""
 
 msgid "Composite"
-msgstr "Verbund"
+msgstr ""
 
-#, fuzzy
 msgid "Last Published"
-msgstr "Veröffentlicht"
+msgstr "Naposledy zveřejněno"
 
 msgid "Content"
-msgstr "Inhalt"
+msgstr "Obsah"
 
 msgid "Hosts"
-msgstr ""
+msgstr "Stroje"
 
-#, fuzzy
 msgid "Products"
-msgstr "Produkt"
+msgstr "Produkty"
 
 msgid "Yum repos"
-msgstr ""
+msgstr "Yum repozitáře"
 
 msgid "Container Image repos"
-msgstr ""
+msgstr "Repozitáře s obrazy kontejnerů"
 
 msgid "Packages"
-msgstr "Pakete"
+msgstr "Balíčky"
 
-#, fuzzy
 msgid "Package groups"
-msgstr "Paketgruppen"
+msgstr "Skupiny balíčků"
 
 msgid "Errata"
-msgstr "Errata"
+msgstr ""
 
-#, fuzzy
 msgid "Puppet modules"
-msgstr "Puppet-Module"
+msgstr "Puppet moduly"
 
-#, fuzzy
 msgid "Name of the composite content view"
-msgstr "Verbundinhaltsansicht erstellen"
+msgstr ""
 
 msgid "Override product content defaults"
 msgstr ""
 
-#, fuzzy
 msgid "Updated content override."
-msgstr "Aktualisiert"
+msgstr ""
 
-#, fuzzy
 msgid "Could not update content override"
-msgstr "Inhaltshost konnte nicht aktualisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Label of the content"
-msgstr "Kennung"
+msgstr "Štítek obsahu"
 
 msgid ""
 "Override parameter key or name.\n"
@@ -403,161 +368,141 @@ msgid "Remove a content override"
 msgstr ""
 
 msgid "Content View ID"
-msgstr "Inhaltsansichts-ID"
+msgstr "Identifikátor zobrazení obsahu"
 
 msgid "Label"
-msgstr "Kennung"
+msgstr "Štítek"
 
 msgid "Repository IDs"
-msgstr "Repository-IDs"
+msgstr "Identifikátory repozitáře"
 
-#, fuzzy
 msgid "Content Host Count"
-msgstr "Inhalt"
+msgstr "Stávající počet strojů"
 
-#, fuzzy
 msgid "Yum Repositories"
-msgstr "Repositorys"
+msgstr "Yum repozitáře"
 
-#, fuzzy
 msgid "Container Image Repositories"
-msgstr "Repositorys"
+msgstr "Repozitáře s obrazy kontejnerů"
 
-#, fuzzy
 msgid "OSTree Repositories"
-msgstr "Repositorys"
+msgstr ""
 
 msgid "Puppet Modules"
-msgstr "Puppet-Module"
+msgstr "Puppet moduly"
 
 msgid "UUID"
-msgstr "UUID"
+msgstr ""
 
 msgid "Author"
 msgstr "Autor"
 
 msgid "Versions"
-msgstr "Versionen"
+msgstr "Verze"
 
 msgid "Version"
-msgstr "Version"
+msgstr "Verze"
 
 msgid "Published"
-msgstr "Veröffentlicht"
+msgstr "Zveřejněno"
 
 msgid "Components"
-msgstr "Komponenten"
+msgstr "Součásti"
 
 msgid "Activation Keys"
-msgstr ""
+msgstr "Aktivační klíče"
 
-#, fuzzy
 msgid "Content view created."
-msgstr "Inhaltsansicht erstellt"
+msgstr "Pohled na obsah vytvořen."
 
 msgid "Could not create the content view"
-msgstr "Inhaltsansicht konnte nicht erstellt werden"
+msgstr ""
 
 msgid "Create a composite content view"
-msgstr "Verbundinhaltsansicht erstellen"
+msgstr ""
 
 msgid "Copy a content view"
 msgstr ""
 
 msgid "Content view name to search by"
-msgstr "Name der zu suchenden Inhaltsansicht"
-
-#, fuzzy
-msgid "New content view name"
-msgstr "Inhaltsansichtsname"
-
-#, fuzzy
-msgid "Content view copied."
-msgstr "Inhaltsansicht erstellt"
-
-#, fuzzy
-msgid "Could not copy the content view"
-msgstr "Inhaltsansicht konnte nicht erstellt werden"
-
-#, fuzzy
-msgid "Content view updated."
-msgstr "Inhaltsansicht aktualisiert"
-
-msgid "Could not update the content view"
-msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
-
-#, fuzzy
-msgid "Content view is being deleted with task %{id}."
-msgstr "Inhaltsansicht wird gelöscht durch Task %{id}"
-
-msgid "Could not delete the content view"
-msgstr "Inhaltsansicht konnte nicht gelöscht werden"
-
-#, fuzzy
-msgid "Content view is being published with task %{id}."
-msgstr "Inhaltsansicht wird veröffentlicht durch Task %{id}"
-
-msgid "Could not publish the content view"
-msgstr "Inhaltsansicht konnte nicht veröffentlicht werden"
-
-#, fuzzy
-msgid "Content view is being removed from environment with task %{id}."
-msgstr "Inhaltsansicht wird von Umgebung entfernt durch Task %{id}"
-
-msgid "Could not remove the content view from environment"
-msgstr "Inhaltsansicht konnte nicht aus Umgebung entfernt werden"
-
-#, fuzzy
-msgid "Version ids to remove"
-msgstr "Version"
-
-msgid "Environment ids to remove"
 msgstr ""
 
-#, fuzzy
+msgid "New content view name"
+msgstr "Nový název zobrazení obsahu"
+
+msgid "Content view copied."
+msgstr "Pohled na obsah zkopírován."
+
+msgid "Could not copy the content view"
+msgstr ""
+
+msgid "Content view updated."
+msgstr "Pohled na obsah zaktualizován."
+
+msgid "Could not update the content view"
+msgstr ""
+
+msgid "Content view is being deleted with task %{id}."
+msgstr ""
+
+msgid "Could not delete the content view"
+msgstr ""
+
+msgid "Content view is being published with task %{id}."
+msgstr "Pohled na obsah je zveřejňován v úloze %{id}."
+
+msgid "Could not publish the content view"
+msgstr ""
+
+msgid "Content view is being removed from environment with task %{id}."
+msgstr "Pohled na obsah je odebírán z prostředí v úloze %{id}."
+
+msgid "Could not remove the content view from environment"
+msgstr ""
+
+msgid "Version ids to remove"
+msgstr "Identifikátory verzí, které odebrat"
+
+msgid "Environment ids to remove"
+msgstr "Identifikátory prostředí, která odebrat"
+
 msgid "Content view objects are being removed task %{id}."
-msgstr "Inhaltsansichtsobjekte werden entfernt durch Task %{id}"
+msgstr "Objekty pohledu na obsah jsou odebírány v úloze %{id}."
 
 msgid "Could not remove objects from content view"
-msgstr "Objekte konnten nicht aus Inhaltsansicht entfernt werden"
+msgstr ""
 
 msgid "Add a content view version to a composite view"
 msgstr ""
 
-#, fuzzy
 msgid "The component version has been added."
-msgstr "Komponentenversion wurde hinzugefügt"
+msgstr "Verze součásti byla přidána."
 
 msgid "Could not add version"
-msgstr "Version konnte nicht hinzugefügt werden"
+msgstr "Verzi se nedaří přidat"
 
 msgid "Remove a content view version from a composite view"
 msgstr ""
 
-#, fuzzy
 msgid "The component version has been removed."
-msgstr "Komponentenversion wurde entfernt"
+msgstr "Verze součásti byla odebrána."
 
 msgid "Could not remove version"
-msgstr "Version konnte nicht entfernt werden"
+msgstr "Verzi se nedaří odebrat"
 
-#, fuzzy
 msgid "Content View identifier of the component who's latest version is desired"
-msgstr "Inhaltsansicht"
+msgstr ""
 
-#, fuzzy
 msgid "Content View name of the component who's latest version is desired"
-msgstr "Inhaltsansicht"
+msgstr ""
 
-#, fuzzy
 msgid "Content View Version identifier of the component"
-msgstr "Inhaltsansicht"
+msgstr ""
 
-#, fuzzy
 msgid ""
 "Content View Version number of the component. Either use this or --component-c"
 "ontent-view-version-id option"
-msgstr "Inhaltsansicht"
+msgstr ""
 
 msgid "Select the latest version of the components content view is desired"
 msgstr ""
@@ -571,37 +516,31 @@ msgid ""
 msgstr ""
 
 msgid "Id"
-msgstr "ID"
+msgstr "Identifikátor"
 
-#, fuzzy
 msgid "Current Version"
-msgstr "Version"
+msgstr "Stávající verze"
 
-#, fuzzy
 msgid "Version Id"
-msgstr "Version"
+msgstr "Identifikátor verze"
 
 msgid "Latest"
-msgstr ""
+msgstr "Nejnovější"
 
-#, fuzzy
 msgid "No Published Version"
-msgstr "Veröffentlicht"
+msgstr "Žádná zveřejněná verze"
 
 msgid "Component added to content view."
+msgstr "Součást přidána do pohledu na obsah."
+
+msgid "Could not add the component"
 msgstr ""
 
-#, fuzzy
-msgid "Could not add the component"
-msgstr "Inhalte konnten nicht hochgeladen werden"
-
-#, fuzzy
 msgid "Content view component updated."
-msgstr "Inhalt"
+msgstr "Součást pohledu na obsah aktualizována."
 
-#, fuzzy
 msgid "Could not update the content view component"
-msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
+msgstr ""
 
 msgid ""
 "Array of component content view names to remove. Comma separated list of value"
@@ -613,38 +552,32 @@ msgid ""
 "values"
 msgstr ""
 
-#, fuzzy
 msgid "Components removed from content view."
-msgstr "Komponenten"
+msgstr ""
 
-#, fuzzy
 msgid "Could not remove the components"
-msgstr "Inhalte konnten nicht hochgeladen werden"
+msgstr ""
 
 msgid "Latest(Currently %s)"
-msgstr "Letzter (derzeit %s)"
+msgstr "Nejnovější (nyní %s)"
 
-#, fuzzy
 msgid "Puppet module added to content view."
-msgstr "Puppet-Modul zur Inhaltsansicht hinzugefügt"
+msgstr "Puppet modul přidán do pohledu na obsah."
 
 msgid "Could not add the puppet module"
-msgstr "Puppet-Modul konnte nicht hinzugefügt werden"
+msgstr ""
 
-#, fuzzy
 msgid "Puppet module removed from content view."
-msgstr "Puppet-Modul aus Inhaltsansicht entfernt"
+msgstr "Puppet modul odebrán z pohledu na obsah."
 
 msgid "Couldn't remove puppet module from the content view"
-msgstr "Puppet-Modul konnte nicht aus Inhaltsansicht entfernt werden"
+msgstr ""
 
-#, fuzzy
 msgid "Content View numeric identifier"
-msgstr "Inhaltsansicht"
+msgstr ""
 
-#, fuzzy
 msgid "Content View name"
-msgstr "Inhaltsansichtsname"
+msgstr "Název pohledu na obsah"
 
 msgid "count of unused versions to keep"
 msgstr ""
@@ -653,179 +586,152 @@ msgid "Invalid value for --count option: value must be 0 or greater."
 msgstr ""
 
 msgid "No versions to delete."
-msgstr ""
+msgstr "Žádné verze ke smazání."
 
-#, fuzzy
 msgid ""
 "Version '%{version}' of content view '%{view}' scheduled for deletion in task "
 "'%{task_id}'."
-msgstr "Version"
+msgstr ""
 
-#, fuzzy
 msgid "Version '%{version}' of content view '%{view}' deleted."
-msgstr "Version"
+msgstr ""
 
 msgid "Content View Name"
-msgstr "Inhaltsansichtsname"
+msgstr ""
 
 msgid "Content View Label"
-msgstr "Inhaltsansichtskennung"
+msgstr ""
 
 msgid "Repositories"
-msgstr "Repositorys"
+msgstr "Repozitáře"
 
-#, fuzzy
 msgid "Content View Version is being republished with task %{id}."
-msgstr "Inhaltsansicht wird veröffentlicht durch Task %{id}"
+msgstr ""
 
-#, fuzzy
 msgid "Could not republish the Content View"
-msgstr "Inhaltsansicht konnte nicht veröffentlicht werden"
+msgstr ""
 
-#, fuzzy
 msgid "Content view is being promoted with task %{id}."
-msgstr "Inhaltsansicht wird übertragen durch Task %{id}"
+msgstr ""
 
 msgid "Could not promote the content view"
-msgstr "Inhaltsansicht konnte nicht übertragen werden"
+msgstr ""
 
 msgid "force content view promotion and bypass lifecycle environment restriction"
 msgstr ""
 
-#, fuzzy
 msgid "Name of the target environment"
-msgstr "Name"
+msgstr "Název cílového prostředí"
 
-#, fuzzy
 msgid "Id of the target environment"
-msgstr "ID"
+msgstr "Identifikátor cílového prostředí"
 
-#, fuzzy
 msgid ""
 "Environment name from where to promote its version from (if version is unknown"
 ")"
-msgstr "nein"
+msgstr ""
 
-#, fuzzy
 msgid "Id of the environment from where to promote its version "
-msgstr "ID"
+msgstr "Identifikátor prostředí ze kterého povýšit jeho verzi"
 
 msgid "Incremental update is being performed with task %{id}."
-msgstr ""
+msgstr "Přírůstková aktualizace je prováděna v úloze %{id}."
 
 msgid "An error occurred incrementally updating the content view"
 msgstr ""
 
-#, fuzzy
 msgid "list of lifecycle environment IDs to update the content view version in"
-msgstr "ID"
+msgstr ""
 
 msgid "list of lifecycle environment names to update the content view version in"
 msgstr ""
 
-#, fuzzy
 msgid "Organization name for resolving lifecycle environment names"
-msgstr "Organisation"
+msgstr ""
 
-#, fuzzy
 msgid "Organization id for resolving lifecycle environment names"
-msgstr "Organisation"
+msgstr ""
 
-#, fuzzy
 msgid ""
 "Update all editable and applicable hosts within the specified Content View and"
 " \\\n"
 "               Lifecycle Environments"
-msgstr "Lebenszyklusumgebung"
+msgstr ""
 
-#, fuzzy
 msgid "IDs of hosts to update"
-msgstr "ID"
+msgstr "Identifikátory strojů které aktualizovat"
 
 msgid "Export a content view (deprecated)"
 msgstr ""
 
-#, fuzzy
 msgid "Content view is being exported in task %{id}."
-msgstr "Inhaltsansicht wird übertragen durch Task %{id}"
+msgstr "Pohled na obsah je exportován v úloze %{id}."
 
-#, fuzzy
 msgid "Could not export the content view"
-msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
+msgstr "Nedaří se exportovat pohled na obsah"
 
 msgid "Export a content view version"
-msgstr ""
+msgstr "Exportovat verzi zobrazení obsahu"
 
-#, fuzzy
 msgid "Content view export is available in %{directory}."
-msgstr "Inhalt"
+msgstr "Export pohledu na obsah je k dispozici v %{directory}."
 
-#, fuzzy
 msgid "Content View Version numeric identifier"
-msgstr "Inhaltsansicht"
+msgstr "Číselný identifikátor pohledu na obsah"
 
 msgid "Directory to put content view version export into."
 msgstr ""
 
-#, fuzzy
 msgid ""
 "The Repository '#{repo['name']}' is a non-yum repository. Only Yum is supporte"
 "d at this time. Please remove the repository from the Content View, republish "
 "and try the export again."
-msgstr "Inhaltsansicht"
-
-msgid "Import a content view version"
 msgstr ""
 
-#, fuzzy
+msgid "Import a content view version"
+msgstr "Importovat verzi pohledu na obsah"
+
 msgid "Content view imported."
-msgstr "Inhaltsansicht aktualisiert"
+msgstr "Pohled na obsah naimportován."
 
-#, fuzzy
 msgid "Could not import the content view"
-msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
+msgstr "Pohled na obsah se nedaří naimportovat"
 
-#, fuzzy
 msgid "Organization numeric identifier"
-msgstr "Organisation"
+msgstr "Číselný identifikátor organizace"
 
-#, fuzzy
 msgid "Location of export tar on disk"
-msgstr "Standort"
+msgstr "Umístění tar archivu na úložišti"
 
-#, fuzzy
 msgid "Export tar #{options['option_export_tar']} does not exist."
-msgstr "nein"
+msgstr ""
 
-#, fuzzy
 msgid "Unable to sync repositories, no library repository found for %s"
-msgstr "nein"
+msgstr ""
 
 msgid "Errata ID"
-msgstr "Errata-ID"
+msgstr ""
 
 msgid "Type"
 msgstr "Typ"
 
-#, fuzzy
 msgid "Title"
-msgstr "Zeit"
+msgstr "Nadpis"
 
 msgid "Reboot Suggested"
-msgstr ""
+msgstr "Doporučován restart"
 
 msgid "Updated"
-msgstr "Aktualisiert"
+msgstr "Aktualizováno"
 
 msgid "Issued"
-msgstr ""
+msgstr "Vydáno"
 
 msgid "Release"
-msgstr "Release"
+msgstr "Vydání"
 
-#, fuzzy
 msgid "Solution"
-msgstr "Standort"
+msgstr "Řešení"
 
 msgid "Module Streams"
 msgstr ""
@@ -834,183 +740,160 @@ msgid "Stream"
 msgstr ""
 
 msgid "Path"
-msgstr ""
+msgstr "Popis umístění"
 
 msgid "Checksum"
-msgstr ""
+msgstr "Kontrolní součet"
 
 msgid "Filter ID"
-msgstr "Filter-ID"
+msgstr "Identif. filtru"
 
 msgid "Inclusion"
-msgstr "Einbeziehung"
+msgstr "Zahrnutí"
 
 msgid "Rules"
-msgstr "Regeln"
+msgstr "Pravidla"
 
 msgid "Minimum Version"
-msgstr "Minimumversion"
+msgstr "Minimální verze"
 
 msgid "Maximum Version"
-msgstr "Maximalversion"
+msgstr "Maximální verze"
 
 msgid "Types"
-msgstr "Typen"
+msgstr "Typy"
 
 msgid "Created"
-msgstr "Erstellt"
+msgstr "Vytvořeno"
 
-#, fuzzy
 msgid "Filter created."
-msgstr "Filter erstellt"
+msgstr "Filtr vytvořen."
 
 msgid "Could not create the filter"
-msgstr "Filter konnte nicht erstellt werden"
+msgstr "Filtr se nedaří vytvořit"
 
-#, fuzzy
 msgid "Filter updated."
-msgstr "Filter aktualisiert"
+msgstr "Filtr aktualizován."
 
 msgid "Could not update the filter"
-msgstr "Filter konnte nicht aktualisiert werden"
+msgstr "Filtr se nedaří aktualizovat"
 
-#, fuzzy
 msgid "Filter deleted."
-msgstr "Filter gelöscht"
+msgstr "Filtr smazán."
 
 msgid "Could not delete the filter"
-msgstr "Filter konnte nicht gelöscht werden"
+msgstr "Filtr se nedaří smazat"
 
 msgid "Rule ID"
-msgstr "Regel-ID"
+msgstr "Identifikátor pravidla"
 
-#, fuzzy
 msgid "Architecture"
-msgstr "Architektur"
+msgstr "Architektura"
 
-#, fuzzy
 msgid "Date Type"
-msgstr "Typ"
+msgstr "Typ data"
 
-#, fuzzy
 msgid "Filter rule created."
-msgstr "Filterregel erstellt"
+msgstr "Pravidlo filtru."
 
 msgid "Could not create the filter rule"
-msgstr "Filterregel konnte nicht erstellt werden"
-
-msgid "Package and package group names"
 msgstr ""
 
-#, fuzzy
+msgid "Package and package group names"
+msgstr "Názvy balíčků a jejich skupin"
+
 msgid "Filter rule updated."
-msgstr "Filterregel aktualisiert"
+msgstr "Pravidlo filtru aktualizováno."
 
 msgid "Could not update the filter rule"
-msgstr "Filterregel konnte nicht aktualisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Filter rule deleted."
-msgstr "Filterregel gelöscht"
+msgstr "Pravidlo filtru smazáno."
 
 msgid "Could not delete the filter rule"
-msgstr "Filterregel konnte nicht gelöscht werden"
+msgstr ""
 
 msgid "Content Type"
-msgstr "Inhaltstyp"
+msgstr "Typ obsahu"
 
 msgid "Product"
 msgstr "Produkt"
 
-#, fuzzy
 msgid "GPG Key created."
-msgstr "GPG-Schlüssel erstellt"
+msgstr "GPG klíč vytvořen."
 
 msgid "Could not create GPG Key"
-msgstr "GPG-Schlüssel konnte nicht erstellt werden"
+msgstr "GPG klíč se nedaří vytvořit"
 
 msgid "GPG Key file"
-msgstr "GPG-Schlüsseldatei"
+msgstr "Soubor s GPG klíčem"
 
-#, fuzzy
 msgid "GPG Key updated."
-msgstr "GPG-Schlüssel aktualisiert"
+msgstr "GPG klíč aktualizován."
 
 msgid "Could not update GPG Key"
-msgstr "GPG-Schlüssel konnte nicht aktualisiert werden"
+msgstr "GPG klíč se nedaří aktualizovat"
 
-#, fuzzy
 msgid "GPG Key deleted."
-msgstr "GPG-Schlüssel gelöscht"
+msgstr "GPG klíč smazán."
 
 msgid "Could not delete the GPG Key"
-msgstr "GPG-Schlüssel konnte nicht gelöscht werden"
-
-msgid "Limit"
-msgstr "Grenze"
-
-#, fuzzy
-msgid "Host collection created."
-msgstr "Hostsammlung erstellt"
-
-msgid "Could not create the host collection"
-msgstr "Hostsammlung konnte nicht erstellt werden"
-
-msgid "Total Hosts"
 msgstr ""
 
-#, fuzzy
+msgid "Limit"
+msgstr "Limit"
+
+msgid "Host collection created."
+msgstr "Sada strojů vytvořena."
+
+msgid "Could not create the host collection"
+msgstr ""
+
+msgid "Total Hosts"
+msgstr "Celkem strojů"
+
 msgid "Host Collection ID"
-msgstr "Hostsammlungen"
+msgstr ""
 
-#, fuzzy
 msgid "Host Collection Name"
-msgstr "Hostsammlungen"
+msgstr "Název sady hostitelů"
 
-#, fuzzy
 msgid "Copy a host collection"
-msgstr "Hostsammlung konnte nicht hinzugefügt werden"
+msgstr ""
 
 msgid "New host collection name"
 msgstr ""
 
-#, fuzzy
 msgid "New host collection created."
-msgstr "Hostsammlung erstellt"
+msgstr "Nová sada strojů vytvořena."
 
-#, fuzzy
 msgid "Could not create the new host collection"
-msgstr "Hostsammlung konnte nicht erstellt werden"
+msgstr ""
 
-#, fuzzy
 msgid "Host collection updated."
-msgstr "Hostsammlung aktualisiert"
+msgstr "Sada strojů aktualizována."
 
 msgid "Could not update the the host collection"
-msgstr "Hostsammlung konnte nicht aktualisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Host collection deleted."
-msgstr "Hostsammlung gelöscht"
+msgstr "Sada strojů smazána."
 
 msgid "Could not delete the host collection"
-msgstr "Hostsammlung konnte nicht gelöscht werden"
+msgstr ""
 
-#, fuzzy
 msgid "The host(s) has been added."
-msgstr "Inhaltshosts wurden hinzugefügt"
+msgstr "Stroj(e) byl(y) přidán(y)."
 
-#, fuzzy
 msgid "Could not add host(s)"
-msgstr "Inhaltshosts konnten nicht hinzugefügt werden"
+msgstr ""
 
-#, fuzzy
 msgid "The host(s) has been removed."
-msgstr "Inhaltshosts wurden entfernt"
+msgstr "Stroj(e) byl(y) odebrán(y)."
 
-#, fuzzy
 msgid "Could not remove host(s)"
-msgstr "Inhaltshosts konnten nicht entfernt werden"
+msgstr "Nedaří se odebrat stroje"
 
 msgid "Manipulate errata for a host collection"
 msgstr ""
@@ -1018,17 +901,14 @@ msgstr ""
 msgid "Install errata on content hosts contained within a host collection"
 msgstr ""
 
-#, fuzzy
 msgid "Successfully scheduled installation of errata."
-msgstr "Erfolgreich"
+msgstr ""
 
-#, fuzzy
 msgid "Could not schedule installation of errata"
-msgstr "nein"
+msgstr ""
 
-#, fuzzy
 msgid "List of Errata to install"
-msgstr "Errata"
+msgstr ""
 
 msgid "Manipulate packages for a host collection"
 msgstr ""
@@ -1039,157 +919,134 @@ msgstr ""
 msgid "Install packages on content hosts contained within a host collection"
 msgstr ""
 
-#, fuzzy
 msgid "Successfully scheduled installation of package(s)."
-msgstr "Erfolgreich"
+msgstr "Instalace balíčku/ů úspěšně naplánována."
 
-#, fuzzy
 msgid "Could not schedule installation of package(s)"
-msgstr "nein"
+msgstr "Nepodařilo se naplánovat instalaci balíčků"
 
 msgid "Update packages on content hosts contained within a host collection"
 msgstr ""
 
-#, fuzzy
 msgid "Successfully scheduled update of package(s)."
-msgstr "Erfolgreich"
+msgstr ""
 
-#, fuzzy
 msgid "Could not schedule update of package(s)"
-msgstr "nein"
+msgstr ""
 
 msgid "Remove packages on content hosts contained within a host collection"
 msgstr ""
 
-#, fuzzy
 msgid "Successfully scheduled removal of package(s)."
-msgstr "Erfolgreich"
+msgstr ""
 
-#, fuzzy
 msgid "Could not schedule removal of package(s)"
-msgstr "nein"
+msgstr ""
 
 msgid "Manipulate package-groups for a host collection"
 msgstr ""
 
 msgid "comma-separated list of package-groups to install"
-msgstr ""
+msgstr "čárkou oddělovaný seznam skupin balíčků k instalaci"
 
 msgid "Install package-groups on content hosts contained within a host collection"
 msgstr ""
 
-#, fuzzy
 msgid "Successfully scheduled installation of package-group(s)."
-msgstr "Erfolgreich"
+msgstr ""
 
-#, fuzzy
 msgid "Could not schedule installation of package-group(s)"
-msgstr "nein"
+msgstr ""
 
 msgid "Update package-groups on content hosts contained within a host collection"
 msgstr ""
 
-#, fuzzy
 msgid "Successfully scheduled update of package-groups(s)."
-msgstr "Erfolgreich"
+msgstr ""
 
-#, fuzzy
 msgid "Could not schedule update of package-group(s)"
-msgstr "nein"
+msgstr ""
 
 msgid "Remove package-groups on content hosts contained within a host collection"
 msgstr ""
 
-#, fuzzy
 msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "Erfolgreich"
+msgstr ""
 
-#, fuzzy
 msgid "Could not schedule removal of package-group(s)"
-msgstr "nein"
+msgstr ""
 
-#, fuzzy
 msgid "Content Source name "
-msgstr "Inhalt"
+msgstr "Název zdroje obsahu"
 
-#, fuzzy
 msgid "Content Source"
-msgstr "Inhalt"
+msgstr "Zdroj obsahu"
 
-#, fuzzy
 msgid "Errata is being applied with task %{id}."
-msgstr "Errata"
+msgstr ""
 
-#, fuzzy
 msgid "Could not apply errata"
-msgstr "nein"
+msgstr ""
 
-#, fuzzy
 msgid "Erratum ID"
-msgstr "Errata-ID"
+msgstr ""
 
 msgid "Installable"
+msgstr "Instalovatelné"
+
+msgid "Errata recalculated with task %{id}."
 msgstr ""
 
-#, fuzzy
-msgid "Errata recalculated with task %{id}."
-msgstr "Errata"
-
-#, fuzzy
 msgid "Could not recalculate errata"
-msgstr "nein"
+msgstr ""
 
-#, fuzzy
 msgid "Content Information"
-msgstr "Inhalt"
+msgstr "Informace o obsahu"
 
 msgid "Kickstart Repository"
-msgstr ""
+msgstr "Kickstart repozitář"
 
-#, fuzzy
 msgid "Applicable Packages"
-msgstr "Pakete"
+msgstr "Balíčky k dispozici"
 
-#, fuzzy
 msgid "Upgradable Packages"
-msgstr "Pakete"
+msgstr "Balíčky které lze aktualizovat"
 
-#, fuzzy
 msgid "Applicable Errata"
-msgstr "Errata"
+msgstr ""
 
 msgid "Enhancement"
-msgstr ""
+msgstr "Vylepšení"
 
 msgid "Bug Fix"
-msgstr ""
+msgstr "Oprava"
 
 msgid "Security"
-msgstr ""
+msgstr "Zabezpečení"
 
 msgid "Subscription Information"
-msgstr ""
+msgstr "Informace o předplatném"
 
 msgid "Last Checkin"
 msgstr ""
 
 msgid "Autoheal"
-msgstr "Automatische Neusubskription"
+msgstr "Automatické léčení"
 
 msgid "Registered To"
-msgstr ""
+msgstr "Registrováno na"
 
 msgid "Registered At"
 msgstr ""
 
 msgid "Registered by Activation Keys"
-msgstr ""
+msgstr "Registrováno aktivačními klíči"
 
 msgid "Kickstart repository name "
-msgstr ""
+msgstr "Název kickstart repozitáře"
 
 msgid "Please provide --lifecycle-environment-id"
-msgstr ""
+msgstr "Zadejte --lifecycle-environment-id"
 
 msgid "Please provide --content-view-id"
 msgstr ""
@@ -1203,515 +1060,463 @@ msgid "NVRA"
 msgstr ""
 
 msgid "Host unregistered."
-msgstr ""
+msgstr "Registrace stroje zrušena."
 
-#, fuzzy
 msgid "Could not unregister the host"
-msgstr "nein"
+msgstr ""
 
 msgid "Host successfully registered."
-msgstr ""
+msgstr "Stroj úspěšně zaregistrován."
 
-#, fuzzy
 msgid "Failed to register host"
-msgstr "Fehlgeschlagen"
+msgstr "Stroj se nepodařilo zaregistrovat"
 
 msgid "Subscription attached to the host successfully."
-msgstr ""
+msgstr "Předplatné stroji úspěšně přiděleno."
 
-#, fuzzy
 msgid "Failed to attach subscriptions to the host"
-msgstr "Fehlgeschlagen"
+msgstr "Nepodařilo se připojit předplatné k hostiteli"
 
-#, fuzzy
 msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "Anzahl"
+msgstr ""
 
 msgid "Auto attached subscriptions to the host successfully."
-msgstr ""
+msgstr "Hostiteli úspěšně automaticky přiděleno předplatné."
 
-#, fuzzy
 msgid "Failed to auto attach subscriptions to the host"
-msgstr "Fehlgeschlagen"
+msgstr ""
 
 msgid "Subscription removed from the host successfully."
-msgstr ""
+msgstr "Předplatné stroji úspěšně odebráno."
 
-#, fuzzy
 msgid "Failed to remove subscriptions from the host"
-msgstr "Fehlgeschlagen"
+msgstr ""
 
 msgid "Remove the first instance of a subscription with matching id and quantity"
 msgstr ""
 
-#, fuzzy
 msgid "Organization ID to search by"
-msgstr "Name der zu suchenden Organisation"
-
-msgid "Organization name to search by"
-msgstr "Name der zu suchenden Organisation"
-
-msgid "Organization label to search by"
-msgstr "Kennung der zu suchenden Organisation"
-
-msgid "Capsule name to search by"
-msgstr "Name der zu suchenden Capsule"
-
-#, fuzzy
-msgid "File name to search by"
-msgstr "Name der zu suchenden Task"
-
-#, fuzzy
-msgid "Content View Version ID"
-msgstr "Inhaltsansicht"
-
-#, fuzzy
-msgid "Repository ID"
-msgstr "Repository-IDs"
-
-#, fuzzy
-msgid "Module stream name to search by"
-msgstr "Name des zu suchenden Produkts"
-
-msgid "Gpg key name to search by"
-msgstr "Name des zu suchenden GPG-Schlüssels"
-
-msgid "Host collection name to search by"
-msgstr "Name der zu suchenden Hostsammlung"
-
-msgid "Lifecycle environment name to search by"
-msgstr "Name der zu suchenden Lebenszyklusumgebung"
-
-msgid "Product name to search by"
-msgstr "Name des zu suchenden Produkts"
-
-msgid "Operating system title"
 msgstr ""
 
+msgid "Organization name to search by"
+msgstr "Název organizace pomocí kterého hledat"
+
+msgid "Organization label to search by"
+msgstr ""
+
+msgid "Capsule name to search by"
+msgstr ""
+
+msgid "File name to search by"
+msgstr "Název souboru podle kterého hledat"
+
+msgid "Content View Version ID"
+msgstr ""
+
+msgid "Repository ID"
+msgstr "Identifikátor repozitáře"
+
+msgid "Module stream name to search by"
+msgstr ""
+
+msgid "Gpg key name to search by"
+msgstr ""
+
+msgid "Host collection name to search by"
+msgstr ""
+
+msgid "Lifecycle environment name to search by"
+msgstr ""
+
+msgid "Product name to search by"
+msgstr "Název produktu pomocí kterého hledat"
+
+msgid "Operating system title"
+msgstr "Nadpis operačního systému"
+
 msgid "Repository name to search by"
-msgstr "Name des zu suchenden Repositorys"
+msgstr ""
 
 msgid "Repository set name to search by"
-msgstr "Name der zu suchenden Repository-Gruppe"
+msgstr ""
 
 msgid "Subscription name to search by"
-msgstr "Name der zu suchenden Subskription"
+msgstr "Název předplatného, podle kterého hledat"
 
 msgid "Sync plan name to search by"
-msgstr "Name des zu suchenden Synchronisationsplans"
+msgstr ""
 
 msgid "Task name to search by"
-msgstr "Name der zu suchenden Task"
+msgstr ""
 
 msgid "Puppet module name to search by"
-msgstr "Name des zu suchenden Puppet-Moduls"
+msgstr ""
 
 msgid "Puppet module's author to search by"
-msgstr "Name des zu suchenden Puppet-Modulautors"
+msgstr ""
 
 msgid "Puppet module's UUID to search by"
-msgstr "Name der zu suchenden Puppet-Modul-UUID"
+msgstr ""
 
-#, fuzzy
 msgid "Content view version number"
-msgstr "Inhalt"
+msgstr "Číslo verze pohledu na obsah"
 
 msgid "Name to search by"
-msgstr "Zu suchender Name"
+msgstr "Název podle kterého hledat"
 
-#, fuzzy
 msgid "Name of the prior environment"
-msgstr "Name"
+msgstr "Název předchozího prostředí"
 
 msgid "Prior"
-msgstr "Vorherige"
+msgstr "Před"
 
 msgid "Lifecycle Path"
-msgstr "Lebenszykluspfad"
+msgstr ""
 
 msgid "Library"
-msgstr "Library"
+msgstr "Knihovna"
 
 msgid "Prior Lifecycle Environment"
-msgstr "Vorherige Lebenszyklusumgebung"
+msgstr ""
 
 msgid "Unauthenticated Pull"
 msgstr ""
 
-#, fuzzy
 msgid "Registry Name Pattern"
-msgstr "Name"
+msgstr ""
 
-#, fuzzy
 msgid "Environment created."
-msgstr "Umgebung erstellt"
+msgstr "Prostředí vytvořeno."
 
 msgid "Could not create environment"
-msgstr "Umgebung konnte nicht erstellt werden"
+msgstr "Prostředí se nedaří vytvořit"
 
-#, fuzzy
 msgid "Environment updated."
-msgstr "Umgebung aktualisiert"
+msgstr "Prostředí aktualizováno."
 
 msgid "Could not update environment"
-msgstr "Umgebung konnte nicht aktualisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Environment deleted."
-msgstr "Umgebung gelöscht"
+msgstr "Prostředí smazáno."
 
 msgid "Could not delete environment"
-msgstr "Umgebung konnte nicht gelöscht werden"
+msgstr "Prostředí se nedaří smazat"
 
-#, fuzzy
 msgid "Module Stream Name"
-msgstr "Name"
+msgstr ""
 
-#, fuzzy
 msgid "Context"
-msgstr "Inhalt"
+msgstr "Kontext"
 
 msgid "Artifacts"
 msgstr ""
 
 msgid "Profiles"
-msgstr ""
+msgstr "Profily"
 
 msgid "RPMs"
-msgstr ""
+msgstr "RPM balíčky"
 
 msgid "Red Hat Repository URL"
-msgstr "Red Hat Repository-URL"
+msgstr "URL Red Hat repozitáře"
 
 msgid "Service Levels"
 msgstr ""
 
-#, fuzzy
 msgid "Organization updated."
-msgstr "Organisation aktualisiert"
+msgstr "Organizace aktualizována."
 
 msgid "Could not update the organization"
-msgstr "Organisation konnte nicht aktualisiert werden"
+msgstr "Organizaci se nedaří aktualizovat"
 
-#, fuzzy
 msgid "Organization created."
-msgstr "Organisation erstellt"
+msgstr "Organizace vytvořena."
 
 msgid "Could not create the organization"
-msgstr "Organisation konnte nicht erstellt werden"
+msgstr "Parametr se nedaří vytvořit"
 
-#, fuzzy
 msgid "Organization deleted."
-msgstr "Organisation gelöscht"
+msgstr "Organizace smazána."
 
 msgid "Could not delete the organization"
-msgstr "Organisation konnte nicht gelöscht werden"
+msgstr "Organizaci se nedaří smazat"
 
-#, fuzzy
 msgid "version"
-msgstr "Version"
+msgstr "verze"
 
 msgid "Commit"
 msgstr ""
 
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 msgid "%s  %s"
 msgstr "%s  %s"
 
 msgid "Filename"
-msgstr ""
+msgstr "Název souboru"
 
-#, fuzzy
 msgid "Source RPM"
-msgstr "Quelle"
+msgstr ""
 
 msgid "Epoch"
 msgstr ""
 
 msgid "Build Host"
-msgstr ""
+msgstr "Sestavit stroj"
 
 msgid "Vendor"
-msgstr ""
+msgstr "Výrobce"
 
 msgid "License"
-msgstr "Lizenz"
+msgstr "Licence"
 
 msgid "Relative Path"
-msgstr ""
+msgstr "Vztažený popis umístění"
 
-#, fuzzy
 msgid "Package Group Name"
-msgstr "Paketgruppen"
+msgstr "Název skupiny balíčků"
 
-#, fuzzy
 msgid "Repository Name"
-msgstr "Repository-IDs"
+msgstr "Název repozitáře"
 
-#, fuzzy
 msgid "Default Packages"
-msgstr "Pakete"
+msgstr "Výchozí balíčky"
 
-#, fuzzy
 msgid "Mandatory Packages"
-msgstr "Pakete"
+msgstr "Povinné balíčky"
 
-#, fuzzy
 msgid "Conditional Packages"
-msgstr "Pakete"
+msgstr "Podmíněné balíčky"
 
-#, fuzzy
 msgid "Optional Packages"
-msgstr "Pakete"
+msgstr "Volitelné balíčky"
 
 msgid "Server Response"
-msgstr "Serverantwort"
+msgstr "Odpověď ze serveru"
 
 msgid "FAIL"
-msgstr "FEHLER"
+msgstr ""
 
 msgid "Duration: %sms"
-msgstr "Dauer: %s ms"
+msgstr "Trvání: %s ms"
 
 msgid "Message: %s"
-msgstr "Meldung: %s"
+msgstr "Zpráva: %s"
 
 msgid "Sync State"
-msgstr "Synchronisationsstatus"
+msgstr "Stav synchronizace"
 
-#, fuzzy
 msgid "Product created."
-msgstr "Produkt erstellt"
+msgstr "Produkt vytvořen."
 
 msgid "Could not create the product"
-msgstr "Produkt konnte nicht erstellt werden"
+msgstr "Produkt se nedaří vytvořit"
 
 msgid "Sync Plan ID"
-msgstr "Synchronisationsplan-ID"
+msgstr "Identif. plánu synchronizace"
 
 msgid "GPG"
 msgstr "GPG"
 
 msgid "GPG Key ID"
-msgstr "GPG-Schlüssel-ID"
+msgstr "Identif. GPG klíče"
 
 msgid "GPG Key"
-msgstr "GPG-Schlüssel"
+msgstr "GPG klíč"
 
 msgid "Readonly"
-msgstr "Schreibgeschützt"
+msgstr "Pouze pro čtení"
 
 msgid "Deletable"
-msgstr "Löschbar"
+msgstr "Je možné smazat"
 
 msgid "Repo Name"
-msgstr "Repository-Name"
+msgstr "Název repozitáře"
 
 msgid "URL"
-msgstr "URL"
+msgstr "URL adresa"
 
-#, fuzzy
 msgid "Product updated."
-msgstr "Produkt aktualisiert"
+msgstr "Produkt aktualizován."
 
 msgid "Could not update the product"
-msgstr "Produkt konnte nicht aktualisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Product destroyed."
-msgstr "Produkt gelöscht"
+msgstr "Produkt zlikvidován."
 
 msgid "Could not destroy the product"
-msgstr "Produkt konnte nicht gelöscht werden"
+msgstr ""
 
-#, fuzzy
 msgid "Product repositories are being synchronized in task %{id}."
-msgstr "Repository wird synchronisiert durch Task %{id}"
+msgstr ""
 
-#, fuzzy
 msgid "Could not synchronize the product repositories"
-msgstr "Repository konnte nicht synchronisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Assign sync plan to product"
-msgstr "Synchronisationsplan zu Produkt zuweisen."
+msgstr "Přiřadit produktu plán synchronizace"
 
 msgid "Synchronization plan assigned."
-msgstr "Synchronisationsplan zugewiesen."
+msgstr ""
 
-#, fuzzy
 msgid "Could not assign synchronization plan"
-msgstr "Synchronisationsplan konnte nicht zugewiesen werden."
+msgstr ""
 
-#, fuzzy
 msgid "Delete assignment sync plan and product"
-msgstr "Zuweisung von Synchronisationsplan und Produkt löschen."
+msgstr ""
 
 msgid "Synchronization plan removed."
-msgstr "Synchronisationsplan entfernt."
+msgstr "Plán synchronizace odebrán"
 
-#, fuzzy
 msgid "Could not remove synchronization plan"
-msgstr "Synchronisationsplan konnte nicht entfernt werden."
+msgstr "Plán synchronizace se nedaří smazat"
 
 msgid "List associated products"
-msgstr ""
+msgstr "Vypsat přiřazené produkty"
 
-#, fuzzy
 msgid "Default Enabled?"
-msgstr "Aktiviert"
+msgstr "Výchozí zapnuto?"
 
 msgid "Override"
-msgstr ""
+msgstr "Přebít"
 
 msgid "Uuid"
 msgstr ""
 
 msgid "Summary"
-msgstr "Zusammenfassung"
+msgstr "Souhrn"
 
 msgid "Project Page"
-msgstr "Projektseite"
+msgstr "Stránka projektu"
 
 msgid "Source"
-msgstr "Quelle"
+msgstr "Zdroj"
 
 msgid "Dependencies"
-msgstr "Abhängigkeiten"
+msgstr "Závislosti"
 
 msgid "File checksums"
-msgstr "Dateiprüfsummen"
+msgstr "Kontrolní součty souborů"
 
 msgid "Tag List"
-msgstr "Tag-Liste"
+msgstr "Seznam štítků"
 
 msgid "Red Hat Repository"
-msgstr "Red Hat Repository"
+msgstr "Red Hat repozitář"
 
-#, fuzzy
 msgid "Checksum Type"
-msgstr "Typ"
+msgstr "Typ kontrolního součtu"
 
-#, fuzzy
 msgid "Mirror on Sync"
-msgstr "Synchronisation"
+msgstr ""
 
 msgid "Publish Via HTTP"
-msgstr "Über HTTP veröffentlichen"
+msgstr "Zveřejnit přes HTTP"
 
 msgid "Published At"
-msgstr "Veröffentlicht unter"
+msgstr "Zveřejněno v"
 
 msgid "Download Policy"
+msgstr "Zásada stahování"
+
+msgid "OSTree Upstream Sync Policy"
 msgstr ""
 
-#, fuzzy
-msgid "OSTree Upstream Sync Policy"
-msgstr "Synchronisation"
-
-#, fuzzy
 msgid "OSTree Upstream Sync Depth"
-msgstr "Synchronisation"
+msgstr ""
 
-#, fuzzy
 msgid "Upstream Repository Name"
-msgstr "Name"
+msgstr "Název upstream repozitáře"
 
 msgid "Container Image Tags Filter"
+msgstr "Filtr štítků obrazů kontejnerů"
+
+msgid "Container Repository Name"
 msgstr ""
 
-#, fuzzy
-msgid "Container Repository Name"
-msgstr "Name"
-
-#, fuzzy
 msgid "Ignorable Content Units"
-msgstr "Inhalt"
+msgstr "Ignorovatelné jednotky obsahu"
 
 msgid "Sync"
-msgstr "Synchronisation"
+msgstr "Synchronizovat"
 
 msgid "Last Sync Date"
-msgstr "Letzte Synchronisation"
+msgstr "Datum poslední synchronizace"
 
 msgid "Content Counts"
-msgstr "Anzahl der Inhalte"
+msgstr "Počty obsahu"
 
-#, fuzzy
 msgid "Source RPMS"
-msgstr "Quelle"
+msgstr ""
 
 msgid "Package Groups"
-msgstr "Paketgruppen"
+msgstr "Skupiny balíčků"
 
 msgid "Container Image Manifest Lists"
-msgstr ""
+msgstr "Seznamy manifestů obrazů kontejnerů"
 
 msgid "Container Image Manifests"
-msgstr ""
+msgstr "Manifest obrazu v kontejneru"
 
 msgid "Container Image Tags"
-msgstr ""
+msgstr "Štítky obrazu kontejneru"
 
 msgid "OSTree Branches"
 msgstr ""
 
-#, fuzzy
 msgid "Files"
-msgstr "Fehlgeschlagen"
+msgstr "Soubory"
 
 msgid "yes"
-msgstr "ja"
+msgstr "ano"
 
 msgid "no"
-msgstr "nein"
+msgstr "ne"
 
 msgid "Not Synced"
-msgstr "Nicht synchronisiert"
+msgstr "Nesynchronizováno"
 
 msgid "Failed"
-msgstr "Fehlgeschlagen"
+msgstr "Nezdařilo se"
 
 msgid "Success"
-msgstr "Erfolgreich"
+msgstr "Úspěch"
 
 msgid "Finished"
-msgstr "Abgeschlossen"
+msgstr "Dokončeno"
 
 msgid "Error"
-msgstr "Fehler"
+msgstr "Chyba"
 
 msgid "Running"
-msgstr "Läuft"
+msgstr "Spuštěné"
 
 msgid "Waiting"
-msgstr "Wartet"
+msgstr "Čeká se"
 
 msgid "Canceled"
-msgstr "Abgebrochen"
+msgstr "Zrušeno"
 
-#, fuzzy
 msgid "Repository is being synchronized in task %{id}."
-msgstr "Repository wird synchronisiert durch Task %{id}"
+msgstr "Repozitář je synchronizován v úloze %{id}."
 
 msgid "Could not synchronize the repository"
-msgstr "Repository konnte nicht synchronisiert werden"
+msgstr "Repozitář se nedaří synchronizovat"
 
-#, fuzzy
 msgid "Repository created."
-msgstr "Repository erstellt"
+msgstr "Repozitář vytvořen."
 
 msgid "Could not create the repository"
-msgstr "Repository konnte nicht erstellt werden"
+msgstr "Repozitář se nedaří vytvořit"
 
-#, fuzzy
 msgid "Repository updated."
-msgstr "Repository aktualisiert"
+msgstr "Repozitář aktualizován."
 
 msgid "Could not update the repository"
-msgstr "Repository konnte nicht aktualisiert werden"
+msgstr "Repozitář se nedaří aktualizovat"
 
 msgid "--docker-digest required with --docker-tag"
 msgstr ""
@@ -1726,33 +1531,28 @@ msgid "Container Image manifest digest"
 msgstr ""
 
 msgid "Repository updated"
-msgstr "Repository aktualisiert"
+msgstr "Repozitář aktualizován"
 
-#, fuzzy
 msgid "Failed to upload tag '%s' to repository."
-msgstr "Fehlgeschlagen"
+msgstr ""
 
-#, fuzzy
 msgid "Repository deleted."
-msgstr "Repository gelöscht"
+msgstr "Repozitář smazán."
 
 msgid "Could not delete the Repository"
-msgstr "Repository konnte nicht gelöscht werden"
+msgstr "Repozitář se nedaří smazat"
 
-#, fuzzy
 msgid "Could not find any files matching PATH"
-msgstr "nein"
+msgstr ""
 
-#, fuzzy
 msgid "Cannot specify both product options and repository ID."
-msgstr "ID"
+msgstr ""
 
-#, fuzzy
 msgid "Repository content uploaded."
-msgstr "Repository-Inhalte hochgeladen"
+msgstr "Obsah repozitáře nahrán."
 
 msgid "Could not upload the content"
-msgstr "Inhalte konnten nicht hochgeladen werden"
+msgstr "Obsah se nedaří nahrát"
 
 msgid ""
 "Upload file, directory of files, or glob of files as content for a repository."
@@ -1762,159 +1562,140 @@ msgstr ""
 
 msgid "Failed to upload file '%s' to repository. Please check the file and try again."
 msgstr ""
-"Hochladen der Datei \"%s\" zum Repository ist fehlgeschlagen. Bitte prüfen Sie d"
-"ie Datei und versuchen Sie es erneut."
 
-#, fuzzy
 msgid "Successfully uploaded file '%{name}'"
-msgstr "Datei \"%s\" erfolgreich hochgeladen."
+msgstr "Soubor „%{name}“ úspěšně nahrán"
 
-#, fuzzy
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
-msgstr "Erfolgreich"
-
-msgid "Remove content from a repository"
 msgstr ""
 
-#, fuzzy
-msgid "Repository content removed."
-msgstr "Repository-Inhalte hochgeladen"
+msgid "Remove content from a repository"
+msgstr "Odebrat obsah z repozitáře"
 
-#, fuzzy
+msgid "Repository content removed."
+msgstr "Obsah repozitáře odebrán."
+
 msgid "Could not remove content"
-msgstr "Inhaltshost konnte nicht entfernt werden"
+msgstr "Obsah nebylo možné odebrat"
 
 msgid "Export content from a repository to the configured directory"
 msgstr ""
 
-#, fuzzy
 msgid "Repository is being exported in task %{id}."
-msgstr "Repository wird synchronisiert durch Task %{id}"
+msgstr "Repozitář je exportován v úloze %{id}."
 
-#, fuzzy
 msgid "Could not export the repository"
-msgstr "Repository konnte nicht aktualisiert werden"
+msgstr "Repozitář se nedaří exportovat"
 
 msgid "Enabled Repositories"
-msgstr "Aktivierte Repositorys"
+msgstr "Zapnout repozitáře"
 
 msgid "Arch"
-msgstr "Architektur"
+msgstr "Architektura"
 
-#, fuzzy
 msgid "Registry Name"
-msgstr "Name"
+msgstr "Název registrů"
 
 msgid "Enabled"
-msgstr "Aktiviert"
+msgstr "Zapnuto"
 
-#, fuzzy
 msgid "Repository enabled."
-msgstr "Repository aktiviert"
+msgstr "Repozitář zapnut."
 
 msgid "Could not enable repository"
-msgstr "Repository konnte nicht aktiviert werden"
+msgstr "Repozitář se nepodařilo zapnout"
 
-#, fuzzy
 msgid "Repository disabled."
-msgstr "Repository deaktiviert"
+msgstr "Repozitář vypnut."
 
 msgid "Could not disable repository"
-msgstr "Repository konnte nicht deaktiviert werden"
+msgstr ""
 
 msgid "Consumed"
-msgstr "Verbraucht"
+msgstr "Spotřebováno"
 
 msgid "Physical"
-msgstr ""
+msgstr "Fyzický"
 
 msgid "Guests of %s"
-msgstr ""
+msgstr "Host na %s"
 
 msgid "Temporary"
-msgstr ""
+msgstr "Dočasné"
 
 msgid "Virtual"
+msgstr "Virtuální"
+
+msgid "Manifest is being uploaded in task %{id}."
 msgstr ""
 
-#, fuzzy
-msgid "Manifest is being uploaded in task %{id}."
-msgstr "Manifest wird hochgeladen durch Task %{id}"
-
 msgid "Manifest upload failed"
-msgstr "Hochladen von Manifest fehlgeschlagen"
+msgstr ""
 
 msgid "Subscription manifest file"
-msgstr "Subskriptions-Manifestdatei"
+msgstr ""
 
-#, fuzzy
 msgid "Manifest is being deleted in task %{id}."
-msgstr "Manifest wird gelöscht durch Task %{id}"
+msgstr ""
 
 msgid "Manifest deletion failed"
-msgstr "Löschen von Manifest fehlgeschlagen"
+msgstr "Smazání manifestu se nezdařilo"
 
-#, fuzzy
 msgid "Manifest is being refreshed in task %{id}."
-msgstr "Manifest wird aktualisiert durch Task %{id}"
+msgstr ""
 
 msgid "Manifest refresh failed"
-msgstr "Aktualisieren von Manifest fehlgeschlagen"
+msgstr ""
 
 msgid "Status Message"
-msgstr "Statusmeldung"
+msgstr "Stavová zpráva"
 
 msgid "Time"
-msgstr "Zeit"
+msgstr "Čas"
 
 msgid "Interval"
-msgstr "Intervall"
+msgstr "Interval"
 
 msgid "Cron Expression"
 msgstr ""
 
-#, fuzzy
 msgid "Recurring Logic ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Created at"
-msgstr "Erstellt um"
+msgstr "Vytvořeno v"
 
 msgid "Updated at"
-msgstr "Aktualisiert um"
+msgstr "Aktualizováno v"
 
 msgid "how often synchronization should run"
-msgstr "Häufigkeit der Synchronisation"
+msgstr "jak často by měla být synchronizace spouštěna"
 
 msgid "set this when interval is custom cron"
 msgstr ""
 
-#, fuzzy
 msgid ""
 "Start date and time for the sync plan.Time is optional, if kept blank current "
 "system time will be considered"
-msgstr "Zeit"
+msgstr ""
 
-#, fuzzy
 msgid "Sync plan created."
-msgstr "Synchronisationsplan erstellt"
+msgstr ""
 
 msgid "Could not create the sync plan"
-msgstr "Synchronisationsplan konnte nicht erstellt werden"
+msgstr "Nedaří se vytvořit plán synchronizace"
 
 msgid "start date and time of the synchronization"
-msgstr "Startdatum und -zeit der Synchronisation"
+msgstr "počáteční datum a čas synchronizace"
 
-#, fuzzy
 msgid "Sync plan updated."
-msgstr "Synchronisationsplan aktualisiert"
+msgstr "Plán synchronizace aktualizován."
 
 msgid "Could not update the sync plan"
-msgstr "Synchronisationsplan konnte nicht aktualisiert werden"
+msgstr ""
 
-#, fuzzy
 msgid "Sync plan destroyed."
-msgstr "Synchronisationsplan gelöscht"
+msgstr "Plán synchronizace zlikvidován."
 
 msgid "Could not destroy the sync plan"
-msgstr "Synchronisationsplan konnte nicht gelöscht werden"
+msgstr "Plán synchronizace se nedaří zničit"
