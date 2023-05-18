@@ -11,7 +11,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-katello 0.0.7.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-04 13:31+0200\n"
 "PO-Revision-Date: 2015-04-28 08:27+0000\n"
 "Last-Translator: jcarbone <jcarbone@redhat.com>\n"
 "Language-Team: French\n"
@@ -22,1587 +21,2087 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "X-Generator: Zanata 3.6.0\n"
 
-#: lib/hammer_cli_katello/host_collection.rb:10
-msgid "Array of system ids to replace the content hosts in host collection"
+#, fuzzy
+msgid "Manipulate activation keys"
+msgstr "Manipuler les clés d'activations"
+
+msgid "Manipulate organizations"
+msgstr "Manipuler les organisations"
+
+#, fuzzy
+msgid "Manipulate GPG Key actions on the server"
+msgstr "Clé GPG"
+
+msgid "Manipulate lifecycle_environments on the server"
+msgstr ""
+
+msgid "Get the status of the server"
+msgstr ""
+
+#, fuzzy
+msgid "Manipulate products"
+msgstr "Manipuler les produits."
+
+msgid "View Puppet Module details"
+msgstr ""
+
+msgid "Manipulate repositories"
+msgstr "Manipuler les référentiels"
+
+msgid "Manipulate repository sets on the server"
+msgstr ""
+
+#, fuzzy
+msgid "Manipulate subscriptions"
+msgstr "Manipuler les abonnements."
+
+msgid "Manipulate sync plans"
+msgstr "Manipuler les plans de synchronisation"
+
+msgid "Manipulate host collections"
+msgstr "Manipuler les collections d'hôte"
+
+#, fuzzy
+msgid "Manipulate content views"
+msgstr "Manipuler les affichages du contenu."
+
+msgid "Manipulate capsule"
+msgstr "Manipuler la capsule"
+
+#, fuzzy
+msgid "Manipulate packages"
+msgstr "Manipuler la capsule"
+
+msgid "Manipulate package groups"
+msgstr ""
+
+msgid "Manipulate errata"
+msgstr ""
+
+msgid "Manipulate ostree branches"
+msgstr ""
+
+#, fuzzy
+msgid "Manipulate files"
+msgstr "Manipuler la capsule"
+
+msgid "View Module Streams"
 msgstr ""
 
 # translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/host_collection.rb:26
-#: lib/hammer_cli_katello/host_collection.rb:60
-#: lib/hammer_cli_katello/repository_set.rb:9
-#: lib/hammer_cli_katello/repository_set.rb:21
-#: lib/hammer_cli_katello/repository_set.rb:29
-#: lib/hammer_cli_katello/content_view.rb:25
-#: lib/hammer_cli_katello/content_view.rb:36
-#: lib/hammer_cli_katello/content_view.rb:42
-#: lib/hammer_cli_katello/content_view.rb:51
-#: lib/hammer_cli_katello/content_view.rb:56
-#: lib/hammer_cli_katello/content_view.rb:62
-#: lib/hammer_cli_katello/activation_key.rb:11
-#: lib/hammer_cli_katello/activation_key.rb:49
-#: lib/hammer_cli_katello/activation_key.rb:59
-#: lib/hammer_cli_katello/activation_key.rb:100
-#: lib/hammer_cli_katello/activation_key.rb:173
-#: lib/hammer_cli_katello/sync_plan.rb:8
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:11
-#: lib/hammer_cli_katello/gpg_key.rb:10 lib/hammer_cli_katello/gpg_key.rb:20
-#: lib/hammer_cli_katello/gpg_key.rb:27
-#: lib/hammer_cli_katello/subscription.rb:21
-#: lib/hammer_cli_katello/content_host.rb:16
-#: lib/hammer_cli_katello/content_host.rb:30
-#: lib/hammer_cli_katello/puppet_module.rb:8
-#: lib/hammer_cli_katello/puppet_module.rb:19
-#: lib/hammer_cli_katello/repository.rb:24
-#: lib/hammer_cli_katello/repository.rb:38
-#: lib/hammer_cli_katello/repository.rb:45
-#: lib/hammer_cli_katello/content_view_version.rb:10
-#: lib/hammer_cli_katello/content_view_version.rb:26
-#: lib/hammer_cli_katello/content_view_version.rb:37
-#: lib/hammer_cli_katello/content_view_version.rb:43
-#: lib/hammer_cli_katello/content_view_version.rb:49
-#: lib/hammer_cli_katello/product.rb:8 lib/hammer_cli_katello/product.rb:37
-#: lib/hammer_cli_katello/filter.rb:30 lib/hammer_cli_katello/filter.rb:36
-#: lib/hammer_cli_katello/lifecycle_environment.rb:21
-#: lib/hammer_cli_katello/lifecycle_environment.rb:52
-#: lib/hammer_cli_katello/capsule.rb:44 lib/hammer_cli_katello/capsule.rb:60
 msgid "ID"
 msgstr "ID"
 
 # translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#: lib/hammer_cli_katello/host_collection.rb:27
-#: lib/hammer_cli_katello/host_collection.rb:61
-#: lib/hammer_cli_katello/repository_set.rb:11
-#: lib/hammer_cli_katello/repository_set.rb:22
-#: lib/hammer_cli_katello/repository_set.rb:30
-#: lib/hammer_cli_katello/repository_set.rb:42
-#: lib/hammer_cli_katello/filter_rule.rb:14
-#: lib/hammer_cli_katello/filter_rule.rb:31
-#: lib/hammer_cli_katello/content_view.rb:14
-#: lib/hammer_cli_katello/content_view.rb:26
-#: lib/hammer_cli_katello/content_view.rb:37
-#: lib/hammer_cli_katello/content_view.rb:44
-#: lib/hammer_cli_katello/content_view.rb:52
-#: lib/hammer_cli_katello/content_view.rb:63
-#: lib/hammer_cli_katello/activation_key.rb:12
-#: lib/hammer_cli_katello/activation_key.rb:48
-#: lib/hammer_cli_katello/activation_key.rb:60
-#: lib/hammer_cli_katello/activation_key.rb:101
-#: lib/hammer_cli_katello/activation_key.rb:174
-#: lib/hammer_cli_katello/sync_plan.rb:9
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:13
-#: lib/hammer_cli_katello/gpg_key.rb:11 lib/hammer_cli_katello/gpg_key.rb:21
-#: lib/hammer_cli_katello/gpg_key.rb:28
-#: lib/hammer_cli_katello/subscription.rb:14
-#: lib/hammer_cli_katello/content_host.rb:17
-#: lib/hammer_cli_katello/content_host.rb:29
-#: lib/hammer_cli_katello/puppet_module.rb:9
-#: lib/hammer_cli_katello/puppet_module.rb:20
-#: lib/hammer_cli_katello/puppet_module.rb:41
-#: lib/hammer_cli_katello/repository.rb:9
-#: lib/hammer_cli_katello/repository.rb:25
-#: lib/hammer_cli_katello/repository.rb:39
-#: lib/hammer_cli_katello/repository.rb:46
-#: lib/hammer_cli_katello/content_view_version.rb:11
-#: lib/hammer_cli_katello/content_view_version.rb:27
-#: lib/hammer_cli_katello/content_view_version.rb:38
-#: lib/hammer_cli_katello/content_view_version.rb:44
-#: lib/hammer_cli_katello/content_view_version.rb:50
-#: lib/hammer_cli_katello/product.rb:9 lib/hammer_cli_katello/product.rb:38
-#: lib/hammer_cli_katello/filter.rb:14 lib/hammer_cli_katello/filter.rb:25
-#: lib/hammer_cli_katello/filter.rb:31 lib/hammer_cli_katello/filter.rb:37
-#: lib/hammer_cli_katello/lifecycle_environment.rb:22
-#: lib/hammer_cli_katello/lifecycle_environment.rb:53
-#: lib/hammer_cli_katello/capsule.rb:10 lib/hammer_cli_katello/capsule.rb:45
-#: lib/hammer_cli_katello/capsule.rb:61
 msgid "Name"
 msgstr "Nom"
 
-#: lib/hammer_cli_katello/host_collection.rb:28
-msgid "Limit"
+#, fuzzy
+msgid "Host Limit"
 msgstr "Limite"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/host_collection.rb:29
-#: lib/hammer_cli_katello/organization.rb:11
-#: lib/hammer_cli_katello/organization.rb:23
-#: lib/hammer_cli_katello/content_view.rb:29
-#: lib/hammer_cli_katello/activation_key.rb:50
-#: lib/hammer_cli_katello/sync_plan.rb:20
-#: lib/hammer_cli_katello/content_host.rb:31
-#: lib/hammer_cli_katello/puppet_module.rb:25
-#: lib/hammer_cli_katello/product.rb:10 lib/hammer_cli_katello/product.rb:40
-#: lib/hammer_cli_katello/lifecycle_environment.rb:55
-msgid "Description"
-msgstr "Description"
-
-#: lib/hammer_cli_katello/host_collection.rb:39
-#: lib/hammer_cli_katello/host_collection.rb:73
-msgid "Host collection created"
-msgstr "Collection d'hôte créée"
-
-#: lib/hammer_cli_katello/host_collection.rb:40
-#: lib/hammer_cli_katello/host_collection.rb:74
-msgid "Could not create the host collection"
-msgstr "Impossible de créer la collection de l'hôte"
-
-#: lib/hammer_cli_katello/host_collection.rb:48
-msgid "Total Content Hosts"
-msgstr "Hôtes de contenu total"
-
-#: lib/hammer_cli_katello/host_collection.rb:49
-msgid "Max Content Hosts"
-msgstr "Hôtes de contenu maximum"
-
-#: lib/hammer_cli_katello/host_collection.rb:85
-msgid "Host collection updated"
-msgstr "Collection d'hôte mise à jour"
-
-#: lib/hammer_cli_katello/host_collection.rb:86
-msgid "Could not update the the host collection"
-msgstr "Impossible de mettre à jour la collection d'hôte"
-
-#: lib/hammer_cli_katello/host_collection.rb:94
-msgid "Host collection deleted"
-msgstr "Collection d'hôte supprimée"
-
-#: lib/hammer_cli_katello/host_collection.rb:95
-msgid "Could not delete the host collection"
-msgstr "Impossible de supprimer la collection d'hôte"
-
-#: lib/hammer_cli_katello/host_collection.rb:104
-msgid "The content host(s) has been added"
-msgstr "Le(s) hôte(s) de contenu a (ont) été ajouté(s)"
-
-#: lib/hammer_cli_katello/host_collection.rb:105
-msgid "Could not add content host(s)"
-msgstr "Impossible d'ajouter le(s) hôte(s) de contenu"
-
-#: lib/hammer_cli_katello/host_collection.rb:114
-msgid "The content host(s) has been removed"
-msgstr "Le(s) hôte(s) de contenu a (ont) été supprimé(s)"
-
-#: lib/hammer_cli_katello/host_collection.rb:115
-msgid "Could not remove content host(s)"
-msgstr "Impossible de supprimer le(s) hôte(s) de contenu"
-
-#: lib/hammer_cli_katello/host_collection.rb:124
-msgid "Manipulate host collections"
-msgstr "Manipuler les collections d'hôte"
-
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/organization.rb:10
-#: lib/hammer_cli_katello/organization.rb:22
-#: lib/hammer_cli_katello/repository_set.rb:26
-#: lib/hammer_cli_katello/content_view.rb:15
-#: lib/hammer_cli_katello/content_view.rb:27
-#: lib/hammer_cli_katello/content_view.rb:38
-#: lib/hammer_cli_katello/repository.rb:26
-#: lib/hammer_cli_katello/content_view_version.rb:39
-#: lib/hammer_cli_katello/content_view_version.rb:45
-#: lib/hammer_cli_katello/product.rb:39 lib/hammer_cli_katello/filter.rb:32
-#: lib/hammer_cli_katello/lifecycle_environment.rb:54
-msgid "Label"
-msgstr "Étiquette"
-
-#: lib/hammer_cli_katello/organization.rb:24
-msgid "Red Hat Repository URL"
-msgstr "URL du référentiel Red Hat"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/organization.rb:34
-msgid "Organization updated"
-msgstr "Organisation mise à jour"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/organization.rb:35
-msgid "Could not update the organization"
-msgstr "Impossible de mettre à jour l'organisation"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/organization.rb:43
-msgid "Organization created"
-msgstr "Organisation créée"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/organization.rb:44
-msgid "Could not create the organization"
-msgstr "Impossible de créer l'organisation"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/organization.rb:54
-msgid "Organization deleted"
-msgstr "Organisation supprimée"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/organization.rb:55
-msgid "Could not delete the organization"
-msgstr "Impossible de supprimer l'organisation"
-
-#: lib/hammer_cli_katello/organization.rb:65
-msgid "Manipulate organizations"
-msgstr "Manipuler les organisations"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/repository_set.rb:10
-#: lib/hammer_cli_katello/repository_set.rb:23
-#: lib/hammer_cli_katello/filter.rb:15 lib/hammer_cli_katello/filter.rb:26
-msgid "Type"
-msgstr "Type"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/repository_set.rb:24
-#: lib/hammer_cli_katello/repository.rb:14
-#: lib/hammer_cli_katello/repository.rb:32
-#: lib/hammer_cli_katello/product.rb:68 lib/hammer_cli_katello/capsule.rb:11
-msgid "URL"
-msgstr "URL"
-
-#: lib/hammer_cli_katello/repository_set.rb:25
-#: lib/hammer_cli_katello/repository.rb:43
-#: lib/hammer_cli_katello/product.rb:51
-msgid "GPG Key"
-msgstr "Clé GPG"
-
-#: lib/hammer_cli_katello/repository_set.rb:28
-msgid "Enabled Repositories"
-msgstr "Référentiels activés"
-
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/repository_set.rb:44
-msgid "Arch"
-msgstr "Arch"
-
-#: lib/hammer_cli_katello/repository_set.rb:45
-msgid "Release"
-msgstr "Version"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/repository_set.rb:47
-msgid "Enabled"
-msgstr "Activé"
-
-#: lib/hammer_cli_katello/repository_set.rb:67
-msgid "Repository enabled"
-msgstr "Référentiel activé"
-
-#: lib/hammer_cli_katello/repository_set.rb:68
-msgid "Could not enable repository"
-msgstr "Impossible d'activer le référentiel"
-
-#: lib/hammer_cli_katello/repository_set.rb:77
-msgid "Repository disabled"
-msgstr "Référentiel désactivé"
-
-#: lib/hammer_cli_katello/repository_set.rb:78
-msgid "Could not disable repository"
-msgstr "Impossible de désactiver le référentiel"
-
-#: lib/hammer_cli_katello/repository_set.rb:86
-msgid "manipulate repository sets on the server"
-msgstr ""
-
-#: lib/hammer_cli_katello/filter_rule.rb:11
-#: lib/hammer_cli_katello/filter_rule.rb:28
-msgid "Rule ID"
-msgstr "ID de la règle"
-
-#: lib/hammer_cli_katello/filter_rule.rb:12
-#: lib/hammer_cli_katello/filter_rule.rb:29
-#: lib/hammer_cli_katello/filter.rb:13 lib/hammer_cli_katello/filter.rb:24
-msgid "Filter ID"
-msgstr "ID du filtre"
-
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#: lib/hammer_cli_katello/filter_rule.rb:15
-#: lib/hammer_cli_katello/filter_rule.rb:32
-#: lib/hammer_cli_katello/content_view.rb:57
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:15
-#: lib/hammer_cli_katello/puppet_module.rb:11
-#: lib/hammer_cli_katello/puppet_module.rb:21
-#: lib/hammer_cli_katello/content_view_version.rb:12
-#: lib/hammer_cli_katello/content_view_version.rb:28
-#: lib/hammer_cli_katello/content_view_version.rb:52
-#: lib/hammer_cli_katello/filter.rb:38
-msgid "Version"
-msgstr "Version"
-
-#: lib/hammer_cli_katello/filter_rule.rb:16
-#: lib/hammer_cli_katello/filter_rule.rb:33
-#: lib/hammer_cli_katello/filter.rb:39
-msgid "Minimum Version"
-msgstr "Version minimum"
-
-#: lib/hammer_cli_katello/filter_rule.rb:17
-#: lib/hammer_cli_katello/filter_rule.rb:34
-#: lib/hammer_cli_katello/filter.rb:40
-msgid "Maximum Version"
-msgstr "Version maximum"
-
-#: lib/hammer_cli_katello/filter_rule.rb:18
-#: lib/hammer_cli_katello/filter_rule.rb:35
-#: lib/hammer_cli_katello/filter.rb:41
-msgid "Errata ID"
-msgstr "ID d'errata"
-
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/filter_rule.rb:19
-#: lib/hammer_cli_katello/filter_rule.rb:36
-#: lib/hammer_cli_katello/sync_plan.rb:10 lib/hammer_cli_katello/filter.rb:42
-msgid "Start Date"
-msgstr "Date de début"
-
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/filter_rule.rb:20
-#: lib/hammer_cli_katello/filter_rule.rb:37
-#: lib/hammer_cli_katello/subscription.rb:20
-#: lib/hammer_cli_katello/filter.rb:43
-msgid "End Date"
-msgstr "Date de fin"
-
-# translation auto-copied from project policycoreutils, version 2.1.14, document policycoreutils, author Sam Friedmann
-#: lib/hammer_cli_katello/filter_rule.rb:38
-#: lib/hammer_cli_katello/filter.rb:44
-msgid "Types"
-msgstr "Types"
-
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/filter_rule.rb:39
-#: lib/hammer_cli_katello/content_view.rb:46
-#: lib/hammer_cli_katello/repository.rb:55 lib/hammer_cli_katello/filter.rb:45
-msgid "Created"
-msgstr "Créé"
-
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#: lib/hammer_cli_katello/filter_rule.rb:40
-#: lib/hammer_cli_katello/content_view.rb:47
-#: lib/hammer_cli_katello/repository.rb:56 lib/hammer_cli_katello/filter.rb:46
-msgid "Updated"
-msgstr "Mis à jour"
-
-#: lib/hammer_cli_katello/filter_rule.rb:47
-msgid "Filter rule created"
-msgstr "Règle de filtre créé"
-
-#: lib/hammer_cli_katello/filter_rule.rb:48
-msgid "Could not create the filter rule"
-msgstr "Impossible de créer la règle de filtre"
-
-#: lib/hammer_cli_katello/filter_rule.rb:54
-msgid "Filter rule updated"
-msgstr "Règle de filtre mise à jour"
-
-#: lib/hammer_cli_katello/filter_rule.rb:55
-msgid "Could not update the filter rule"
-msgstr "Impossible de mettre à jour la règle de filtre"
-
-#: lib/hammer_cli_katello/filter_rule.rb:61
-msgid "Filter rule deleted"
-msgstr "Règle de filtre supprimée"
-
-#: lib/hammer_cli_katello/filter_rule.rb:62
-msgid "Could not delete the filter rule"
-msgstr "Impossible de supprimer la règle de filtre"
-
-#: lib/hammer_cli_katello/content_view.rb:13
-#: lib/hammer_cli_katello/content_view_version.rb:15
-#: lib/hammer_cli_katello/content_view_version.rb:31
-msgid "Content View ID"
-msgstr "ID de l'affichage de contenu"
-
-#: lib/hammer_cli_katello/content_view.rb:16
-#: lib/hammer_cli_katello/content_view.rb:28
-msgid "Composite"
-msgstr "Composite"
-
-#: lib/hammer_cli_katello/content_view.rb:17
-msgid "Repository IDs"
-msgstr "ID de référentiel"
-
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#: lib/hammer_cli_katello/content_view.rb:32
-#: lib/hammer_cli_katello/gpg_key.rb:23
-#: lib/hammer_cli_katello/repository.rb:28
-#: lib/hammer_cli_katello/product.rb:13 lib/hammer_cli_katello/product.rb:56
-#: lib/hammer_cli_katello/lifecycle_environment.rb:57
-#: lib/hammer_cli_katello/capsule.rb:47 lib/hammer_cli_katello/capsule.rb:63
-msgid "Organization"
-msgstr "Organisation"
-
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author Sam Friedmann
-#: lib/hammer_cli_katello/content_view.rb:35
-#: lib/hammer_cli_katello/puppet_module.rb:39
-#: lib/hammer_cli_katello/content_view_version.rb:42
-#: lib/hammer_cli_katello/product.rb:16 lib/hammer_cli_katello/filter.rb:29
-msgid "Repositories"
-msgstr "Référentiels"
-
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#: lib/hammer_cli_katello/content_view.rb:41
-#: lib/hammer_cli_katello/repository.rb:62
-#: lib/hammer_cli_katello/content_view_version.rb:48
-msgid "Puppet Modules"
-msgstr "Modules Puppet"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/content_view.rb:43
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:12
-msgid "UUID"
-msgstr "UUID"
-
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#: lib/hammer_cli_katello/content_view.rb:45
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:14
-#: lib/hammer_cli_katello/puppet_module.rb:10
-#: lib/hammer_cli_katello/puppet_module.rb:22
-#: lib/hammer_cli_katello/content_view_version.rb:51
-msgid "Author"
-msgstr "Auteur"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/content_view.rb:50
-#: lib/hammer_cli_katello/content_view_version.rb:36
-msgid "Environments"
-msgstr "Environnements"
-
-# translation auto-copied from project PressGang CCMS topics, version BRMS_5.2.0_User_Guide, document Section-IDE
-#: lib/hammer_cli_katello/content_view.rb:55
-msgid "Versions"
-msgstr "Versions"
-
-#: lib/hammer_cli_katello/content_view.rb:58
-msgid "Published"
-msgstr "Publiées"
-
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30481-632191, author Corina Roe
-#: lib/hammer_cli_katello/content_view.rb:61
-msgid "Components"
-msgstr "Composants"
-
-#: lib/hammer_cli_katello/content_view.rb:71
-msgid "Content view created"
-msgstr "Affichage du contenu créé"
-
-#: lib/hammer_cli_katello/content_view.rb:72
-msgid "Could not create the content view"
-msgstr "Impossible de créer l'affichage du contenu"
-
-#: lib/hammer_cli_katello/content_view.rb:74
-msgid "Create a composite content view"
-msgstr "Créer un affichage du contenu composite"
-
-#: lib/hammer_cli_katello/content_view.rb:86
-msgid "Content view updated"
-msgstr "Affichage de contenu mis à jour"
-
-#: lib/hammer_cli_katello/content_view.rb:87
-msgid "Could not update the content view"
-msgstr "Impossible de mettre à jour l'affichage du contenu"
-
-#: lib/hammer_cli_katello/content_view.rb:98
-#: lib/hammer_cli_katello/content_view_version.rb:77
-msgid "Content view is being deleted with task %{id}"
-msgstr "L'affichage du contenu est en cours de suppression avec la tâche %{id}"
-
-#: lib/hammer_cli_katello/content_view.rb:99
-#: lib/hammer_cli_katello/content_view_version.rb:78
-msgid "Could not delete the content view"
-msgstr "Impossible de supprimer l'affichage du contenu"
-
-#: lib/hammer_cli_katello/content_view.rb:110
-msgid "Content view is being published with task %{id}"
-msgstr "L'affichage du contenu est en cours de publication avec la tâche %{id}"
-
-#: lib/hammer_cli_katello/content_view.rb:111
-msgid "Could not publish the content view"
-msgstr "Impossible de publier l'affichage de contenu"
-
-#: lib/hammer_cli_katello/content_view.rb:123
-msgid "Content view is being removed from environment with task %{id}"
-msgstr ""
-"L'affichage du contenu est en cours de suppression de l'environnement avec "
-"la tâche %{id}"
-
-#: lib/hammer_cli_katello/content_view.rb:124
-msgid "Could not remove the content view from environment"
-msgstr "Impossible de supprimer l'affichage du contenu de l'environnement"
-
-#: lib/hammer_cli_katello/content_view.rb:138
-msgid "Comma separated list of version ids to remove"
-msgstr "Liste d'id de versions à supprimer séparée par des virgules"
-
-#: lib/hammer_cli_katello/content_view.rb:140
-msgid "Comma separated list of environment ids to remove"
-msgstr "Liste d'id d'environnements à supprimer séparée par des virgules"
-
-#: lib/hammer_cli_katello/content_view.rb:150
-msgid "Content view objects are being removed task %{id}"
-msgstr ""
-"Les objets d'affichage du contenu sont en cours de suppression de la tâche "
-"%{id}"
-
-#: lib/hammer_cli_katello/content_view.rb:151
-msgid "Could not remove objects from content view"
-msgstr "Impossible de supprimer les objets de l'affichage du contenu"
-
-#: lib/hammer_cli_katello/content_view.rb:166
-msgid "The component version has been added"
-msgstr "La version du composant a été ajoutée"
-
-#: lib/hammer_cli_katello/content_view.rb:167
-msgid "Could not add version"
-msgstr "Impossible d'ajouter la version"
-
-#: lib/hammer_cli_katello/content_view.rb:180
-msgid "The component version has been removed"
-msgstr "La version du composant a été supprimée"
-
-#: lib/hammer_cli_katello/content_view.rb:181
-msgid "Could not remove version"
-msgstr "Impossible de supprimer la version"
-
-#: lib/hammer_cli_katello/content_view.rb:202
-msgid "Manipulate content views."
-msgstr "Manipuler les affichages du contenu."
-
-#: lib/hammer_cli_katello/activation_key.rb:13
-#: lib/hammer_cli_katello/subscription.rb:19
-msgid "Consumed"
-msgstr "Consommé"
-
 # translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Host_Groups
-#: lib/hammer_cli_katello/activation_key.rb:15
-#: lib/hammer_cli_katello/activation_key.rb:52
-#: lib/hammer_cli_katello/content_host.rb:34
 msgid "Lifecycle Environment"
 msgstr "Environnement de cycle de vie"
 
 # translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#: lib/hammer_cli_katello/activation_key.rb:18
-#: lib/hammer_cli_katello/activation_key.rb:55
-#: lib/hammer_cli_katello/content_host.rb:37
 msgid "Content View"
 msgstr "Affichage du contenu"
 
-#: lib/hammer_cli_katello/activation_key.rb:23
-msgid "%{consumed} of %{limit}"
-msgstr "%{consumed} sur %{limit}"
-
 # translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author Sam Friedmann
-#: lib/hammer_cli_katello/activation_key.rb:26
-#: lib/hammer_cli_katello/subscription.rb:28
 msgid "Unlimited"
 msgstr "Illimité"
 
+msgid "%{consumed} of %{limit}"
+msgstr "%{consumed} sur %{limit}"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Description"
+msgstr "Description"
+
+msgid "Auto Attach"
+msgstr ""
+
+msgid "Service Level"
+msgstr ""
+
+msgid "Release Version"
+msgstr "Version de publication"
+
 # translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Using_the_CloudForms_System_Engine_Dashboard
-#: lib/hammer_cli_katello/activation_key.rb:58
 msgid "Host Collections"
 msgstr "Collections d'hôtes"
 
-#: lib/hammer_cli_katello/activation_key.rb:70
-msgid "Activation key created"
+#, fuzzy
+msgid "Activation key created."
 msgstr "Clé d'activation activée"
 
-#: lib/hammer_cli_katello/activation_key.rb:71
 msgid "Could not create the activation key"
 msgstr "Impossible de créer la clé d'activation"
 
-#: lib/hammer_cli_katello/activation_key.rb:79
-msgid "Activation key updated"
+msgid "Copy an activation key"
+msgstr ""
+
+#, fuzzy
+msgid "Activation key copied."
+msgstr "Clé d'activation activée"
+
+#, fuzzy
+msgid "Could not copy the activation key"
+msgstr "Impossible de créer la clé d'activation"
+
+#, fuzzy
+msgid "Activation key updated."
 msgstr "Clé d'activation mise à jour"
 
-#: lib/hammer_cli_katello/activation_key.rb:80
 msgid "Could not update the activation key"
 msgstr "Impossible de mettre à jour la clé d'activation"
 
-#: lib/hammer_cli_katello/activation_key.rb:88
-msgid "Activation key deleted"
+#, fuzzy
+msgid "Activation key deleted."
 msgstr "Clé d'activation supprimée"
 
-#: lib/hammer_cli_katello/activation_key.rb:89
 msgid "Could not delete the activation key"
 msgstr "Impossible de supprimer la clé d'activation"
 
-#: lib/hammer_cli_katello/activation_key.rb:96
 msgid "List associated subscriptions"
 msgstr "Répertorier les abonnements associés"
 
-#: lib/hammer_cli_katello/activation_key.rb:104
-#: lib/hammer_cli_katello/activation_key.rb:123
-#: lib/hammer_cli_katello/activation_key.rb:149
-#: lib/hammer_cli_katello/activation_key.rb:177
-msgid "resource ID"
-msgstr ""
-
-#: lib/hammer_cli_katello/activation_key.rb:124
-#: lib/hammer_cli_katello/activation_key.rb:150
-msgid "subscription ID"
-msgstr ""
-
-#: lib/hammer_cli_katello/activation_key.rb:125
-msgid "subscription quantity"
-msgstr ""
-
-#: lib/hammer_cli_katello/activation_key.rb:139
-msgid "Subscription added to activation key"
-msgstr "Abonnement ajouté à la clé d'activation"
-
-#: lib/hammer_cli_katello/activation_key.rb:140
-msgid "Could not add subscription to activation key"
-msgstr "Impossible d'ajouter l'abonnement à la clé d'activation"
-
-#: lib/hammer_cli_katello/activation_key.rb:146
-msgid "Remove subscription"
-msgstr "Supprimer l'abonnement"
-
-#: lib/hammer_cli_katello/activation_key.rb:162
-msgid "Subscription removed from activation key"
-msgstr "Abonnement supprimé de la clé d'activation"
-
-#: lib/hammer_cli_katello/activation_key.rb:163
-msgid "Could not remove subscription from activation key"
-msgstr "Impossible de supprimer l'abonnement de la clé d'activation"
-
-#: lib/hammer_cli_katello/activation_key.rb:169
-msgid "List associated host collections"
-msgstr "Répertorier les collections d'hôtes associées"
-
-#: lib/hammer_cli_katello/activation_key.rb:197
-msgid "Manipulate activation keys."
-msgstr "Manipuler les clés d'activations"
-
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#: lib/hammer_cli_katello/sync_plan.rb:11
-msgid "Interval"
-msgstr "Intervalle"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/sync_plan.rb:21 lib/hammer_cli_katello/capsule.rb:23
-msgid "Created at"
-msgstr "Créé le"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/sync_plan.rb:22 lib/hammer_cli_katello/capsule.rb:24
-msgid "Updated at"
-msgstr "Mis à jour le"
-
-#: lib/hammer_cli_katello/sync_plan.rb:30
-#: lib/hammer_cli_katello/sync_plan.rb:49
-msgid "how often synchronization should run"
-msgstr "la fréquence à laquelle la synchronisation doit s'exécuter"
-
-#: lib/hammer_cli_katello/sync_plan.rb:37
-msgid "start date and time of the synchronization defaults to now"
-msgstr ""
-"l'heure et la date de lancement de la synchronisation définies par défaut à "
-"maintenant "
-
-#: lib/hammer_cli_katello/sync_plan.rb:41
-msgid "Sync plan created"
-msgstr "Plan de synchronisation créé"
-
-#: lib/hammer_cli_katello/sync_plan.rb:42
-msgid "Could not create the sync plan"
-msgstr "Impossible de créer le plan de synchronisation"
-
-#: lib/hammer_cli_katello/sync_plan.rb:53
-msgid "start date and time of the synchronization"
-msgstr "l'heure et la date de lancement de la synchronisation"
-
-#: lib/hammer_cli_katello/sync_plan.rb:56
-msgid "Sync plan updated"
-msgstr "Plan de synchronisation mis à jour"
-
-#: lib/hammer_cli_katello/sync_plan.rb:57
-msgid "Could not update the sync plan"
-msgstr "Impossible de mettre à jour le plan de synchronisation"
-
-#: lib/hammer_cli_katello/sync_plan.rb:63
-msgid "Sync plan destroyed"
-msgstr "Plan de synchronisation détruit"
-
-#: lib/hammer_cli_katello/sync_plan.rb:64
-msgid "Could not destroy the sync plan"
-msgstr "Impossible de détruire le plan de synchronisation"
-
-#: lib/hammer_cli_katello/sync_plan.rb:73
-msgid "Manipulate sync plans"
-msgstr "Manipuler les plans de synchronisation"
-
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:22
-msgid "Latest(Currently %s)"
-msgstr "Dernier (actuellement %s)"
-
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:33
-msgid "Puppet module added to content view"
-msgstr "Module Puppet ajouté à l'affichage du contenu"
-
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:34
-msgid "Could not add the puppet module"
-msgstr "Impossible d'ajouter le module Puppet"
-
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:42
-msgid "Puppet module removed from content view"
-msgstr "Module Puppet supprimé de l'affichage du contenu"
-
-#: lib/hammer_cli_katello/content_view_puppet_module.rb:43
-msgid "Couldn't remove puppet module from the content view"
-msgstr "Impossible de supprimer le module puppet de l'affichage du contenu"
-
-#: lib/hammer_cli_katello/associating_commands.rb:12
-msgid "The repository has been associated"
-msgstr "Le référentiel a été associé"
-
-#: lib/hammer_cli_katello/associating_commands.rb:13
-msgid "Could not add repository"
-msgstr "Impossible d'ajouter le référentiel"
-
-#: lib/hammer_cli_katello/associating_commands.rb:21
-msgid "The repository has been removed"
-msgstr "Le référentiel a été supprimé"
-
-#: lib/hammer_cli_katello/associating_commands.rb:22
-msgid "Could not remove repository"
-msgstr "Impossible de supprimer le référentiel"
-
-#: lib/hammer_cli_katello/associating_commands.rb:34
-msgid "The host collection has been associated"
-msgstr "La collection d'hôte a été associée"
-
-#: lib/hammer_cli_katello/associating_commands.rb:35
-msgid "Could not add host collection"
-msgstr "Impossible d'ajouter la collection d'hôte"
-
-#: lib/hammer_cli_katello/associating_commands.rb:42
-msgid "The host collection has been removed"
-msgstr "La collection d'hôte a été supprimée"
-
-#: lib/hammer_cli_katello/associating_commands.rb:43
-msgid "Could not remove host collection"
-msgstr "Impossible de supprimer la collection d'hôte"
-
-#: lib/hammer_cli_katello/associating_commands.rb:55
-msgid "The content host has been added"
-msgstr "L'hôte de contenu a été ajouté"
-
-#: lib/hammer_cli_katello/associating_commands.rb:56
-msgid "Could not add content host"
-msgstr "Impossible d'ajouter l'hôte de contenu"
-
-#: lib/hammer_cli_katello/associating_commands.rb:63
-msgid "The content host has been removed"
-msgstr "L'hôte de contenu a été supprimé"
-
-#: lib/hammer_cli_katello/associating_commands.rb:64
-msgid "Could not remove content host"
-msgstr "Impossible de supprimer l'hôte de contenu"
-
-#: lib/hammer_cli_katello/gpg_key.rb:29
-#: lib/hammer_cli_katello/repository.rb:13
-#: lib/hammer_cli_katello/repository.rb:31
-msgid "Content Type"
-msgstr "Type de contenu"
-
 # translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author Sam Friedmann
-#: lib/hammer_cli_katello/gpg_key.rb:31
-#: lib/hammer_cli_katello/subscription.rb:22
-#: lib/hammer_cli_katello/repository.rb:11
-#: lib/hammer_cli_katello/repository.rb:36
-msgid "Product"
-msgstr "Produit"
-
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#: lib/hammer_cli_katello/gpg_key.rb:35 lib/hammer_cli_katello/product.rb:65
-msgid "Content"
-msgstr "Contenu"
-
-#: lib/hammer_cli_katello/gpg_key.rb:42
-msgid "GPG Key created"
-msgstr "Clé GPG créée"
-
-#: lib/hammer_cli_katello/gpg_key.rb:43
-msgid "Could not create GPG Key"
-msgstr "Impossible de créer la clé GPG"
-
-#: lib/hammer_cli_katello/gpg_key.rb:46 lib/hammer_cli_katello/gpg_key.rb:57
-msgid "GPG Key file"
-msgstr "Fichier de la clé GPG"
-
-#: lib/hammer_cli_katello/gpg_key.rb:53
-msgid "GPG Key updated"
-msgstr "Clé GPG mise à jour"
-
-#: lib/hammer_cli_katello/gpg_key.rb:54
-msgid "Could not update GPG Key"
-msgstr "Impossible de mettre à jour la clé GPG"
-
-#: lib/hammer_cli_katello/gpg_key.rb:63
-msgid "GPG Key deleted"
-msgstr "Clé GPG supprimée"
-
-#: lib/hammer_cli_katello/gpg_key.rb:64
-msgid "Could not delete the GPG Key"
-msgstr "Impossible de supprimer la clé GPG"
-
-#: lib/hammer_cli_katello/gpg_key.rb:73
-msgid "manipulate GPG Key actions on the server"
-msgstr ""
+msgid "Attached"
+msgstr "Attaché"
 
 # translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/subscription.rb:15
-msgid "Contract"
-msgstr "Contrat"
+msgid "Quantity"
+msgstr "Quantité"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#: lib/hammer_cli_katello/subscription.rb:16
-msgid "Account"
-msgstr "Compte"
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+msgid "Start Date"
+msgstr "Date de début"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+msgid "End Date"
+msgstr "Date de fin"
 
 # translation auto-copied from project Customer Portal Translations, version ProductionSupportScopeofCoverage, document ProductionSupportScopeofCoverage.html, author jfenal
-#: lib/hammer_cli_katello/subscription.rb:17
 msgid "Support"
 msgstr "Nous prenons en charge l'assistance à"
 
 # translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/subscription.rb:18
-#: lib/hammer_cli_katello/subscription.rb:23
-msgid "Quantity"
-msgstr "Quantité"
+msgid "Contract"
+msgstr "Contrat"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author Sam Friedmann
-#: lib/hammer_cli_katello/subscription.rb:24
-msgid "Attached"
-msgstr "Attaché"
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+msgid "Account"
+msgstr "Compte"
 
-#: lib/hammer_cli_katello/subscription.rb:51
-msgid "Manifest is being uploaded in task %{id}"
+# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author Sam Friedmann
+#, fuzzy
+msgid ""
+"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : data['quan"
+"tity']}"
+msgstr "Illimité"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "ID of the activation key"
+msgstr "ID"
+
+msgid "Activation key name to search by"
+msgstr "Nom de la clé d'activation avec lequel effectuer la recherche"
+
+#, fuzzy
+msgid "ID of subscription"
+msgstr "Supprimer l'abonnement"
+
+#, fuzzy
+msgid "Subscription added to activation key."
+msgstr "Abonnement ajouté à la clé d'activation"
+
+msgid "Could not add subscription to activation key"
+msgstr "Impossible d'ajouter l'abonnement à la clé d'activation"
+
+msgid "Remove subscription"
+msgstr "Supprimer l'abonnement"
+
+#, fuzzy
+msgid "Subscription removed from activation key."
+msgstr "Abonnement supprimé de la clé d'activation"
+
+msgid "Could not remove subscription from activation key"
+msgstr "Impossible de supprimer l'abonnement de la clé d'activation"
+
+msgid "List associated host collections"
+msgstr "Répertorier les collections d'hôtes associées"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "ID of activation key"
+msgstr "ID"
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Name of activation key"
+msgstr "Nom"
+
+#, fuzzy
+msgid "The repository has been associated."
+msgstr "Le référentiel a été associé"
+
+msgid "Could not add repository"
+msgstr "Impossible d'ajouter le référentiel"
+
+#, fuzzy
+msgid "The repository has been removed."
+msgstr "Le référentiel a été supprimé"
+
+msgid "Could not remove repository"
+msgstr "Impossible de supprimer le référentiel"
+
+#, fuzzy
+msgid "The host collection has been associated."
+msgstr "La collection d'hôte a été associée"
+
+msgid "Could not add host collection"
+msgstr "Impossible d'ajouter la collection d'hôte"
+
+#, fuzzy
+msgid "The host collection has been removed."
+msgstr "La collection d'hôte a été supprimée"
+
+msgid "Could not remove host collection"
+msgstr "Impossible de supprimer la collection d'hôte"
+
+#, fuzzy
+msgid "The host has been added."
+msgstr "L'hôte de contenu a été ajouté"
+
+#, fuzzy
+msgid "Could not add host"
+msgstr "Impossible d'ajouter la version"
+
+#, fuzzy
+msgid "The host has been removed."
+msgstr "Le référentiel a été supprimé"
+
+#, fuzzy
+msgid "Could not remove host"
+msgstr "Impossible de supprimer la version"
+
+msgid "Manage the capsule content"
+msgstr "Gérer le contenu de la capsule"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+msgid "Organization"
+msgstr "Organisation"
+
+#, fuzzy
+msgid "Lifecycle environment successfully added to the capsule."
+msgstr "L'environnement du cycle de vie a été ajouté à la capsule"
+
+msgid "Could not add the lifecycle environment to the capsule"
+msgstr "Impossible d'ajouter l'environnement du cycle de vie à la capsule"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Organization ID"
+msgstr "Organisation"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Organization name"
+msgstr "Organisation"
+
+#, fuzzy
+msgid "Lifecycle environment successfully removed from the capsule."
+msgstr "L'environnement du cycle de vie a été supprimé de la capsule"
+
+msgid "Could not remove the lifecycle environment from the capsule"
+msgstr "Impossible de supprimer l'environnement du cycle de vie de la capsule"
+
+#, fuzzy
+msgid "Capsule content is being synchronized in task %{id}."
+msgstr "Le contenu de la capsule est en cours de synchronisation dans la tâche %{id}"
+
+msgid "Could not synchronize capsule content"
+msgstr "Impossible de synchroniser le contenu de la capsule"
+
+msgid "Last sync"
 msgstr ""
-"Le fichier manifeste est en cours de téléchargement dans la tâche %{id}"
-
-#: lib/hammer_cli_katello/subscription.rb:52
-msgid "Manifest upload failed"
-msgstr "Échec du téléchargement du manifeste "
-
-#: lib/hammer_cli_katello/subscription.rb:55
-msgid "Subscription manifest file"
-msgstr "Fichier manifeste d'abonnement"
-
-#: lib/hammer_cli_katello/subscription.rb:66
-msgid "Manifest is being deleted in task %{id}"
-msgstr "Le fichier manifeste est en cours de suppression dans la tâche %{id}"
-
-#: lib/hammer_cli_katello/subscription.rb:67
-msgid "Manifest deletion failed"
-msgstr "Échec de la suppression du fichier manifeste"
-
-#: lib/hammer_cli_katello/subscription.rb:80
-msgid "Manifest is being refreshed in task %{id}"
-msgstr "Le fichier manifeste est en cours d'actualisation dans la tâche %{id}"
-
-#: lib/hammer_cli_katello/subscription.rb:81
-msgid "Manifest refresh failed"
-msgstr "Échec de l'actualisation du manifeste"
 
 # translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/subscription.rb:91
-#: lib/hammer_cli_katello/repository.rb:51 lib/hammer_cli_katello/ping.rb:12
-#: lib/hammer_cli_katello/ping.rb:19 lib/hammer_cli_katello/ping.rb:26
-#: lib/hammer_cli_katello/ping.rb:33 lib/hammer_cli_katello/ping.rb:40
-#: lib/hammer_cli_katello/ping.rb:47
 msgid "Status"
 msgstr "Statut"
 
-#: lib/hammer_cli_katello/subscription.rb:92
-msgid "Status Message"
-msgstr "Message d'état"
+msgid "Currently running sync tasks"
+msgstr ""
 
-# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
-#: lib/hammer_cli_katello/subscription.rb:93
-msgid "Time"
-msgstr "Horodatage"
+msgid "Task id"
+msgstr ""
 
-#: lib/hammer_cli_katello/subscription.rb:103
-msgid "Manipulate subscriptions."
-msgstr "Manipuler les abonnements."
+msgid "Progress"
+msgstr ""
 
-#: lib/hammer_cli_katello/output/formatters.rb:11
-msgid "%s  %s"
-msgstr "%s  %s"
+msgid "Last failure"
+msgstr ""
 
-#: lib/hammer_cli_katello/content_host.rb:7
-msgid "ID of the content host"
-msgstr "ID de l'hôte du contenu"
+#, fuzzy
+msgid "Messages"
+msgstr "Message : %s"
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
-#: lib/hammer_cli_katello/content_host.rb:32
-msgid "Location"
-msgstr "Localisation"
+msgid "Capsule is synchronized"
+msgstr ""
 
-#: lib/hammer_cli_katello/content_host.rb:39
-msgid "Entitlement Status"
-msgstr "État des droits d'accès"
+msgid "%{count} environment(s) can be synchronized: %{names}"
+msgstr ""
 
-#: lib/hammer_cli_katello/content_host.rb:40
-msgid "Release Version"
-msgstr "Version de publication"
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Host_Groups
+#, fuzzy
+msgid "Lifecycle Environments"
+msgstr "Environnement de cycle de vie"
 
-#: lib/hammer_cli_katello/content_host.rb:41
-msgid "Autoheal"
-msgstr "Autoheal"
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content Views"
+msgstr "Affichage du contenu"
 
-#: lib/hammer_cli_katello/content_host.rb:53
-msgid "Content host created"
-msgstr "Hôte du contenu créé"
+msgid "Composite"
+msgstr "Composite"
 
-#: lib/hammer_cli_katello/content_host.rb:54
-msgid "Could not create content host"
-msgstr "Impossible de créer l'hôte du contenu"
+#, fuzzy
+msgid "Last Published"
+msgstr "Publiées"
 
-#: lib/hammer_cli_katello/content_host.rb:77
-msgid "Content host updated"
-msgstr "Hôte du contenu mis à jour"
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+msgid "Content"
+msgstr "Contenu"
 
-#: lib/hammer_cli_katello/content_host.rb:78
-msgid "Could not update content host"
-msgstr "Impossible de mettre à jour l'hôte du contenu"
-
-#: lib/hammer_cli_katello/content_host.rb:88
-msgid "Content host deleted"
-msgstr "Hôte du contenu supprimé"
-
-#: lib/hammer_cli_katello/content_host.rb:89
-msgid "Could not delete content host"
-msgstr "Impossible de supprimer l'hôte du contenu"
-
-#: lib/hammer_cli_katello/content_host.rb:107
-msgid "manipulate content hosts on the server"
+msgid "Hosts"
 msgstr ""
 
 # translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author Sam Friedmann
-#: lib/hammer_cli_katello/puppet_module.rb:24
-msgid "Summary"
-msgstr "Résumé"
+#, fuzzy
+msgid "Products"
+msgstr "Produit"
 
-# translation auto-copied from project gtk3, version 3.8.2, document gtk30
-#: lib/hammer_cli_katello/puppet_module.rb:26
-msgid "License"
-msgstr "Licence"
+msgid "Yum repos"
+msgstr ""
 
-#: lib/hammer_cli_katello/puppet_module.rb:27
-msgid "Project Page"
-msgstr "Page du projet"
-
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#: lib/hammer_cli_katello/puppet_module.rb:28
-msgid "Source"
-msgstr "Source"
-
-#: lib/hammer_cli_katello/puppet_module.rb:30
-msgid "Dependencies"
-msgstr "Dépendances"
-
-#: lib/hammer_cli_katello/puppet_module.rb:33
-msgid "File checksums"
-msgstr "Sommes de contrôle du fichier"
-
-#: lib/hammer_cli_katello/puppet_module.rb:37
-msgid "Tag List"
-msgstr "Liste des balises"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/puppet_module.rb:40
-#: lib/hammer_cli_katello/repository.rb:8 lib/hammer_cli_katello/capsule.rb:9
-msgid "Id"
-msgstr "Id"
-
-#: lib/hammer_cli_katello/repository.rb:30
-msgid "Red Hat Repository"
-msgstr "Référentiel Red Hat"
-
-#: lib/hammer_cli_katello/repository.rb:33
-#: lib/hammer_cli_katello/repository.rb:131
-#: lib/hammer_cli_katello/repository.rb:147
-msgid "Publish Via HTTP"
-msgstr "Publier via HTTP"
-
-#: lib/hammer_cli_katello/repository.rb:34
-msgid "Published At"
-msgstr "Publié à"
-
-#: lib/hammer_cli_katello/repository.rb:50
-msgid "Sync"
-msgstr "Sync"
-
-#: lib/hammer_cli_katello/repository.rb:52
-msgid "Last Sync Date"
-msgstr "Dernière date de synchronisation"
-
-#: lib/hammer_cli_katello/repository.rb:58
-msgid "Content Counts"
-msgstr "Nombre de contenus"
+msgid "Container Image repos"
+msgstr ""
 
 # translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#: lib/hammer_cli_katello/repository.rb:59
 msgid "Packages"
 msgstr "Packages"
 
 # translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#: lib/hammer_cli_katello/repository.rb:60
-msgid "Package Groups"
+#, fuzzy
+msgid "Package groups"
 msgstr "Groupes de packages"
 
 # translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#: lib/hammer_cli_katello/repository.rb:61
 msgid "Errata"
 msgstr "Errata"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#: lib/hammer_cli_katello/repository.rb:68
-#: lib/hammer_cli_katello/repository.rb:69
-msgid "yes"
-msgstr "oui"
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "Puppet modules"
+msgstr "Modules Puppet"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#: lib/hammer_cli_katello/repository.rb:68
-#: lib/hammer_cli_katello/repository.rb:69
-msgid "no"
-msgstr "non"
+#, fuzzy
+msgid "Name of the composite content view"
+msgstr "Créer un affichage du contenu composite"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#: lib/hammer_cli_katello/repository.rb:91
-msgid "Failed"
-msgstr "Échec"
-
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#: lib/hammer_cli_katello/repository.rb:92
-msgid "Success"
-msgstr "Réussite"
-
-# translation auto-copied from project gnome-packagekit, version 3.8.2, document gnome-packagekit
-#: lib/hammer_cli_katello/repository.rb:93
-msgid "Finished"
-msgstr "Terminé"
+msgid "Override product content defaults"
+msgstr ""
 
 # translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#: lib/hammer_cli_katello/repository.rb:94
-msgid "Error"
-msgstr "Erreur"
+#, fuzzy
+msgid "Updated content override."
+msgstr "Mis à jour"
 
-# translation auto-copied from project virt-manager, version 0.10.0, document virt-manager
-#: lib/hammer_cli_katello/repository.rb:95
-msgid "Running"
-msgstr "En cours de fonctionnement"
-
-# translation auto-copied from project evolution-data-server, version el6, document evolution-data-server-2.32
-#: lib/hammer_cli_katello/repository.rb:96
-msgid "Waiting"
-msgstr "En attente"
-
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
-#: lib/hammer_cli_katello/repository.rb:97
-msgid "Canceled"
-msgstr "Annulé"
-
-#: lib/hammer_cli_katello/repository.rb:98
-msgid "Not Synced"
-msgstr "Pas synchronisé"
-
-#: lib/hammer_cli_katello/repository.rb:119
-msgid "Repository is being synchronized in task %{id}"
-msgstr "Le référentiel est en cours de synchronisation dans la tâche %{id}"
-
-#: lib/hammer_cli_katello/repository.rb:120
-msgid "Could not synchronize the repository"
-msgstr "Impossible de synchroniser le référentiel"
-
-#: lib/hammer_cli_katello/repository.rb:128
-msgid "Repository created"
-msgstr "Référentiel créé"
-
-#: lib/hammer_cli_katello/repository.rb:129
-msgid "Could not create the repository"
-msgstr "Impossible de créer le référentiel"
-
-#: lib/hammer_cli_katello/repository.rb:141
-msgid "Repository updated"
-msgstr "Référentiel mis à jour"
-
-#: lib/hammer_cli_katello/repository.rb:142
-msgid "Could not update the repository"
-msgstr "Impossible de mettre à jour le référentiel"
-
-#: lib/hammer_cli_katello/repository.rb:155
-msgid "Repository deleted"
-msgstr "Référentiel supprimé"
-
-#: lib/hammer_cli_katello/repository.rb:156
-msgid "Could not delete the Repository"
-msgstr "Impossible de supprimer le référentiel"
-
-#: lib/hammer_cli_katello/repository.rb:197
-msgid "Repository content uploaded"
-msgstr "Contenu du référentiel téléchargé"
-
-#: lib/hammer_cli_katello/repository.rb:198
-msgid "Could not upload the content"
-msgstr "Impossible de télécharger le contenu"
-
-#: lib/hammer_cli_katello/repository.rb:203
-msgid "Upload file or directory of files as content for a repository"
-msgstr ""
-"Télécharger le fichier ou le répertoire de fichiers en tant que contenu de "
-"référentiel"
-
-#: lib/hammer_cli_katello/repository.rb:227
-msgid "Successfully uploaded file '%s'."
-msgstr "Fichier '%s' téléchargé avec succès"
-
-#: lib/hammer_cli_katello/repository.rb:230
-msgid ""
-"Failed to upload file '%s' to repository. Please check the file and try "
-"again."
-msgstr ""
-"Échec de téléchargement du fichier '%s' sur le référentiel. Veuillez "
-"vérifier le fichier et essayer à nouveau."
-
-#: lib/hammer_cli_katello/repository.rb:254
-msgid "Manipulate repositories"
-msgstr "Manipuler les référentiels"
-
-#: lib/hammer_cli_katello/content_view_version.rb:16
-#: lib/hammer_cli_katello/content_view_version.rb:32
-msgid "Content View Name"
-msgstr "Nom de l'affichage de contenu"
-
-#: lib/hammer_cli_katello/content_view_version.rb:17
-#: lib/hammer_cli_katello/content_view_version.rb:33
-msgid "Content View Label"
-msgstr "Étiquette de l'affichage du contenu"
-
-#: lib/hammer_cli_katello/content_view_version.rb:65
-msgid "Content view is being promoted with task %{id}"
-msgstr "L'affichage du contenu est en cours de promotion avec la tâche %{id}"
-
-#: lib/hammer_cli_katello/content_view_version.rb:66
-msgid "Could not promote the content view"
-msgstr "Impossible de promouvoir l'affichage de contenu"
-
-#: lib/hammer_cli_katello/product.rb:19 lib/hammer_cli_katello/product.rb:43
-msgid "Sync State"
-msgstr "État de synchronisation"
-
-#: lib/hammer_cli_katello/product.rb:28
-msgid "Product created"
-msgstr "Produit créé"
-
-#: lib/hammer_cli_katello/product.rb:29
-msgid "Could not create the product"
-msgstr "Impossible de créer le produit"
-
-#: lib/hammer_cli_katello/product.rb:46
-msgid "Sync Plan ID"
-msgstr "ID du plan de synchronisation"
+#, fuzzy
+msgid "Could not update content override"
+msgstr "Impossible de mettre à jour l'hôte du contenu"
 
 # translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#: lib/hammer_cli_katello/product.rb:48
-msgid "GPG"
-msgstr "GPG"
+#, fuzzy
+msgid "Label of the content"
+msgstr "Étiquette"
 
-#: lib/hammer_cli_katello/product.rb:50
-msgid "GPG Key ID"
-msgstr "ID de la clé GPG"
-
-#: lib/hammer_cli_katello/product.rb:59
-msgid "Readonly"
-msgstr "Lecture seule"
-
-#: lib/hammer_cli_katello/product.rb:62
-msgid "Deletable"
-msgstr "Supprimable"
-
-#: lib/hammer_cli_katello/product.rb:67
-msgid "Repo Name"
-msgstr "Nom du référentiel"
-
-#: lib/hammer_cli_katello/product.rb:77
-msgid "Product updated"
-msgstr "Produit mis à jour"
-
-#: lib/hammer_cli_katello/product.rb:78
-msgid "Could not update the product"
-msgstr "Impossible de mettre à jour le produit"
-
-#: lib/hammer_cli_katello/product.rb:84
-msgid "Product destroyed"
-msgstr "Produit détruit"
-
-#: lib/hammer_cli_katello/product.rb:85
-msgid "Could not destroy the product"
-msgstr "Impossible de détruire le produit"
-
-#: lib/hammer_cli_katello/product.rb:91
-msgid "Assign sync plan to product."
-msgstr "Attribuer le plan de synchronisation au produit."
-
-#: lib/hammer_cli_katello/product.rb:94
-msgid "Synchronization plan assigned."
-msgstr "Le plan de synchronisation a été attribué."
-
-#: lib/hammer_cli_katello/product.rb:95
-msgid "Could not assign synchronization plan."
-msgstr "Impossible d'attribuer le plan de synchronisation."
-
-#: lib/hammer_cli_katello/product.rb:101 lib/hammer_cli_katello/product.rb:116
-msgid "plan numeric identifier"
+msgid ""
+"Override parameter key or name.\n"
+"To enable or disable a repo select 'enabled'.\n"
+"Default value: enabled"
 msgstr ""
 
-#: lib/hammer_cli_katello/product.rb:106
-msgid "Delete assignment sync plan and product."
-msgstr "Supprimer le produit et le plan de synchronisation de l'attribuation."
-
-#: lib/hammer_cli_katello/product.rb:109
-msgid "Synchronization plan removed."
-msgstr "Plan de synchronisation supprimé."
-
-#: lib/hammer_cli_katello/product.rb:110
-msgid "Could not remove synchronization plan."
-msgstr "Impossible de supprimer le plan de synchronisation."
-
-#: lib/hammer_cli_katello/product.rb:124
-msgid "Manipulate products."
-msgstr "Manipuler les produits."
-
-#: lib/hammer_cli_katello/ping.rb:13 lib/hammer_cli_katello/ping.rb:20
-#: lib/hammer_cli_katello/ping.rb:27 lib/hammer_cli_katello/ping.rb:34
-#: lib/hammer_cli_katello/ping.rb:41 lib/hammer_cli_katello/ping.rb:48
-msgid "Server Response"
-msgstr "Réponse du serveur"
-
-# translation auto-copied from project libvirt, version 1.1.1, document libvirt
-#: lib/hammer_cli_katello/ping.rb:58
-msgid "FAIL"
-msgstr "ÉCHEC"
-
-#: lib/hammer_cli_katello/ping.rb:73
-msgid "Duration: %sms"
-msgstr "Durée : %sms"
-
-#: lib/hammer_cli_katello/ping.rb:75
-msgid "Message: %s"
-msgstr "Message : %s"
-
-#: lib/hammer_cli_katello/ping.rb:81
-msgid "get the status of the server"
+msgid "Override value. Note for repo enablement you can use a boolean value"
 msgstr ""
 
-#: lib/hammer_cli_katello/id_resolver.rb:6
-msgid "Activation key name to search by"
-msgstr "Nom de la clé d'activation avec lequel effectuer la recherche"
+msgid "Remove a content override"
+msgstr ""
 
-#: lib/hammer_cli_katello/id_resolver.rb:7
-msgid "Capsule name to search by"
-msgstr "Nom de la capsule avec lequel effectuer la recherche"
+msgid "Content View ID"
+msgstr "ID de l'affichage de contenu"
 
-#: lib/hammer_cli_katello/id_resolver.rb:8
-msgid "Content host name to search by"
-msgstr "Nom de l'hôte du contenu avec lequel effectuer la recherche"
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+msgid "Label"
+msgstr "Étiquette"
 
-#: lib/hammer_cli_katello/id_resolver.rb:9
+msgid "Repository IDs"
+msgstr "ID de référentiel"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content Host Count"
+msgstr "Contenu"
+
+# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author Sam Friedmann
+#, fuzzy
+msgid "Yum Repositories"
+msgstr "Référentiels"
+
+# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author Sam Friedmann
+#, fuzzy
+msgid "Container Image Repositories"
+msgstr "Référentiels"
+
+# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author Sam Friedmann
+#, fuzzy
+msgid "OSTree Repositories"
+msgstr "Référentiels"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+msgid "Puppet Modules"
+msgstr "Modules Puppet"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "UUID"
+msgstr "UUID"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+msgid "Author"
+msgstr "Auteur"
+
+# translation auto-copied from project PressGang CCMS topics, version BRMS_5.2.0_User_Guide, document Section-IDE
+msgid "Versions"
+msgstr "Versions"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+msgid "Version"
+msgstr "Version"
+
+msgid "Published"
+msgstr "Publiées"
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 30481-632191, author Corina Roe
+msgid "Components"
+msgstr "Composants"
+
+msgid "Activation Keys"
+msgstr ""
+
+#, fuzzy
+msgid "Content view created."
+msgstr "Affichage du contenu créé"
+
+msgid "Could not create the content view"
+msgstr "Impossible de créer l'affichage du contenu"
+
+msgid "Create a composite content view"
+msgstr "Créer un affichage du contenu composite"
+
+msgid "Copy a content view"
+msgstr ""
+
 msgid "Content view name to search by"
 msgstr "Nom de l'affichage du contenu avec lequel effectuer la recherche"
 
-#: lib/hammer_cli_katello/id_resolver.rb:10
-msgid "Gpg key name to search by"
-msgstr "Nom de la clé Gpg avec lequel effectuer la recherche"
+#, fuzzy
+msgid "New content view name"
+msgstr "Nom de l'affichage de contenu"
 
-#: lib/hammer_cli_katello/id_resolver.rb:11
-msgid "Host collection name to search by"
-msgstr "Nom de la collection d'hôte avec lequel effectuer la recherche"
+#, fuzzy
+msgid "Content view copied."
+msgstr "Affichage du contenu créé"
 
-#: lib/hammer_cli_katello/id_resolver.rb:12
-msgid "Lifecycle environment name to search by"
+#, fuzzy
+msgid "Could not copy the content view"
+msgstr "Impossible de créer l'affichage du contenu"
+
+#, fuzzy
+msgid "Content view updated."
+msgstr "Affichage de contenu mis à jour"
+
+msgid "Could not update the content view"
+msgstr "Impossible de mettre à jour l'affichage du contenu"
+
+#, fuzzy
+msgid "Content view is being deleted with task %{id}."
+msgstr "L'affichage du contenu est en cours de suppression avec la tâche %{id}"
+
+msgid "Could not delete the content view"
+msgstr "Impossible de supprimer l'affichage du contenu"
+
+#, fuzzy
+msgid "Content view is being published with task %{id}."
+msgstr "L'affichage du contenu est en cours de publication avec la tâche %{id}"
+
+msgid "Could not publish the content view"
+msgstr "Impossible de publier l'affichage de contenu"
+
+#, fuzzy
+msgid "Content view is being removed from environment with task %{id}."
 msgstr ""
-"Nom de l'environnement du cycle de vie avec lequel effectuer la recherche"
+"L'affichage du contenu est en cours de suppression de l'environnement avec la "
+"tâche %{id}"
 
-#: lib/hammer_cli_katello/id_resolver.rb:13
-msgid "Organization name to search by"
-msgstr "Nom de l'organisation avec lequel effectuer la recherche"
+msgid "Could not remove the content view from environment"
+msgstr "Impossible de supprimer l'affichage du contenu de l'environnement"
 
-#: lib/hammer_cli_katello/id_resolver.rb:14
-msgid "Organization label to search by"
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "Version ids to remove"
+msgstr "Version"
+
+msgid "Environment ids to remove"
 msgstr ""
-"Nom de l'étiquette de l'organisation avec lequel effectuer la recherche"
 
-#: lib/hammer_cli_katello/id_resolver.rb:17
-msgid "Product name to search by"
-msgstr "Nom du produit avec lequel effectuer la recherche"
+#, fuzzy
+msgid "Content view objects are being removed task %{id}."
+msgstr ""
+"Les objets d'affichage du contenu sont en cours de suppression de la tâche %{i"
+"d}"
 
-#: lib/hammer_cli_katello/id_resolver.rb:18
-msgid "Repository name to search by"
-msgstr "Nom du référentiel avec lequel effectuer la recherche"
+msgid "Could not remove objects from content view"
+msgstr "Impossible de supprimer les objets de l'affichage du contenu"
 
-#: lib/hammer_cli_katello/id_resolver.rb:19
-msgid "Repository set name to search by"
-msgstr "Nom de l'ensemble du référentiel avec lequel effectuer la recherche"
+msgid "Add a content view version to a composite view"
+msgstr ""
 
-#: lib/hammer_cli_katello/id_resolver.rb:20
-msgid "Subscription name to search by"
-msgstr "Nom de l'abonnement avec lequel effectuer la recherche"
+#, fuzzy
+msgid "The component version has been added."
+msgstr "La version du composant a été ajoutée"
 
-#: lib/hammer_cli_katello/id_resolver.rb:21
-msgid "Sync plan name to search by"
-msgstr "Nom du plan de synchronisation avec lequel effectuer la recherche"
+msgid "Could not add version"
+msgstr "Impossible d'ajouter la version"
 
-#: lib/hammer_cli_katello/id_resolver.rb:22
-msgid "Task name to search by"
-msgstr "Nom de la tâche avec lequel effectuer la recherche"
+msgid "Remove a content view version from a composite view"
+msgstr ""
 
-#: lib/hammer_cli_katello/id_resolver.rb:23
-msgid "User name to search by"
-msgstr "Nom d'utilisateur avec lequel effectuer la recherche"
+#, fuzzy
+msgid "The component version has been removed."
+msgstr "La version du composant a été supprimée"
 
-#: lib/hammer_cli_katello/id_resolver.rb:25
-msgid "Puppet module name to search by"
-msgstr "Nom du module Puppet avec lequel effectuer la recherche"
+msgid "Could not remove version"
+msgstr "Impossible de supprimer la version"
 
-#: lib/hammer_cli_katello/id_resolver.rb:26
-msgid "Puppet module's author to search by"
-msgstr "Auteur du module Puppet avec lequel effectuer la recherche"
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content View identifier of the component who's latest version is desired"
+msgstr "Affichage du contenu"
 
-#: lib/hammer_cli_katello/id_resolver.rb:27
-msgid "Puppet module's UUID to search by"
-msgstr "UUID du module Puppet avec lequel effectuer la recherche"
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content View name of the component who's latest version is desired"
+msgstr "Affichage du contenu"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content View Version identifier of the component"
+msgstr "Affichage du contenu"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid ""
+"Content View Version number of the component. Either use this or --component-c"
+"ontent-view-version-id option"
+msgstr "Affichage du contenu"
+
+msgid "Select the latest version of the components content view is desired"
+msgstr ""
+
+msgid "Please provide --component-content-view-id"
+msgstr ""
+
+msgid ""
+"Please provide --component-content-view-version-id or --component-content-view"
+"-version or --latest for the latest version"
+msgstr ""
 
 # translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/id_resolver.rb:31
-msgid "Name to search by"
-msgstr "Recherche par nom"
+msgid "Id"
+msgstr "Id"
 
-#: lib/hammer_cli_katello/filter.rb:16 lib/hammer_cli_katello/filter.rb:27
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "Current Version"
+msgstr "Version"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "Version Id"
+msgstr "Version"
+
+msgid "Latest"
+msgstr ""
+
+#, fuzzy
+msgid "No Published Version"
+msgstr "Publiées"
+
+msgid "Component added to content view."
+msgstr ""
+
+#, fuzzy
+msgid "Could not add the component"
+msgstr "Impossible de télécharger le contenu"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content view component updated."
+msgstr "Contenu"
+
+#, fuzzy
+msgid "Could not update the content view component"
+msgstr "Impossible de mettre à jour l'affichage du contenu"
+
+msgid ""
+"Array of component content view names to remove. Comma separated list of value"
+"s"
+msgstr ""
+
+msgid ""
+"Array of component content view identfiers to remove. Comma separated list of "
+"values"
+msgstr ""
+
+# translation auto-copied from project PressGang CCMS topics, version 1, document 30481-632191, author Corina Roe
+#, fuzzy
+msgid "Components removed from content view."
+msgstr "Composants"
+
+#, fuzzy
+msgid "Could not remove the components"
+msgstr "Impossible de télécharger le contenu"
+
+msgid "Latest(Currently %s)"
+msgstr "Dernier (actuellement %s)"
+
+#, fuzzy
+msgid "Puppet module added to content view."
+msgstr "Module Puppet ajouté à l'affichage du contenu"
+
+msgid "Could not add the puppet module"
+msgstr "Impossible d'ajouter le module Puppet"
+
+#, fuzzy
+msgid "Puppet module removed from content view."
+msgstr "Module Puppet supprimé de l'affichage du contenu"
+
+msgid "Couldn't remove puppet module from the content view"
+msgstr "Impossible de supprimer le module puppet de l'affichage du contenu"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content View numeric identifier"
+msgstr "Affichage du contenu"
+
+#, fuzzy
+msgid "Content View name"
+msgstr "Nom de l'affichage de contenu"
+
+msgid "count of unused versions to keep"
+msgstr ""
+
+msgid "Invalid value for --count option: value must be 0 or greater."
+msgstr ""
+
+msgid "No versions to delete."
+msgstr ""
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid ""
+"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
+"'%{task_id}'."
+msgstr "Version"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "Version '%{version}' of content view '%{view}' deleted."
+msgstr "Version"
+
+msgid "Content View Name"
+msgstr "Nom de l'affichage de contenu"
+
+msgid "Content View Label"
+msgstr "Étiquette de l'affichage du contenu"
+
+# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author Sam Friedmann
+msgid "Repositories"
+msgstr "Référentiels"
+
+#, fuzzy
+msgid "Content View Version is being republished with task %{id}."
+msgstr "L'affichage du contenu est en cours de publication avec la tâche %{id}"
+
+#, fuzzy
+msgid "Could not republish the Content View"
+msgstr "Impossible de publier l'affichage de contenu"
+
+#, fuzzy
+msgid "Content view is being promoted with task %{id}."
+msgstr "L'affichage du contenu est en cours de promotion avec la tâche %{id}"
+
+msgid "Could not promote the content view"
+msgstr "Impossible de promouvoir l'affichage de contenu"
+
+msgid "force content view promotion and bypass lifecycle environment restriction"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Name of the target environment"
+msgstr "Nom"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#, fuzzy
+msgid "Id of the target environment"
+msgstr "Id"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid ""
+"Environment name from where to promote its version from (if version is unknown"
+")"
+msgstr "non"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#, fuzzy
+msgid "Id of the environment from where to promote its version "
+msgstr "Id"
+
+msgid "Incremental update is being performed with task %{id}."
+msgstr ""
+
+msgid "An error occurred incrementally updating the content view"
+msgstr ""
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "list of lifecycle environment IDs to update the content view version in"
+msgstr "ID"
+
+msgid "list of lifecycle environment names to update the content view version in"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Organization name for resolving lifecycle environment names"
+msgstr "Organisation"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Organization id for resolving lifecycle environment names"
+msgstr "Organisation"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Host_Groups
+#, fuzzy
+msgid ""
+"Update all editable and applicable hosts within the specified Content View and"
+" \\\n"
+"               Lifecycle Environments"
+msgstr "Environnement de cycle de vie"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "IDs of hosts to update"
+msgstr "ID"
+
+msgid "Export a content view (deprecated)"
+msgstr ""
+
+#, fuzzy
+msgid "Content view is being exported in task %{id}."
+msgstr "L'affichage du contenu est en cours de promotion avec la tâche %{id}"
+
+#, fuzzy
+msgid "Could not export the content view"
+msgstr "Impossible de mettre à jour l'affichage du contenu"
+
+msgid "Export a content view version"
+msgstr ""
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content view export is available in %{directory}."
+msgstr "Contenu"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content View Version numeric identifier"
+msgstr "Affichage du contenu"
+
+msgid "Directory to put content view version export into."
+msgstr ""
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid ""
+"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is supporte"
+"d at this time. Please remove the repository from the Content View, republish "
+"and try the export again."
+msgstr "Affichage du contenu"
+
+msgid "Import a content view version"
+msgstr ""
+
+#, fuzzy
+msgid "Content view imported."
+msgstr "Affichage de contenu mis à jour"
+
+#, fuzzy
+msgid "Could not import the content view"
+msgstr "Impossible de mettre à jour l'affichage du contenu"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Organization numeric identifier"
+msgstr "Organisation"
+
+# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+#, fuzzy
+msgid "Location of export tar on disk"
+msgstr "Localisation"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Export tar #{options['option_export_tar']} does not exist."
+msgstr "non"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Unable to sync repositories, no library repository found for %s"
+msgstr "non"
+
+msgid "Errata ID"
+msgstr "ID d'errata"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Type"
+msgstr "Type"
+
+# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
+#, fuzzy
+msgid "Title"
+msgstr "Horodatage"
+
+msgid "Reboot Suggested"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+msgid "Updated"
+msgstr "Mis à jour"
+
+msgid "Issued"
+msgstr ""
+
+msgid "Release"
+msgstr "Version"
+
+# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
+#, fuzzy
+msgid "Solution"
+msgstr "Localisation"
+
+msgid "Module Streams"
+msgstr ""
+
+msgid "Stream"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Checksum"
+msgstr ""
+
+msgid "Filter ID"
+msgstr "ID du filtre"
+
 msgid "Inclusion"
 msgstr "Inclusion"
 
 # translation auto-copied from project firewalld, version 0.3.8, document firewalld
-#: lib/hammer_cli_katello/filter.rb:35
 msgid "Rules"
 msgstr "Règles"
 
-#: lib/hammer_cli_katello/filter.rb:54
-msgid "Filter created"
+msgid "Minimum Version"
+msgstr "Version minimum"
+
+msgid "Maximum Version"
+msgstr "Version maximum"
+
+# translation auto-copied from project policycoreutils, version 2.1.14, document policycoreutils, author Sam Friedmann
+msgid "Types"
+msgstr "Types"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+msgid "Created"
+msgstr "Créé"
+
+#, fuzzy
+msgid "Filter created."
 msgstr "Filtre créé"
 
-#: lib/hammer_cli_katello/filter.rb:55
 msgid "Could not create the filter"
 msgstr "Impossible de créer le filtre"
 
-#: lib/hammer_cli_katello/filter.rb:61
-msgid "Filter updated"
+#, fuzzy
+msgid "Filter updated."
 msgstr "Filtre mis à jour"
 
-#: lib/hammer_cli_katello/filter.rb:62
 msgid "Could not update the filter"
 msgstr "Impossible de mettre à jour le filtre"
 
-#: lib/hammer_cli_katello/filter.rb:68
-msgid "Filter deleted"
+#, fuzzy
+msgid "Filter deleted."
 msgstr "Filtre supprimé"
 
-#: lib/hammer_cli_katello/filter.rb:69
 msgid "Could not delete the filter"
 msgstr "Impossible de supprimer le filtre"
 
-#: lib/hammer_cli_katello/lifecycle_environment.rb:24
+msgid "Rule ID"
+msgstr "ID de la règle"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "Architecture"
+msgstr "Arch"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#, fuzzy
+msgid "Date Type"
+msgstr "Type"
+
+#, fuzzy
+msgid "Filter rule created."
+msgstr "Règle de filtre créé"
+
+msgid "Could not create the filter rule"
+msgstr "Impossible de créer la règle de filtre"
+
+msgid "Package and package group names"
+msgstr ""
+
+#, fuzzy
+msgid "Filter rule updated."
+msgstr "Règle de filtre mise à jour"
+
+msgid "Could not update the filter rule"
+msgstr "Impossible de mettre à jour la règle de filtre"
+
+#, fuzzy
+msgid "Filter rule deleted."
+msgstr "Règle de filtre supprimée"
+
+msgid "Could not delete the filter rule"
+msgstr "Impossible de supprimer la règle de filtre"
+
+msgid "Content Type"
+msgstr "Type de contenu"
+
+# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author Sam Friedmann
+msgid "Product"
+msgstr "Produit"
+
+#, fuzzy
+msgid "GPG Key created."
+msgstr "Clé GPG créée"
+
+msgid "Could not create GPG Key"
+msgstr "Impossible de créer la clé GPG"
+
+msgid "GPG Key file"
+msgstr "Fichier de la clé GPG"
+
+#, fuzzy
+msgid "GPG Key updated."
+msgstr "Clé GPG mise à jour"
+
+msgid "Could not update GPG Key"
+msgstr "Impossible de mettre à jour la clé GPG"
+
+#, fuzzy
+msgid "GPG Key deleted."
+msgstr "Clé GPG supprimée"
+
+msgid "Could not delete the GPG Key"
+msgstr "Impossible de supprimer la clé GPG"
+
+msgid "Limit"
+msgstr "Limite"
+
+#, fuzzy
+msgid "Host collection created."
+msgstr "Collection d'hôte créée"
+
+msgid "Could not create the host collection"
+msgstr "Impossible de créer la collection de l'hôte"
+
+msgid "Total Hosts"
+msgstr ""
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Using_the_CloudForms_System_Engine_Dashboard
+#, fuzzy
+msgid "Host Collection ID"
+msgstr "Collections d'hôtes"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Using_the_CloudForms_System_Engine_Dashboard
+#, fuzzy
+msgid "Host Collection Name"
+msgstr "Collections d'hôtes"
+
+#, fuzzy
+msgid "Copy a host collection"
+msgstr "Impossible d'ajouter la collection d'hôte"
+
+msgid "New host collection name"
+msgstr ""
+
+#, fuzzy
+msgid "New host collection created."
+msgstr "Collection d'hôte créée"
+
+#, fuzzy
+msgid "Could not create the new host collection"
+msgstr "Impossible de créer la collection de l'hôte"
+
+#, fuzzy
+msgid "Host collection updated."
+msgstr "Collection d'hôte mise à jour"
+
+msgid "Could not update the the host collection"
+msgstr "Impossible de mettre à jour la collection d'hôte"
+
+#, fuzzy
+msgid "Host collection deleted."
+msgstr "Collection d'hôte supprimée"
+
+msgid "Could not delete the host collection"
+msgstr "Impossible de supprimer la collection d'hôte"
+
+#, fuzzy
+msgid "The host(s) has been added."
+msgstr "Le(s) hôte(s) de contenu a (ont) été ajouté(s)"
+
+#, fuzzy
+msgid "Could not add host(s)"
+msgstr "Impossible d'ajouter le(s) hôte(s) de contenu"
+
+#, fuzzy
+msgid "The host(s) has been removed."
+msgstr "Le(s) hôte(s) de contenu a (ont) été supprimé(s)"
+
+#, fuzzy
+msgid "Could not remove host(s)"
+msgstr "Impossible de supprimer le(s) hôte(s) de contenu"
+
+msgid "Manipulate errata for a host collection"
+msgstr ""
+
+msgid "Install errata on content hosts contained within a host collection"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully scheduled installation of errata."
+msgstr "Réussite"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not schedule installation of errata"
+msgstr "non"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "List of Errata to install"
+msgstr "Errata"
+
+msgid "Manipulate packages for a host collection"
+msgstr ""
+
+msgid "comma-separated list of packages to install"
+msgstr ""
+
+msgid "Install packages on content hosts contained within a host collection"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully scheduled installation of package(s)."
+msgstr "Réussite"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not schedule installation of package(s)"
+msgstr "non"
+
+msgid "Update packages on content hosts contained within a host collection"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully scheduled update of package(s)."
+msgstr "Réussite"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not schedule update of package(s)"
+msgstr "non"
+
+msgid "Remove packages on content hosts contained within a host collection"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully scheduled removal of package(s)."
+msgstr "Réussite"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not schedule removal of package(s)"
+msgstr "non"
+
+msgid "Manipulate package-groups for a host collection"
+msgstr ""
+
+msgid "comma-separated list of package-groups to install"
+msgstr ""
+
+msgid "Install package-groups on content hosts contained within a host collection"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully scheduled installation of package-group(s)."
+msgstr "Réussite"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not schedule installation of package-group(s)"
+msgstr "non"
+
+msgid "Update package-groups on content hosts contained within a host collection"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully scheduled update of package-groups(s)."
+msgstr "Réussite"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not schedule update of package-group(s)"
+msgstr "non"
+
+msgid "Remove package-groups on content hosts contained within a host collection"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully scheduled removal of package-groups(s)."
+msgstr "Réussite"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not schedule removal of package-group(s)"
+msgstr "non"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content Source name "
+msgstr "Contenu"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content Source"
+msgstr "Contenu"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Errata is being applied with task %{id}."
+msgstr "Errata"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not apply errata"
+msgstr "non"
+
+#, fuzzy
+msgid "Erratum ID"
+msgstr "ID d'errata"
+
+msgid "Installable"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Errata recalculated with task %{id}."
+msgstr "Errata"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not recalculate errata"
+msgstr "non"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content Information"
+msgstr "Contenu"
+
+msgid "Kickstart Repository"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Applicable Packages"
+msgstr "Packages"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Upgradable Packages"
+msgstr "Packages"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Applicable Errata"
+msgstr "Errata"
+
+msgid "Enhancement"
+msgstr ""
+
+msgid "Bug Fix"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Subscription Information"
+msgstr ""
+
+msgid "Last Checkin"
+msgstr ""
+
+msgid "Autoheal"
+msgstr "Autoheal"
+
+msgid "Registered To"
+msgstr ""
+
+msgid "Registered At"
+msgstr ""
+
+msgid "Registered by Activation Keys"
+msgstr ""
+
+msgid "Kickstart repository name "
+msgstr ""
+
+msgid "Please provide --lifecycle-environment-id"
+msgstr ""
+
+msgid "Please provide --content-view-id"
+msgstr ""
+
+msgid ""
+"No such repository with name %{name}, in lifecycle environment %{environment_i"
+"d} and content view %{content_view_id}"
+msgstr ""
+
+msgid "NVRA"
+msgstr ""
+
+msgid "Host unregistered."
+msgstr ""
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not unregister the host"
+msgstr "non"
+
+msgid "Host successfully registered."
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Failed to register host"
+msgstr "Échec"
+
+msgid "Subscription attached to the host successfully."
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Failed to attach subscriptions to the host"
+msgstr "Échec"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "Quantity of this subscriptions to add. Defaults to 1"
+msgstr "Quantité"
+
+msgid "Auto attached subscriptions to the host successfully."
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Failed to auto attach subscriptions to the host"
+msgstr "Échec"
+
+msgid "Subscription removed from the host successfully."
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Failed to remove subscriptions from the host"
+msgstr "Échec"
+
+msgid "Remove the first instance of a subscription with matching id and quantity"
+msgstr ""
+
+#, fuzzy
+msgid "Organization ID to search by"
+msgstr "Nom de l'organisation avec lequel effectuer la recherche"
+
+msgid "Organization name to search by"
+msgstr "Nom de l'organisation avec lequel effectuer la recherche"
+
+msgid "Organization label to search by"
+msgstr "Nom de l'étiquette de l'organisation avec lequel effectuer la recherche"
+
+msgid "Capsule name to search by"
+msgstr "Nom de la capsule avec lequel effectuer la recherche"
+
+#, fuzzy
+msgid "File name to search by"
+msgstr "Nom de la tâche avec lequel effectuer la recherche"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content View Version ID"
+msgstr "Affichage du contenu"
+
+#, fuzzy
+msgid "Repository ID"
+msgstr "ID de référentiel"
+
+#, fuzzy
+msgid "Module stream name to search by"
+msgstr "Nom du produit avec lequel effectuer la recherche"
+
+msgid "Gpg key name to search by"
+msgstr "Nom de la clé Gpg avec lequel effectuer la recherche"
+
+msgid "Host collection name to search by"
+msgstr "Nom de la collection d'hôte avec lequel effectuer la recherche"
+
+msgid "Lifecycle environment name to search by"
+msgstr "Nom de l'environnement du cycle de vie avec lequel effectuer la recherche"
+
+msgid "Product name to search by"
+msgstr "Nom du produit avec lequel effectuer la recherche"
+
+msgid "Operating system title"
+msgstr ""
+
+msgid "Repository name to search by"
+msgstr "Nom du référentiel avec lequel effectuer la recherche"
+
+msgid "Repository set name to search by"
+msgstr "Nom de l'ensemble du référentiel avec lequel effectuer la recherche"
+
+msgid "Subscription name to search by"
+msgstr "Nom de l'abonnement avec lequel effectuer la recherche"
+
+msgid "Sync plan name to search by"
+msgstr "Nom du plan de synchronisation avec lequel effectuer la recherche"
+
+msgid "Task name to search by"
+msgstr "Nom de la tâche avec lequel effectuer la recherche"
+
+msgid "Puppet module name to search by"
+msgstr "Nom du module Puppet avec lequel effectuer la recherche"
+
+msgid "Puppet module's author to search by"
+msgstr "Auteur du module Puppet avec lequel effectuer la recherche"
+
+msgid "Puppet module's UUID to search by"
+msgstr "UUID du module Puppet avec lequel effectuer la recherche"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Content view version number"
+msgstr "Contenu"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Name to search by"
+msgstr "Recherche par nom"
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Name of the prior environment"
+msgstr "Nom"
+
 msgid "Prior"
 msgstr "Avant"
 
-#: lib/hammer_cli_katello/lifecycle_environment.rb:36
 msgid "Lifecycle Path"
 msgstr "Chemin du cycle de vie"
 
 # translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#: lib/hammer_cli_katello/lifecycle_environment.rb:59
 msgid "Library"
 msgstr "Bibliothèque"
 
-#: lib/hammer_cli_katello/lifecycle_environment.rb:61
 msgid "Prior Lifecycle Environment"
 msgstr "Environnement de cycle de vie antérieur"
 
+msgid "Unauthenticated Pull"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Registry Name Pattern"
+msgstr "Nom"
+
 # translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/lifecycle_environment.rb:71
-msgid "Environment created"
+#, fuzzy
+msgid "Environment created."
 msgstr "Environnement Créé"
 
-#: lib/hammer_cli_katello/lifecycle_environment.rb:72
 msgid "Could not create environment"
 msgstr "Impossible de créer l'environnement"
 
 # translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/lifecycle_environment.rb:80
-msgid "Environment updated"
+#, fuzzy
+msgid "Environment updated."
 msgstr "Environnement mis à jour"
 
-#: lib/hammer_cli_katello/lifecycle_environment.rb:81
 msgid "Could not update environment"
 msgstr "Impossible de mettre à jour l'environnement"
 
 # translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/lifecycle_environment.rb:87
-msgid "Environment deleted"
+#, fuzzy
+msgid "Environment deleted."
 msgstr "Environnement supprimé"
 
-#: lib/hammer_cli_katello/lifecycle_environment.rb:88
 msgid "Could not delete environment"
 msgstr "Impossible de supprimer l'environnement"
 
-#: lib/hammer_cli_katello/lifecycle_environment.rb:97
-msgid "manipulate lifecycle_environments on the server"
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Module Stream Name"
+msgstr "Nom"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Context"
+msgstr "Contenu"
+
+msgid "Artifacts"
+msgstr ""
+
+msgid "Profiles"
+msgstr ""
+
+msgid "RPMs"
+msgstr ""
+
+msgid "Red Hat Repository URL"
+msgstr "URL du référentiel Red Hat"
+
+msgid "Service Levels"
 msgstr ""
 
 # translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#: lib/hammer_cli_katello/capsule.rb:22
-msgid "Features"
-msgstr "Fonctionnalités"
-
-#: lib/hammer_cli_katello/capsule.rb:37
-msgid "Manage the capsule content"
-msgstr "Gérer le contenu de la capsule"
-
-#: lib/hammer_cli_katello/capsule.rb:75
-msgid "Lifecycle environment successfully added to the capsule"
-msgstr "L'environnement du cycle de vie a été ajouté à la capsule"
-
-#: lib/hammer_cli_katello/capsule.rb:76
-msgid "Could not add the lifecycle environment to the capsule"
-msgstr "Impossible d'ajouter l'environnement du cycle de vie à la capsule"
-
-#: lib/hammer_cli_katello/capsule.rb:85
-msgid "Lifecycle environment successfully removed from the capsule"
-msgstr "L'environnement du cycle de vie a été supprimé de la capsule"
-
-#: lib/hammer_cli_katello/capsule.rb:86
-msgid "Could not remove the lifecycle environment from the capsule"
-msgstr "Impossible de supprimer l'environnement du cycle de vie de la capsule"
-
-#: lib/hammer_cli_katello/capsule.rb:95
-msgid "Capsule content is being synchronized in task %{id}"
-msgstr ""
-"Le contenu de la capsule est en cours de synchronisation dans la tâche %{id}"
-
-#: lib/hammer_cli_katello/capsule.rb:96
-msgid "Could not synchronize capsule content"
-msgstr "Impossible de synchroniser le contenu de la capsule"
-
-#: lib/hammer_cli_katello/capsule.rb:107
-msgid "Manipulate capsule"
-msgstr "Manipuler la capsule"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# translation auto-copied from project Customer Portal Translations, version 012_June_RHEL, document downloads.html, author Sam Friedmann
-
-
-
-
-
-
-
+#, fuzzy
+msgid "Organization updated."
+msgstr "Organisation mise à jour"
 
 # translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Could not update the organization"
+msgstr "Impossible de mettre à jour l'organisation"
 
-# translation auto-copied from project Satellite6 Bastion Katello, version 6.1, document bastion_katello, author jcarbone
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#, fuzzy
+msgid "Organization created."
+msgstr "Organisation créée"
 
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Could not create the organization"
+msgstr "Impossible de créer l'organisation"
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#, fuzzy
+msgid "Organization deleted."
+msgstr "Organisation supprimée"
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 14185-431341, author jcarbone
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Could not delete the organization"
+msgstr "Impossible de supprimer l'organisation"
 
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "version"
+msgstr "Version"
 
+msgid "Commit"
+msgstr ""
 
+msgid "Date"
+msgstr ""
 
+msgid "%s  %s"
+msgstr "%s  %s"
 
+msgid "Filename"
+msgstr ""
 
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "Source RPM"
+msgstr "Source"
 
+msgid "Epoch"
+msgstr ""
 
+msgid "Build Host"
+msgstr ""
 
+msgid "Vendor"
+msgstr ""
 
+# translation auto-copied from project gtk3, version 3.8.2, document gtk30
+msgid "License"
+msgstr "Licence"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document chap-Configuring_Organizations_Locations_and_Lifecycle_Environments, author jcarbone
-
-
-
-
-
-
-
-
-
-
+msgid "Relative Path"
+msgstr ""
 
 # translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Package Group Name"
+msgstr "Groupes de packages"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author Sam Friedmann
-
-
-
-
-# translation auto-copied from project Satellite6 Bastion Katello, version 6.1, document bastion_katello, author jcarbone
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author Sam Friedmann
+#, fuzzy
+msgid "Repository Name"
+msgstr "ID de référentiel"
 
 # translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Default Packages"
+msgstr "Packages"
 
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Mandatory Packages"
+msgstr "Packages"
 
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Conditional Packages"
+msgstr "Packages"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Optional Packages"
+msgstr "Packages"
+
+msgid "Server Response"
+msgstr "Réponse du serveur"
+
+# translation auto-copied from project libvirt, version 1.1.1, document libvirt
+msgid "FAIL"
+msgstr "ÉCHEC"
+
+msgid "Duration: %sms"
+msgstr "Durée : %sms"
+
+msgid "Message: %s"
+msgstr "Message : %s"
+
+msgid "Sync State"
+msgstr "État de synchronisation"
+
+#, fuzzy
+msgid "Product created."
+msgstr "Produit créé"
+
+msgid "Could not create the product"
+msgstr "Impossible de créer le produit"
+
+msgid "Sync Plan ID"
+msgstr "ID du plan de synchronisation"
 
 # translation auto-copied from project subscription-manager, version 1.10.10, document keys
+msgid "GPG"
+msgstr "GPG"
 
+msgid "GPG Key ID"
+msgstr "ID de la clé GPG"
+
+msgid "GPG Key"
+msgstr "Clé GPG"
+
+msgid "Readonly"
+msgstr "Lecture seule"
+
+msgid "Deletable"
+msgstr "Supprimable"
+
+msgid "Repo Name"
+msgstr "Nom du référentiel"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "URL"
+msgstr "URL"
+
+#, fuzzy
+msgid "Product updated."
+msgstr "Produit mis à jour"
+
+msgid "Could not update the product"
+msgstr "Impossible de mettre à jour le produit"
+
+#, fuzzy
+msgid "Product destroyed."
+msgstr "Produit détruit"
+
+msgid "Could not destroy the product"
+msgstr "Impossible de détruire le produit"
+
+#, fuzzy
+msgid "Product repositories are being synchronized in task %{id}."
+msgstr "Le référentiel est en cours de synchronisation dans la tâche %{id}"
+
+#, fuzzy
+msgid "Could not synchronize the product repositories"
+msgstr "Impossible de synchroniser le référentiel"
+
+#, fuzzy
+msgid "Assign sync plan to product"
+msgstr "Attribuer le plan de synchronisation au produit."
+
+msgid "Synchronization plan assigned."
+msgstr "Le plan de synchronisation a été attribué."
+
+#, fuzzy
+msgid "Could not assign synchronization plan"
+msgstr "Impossible d'attribuer le plan de synchronisation."
+
+#, fuzzy
+msgid "Delete assignment sync plan and product"
+msgstr "Supprimer le produit et le plan de synchronisation de l'attribuation."
+
+msgid "Synchronization plan removed."
+msgstr "Plan de synchronisation supprimé."
+
+#, fuzzy
+msgid "Could not remove synchronization plan"
+msgstr "Impossible de supprimer le plan de synchronisation."
+
+msgid "List associated products"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#, fuzzy
+msgid "Default Enabled?"
+msgstr "Activé"
+
+msgid "Override"
+msgstr ""
+
+msgid "Uuid"
+msgstr ""
+
+# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author Sam Friedmann
+msgid "Summary"
+msgstr "Résumé"
+
+msgid "Project Page"
+msgstr "Page du projet"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+msgid "Source"
+msgstr "Source"
+
+msgid "Dependencies"
+msgstr "Dépendances"
+
+msgid "File checksums"
+msgstr "Sommes de contrôle du fichier"
+
+msgid "Tag List"
+msgstr "Liste des balises"
+
+msgid "Red Hat Repository"
+msgstr "Référentiel Red Hat"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+#, fuzzy
+msgid "Checksum Type"
+msgstr "Type"
+
+#, fuzzy
+msgid "Mirror on Sync"
+msgstr "Sync"
+
+msgid "Publish Via HTTP"
+msgstr "Publier via HTTP"
+
+msgid "Published At"
+msgstr "Publié à"
+
+msgid "Download Policy"
+msgstr ""
+
+#, fuzzy
+msgid "OSTree Upstream Sync Policy"
+msgstr "Sync"
+
+#, fuzzy
+msgid "OSTree Upstream Sync Depth"
+msgstr "Sync"
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Upstream Repository Name"
+msgstr "Nom"
+
+msgid "Container Image Tags Filter"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Container Repository Name"
+msgstr "Nom"
+
+# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
+#, fuzzy
+msgid "Ignorable Content Units"
+msgstr "Contenu"
+
+msgid "Sync"
+msgstr "Sync"
+
+msgid "Last Sync Date"
+msgstr "Dernière date de synchronisation"
+
+msgid "Content Counts"
+msgstr "Nombre de contenus"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+#, fuzzy
+msgid "Source RPMS"
+msgstr "Source"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+msgid "Package Groups"
+msgstr "Groupes de packages"
+
+msgid "Container Image Manifest Lists"
+msgstr ""
+
+msgid "Container Image Manifests"
+msgstr ""
+
+msgid "Container Image Tags"
+msgstr ""
+
+msgid "OSTree Branches"
+msgstr ""
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Files"
+msgstr "Échec"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+msgid "yes"
+msgstr "oui"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+msgid "no"
+msgstr "non"
+
+msgid "Not Synced"
+msgstr "Pas synchronisé"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+msgid "Failed"
+msgstr "Échec"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+msgid "Success"
+msgstr "Réussite"
+
+# translation auto-copied from project gnome-packagekit, version 3.8.2, document gnome-packagekit
+msgid "Finished"
+msgstr "Terminé"
+
+# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
+msgid "Error"
+msgstr "Erreur"
+
+# translation auto-copied from project virt-manager, version 0.10.0, document virt-manager
+msgid "Running"
+msgstr "En cours de fonctionnement"
+
+# translation auto-copied from project evolution-data-server, version el6, document evolution-data-server-2.32
+msgid "Waiting"
+msgstr "En attente"
+
+# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
+msgid "Canceled"
+msgstr "Annulé"
+
+#, fuzzy
+msgid "Repository is being synchronized in task %{id}."
+msgstr "Le référentiel est en cours de synchronisation dans la tâche %{id}"
+
+msgid "Could not synchronize the repository"
+msgstr "Impossible de synchroniser le référentiel"
+
+#, fuzzy
+msgid "Repository created."
+msgstr "Référentiel créé"
+
+msgid "Could not create the repository"
+msgstr "Impossible de créer le référentiel"
+
+#, fuzzy
+msgid "Repository updated."
+msgstr "Référentiel mis à jour"
+
+msgid "Could not update the repository"
+msgstr "Impossible de mettre à jour le référentiel"
+
+msgid "--docker-digest required with --docker-tag"
+msgstr ""
+
+msgid "--docker-tag required with --docker-digest"
+msgstr ""
+
+msgid "Optional custom Container Image tag to specify the value of the Docker digest"
+msgstr ""
+
+msgid "Container Image manifest digest"
+msgstr ""
+
+msgid "Repository updated"
+msgstr "Référentiel mis à jour"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Failed to upload tag '%s' to repository."
+msgstr "Échec"
+
+#, fuzzy
+msgid "Repository deleted."
+msgstr "Référentiel supprimé"
+
+msgid "Could not delete the Repository"
+msgstr "Impossible de supprimer le référentiel"
+
+# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
+#, fuzzy
+msgid "Could not find any files matching PATH"
+msgstr "non"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "Cannot specify both product options and repository ID."
+msgstr "ID"
+
+#, fuzzy
+msgid "Repository content uploaded."
+msgstr "Contenu du référentiel téléchargé"
+
+msgid "Could not upload the content"
+msgstr "Impossible de télécharger le contenu"
+
+msgid ""
+"Upload file, directory of files, or glob of files as content for a repository."
+"\n"
+"Globs must be escaped by single or double quotes"
+msgstr ""
+
+msgid "Failed to upload file '%s' to repository. Please check the file and try again."
+msgstr ""
+"Échec de téléchargement du fichier '%s' sur le référentiel. Veuillez vérifier "
+"le fichier et essayer à nouveau."
+
+#, fuzzy
+msgid "Successfully uploaded file '%{name}'"
+msgstr "Fichier '%s' téléchargé avec succès"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+#, fuzzy
+msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
+msgstr "Réussite"
+
+msgid "Remove content from a repository"
+msgstr ""
+
+#, fuzzy
+msgid "Repository content removed."
+msgstr "Contenu du référentiel téléchargé"
+
+#, fuzzy
+msgid "Could not remove content"
+msgstr "Impossible de supprimer l'hôte de contenu"
+
+msgid "Export content from a repository to the configured directory"
+msgstr ""
+
+#, fuzzy
+msgid "Repository is being exported in task %{id}."
+msgstr "Le référentiel est en cours de synchronisation dans la tâche %{id}"
+
+#, fuzzy
+msgid "Could not export the repository"
+msgstr "Impossible de mettre à jour le référentiel"
+
+msgid "Enabled Repositories"
+msgstr "Référentiels activés"
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+msgid "Arch"
+msgstr "Arch"
+
+# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
+#, fuzzy
+msgid "Registry Name"
+msgstr "Nom"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Enabled"
+msgstr "Activé"
+
+#, fuzzy
+msgid "Repository enabled."
+msgstr "Référentiel activé"
+
+msgid "Could not enable repository"
+msgstr "Impossible d'activer le référentiel"
+
+#, fuzzy
+msgid "Repository disabled."
+msgstr "Référentiel désactivé"
+
+msgid "Could not disable repository"
+msgstr "Impossible de désactiver le référentiel"
+
+msgid "Consumed"
+msgstr "Consommé"
+
+msgid "Physical"
+msgstr ""
+
+msgid "Guests of %s"
+msgstr ""
+
+msgid "Temporary"
+msgstr ""
+
+msgid "Virtual"
+msgstr ""
+
+#, fuzzy
+msgid "Manifest is being uploaded in task %{id}."
+msgstr "Le fichier manifeste est en cours de téléchargement dans la tâche %{id}"
+
+msgid "Manifest upload failed"
+msgstr "Échec du téléchargement du manifeste "
+
+msgid "Subscription manifest file"
+msgstr "Fichier manifeste d'abonnement"
+
+#, fuzzy
+msgid "Manifest is being deleted in task %{id}."
+msgstr "Le fichier manifeste est en cours de suppression dans la tâche %{id}"
+
+msgid "Manifest deletion failed"
+msgstr "Échec de la suppression du fichier manifeste"
+
+#, fuzzy
+msgid "Manifest is being refreshed in task %{id}."
+msgstr "Le fichier manifeste est en cours d'actualisation dans la tâche %{id}"
+
+msgid "Manifest refresh failed"
+msgstr "Échec de l'actualisation du manifeste"
+
+msgid "Status Message"
+msgstr "Message d'état"
+
+# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
+msgid "Time"
+msgstr "Horodatage"
+
+# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
+msgid "Interval"
+msgstr "Intervalle"
+
+msgid "Cron Expression"
+msgstr ""
+
+# translation auto-copied from project subscription-manager, version 1.10.10, document keys
+#, fuzzy
+msgid "Recurring Logic ID"
+msgstr "ID"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Created at"
+msgstr "Créé le"
+
+# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
+msgid "Updated at"
+msgstr "Mis à jour le"
+
+msgid "how often synchronization should run"
+msgstr "la fréquence à laquelle la synchronisation doit s'exécuter"
+
+msgid "set this when interval is custom cron"
+msgstr ""
+
+# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
+#, fuzzy
+msgid ""
+"Start date and time for the sync plan.Time is optional, if kept blank current "
+"system time will be considered"
+msgstr "Horodatage"
+
+#, fuzzy
+msgid "Sync plan created."
+msgstr "Plan de synchronisation créé"
+
+msgid "Could not create the sync plan"
+msgstr "Impossible de créer le plan de synchronisation"
+
+msgid "start date and time of the synchronization"
+msgstr "l'heure et la date de lancement de la synchronisation"
+
+#, fuzzy
+msgid "Sync plan updated."
+msgstr "Plan de synchronisation mis à jour"
+
+msgid "Could not update the sync plan"
+msgstr "Impossible de mettre à jour le plan de synchronisation"
+
+#, fuzzy
+msgid "Sync plan destroyed."
+msgstr "Plan de synchronisation détruit"
+
+msgid "Could not destroy the sync plan"
+msgstr "Impossible de détruire le plan de synchronisation"
