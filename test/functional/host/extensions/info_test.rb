@@ -16,8 +16,7 @@ describe 'host info' do
 
     result = run_cmd(@cmd + params)
     # rubocop:disable Style/WordArray
-    expected_fields = [['Name', 'Library'],
-                       ['Name', 'Default Organization View'],
+    expected_fields = [['Name', 'robot.example.com'],
                        ['Release Version', '7Server'],
                        ['Name', 'Rhel 7'],
                        ['Name', 'capsule'],

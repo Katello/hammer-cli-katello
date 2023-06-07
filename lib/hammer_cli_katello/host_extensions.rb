@@ -42,14 +42,20 @@ module HammerCLIKatello
       output do
         label _('Content Information') do
           from :content_facet_attributes do
-            label _("Content View") do
-              field :content_view_id, _("Id")
-              field :content_view_name, _("Name")
-            end
-
-            label _("Lifecycle Environment") do
-              field :lifecycle_environment_id, _("Id")
-              field :lifecycle_environment_name, _("Name")
+            collection :content_view_environments, _('Content view environments') do
+              from :content_view do
+                label _("Content view") do
+                  field :id, _("Id")
+                  field :name, _("Name")
+                  field :composite, _("Composite"), Fields::Boolean
+                end
+              end
+              from :lifecycle_environment do
+                label _("Lifecycle environment") do
+                  field :id, _("Id")
+                  field :name, _("Name")
+                end
+              end
             end
 
             label _("Content Source") do
