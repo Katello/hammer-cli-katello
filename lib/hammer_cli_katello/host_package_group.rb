@@ -17,7 +17,7 @@ module HammerCLIKatello
 
       def execute
         warn "This command uses katello agent and will be removed in favor of remote execution " \
-          "in a future release."
+          "in Katello 4.10."
         warn "The remote execution equivalent is `hammer job-invocation create --feature " \
           "katello_group_install`."
         super
@@ -39,7 +39,7 @@ module HammerCLIKatello
 
       def execute
         warn "This command uses katello agent and will be removed in favor of remote execution " \
-          "in a future release."
+          "in Katello 4.10."
         warn "The remote execution equivalent is `hammer job-invocation create --feature " \
           "katello_group_remove`."
         super
