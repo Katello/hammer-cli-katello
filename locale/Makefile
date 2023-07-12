@@ -1,65 +1,6 @@
 #
 # Makefile for PO merging and MO generation. More info in the README.
 #
-# make all-mo (default) - generate MO files
-# make check - check translations using translate-tool
-# make tx-update - download and merge translations from Transifex
-# make clean - clean everything
+# Run make help to list available targets
 #
-DOMAIN = hammer-cli-katello
-VERSION = $(shell ruby -e 'require "rubygems";spec = Gem::Specification::load("../hammer_cli_katello.gemspec");puts spec.version')
-POTFILE = $(DOMAIN).pot
-MOFILE = $(DOMAIN).mo
-POFILES = $(shell find . -name '*.po')
-MOFILES = $(patsubst %.po,%.mo,$(POFILES))
-POXFILES = $(patsubst %.po,%.pox,$(POFILES))
-
-%.mo: %.po
-	mkdir -p $(shell dirname $@)/LC_MESSAGES
-	msgfmt -o $(shell dirname $@)/LC_MESSAGES/$(MOFILE) $<
-
-# Generate MO files from PO files
-all-mo: $(MOFILES)
-
-# Check for malformed strings
-%.pox: %.po
-	msgfmt -c $<
-	pofilter --nofuzzy -t variables -t blank -t urls -t emails -t long -t newlines \
-		-t endwhitespace -t endpunc -t puncspacing -t options -t printf -t validchars --gnome $< > $@
-	cat $@
-	! grep -q msgid $@
-
-check: $(POXFILES)
-	msgfmt -c ${POTFILE}
-
-# Merge PO files
-update-po:
-	for f in $(shell find ./ -name "*.po") ; do \
-		msgmerge -N --backup=none -U $$f ${POTFILE} ; \
-	done
-
-# Unify duplicate translations
-uniq-po:
-	for f in $(shell find ./ -name "*.po") ; do \
-		msguniq $$f -o $$f ; \
-	done
-
-tx-pull:
-	tx pull -f
-	for f in $(POFILES) ; do \
-		sed -i 's/^\("Project-Id-Version: \).*$$/\1$(DOMAIN) $(VERSION)\\n"/' $$f; \
-	done
-	-git commit -a -m "i18n - extracting new, pulling from tx"
-
-extract-strings:
-	bundle exec rake gettext:find
-
-reset-po:
-	# merging po files is unnecessary when using transifex.com
-	git checkout -- ../locale/*/*po
-
-tx-update: tx-pull extract-strings reset-po $(MOFILES)
-	# amend mo files
-	git add ../locale/*/LC_MESSAGES
-	git commit -a --amend -m "i18n - extracting new, pulling from tx"
-	-echo Changes commited!
+include $(shell bundle exec ruby -e 'require "hammer_cli"; puts HammerCLI::I18n.main_makefile')

@@ -28,25 +28,10 @@ task :default do
   Rake::Task['test'].execute
 end
 
-namespace :gettext do
-  task :setup do
-    require "hammer_cli_katello/version"
-    require "hammer_cli_katello/i18n"
-    require 'gettext/tools/task'
-
-    domain = HammerCLIKatello::I18n::LocaleDomain.new
-    GetText::Tools::Task.define do |task|
-      task.package_name = domain.domain_name
-      task.package_version = HammerCLIKatello.version.to_s
-      task.domain = domain.domain_name
-      task.mo_base_directory = domain.locale_dir
-      task.po_base_directory = domain.locale_dir
-      task.files = domain.translated_files
-    end
-  end
-
-  desc "Update pot file"
-  task :find => [:setup] do
-    Rake::Task["gettext:po:update"].invoke
-  end
-end
+require "hammer_cli_katello/version"
+require "hammer_cli_katello/i18n"
+require "hammer_cli/i18n/find_task"
+HammerCLI::I18n::FindTask.define(
+  HammerCLIKatello::I18n::LocaleDomain.new,
+  HammerCLIKatello.version.to_s
+)
