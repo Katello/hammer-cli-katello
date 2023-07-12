@@ -1,52 +1,68 @@
-# hpeters <hpeters@redhat.com>, 2015. #zanata
-# jdimanos <jdimanos@redhat.com>, 2015. #zanata
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-katello package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2017
+# Arnold Bechtoldt <mail@arnoldbechtoldt.com>, 2017
+# Lukas K. <kallies@puzzle.ch>, 2017
+# Michael Moll, 2017
+# mbacovsky <martin.bacovsky@gmail.com>, 2017
+# abf90805572190d649c59f7a021d76cb, 2017
+# Wiederoder <stefanwiederoder@googlemail.com>, 2017
+# simon11 <transifex@stieger.co>, 2017
+# Martin Zimmermann <martin.zimmermann@gmx.com>, 2018
+# Bryan Kearney <bryan.kearney@gmail.com>, 2019
+# Crited <Alexander.Stoll@netways.de>, 2019
+# 47388d0d0847859fcc07f8955b27d2a7_d1cb104 <93875580def0fcc1a566b016c3948752_122921>, 2020
+# pdolinic, 2021
+# Ettore Atalan <atalanttore@googlemail.com>, 2023
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 0.0.7.6\n"
+"Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-04-27 11:53+0000\n"
-"Last-Translator: hpeters <hpeters@redhat.com>\n"
-"Language-Team: German\n"
-"Language: de\n"
+"POT-Creation-Date: 2019-02-27 08:32-0500\n"
+"PO-Revision-Date: 2017-09-11 13:28+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, 2023\n"
+"Language-Team: German (https://app.transifex.com/foreman/teams/114/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 3.6.0\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#, fuzzy
 msgid "Manipulate activation keys"
-msgstr "Aktivierungsschlüssel bearbeiten."
+msgstr "Aktivierungsschlüssel bearbeiten"
 
 msgid "Manipulate organizations"
 msgstr "Organisationen bearbeiten"
 
-#, fuzzy
 msgid "Manipulate GPG Key actions on the server"
-msgstr "GPG-Schlüssel"
+msgstr "Manipulieren von GPG-Schlüsselaktionen auf dem Server"
 
 msgid "Manipulate lifecycle_environments on the server"
-msgstr ""
+msgstr "Lebenszyklusumgebungen auf dem Server manipulieren"
 
 msgid "Get the status of the server"
-msgstr ""
+msgstr "Rufen Sie den Status des Servers ab"
 
-#, fuzzy
 msgid "Manipulate products"
-msgstr "Produkte bearbeiten."
+msgstr "Produkte bearbeiten"
 
 msgid "View Puppet Module details"
-msgstr ""
+msgstr "Details zum Puppet-Modul anzeigen"
 
 msgid "Manipulate repositories"
 msgstr "Repositorys bearbeiten"
 
 msgid "Manipulate repository sets on the server"
-msgstr ""
+msgstr "Repository-Sets auf dem Server manipulieren"
 
-#, fuzzy
 msgid "Manipulate subscriptions"
-msgstr "Subskriptionen bearbeiten."
+msgstr "Subskriptionen bearbeiten"
 
 msgid "Manipulate sync plans"
 msgstr "Synchronisationspläne bearbeiten"
@@ -54,32 +70,29 @@ msgstr "Synchronisationspläne bearbeiten"
 msgid "Manipulate host collections"
 msgstr "Hostsammlungen bearbeiten"
 
-#, fuzzy
 msgid "Manipulate content views"
-msgstr "Inhaltsansichten bearbeiten."
+msgstr "Inhaltsansichten bearbeiten"
 
 msgid "Manipulate capsule"
 msgstr "Capsule bearbeiten"
 
-#, fuzzy
 msgid "Manipulate packages"
-msgstr "Capsule bearbeiten"
+msgstr "Pakete bearbeiten"
 
 msgid "Manipulate package groups"
-msgstr ""
+msgstr "Paketgruppen bearbeiten"
 
 msgid "Manipulate errata"
-msgstr ""
+msgstr "Errata bearbeiten"
 
 msgid "Manipulate ostree branches"
-msgstr ""
+msgstr "OSTree Branch bearbeiten"
 
-#, fuzzy
 msgid "Manipulate files"
-msgstr "Capsule bearbeiten"
+msgstr "Dateien bearbeiten"
 
 msgid "View Module Streams"
-msgstr ""
+msgstr "Modulstreams anzeigen"
 
 msgid "ID"
 msgstr "ID"
@@ -87,9 +100,8 @@ msgstr "ID"
 msgid "Name"
 msgstr "Name"
 
-#, fuzzy
 msgid "Host Limit"
-msgstr "Grenze"
+msgstr "Hostgrenze"
 
 msgid "Lifecycle Environment"
 msgstr "Lebenszyklusumgebung"
@@ -107,10 +119,10 @@ msgid "Description"
 msgstr "Beschreibung"
 
 msgid "Auto Attach"
-msgstr ""
+msgstr "Automatisches Anhängen"
 
 msgid "Service Level"
-msgstr ""
+msgstr "Servicelevel "
 
 msgid "Release Version"
 msgstr "Release-Version"
@@ -118,34 +130,29 @@ msgstr "Release-Version"
 msgid "Host Collections"
 msgstr "Hostsammlungen"
 
-#, fuzzy
 msgid "Activation key created."
-msgstr "Aktivierungsschlüssel erstellt"
+msgstr "Aktivierungsschlüssel erstellt."
 
 msgid "Could not create the activation key"
 msgstr "Aktivierungsschlüssel konnte nicht erstellt werden"
 
 msgid "Copy an activation key"
-msgstr ""
+msgstr "Aktivierungsschlüssel kopieren"
 
-#, fuzzy
 msgid "Activation key copied."
-msgstr "Aktivierungsschlüssel erstellt"
+msgstr "Aktivierungsschlüssel kopiert."
 
-#, fuzzy
 msgid "Could not copy the activation key"
-msgstr "Aktivierungsschlüssel konnte nicht erstellt werden"
+msgstr "Aktivierungsschlüssel konnte nicht kopiert werden"
 
-#, fuzzy
 msgid "Activation key updated."
-msgstr "Aktivierungsschlüssel aktualisiert"
+msgstr "Aktivierungsschlüssel aktualisiert."
 
 msgid "Could not update the activation key"
 msgstr "Aktivierungsschlüssel konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Activation key deleted."
-msgstr "Aktivierungsschlüssel gelöscht"
+msgstr "Aktivierungsschlüssel gelöscht."
 
 msgid "Could not delete the activation key"
 msgstr "Aktivierungsschlüssel konnte nicht gelöscht werden"
@@ -174,26 +181,24 @@ msgstr "Vertrag"
 msgid "Account"
 msgstr "Account"
 
-#, fuzzy
 msgid ""
-"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : data['quan"
-"tity']}"
-msgstr "Unbegrenzt"
+"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : "
+"data['quantity']}"
+msgstr ""
+"#{data['consumed']} aus #{data['quantity'] == -1 ? 'Unbegrenzt' : "
+"data['quantity']}"
 
-#, fuzzy
 msgid "ID of the activation key"
-msgstr "ID"
+msgstr "Kennung des Aktivierungsschlüssels"
 
 msgid "Activation key name to search by"
 msgstr "Name des zu suchenden Aktivierungsschlüssels"
 
-#, fuzzy
 msgid "ID of subscription"
-msgstr "Subskription entfernen"
+msgstr "Kennung der Subskription"
 
-#, fuzzy
 msgid "Subscription added to activation key."
-msgstr "Subskription zum Aktivierungsschlüssel hinzugefügt"
+msgstr "Subskription zum Aktivierungsschlüssel hinzugefügt."
 
 msgid "Could not add subscription to activation key"
 msgstr "Subskription konnte nicht zum Aktivierungsschlüssel hinzugefügt werden"
@@ -201,9 +206,8 @@ msgstr "Subskription konnte nicht zum Aktivierungsschlüssel hinzugefügt werden
 msgid "Remove subscription"
 msgstr "Subskription entfernen"
 
-#, fuzzy
 msgid "Subscription removed from activation key."
-msgstr "Subskription vom Aktivierungsschlüssel entfernt"
+msgstr "Subskription vom Aktivierungsschlüssel entfernt."
 
 msgid "Could not remove subscription from activation key"
 msgstr "Subskription konnte nicht vom Aktivierungsschlüssel entfernt werden"
@@ -211,57 +215,47 @@ msgstr "Subskription konnte nicht vom Aktivierungsschlüssel entfernt werden"
 msgid "List associated host collections"
 msgstr "Verknüpfte Hostsammlungen anzeigen"
 
-#, fuzzy
 msgid "ID of activation key"
-msgstr "ID"
+msgstr "Kennung des Aktivierungsschlüssels"
 
-#, fuzzy
 msgid "Name of activation key"
-msgstr "Name"
+msgstr "Name des Aktivierungsschlüssels"
 
-#, fuzzy
 msgid "The repository has been associated."
-msgstr "Repository wurde verknüpft"
+msgstr "Das Repository wurde verknüpft."
 
 msgid "Could not add repository"
 msgstr "Repository konnte nicht hinzugefügt werden"
 
-#, fuzzy
 msgid "The repository has been removed."
 msgstr "Repository wurde entfernt"
 
 msgid "Could not remove repository"
 msgstr "Repository konnte nicht entfernt werden"
 
-#, fuzzy
 msgid "The host collection has been associated."
-msgstr "Hostsammlung wurde verknüpft"
+msgstr "Die Hostsammlung wurde zugeordnet."
 
 msgid "Could not add host collection"
 msgstr "Hostsammlung konnte nicht hinzugefügt werden"
 
-#, fuzzy
 msgid "The host collection has been removed."
-msgstr "Hostsammlung wurde entfernt"
+msgstr "Die Hostsammlung wurde entfernt."
 
 msgid "Could not remove host collection"
 msgstr "Hostsammlung konnte nicht entfernt werden"
 
-#, fuzzy
 msgid "The host has been added."
-msgstr "Inhaltshost wurde hinzugefügt"
+msgstr "Host wurde hinzugefügt"
 
-#, fuzzy
 msgid "Could not add host"
-msgstr "Version konnte nicht hinzugefügt werden"
+msgstr "Host konnte nicht hinzugefügt werden"
 
-#, fuzzy
 msgid "The host has been removed."
-msgstr "Repository wurde entfernt"
+msgstr "Host wurde entfernt"
 
-#, fuzzy
 msgid "Could not remove host"
-msgstr "Version konnte nicht entfernt werden"
+msgstr "Host konnte nicht entfernt werden"
 
 msgid "Manage the capsule content"
 msgstr "Capsule-Inhalte verwalten"
@@ -269,138 +263,128 @@ msgstr "Capsule-Inhalte verwalten"
 msgid "Organization"
 msgstr "Organisation"
 
-#, fuzzy
 msgid "Lifecycle environment successfully added to the capsule."
-msgstr "Lebenszyklusumgebung erfolgreich zur Capsule hinzugefügt"
+msgstr "Lebenszyklusumgebung erfolgreich zur Kapsel hinzugefügt."
 
 msgid "Could not add the lifecycle environment to the capsule"
 msgstr "Lebenszyklusumgebung konnte nicht zur Capsule hinzugefügt werden"
 
-#, fuzzy
 msgid "Organization ID"
-msgstr "Organisation"
+msgstr "Organisations-ID"
 
-#, fuzzy
 msgid "Organization name"
-msgstr "Organisation"
+msgstr "Organisationsname"
 
-#, fuzzy
 msgid "Lifecycle environment successfully removed from the capsule."
-msgstr "Lebenszyklusumgebung erfolgreich von Capsule entfernt"
+msgstr "Lebenszyklusumgebung erfolgreich aus der Kapsel entfernt."
 
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "Lebenszyklusumgebung konnte nicht von Capsule entfernt werden"
 
-#, fuzzy
 msgid "Capsule content is being synchronized in task %{id}."
-msgstr "Capsule-Inhalte werden synchronisiert in Task %{id}"
+msgstr "Kapselinhalt wird in Aufgabe %{id} synchronisiert."
 
 msgid "Could not synchronize capsule content"
 msgstr "Capsule-Inhalte konnten nicht synchronisiert werden"
 
 msgid "Last sync"
-msgstr ""
+msgstr "Letzte Synchronisierung"
 
 msgid "Status"
 msgstr "Status"
 
 msgid "Currently running sync tasks"
-msgstr ""
+msgstr "Laufen derzeit Synchronisierungsaufgaben"
 
 msgid "Task id"
-msgstr ""
+msgstr "Aufgabenkennung"
 
 msgid "Progress"
-msgstr ""
+msgstr "Fortschritt"
 
 msgid "Last failure"
-msgstr ""
+msgstr "Letzter Fehlschlag"
 
-#, fuzzy
 msgid "Messages"
-msgstr "Meldung: %s"
+msgstr "Nachricht"
 
 msgid "Capsule is synchronized"
-msgstr ""
+msgstr "Capsule ist synchronisiert"
 
 msgid "%{count} environment(s) can be synchronized: %{names}"
-msgstr ""
+msgstr "%{count} Umgebung(en) können synchronisiert werden: %{names}"
 
-#, fuzzy
 msgid "Lifecycle Environments"
-msgstr "Lebenszyklusumgebung"
+msgstr "Lebenszyklusumgebungen"
 
-#, fuzzy
 msgid "Content Views"
-msgstr "Inhaltsansicht"
+msgstr "Inhaltsansichten"
 
 msgid "Composite"
 msgstr "Verbund"
 
-#, fuzzy
 msgid "Last Published"
-msgstr "Veröffentlicht"
+msgstr "Letzte Veröffentlichung"
 
 msgid "Content"
 msgstr "Inhalt"
 
 msgid "Hosts"
-msgstr ""
+msgstr "Hosts"
 
-#, fuzzy
 msgid "Products"
-msgstr "Produkt"
+msgstr "Produkte"
 
 msgid "Yum repos"
-msgstr ""
+msgstr "Yum-Repos"
 
 msgid "Container Image repos"
-msgstr ""
+msgstr "Container-Image-Repositorys"
 
 msgid "Packages"
 msgstr "Pakete"
 
-#, fuzzy
 msgid "Package groups"
 msgstr "Paketgruppen"
 
 msgid "Errata"
 msgstr "Errata"
 
-#, fuzzy
 msgid "Puppet modules"
 msgstr "Puppet-Module"
 
-#, fuzzy
 msgid "Name of the composite content view"
-msgstr "Verbundinhaltsansicht erstellen"
+msgstr "Name der zusammengesetzten Inhaltsansicht"
 
 msgid "Override product content defaults"
-msgstr ""
+msgstr "Standardeinstellungen für Produktinhalte überschreiben"
 
-#, fuzzy
 msgid "Updated content override."
-msgstr "Aktualisiert"
+msgstr "Aktualisierte Inhaltsüberschreibung."
 
-#, fuzzy
 msgid "Could not update content override"
-msgstr "Inhaltshost konnte nicht aktualisiert werden"
+msgstr "Inhaltsüberschreibung konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Label of the content"
-msgstr "Kennung"
+msgstr "Label des Inhalts"
 
 msgid ""
 "Override parameter key or name.\n"
 "To enable or disable a repo select 'enabled'.\n"
 "Default value: enabled"
 msgstr ""
+"Parameterschlüssel oder -name überschreiben.\n"
+"Um ein Repository zu aktivieren oder zu deaktivieren, wählen Sie "
+"'aktiviert'.\n"
+"Standardwert: aktiviert"
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
 msgstr ""
+"Wert überschreiben. Hinweis für die Repo-Aktivierung können Sie einen "
+"booleschen Wert verwenden"
 
 msgid "Remove a content override"
-msgstr ""
+msgstr "Inhaltsüberschreibung entfernen"
 
 msgid "Content View ID"
 msgstr "Inhaltsansichts-ID"
@@ -411,21 +395,17 @@ msgstr "Kennung"
 msgid "Repository IDs"
 msgstr "Repository-IDs"
 
-#, fuzzy
 msgid "Content Host Count"
-msgstr "Inhalt"
+msgstr "Anzahl der Host-Counts"
 
-#, fuzzy
 msgid "Yum Repositories"
-msgstr "Repositorys"
+msgstr "Yum-Repositorys"
 
-#, fuzzy
 msgid "Container Image Repositories"
-msgstr "Repositorys"
+msgstr "Container-Image-Repositorys"
 
-#, fuzzy
 msgid "OSTree Repositories"
-msgstr "Repositorys"
+msgstr "OSTree-Repositorys"
 
 msgid "Puppet Modules"
 msgstr "Puppet-Module"
@@ -449,9 +429,8 @@ msgid "Components"
 msgstr "Komponenten"
 
 msgid "Activation Keys"
-msgstr ""
+msgstr "Aktivierungsschlüssel"
 
-#, fuzzy
 msgid "Content view created."
 msgstr "Inhaltsansicht erstellt"
 
@@ -462,208 +441,197 @@ msgid "Create a composite content view"
 msgstr "Verbundinhaltsansicht erstellen"
 
 msgid "Copy a content view"
-msgstr ""
+msgstr "Inhaltsansicht kopieren"
 
 msgid "Content view name to search by"
 msgstr "Name der zu suchenden Inhaltsansicht"
 
-#, fuzzy
 msgid "New content view name"
-msgstr "Inhaltsansichtsname"
+msgstr "Neuer Name für die Inhaltsansicht"
 
-#, fuzzy
 msgid "Content view copied."
-msgstr "Inhaltsansicht erstellt"
+msgstr "Inhaltsansicht kopiert."
 
-#, fuzzy
 msgid "Could not copy the content view"
-msgstr "Inhaltsansicht konnte nicht erstellt werden"
+msgstr "Inhaltsansicht konnte nicht kopiert werden"
 
-#, fuzzy
 msgid "Content view updated."
 msgstr "Inhaltsansicht aktualisiert"
 
 msgid "Could not update the content view"
 msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Content view is being deleted with task %{id}."
-msgstr "Inhaltsansicht wird gelöscht durch Task %{id}"
+msgstr "Inhaltsansicht wird mit Aufgabe %{id} gelöscht."
 
 msgid "Could not delete the content view"
 msgstr "Inhaltsansicht konnte nicht gelöscht werden"
 
-#, fuzzy
 msgid "Content view is being published with task %{id}."
-msgstr "Inhaltsansicht wird veröffentlicht durch Task %{id}"
+msgstr "Inhaltsansicht wird mit Aufgabe %{id} veröffentlicht."
 
 msgid "Could not publish the content view"
 msgstr "Inhaltsansicht konnte nicht veröffentlicht werden"
 
-#, fuzzy
 msgid "Content view is being removed from environment with task %{id}."
-msgstr "Inhaltsansicht wird von Umgebung entfernt durch Task %{id}"
+msgstr ""
+"Die Inhaltsansicht wird mit der Aufgabe %{id} aus der Umgebung entfernt."
 
 msgid "Could not remove the content view from environment"
 msgstr "Inhaltsansicht konnte nicht aus Umgebung entfernt werden"
 
-#, fuzzy
 msgid "Version ids to remove"
-msgstr "Version"
+msgstr "Zu entfernende Versions-IDs"
 
 msgid "Environment ids to remove"
-msgstr ""
+msgstr "Zu entfernende Umgebungs-IDs"
 
-#, fuzzy
 msgid "Content view objects are being removed task %{id}."
-msgstr "Inhaltsansichtsobjekte werden entfernt durch Task %{id}"
+msgstr "Inhaltsansichtsobjekte werden aus Aufgabe %{id} entfernt."
 
 msgid "Could not remove objects from content view"
 msgstr "Objekte konnten nicht aus Inhaltsansicht entfernt werden"
 
 msgid "Add a content view version to a composite view"
 msgstr ""
+"Hinzufügen einer Inhaltsansichtsversion zu einer zusammengesetzten Ansicht"
 
-#, fuzzy
 msgid "The component version has been added."
-msgstr "Komponentenversion wurde hinzugefügt"
+msgstr "Die Komponentenversion wurde hinzugefügt."
 
 msgid "Could not add version"
 msgstr "Version konnte nicht hinzugefügt werden"
 
 msgid "Remove a content view version from a composite view"
 msgstr ""
+"Entfernen einer Inhaltsansichtsversion aus einer zusammengesetzten Ansicht"
 
-#, fuzzy
 msgid "The component version has been removed."
-msgstr "Komponentenversion wurde entfernt"
+msgstr "Die Komponentenversion wurde entfernt."
 
 msgid "Could not remove version"
 msgstr "Version konnte nicht entfernt werden"
 
-#, fuzzy
-msgid "Content View identifier of the component who's latest version is desired"
-msgstr "Inhaltsansicht"
-
-#, fuzzy
-msgid "Content View name of the component who's latest version is desired"
-msgstr "Inhaltsansicht"
-
-#, fuzzy
-msgid "Content View Version identifier of the component"
-msgstr "Inhaltsansicht"
-
-#, fuzzy
 msgid ""
-"Content View Version number of the component. Either use this or --component-c"
-"ontent-view-version-id option"
-msgstr "Inhaltsansicht"
+"Content View identifier of the component who's latest version is desired"
+msgstr ""
+"Inhaltsansichts-ID der Komponente, deren neueste Version gewünscht wird"
+
+msgid "Content View name of the component who's latest version is desired"
+msgstr ""
+"Inhaltsansichtsname der Komponente, deren neueste Version gewünscht wird"
+
+msgid "Content View Version identifier of the component"
+msgstr "Inhaltsansicht Versionskennung der Komponente"
+
+msgid ""
+"Content View Version number of the component. Either use this or --component-"
+"content-view-version-id option"
+msgstr ""
+"Inhaltsansicht Versionsnummer der Komponente. Verwenden Sie entweder diese "
+"oder die Option --component-content-view-version-id"
 
 msgid "Select the latest version of the components content view is desired"
 msgstr ""
+"Wählen Sie die neueste Version der Komponenteninhaltsansicht die erwünscht "
+"ist"
 
 msgid "Please provide --component-content-view-id"
-msgstr ""
+msgstr "Bitte geben Sie --component-content-view-id an"
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-view"
-"-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-"
+"view-version or --latest for the latest version"
 msgstr ""
+"Bitte geben Sie --component-content-view-version-id oder --component-content-"
+"view-version oder --latest für die neueste Version an"
 
 msgid "Id"
 msgstr "ID"
 
-#, fuzzy
 msgid "Current Version"
-msgstr "Version"
+msgstr "Aktuelle Version"
 
-#, fuzzy
 msgid "Version Id"
-msgstr "Version"
+msgstr "Versions-ID"
 
 msgid "Latest"
-msgstr ""
+msgstr "Neuste"
 
-#, fuzzy
 msgid "No Published Version"
-msgstr "Veröffentlicht"
+msgstr "Keine veröffentlichte Version"
 
 msgid "Component added to content view."
-msgstr ""
+msgstr "Komponente zur Inhaltsansicht hinzugefügt."
 
-#, fuzzy
 msgid "Could not add the component"
-msgstr "Inhalte konnten nicht hochgeladen werden"
+msgstr "Komponente konnte nicht hinzugefügt werden"
 
-#, fuzzy
 msgid "Content view component updated."
-msgstr "Inhalt"
+msgstr "Inhaltsansichtskomponente aktualisiert."
 
-#, fuzzy
 msgid "Could not update the content view component"
-msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
+msgstr "Inhaltsansichtskomponente konnte nicht aktualisiert werden"
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of value"
-"s"
-msgstr ""
-
-msgid ""
-"Array of component content view identfiers to remove. Comma separated list of "
+"Array of component content view names to remove. Comma separated list of "
 "values"
 msgstr ""
+"Array von zu entfernenden Komponenteninhaltsansichtsnamen. Kommagetrennte "
+"Werteliste"
 
-#, fuzzy
+msgid ""
+"Array of component content view identfiers to remove. Comma separated list "
+"of values"
+msgstr ""
+"Array von zu entfernenden Komponenteninhaltsansichts-IDs. Kommagetrennte "
+"Werteliste"
+
 msgid "Components removed from content view."
-msgstr "Komponenten"
+msgstr "Komponenten aus der Inhaltsansicht entfernt."
 
-#, fuzzy
 msgid "Could not remove the components"
-msgstr "Inhalte konnten nicht hochgeladen werden"
+msgstr "Die Komponenten konnten nicht entfernt werden"
 
 msgid "Latest(Currently %s)"
 msgstr "Letzter (derzeit %s)"
 
-#, fuzzy
 msgid "Puppet module added to content view."
-msgstr "Puppet-Modul zur Inhaltsansicht hinzugefügt"
+msgstr "Puppet-Modul zur Inhaltsansicht hinzugefügt."
 
 msgid "Could not add the puppet module"
 msgstr "Puppet-Modul konnte nicht hinzugefügt werden"
 
-#, fuzzy
 msgid "Puppet module removed from content view."
-msgstr "Puppet-Modul aus Inhaltsansicht entfernt"
+msgstr "Puppet-Modul aus Inhaltsansicht entfernt."
 
 msgid "Couldn't remove puppet module from the content view"
 msgstr "Puppet-Modul konnte nicht aus Inhaltsansicht entfernt werden"
 
-#, fuzzy
 msgid "Content View numeric identifier"
-msgstr "Inhaltsansicht"
+msgstr "Numerischer Bezeichner der Inhaltsansicht"
 
-#, fuzzy
 msgid "Content View name"
 msgstr "Inhaltsansichtsname"
 
 msgid "count of unused versions to keep"
-msgstr ""
+msgstr "Anzahl der nicht verwendeten Versionen, die aufbewahrt werden sollen"
 
 msgid "Invalid value for --count option: value must be 0 or greater."
-msgstr ""
+msgstr "Ungültiger Wert für Option --count: Wert muss 0 oder größer sein."
 
 msgid "No versions to delete."
-msgstr ""
+msgstr "Keine Versionen zum Löschen."
 
-#, fuzzy
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
-"'%{task_id}'."
-msgstr "Version"
+"Version '%{version}' of content view '%{view}' scheduled for deletion in "
+"task '%{task_id}'."
+msgstr ""
+"Version '%{version}' der Inhaltsansicht '%{view}' zum Löschen in Aufgabe "
+"'%{task_id}' geplant."
 
-#, fuzzy
 msgid "Version '%{version}' of content view '%{view}' deleted."
-msgstr "Version"
+msgstr "Version '%{version}' der Inhaltsansicht '%{view}' gelöscht."
 
 msgid "Content View Name"
 msgstr "Inhaltsansichtsname"
@@ -674,132 +642,133 @@ msgstr "Inhaltsansichtskennung"
 msgid "Repositories"
 msgstr "Repositorys"
 
-#, fuzzy
 msgid "Content View Version is being republished with task %{id}."
-msgstr "Inhaltsansicht wird veröffentlicht durch Task %{id}"
+msgstr ""
+"Die Inhaltsansichtsversion wird mit der Aufgabe %{id} erneut veröffentlicht."
 
-#, fuzzy
 msgid "Could not republish the Content View"
-msgstr "Inhaltsansicht konnte nicht veröffentlicht werden"
+msgstr "Inhaltsansicht konnte nicht erneut veröffentlicht werden"
 
-#, fuzzy
 msgid "Content view is being promoted with task %{id}."
-msgstr "Inhaltsansicht wird übertragen durch Task %{id}"
+msgstr "Inhaltsansicht wird mit Aufgabe %{id} hochgestuft."
 
 msgid "Could not promote the content view"
 msgstr "Inhaltsansicht konnte nicht übertragen werden"
 
-msgid "force content view promotion and bypass lifecycle environment restriction"
-msgstr ""
-
-#, fuzzy
-msgid "Name of the target environment"
-msgstr "Name"
-
-#, fuzzy
-msgid "Id of the target environment"
-msgstr "ID"
-
-#, fuzzy
 msgid ""
-"Environment name from where to promote its version from (if version is unknown"
-")"
-msgstr "nein"
+"force content view promotion and bypass lifecycle environment restriction"
+msgstr ""
+"Erzwingen Sie die Werbung für die Inhaltsansicht und umgehen Sie die "
+"Einschränkung der Lebenszyklusumgebung"
 
-#, fuzzy
+msgid "Name of the target environment"
+msgstr "Name der Zielumgebung"
+
+msgid "Id of the target environment"
+msgstr "ID der Zielumgebung"
+
+msgid ""
+"Environment name from where to promote its version from (if version is "
+"unknown)"
+msgstr ""
+"Umgebungsname, von dem aus seine Version hochgestuft werden soll (wenn die "
+"Version unbekannt ist)"
+
 msgid "Id of the environment from where to promote its version "
-msgstr "ID"
+msgstr "ID der Umgebung, von der aus ihre Version promoted werden soll"
 
 msgid "Incremental update is being performed with task %{id}."
-msgstr ""
+msgstr "Inkrementelles Update wird mit Aufgabe %{id} durchgeführt."
 
 msgid "An error occurred incrementally updating the content view"
 msgstr ""
+"Beim inkrementellen Aktualisieren der Inhaltsansicht ist ein Fehler "
+"aufgetreten"
 
-#, fuzzy
 msgid "list of lifecycle environment IDs to update the content view version in"
-msgstr "ID"
-
-msgid "list of lifecycle environment names to update the content view version in"
 msgstr ""
+"Liste der Lebenszyklusumgebungs-IDs zum Aktualisieren der "
+"Inhaltsansichtsversion in"
 
-#, fuzzy
-msgid "Organization name for resolving lifecycle environment names"
-msgstr "Organisation"
-
-#, fuzzy
-msgid "Organization id for resolving lifecycle environment names"
-msgstr "Organisation"
-
-#, fuzzy
 msgid ""
-"Update all editable and applicable hosts within the specified Content View and"
-" \\\n"
-"               Lifecycle Environments"
-msgstr "Lebenszyklusumgebung"
+"list of lifecycle environment names to update the content view version in"
+msgstr ""
+"Liste der Lebenszyklusumgebungsnamen zum Aktualisieren der "
+"Inhaltsansichtsversion in"
 
-#, fuzzy
+msgid "Organization name for resolving lifecycle environment names"
+msgstr "Organisationsname zum Auflösen von Lebenszyklusumgebungsnamen"
+
+msgid "Organization id for resolving lifecycle environment names"
+msgstr "Organisations-ID zum Auflösen von Lebenszyklusumgebungsnamen"
+
+msgid ""
+"Update all editable and applicable hosts within the specified Content View "
+"and \\\n"
+"               Lifecycle Environments"
+msgstr ""
+"Aktualisieren Sie alle bearbeitbaren und anwendbaren Hosts innerhalb der "
+"angegebenen Inhaltsansicht und \\ \n"
+"Lebenszyklusumgebungen"
+
 msgid "IDs of hosts to update"
-msgstr "ID"
+msgstr "IDs der zu ändernden Hosts"
 
 msgid "Export a content view (deprecated)"
-msgstr ""
+msgstr "Exportierte Inhaltsansicht (veraltet)"
 
-#, fuzzy
 msgid "Content view is being exported in task %{id}."
-msgstr "Inhaltsansicht wird übertragen durch Task %{id}"
+msgstr "Inhaltsansicht wird in Aufgabe %{id} exportiert."
 
-#, fuzzy
 msgid "Could not export the content view"
-msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
+msgstr "Inhaltsansicht konnte nicht exportiert werden"
 
 msgid "Export a content view version"
-msgstr ""
+msgstr "Eine Inhaltsansichtsversion exportieren"
 
-#, fuzzy
 msgid "Content view export is available in %{directory}."
-msgstr "Inhalt"
+msgstr "Der Export von Inhaltsansichten ist in %{directory} verfügbar."
 
-#, fuzzy
 msgid "Content View Version numeric identifier"
-msgstr "Inhaltsansicht"
+msgstr "Numerische Kennung der Inhaltsansichtsversion"
 
 msgid "Directory to put content view version export into."
 msgstr ""
+"Verzeichnis, in das der Export der Inhaltsansichtsversion eingefügt werden "
+"soll."
 
-#, fuzzy
 msgid ""
-"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is supporte"
-"d at this time. Please remove the repository from the Content View, republish "
-"and try the export again."
-msgstr "Inhaltsansicht"
+"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is "
+"supported at this time. Please remove the repository from the Content View, "
+"republish and try the export again."
+msgstr ""
+"Das Repository '#{repo['name']}' ist ein Nicht-Yum-Repository. Derzeit wird "
+"nur Yum unterstützt. Bitte entfernen Sie das Repository aus der "
+"Inhaltsansicht, veröffentlichen Sie es erneut und versuchen Sie den Export "
+"erneut."
 
 msgid "Import a content view version"
-msgstr ""
+msgstr "Eine Inhaltsansichtsversion importieren"
 
-#, fuzzy
 msgid "Content view imported."
-msgstr "Inhaltsansicht aktualisiert"
+msgstr "Inhaltsansicht importiert."
 
-#, fuzzy
 msgid "Could not import the content view"
-msgstr "Inhaltsansicht konnte nicht aktualisiert werden"
+msgstr "Inhaltsansicht konnte nicht importiert werden"
 
-#, fuzzy
 msgid "Organization numeric identifier"
-msgstr "Organisation"
+msgstr "Numerische Kennung der Organisation"
 
-#, fuzzy
 msgid "Location of export tar on disk"
-msgstr "Standort"
+msgstr "Speicherort des Export-Tar auf der Festplatte"
 
-#, fuzzy
 msgid "Export tar #{options['option_export_tar']} does not exist."
-msgstr "nein"
+msgstr "Export tar #{options['option_export_tar']} existiert nicht."
 
-#, fuzzy
 msgid "Unable to sync repositories, no library repository found for %s"
-msgstr "nein"
+msgstr ""
+"Repositorys können nicht synchronisiert werden, kein Bibliotheksrepository "
+"gefunden für %s"
 
 msgid "Errata ID"
 msgstr "Errata-ID"
@@ -807,37 +776,35 @@ msgstr "Errata-ID"
 msgid "Type"
 msgstr "Typ"
 
-#, fuzzy
 msgid "Title"
-msgstr "Zeit"
+msgstr "Titel"
 
 msgid "Reboot Suggested"
-msgstr ""
+msgstr "Neustart empfohlen"
 
 msgid "Updated"
 msgstr "Aktualisiert"
 
 msgid "Issued"
-msgstr ""
+msgstr "Ausgegeben"
 
 msgid "Release"
 msgstr "Release"
 
-#, fuzzy
 msgid "Solution"
-msgstr "Standort"
+msgstr "Lösung"
 
 msgid "Module Streams"
-msgstr ""
+msgstr "Module Streams"
 
 msgid "Stream"
-msgstr ""
+msgstr "Stream"
 
 msgid "Path"
-msgstr ""
+msgstr "Pfad"
 
 msgid "Checksum"
-msgstr ""
+msgstr "Prüfsumme"
 
 msgid "Filter ID"
 msgstr "Filter-ID"
@@ -860,23 +827,20 @@ msgstr "Typen"
 msgid "Created"
 msgstr "Erstellt"
 
-#, fuzzy
 msgid "Filter created."
-msgstr "Filter erstellt"
+msgstr "Filter erstellt."
 
 msgid "Could not create the filter"
 msgstr "Filter konnte nicht erstellt werden"
 
-#, fuzzy
 msgid "Filter updated."
-msgstr "Filter aktualisiert"
+msgstr "Filter aktualisiert."
 
 msgid "Could not update the filter"
 msgstr "Filter konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Filter deleted."
-msgstr "Filter gelöscht"
+msgstr "Filter gelöscht."
 
 msgid "Could not delete the filter"
 msgstr "Filter konnte nicht gelöscht werden"
@@ -884,34 +848,29 @@ msgstr "Filter konnte nicht gelöscht werden"
 msgid "Rule ID"
 msgstr "Regel-ID"
 
-#, fuzzy
 msgid "Architecture"
 msgstr "Architektur"
 
-#, fuzzy
 msgid "Date Type"
-msgstr "Typ"
+msgstr "Datumstyp"
 
-#, fuzzy
 msgid "Filter rule created."
-msgstr "Filterregel erstellt"
+msgstr "Filterregel erstellt."
 
 msgid "Could not create the filter rule"
 msgstr "Filterregel konnte nicht erstellt werden"
 
 msgid "Package and package group names"
-msgstr ""
+msgstr "Paket- und Paketgruppennamen"
 
-#, fuzzy
 msgid "Filter rule updated."
-msgstr "Filterregel aktualisiert"
+msgstr "Filterregel aktualisiert."
 
 msgid "Could not update the filter rule"
 msgstr "Filterregel konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Filter rule deleted."
-msgstr "Filterregel gelöscht"
+msgstr "Filterregel gelöscht."
 
 msgid "Could not delete the filter rule"
 msgstr "Filterregel konnte nicht gelöscht werden"
@@ -922,9 +881,8 @@ msgstr "Inhaltstyp"
 msgid "Product"
 msgstr "Produkt"
 
-#, fuzzy
 msgid "GPG Key created."
-msgstr "GPG-Schlüssel erstellt"
+msgstr "GPG-Schlüssel erstellt."
 
 msgid "Could not create GPG Key"
 msgstr "GPG-Schlüssel konnte nicht erstellt werden"
@@ -932,16 +890,14 @@ msgstr "GPG-Schlüssel konnte nicht erstellt werden"
 msgid "GPG Key file"
 msgstr "GPG-Schlüsseldatei"
 
-#, fuzzy
 msgid "GPG Key updated."
-msgstr "GPG-Schlüssel aktualisiert"
+msgstr "GPG-Schlüssel aktualisiert."
 
 msgid "Could not update GPG Key"
 msgstr "GPG-Schlüssel konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "GPG Key deleted."
-msgstr "GPG-Schlüssel gelöscht"
+msgstr "GPG-Schlüssel gelöscht."
 
 msgid "Could not delete the GPG Key"
 msgstr "GPG-Schlüssel konnte nicht gelöscht werden"
@@ -949,304 +905,280 @@ msgstr "GPG-Schlüssel konnte nicht gelöscht werden"
 msgid "Limit"
 msgstr "Grenze"
 
-#, fuzzy
 msgid "Host collection created."
-msgstr "Hostsammlung erstellt"
+msgstr "Hostsammlung erstellt."
 
 msgid "Could not create the host collection"
 msgstr "Hostsammlung konnte nicht erstellt werden"
 
 msgid "Total Hosts"
-msgstr ""
+msgstr "Hosts gesamt:"
 
-#, fuzzy
 msgid "Host Collection ID"
-msgstr "Hostsammlungen"
+msgstr "Hostsammlungs-ID"
 
-#, fuzzy
 msgid "Host Collection Name"
-msgstr "Hostsammlungen"
+msgstr "Name der Hostsammlung"
 
-#, fuzzy
 msgid "Copy a host collection"
-msgstr "Hostsammlung konnte nicht hinzugefügt werden"
+msgstr "Hostsammlung kopieren"
 
 msgid "New host collection name"
-msgstr ""
+msgstr "Neuer Name für die Hostsammlung"
 
-#, fuzzy
 msgid "New host collection created."
-msgstr "Hostsammlung erstellt"
+msgstr "Neue Hostsammlung erstellt."
 
-#, fuzzy
 msgid "Could not create the new host collection"
-msgstr "Hostsammlung konnte nicht erstellt werden"
+msgstr "Neue Hostsammlung konnte nicht erstellt werden"
 
-#, fuzzy
 msgid "Host collection updated."
-msgstr "Hostsammlung aktualisiert"
+msgstr "Hostsammlung konnte nicht aktualisiert werden."
 
 msgid "Could not update the the host collection"
 msgstr "Hostsammlung konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Host collection deleted."
-msgstr "Hostsammlung gelöscht"
+msgstr "Hostsammlung gelöscht."
 
 msgid "Could not delete the host collection"
 msgstr "Hostsammlung konnte nicht gelöscht werden"
 
-#, fuzzy
 msgid "The host(s) has been added."
-msgstr "Inhaltshosts wurden hinzugefügt"
+msgstr "Der/Die Host(s) wurde(n) hinzugefügt."
 
-#, fuzzy
 msgid "Could not add host(s)"
-msgstr "Inhaltshosts konnten nicht hinzugefügt werden"
+msgstr "Host(s) konnte(n) nicht hinzugefügt werden"
 
-#, fuzzy
 msgid "The host(s) has been removed."
-msgstr "Inhaltshosts wurden entfernt"
+msgstr "Der/Die Host(s) wurde(n) entfernt."
 
-#, fuzzy
 msgid "Could not remove host(s)"
-msgstr "Inhaltshosts konnten nicht entfernt werden"
+msgstr "Der/Die Host(s) konnte(n) nicht entfernt werden"
 
 msgid "Manipulate errata for a host collection"
-msgstr ""
+msgstr "Errata für Hostsammlung bearbeiten"
 
 msgid "Install errata on content hosts contained within a host collection"
 msgstr ""
+"Errata auf Inhaltshosts installieren, die in einer Hostsammlung enthalten "
+"sind"
 
-#, fuzzy
 msgid "Successfully scheduled installation of errata."
-msgstr "Erfolgreich"
+msgstr "Erfolgreich geplante Installation von Errata."
 
-#, fuzzy
 msgid "Could not schedule installation of errata"
-msgstr "nein"
+msgstr "Installation des Errata konnte nicht geplant werden."
 
-#, fuzzy
 msgid "List of Errata to install"
-msgstr "Errata"
+msgstr "Liste der zu installierenden Errata"
 
 msgid "Manipulate packages for a host collection"
-msgstr ""
+msgstr "Pakete für eine Hostsammlung manipulieren"
 
 msgid "comma-separated list of packages to install"
-msgstr ""
+msgstr "durch Kommas getrennte Liste der zu installierenden Pakete"
 
 msgid "Install packages on content hosts contained within a host collection"
 msgstr ""
+"Pakete auf Inhaltshosts installieren, die in einer Hostsammlung enthalten "
+"sind"
 
-#, fuzzy
 msgid "Successfully scheduled installation of package(s)."
-msgstr "Erfolgreich"
+msgstr "Erfolgreich geplante Installation von Paket(en)."
 
-#, fuzzy
 msgid "Could not schedule installation of package(s)"
-msgstr "nein"
+msgstr "Installation von Paket(en) konnte nicht geplant werden"
 
 msgid "Update packages on content hosts contained within a host collection"
 msgstr ""
+"Pakete auf Inhaltshosts aktualisieren, die in einer Hostsammlung enthalten "
+"sind"
 
-#, fuzzy
 msgid "Successfully scheduled update of package(s)."
-msgstr "Erfolgreich"
+msgstr "Erfolgreich geplantes Update von Paket(en)."
 
-#, fuzzy
 msgid "Could not schedule update of package(s)"
-msgstr "nein"
+msgstr "Aktualisierung von Paket(en) konnte nicht geplant werden"
 
 msgid "Remove packages on content hosts contained within a host collection"
 msgstr ""
+"Pakete auf Inhaltshosts entfernen, die in einer Hostsammlung enthalten sind"
 
-#, fuzzy
 msgid "Successfully scheduled removal of package(s)."
-msgstr "Erfolgreich"
+msgstr "Erfolgreich geplantes Entfernen von Paketen."
 
-#, fuzzy
 msgid "Could not schedule removal of package(s)"
-msgstr "nein"
+msgstr "Das Entfernen von Paket(en) konnte nicht geplant werden"
 
 msgid "Manipulate package-groups for a host collection"
-msgstr ""
+msgstr "Paketgruppen für eine Hostsammlung manipulieren"
 
 msgid "comma-separated list of package-groups to install"
-msgstr ""
+msgstr "durch Kommas getrennte Liste der zu installierenden Paketgruppen"
 
-msgid "Install package-groups on content hosts contained within a host collection"
+msgid ""
+"Install package-groups on content hosts contained within a host collection"
 msgstr ""
+"Install package-groups on content hosts contained within a host collection"
 
-#, fuzzy
 msgid "Successfully scheduled installation of package-group(s)."
-msgstr "Erfolgreich"
+msgstr "Erfolgreich geplante Installation der Paketgruppe(n)."
 
-#, fuzzy
 msgid "Could not schedule installation of package-group(s)"
-msgstr "nein"
+msgstr "Installation von Paketgruppe(n) konnte nicht geplant werden"
 
-msgid "Update package-groups on content hosts contained within a host collection"
+msgid ""
+"Update package-groups on content hosts contained within a host collection"
 msgstr ""
+"Paketgruppen auf Inhaltshosts aktualisieren, die in einer Hostsammlung "
+"enthalten sind"
 
-#, fuzzy
 msgid "Successfully scheduled update of package-groups(s)."
-msgstr "Erfolgreich"
+msgstr "Erfolgreich geplantes Update der Paketgruppe(n)."
 
-#, fuzzy
 msgid "Could not schedule update of package-group(s)"
-msgstr "nein"
+msgstr "Aktualisierung der Paketgruppe(n) konnte nicht geplant werden"
 
-msgid "Remove package-groups on content hosts contained within a host collection"
+msgid ""
+"Remove package-groups on content hosts contained within a host collection"
 msgstr ""
+"Paketgruppen auf Inhaltshosts entfernen, die in einer Hostsammlung enthalten "
+"sind"
 
-#, fuzzy
 msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "Erfolgreich"
+msgstr "Erfolgreich geplantes Entfernen der Paketgruppe(n)."
 
-#, fuzzy
 msgid "Could not schedule removal of package-group(s)"
-msgstr "nein"
+msgstr "Das Entfernen der Paketgruppe(n) konnte nicht geplant werden"
 
-#, fuzzy
 msgid "Content Source name "
-msgstr "Inhalt"
+msgstr "Inhaltsquellenname"
 
-#, fuzzy
 msgid "Content Source"
-msgstr "Inhalt"
+msgstr "Inhaltsquelle"
 
-#, fuzzy
 msgid "Errata is being applied with task %{id}."
-msgstr "Errata"
+msgstr "Errata wird mit Aufgabe %{id} angewendet."
 
-#, fuzzy
 msgid "Could not apply errata"
-msgstr "nein"
+msgstr "Errata konnte nicht angewandt werden"
 
-#, fuzzy
 msgid "Erratum ID"
-msgstr "Errata-ID"
+msgstr "Erratum-ID"
 
 msgid "Installable"
-msgstr ""
+msgstr "Installierbar"
 
-#, fuzzy
 msgid "Errata recalculated with task %{id}."
-msgstr "Errata"
+msgstr "Errata mit Aufgabe %{id} neu berechnet."
 
-#, fuzzy
 msgid "Could not recalculate errata"
-msgstr "nein"
+msgstr "Errata konnten nicht neu berechnet werden"
 
-#, fuzzy
 msgid "Content Information"
-msgstr "Inhalt"
+msgstr "Inhaltsinformationen"
 
 msgid "Kickstart Repository"
-msgstr ""
+msgstr "Kickstart-Repository"
 
-#, fuzzy
 msgid "Applicable Packages"
-msgstr "Pakete"
+msgstr "Anwendbare Pakete"
 
-#, fuzzy
 msgid "Upgradable Packages"
-msgstr "Pakete"
+msgstr "Aktualisierbare Pakete"
 
-#, fuzzy
 msgid "Applicable Errata"
-msgstr "Errata"
+msgstr "Relevante Errata"
 
 msgid "Enhancement"
-msgstr ""
+msgstr "Erweiterung"
 
 msgid "Bug Fix"
-msgstr ""
+msgstr "Bugfix"
 
 msgid "Security"
-msgstr ""
+msgstr "Sicherheit"
 
 msgid "Subscription Information"
-msgstr ""
+msgstr "Subskriptionsinformationen"
 
 msgid "Last Checkin"
-msgstr ""
+msgstr "Letzte Anmeldung"
 
 msgid "Autoheal"
 msgstr "Automatische Neusubskription"
 
 msgid "Registered To"
-msgstr ""
+msgstr "Registriert zu"
 
 msgid "Registered At"
-msgstr ""
+msgstr "Registriert auf"
 
 msgid "Registered by Activation Keys"
-msgstr ""
+msgstr "Registriert durch Aktivierungsschlüssel"
 
 msgid "Kickstart repository name "
-msgstr ""
+msgstr "Kickstart-Repository-Name"
 
 msgid "Please provide --lifecycle-environment-id"
-msgstr ""
+msgstr "Es wird der Parameter --lifecycle-environment-id benötigt"
 
 msgid "Please provide --content-view-id"
-msgstr ""
+msgstr "Es wird der Parameter --content-view-id benötigt."
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment %{environment_i"
-"d} and content view %{content_view_id}"
+"No such repository with name %{name}, in lifecycle environment "
+"%{environment_id} and content view %{content_view_id}"
 msgstr ""
+"Kein solches Repository mit dem Namen %{name}, in der Lebenszyklusumgebung "
+"%{environment_id} und der Inhaltsansicht %{content_view_id}"
 
 msgid "NVRA"
-msgstr ""
+msgstr "NVRA"
 
 msgid "Host unregistered."
-msgstr ""
+msgstr "Host unregistriert."
 
-#, fuzzy
 msgid "Could not unregister the host"
-msgstr "nein"
+msgstr "Host konnte nicht unregistriert werden."
 
 msgid "Host successfully registered."
-msgstr ""
+msgstr "Host erfolgreich registriert"
 
-#, fuzzy
 msgid "Failed to register host"
-msgstr "Fehlgeschlagen"
+msgstr "Registrierung des Hosts fehlgeschlagen"
 
 msgid "Subscription attached to the host successfully."
-msgstr ""
+msgstr "Abonnement erfolgreich an den Host angehängt."
 
-#, fuzzy
 msgid "Failed to attach subscriptions to the host"
-msgstr "Fehlgeschlagen"
+msgstr "Fehler beim Anhängen von Abonnements an den Host"
 
-#, fuzzy
 msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "Anzahl"
+msgstr ""
+"Anzahl dieser Abonnements, die hinzugefügt werden sollen. Standardmäßig 1"
 
 msgid "Auto attached subscriptions to the host successfully."
-msgstr ""
+msgstr "Automatisches Anhängen von Abonnements an den Host erfolgreich."
 
-#, fuzzy
 msgid "Failed to auto attach subscriptions to the host"
-msgstr "Fehlgeschlagen"
+msgstr "Fehler beim automatischen Anhängen von Abonnements an den Host"
 
 msgid "Subscription removed from the host successfully."
-msgstr ""
+msgstr "Abonnement erfolgreich vom Host entfernt."
 
-#, fuzzy
 msgid "Failed to remove subscriptions from the host"
-msgstr "Fehlgeschlagen"
+msgstr "Abonnements konnten nicht vom Host entfernt werden"
 
-msgid "Remove the first instance of a subscription with matching id and quantity"
+msgid ""
+"Remove the first instance of a subscription with matching id and quantity"
 msgstr ""
+"Entfernen Sie die erste Instanz eines Abonnements mit übereinstimmender ID "
+"und Menge"
 
-#, fuzzy
 msgid "Organization ID to search by"
-msgstr "Name der zu suchenden Organisation"
+msgstr "Kennung der zu suchenden Organisation"
 
 msgid "Organization name to search by"
 msgstr "Name der zu suchenden Organisation"
@@ -1257,21 +1189,17 @@ msgstr "Kennung der zu suchenden Organisation"
 msgid "Capsule name to search by"
 msgstr "Name der zu suchenden Capsule"
 
-#, fuzzy
 msgid "File name to search by"
-msgstr "Name der zu suchenden Task"
+msgstr "Name der zu suchenden Datei"
 
-#, fuzzy
 msgid "Content View Version ID"
-msgstr "Inhaltsansicht"
+msgstr "Versions-ID der Inhaltsansicht"
 
-#, fuzzy
 msgid "Repository ID"
-msgstr "Repository-IDs"
+msgstr "Repository-Kennung"
 
-#, fuzzy
 msgid "Module stream name to search by"
-msgstr "Name des zu suchenden Produkts"
+msgstr "Name des Modul-Streams, nach dem gesucht werden soll"
 
 msgid "Gpg key name to search by"
 msgstr "Name des zu suchenden GPG-Schlüssels"
@@ -1286,7 +1214,7 @@ msgid "Product name to search by"
 msgstr "Name des zu suchenden Produkts"
 
 msgid "Operating system title"
-msgstr ""
+msgstr "Betriebssystemtitel"
 
 msgid "Repository name to search by"
 msgstr "Name des zu suchenden Repositorys"
@@ -1301,7 +1229,7 @@ msgid "Sync plan name to search by"
 msgstr "Name des zu suchenden Synchronisationsplans"
 
 msgid "Task name to search by"
-msgstr "Name der zu suchenden Task"
+msgstr "Name der zu suchenden Aufgabe"
 
 msgid "Puppet module name to search by"
 msgstr "Name des zu suchenden Puppet-Moduls"
@@ -1312,16 +1240,14 @@ msgstr "Name des zu suchenden Puppet-Modulautors"
 msgid "Puppet module's UUID to search by"
 msgstr "Name der zu suchenden Puppet-Modul-UUID"
 
-#, fuzzy
 msgid "Content view version number"
-msgstr "Inhalt"
+msgstr "Inhaltsansichtsversionsnummer"
 
 msgid "Name to search by"
 msgstr "Zu suchender Name"
 
-#, fuzzy
 msgid "Name of the prior environment"
-msgstr "Name"
+msgstr "Name der vorherigen Umgebung"
 
 msgid "Prior"
 msgstr "Vorherige"
@@ -1336,135 +1262,118 @@ msgid "Prior Lifecycle Environment"
 msgstr "Vorherige Lebenszyklusumgebung"
 
 msgid "Unauthenticated Pull"
-msgstr ""
+msgstr "Nicht authentifizierter Pull"
 
-#, fuzzy
 msgid "Registry Name Pattern"
-msgstr "Name"
+msgstr "Registrierungsnamenmuster"
 
-#, fuzzy
 msgid "Environment created."
-msgstr "Umgebung erstellt"
+msgstr "Umgebung erstellt."
 
 msgid "Could not create environment"
 msgstr "Umgebung konnte nicht erstellt werden"
 
-#, fuzzy
 msgid "Environment updated."
-msgstr "Umgebung aktualisiert"
+msgstr "Umgebung aktualisiert."
 
 msgid "Could not update environment"
 msgstr "Umgebung konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Environment deleted."
-msgstr "Umgebung gelöscht"
+msgstr "Umgebung gelöscht."
 
 msgid "Could not delete environment"
 msgstr "Umgebung konnte nicht gelöscht werden"
 
-#, fuzzy
 msgid "Module Stream Name"
-msgstr "Name"
+msgstr "Module Stream Name"
 
-#, fuzzy
 msgid "Context"
-msgstr "Inhalt"
+msgstr "Kontext"
 
 msgid "Artifacts"
-msgstr ""
+msgstr "Artefakte"
 
 msgid "Profiles"
-msgstr ""
+msgstr "Profile"
 
 msgid "RPMs"
-msgstr ""
+msgstr "RPMs"
 
 msgid "Red Hat Repository URL"
 msgstr "Red Hat Repository-URL"
 
 msgid "Service Levels"
-msgstr ""
+msgstr "Servicelevel "
 
-#, fuzzy
 msgid "Organization updated."
-msgstr "Organisation aktualisiert"
+msgstr "Organisation aktualisiert."
 
 msgid "Could not update the organization"
 msgstr "Organisation konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Organization created."
-msgstr "Organisation erstellt"
+msgstr "Organisation erstellt."
 
 msgid "Could not create the organization"
 msgstr "Organisation konnte nicht erstellt werden"
 
-#, fuzzy
 msgid "Organization deleted."
-msgstr "Organisation gelöscht"
+msgstr "Organisation gelöscht."
 
 msgid "Could not delete the organization"
 msgstr "Organisation konnte nicht gelöscht werden"
 
-#, fuzzy
 msgid "version"
 msgstr "Version"
 
 msgid "Commit"
-msgstr ""
+msgstr "Commit"
 
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 msgid "%s  %s"
 msgstr "%s  %s"
 
 msgid "Filename"
-msgstr ""
+msgstr "Dateiname"
 
-#, fuzzy
 msgid "Source RPM"
-msgstr "Quelle"
+msgstr "Quell-RPM"
 
 msgid "Epoch"
-msgstr ""
+msgstr "Epoche"
 
 msgid "Build Host"
-msgstr ""
+msgstr "Build-Host"
 
 msgid "Vendor"
-msgstr ""
+msgstr "Hersteller"
 
 msgid "License"
 msgstr "Lizenz"
 
 msgid "Relative Path"
-msgstr ""
+msgstr "Relativer Pfad"
 
-#, fuzzy
 msgid "Package Group Name"
-msgstr "Paketgruppen"
+msgstr "Paketgruppenname"
 
-#, fuzzy
 msgid "Repository Name"
-msgstr "Repository-IDs"
+msgstr "Repository-Name"
 
-#, fuzzy
 msgid "Default Packages"
-msgstr "Pakete"
+msgstr "Standardpakete"
 
-#, fuzzy
 msgid "Mandatory Packages"
-msgstr "Pakete"
+msgstr "Obligatorische Pakete"
 
-#, fuzzy
 msgid "Conditional Packages"
-msgstr "Pakete"
+msgstr "Bedingte Pakete"
 
-#, fuzzy
 msgid "Optional Packages"
-msgstr "Pakete"
+msgstr "Optionale Pakete"
 
 msgid "Server Response"
 msgstr "Serverantwort"
@@ -1473,17 +1382,16 @@ msgid "FAIL"
 msgstr "FEHLER"
 
 msgid "Duration: %sms"
-msgstr "Dauer: %s ms"
+msgstr "Dauer: %sms"
 
 msgid "Message: %s"
-msgstr "Meldung: %s"
+msgstr "Nachricht: %s"
 
 msgid "Sync State"
 msgstr "Synchronisationsstatus"
 
-#, fuzzy
 msgid "Product created."
-msgstr "Produkt erstellt"
+msgstr "Produkt erstellt."
 
 msgid "Could not create the product"
 msgstr "Produkt konnte nicht erstellt werden"
@@ -1512,62 +1420,53 @@ msgstr "Repository-Name"
 msgid "URL"
 msgstr "URL"
 
-#, fuzzy
 msgid "Product updated."
-msgstr "Produkt aktualisiert"
+msgstr "Produkt aktualisiert."
 
 msgid "Could not update the product"
 msgstr "Produkt konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Product destroyed."
-msgstr "Produkt gelöscht"
+msgstr "Produkt gelöscht."
 
 msgid "Could not destroy the product"
 msgstr "Produkt konnte nicht gelöscht werden"
 
-#, fuzzy
 msgid "Product repositories are being synchronized in task %{id}."
-msgstr "Repository wird synchronisiert durch Task %{id}"
+msgstr "Repository wird synchronisiert durch Job %{id}."
 
-#, fuzzy
 msgid "Could not synchronize the product repositories"
-msgstr "Repository konnte nicht synchronisiert werden"
+msgstr "Die Produkt-Repositorys konnten nicht synchronisiert werden"
 
-#, fuzzy
 msgid "Assign sync plan to product"
-msgstr "Synchronisationsplan zu Produkt zuweisen."
+msgstr "Synchronisationsplan zu Produkt zuweisen"
 
 msgid "Synchronization plan assigned."
 msgstr "Synchronisationsplan zugewiesen."
 
-#, fuzzy
 msgid "Could not assign synchronization plan"
-msgstr "Synchronisationsplan konnte nicht zugewiesen werden."
+msgstr "Synchronisationsplan konnte nicht zugewiesen werden"
 
-#, fuzzy
 msgid "Delete assignment sync plan and product"
-msgstr "Zuweisung von Synchronisationsplan und Produkt löschen."
+msgstr "Zuweisung von Synchronisationsplan und Produkt löschen"
 
 msgid "Synchronization plan removed."
 msgstr "Synchronisationsplan entfernt."
 
-#, fuzzy
 msgid "Could not remove synchronization plan"
-msgstr "Synchronisationsplan konnte nicht entfernt werden."
+msgstr "Synchronisationsplan konnte nicht entfernt werden"
 
 msgid "List associated products"
-msgstr ""
+msgstr "Verknüpfte Produkte auflisten"
 
-#, fuzzy
 msgid "Default Enabled?"
-msgstr "Aktiviert"
+msgstr "Standard aktiviert?"
 
 msgid "Override"
-msgstr ""
+msgstr "Überschreiben"
 
 msgid "Uuid"
-msgstr ""
+msgstr "UUID"
 
 msgid "Summary"
 msgstr "Zusammenfassung"
@@ -1590,13 +1489,11 @@ msgstr "Tag-Liste"
 msgid "Red Hat Repository"
 msgstr "Red Hat Repository"
 
-#, fuzzy
 msgid "Checksum Type"
-msgstr "Typ"
+msgstr "Prüfsummentyp"
 
-#, fuzzy
 msgid "Mirror on Sync"
-msgstr "Synchronisation"
+msgstr "Sync spiegeln"
 
 msgid "Publish Via HTTP"
 msgstr "Über HTTP veröffentlichen"
@@ -1605,30 +1502,25 @@ msgid "Published At"
 msgstr "Veröffentlicht unter"
 
 msgid "Download Policy"
-msgstr ""
+msgstr "Richtlinie herunterladen"
 
-#, fuzzy
 msgid "OSTree Upstream Sync Policy"
-msgstr "Synchronisation"
+msgstr "OSTree Upstream Sync Richtlinie"
 
-#, fuzzy
 msgid "OSTree Upstream Sync Depth"
-msgstr "Synchronisation"
+msgstr "OSTree Upstream-Sync-Tiefe"
 
-#, fuzzy
 msgid "Upstream Repository Name"
-msgstr "Name"
+msgstr "Upstream-Repository-Name"
 
 msgid "Container Image Tags Filter"
-msgstr ""
+msgstr "Container-Image-Tags-Filter"
 
-#, fuzzy
 msgid "Container Repository Name"
-msgstr "Name"
+msgstr "Container-Repository-Name"
 
-#, fuzzy
 msgid "Ignorable Content Units"
-msgstr "Inhalt"
+msgstr "Ingorierbare Inhalts-Einheiten"
 
 msgid "Sync"
 msgstr "Synchronisation"
@@ -1639,28 +1531,26 @@ msgstr "Letzte Synchronisation"
 msgid "Content Counts"
 msgstr "Anzahl der Inhalte"
 
-#, fuzzy
 msgid "Source RPMS"
-msgstr "Quelle"
+msgstr "Quell-RPMs"
 
 msgid "Package Groups"
 msgstr "Paketgruppen"
 
 msgid "Container Image Manifest Lists"
-msgstr ""
+msgstr "Container-Image-Manifestlisten"
 
 msgid "Container Image Manifests"
-msgstr ""
+msgstr "Container-Image-Manifeste"
 
 msgid "Container Image Tags"
-msgstr ""
+msgstr "Container-Image-Tags"
 
 msgid "OSTree Branches"
-msgstr ""
+msgstr "OSTree-Branches"
 
-#, fuzzy
 msgid "Files"
-msgstr "Fehlgeschlagen"
+msgstr "Dateien"
 
 msgid "yes"
 msgstr "ja"
@@ -1692,108 +1582,104 @@ msgstr "Wartet"
 msgid "Canceled"
 msgstr "Abgebrochen"
 
-#, fuzzy
 msgid "Repository is being synchronized in task %{id}."
-msgstr "Repository wird synchronisiert durch Task %{id}"
+msgstr "Repository wird in Aufgabe %{id} synchronisiert."
 
 msgid "Could not synchronize the repository"
 msgstr "Repository konnte nicht synchronisiert werden"
 
-#, fuzzy
 msgid "Repository created."
-msgstr "Repository erstellt"
+msgstr "Repository erstellt."
 
 msgid "Could not create the repository"
 msgstr "Repository konnte nicht erstellt werden"
 
-#, fuzzy
 msgid "Repository updated."
-msgstr "Repository aktualisiert"
+msgstr "Repository aktualisiert."
 
 msgid "Could not update the repository"
 msgstr "Repository konnte nicht aktualisiert werden"
 
 msgid "--docker-digest required with --docker-tag"
-msgstr ""
+msgstr "--docker-digest wird benötigt für --docker-tag"
 
 msgid "--docker-tag required with --docker-digest"
-msgstr ""
+msgstr "--docker-tag wird benötigt für --docker-digest"
 
-msgid "Optional custom Container Image tag to specify the value of the Docker digest"
+msgid ""
+"Optional custom Container Image tag to specify the value of the Docker digest"
 msgstr ""
+"Optionales benutzerdefiniertes Container Image-Tag, um den Wert des Docker-"
+"Digests anzugeben"
 
 msgid "Container Image manifest digest"
-msgstr ""
+msgstr "Container-Image-Manifest-Digest"
 
 msgid "Repository updated"
 msgstr "Repository aktualisiert"
 
-#, fuzzy
 msgid "Failed to upload tag '%s' to repository."
-msgstr "Fehlgeschlagen"
+msgstr "Fehler beim Hochladen des Tags '%s' in das Repository."
 
-#, fuzzy
 msgid "Repository deleted."
-msgstr "Repository gelöscht"
+msgstr "Repository gelöscht."
 
 msgid "Could not delete the Repository"
 msgstr "Repository konnte nicht gelöscht werden"
 
-#, fuzzy
 msgid "Could not find any files matching PATH"
-msgstr "nein"
+msgstr "Es konnten keine Dateien gefunden werden, die mit PATH übereinstimmen"
 
-#, fuzzy
 msgid "Cannot specify both product options and repository ID."
-msgstr "ID"
+msgstr ""
+"Produktoptionen und Repository-ID können nicht gleichzeitig angegeben werden."
 
-#, fuzzy
 msgid "Repository content uploaded."
-msgstr "Repository-Inhalte hochgeladen"
+msgstr "Repository-Inhalte hochgeladen."
 
 msgid "Could not upload the content"
 msgstr "Inhalte konnten nicht hochgeladen werden"
 
 msgid ""
-"Upload file, directory of files, or glob of files as content for a repository."
-"\n"
+"Upload file, directory of files, or glob of files as content for a "
+"repository.\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
+"Laden Sie eine Datei, ein Dateiverzeichnis oder einen Dateiglob als Inhalt "
+"für ein Repository hoch.\n"
+"Globs müssen durch einfache oder doppelte Anführungszeichen maskiert werden"
 
-msgid "Failed to upload file '%s' to repository. Please check the file and try again."
+msgid ""
+"Failed to upload file '%s' to repository. Please check the file and try "
+"again."
 msgstr ""
-"Hochladen der Datei \"%s\" zum Repository ist fehlgeschlagen. Bitte prüfen Sie d"
-"ie Datei und versuchen Sie es erneut."
+"Hochladen der Datei \"%s\" zum Repository ist fehlgeschlagen. Bitte prüfen "
+"Sie die Datei und versuchen Sie es erneut."
 
-#, fuzzy
 msgid "Successfully uploaded file '%{name}'"
-msgstr "Datei \"%s\" erfolgreich hochgeladen."
+msgstr "Datei '%{name}' erfolgreich hochgeladen"
 
-#, fuzzy
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
-msgstr "Erfolgreich"
+msgstr "Manifestdatei '%{name}' mit Digest '%{digest}' erfolgreich hochgeladen"
 
 msgid "Remove content from a repository"
-msgstr ""
+msgstr "Inhalt aus Repository entfernt"
 
-#, fuzzy
 msgid "Repository content removed."
-msgstr "Repository-Inhalte hochgeladen"
+msgstr "Repository-Inhalt entfernt"
 
-#, fuzzy
 msgid "Could not remove content"
-msgstr "Inhaltshost konnte nicht entfernt werden"
+msgstr "Inhalt  konnte nicht entfernt werden"
 
 msgid "Export content from a repository to the configured directory"
 msgstr ""
+"Inhalte aus einem Repository in das konfigurierte Verzeichnis exportieren"
 
-#, fuzzy
 msgid "Repository is being exported in task %{id}."
-msgstr "Repository wird synchronisiert durch Task %{id}"
+msgstr "Repository wird in Aufgabe %{id} exportiert."
 
-#, fuzzy
 msgid "Could not export the repository"
-msgstr "Repository konnte nicht aktualisiert werden"
+msgstr "Das Repository konnte nicht exportiert werden"
 
 msgid "Enabled Repositories"
 msgstr "Aktivierte Repositorys"
@@ -1801,21 +1687,18 @@ msgstr "Aktivierte Repositorys"
 msgid "Arch"
 msgstr "Architektur"
 
-#, fuzzy
 msgid "Registry Name"
-msgstr "Name"
+msgstr "Registry-Name"
 
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#, fuzzy
 msgid "Repository enabled."
 msgstr "Repository aktiviert"
 
 msgid "Could not enable repository"
 msgstr "Repository konnte nicht aktiviert werden"
 
-#, fuzzy
 msgid "Repository disabled."
 msgstr "Repository deaktiviert"
 
@@ -1826,20 +1709,19 @@ msgid "Consumed"
 msgstr "Verbraucht"
 
 msgid "Physical"
-msgstr ""
+msgstr "Physisch"
 
 msgid "Guests of %s"
-msgstr ""
+msgstr "Gäste von %s"
 
 msgid "Temporary"
-msgstr ""
+msgstr "Temporär"
 
 msgid "Virtual"
-msgstr ""
+msgstr "Virtuell"
 
-#, fuzzy
 msgid "Manifest is being uploaded in task %{id}."
-msgstr "Manifest wird hochgeladen durch Task %{id}"
+msgstr "Manifest wird in Aufgabe %{id} hochgeladen."
 
 msgid "Manifest upload failed"
 msgstr "Hochladen von Manifest fehlgeschlagen"
@@ -1847,16 +1729,14 @@ msgstr "Hochladen von Manifest fehlgeschlagen"
 msgid "Subscription manifest file"
 msgstr "Subskriptions-Manifestdatei"
 
-#, fuzzy
 msgid "Manifest is being deleted in task %{id}."
-msgstr "Manifest wird gelöscht durch Task %{id}"
+msgstr "Manifest wird in Aufgabe %{id} gelöscht."
 
 msgid "Manifest deletion failed"
 msgstr "Löschen von Manifest fehlgeschlagen"
 
-#, fuzzy
 msgid "Manifest is being refreshed in task %{id}."
-msgstr "Manifest wird aktualisiert durch Task %{id}"
+msgstr "Manifest wird in Aufgabe %{id} aktualisiert."
 
 msgid "Manifest refresh failed"
 msgstr "Aktualisieren von Manifest fehlgeschlagen"
@@ -1871,11 +1751,10 @@ msgid "Interval"
 msgstr "Intervall"
 
 msgid "Cron Expression"
-msgstr ""
+msgstr "Cron-Ausdruck"
 
-#, fuzzy
 msgid "Recurring Logic ID"
-msgstr "ID"
+msgstr "Wiederkehrende Logik-ID"
 
 msgid "Created at"
 msgstr "Erstellt um"
@@ -1887,17 +1766,17 @@ msgid "how often synchronization should run"
 msgstr "Häufigkeit der Synchronisation"
 
 msgid "set this when interval is custom cron"
-msgstr ""
+msgstr "Stellen Sie dies ein, wenn das Intervall benutzerdefinierter Cron ist"
 
-#, fuzzy
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank current "
-"system time will be considered"
-msgstr "Zeit"
+"Start date and time for the sync plan.Time is optional, if kept blank "
+"current system time will be considered"
+msgstr ""
+"Startdatum und -uhrzeit für den Synchronisierungsplan. Die Zeit ist "
+"optional, wenn sie leer bleibt, wird die aktuelle Systemzeit berücksichtigt"
 
-#, fuzzy
 msgid "Sync plan created."
-msgstr "Synchronisationsplan erstellt"
+msgstr "Synchronisationsplan erstellt."
 
 msgid "Could not create the sync plan"
 msgstr "Synchronisationsplan konnte nicht erstellt werden"
@@ -1905,16 +1784,635 @@ msgstr "Synchronisationsplan konnte nicht erstellt werden"
 msgid "start date and time of the synchronization"
 msgstr "Startdatum und -zeit der Synchronisation"
 
-#, fuzzy
 msgid "Sync plan updated."
-msgstr "Synchronisationsplan aktualisiert"
+msgstr "Synchronisationsplan aktualisiert."
 
 msgid "Could not update the sync plan"
 msgstr "Synchronisationsplan konnte nicht aktualisiert werden"
 
-#, fuzzy
 msgid "Sync plan destroyed."
-msgstr "Synchronisationsplan gelöscht"
+msgstr "Synchronisationsplan gelöscht."
 
 msgid "Could not destroy the sync plan"
 msgstr "Synchronisationsplan konnte nicht gelöscht werden"
+
+msgid "Manipulate alternate content sources"
+msgstr ""
+
+msgid "Manipulate content credentials on the server"
+msgstr ""
+
+msgid "Manipulate deb packages"
+msgstr ""
+
+msgid "Manipulate content units"
+msgstr ""
+
+msgid "Prepare content for export to a disconnected Katello"
+msgstr ""
+
+msgid "Import content from an upstream archive."
+msgstr ""
+
+msgid "Manipulate source RPMs"
+msgstr ""
+
+msgid "Simple content access commands"
+msgstr ""
+
+msgid "Manipulate docker content"
+msgstr ""
+
+msgid "Alternate Content Source created."
+msgstr ""
+
+msgid "Could not create the Alternate Content Source."
+msgstr ""
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Alternate content source type"
+msgstr ""
+
+msgid "Upstream username"
+msgstr ""
+
+msgid "Verify SSL"
+msgstr ""
+
+msgid "SSL CA Cert"
+msgstr ""
+
+msgid "SSL Client Cert"
+msgstr ""
+
+msgid "SSL Client Key"
+msgstr ""
+
+msgid "Subpaths"
+msgstr ""
+
+msgid "Smart proxies"
+msgstr ""
+
+msgid "Download policy"
+msgstr ""
+
+msgid "Alternate Content Source updated."
+msgstr ""
+
+msgid "Could not update the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate Content Source deleted."
+msgstr ""
+
+msgid "Could not delete the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate content source is being refreshed in task %{id}."
+msgstr ""
+
+msgid "Could not refresh the alternate content source"
+msgstr ""
+
+msgid "Associated Hosts"
+msgstr ""
+
+msgid "Content Overrides"
+msgstr ""
+
+msgid "Content Label"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "System Purpose"
+msgstr ""
+
+msgid "Purpose Usage"
+msgstr ""
+
+msgid "Purpose Role"
+msgstr ""
+
+msgid "Purpose Addons"
+msgstr ""
+
+msgid "Content Source name"
+msgstr ""
+
+msgid "Kickstart repository name"
+msgstr ""
+
+msgid "Use %s instead"
+msgstr ""
+
+msgid "Content Credential created."
+msgstr ""
+
+msgid "Could not create Content Credential"
+msgstr ""
+
+msgid "Key file"
+msgstr ""
+
+msgid "Content Credential updated."
+msgstr ""
+
+msgid "Could not update Content Credential"
+msgstr ""
+
+msgid "Content Credential deleted."
+msgstr ""
+
+msgid "Could not delete the Content Credential"
+msgstr ""
+
+msgid ""
+"Writes export metadata to disk for use by the importing Katello. This "
+"command only needs to be used if the export was performed asynchronously or "
+"if the metadata was lost"
+msgstr ""
+
+msgid "Generate metadata based on output of the specified export task"
+msgstr ""
+
+msgid "Generate metadata based on specified export history"
+msgstr ""
+
+msgid ""
+"No export history was found. Verify the value given for --task-id or --id"
+msgstr ""
+
+msgid ""
+"Generates listing file on each directory of a syncable export. This command "
+"only needs to be used if the export was performed asynchronously or if the "
+"listing files were lost. Assumes the syncable export directory is accessible "
+"on disk"
+msgstr ""
+
+msgid "Generate listing files for a syncable export task"
+msgstr ""
+
+msgid "Generate listing files based on specified export history"
+msgstr ""
+
+msgid "Destination Server"
+msgstr ""
+
+msgid "Content View Version"
+msgstr ""
+
+msgid "Performs a full export a content view version"
+msgstr ""
+
+msgid "Performs a full export of the organization's library environment"
+msgstr ""
+
+msgid "Performs a full export of a repository"
+msgstr ""
+
+msgid "Could not fetch the export history"
+msgstr ""
+
+msgid ""
+"Once the task completes the listing files may be generated with the command:"
+msgstr ""
+
+msgid ""
+"Once the task completes the export metadata must be generated with the "
+"command:"
+msgstr ""
+
+msgid "Can not fetch export history from an unfinished task"
+msgstr ""
+
+msgid ""
+"Cannot generate listing files for this export since it is not syncable. It "
+"was not generated with --format=syncable."
+msgstr ""
+
+msgid ""
+"Export History does not have the path specified. The task may have errored "
+"out."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this version because it contains repositories "
+"without the 'immediate' download policy. Update the download policy and sync "
+"affected repositories. Once synced republish the content view and export the "
+"generated version."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this repository because it does not have the "
+"'immediate' download policy. Update the download policy, sync the repository "
+"and export."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this organization's library because it contains "
+"repositories without the 'immediate' download policy. Update the download "
+"policy and sync affected repositories to include them in the export."
+msgstr ""
+
+msgid ""
+"Use the following command to update the download policy of these "
+"repositories."
+msgstr ""
+
+msgid "Filter repositories by name."
+msgstr ""
+
+msgid "Library environment is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the library"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this organization are "
+"unexportable."
+msgstr ""
+
+msgid "Content view version is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the content view version"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this version are unexportable."
+msgstr ""
+
+msgid "Filter versions by version number."
+msgstr ""
+
+msgid "Performs an incremental export of a content view version"
+msgstr ""
+
+msgid ""
+"Performs an incremental export of the organization's library environment"
+msgstr ""
+
+msgid "Performs an incremental export of a repository"
+msgstr ""
+
+msgid ""
+"Location of the metadata.json file. This is not required if the metadata."
+"json file is already in the archive directory."
+msgstr ""
+
+msgid "Archive is being imported in task %{id}."
+msgstr ""
+
+msgid "Could not import the archive."
+msgstr ""
+
+msgid "Imports a content archive to a content view version"
+msgstr ""
+
+msgid ""
+"Imports a content archive to an organization's library lifecycle environment"
+msgstr ""
+
+msgid "Imports a repository"
+msgstr ""
+
+msgid "Solve Dependencies"
+msgstr ""
+
+msgid "Designate this Content View for importing from upstream servers only."
+msgstr ""
+
+msgid "Names for Lifecycle Environment"
+msgstr ""
+
+msgid "Content view id to search by"
+msgstr ""
+
+msgid "Content View Id"
+msgstr ""
+
+msgid "Component Id"
+msgstr ""
+
+msgid "Has Applied Filters"
+msgstr ""
+
+msgid "Applied Filters"
+msgstr ""
+
+msgid "Dependency Solving"
+msgstr ""
+
+msgid "Content view version updated."
+msgstr ""
+
+msgid "Could not update the content view version"
+msgstr ""
+
+msgid "Pulp ID"
+msgstr ""
+
+msgid "checksum"
+msgstr ""
+
+msgid "Nav"
+msgstr ""
+
+msgid "Nva"
+msgstr ""
+
+msgid "Available Host Count"
+msgstr ""
+
+msgid "Applicable Host Count"
+msgstr ""
+
+msgid "Manage docker manifests"
+msgstr ""
+
+msgid "Schema Version"
+msgstr ""
+
+msgid "Digest"
+msgstr ""
+
+msgid "Downloaded"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Manage docker tags"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Docker Manifest ID"
+msgstr ""
+
+msgid "Docker Manifest Name"
+msgstr ""
+
+msgid "Bugfix"
+msgstr ""
+
+msgid "Errata recalculation started."
+msgstr ""
+
+msgid "Trace Status"
+msgstr ""
+
+msgid "Content view environments"
+msgstr ""
+
+msgid "Content view"
+msgstr ""
+
+msgid "Lifecycle environment"
+msgstr ""
+
+msgid "Nvra"
+msgstr ""
+
+msgid "Content View id"
+msgstr ""
+
+msgid "Content View version"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Product name"
+msgstr ""
+
+msgid "Trace ID"
+msgstr ""
+
+msgid "Application"
+msgstr ""
+
+msgid "Helper"
+msgstr ""
+
+msgid "Traces are being resolved with task %{id}."
+msgstr ""
+
+msgid "Could not resolve traces"
+msgstr ""
+
+msgid "Organization title"
+msgstr ""
+
+msgid "Simple Content Access"
+msgstr ""
+
+msgid "Upstream Organization"
+msgstr ""
+
+msgid "Upstream Lifecycle Environment"
+msgstr ""
+
+msgid "Upstream Content View"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "SSL CA Credential ID"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Export Sync"
+msgstr ""
+
+msgid "Network Sync"
+msgstr ""
+
+msgid "Red Hat CDN"
+msgstr ""
+
+msgid "Custom CDN"
+msgstr ""
+
+msgid "Updated CDN configuration."
+msgstr ""
+
+msgid "Could not update CDN configuration."
+msgstr ""
+
+msgid "Source rpm"
+msgstr ""
+
+msgid "Nvrea"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Url"
+msgstr ""
+
+msgid "Build Time"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Requires"
+msgstr ""
+
+msgid "Provides"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Modular"
+msgstr ""
+
+msgid "message"
+msgstr ""
+
+msgid "Sync State (all)"
+msgstr ""
+
+msgid "Sync State (last)"
+msgstr ""
+
+msgid "Updates an HTTP Proxy for a product"
+msgstr ""
+
+msgid "Product proxy updated."
+msgstr ""
+
+msgid "Could not update the product HTTP Proxy."
+msgstr ""
+
+msgid "Location of the ansible collections requirements.yml file. "
+msgstr ""
+
+msgid ""
+"Limit the repository type to return. View available types with \"hammer "
+"repository types\""
+msgstr ""
+
+msgid "Mirroring Policy"
+msgstr ""
+
+msgid "Metadata Expiration"
+msgstr ""
+
+msgid "HTTP Proxy"
+msgstr ""
+
+msgid "HTTP Proxy Policy"
+msgstr ""
+
+msgid "Additive"
+msgstr ""
+
+msgid "Content Only"
+msgstr ""
+
+msgid "Complete Mirroring"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid ""
+"Type of repository to create. View available types with \"hammer repository "
+"types\""
+msgstr ""
+
+msgid "Container Image tag"
+msgstr ""
+
+msgid "Content types"
+msgstr ""
+
+msgid "Generic?"
+msgstr ""
+
+msgid "Removable?"
+msgstr ""
+
+msgid "Uploadable?"
+msgstr ""
+
+msgid "Indexed?"
+msgstr ""
+
+msgid ""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types "
+"with \"hammer repository types\""
+msgstr ""
+
+msgid "Do not wait for the task."
+msgstr ""
+
+msgid "Name of OSTree repository in archive."
+msgstr ""
+
+msgid "Successfully uploaded file %s"
+msgstr ""
+
+msgid "Could not upload the content."
+msgstr ""
+
+msgid ""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View "
+"removable types with \"hammer repository types\""
+msgstr ""
+
+msgid "Forces a republish of the specified repository."
+msgstr ""
+
+msgid "Repository republished."
+msgstr ""
+
+msgid "Could not republish the repository."
+msgstr ""
+
+msgid "Reclaim space from an On Demand repository"
+msgstr ""
+
+msgid "Repository space reclaimed."
+msgstr ""
+
+msgid "Could not reclaim the repository"
+msgstr ""
+
+msgid "This organization is not eligible for Simple Content Access"
+msgstr ""
+
+msgid "Simple Content Access Enabled."
+msgstr ""
+
+msgid "Could not enable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Simple Content Access Disabled."
+msgstr ""
+
+msgid "Could not disable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Time UTC"
+msgstr ""
+
+msgid "Next Sync"
+msgstr ""

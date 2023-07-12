@@ -1,31 +1,37 @@
-# eukim <eukim@redhat.com>, 2012. #zanata
-# eukim <eukim@redhat.com>, 2013. #zanata
-# eukim <eukim@redhat.com>, 2014. #zanata
-# eukim <eukim@redhat.com>, 2015. #zanata
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-katello package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# mbacovsky <martin.bacovsky@gmail.com>, 2022
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2022
+# Bryan Kearney <bryan.kearney@gmail.com>, 2022
+# 진선재, 2022
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 0.0.7.6\n"
+"Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-04-28 12:51+0000\n"
-"Last-Translator: eukim <eukim@redhat.com>\n"
-"Language-Team: Korean\n"
-"Language: ko\n"
+"POT-Creation-Date: 2019-02-27 08:32-0500\n"
+"PO-Revision-Date: 2017-09-11 13:28+0000\n"
+"Last-Translator: 진선재, 2022\n"
+"Language-Team: Korean (https://app.transifex.com/foreman/teams/114/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: Zanata 3.6.0\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#, fuzzy
 msgid "Manipulate activation keys"
-msgstr "활성키를 조정합니다."
+msgstr ""
 
 msgid "Manipulate organizations"
 msgstr "조직 조정 "
 
-#, fuzzy
 msgid "Manipulate GPG Key actions on the server"
-msgstr "GPG 키 "
+msgstr ""
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr ""
@@ -33,9 +39,8 @@ msgstr ""
 msgid "Get the status of the server"
 msgstr ""
 
-#, fuzzy
 msgid "Manipulate products"
-msgstr "제품을 조정합니다. "
+msgstr ""
 
 msgid "View Puppet Module details"
 msgstr ""
@@ -46,9 +51,8 @@ msgstr "리포지터리 조정 "
 msgid "Manipulate repository sets on the server"
 msgstr ""
 
-#, fuzzy
 msgid "Manipulate subscriptions"
-msgstr "서브스크립션 조정 "
+msgstr ""
 
 msgid "Manipulate sync plans"
 msgstr "동기화 계획 조정 "
@@ -56,16 +60,14 @@ msgstr "동기화 계획 조정 "
 msgid "Manipulate host collections"
 msgstr "호스트 컬렉션을 조정합니다 "
 
-#, fuzzy
 msgid "Manipulate content views"
-msgstr "컨텐츠 뷰 조정 "
+msgstr ""
 
 msgid "Manipulate capsule"
 msgstr "Capsule 조정 "
 
-#, fuzzy
 msgid "Manipulate packages"
-msgstr "Capsule 조정 "
+msgstr ""
 
 msgid "Manipulate package groups"
 msgstr ""
@@ -76,40 +78,33 @@ msgstr ""
 msgid "Manipulate ostree branches"
 msgstr ""
 
-#, fuzzy
 msgid "Manipulate files"
-msgstr "Capsule 조정 "
+msgstr ""
 
 msgid "View Module Streams"
 msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "ID"
 msgstr "ID"
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
 msgid "Name"
 msgstr "이름 "
 
-#, fuzzy
 msgid "Host Limit"
-msgstr "제한 "
+msgstr "호스트 제한"
 
 msgid "Lifecycle Environment"
 msgstr "라이프사이클 환경 "
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
 msgid "Content View"
 msgstr "컨텐츠 뷰 "
 
-# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author eukim
 msgid "Unlimited"
 msgstr "제한 없음 "
 
 msgid "%{consumed} of %{limit}"
 msgstr " %{limit} 중 %{consumed}"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Description"
 msgstr "설명 "
 
@@ -117,7 +112,7 @@ msgid "Auto Attach"
 msgstr ""
 
 msgid "Service Level"
-msgstr ""
+msgstr "서비스 레벨 "
 
 msgid "Release Version"
 msgstr "릴리즈 버전 "
@@ -125,34 +120,29 @@ msgstr "릴리즈 버전 "
 msgid "Host Collections"
 msgstr "호스트 컬렉션 "
 
-#, fuzzy
 msgid "Activation key created."
-msgstr "활성키가 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the activation key"
 msgstr "활성키를 생성할 수 없습니다 "
 
 msgid "Copy an activation key"
+msgstr "활성키 복사 "
+
+msgid "Activation key copied."
 msgstr ""
 
-#, fuzzy
-msgid "Activation key copied."
-msgstr "활성키가 생성되었습니다 "
-
-#, fuzzy
 msgid "Could not copy the activation key"
-msgstr "활성키를 생성할 수 없습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Activation key updated."
-msgstr "활성키가 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the activation key"
 msgstr "활성키를 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "Activation key deleted."
-msgstr "활성키가 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not delete the activation key"
 msgstr "활성키를 삭제할 수 없습니다 "
@@ -160,56 +150,43 @@ msgstr "활성키를 삭제할 수 없습니다 "
 msgid "List associated subscriptions"
 msgstr "관련된 서브스크립션 목록 나열 "
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author eukim
 msgid "Attached"
 msgstr "첨부됨  "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Quantity"
 msgstr "수량 "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Start Date"
 msgstr "시작 날짜 "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "End Date"
 msgstr "종료 날짜  "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Support"
 msgstr "지원"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Contract"
 msgstr "계약 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Account"
 msgstr "계정 "
 
-# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author eukim
-#, fuzzy
 msgid ""
-"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : data['quan"
-"tity']}"
-msgstr "제한 없음 "
+"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : "
+"data['quantity']}"
+msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "ID of the activation key"
-msgstr "ID"
+msgstr "활성키 ID"
 
 msgid "Activation key name to search by"
 msgstr "검색할 활성키 이름 "
 
-#, fuzzy
 msgid "ID of subscription"
-msgstr "서브스크립션 삭제 "
+msgstr ""
 
-#, fuzzy
 msgid "Subscription added to activation key."
-msgstr "활성키에 서브스크립션이 추가되었습니다 "
+msgstr ""
 
 msgid "Could not add subscription to activation key"
 msgstr "활성키에 서브스크립션을 추가할 수 없습니다 "
@@ -217,9 +194,8 @@ msgstr "활성키에 서브스크립션을 추가할 수 없습니다 "
 msgid "Remove subscription"
 msgstr "서브스크립션 삭제 "
 
-#, fuzzy
 msgid "Subscription removed from activation key."
-msgstr "활성키에서 서브스크립션이 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not remove subscription from activation key"
 msgstr "활성키에서 서브스크립션을 삭제할 수 없습니다 "
@@ -227,94 +203,74 @@ msgstr "활성키에서 서브스크립션을 삭제할 수 없습니다 "
 msgid "List associated host collections"
 msgstr "관련된 호스트 컬렉션 목록 나열 "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "ID of activation key"
-msgstr "ID"
+msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
 msgid "Name of activation key"
-msgstr "이름 "
+msgstr ""
 
-#, fuzzy
 msgid "The repository has been associated."
-msgstr "리포지터리가 연결되어 있습니다 "
+msgstr ""
 
 msgid "Could not add repository"
 msgstr "리포지터리를 추가할 수 없습니다 "
 
-#, fuzzy
 msgid "The repository has been removed."
-msgstr "리포지터리가 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not remove repository"
 msgstr "리포지터리를 삭제할 수 없습니다 "
 
-#, fuzzy
 msgid "The host collection has been associated."
-msgstr "호스트 컬렉션이 연결되어 있습니다 "
+msgstr ""
 
 msgid "Could not add host collection"
 msgstr "호스트 컬렉션을 추가할 수 없습니다 "
 
-#, fuzzy
 msgid "The host collection has been removed."
-msgstr "호스트 컬렉션이 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not remove host collection"
 msgstr "호스트 컬렉션을 삭제할 수 없습니다 "
 
-#, fuzzy
 msgid "The host has been added."
-msgstr "컨텐츠 호스트가 추가되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not add host"
-msgstr "버전을 추가할 수 없습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "The host has been removed."
-msgstr "리포지터리가 삭제되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not remove host"
-msgstr "버전을 삭제할 수 없습니다 "
+msgstr ""
 
 msgid "Manage the capsule content"
 msgstr "capsule 컨텐츠 관리 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Organization"
 msgstr "조직 "
 
-#, fuzzy
 msgid "Lifecycle environment successfully added to the capsule."
-msgstr "라이프 사이클 환경이 capsule에 성공적으로 추가되었습니다 "
+msgstr ""
 
 msgid "Could not add the lifecycle environment to the capsule"
 msgstr "라이프 사이클 환경이 capsule에 추가할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Organization ID"
-msgstr "조직 "
+msgstr "조직 ID"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Organization name"
-msgstr "조직 "
+msgstr "조직 이름 "
 
-#, fuzzy
 msgid "Lifecycle environment successfully removed from the capsule."
-msgstr "라이프 사이클 환경이 capsule에서 성공적으로 제거되었습니다 "
+msgstr ""
 
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "라이프 사이클 환경을 capsule에서 삭제할 수 없습니다 "
 
-#, fuzzy
 msgid "Capsule content is being synchronized in task %{id}."
-msgstr "Capsule 컨텐츠가 태스크 %{id}에서 동기화되어 있습니다 "
+msgstr ""
 
 msgid "Could not synchronize capsule content"
 msgstr "capsule 컨텐츠를 동기화할 수 없습니다 "
@@ -322,7 +278,6 @@ msgstr "capsule 컨텐츠를 동기화할 수 없습니다 "
 msgid "Last sync"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Status"
 msgstr "상태 "
 
@@ -338,9 +293,8 @@ msgstr ""
 msgid "Last failure"
 msgstr ""
 
-#, fuzzy
 msgid "Messages"
-msgstr "메세지: %s"
+msgstr ""
 
 msgid "Capsule is synchronized"
 msgstr ""
@@ -348,33 +302,26 @@ msgstr ""
 msgid "%{count} environment(s) can be synchronized: %{names}"
 msgstr ""
 
-#, fuzzy
 msgid "Lifecycle Environments"
 msgstr "라이프사이클 환경 "
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content Views"
 msgstr "컨텐츠 뷰 "
 
 msgid "Composite"
 msgstr "복합 "
 
-#, fuzzy
 msgid "Last Published"
-msgstr "공개 일시 "
+msgstr "마지막 공개 일시 "
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
 msgid "Content"
 msgstr "컨텐츠"
 
 msgid "Hosts"
-msgstr ""
+msgstr "호스트"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author eukim
-#, fuzzy
 msgid "Products"
-msgstr "제품"
+msgstr "제품 "
 
 msgid "Yum repos"
 msgstr ""
@@ -382,44 +329,32 @@ msgstr ""
 msgid "Container Image repos"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Packages"
 msgstr "패키지 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Package groups"
-msgstr "패키지 그룹 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Errata"
 msgstr "에라타 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Puppet modules"
-msgstr "Puppet 모듈 "
+msgstr ""
 
-#, fuzzy
 msgid "Name of the composite content view"
-msgstr "복합적인 컨텐츠 뷰 생성 "
+msgstr ""
 
 msgid "Override product content defaults"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Updated content override."
-msgstr "업데이트 일시 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not update content override"
-msgstr "컨텐츠 호스트를 업데이트할 수 없습니다 "
+msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Label of the content"
-msgstr "레이블 "
+msgstr "컨텐츠 레이블 "
 
 msgid ""
 "Override parameter key or name.\n"
@@ -436,66 +371,50 @@ msgstr ""
 msgid "Content View ID"
 msgstr "컨텐츠 뷰 ID"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Label"
 msgstr "레이블 "
 
 msgid "Repository IDs"
 msgstr "리포지터리 ID"
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content Host Count"
-msgstr "컨텐츠"
+msgstr ""
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author eukim
-#, fuzzy
 msgid "Yum Repositories"
-msgstr "리포지터리 "
+msgstr "Yum 리포지터리 "
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author eukim
-#, fuzzy
 msgid "Container Image Repositories"
-msgstr "리포지터리 "
+msgstr ""
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author eukim
-#, fuzzy
 msgid "OSTree Repositories"
-msgstr "리포지터리 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Puppet Modules"
 msgstr "Puppet 모듈 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "UUID"
 msgstr "UUID"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Author"
 msgstr "저자 "
 
-# translation auto-copied from project Cloudforms Cloud Engine User Guide, version 1.1, document topics/Supported_Instance_Operating_Systems1, author eukim
 msgid "Versions"
 msgstr "버전 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Version"
 msgstr "버전 "
 
 msgid "Published"
 msgstr "공개 일시 "
 
-# translation auto-copied from project [RHEL] [CLUSTER] High Availability Add-On Overview  (was Cluster Suite Overview), version 5.9, document RHCS_Component_Summary
 msgid "Components"
 msgstr "구성 요소"
 
 msgid "Activation Keys"
-msgstr ""
+msgstr "활성키 "
 
-#, fuzzy
 msgid "Content view created."
-msgstr "컨텐츠 뷰가 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the content view"
 msgstr "컨텐츠 뷰를 생성할 수 없습니다 "
@@ -509,57 +428,47 @@ msgstr ""
 msgid "Content view name to search by"
 msgstr "검색할 컨텐츠 뷰 이름 "
 
-#, fuzzy
 msgid "New content view name"
-msgstr "컨텐츠 뷰 이름 "
+msgstr "새 컨텐츠 뷰 이름 "
 
-#, fuzzy
 msgid "Content view copied."
-msgstr "컨텐츠 뷰가 생성되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not copy the content view"
-msgstr "컨텐츠 뷰를 생성할 수 없습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Content view updated."
-msgstr "컨텐츠 뷰가 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the content view"
 msgstr "컨텐츠 뷰를 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "Content view is being deleted with task %{id}."
-msgstr "컨텐츠 뷰가 태스크 %{id}로 삭제되어 있습니다 "
+msgstr ""
 
 msgid "Could not delete the content view"
 msgstr "컨텐츠 뷰를 삭제할 수 없습니다 "
 
-#, fuzzy
 msgid "Content view is being published with task %{id}."
-msgstr "컨텐츠 뷰가 태스크 %{id}로 공개되어 있습니다 "
+msgstr ""
 
 msgid "Could not publish the content view"
 msgstr "컨텐츠 뷰를 공개할 수 없습니다 "
 
-#, fuzzy
 msgid "Content view is being removed from environment with task %{id}."
-msgstr "컨텐츠 뷰가 태스크 %{id}로 환경에서 삭제되어 있습니다 "
+msgstr ""
 
 msgid "Could not remove the content view from environment"
 msgstr "환경에서 컨텐츠 뷰를 삭제할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Version ids to remove"
-msgstr "버전 "
+msgstr ""
 
 msgid "Environment ids to remove"
 msgstr ""
 
-#, fuzzy
 msgid "Content view objects are being removed task %{id}."
-msgstr "컨텐츠 뷰 객체가 태스크 %{id}에서 삭제됩니다 "
+msgstr ""
 
 msgid "Could not remove objects from content view"
 msgstr "컨텐츠 뷰에서 객체를 삭제할 수 없습니다."
@@ -567,9 +476,8 @@ msgstr "컨텐츠 뷰에서 객체를 삭제할 수 없습니다."
 msgid "Add a content view version to a composite view"
 msgstr ""
 
-#, fuzzy
 msgid "The component version has been added."
-msgstr "구성 요소 버전이 추가되어 있습니다 "
+msgstr ""
 
 msgid "Could not add version"
 msgstr "버전을 추가할 수 없습니다 "
@@ -577,34 +485,26 @@ msgstr "버전을 추가할 수 없습니다 "
 msgid "Remove a content view version from a composite view"
 msgstr ""
 
-#, fuzzy
 msgid "The component version has been removed."
-msgstr "구성 요소 버전이 삭제되어 있습니다 "
+msgstr ""
 
 msgid "Could not remove version"
 msgstr "버전을 삭제할 수 없습니다 "
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
-msgid "Content View identifier of the component who's latest version is desired"
-msgstr "컨텐츠 뷰 "
-
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
-msgid "Content View name of the component who's latest version is desired"
-msgstr "컨텐츠 뷰 "
-
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
-msgid "Content View Version identifier of the component"
-msgstr "컨텐츠 뷰 "
-
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid ""
-"Content View Version number of the component. Either use this or --component-c"
-"ontent-view-version-id option"
-msgstr "컨텐츠 뷰 "
+"Content View identifier of the component who's latest version is desired"
+msgstr ""
+
+msgid "Content View name of the component who's latest version is desired"
+msgstr ""
+
+msgid "Content View Version identifier of the component"
+msgstr ""
+
+msgid ""
+"Content View Version number of the component. Either use this or --component-"
+"content-view-version-id option"
+msgstr ""
 
 msgid "Select the latest version of the components content view is desired"
 msgstr ""
@@ -613,91 +513,73 @@ msgid "Please provide --component-content-view-id"
 msgstr ""
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-view"
-"-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-"
+"view-version or --latest for the latest version"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Id"
 msgstr "ID "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Current Version"
-msgstr "버전 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Version Id"
-msgstr "버전 "
+msgstr ""
 
 msgid "Latest"
 msgstr ""
 
-#, fuzzy
 msgid "No Published Version"
-msgstr "공개 일시 "
+msgstr ""
 
 msgid "Component added to content view."
 msgstr ""
 
-#, fuzzy
 msgid "Could not add the component"
-msgstr "컨텐츠를 업로드할 수 없습니다 "
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content view component updated."
-msgstr "컨텐츠"
+msgstr ""
 
-#, fuzzy
 msgid "Could not update the content view component"
-msgstr "컨텐츠 뷰를 업데이트할 수 없습니다 "
-
-msgid ""
-"Array of component content view names to remove. Comma separated list of value"
-"s"
 msgstr ""
 
 msgid ""
-"Array of component content view identfiers to remove. Comma separated list of "
+"Array of component content view names to remove. Comma separated list of "
 "values"
 msgstr ""
 
-# translation auto-copied from project [RHEL] [CLUSTER] High Availability Add-On Overview  (was Cluster Suite Overview), version 5.9, document RHCS_Component_Summary
-#, fuzzy
-msgid "Components removed from content view."
-msgstr "구성 요소"
+msgid ""
+"Array of component content view identfiers to remove. Comma separated list "
+"of values"
+msgstr ""
 
-#, fuzzy
+msgid "Components removed from content view."
+msgstr ""
+
 msgid "Could not remove the components"
-msgstr "컨텐츠를 업로드할 수 없습니다 "
+msgstr ""
 
 msgid "Latest(Currently %s)"
 msgstr "최신 (현재 %s)"
 
-#, fuzzy
 msgid "Puppet module added to content view."
-msgstr "Puppet 모듈이 컨텐츠 뷰에 추가되었습니다 "
+msgstr ""
 
 msgid "Could not add the puppet module"
 msgstr "puppet 모듈을 추가할 수 없습니다 "
 
-#, fuzzy
 msgid "Puppet module removed from content view."
-msgstr "Puppet 모듈이 컨텐츠 뷰에서 삭제되었습니다 "
+msgstr ""
 
 msgid "Couldn't remove puppet module from the content view"
 msgstr "컨텐츠 보기에서 puppet 모듈을 삭제할 수 없습니다 "
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content View numeric identifier"
-msgstr "컨텐츠 뷰 "
+msgstr ""
 
-#, fuzzy
 msgid "Content View name"
-msgstr "컨텐츠 뷰 이름 "
+msgstr ""
 
 msgid "count of unused versions to keep"
 msgstr ""
@@ -708,17 +590,13 @@ msgstr ""
 msgid "No versions to delete."
 msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
-"'%{task_id}'."
-msgstr "버전 "
+"Version '%{version}' of content view '%{view}' scheduled for deletion in "
+"task '%{task_id}'."
+msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Version '%{version}' of content view '%{view}' deleted."
-msgstr "버전 "
+msgstr ""
 
 msgid "Content View Name"
 msgstr "컨텐츠 뷰 이름 "
@@ -726,49 +604,38 @@ msgstr "컨텐츠 뷰 이름 "
 msgid "Content View Label"
 msgstr "컨텐츠 뷰 레이블 "
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author eukim
 msgid "Repositories"
 msgstr "리포지터리 "
 
-#, fuzzy
 msgid "Content View Version is being republished with task %{id}."
-msgstr "컨텐츠 뷰가 태스크 %{id}로 공개되어 있습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not republish the Content View"
-msgstr "컨텐츠 뷰를 공개할 수 없습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Content view is being promoted with task %{id}."
-msgstr "컨텐츠 뷰가 태스크 %{id}로 승격되어 있습니다 "
+msgstr ""
 
 msgid "Could not promote the content view"
 msgstr "컨텐츠 뷰를 승격할 수 없습니다 "
 
-msgid "force content view promotion and bypass lifecycle environment restriction"
+msgid ""
+"force content view promotion and bypass lifecycle environment restriction"
+msgstr "컨텐츠 뷰 승격 강제 및 라이프 사이클 환경 제한을 무시  "
+
+msgid "Name of the target environment"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
-msgid "Name of the target environment"
-msgstr "이름 "
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Id of the target environment"
-msgstr "ID "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid ""
-"Environment name from where to promote its version from (if version is unknown"
-")"
-msgstr "no"
+"Environment name from where to promote its version from (if version is "
+"unknown)"
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Id of the environment from where to promote its version "
-msgstr "ID "
+msgstr ""
 
 msgid "Incremental update is being performed with task %{id}."
 msgstr ""
@@ -776,143 +643,111 @@ msgstr ""
 msgid "An error occurred incrementally updating the content view"
 msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "list of lifecycle environment IDs to update the content view version in"
-msgstr "ID"
-
-msgid "list of lifecycle environment names to update the content view version in"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
-msgid "Organization name for resolving lifecycle environment names"
-msgstr "조직 "
-
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
-msgid "Organization id for resolving lifecycle environment names"
-msgstr "조직 "
-
-#, fuzzy
 msgid ""
-"Update all editable and applicable hosts within the specified Content View and"
-" \\\n"
-"               Lifecycle Environments"
-msgstr "라이프사이클 환경 "
+"list of lifecycle environment names to update the content view version in"
+msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
+msgid "Organization name for resolving lifecycle environment names"
+msgstr ""
+
+msgid "Organization id for resolving lifecycle environment names"
+msgstr ""
+
+msgid ""
+"Update all editable and applicable hosts within the specified Content View "
+"and \\\n"
+"               Lifecycle Environments"
+msgstr ""
+
 msgid "IDs of hosts to update"
-msgstr "ID"
+msgstr ""
 
 msgid "Export a content view (deprecated)"
 msgstr ""
 
-#, fuzzy
 msgid "Content view is being exported in task %{id}."
-msgstr "컨텐츠 뷰가 태스크 %{id}로 승격되어 있습니다 "
-
-#, fuzzy
-msgid "Could not export the content view"
-msgstr "컨텐츠 뷰를 업데이트할 수 없습니다 "
-
-msgid "Export a content view version"
 msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
-msgid "Content view export is available in %{directory}."
-msgstr "컨텐츠"
+msgid "Could not export the content view"
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
+msgid "Export a content view version"
+msgstr "컨텐츠 뷰 버전 내보내기"
+
+msgid "Content view export is available in %{directory}."
+msgstr ""
+
 msgid "Content View Version numeric identifier"
-msgstr "컨텐츠 뷰 "
+msgstr ""
 
 msgid "Directory to put content view version export into."
 msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid ""
-"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is supporte"
-"d at this time. Please remove the repository from the Content View, republish "
-"and try the export again."
-msgstr "컨텐츠 뷰 "
+"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is "
+"supported at this time. Please remove the repository from the Content View, "
+"republish and try the export again."
+msgstr ""
 
 msgid "Import a content view version"
 msgstr ""
 
-#, fuzzy
 msgid "Content view imported."
-msgstr "컨텐츠 뷰가 업데이트되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not import the content view"
-msgstr "컨텐츠 뷰를 업데이트할 수 없습니다 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Organization numeric identifier"
-msgstr "조직 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
-#, fuzzy
 msgid "Location of export tar on disk"
-msgstr "위치 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Export tar #{options['option_export_tar']} does not exist."
-msgstr "no"
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Unable to sync repositories, no library repository found for %s"
-msgstr "no"
+msgstr ""
 
 msgid "Errata ID"
 msgstr "에라타 ID"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Type"
 msgstr "유형"
 
-# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
-#, fuzzy
 msgid "Title"
-msgstr "시각"
+msgstr "제목"
 
 msgid "Reboot Suggested"
-msgstr ""
+msgstr "재부팅이 권장됩니다 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Updated"
 msgstr "업데이트 일시 "
 
 msgid "Issued"
-msgstr ""
+msgstr "발행됨 "
 
 msgid "Release"
 msgstr "릴리즈 "
 
-# translation auto-copied from project Satellite6 Foreman Discovery, version 6.1, document foreman_discovery
-#, fuzzy
 msgid "Solution"
-msgstr "위치 "
+msgstr "솔루션 "
 
 msgid "Module Streams"
-msgstr ""
+msgstr "모듈 스트림"
 
 msgid "Stream"
-msgstr ""
+msgstr "스트림"
 
 msgid "Path"
-msgstr ""
+msgstr "경로 "
 
 msgid "Checksum"
-msgstr ""
+msgstr "체크섬 "
 
 msgid "Filter ID"
 msgstr "필터 ID"
@@ -920,7 +755,6 @@ msgstr "필터 ID"
 msgid "Inclusion"
 msgstr "포함 사항 "
 
-# translation auto-copied from project firewalld, version 0.3.8, document firewalld, author eukim
 msgid "Rules"
 msgstr "규칙 "
 
@@ -930,31 +764,26 @@ msgstr "최소 버전 "
 msgid "Maximum Version"
 msgstr "최대 버전 "
 
-# translation auto-copied from project policycoreutils, version 2.1.14, document policycoreutils, author eukim
 msgid "Types"
 msgstr "유형 "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Created"
 msgstr "생성 일시 "
 
-#, fuzzy
 msgid "Filter created."
-msgstr "필터가 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the filter"
 msgstr "필터를 생성할 수 없습니다 "
 
-#, fuzzy
 msgid "Filter updated."
-msgstr "필터가 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the filter"
 msgstr "필터를 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "Filter deleted."
-msgstr "필터가 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not delete the filter"
 msgstr "필터를 삭제할 수 없습니다 "
@@ -962,19 +791,14 @@ msgstr "필터를 삭제할 수 없습니다 "
 msgid "Rule ID"
 msgstr "규칙 ID "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Architecture"
 msgstr "아키텍처 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Date Type"
-msgstr "유형"
+msgstr "날짜 유형"
 
-#, fuzzy
 msgid "Filter rule created."
-msgstr "필터 규칙이 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the filter rule"
 msgstr "필터 규칙을 생성할 수 없습니다 "
@@ -982,16 +806,14 @@ msgstr "필터 규칙을 생성할 수 없습니다 "
 msgid "Package and package group names"
 msgstr ""
 
-#, fuzzy
 msgid "Filter rule updated."
-msgstr "필터 규칙이 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the filter rule"
 msgstr "필터 규칙을 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "Filter rule deleted."
-msgstr "필터 규칙이 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not delete the filter rule"
 msgstr "필터 규칙을 삭제할 수 없습니다 "
@@ -999,13 +821,11 @@ msgstr "필터 규칙을 삭제할 수 없습니다 "
 msgid "Content Type"
 msgstr "컨텐츠 유형 "
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author eukim
 msgid "Product"
 msgstr "제품"
 
-#, fuzzy
 msgid "GPG Key created."
-msgstr "GPG 키가 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create GPG Key"
 msgstr "GPG 키를 생성할 수 없습니다 "
@@ -1013,16 +833,14 @@ msgstr "GPG 키를 생성할 수 없습니다 "
 msgid "GPG Key file"
 msgstr "GPG 키 파일 "
 
-#, fuzzy
 msgid "GPG Key updated."
-msgstr "GPG 키가 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update GPG Key"
 msgstr "GPG 키를 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "GPG Key deleted."
-msgstr "GPG 키가 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not delete the GPG Key"
 msgstr "GPG 키를 삭제할 수 없습니다 "
@@ -1030,9 +848,8 @@ msgstr "GPG 키를 삭제할 수 없습니다 "
 msgid "Limit"
 msgstr "제한 "
 
-#, fuzzy
 msgid "Host collection created."
-msgstr "호스트 컬렉션이 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the host collection"
 msgstr "호스트 컬렉션을 생성할 수 없습니다 "
@@ -1040,58 +857,47 @@ msgstr "호스트 컬렉션을 생성할 수 없습니다 "
 msgid "Total Hosts"
 msgstr ""
 
-#, fuzzy
 msgid "Host Collection ID"
-msgstr "호스트 컬렉션 "
-
-#, fuzzy
-msgid "Host Collection Name"
-msgstr "호스트 컬렉션 "
-
-#, fuzzy
-msgid "Copy a host collection"
-msgstr "호스트 컬렉션을 추가할 수 없습니다 "
-
-msgid "New host collection name"
 msgstr ""
 
-#, fuzzy
+msgid "Host Collection Name"
+msgstr ""
+
+msgid "Copy a host collection"
+msgstr ""
+
+msgid "New host collection name"
+msgstr "새 호스트 컬렉션 이름 "
+
 msgid "New host collection created."
-msgstr "호스트 컬렉션이 생성되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not create the new host collection"
-msgstr "호스트 컬렉션을 생성할 수 없습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Host collection updated."
-msgstr "호스트 컬렉션이 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the the host collection"
 msgstr "호스트 컬렉션을 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "Host collection deleted."
-msgstr "호스트 컬렉션이 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not delete the host collection"
 msgstr "호스트 컬렉션을 삭제할 수 없습니다 "
 
-#, fuzzy
 msgid "The host(s) has been added."
-msgstr "컨텐츠 호스트가 추가되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not add host(s)"
-msgstr "컨텐츠 호스트를 추가할 수 없습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "The host(s) has been removed."
-msgstr "컨텐츠 호스트가 삭제되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not remove host(s)"
-msgstr "컨텐츠 호스트를 삭제할 수 없습니다 "
+msgstr ""
 
 msgid "Manipulate errata for a host collection"
 msgstr ""
@@ -1099,20 +905,14 @@ msgstr ""
 msgid "Install errata on content hosts contained within a host collection"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Successfully scheduled installation of errata."
-msgstr "성공 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule installation of errata"
-msgstr "no"
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "List of Errata to install"
-msgstr "에라타 "
+msgstr ""
 
 msgid "Manipulate packages for a host collection"
 msgstr ""
@@ -1123,41 +923,29 @@ msgstr ""
 msgid "Install packages on content hosts contained within a host collection"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Successfully scheduled installation of package(s)."
-msgstr "성공 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule installation of package(s)"
-msgstr "no"
+msgstr ""
 
 msgid "Update packages on content hosts contained within a host collection"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Successfully scheduled update of package(s)."
-msgstr "성공 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule update of package(s)"
-msgstr "no"
+msgstr ""
 
 msgid "Remove packages on content hosts contained within a host collection"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Successfully scheduled removal of package(s)."
-msgstr "성공 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule removal of package(s)"
-msgstr "no"
+msgstr ""
 
 msgid "Manipulate package-groups for a host collection"
 msgstr ""
@@ -1165,122 +953,92 @@ msgstr ""
 msgid "comma-separated list of package-groups to install"
 msgstr ""
 
-msgid "Install package-groups on content hosts contained within a host collection"
+msgid ""
+"Install package-groups on content hosts contained within a host collection"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Successfully scheduled installation of package-group(s)."
-msgstr "성공 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule installation of package-group(s)"
-msgstr "no"
-
-msgid "Update package-groups on content hosts contained within a host collection"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
+msgid ""
+"Update package-groups on content hosts contained within a host collection"
+msgstr ""
+
 msgid "Successfully scheduled update of package-groups(s)."
-msgstr "성공 "
-
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
-msgid "Could not schedule update of package-group(s)"
-msgstr "no"
-
-msgid "Remove package-groups on content hosts contained within a host collection"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
+msgid "Could not schedule update of package-group(s)"
+msgstr ""
+
+msgid ""
+"Remove package-groups on content hosts contained within a host collection"
+msgstr ""
+
 msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "성공 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule removal of package-group(s)"
-msgstr "no"
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content Source name "
-msgstr "컨텐츠"
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content Source"
-msgstr "컨텐츠"
+msgstr "컨텐츠 소스 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Errata is being applied with task %{id}."
-msgstr "에라타 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not apply errata"
-msgstr "no"
+msgstr ""
 
-#, fuzzy
 msgid "Erratum ID"
-msgstr "에라타 ID"
+msgstr ""
 
 msgid "Installable"
+msgstr "설치 가능 "
+
+msgid "Errata recalculated with task %{id}."
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
-msgid "Errata recalculated with task %{id}."
-msgstr "에라타 "
-
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not recalculate errata"
-msgstr "no"
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content Information"
-msgstr "컨텐츠"
+msgstr ""
 
 msgid "Kickstart Repository"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Applicable Packages"
-msgstr "패키지 "
+msgstr "적용 가능한 패키지"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Upgradable Packages"
-msgstr "패키지 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Applicable Errata"
-msgstr "에라타 "
+msgstr "적용 가능한 에라타 "
 
 msgid "Enhancement"
-msgstr ""
+msgstr "기능 강화"
 
 msgid "Bug Fix"
-msgstr ""
+msgstr "버그 수정"
 
 msgid "Security"
-msgstr ""
+msgstr "보안 "
 
 msgid "Subscription Information"
 msgstr ""
 
 msgid "Last Checkin"
-msgstr ""
+msgstr "마지막 체크인 "
 
 msgid "Autoheal"
-msgstr "Autoheal"
+msgstr "자동 복구"
 
 msgid "Registered To"
 msgstr ""
@@ -1301,8 +1059,8 @@ msgid "Please provide --content-view-id"
 msgstr ""
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment %{environment_i"
-"d} and content view %{content_view_id}"
+"No such repository with name %{name}, in lifecycle environment "
+"%{environment_id} and content view %{content_view_id}"
 msgstr ""
 
 msgid "NVRA"
@@ -1311,54 +1069,42 @@ msgstr ""
 msgid "Host unregistered."
 msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not unregister the host"
-msgstr "no"
+msgstr ""
 
 msgid "Host successfully registered."
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Failed to register host"
-msgstr "실패 "
+msgstr ""
 
 msgid "Subscription attached to the host successfully."
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Failed to attach subscriptions to the host"
-msgstr "실패 "
+msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "수량 "
+msgstr ""
 
 msgid "Auto attached subscriptions to the host successfully."
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Failed to auto attach subscriptions to the host"
-msgstr "실패 "
+msgstr ""
 
 msgid "Subscription removed from the host successfully."
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Failed to remove subscriptions from the host"
-msgstr "실패 "
-
-msgid "Remove the first instance of a subscription with matching id and quantity"
 msgstr ""
 
-#, fuzzy
+msgid ""
+"Remove the first instance of a subscription with matching id and quantity"
+msgstr ""
+
 msgid "Organization ID to search by"
-msgstr "검색할 조직 이름 "
+msgstr ""
 
 msgid "Organization name to search by"
 msgstr "검색할 조직 이름 "
@@ -1369,22 +1115,17 @@ msgstr "검색할 조직 레이블 "
 msgid "Capsule name to search by"
 msgstr "검색할 Capsule 이름 "
 
-#, fuzzy
 msgid "File name to search by"
-msgstr "검색할 작업 이름 "
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content View Version ID"
-msgstr "컨텐츠 뷰 "
+msgstr ""
 
-#, fuzzy
 msgid "Repository ID"
 msgstr "리포지터리 ID"
 
-#, fuzzy
 msgid "Module stream name to search by"
-msgstr "검색할 제품 이름 "
+msgstr ""
 
 msgid "Gpg key name to search by"
 msgstr "검색할 Gpg 키 이름 "
@@ -1399,7 +1140,7 @@ msgid "Product name to search by"
 msgstr "검색할 제품 이름 "
 
 msgid "Operating system title"
-msgstr ""
+msgstr "운영 체제 제목 "
 
 msgid "Repository name to search by"
 msgstr "검색할 리포지터리 이름 "
@@ -1425,19 +1166,14 @@ msgstr "검색할 Puppet 모듈의 저자 "
 msgid "Puppet module's UUID to search by"
 msgstr "검색할 Puppet 모듈의 UUID "
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Content view version number"
-msgstr "컨텐츠"
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Name to search by"
 msgstr "검색할 이름 "
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
 msgid "Name of the prior environment"
-msgstr "이름 "
+msgstr ""
 
 msgid "Prior"
 msgstr "이전 "
@@ -1445,7 +1181,6 @@ msgstr "이전 "
 msgid "Lifecycle Path"
 msgstr "라이프 사이클 경로 "
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
 msgid "Library"
 msgstr "라이브러리"
 
@@ -1453,46 +1188,34 @@ msgid "Prior Lifecycle Environment"
 msgstr "이전 라이프 사이클 환경 "
 
 msgid "Unauthenticated Pull"
-msgstr ""
+msgstr "인증되지 않은 pull"
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
 msgid "Registry Name Pattern"
-msgstr "이름 "
+msgstr "레지스트리 이름 패턴"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Environment created."
-msgstr "환경이 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create environment"
 msgstr "환경을 생성할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Environment updated."
-msgstr "환경이 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update environment"
 msgstr "환경을 업데이트할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Environment deleted."
-msgstr "환경이 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not delete environment"
 msgstr "환경을 삭제할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
 msgid "Module Stream Name"
-msgstr "이름 "
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Context"
-msgstr "컨텐츠"
+msgstr "컨텍스트"
 
 msgid "Artifacts"
 msgstr ""
@@ -1501,7 +1224,7 @@ msgid "Profiles"
 msgstr ""
 
 msgid "RPMs"
-msgstr ""
+msgstr "RPM"
 
 msgid "Red Hat Repository URL"
 msgstr "Red Hat 리포지터리 URL"
@@ -1509,104 +1232,78 @@ msgstr "Red Hat 리포지터리 URL"
 msgid "Service Levels"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Organization updated."
-msgstr "조직이 업데이트되었습니다 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Could not update the organization"
 msgstr "조직을 업데이트할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Organization created."
-msgstr "조직이 생성되었습니다 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Could not create the organization"
 msgstr "조직을 생성할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Organization deleted."
-msgstr "조직이 삭제되었습니다 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Could not delete the organization"
 msgstr "조직을 삭제할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "version"
-msgstr "버전 "
+msgstr ""
 
 msgid "Commit"
-msgstr ""
+msgstr "커밋 "
 
 msgid "Date"
-msgstr ""
+msgstr "날짜 "
 
 msgid "%s  %s"
 msgstr "%s  %s"
 
 msgid "Filename"
-msgstr ""
+msgstr "파일 이름"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Source RPM"
-msgstr "소스 "
+msgstr "소스 RPM"
 
 msgid "Epoch"
 msgstr ""
 
 msgid "Build Host"
-msgstr ""
+msgstr "빌드 호스트 "
 
 msgid "Vendor"
 msgstr ""
 
-# translation auto-copied from project gtk3, version 3.8.2, document gtk30
 msgid "License"
 msgstr "라이선스"
 
 msgid "Relative Path"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Package Group Name"
-msgstr "패키지 그룹 "
+msgstr ""
 
-#, fuzzy
 msgid "Repository Name"
-msgstr "리포지터리 ID"
+msgstr "리포지터리 이름 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Default Packages"
-msgstr "패키지 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Mandatory Packages"
-msgstr "패키지 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Conditional Packages"
-msgstr "패키지 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Optional Packages"
-msgstr "패키지 "
+msgstr ""
 
 msgid "Server Response"
 msgstr "서버 응답 "
 
-# translation auto-copied from project libvirt, version 1.1.1, document libvirt
 msgid "FAIL"
 msgstr "실패 "
 
@@ -1619,9 +1316,8 @@ msgstr "메세지: %s"
 msgid "Sync State"
 msgstr "동기화 상태 "
 
-#, fuzzy
 msgid "Product created."
-msgstr "제품이 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the product"
 msgstr "제품을 생성할 수 없습니다 "
@@ -1629,7 +1325,6 @@ msgstr "제품을 생성할 수 없습니다 "
 msgid "Sync Plan ID"
 msgstr "동기화 계획 ID "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "GPG"
 msgstr "GPG"
 
@@ -1648,76 +1343,63 @@ msgstr "삭제 가능 "
 msgid "Repo Name"
 msgstr "리포지터리 이름 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "URL"
 msgstr "URL"
 
-#, fuzzy
 msgid "Product updated."
-msgstr "제품이 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the product"
 msgstr "제품을 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "Product destroyed."
-msgstr "제품이 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not destroy the product"
 msgstr "제품을 삭제할 수 없습니다 "
 
-#, fuzzy
 msgid "Product repositories are being synchronized in task %{id}."
-msgstr "리포지터리가 태스크 %{id}에서 동기화되어 있습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not synchronize the product repositories"
-msgstr "리포지터리를 동기화할 수 없습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Assign sync plan to product"
-msgstr "제품에 동기화 계획을 할당합니다."
+msgstr ""
 
 msgid "Synchronization plan assigned."
 msgstr "동기화 계획이 할당되었습니다. "
 
-#, fuzzy
 msgid "Could not assign synchronization plan"
-msgstr "동기화 계획을 할당할 수 없습니다. "
+msgstr ""
 
-#, fuzzy
 msgid "Delete assignment sync plan and product"
-msgstr "할당 동기화 계획 및 제품을 삭제합니다. "
+msgstr ""
 
 msgid "Synchronization plan removed."
 msgstr "동기화 계획이 삭제되었습니다. "
 
-#, fuzzy
 msgid "Could not remove synchronization plan"
-msgstr "동기화 계획을 삭제할 수 없습니다. "
+msgstr ""
 
 msgid "List associated products"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Default Enabled?"
-msgstr "활성화됨 "
+msgstr ""
 
 msgid "Override"
-msgstr ""
+msgstr "덮어쓰기 "
 
 msgid "Uuid"
 msgstr ""
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author eukim
 msgid "Summary"
 msgstr "요약"
 
 msgid "Project Page"
 msgstr "프로젝트 페이지 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Source"
 msgstr "소스 "
 
@@ -1733,14 +1415,11 @@ msgstr "태그 목록 "
 msgid "Red Hat Repository"
 msgstr "Red Hat 리포지터리 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Checksum Type"
-msgstr "유형"
+msgstr "체크섬 유형 "
 
-#, fuzzy
 msgid "Mirror on Sync"
-msgstr "동기화 "
+msgstr "동기화 시 미러링"
 
 msgid "Publish Via HTTP"
 msgstr "HTTP를 통해 공개 "
@@ -1749,33 +1428,25 @@ msgid "Published At"
 msgstr "공개 일시 "
 
 msgid "Download Policy"
+msgstr "다운로드 정책"
+
+msgid "OSTree Upstream Sync Policy"
 msgstr ""
 
-#, fuzzy
-msgid "OSTree Upstream Sync Policy"
-msgstr "동기화 "
-
-#, fuzzy
 msgid "OSTree Upstream Sync Depth"
-msgstr "동기화 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
 msgid "Upstream Repository Name"
-msgstr "이름 "
+msgstr "업스트림 리포지터리 이름 "
 
 msgid "Container Image Tags Filter"
 msgstr ""
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
 msgid "Container Repository Name"
-msgstr "이름 "
+msgstr ""
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30851-704293, author eukim
-#, fuzzy
 msgid "Ignorable Content Units"
-msgstr "컨텐츠"
+msgstr ""
 
 msgid "Sync"
 msgstr "동기화 "
@@ -1786,88 +1457,71 @@ msgstr "마지막 동기화 날짜 "
 msgid "Content Counts"
 msgstr "컨텐츠 수 "
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Source RPMS"
-msgstr "소스 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Package Groups"
 msgstr "패키지 그룹 "
 
 msgid "Container Image Manifest Lists"
-msgstr ""
+msgstr "컨테이너 이미지 매니페스트 목록"
 
 msgid "Container Image Manifests"
-msgstr ""
+msgstr "컨테이너 이미지 매니페스트"
 
 msgid "Container Image Tags"
-msgstr ""
+msgstr "컨테이너 이미지 태그"
 
 msgid "OSTree Branches"
-msgstr ""
+msgstr "OSTree 분기"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Files"
-msgstr "실패 "
+msgstr "파일"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
 msgid "yes"
-msgstr "yes"
+msgstr "예"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
 msgid "no"
 msgstr "no"
 
 msgid "Not Synced"
 msgstr "동기화되지 않았습니다 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Failed"
 msgstr "실패 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Success"
 msgstr "성공 "
 
-# translation auto-copied from project gnome-packagekit, version 3.8.2, document gnome-packagekit
 msgid "Finished"
 msgstr "마쳤음"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Error"
 msgstr "오류 "
 
-# translation auto-copied from project virt-manager, version 0.10.0, document virt-manager
 msgid "Running"
 msgstr "실행 중"
 
-# translation auto-copied from project evolution-data-server, version el6, document evolution-data-server-2.32
 msgid "Waiting"
 msgstr "기다리는 중"
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
 msgid "Canceled"
 msgstr "취소함"
 
-#, fuzzy
 msgid "Repository is being synchronized in task %{id}."
-msgstr "리포지터리가 태스크 %{id}에서 동기화되어 있습니다 "
+msgstr ""
 
 msgid "Could not synchronize the repository"
 msgstr "리포지터리를 동기화할 수 없습니다 "
 
-#, fuzzy
 msgid "Repository created."
-msgstr "리포지터리가 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the repository"
 msgstr "리포지터리를 생성할 수 없습니다 "
 
-#, fuzzy
 msgid "Repository updated."
-msgstr "리포지터리가 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the repository"
 msgstr "리포지터리를 업데이트할 수 없습니다 "
@@ -1878,7 +1532,8 @@ msgstr ""
 msgid "--docker-tag required with --docker-digest"
 msgstr ""
 
-msgid "Optional custom Container Image tag to specify the value of the Docker digest"
+msgid ""
+"Optional custom Container Image tag to specify the value of the Docker digest"
 msgstr ""
 
 msgid "Container Image manifest digest"
@@ -1887,101 +1542,84 @@ msgstr ""
 msgid "Repository updated"
 msgstr "리포지터리가 업데이트되었습니다 "
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Failed to upload tag '%s' to repository."
-msgstr "실패 "
+msgstr ""
 
-#, fuzzy
 msgid "Repository deleted."
-msgstr "리포지터리를 삭제했습니다 "
+msgstr ""
 
 msgid "Could not delete the Repository"
 msgstr "리포지터리를 삭제할 수 없습니다 "
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not find any files matching PATH"
-msgstr "no"
+msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Cannot specify both product options and repository ID."
-msgstr "ID"
+msgstr ""
 
-#, fuzzy
 msgid "Repository content uploaded."
-msgstr "리포지터리 컨텐츠가 업로드되었습니다 "
+msgstr ""
 
 msgid "Could not upload the content"
 msgstr "컨텐츠를 업로드할 수 없습니다 "
 
 msgid ""
-"Upload file, directory of files, or glob of files as content for a repository."
-"\n"
+"Upload file, directory of files, or glob of files as content for a "
+"repository.\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
 
-msgid "Failed to upload file '%s' to repository. Please check the file and try again."
-msgstr "리포지터리에 파일 '%s'을(를) 업로드 실패했습니다. 파일을 확인한 후 다시 시도하십시오. "
+msgid ""
+"Failed to upload file '%s' to repository. Please check the file and try "
+"again."
+msgstr ""
+"리포지터리에 파일 '%s'을(를) 업로드 실패했습니다. 파일을 확인한 후 다시 시도"
+"하십시오. "
 
-#, fuzzy
 msgid "Successfully uploaded file '%{name}'"
-msgstr "파일 '%s'이(가) 성공적으로 업로드되었습니다."
+msgstr ""
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
-msgstr "성공 "
+msgstr ""
 
 msgid "Remove content from a repository"
 msgstr ""
 
-#, fuzzy
 msgid "Repository content removed."
-msgstr "리포지터리 컨텐츠가 업로드되었습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not remove content"
-msgstr "컨텐츠 호스트를 삭제할 수 없습니다 "
+msgstr ""
 
 msgid "Export content from a repository to the configured directory"
 msgstr ""
 
-#, fuzzy
 msgid "Repository is being exported in task %{id}."
-msgstr "리포지터리가 태스크 %{id}에서 동기화되어 있습니다 "
+msgstr ""
 
-#, fuzzy
 msgid "Could not export the repository"
-msgstr "리포지터리를 업데이트할 수 없습니다 "
+msgstr ""
 
 msgid "Enabled Repositories"
 msgstr "활성화된 리포지터리 "
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Arch"
 msgstr "아키텍처 "
 
-# translation auto-copied from project Satellite6 Foreman Docker, version 6.1, document locale/foreman_docker
-#, fuzzy
 msgid "Registry Name"
-msgstr "이름 "
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Enabled"
 msgstr "활성화됨 "
 
-#, fuzzy
 msgid "Repository enabled."
-msgstr "리포지터리가 활성화됨 "
+msgstr ""
 
 msgid "Could not enable repository"
 msgstr "리포지터리를 활성화할 수 없습니다 "
 
-#, fuzzy
 msgid "Repository disabled."
-msgstr "리포지터리가 비활성화되었습니다 "
+msgstr ""
 
 msgid "Could not disable repository"
 msgstr "리포지터리를 비활성화할 수 없습니다 "
@@ -1990,20 +1628,19 @@ msgid "Consumed"
 msgstr "사용됨 "
 
 msgid "Physical"
-msgstr ""
+msgstr "물리적 "
 
 msgid "Guests of %s"
 msgstr ""
 
 msgid "Temporary"
-msgstr ""
+msgstr "임시"
 
 msgid "Virtual"
-msgstr ""
+msgstr "가상 "
 
-#, fuzzy
 msgid "Manifest is being uploaded in task %{id}."
-msgstr "매니페스트가 태스크 %{id}에서 업로드되어 있습니다"
+msgstr ""
 
 msgid "Manifest upload failed"
 msgstr "매니페스트 업로드를 실패했습니다 "
@@ -2011,16 +1648,14 @@ msgstr "매니페스트 업로드를 실패했습니다 "
 msgid "Subscription manifest file"
 msgstr "서브스크립션 매니페스트 파일 "
 
-#, fuzzy
 msgid "Manifest is being deleted in task %{id}."
-msgstr "태스크 %{id}에서 매니페스트가 삭제되어 있습니다 "
+msgstr ""
 
 msgid "Manifest deletion failed"
 msgstr "매니페스트 삭제가 실패했습니다 "
 
-#, fuzzy
 msgid "Manifest is being refreshed in task %{id}."
-msgstr "매니페스트가 태스크 %{id}에서 새로 고침되어 있습니다"
+msgstr ""
 
 msgid "Manifest refresh failed"
 msgstr "매니페스트 새로 고침에  실패했습니다 "
@@ -2028,27 +1663,21 @@ msgstr "매니페스트 새로 고침에  실패했습니다 "
 msgid "Status Message"
 msgstr "상태 메세지 "
 
-# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
 msgid "Time"
 msgstr "시각"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Interval"
 msgstr "간격 "
 
 msgid "Cron Expression"
 msgstr ""
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Recurring Logic ID"
-msgstr "ID"
+msgstr ""
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Created at"
 msgstr "생성 일시 "
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Updated at"
 msgstr "업데이트 일시 "
 
@@ -2058,16 +1687,13 @@ msgstr "동기화 실행 빈도 "
 msgid "set this when interval is custom cron"
 msgstr ""
 
-# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
-#, fuzzy
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank current "
-"system time will be considered"
-msgstr "시각"
+"Start date and time for the sync plan.Time is optional, if kept blank "
+"current system time will be considered"
+msgstr ""
 
-#, fuzzy
 msgid "Sync plan created."
-msgstr "동기화 계획이 생성되었습니다 "
+msgstr ""
 
 msgid "Could not create the sync plan"
 msgstr "동기화 계획을 생성할 수 없습니다 "
@@ -2075,16 +1701,635 @@ msgstr "동기화 계획을 생성할 수 없습니다 "
 msgid "start date and time of the synchronization"
 msgstr "동기화 시작 날짜 및 시간 "
 
-#, fuzzy
 msgid "Sync plan updated."
-msgstr "동기화 계획이 업데이트되었습니다 "
+msgstr ""
 
 msgid "Could not update the sync plan"
 msgstr "동기화 계획을 업데이트할 수 없습니다 "
 
-#, fuzzy
 msgid "Sync plan destroyed."
-msgstr "동기화 계획이 삭제되었습니다 "
+msgstr ""
 
 msgid "Could not destroy the sync plan"
 msgstr "동기화 계획을 삭제할 수 없습니다 "
+
+msgid "Manipulate alternate content sources"
+msgstr ""
+
+msgid "Manipulate content credentials on the server"
+msgstr ""
+
+msgid "Manipulate deb packages"
+msgstr ""
+
+msgid "Manipulate content units"
+msgstr ""
+
+msgid "Prepare content for export to a disconnected Katello"
+msgstr ""
+
+msgid "Import content from an upstream archive."
+msgstr ""
+
+msgid "Manipulate source RPMs"
+msgstr ""
+
+msgid "Simple content access commands"
+msgstr ""
+
+msgid "Manipulate docker content"
+msgstr ""
+
+msgid "Alternate Content Source created."
+msgstr ""
+
+msgid "Could not create the Alternate Content Source."
+msgstr ""
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Alternate content source type"
+msgstr ""
+
+msgid "Upstream username"
+msgstr ""
+
+msgid "Verify SSL"
+msgstr ""
+
+msgid "SSL CA Cert"
+msgstr ""
+
+msgid "SSL Client Cert"
+msgstr ""
+
+msgid "SSL Client Key"
+msgstr ""
+
+msgid "Subpaths"
+msgstr ""
+
+msgid "Smart proxies"
+msgstr ""
+
+msgid "Download policy"
+msgstr ""
+
+msgid "Alternate Content Source updated."
+msgstr ""
+
+msgid "Could not update the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate Content Source deleted."
+msgstr ""
+
+msgid "Could not delete the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate content source is being refreshed in task %{id}."
+msgstr ""
+
+msgid "Could not refresh the alternate content source"
+msgstr ""
+
+msgid "Associated Hosts"
+msgstr ""
+
+msgid "Content Overrides"
+msgstr ""
+
+msgid "Content Label"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "System Purpose"
+msgstr ""
+
+msgid "Purpose Usage"
+msgstr ""
+
+msgid "Purpose Role"
+msgstr ""
+
+msgid "Purpose Addons"
+msgstr ""
+
+msgid "Content Source name"
+msgstr ""
+
+msgid "Kickstart repository name"
+msgstr ""
+
+msgid "Use %s instead"
+msgstr ""
+
+msgid "Content Credential created."
+msgstr ""
+
+msgid "Could not create Content Credential"
+msgstr ""
+
+msgid "Key file"
+msgstr ""
+
+msgid "Content Credential updated."
+msgstr ""
+
+msgid "Could not update Content Credential"
+msgstr ""
+
+msgid "Content Credential deleted."
+msgstr ""
+
+msgid "Could not delete the Content Credential"
+msgstr ""
+
+msgid ""
+"Writes export metadata to disk for use by the importing Katello. This "
+"command only needs to be used if the export was performed asynchronously or "
+"if the metadata was lost"
+msgstr ""
+
+msgid "Generate metadata based on output of the specified export task"
+msgstr ""
+
+msgid "Generate metadata based on specified export history"
+msgstr ""
+
+msgid ""
+"No export history was found. Verify the value given for --task-id or --id"
+msgstr ""
+
+msgid ""
+"Generates listing file on each directory of a syncable export. This command "
+"only needs to be used if the export was performed asynchronously or if the "
+"listing files were lost. Assumes the syncable export directory is accessible "
+"on disk"
+msgstr ""
+
+msgid "Generate listing files for a syncable export task"
+msgstr ""
+
+msgid "Generate listing files based on specified export history"
+msgstr ""
+
+msgid "Destination Server"
+msgstr ""
+
+msgid "Content View Version"
+msgstr ""
+
+msgid "Performs a full export a content view version"
+msgstr ""
+
+msgid "Performs a full export of the organization's library environment"
+msgstr ""
+
+msgid "Performs a full export of a repository"
+msgstr ""
+
+msgid "Could not fetch the export history"
+msgstr ""
+
+msgid ""
+"Once the task completes the listing files may be generated with the command:"
+msgstr ""
+
+msgid ""
+"Once the task completes the export metadata must be generated with the "
+"command:"
+msgstr ""
+
+msgid "Can not fetch export history from an unfinished task"
+msgstr ""
+
+msgid ""
+"Cannot generate listing files for this export since it is not syncable. It "
+"was not generated with --format=syncable."
+msgstr ""
+
+msgid ""
+"Export History does not have the path specified. The task may have errored "
+"out."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this version because it contains repositories "
+"without the 'immediate' download policy. Update the download policy and sync "
+"affected repositories. Once synced republish the content view and export the "
+"generated version."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this repository because it does not have the "
+"'immediate' download policy. Update the download policy, sync the repository "
+"and export."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this organization's library because it contains "
+"repositories without the 'immediate' download policy. Update the download "
+"policy and sync affected repositories to include them in the export."
+msgstr ""
+
+msgid ""
+"Use the following command to update the download policy of these "
+"repositories."
+msgstr ""
+
+msgid "Filter repositories by name."
+msgstr ""
+
+msgid "Library environment is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the library"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this organization are "
+"unexportable."
+msgstr ""
+
+msgid "Content view version is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the content view version"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this version are unexportable."
+msgstr ""
+
+msgid "Filter versions by version number."
+msgstr ""
+
+msgid "Performs an incremental export of a content view version"
+msgstr ""
+
+msgid ""
+"Performs an incremental export of the organization's library environment"
+msgstr ""
+
+msgid "Performs an incremental export of a repository"
+msgstr ""
+
+msgid ""
+"Location of the metadata.json file. This is not required if the metadata."
+"json file is already in the archive directory."
+msgstr ""
+
+msgid "Archive is being imported in task %{id}."
+msgstr ""
+
+msgid "Could not import the archive."
+msgstr ""
+
+msgid "Imports a content archive to a content view version"
+msgstr ""
+
+msgid ""
+"Imports a content archive to an organization's library lifecycle environment"
+msgstr ""
+
+msgid "Imports a repository"
+msgstr ""
+
+msgid "Solve Dependencies"
+msgstr ""
+
+msgid "Designate this Content View for importing from upstream servers only."
+msgstr ""
+
+msgid "Names for Lifecycle Environment"
+msgstr ""
+
+msgid "Content view id to search by"
+msgstr ""
+
+msgid "Content View Id"
+msgstr ""
+
+msgid "Component Id"
+msgstr ""
+
+msgid "Has Applied Filters"
+msgstr ""
+
+msgid "Applied Filters"
+msgstr ""
+
+msgid "Dependency Solving"
+msgstr ""
+
+msgid "Content view version updated."
+msgstr ""
+
+msgid "Could not update the content view version"
+msgstr ""
+
+msgid "Pulp ID"
+msgstr ""
+
+msgid "checksum"
+msgstr ""
+
+msgid "Nav"
+msgstr ""
+
+msgid "Nva"
+msgstr ""
+
+msgid "Available Host Count"
+msgstr ""
+
+msgid "Applicable Host Count"
+msgstr ""
+
+msgid "Manage docker manifests"
+msgstr ""
+
+msgid "Schema Version"
+msgstr ""
+
+msgid "Digest"
+msgstr ""
+
+msgid "Downloaded"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Manage docker tags"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Docker Manifest ID"
+msgstr ""
+
+msgid "Docker Manifest Name"
+msgstr ""
+
+msgid "Bugfix"
+msgstr ""
+
+msgid "Errata recalculation started."
+msgstr ""
+
+msgid "Trace Status"
+msgstr ""
+
+msgid "Content view environments"
+msgstr ""
+
+msgid "Content view"
+msgstr ""
+
+msgid "Lifecycle environment"
+msgstr ""
+
+msgid "Nvra"
+msgstr ""
+
+msgid "Content View id"
+msgstr ""
+
+msgid "Content View version"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Product name"
+msgstr ""
+
+msgid "Trace ID"
+msgstr ""
+
+msgid "Application"
+msgstr ""
+
+msgid "Helper"
+msgstr ""
+
+msgid "Traces are being resolved with task %{id}."
+msgstr ""
+
+msgid "Could not resolve traces"
+msgstr ""
+
+msgid "Organization title"
+msgstr ""
+
+msgid "Simple Content Access"
+msgstr ""
+
+msgid "Upstream Organization"
+msgstr ""
+
+msgid "Upstream Lifecycle Environment"
+msgstr ""
+
+msgid "Upstream Content View"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "SSL CA Credential ID"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Export Sync"
+msgstr ""
+
+msgid "Network Sync"
+msgstr ""
+
+msgid "Red Hat CDN"
+msgstr ""
+
+msgid "Custom CDN"
+msgstr ""
+
+msgid "Updated CDN configuration."
+msgstr ""
+
+msgid "Could not update CDN configuration."
+msgstr ""
+
+msgid "Source rpm"
+msgstr ""
+
+msgid "Nvrea"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Url"
+msgstr ""
+
+msgid "Build Time"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Requires"
+msgstr ""
+
+msgid "Provides"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Modular"
+msgstr ""
+
+msgid "message"
+msgstr ""
+
+msgid "Sync State (all)"
+msgstr ""
+
+msgid "Sync State (last)"
+msgstr ""
+
+msgid "Updates an HTTP Proxy for a product"
+msgstr ""
+
+msgid "Product proxy updated."
+msgstr ""
+
+msgid "Could not update the product HTTP Proxy."
+msgstr ""
+
+msgid "Location of the ansible collections requirements.yml file. "
+msgstr ""
+
+msgid ""
+"Limit the repository type to return. View available types with \"hammer "
+"repository types\""
+msgstr ""
+
+msgid "Mirroring Policy"
+msgstr ""
+
+msgid "Metadata Expiration"
+msgstr ""
+
+msgid "HTTP Proxy"
+msgstr ""
+
+msgid "HTTP Proxy Policy"
+msgstr ""
+
+msgid "Additive"
+msgstr ""
+
+msgid "Content Only"
+msgstr ""
+
+msgid "Complete Mirroring"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid ""
+"Type of repository to create. View available types with \"hammer repository "
+"types\""
+msgstr ""
+
+msgid "Container Image tag"
+msgstr ""
+
+msgid "Content types"
+msgstr ""
+
+msgid "Generic?"
+msgstr ""
+
+msgid "Removable?"
+msgstr ""
+
+msgid "Uploadable?"
+msgstr ""
+
+msgid "Indexed?"
+msgstr ""
+
+msgid ""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types "
+"with \"hammer repository types\""
+msgstr ""
+
+msgid "Do not wait for the task."
+msgstr ""
+
+msgid "Name of OSTree repository in archive."
+msgstr ""
+
+msgid "Successfully uploaded file %s"
+msgstr ""
+
+msgid "Could not upload the content."
+msgstr ""
+
+msgid ""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View "
+"removable types with \"hammer repository types\""
+msgstr ""
+
+msgid "Forces a republish of the specified repository."
+msgstr ""
+
+msgid "Repository republished."
+msgstr ""
+
+msgid "Could not republish the repository."
+msgstr ""
+
+msgid "Reclaim space from an On Demand repository"
+msgstr ""
+
+msgid "Repository space reclaimed."
+msgstr ""
+
+msgid "Could not reclaim the repository"
+msgstr ""
+
+msgid "This organization is not eligible for Simple Content Access"
+msgstr ""
+
+msgid "Simple Content Access Enabled."
+msgstr ""
+
+msgid "Could not enable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Simple Content Access Disabled."
+msgstr ""
+
+msgid "Could not disable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Time UTC"
+msgstr ""
+
+msgid "Next Sync"
+msgstr ""
