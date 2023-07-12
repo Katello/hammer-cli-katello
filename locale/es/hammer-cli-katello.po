@@ -1,55 +1,63 @@
-# gguerrer <gguerrer@redhat.com>, 2012. #zanata
-# gguerrer <gguerrer@redhat.com>, 2013. #zanata
-# agarcia <agarcia@redhat.com>, 2014. #zanata
-# gguerrer <gguerrer@redhat.com>, 2014. #zanata
-# gguerrer <gguerrer@redhat.com>, 2015. #zanata
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-katello package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Gustavo Varela <gustavo.varela@gmail.com>, 2017
+# Jared Nelson <jared@ajpadilla.com>, 2017
+# mbacovsky <martin.bacovsky@gmail.com>, 2017
+# francis <hackgo@gmail.com>, 2017
+# Carmela Rubiños <carmela.rubinos@gmail.com>, 2017
+# Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2017
+# Bryan Kearney <bryan.kearney@gmail.com>, 2019
+# Amit Upadhye <aupadhye@redhat.com>, 2022
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 0.0.7.6\n"
+"Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-04-27 06:33+0000\n"
-"Last-Translator: gguerrer <gguerrer@redhat.com>\n"
-"Language-Team: Spanish\n"
-"Language: es\n"
+"POT-Creation-Date: 2019-02-27 08:32-0500\n"
+"PO-Revision-Date: 2017-09-11 13:28+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
+"Language-Team: Spanish (https://app.transifex.com/foreman/teams/114/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Zanata 3.6.0\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
-#, fuzzy
 msgid "Manipulate activation keys"
-msgstr "Manipular llaves de activación."
+msgstr "Manipular claves de activación"
 
 msgid "Manipulate organizations"
 msgstr "Manipular organizaciones"
 
-#, fuzzy
 msgid "Manipulate GPG Key actions on the server"
-msgstr "Llave GPG"
+msgstr "Manipular acciones de claves GPG en el servidor"
 
 msgid "Manipulate lifecycle_environments on the server"
-msgstr ""
+msgstr "Manipular lifecycle_environments en el servidor"
 
 msgid "Get the status of the server"
-msgstr ""
+msgstr "Obtener el estado del servidor"
 
-#, fuzzy
 msgid "Manipulate products"
-msgstr "Manipular productos."
+msgstr "Manipular productos"
 
 msgid "View Puppet Module details"
-msgstr ""
+msgstr "Ver detalles del módulo Puppet"
 
 msgid "Manipulate repositories"
 msgstr "Manipular repositorios"
 
 msgid "Manipulate repository sets on the server"
-msgstr ""
+msgstr "Manipular conjuntos de repositorios en el servidor"
 
-#, fuzzy
 msgid "Manipulate subscriptions"
-msgstr "Manipular suscripciones."
+msgstr "Manipular suscripciones"
 
 msgid "Manipulate sync plans"
 msgstr "Manipular planes de sincronización"
@@ -57,105 +65,89 @@ msgstr "Manipular planes de sincronización"
 msgid "Manipulate host collections"
 msgstr "Manipular las recopilaciones de hosts"
 
-#, fuzzy
 msgid "Manipulate content views"
-msgstr "Manipular vistas de contenido."
+msgstr "Manipular vistas de contenido"
 
 msgid "Manipulate capsule"
 msgstr "Manipular Capsule"
 
-#, fuzzy
 msgid "Manipulate packages"
-msgstr "Manipular Capsule"
+msgstr "Manipular paquetes"
 
 msgid "Manipulate package groups"
-msgstr ""
+msgstr "Manipular grupos de paquetes"
 
 msgid "Manipulate errata"
-msgstr ""
+msgstr "Manipular erratas"
 
 msgid "Manipulate ostree branches"
-msgstr ""
+msgstr "Manipular ramas de ostra"
 
-#, fuzzy
 msgid "Manipulate files"
-msgstr "Manipular Capsule"
+msgstr "Manipular archivos"
 
 msgid "View Module Streams"
-msgstr ""
+msgstr "Ver flujos de módulos"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "ID"
 msgstr "ID"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Name"
 msgstr "Nombre"
 
-#, fuzzy
 msgid "Host Limit"
-msgstr "Límite"
+msgstr "Límite de acogida"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Host_Groups, author gguerrer
 msgid "Lifecycle Environment"
 msgstr "El entorno de ciclo de vida"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
 msgid "Content View"
-msgstr "Vista de contenido"
+msgstr "Vista del contenido"
 
-# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author gguerrer
 msgid "Unlimited"
 msgstr "Ilimitado"
 
 msgid "%{consumed} of %{limit}"
 msgstr "%{consumed} de %{limit}"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Description"
 msgstr "Descripción"
 
 msgid "Auto Attach"
-msgstr ""
+msgstr "Fijación automática"
 
 msgid "Service Level"
-msgstr ""
+msgstr "Nivel de servicio"
 
 msgid "Release Version"
-msgstr "Versión de lanzamiento"
+msgstr "Versión del lanzamiento"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Using_the_CloudForms_System_Engine_Dashboard, author gguerrer
 msgid "Host Collections"
-msgstr "Colecciones de hosts"
+msgstr "colecciones de hosts"
 
-#, fuzzy
 msgid "Activation key created."
-msgstr "Llave de activación creada"
+msgstr "Clave de activación creada."
 
 msgid "Could not create the activation key"
 msgstr "No se ha podido crear la llave de activación"
 
 msgid "Copy an activation key"
-msgstr ""
+msgstr "Copiar una clave de activación"
 
-#, fuzzy
 msgid "Activation key copied."
-msgstr "Llave de activación creada"
+msgstr "Clave de activación copiada."
 
-#, fuzzy
 msgid "Could not copy the activation key"
-msgstr "No se ha podido crear la llave de activación"
+msgstr "No se ha podido copiar la clave de activación"
 
-#, fuzzy
 msgid "Activation key updated."
-msgstr "Llave de activación actualizada"
+msgstr "Clave de activación actualizada."
 
 msgid "Could not update the activation key"
 msgstr "No se ha podido actualizar la llave de activación"
 
-#, fuzzy
 msgid "Activation key deleted."
-msgstr "Llave de activación borrada"
+msgstr "Clave de activación borrada."
 
 msgid "Could not delete the activation key"
 msgstr "No se ha podido borrar la llave de activación"
@@ -163,56 +155,45 @@ msgstr "No se ha podido borrar la llave de activación"
 msgid "List associated subscriptions"
 msgstr "Mostrar suscripciones asociadas"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gguerrer
 msgid "Attached"
 msgstr "Adjuntado"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Quantity"
 msgstr "Cantidad"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Start Date"
 msgstr "Fecha de inicio"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "End Date"
-msgstr "Fecha de terminación"
+msgstr "Fecha de finalización"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gguerrer
 msgid "Support"
 msgstr "Soporte"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Contract"
 msgstr "Contrato"
 
-# translation auto-copied from project Customer Portal Translations, version management_page, document Management_Prototype.html, author gguerrer
 msgid "Account"
 msgstr "Cuenta"
 
-# translation auto-copied from project Customer Portal Translations, version RedHatCloudFormsLifeCycle, document RedHatCouldFormsLifeCycle.html, author gguerrer
-#, fuzzy
 msgid ""
-"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : data['quan"
-"tity']}"
-msgstr "Ilimitado"
+"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : "
+"data['quantity']}"
+msgstr ""
+"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : "
+"data['quantity']}"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "ID of the activation key"
-msgstr "ID"
+msgstr "ID de la clave de activación"
 
 msgid "Activation key name to search by"
 msgstr "Nombre de llave de activación para realizar la búsqueda"
 
-#, fuzzy
 msgid "ID of subscription"
-msgstr "Eliminar suscripción"
+msgstr "ID de suscripción"
 
-#, fuzzy
 msgid "Subscription added to activation key."
-msgstr "Suscripción añadida a la llave de activación"
+msgstr "Suscripción añadida a la clave de activación."
 
 msgid "Could not add subscription to activation key"
 msgstr "No se ha podido añadir la suscripción a la llave de activación"
@@ -220,9 +201,8 @@ msgstr "No se ha podido añadir la suscripción a la llave de activación"
 msgid "Remove subscription"
 msgstr "Eliminar suscripción"
 
-#, fuzzy
 msgid "Subscription removed from activation key."
-msgstr "Suscripción eliminada de la llave de activación"
+msgstr "Suscripción eliminada de la clave de activación."
 
 msgid "Could not remove subscription from activation key"
 msgstr "No se ha podido eliminar la suscripción de la llave de activación"
@@ -230,274 +210,223 @@ msgstr "No se ha podido eliminar la suscripción de la llave de activación"
 msgid "List associated host collections"
 msgstr "Mostrar recopilaciones de hosts asociados"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "ID of activation key"
-msgstr "ID"
+msgstr "ID de la clave de activación"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Name of activation key"
-msgstr "Nombre"
+msgstr "Nombre de la clave de activación"
 
-#, fuzzy
 msgid "The repository has been associated."
-msgstr "El repositorio se ha asociado"
+msgstr "El repositorio ha sido asociado."
 
 msgid "Could not add repository"
 msgstr "No se ha podido añadir el repositorio"
 
-#, fuzzy
 msgid "The repository has been removed."
-msgstr "El repositorio se ha eliminado"
+msgstr "El repositorio ha sido eliminado."
 
 msgid "Could not remove repository"
 msgstr "No se ha podido eliminar el repositorio"
 
-#, fuzzy
 msgid "The host collection has been associated."
-msgstr "La recopilación de hosts se ha asociado"
+msgstr "Se ha asociado la colección de acogida."
 
 msgid "Could not add host collection"
 msgstr "No se ha podido añadir la recopilación de hosts"
 
-#, fuzzy
 msgid "The host collection has been removed."
-msgstr "La recopilación de hosts se ha eliminado"
+msgstr "Se ha eliminado la colección anfitriona."
 
 msgid "Could not remove host collection"
 msgstr "No se ha podido eliminar la recopilación de hosts"
 
-#, fuzzy
 msgid "The host has been added."
-msgstr "El host de contenido se ha añadido"
+msgstr "Se ha añadido el anfitrión."
 
-#, fuzzy
 msgid "Could not add host"
-msgstr "No se ha podido añadir la versión"
+msgstr "No se ha podido añadir el host"
 
-#, fuzzy
 msgid "The host has been removed."
-msgstr "El repositorio se ha eliminado"
+msgstr "El anfitrión ha sido eliminado."
 
-#, fuzzy
 msgid "Could not remove host"
-msgstr "No se ha podido eliminar la versión"
+msgstr "No se ha podido eliminar el host"
 
 msgid "Manage the capsule content"
 msgstr "Gestionar el contenido de Capsule"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Organization"
 msgstr "Organización"
 
-#, fuzzy
 msgid "Lifecycle environment successfully added to the capsule."
-msgstr "Entorno de ciclo de vida añadido correctamente a la Capsule"
+msgstr "Entorno del ciclo de vida añadido correctamente a la cápsula."
 
 msgid "Could not add the lifecycle environment to the capsule"
 msgstr "No se ha podido añadir el entorno del ciclo de vida a la Capsule"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Organization ID"
-msgstr "Organización"
+msgstr "ID de organización"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Organization name"
-msgstr "Organización"
+msgstr "Nombre de la organización"
 
-#, fuzzy
 msgid "Lifecycle environment successfully removed from the capsule."
-msgstr "Entorno de ciclo de vida eliminado correctamente de Capsule"
+msgstr "Entorno del ciclo de vida retirado con éxito de la cápsula."
 
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "No se ha podido eliminar el entorno del ciclo de vida de Capsule"
 
-#, fuzzy
 msgid "Capsule content is being synchronized in task %{id}."
-msgstr "El contenido de Capsule se está sincronizando en la tarea %{id}"
+msgstr "El contenido de la cápsula se está sincronizando en la tarea %{id}."
 
 msgid "Could not synchronize capsule content"
 msgstr "No se ha podido sincronizar el contenido de Capsule"
 
 msgid "Last sync"
-msgstr ""
+msgstr "Última sincronización"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Status"
 msgstr "Estado"
 
 msgid "Currently running sync tasks"
-msgstr ""
+msgstr "Tareas de sincronización en curso"
 
 msgid "Task id"
-msgstr ""
+msgstr "Id de tarea"
 
 msgid "Progress"
-msgstr ""
+msgstr "Progreso"
 
 msgid "Last failure"
-msgstr ""
+msgstr "Último fracaso"
 
-#, fuzzy
 msgid "Messages"
-msgstr "Mensaje: %s"
+msgstr "Mensajes"
 
 msgid "Capsule is synchronized"
-msgstr ""
+msgstr "La cápsula está sincronizada"
 
 msgid "%{count} environment(s) can be synchronized: %{names}"
-msgstr ""
+msgstr "%{count} entorno(s) pueden sincronizarse: %{names}"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Host_Groups, author gguerrer
-#, fuzzy
 msgid "Lifecycle Environments"
-msgstr "El entorno de ciclo de vida"
+msgstr "Entornos de ciclo de vida"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content Views"
-msgstr "Vista de contenido"
+msgstr "Vistas de contenido"
 
 msgid "Composite"
 msgstr "Compuesto"
 
-#, fuzzy
 msgid "Last Published"
-msgstr "Publicado"
+msgstr "Última publicación"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
 msgid "Content"
 msgstr "Contenido"
 
 msgid "Hosts"
-msgstr ""
+msgstr "Hosts"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gguerrer
-#, fuzzy
 msgid "Products"
-msgstr "Producto"
+msgstr "Productos"
 
 msgid "Yum repos"
-msgstr ""
+msgstr "Repositorios Yum"
 
 msgid "Container Image repos"
-msgstr ""
+msgstr "Repositorios de imágenes de contenedores"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Packages"
 msgstr "Paquetes"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Package groups"
 msgstr "Grupos de paquetes"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Errata"
 msgstr "Erratas"
 
-#, fuzzy
 msgid "Puppet modules"
-msgstr "Módulos puppet"
+msgstr "Módulos Puppet"
 
-#, fuzzy
 msgid "Name of the composite content view"
-msgstr "Crear una vista de contenido compuesta"
+msgstr "Nombre de la vista de contenido compuesto"
 
 msgid "Override product content defaults"
-msgstr ""
+msgstr "Anular el contenido predeterminado del producto"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gguerrer
-#, fuzzy
 msgid "Updated content override."
-msgstr "Actualizado"
+msgstr "Actualización de la anulación de contenido."
 
-#, fuzzy
 msgid "Could not update content override"
-msgstr "No se ha podido actualizar el host de contenido"
+msgstr "No se ha podido actualizar el contenido"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Label of the content"
-msgstr "Etiqueta"
+msgstr "Etiqueta del contenido"
 
 msgid ""
 "Override parameter key or name.\n"
 "To enable or disable a repo select 'enabled'.\n"
 "Default value: enabled"
 msgstr ""
+"Anular la clave o el nombre del parámetro.\n"
+"Para habilitar o deshabilitar un repositorio seleccione 'enabled'.\n"
+"Valor por defecto: activado"
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
 msgstr ""
+"Valor de anulación. Nota: para la habilitación de repositorios puede "
+"utilizar un valor booleano"
 
 msgid "Remove a content override"
-msgstr ""
+msgstr "Eliminar una modificación de contenido"
 
 msgid "Content View ID"
 msgstr "ID de vista de contenido"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Label"
 msgstr "Etiqueta"
 
 msgid "Repository IDs"
 msgstr "ID de repositorio"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content Host Count"
-msgstr "Contenido"
+msgstr "Contenido Recuento de hosts"
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author gguerrer
-#, fuzzy
 msgid "Yum Repositories"
-msgstr "Repositorios"
+msgstr "Repositorios Yum"
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author gguerrer
-#, fuzzy
 msgid "Container Image Repositories"
-msgstr "Repositorios"
+msgstr "Repositorios de imágenes de contenedores"
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author gguerrer
-#, fuzzy
 msgid "OSTree Repositories"
-msgstr "Repositorios"
+msgstr "Repositorios OSTree"
 
 msgid "Puppet Modules"
-msgstr "Módulos puppet"
+msgstr "Módulos Puppet"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "UUID"
 msgstr "UUID"
 
-# translation auto-copied from project nautilus, version 3.8.2, document nautilus
 msgid "Author"
 msgstr "Autor"
 
-# translation auto-copied from project PressGang CCMS topics, version BRMS_5.2.0_User_Guide, document Section-IDE
 msgid "Versions"
 msgstr "Versiones"
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
 msgid "Version"
 msgstr "Versión"
 
 msgid "Published"
 msgstr "Publicado"
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30481-632191, author agarcia
 msgid "Components"
 msgstr "Componentes"
 
 msgid "Activation Keys"
-msgstr ""
+msgstr "Llaves de activación"
 
-#, fuzzy
 msgid "Content view created."
-msgstr "Vista de contenido creada"
+msgstr "Vista de contenido creada."
 
 msgid "Could not create the content view"
 msgstr "No se ha podido crear la vista de contenido"
@@ -506,221 +435,196 @@ msgid "Create a composite content view"
 msgstr "Crear una vista de contenido compuesta"
 
 msgid "Copy a content view"
-msgstr ""
+msgstr "Copiar una vista de contenido"
 
 msgid "Content view name to search by"
 msgstr "Nombre de  vista de contenido para realizar la búsqueda"
 
-#, fuzzy
 msgid "New content view name"
-msgstr "Nombre de vista de contenido"
+msgstr "Nuevo nombre de vista de contenido"
 
-#, fuzzy
 msgid "Content view copied."
-msgstr "Vista de contenido creada"
+msgstr "Vista de contenido copiada."
 
-#, fuzzy
 msgid "Could not copy the content view"
-msgstr "No se ha podido crear la vista de contenido"
+msgstr "No se ha podido copiar la vista de contenido"
 
-#, fuzzy
 msgid "Content view updated."
-msgstr "Vista de contenido actualizada"
+msgstr "Vista de contenido actualizada."
 
 msgid "Could not update the content view"
 msgstr "No se ha podido actualizar la vista de contenido"
 
-#, fuzzy
 msgid "Content view is being deleted with task %{id}."
-msgstr "La vista de contenido se está borrando mediante la tarea %{id}"
+msgstr "La vista de contenido se está eliminando con la tarea %{id}."
 
 msgid "Could not delete the content view"
 msgstr "No se ha podido borrar la vista de contenido"
 
-#, fuzzy
 msgid "Content view is being published with task %{id}."
-msgstr "La vista de contenido se está publicando mediante la tarea %{id}"
+msgstr "La vista de contenido se está publicando con la tarea %{id}."
 
 msgid "Could not publish the content view"
 msgstr "No se ha podido publicar la vista de contenido"
 
-#, fuzzy
 msgid "Content view is being removed from environment with task %{id}."
-msgstr "La vista de contenido se está eliminando del entorno mediante la tarea %{id}"
+msgstr "La vista de contenido se elimina del entorno con la tarea %{id}."
 
 msgid "Could not remove the content view from environment"
 msgstr "No se ha podido eliminar la vista de contenido del entorno"
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
-#, fuzzy
 msgid "Version ids to remove"
-msgstr "Versión"
+msgstr "Id de versión a eliminar"
 
 msgid "Environment ids to remove"
-msgstr ""
+msgstr "Id. de entorno a eliminar"
 
-#, fuzzy
 msgid "Content view objects are being removed task %{id}."
-msgstr "Los objetos de vista de contenido se están eliminando mediante la tarea %{id}"
+msgstr "Los objetos de la vista de contenido se están eliminando tarea %{id}."
 
 msgid "Could not remove objects from content view"
 msgstr "No se han podido eliminar los objetos de la vista de contenido"
 
 msgid "Add a content view version to a composite view"
-msgstr ""
+msgstr "Añadir una versión de vista de contenido a una vista compuesta"
 
-#, fuzzy
 msgid "The component version has been added."
-msgstr "La versión de componente se ha añadido"
+msgstr "Se ha añadido la versión del componente."
 
 msgid "Could not add version"
 msgstr "No se ha podido añadir la versión"
 
 msgid "Remove a content view version from a composite view"
-msgstr ""
+msgstr "Eliminar una versión de vista de contenido de una vista compuesta"
 
-#, fuzzy
 msgid "The component version has been removed."
-msgstr "La versión de componente se ha eliminado"
+msgstr "Se ha eliminado la versión del componente."
 
 msgid "Could not remove version"
 msgstr "No se ha podido eliminar la versión"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
-msgid "Content View identifier of the component who's latest version is desired"
-msgstr "Vista de contenido"
-
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
-msgid "Content View name of the component who's latest version is desired"
-msgstr "Vista de contenido"
-
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
-msgid "Content View Version identifier of the component"
-msgstr "Vista de contenido"
-
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid ""
-"Content View Version number of the component. Either use this or --component-c"
-"ontent-view-version-id option"
-msgstr "Vista de contenido"
+"Content View identifier of the component who's latest version is desired"
+msgstr ""
+"Identificador de la vista de contenido del componente cuya última versión se "
+"desea consultar"
+
+msgid "Content View name of the component who's latest version is desired"
+msgstr ""
+"Contenido Nombre de la vista del componente cuya última versión se desea "
+"consultar"
+
+msgid "Content View Version identifier of the component"
+msgstr "Vista de contenido Identificador de la versión del componente"
+
+msgid ""
+"Content View Version number of the component. Either use this or --component-"
+"content-view-version-id option"
+msgstr ""
+"Número de versión de la vista de contenido del componente. Utilice esta "
+"opción o la opción --component-content-view-version-id."
 
 msgid "Select the latest version of the components content view is desired"
 msgstr ""
+"Seleccione la última versión de la vista de contenido de los componentes se "
+"desea"
 
 msgid "Please provide --component-content-view-id"
-msgstr ""
+msgstr "Indique --component-content-view-id"
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-view"
-"-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-"
+"view-version or --latest for the latest version"
 msgstr ""
+"Indique --component-content-view-version-id o --component-content-view-"
+"version o --latest para la última versión."
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Id"
 msgstr "ID"
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
-#, fuzzy
 msgid "Current Version"
-msgstr "Versión"
+msgstr "Versión actual"
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
-#, fuzzy
 msgid "Version Id"
-msgstr "Versión"
+msgstr "Id de versión"
 
 msgid "Latest"
-msgstr ""
+msgstr "Última"
 
-#, fuzzy
 msgid "No Published Version"
-msgstr "Publicado"
+msgstr "Versión no publicada"
 
 msgid "Component added to content view."
-msgstr ""
+msgstr "Componente añadido a la vista de contenido."
 
-#, fuzzy
 msgid "Could not add the component"
-msgstr "No se ha podido cargar el contenido"
+msgstr "No se ha podido añadir el componente"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content view component updated."
-msgstr "Contenido"
+msgstr "Componente de vista de contenido actualizado."
 
-#, fuzzy
 msgid "Could not update the content view component"
-msgstr "No se ha podido actualizar la vista de contenido"
+msgstr "No se ha podido actualizar el componente de la vista de contenido"
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of value"
-"s"
-msgstr ""
-
-msgid ""
-"Array of component content view identfiers to remove. Comma separated list of "
+"Array of component content view names to remove. Comma separated list of "
 "values"
 msgstr ""
+"Matriz de nombres de vistas de contenido de componentes que se van a "
+"eliminar. Lista de valores separados por comas"
 
-# translation auto-copied from project PressGang CCMS topics, version 1, document 30481-632191, author agarcia
-#, fuzzy
+msgid ""
+"Array of component content view identfiers to remove. Comma separated list "
+"of values"
+msgstr ""
+"Matriz de identificadores de vistas de contenido de componentes que se van a "
+"eliminar. Lista de valores separados por comas"
+
 msgid "Components removed from content view."
-msgstr "Componentes"
+msgstr "Componentes eliminados de la vista de contenido."
 
-#, fuzzy
 msgid "Could not remove the components"
-msgstr "No se ha podido cargar el contenido"
+msgstr "No se han podido extraer los componentes"
 
 msgid "Latest(Currently %s)"
-msgstr "Más reciente (actualmente %s)"
+msgstr "Lo último(Actualmente %s)"
 
-#, fuzzy
 msgid "Puppet module added to content view."
-msgstr "Módulo puppet añadido a la vista de contenido"
+msgstr "Módulo Puppet añadido a la vista de contenido."
 
 msgid "Could not add the puppet module"
 msgstr "No se ha podido añadir el módulo puppet"
 
-#, fuzzy
 msgid "Puppet module removed from content view."
-msgstr "Módulo puppet eliminado de la vista de contenido"
+msgstr "Módulo Puppet eliminado de la vista de contenido."
 
 msgid "Couldn't remove puppet module from the content view"
 msgstr "No se ha podido eliminar el módulo puppet de la vista de contenido"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content View numeric identifier"
-msgstr "Vista de contenido"
+msgstr "Identificador numérico de la vista de contenido"
 
-#, fuzzy
 msgid "Content View name"
-msgstr "Nombre de vista de contenido"
+msgstr "Contenido Nombre de la vista"
 
 msgid "count of unused versions to keep"
-msgstr ""
+msgstr "recuento de versiones no utilizadas que deben conservarse"
 
 msgid "Invalid value for --count option: value must be 0 or greater."
-msgstr ""
+msgstr "Valor no válido para la opción --count: el valor debe ser 0 o mayor."
 
 msgid "No versions to delete."
-msgstr ""
+msgstr "No hay versiones que eliminar."
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
-#, fuzzy
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
-"'%{task_id}'."
-msgstr "Versión"
+"Version '%{version}' of content view '%{view}' scheduled for deletion in "
+"task '%{task_id}'."
+msgstr ""
+"Versión '%{version}' de la vista de contenido '%{view}' programada para "
+"borrarse en la tarea '%{task_id}'."
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
-#, fuzzy
 msgid "Version '%{version}' of content view '%{view}' deleted."
-msgstr "Versión"
+msgstr "Versión '%{version}' de la vista de contenido '%{view}' eliminada."
 
 msgid "Content View Name"
 msgstr "Nombre de vista de contenido"
@@ -728,194 +632,172 @@ msgstr "Nombre de vista de contenido"
 msgid "Content View Label"
 msgstr "Etiqueta de vista de contenido"
 
-# translation auto-copied from project Cloudforms System Engine User Guide, version 1.0, document Repositories, author gguerrer
 msgid "Repositories"
 msgstr "Repositorios"
 
-#, fuzzy
 msgid "Content View Version is being republished with task %{id}."
-msgstr "La vista de contenido se está publicando mediante la tarea %{id}"
+msgstr "Content View Version se vuelve a publicar con la tarea %{id}."
 
-#, fuzzy
 msgid "Could not republish the Content View"
-msgstr "No se ha podido publicar la vista de contenido"
+msgstr "No se ha podido volver a publicar la vista de contenido"
 
-#, fuzzy
 msgid "Content view is being promoted with task %{id}."
-msgstr "La vista de contenido se está promoviendo mediante la tarea %{id}"
+msgstr "La vista de contenido se está promocionando con la tarea %{id}."
 
 msgid "Could not promote the content view"
 msgstr "No se ha podido promover la vista de contenido"
 
-msgid "force content view promotion and bypass lifecycle environment restriction"
-msgstr ""
-
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
-msgid "Name of the target environment"
-msgstr "Nombre"
-
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
-msgid "Id of the target environment"
-msgstr "ID"
-
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid ""
-"Environment name from where to promote its version from (if version is unknown"
-")"
-msgstr "no"
+"force content view promotion and bypass lifecycle environment restriction"
+msgstr ""
+"forzar promoción de vista de contenido e ignorar la restricción del entorno "
+"de ciclo de vida"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
+msgid "Name of the target environment"
+msgstr "Nombre del entorno de destino"
+
+msgid "Id of the target environment"
+msgstr "Id del entorno de destino"
+
+msgid ""
+"Environment name from where to promote its version from (if version is "
+"unknown)"
+msgstr ""
+"Nombre del entorno desde el que promocionar su versión (si se desconoce la "
+"versión)"
+
 msgid "Id of the environment from where to promote its version "
-msgstr "ID"
+msgstr "Id del entorno desde el que promocionar su versión "
 
 msgid "Incremental update is being performed with task %{id}."
-msgstr ""
+msgstr "La actualización incremental se está realizando con la tarea %{id}."
 
 msgid "An error occurred incrementally updating the content view"
-msgstr ""
+msgstr "Se ha producido un error al actualizar la vista de contenido"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "list of lifecycle environment IDs to update the content view version in"
-msgstr "ID"
-
-msgid "list of lifecycle environment names to update the content view version in"
 msgstr ""
+"lista de ID de entorno de ciclo de vida para actualizar la versión de la "
+"vista de contenido en"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
-msgid "Organization name for resolving lifecycle environment names"
-msgstr "Organización"
-
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
-msgid "Organization id for resolving lifecycle environment names"
-msgstr "Organización"
-
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Host_Groups, author gguerrer
-#, fuzzy
 msgid ""
-"Update all editable and applicable hosts within the specified Content View and"
-" \\\n"
-"               Lifecycle Environments"
-msgstr "El entorno de ciclo de vida"
+"list of lifecycle environment names to update the content view version in"
+msgstr ""
+"lista de nombres de entorno de ciclo de vida para actualizar la versión de "
+"la vista de contenido en"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
+msgid "Organization name for resolving lifecycle environment names"
+msgstr ""
+"Nombre de la organización para resolver los nombres del entorno del ciclo de "
+"vida"
+
+msgid "Organization id for resolving lifecycle environment names"
+msgstr ""
+"Id. de la organización para resolver los nombres del entorno del ciclo de "
+"vida"
+
+msgid ""
+"Update all editable and applicable hosts within the specified Content View "
+"and \\\n"
+"               Lifecycle Environments"
+msgstr ""
+"Actualizar todos los hosts editables y aplicables dentro de la Vista de "
+"Contenido y \\ especificados.\n"
+"               Entornos del ciclo de vida"
+
 msgid "IDs of hosts to update"
-msgstr "ID"
+msgstr "ID de los hosts que se van a actualizar"
 
 msgid "Export a content view (deprecated)"
-msgstr ""
+msgstr "Exportar una vista de contenido (obsoleto)"
 
-#, fuzzy
 msgid "Content view is being exported in task %{id}."
-msgstr "La vista de contenido se está promoviendo mediante la tarea %{id}"
+msgstr "La vista de contenido se exporta en la tarea %{id}."
 
-#, fuzzy
 msgid "Could not export the content view"
-msgstr "No se ha podido actualizar la vista de contenido"
+msgstr "No se ha podido exportar la vista de contenido"
 
 msgid "Export a content view version"
-msgstr ""
+msgstr "Exportar una versión de vista de contenido"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content view export is available in %{directory}."
-msgstr "Contenido"
+msgstr "La exportación de vistas de contenido está disponible en %{directory}."
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content View Version numeric identifier"
-msgstr "Vista de contenido"
+msgstr "Identificador numérico de la versión de la vista de contenido"
 
 msgid "Directory to put content view version export into."
 msgstr ""
+"Directorio en el que colocar la exportación de la versión de la vista de "
+"contenido."
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid ""
-"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is supporte"
-"d at this time. Please remove the repository from the Content View, republish "
-"and try the export again."
-msgstr "Vista de contenido"
+"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is "
+"supported at this time. Please remove the repository from the Content View, "
+"republish and try the export again."
+msgstr ""
+"El repositorio '#{repo['name']}' es un repositorio no Yum. En este momento "
+"sólo está soportado Yum. Por favor, elimine el repositorio de la Vista de "
+"Contenido, vuelva a publicar e intente exportar de nuevo."
 
 msgid "Import a content view version"
-msgstr ""
+msgstr "Importar una versión de la vista de contenido"
 
-#, fuzzy
 msgid "Content view imported."
-msgstr "Vista de contenido actualizada"
+msgstr "Vista de contenido importada."
 
-#, fuzzy
 msgid "Could not import the content view"
-msgstr "No se ha podido actualizar la vista de contenido"
+msgstr "No se ha podido importar la vista de contenido"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Organization numeric identifier"
-msgstr "Organización"
+msgstr "Identificador numérico de la organización"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Location of export tar on disk"
-msgstr "Ubicación"
+msgstr "Ubicación del tar de exportación en el disco"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Export tar #{options['option_export_tar']} does not exist."
-msgstr "no"
+msgstr "Exportar tar #{options['option_export_tar']} no existe."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Unable to sync repositories, no library repository found for %s"
-msgstr "no"
+msgstr ""
+"No se han podido sincronizar los repositorios, no se ha encontrado ningún "
+"repositorio de bibliotecas para %s"
 
 msgid "Errata ID"
 msgstr "ID de erratas"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Type"
 msgstr "Tipo"
 
-# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
-#, fuzzy
 msgid "Title"
-msgstr "Hora"
+msgstr "Título"
 
 msgid "Reboot Suggested"
-msgstr ""
+msgstr "Reinicio sugerido"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gguerrer
 msgid "Updated"
 msgstr "Actualizado"
 
 msgid "Issued"
-msgstr ""
+msgstr "Publicado"
 
 msgid "Release"
-msgstr "Lanzamiento"
+msgstr "Soltar"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Solution"
-msgstr "Ubicación"
+msgstr "Solución"
 
 msgid "Module Streams"
-msgstr ""
+msgstr "Corriente de módulo"
 
 msgid "Stream"
-msgstr ""
+msgstr "Corriente"
 
 msgid "Path"
-msgstr ""
+msgstr "Ruta"
 
 msgid "Checksum"
-msgstr ""
+msgstr "Suma de comprobación"
 
 msgid "Filter ID"
 msgstr "ID de filtro"
@@ -923,7 +805,6 @@ msgstr "ID de filtro"
 msgid "Inclusion"
 msgstr "Inclusión"
 
-# translation auto-copied from project firewalld, version 0.3.8, document firewalld
 msgid "Rules"
 msgstr "Reglas"
 
@@ -933,31 +814,26 @@ msgstr "Versión mínima"
 msgid "Maximum Version"
 msgstr "Versión máxima"
 
-# translation auto-copied from project policycoreutils, version 2.1.14, document policycoreutils, author gguerrer
 msgid "Types"
 msgstr "Tipos"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Created"
 msgstr "Creado"
 
-#, fuzzy
 msgid "Filter created."
-msgstr "Filtro creado"
+msgstr "Filtro creado."
 
 msgid "Could not create the filter"
 msgstr "No se ha podido crear el filtro"
 
-#, fuzzy
 msgid "Filter updated."
-msgstr "Filtro actualizado"
+msgstr "Filtro actualizado."
 
 msgid "Could not update the filter"
 msgstr "No se ha podido actualizar el filtro"
 
-#, fuzzy
 msgid "Filter deleted."
-msgstr "Filtro borrado"
+msgstr "Filtro eliminado."
 
 msgid "Could not delete the filter"
 msgstr "No se ha podido borrar el filtro"
@@ -965,36 +841,29 @@ msgstr "No se ha podido borrar el filtro"
 msgid "Rule ID"
 msgstr "ID de regla"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Architecture"
 msgstr "Arquitectura"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Date Type"
-msgstr "Tipo"
+msgstr "Fecha Tipo"
 
-#, fuzzy
 msgid "Filter rule created."
-msgstr "Regla de filtro creada"
+msgstr "Regla de filtro creada."
 
 msgid "Could not create the filter rule"
 msgstr "No se ha podido crear la regla de filtro"
 
 msgid "Package and package group names"
-msgstr ""
+msgstr "Nombres de paquetes y grupos de paquetes"
 
-#, fuzzy
 msgid "Filter rule updated."
-msgstr "Regla de filtro actualizada"
+msgstr "Regla de filtro actualizada."
 
 msgid "Could not update the filter rule"
 msgstr "No se ha podido actualizar la regla de filtro"
 
-#, fuzzy
 msgid "Filter rule deleted."
-msgstr "Regla de filtro borrada"
+msgstr "Regla de filtro eliminada."
 
 msgid "Could not delete the filter rule"
 msgstr "No se ha podido borrar la regla de filtro"
@@ -1002,13 +871,11 @@ msgstr "No se ha podido borrar la regla de filtro"
 msgid "Content Type"
 msgstr "Tipo de contenido"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gguerrer
 msgid "Product"
 msgstr "Producto"
 
-#, fuzzy
 msgid "GPG Key created."
-msgstr "Llave GPG creada"
+msgstr "Clave GPG creada."
 
 msgid "Could not create GPG Key"
 msgstr "No se ha podido crear la llave GPG"
@@ -1016,16 +883,14 @@ msgstr "No se ha podido crear la llave GPG"
 msgid "GPG Key file"
 msgstr "Archivo de llave GPG"
 
-#, fuzzy
 msgid "GPG Key updated."
-msgstr "Llave GPG actualizada"
+msgstr "Clave GPG actualizada."
 
 msgid "Could not update GPG Key"
 msgstr "No se ha podido actualizar la llave GPG"
 
-#, fuzzy
 msgid "GPG Key deleted."
-msgstr "Llave GPG borrada"
+msgstr "Clave GPG eliminada."
 
 msgid "Could not delete the GPG Key"
 msgstr "No se ha podido borrar la llave GPG"
@@ -1033,337 +898,278 @@ msgstr "No se ha podido borrar la llave GPG"
 msgid "Limit"
 msgstr "Límite"
 
-#, fuzzy
 msgid "Host collection created."
-msgstr "Recopilación de hosts creada"
+msgstr "Colección de hosts creada."
 
 msgid "Could not create the host collection"
 msgstr "No se ha podido crear la recopilación de hosts"
 
 msgid "Total Hosts"
-msgstr ""
+msgstr "Total de hosts"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Using_the_CloudForms_System_Engine_Dashboard, author gguerrer
-#, fuzzy
 msgid "Host Collection ID"
-msgstr "Colecciones de hosts"
+msgstr "ID de la colección anfitriona"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document Using_the_CloudForms_System_Engine_Dashboard, author gguerrer
-#, fuzzy
 msgid "Host Collection Name"
-msgstr "Colecciones de hosts"
+msgstr "Nombre de la colección anfitriona"
 
-#, fuzzy
 msgid "Copy a host collection"
-msgstr "No se ha podido añadir la recopilación de hosts"
+msgstr "Copiar una colección de hosts"
 
 msgid "New host collection name"
-msgstr ""
+msgstr "Nuevo nombre de colección de hosts"
 
-#, fuzzy
 msgid "New host collection created."
-msgstr "Recopilación de hosts creada"
+msgstr "Nueva colección de hosts creada."
 
-#, fuzzy
 msgid "Could not create the new host collection"
-msgstr "No se ha podido crear la recopilación de hosts"
+msgstr "No se ha podido crear la nueva colección de hosts"
 
-#, fuzzy
 msgid "Host collection updated."
-msgstr "Recopilación de hosts actualizada"
+msgstr "Colección de hosts actualizada."
 
 msgid "Could not update the the host collection"
 msgstr "No se ha podido actualizar la recopilación de hosts"
 
-#, fuzzy
 msgid "Host collection deleted."
-msgstr "Recopilación de hosts borrada"
+msgstr "Colección de hosts eliminada."
 
 msgid "Could not delete the host collection"
 msgstr "No se ha podido borrar la recopilación de hosts"
 
-#, fuzzy
 msgid "The host(s) has been added."
-msgstr "Se han añadido los hosts de contenido"
+msgstr "Se han añadido los anfitriones."
 
-#, fuzzy
 msgid "Could not add host(s)"
-msgstr "No se han podido añadir los hosts de contenido"
+msgstr "No se ha podido añadir host(es)"
 
-#, fuzzy
 msgid "The host(s) has been removed."
-msgstr "Se han eliminado los hosts de contenido"
+msgstr "El anfitrión o anfitriones han sido eliminados."
 
-#, fuzzy
 msgid "Could not remove host(s)"
-msgstr "No se han podido eliminar los hosts de contenido"
+msgstr "No se ha podido eliminar el host"
 
 msgid "Manipulate errata for a host collection"
-msgstr ""
+msgstr "Manipular las erratas de una colección huésped"
 
 msgid "Install errata on content hosts contained within a host collection"
 msgstr ""
+"Instalar erratas en hosts de contenido incluidos en una colección de hosts"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully scheduled installation of errata."
-msgstr "Éxito"
+msgstr "Programada con éxito la instalación de la fe de erratas."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule installation of errata"
-msgstr "no"
+msgstr "No se ha podido programar la instalación de erratas"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "List of Errata to install"
-msgstr "Erratas"
+msgstr "Lista de erratas a instalar"
 
 msgid "Manipulate packages for a host collection"
-msgstr ""
+msgstr "Manipular paquetes para una colección de hosts"
 
 msgid "comma-separated list of packages to install"
-msgstr ""
+msgstr "lista separada por comas de los paquetes a instalar"
 
 msgid "Install packages on content hosts contained within a host collection"
 msgstr ""
+"Instalar paquetes en hosts de contenido incluidos en una colección de hosts"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully scheduled installation of package(s)."
-msgstr "Éxito"
+msgstr "Instalación de paquete(s) programada con éxito."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule installation of package(s)"
-msgstr "no"
+msgstr "No se ha podido programar la instalación de paquete(s)"
 
 msgid "Update packages on content hosts contained within a host collection"
 msgstr ""
+"Actualizar paquetes en hosts de contenido incluidos en una colección de hosts"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully scheduled update of package(s)."
-msgstr "Éxito"
+msgstr "Actualización de paquete(s) programada con éxito."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule update of package(s)"
-msgstr "no"
+msgstr "No se ha podido programar la actualización de los paquetes"
 
 msgid "Remove packages on content hosts contained within a host collection"
 msgstr ""
+"Eliminar paquetes en hosts de contenido incluidos en una colección de hosts"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully scheduled removal of package(s)."
-msgstr "Éxito"
+msgstr "Programada con éxito la retirada de paquete(s)."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule removal of package(s)"
-msgstr "no"
+msgstr "No se ha podido programar la retirada de paquetes"
 
 msgid "Manipulate package-groups for a host collection"
-msgstr ""
+msgstr "Manipular grupos de paquetes para una colección de hosts"
 
 msgid "comma-separated list of package-groups to install"
-msgstr ""
+msgstr "lista separada por comas de los grupos de paquetes a instalar"
 
-msgid "Install package-groups on content hosts contained within a host collection"
+msgid ""
+"Install package-groups on content hosts contained within a host collection"
 msgstr ""
+"Instalación de grupos de paquetes en hosts de contenido incluidos en una "
+"colección de hosts"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully scheduled installation of package-group(s)."
-msgstr "Éxito"
+msgstr ""
+"Se ha programado correctamente la instalación de los grupos de paquetes."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule installation of package-group(s)"
-msgstr "no"
+msgstr "No se ha podido programar la instalación de grupo(s) de paquetes"
 
-msgid "Update package-groups on content hosts contained within a host collection"
+msgid ""
+"Update package-groups on content hosts contained within a host collection"
 msgstr ""
+"Actualización de grupos de paquetes en hosts de contenido incluidos en una "
+"colección de hosts"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully scheduled update of package-groups(s)."
-msgstr "Éxito"
+msgstr "Actualización de grupos de paquetes programada con éxito."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule update of package-group(s)"
-msgstr "no"
+msgstr "No se ha podido programar la actualización de los grupos de paquetes."
 
-msgid "Remove package-groups on content hosts contained within a host collection"
+msgid ""
+"Remove package-groups on content hosts contained within a host collection"
 msgstr ""
+"Eliminar grupos de paquetes en hosts de contenido incluidos en una colección "
+"de hosts"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "Éxito"
+msgstr "Programada con éxito la eliminación de grupos de paquetes."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not schedule removal of package-group(s)"
-msgstr "no"
+msgstr "No se ha podido programar la eliminación de los grupos de paquetes."
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content Source name "
-msgstr "Contenido"
+msgstr "Nombre de la fuente de contenido "
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content Source"
-msgstr "Contenido"
+msgstr "Fuente del contenido"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Errata is being applied with task %{id}."
-msgstr "Erratas"
+msgstr "La errata se está aplicando con la tarea %{id}."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not apply errata"
-msgstr "no"
+msgstr "No se ha podido aplicar la fe de erratas"
 
-#, fuzzy
 msgid "Erratum ID"
-msgstr "ID de erratas"
+msgstr "Fe de erratas"
 
 msgid "Installable"
-msgstr ""
+msgstr "Instalable"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Errata recalculated with task %{id}."
-msgstr "Erratas"
+msgstr "Erratas recalculadas con la tarea %{id}."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not recalculate errata"
-msgstr "no"
+msgstr "No se ha podido recalcular la fe de erratas"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content Information"
-msgstr "Contenido"
+msgstr "Información sobre el contenido"
 
 msgid "Kickstart Repository"
-msgstr ""
+msgstr "Repositorio Kickstart"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Applicable Packages"
-msgstr "Paquetes"
+msgstr "Paquetes aplicables"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Upgradable Packages"
-msgstr "Paquetes"
+msgstr "Paquetes actualizables"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Applicable Errata"
-msgstr "Erratas"
+msgstr "Erratas aplicables"
 
 msgid "Enhancement"
-msgstr ""
+msgstr "Mejora"
 
 msgid "Bug Fix"
-msgstr ""
+msgstr "Corrección de errores"
 
 msgid "Security"
-msgstr ""
+msgstr "Seguridad"
 
 msgid "Subscription Information"
-msgstr ""
+msgstr "Información de suscripción"
 
 msgid "Last Checkin"
-msgstr ""
+msgstr "Último registro"
 
 msgid "Autoheal"
 msgstr "AutoHeal"
 
 msgid "Registered To"
-msgstr ""
+msgstr "Registrado en"
 
 msgid "Registered At"
-msgstr ""
+msgstr "Registrado en"
 
 msgid "Registered by Activation Keys"
-msgstr ""
+msgstr "Registrado por claves de activación"
 
 msgid "Kickstart repository name "
-msgstr ""
+msgstr "Nombre del repositorio Kickstart "
 
 msgid "Please provide --lifecycle-environment-id"
-msgstr ""
+msgstr "Indique --lifecycle-environment-id"
 
 msgid "Please provide --content-view-id"
-msgstr ""
+msgstr "Indique --content-view-id"
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment %{environment_i"
-"d} and content view %{content_view_id}"
+"No such repository with name %{name}, in lifecycle environment "
+"%{environment_id} and content view %{content_view_id}"
 msgstr ""
+"No existe tal repositorio con nombre %{name}, en entorno de ciclo de vida "
+"%{environment_id} y vista de contenido %{content_view_id}"
 
 msgid "NVRA"
-msgstr ""
+msgstr "NVRA"
 
 msgid "Host unregistered."
-msgstr ""
+msgstr "Anfitrión no registrado."
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not unregister the host"
-msgstr "no"
+msgstr "No se ha podido anular el registro del host"
 
 msgid "Host successfully registered."
-msgstr ""
+msgstr "Host registrado correctamente."
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Failed to register host"
-msgstr "Falló"
+msgstr "No se ha podido registrar el host"
 
 msgid "Subscription attached to the host successfully."
-msgstr ""
+msgstr "Suscripción conectada al host correctamente."
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Failed to attach subscriptions to the host"
-msgstr "Falló"
+msgstr "Error al adjuntar suscripciones al host"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "Cantidad"
+msgstr "Cantidad de suscripciones a añadir. Por defecto 1"
 
 msgid "Auto attached subscriptions to the host successfully."
-msgstr ""
+msgstr "Suscripciones adjuntas automáticamente al host con éxito."
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Failed to auto attach subscriptions to the host"
-msgstr "Falló"
+msgstr "Error al adjuntar suscripciones automáticamente al host"
 
 msgid "Subscription removed from the host successfully."
-msgstr ""
+msgstr "Suscripción eliminada correctamente del host."
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Failed to remove subscriptions from the host"
-msgstr "Falló"
+msgstr "Error al eliminar suscripciones del host"
 
-msgid "Remove the first instance of a subscription with matching id and quantity"
+msgid ""
+"Remove the first instance of a subscription with matching id and quantity"
 msgstr ""
+"Eliminar la primera instancia de una suscripción con id y cantidad "
+"coincidentes"
 
-#, fuzzy
 msgid "Organization ID to search by"
-msgstr "Nombre de organización para realizar la búsqueda"
+msgstr "ID de la organización por la que se busca"
 
 msgid "Organization name to search by"
 msgstr "Nombre de organización para realizar la búsqueda"
@@ -1374,22 +1180,17 @@ msgstr "Etiqueta de organización para realizar la búsqueda"
 msgid "Capsule name to search by"
 msgstr "Nombre de Capsule para realizar la búsqueda"
 
-#, fuzzy
 msgid "File name to search by"
-msgstr "Nombre de la tarea para realizar la búsqueda"
+msgstr "Nombre de archivo por el que se busca"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content View Version ID"
-msgstr "Vista de contenido"
+msgstr "Contenido Ver Versión ID"
 
-#, fuzzy
 msgid "Repository ID"
 msgstr "ID de repositorio"
 
-#, fuzzy
 msgid "Module stream name to search by"
-msgstr "Nombre de producto para realizar la búsqueda"
+msgstr "Nombre del flujo del módulo por el que se busca"
 
 msgid "Gpg key name to search by"
 msgstr "Nombre de llave GPG para realizar la búsqueda"
@@ -1404,7 +1205,7 @@ msgid "Product name to search by"
 msgstr "Nombre de producto para realizar la búsqueda"
 
 msgid "Operating system title"
-msgstr ""
+msgstr "Título de sistema operativo"
 
 msgid "Repository name to search by"
 msgstr "Nombre de repositorio para realizar la búsqueda"
@@ -1430,19 +1231,14 @@ msgstr "Autor del módulo Puppet para realizar la búsqueda"
 msgid "Puppet module's UUID to search by"
 msgstr "UUID del módulo Puppet para realizar la búsqueda"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Content view version number"
-msgstr "Contenido"
+msgstr "Número de versión de la vista de contenido"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Name to search by"
 msgstr "Nombre a buscar"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Name of the prior environment"
-msgstr "Nombre"
+msgstr "Nombre del entorno anterior"
 
 msgid "Prior"
 msgstr "Anterior"
@@ -1450,7 +1246,6 @@ msgstr "Anterior"
 msgid "Lifecycle Path"
 msgstr "Ruta de ciclo de vida"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
 msgid "Library"
 msgstr "Biblioteca"
 
@@ -1458,160 +1253,122 @@ msgid "Prior Lifecycle Environment"
 msgstr "Entorno del ciclo de vida anterior"
 
 msgid "Unauthenticated Pull"
-msgstr ""
+msgstr "Extracción no autenticada"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Registry Name Pattern"
-msgstr "Nombre"
+msgstr "Patrón de nombre de registro"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Environment created."
-msgstr "Entorno creado"
+msgstr "Entorno creado."
 
 msgid "Could not create environment"
 msgstr "No se ha podido crear el entorno"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Environment updated."
-msgstr "Entorno actualizado"
+msgstr "Entorno actualizado."
 
 msgid "Could not update environment"
 msgstr "No se ha podido actualizar el entorno"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Environment deleted."
-msgstr "Entorno eliminado"
+msgstr "Entorno borrado."
 
 msgid "Could not delete environment"
 msgstr "No se ha podido borrar el entorno"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Module Stream Name"
-msgstr "Nombre"
+msgstr "Módulo Nombre del flujo"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Context"
-msgstr "Contenido"
+msgstr "Contexto"
 
 msgid "Artifacts"
-msgstr ""
+msgstr "Artefactos"
 
 msgid "Profiles"
-msgstr ""
+msgstr "Perfiles"
 
 msgid "RPMs"
-msgstr ""
+msgstr "RPMs"
 
 msgid "Red Hat Repository URL"
 msgstr "URL del repositorio de Red Hat"
 
 msgid "Service Levels"
-msgstr ""
+msgstr "Niveles de servicio"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Organization updated."
-msgstr "Se actualizó la organización"
+msgstr "Se actualizó la organización."
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Could not update the organization"
 msgstr "No se pudo actualizar la organización"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Organization created."
-msgstr "Se creó la organización"
+msgstr "Se creó la organización."
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Could not create the organization"
-msgstr "No se pudo crear la organización"
+msgstr "No se pudo crear organización"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
-#, fuzzy
 msgid "Organization deleted."
-msgstr "Se borró la organización"
+msgstr "Se borró la organización."
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Could not delete the organization"
 msgstr "No se pudo borrar la organización"
 
-# translation auto-copied from project Red Hat Satellite Installation Guide, version 6.0, document Prerequisites3
-#, fuzzy
 msgid "version"
-msgstr "Versión"
+msgstr "versión"
 
 msgid "Commit"
-msgstr ""
+msgstr "Compromiso"
 
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 msgid "%s  %s"
 msgstr "%s  %s"
 
 msgid "Filename"
-msgstr ""
+msgstr "Archivo"
 
-# translation auto-copied from project firewalld, version 0.3.8, document firewalld
-#, fuzzy
 msgid "Source RPM"
-msgstr "Fuente"
+msgstr "RPM de fuente"
 
 msgid "Epoch"
-msgstr ""
+msgstr "Época"
 
 msgid "Build Host"
-msgstr ""
+msgstr "Construir host"
 
 msgid "Vendor"
-msgstr ""
+msgstr "Vendor"
 
-# translation auto-copied from project gtk3, version 3.8.2, document gtk30
 msgid "License"
 msgstr "Licencia"
 
 msgid "Relative Path"
-msgstr ""
+msgstr "Trayectoria relativa"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Package Group Name"
-msgstr "Grupos de paquetes"
+msgstr "Nombre del grupo de paquetes"
 
-#, fuzzy
 msgid "Repository Name"
-msgstr "ID de repositorio"
+msgstr "Nombre del repositorio"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Default Packages"
-msgstr "Paquetes"
+msgstr "Paquetes por defecto"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Mandatory Packages"
-msgstr "Paquetes"
+msgstr "Paquetes obligatorios"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Conditional Packages"
-msgstr "Paquetes"
+msgstr "Paquetes condicionales"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
-#, fuzzy
 msgid "Optional Packages"
-msgstr "Paquetes"
+msgstr "Paquetes opcionales"
 
 msgid "Server Response"
 msgstr "Respuesta del servidor"
 
-# translation auto-copied from project libvirt, version 1.1.1, document libvirt
 msgid "FAIL"
 msgstr "FALLA"
 
@@ -1622,11 +1379,10 @@ msgid "Message: %s"
 msgstr "Mensaje: %s"
 
 msgid "Sync State"
-msgstr "Sincronizar estado"
+msgstr "Estado de la sincronización"
 
-#, fuzzy
 msgid "Product created."
-msgstr "Producto creado"
+msgstr "Producto creado."
 
 msgid "Could not create the product"
 msgstr "No se ha podido crear el producto"
@@ -1634,7 +1390,6 @@ msgstr "No se ha podido crear el producto"
 msgid "Sync Plan ID"
 msgstr "ID de plan de sincronización"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "GPG"
 msgstr "GPG"
 
@@ -1642,10 +1397,10 @@ msgid "GPG Key ID"
 msgstr "ID de llave GPG"
 
 msgid "GPG Key"
-msgstr "Llave GPG"
+msgstr "llave GPG"
 
 msgid "Readonly"
-msgstr "Solo lectura"
+msgstr "Sólo lectura"
 
 msgid "Deletable"
 msgstr "Borrable"
@@ -1653,76 +1408,64 @@ msgstr "Borrable"
 msgid "Repo Name"
 msgstr "Nombre de repositorio"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "URL"
 msgstr "URL"
 
-#, fuzzy
 msgid "Product updated."
-msgstr "Producto actualizado"
+msgstr "Producto actualizado."
 
 msgid "Could not update the product"
 msgstr "No se ha podido actualizar el producto"
 
-#, fuzzy
 msgid "Product destroyed."
-msgstr "Producto destruido"
+msgstr "Producto destruido."
 
 msgid "Could not destroy the product"
 msgstr "No se ha podido destruir el producto"
 
-#, fuzzy
 msgid "Product repositories are being synchronized in task %{id}."
-msgstr "El repositorio se está sincronizando en la tarea %{id}"
+msgstr ""
+"Los repositorios de productos se están sincronizando en la tarea %{id}."
 
-#, fuzzy
 msgid "Could not synchronize the product repositories"
-msgstr "No se ha podido sincronizar el repositorio"
+msgstr "No se han podido sincronizar los repositorios de productos"
 
-#, fuzzy
 msgid "Assign sync plan to product"
-msgstr "Asignar plan de sincronización al producto."
+msgstr "Asignar plan de sincronización al producto"
 
 msgid "Synchronization plan assigned."
 msgstr "Plan de sincronización asignado."
 
-#, fuzzy
 msgid "Could not assign synchronization plan"
-msgstr "No se ha podido asignar el plan de sincronización."
+msgstr "No se ha podido asignar el plan de sincronización"
 
-#, fuzzy
 msgid "Delete assignment sync plan and product"
-msgstr "Borrar plan de sincronización de la asignación y el producto."
+msgstr "Borrar plan de sincronización de asignaciones y producto"
 
 msgid "Synchronization plan removed."
 msgstr "Plan de sincronización eliminado."
 
-#, fuzzy
 msgid "Could not remove synchronization plan"
-msgstr "No se ha podido eliminar el plan de sincronización."
+msgstr "No se ha podido eliminar el plan de sincronización"
 
 msgid "List associated products"
-msgstr ""
+msgstr "Lista de productos asociados"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Default Enabled?"
-msgstr "Habilitado"
+msgstr "¿Por defecto activado?"
 
 msgid "Override"
-msgstr ""
+msgstr "Sobrescribir"
 
 msgid "Uuid"
-msgstr ""
+msgstr "Uuid"
 
-# translation auto-copied from project Customer Portal Translations, version Portal-Case-Management, document Template, author gguerrer
 msgid "Summary"
 msgstr "Resumen"
 
 msgid "Project Page"
 msgstr "Página de proyecto"
 
-# translation auto-copied from project firewalld, version 0.3.8, document firewalld
 msgid "Source"
 msgstr "Fuente"
 
@@ -1738,52 +1481,41 @@ msgstr "Lista de etiquetas"
 msgid "Red Hat Repository"
 msgstr "Repositorio de Red Hat"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Checksum Type"
-msgstr "Tipo"
+msgstr "Tipo de suma de comprobación"
 
-#, fuzzy
 msgid "Mirror on Sync"
-msgstr "Sincronización"
+msgstr "Espejo en sincronización"
 
 msgid "Publish Via HTTP"
 msgstr "Publicar mediante HTTP"
 
 msgid "Published At"
-msgstr "Publicado en"
+msgstr "Publicada a las"
 
 msgid "Download Policy"
-msgstr ""
+msgstr "Descargar Política"
 
-#, fuzzy
 msgid "OSTree Upstream Sync Policy"
-msgstr "Sincronización"
+msgstr "Política de sincronización ascendente de OSTree"
 
-#, fuzzy
 msgid "OSTree Upstream Sync Depth"
-msgstr "Sincronización"
+msgstr "Profundidad de sincronización ascendente de OSTree"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Upstream Repository Name"
-msgstr "Nombre"
+msgstr "Nombre del repositorio"
 
 msgid "Container Image Tags Filter"
-msgstr ""
+msgstr "Contenedor Imagen Etiquetas Filtro"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Container Repository Name"
-msgstr "Nombre"
+msgstr "Contenedor Nombre del repositorio"
 
-# translation auto-copied from project Red Hat Satellite User Guide, version 6.0, document appe-Glossary_of_Terms
-#, fuzzy
 msgid "Ignorable Content Units"
-msgstr "Contenido"
+msgstr "Unidades de contenido ignorable"
 
 msgid "Sync"
-msgstr "Sincronización"
+msgstr "Sincronizar"
 
 msgid "Last Sync Date"
 msgstr "Última fecha de sincronización"
@@ -1791,226 +1523,199 @@ msgstr "Última fecha de sincronización"
 msgid "Content Counts"
 msgstr "Recuentos de contenido"
 
-# translation auto-copied from project firewalld, version 0.3.8, document firewalld
-#, fuzzy
 msgid "Source RPMS"
-msgstr "Fuente"
+msgstr "Fuente RPMS"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Package Groups"
 msgstr "Grupos de paquetes"
 
 msgid "Container Image Manifest Lists"
-msgstr ""
+msgstr "Listas de manifiestos de imágenes de contenedores"
 
 msgid "Container Image Manifests"
-msgstr ""
+msgstr "Manifiestos de imágenes de contenedores"
 
 msgid "Container Image Tags"
-msgstr ""
+msgstr "Etiquetas de imagen de contenedor"
 
 msgid "OSTree Branches"
-msgstr ""
+msgstr "Ramas de OSTree"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Files"
-msgstr "Falló"
+msgstr "Archivos"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
 msgid "yes"
 msgstr "sí"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
 msgid "no"
 msgstr "no"
 
 msgid "Not Synced"
 msgstr "No sincronizado"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Failed"
-msgstr "Falló"
+msgstr "Errores"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Success"
 msgstr "Éxito"
 
-# translation auto-copied from project gnome-packagekit, version 3.8.2, document gnome-packagekit
 msgid "Finished"
-msgstr "Terminado"
+msgstr "Finalizado"
 
-# translation auto-copied from project passwd, version 0.79, document passwd
 msgid "Error"
 msgstr "Error"
 
-# translation auto-copied from project virt-manager, version 0.10.0, document virt-manager
 msgid "Running"
-msgstr "Ejecutándose"
+msgstr "Ejecutando"
 
-# translation auto-copied from project evolution-data-server, version el6, document evolution-data-server-2.32
 msgid "Waiting"
 msgstr "Esperando"
 
-# translation auto-copied from project evolution, version 3.8.5, document evolution-3.8
 msgid "Canceled"
 msgstr "Cancelado"
 
-#, fuzzy
 msgid "Repository is being synchronized in task %{id}."
-msgstr "El repositorio se está sincronizando en la tarea %{id}"
+msgstr "El repositorio se está sincronizando en la tarea %{id}."
 
 msgid "Could not synchronize the repository"
 msgstr "No se ha podido sincronizar el repositorio"
 
-#, fuzzy
 msgid "Repository created."
-msgstr "Repositorio creado"
+msgstr "Repositorio creado."
 
 msgid "Could not create the repository"
 msgstr "No se ha podido crear el repositorio"
 
-#, fuzzy
 msgid "Repository updated."
-msgstr "Repositorio actualizado"
+msgstr "Repositorio actualizado."
 
 msgid "Could not update the repository"
 msgstr "No se ha podido actualizar el repositorio"
 
 msgid "--docker-digest required with --docker-tag"
-msgstr ""
+msgstr "--docker-digest necesario con --docker-tag"
 
 msgid "--docker-tag required with --docker-digest"
-msgstr ""
+msgstr "--docker-tag necesario con --docker-digest"
 
-msgid "Optional custom Container Image tag to specify the value of the Docker digest"
+msgid ""
+"Optional custom Container Image tag to specify the value of the Docker digest"
 msgstr ""
+"Etiqueta de imagen de contenedor personalizada opcional para especificar el "
+"valor del resumen de Docker"
 
 msgid "Container Image manifest digest"
-msgstr ""
+msgstr "Resumen del manifiesto de la imagen del contenedor"
 
 msgid "Repository updated"
 msgstr "Repositorio actualizado"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Failed to upload tag '%s' to repository."
-msgstr "Falló"
+msgstr "Error al subir la etiqueta '%s' al repositorio."
 
-#, fuzzy
 msgid "Repository deleted."
-msgstr "Repositorio borrado"
+msgstr "Repositorio eliminado."
 
 msgid "Could not delete the Repository"
 msgstr "No se ha podido borrar el repositorio"
 
-# translation auto-copied from project Satellite6 Hammer CLI, version 6.1, document hammer-cli
-#, fuzzy
 msgid "Could not find any files matching PATH"
-msgstr "no"
+msgstr "No se ha encontrado ningún archivo que coincida con PATH"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Cannot specify both product options and repository ID."
-msgstr "ID"
+msgstr ""
+"No se pueden especificar tanto las opciones de producto como el ID de "
+"repositorio."
 
-#, fuzzy
 msgid "Repository content uploaded."
-msgstr "Contenido del repositorio cargado"
+msgstr "Contenido del repositorio cargado."
 
 msgid "Could not upload the content"
 msgstr "No se ha podido cargar el contenido"
 
 msgid ""
-"Upload file, directory of files, or glob of files as content for a repository."
-"\n"
+"Upload file, directory of files, or glob of files as content for a "
+"repository.\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
+"Cargar un archivo, un directorio de archivos o un glob de archivos como "
+"contenido de un repositorio.\n"
+"Los globos deben ir entre comillas simples o dobles."
 
-msgid "Failed to upload file '%s' to repository. Please check the file and try again."
+msgid ""
+"Failed to upload file '%s' to repository. Please check the file and try "
+"again."
 msgstr ""
-"No se ha podido cargar el archivo '%s' al repositorio. Verifique el archivo e "
-"inténtelo de nuevo."
+"Error al subir el archivo '%s' al repositorio. Por favor, compruebe el "
+"archivo e inténtelo de nuevo."
 
-#, fuzzy
 msgid "Successfully uploaded file '%{name}'"
-msgstr "Archivo '%s' cargado correctamente."
+msgstr "Archivo cargado con éxito '%{name}'"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
-msgstr "Éxito"
+msgstr ""
+"Se ha cargado correctamente el archivo de manifiesto '%{name}' con el "
+"resumen '%{digest}'."
 
 msgid "Remove content from a repository"
-msgstr ""
+msgstr "Eliminar contenido de un repositorio"
 
-#, fuzzy
 msgid "Repository content removed."
-msgstr "Contenido del repositorio cargado"
+msgstr "Contenido del repositorio eliminado."
 
-#, fuzzy
 msgid "Could not remove content"
-msgstr "No se ha podido eliminar el host de contenido"
+msgstr "No se ha podido eliminar el contenido"
 
 msgid "Export content from a repository to the configured directory"
-msgstr ""
+msgstr "Exportar el contenido de un repositorio al directorio configurado"
 
-#, fuzzy
 msgid "Repository is being exported in task %{id}."
-msgstr "El repositorio se está sincronizando en la tarea %{id}"
+msgstr "El repositorio se está exportando en la tarea %{id}."
 
-#, fuzzy
 msgid "Could not export the repository"
-msgstr "No se ha podido actualizar el repositorio"
+msgstr "No se ha podido exportar el repositorio"
 
 msgid "Enabled Repositories"
 msgstr "Repositorios habilitados"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
 msgid "Arch"
 msgstr "Arquitectura"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
-#, fuzzy
 msgid "Registry Name"
-msgstr "Nombre"
+msgstr "Nombre de registro"
 
-# translation auto-copied from project Satellite6 Foreman, version 6.1, document foreman
 msgid "Enabled"
 msgstr "Habilitado"
 
-#, fuzzy
 msgid "Repository enabled."
-msgstr "Repositorio habilitado"
+msgstr "Repositorio habilitado."
 
 msgid "Could not enable repository"
 msgstr "No se ha podido habilitar el repositorio"
 
-#, fuzzy
 msgid "Repository disabled."
-msgstr "Repositorio inhabilitado"
+msgstr "Repositorio desactivado."
 
 msgid "Could not disable repository"
 msgstr "No se ha podido inhabilitar el repositorio"
 
 msgid "Consumed"
-msgstr "Consumido"
+msgstr "Consumidas"
 
 msgid "Physical"
-msgstr ""
+msgstr "Físico"
 
 msgid "Guests of %s"
-msgstr ""
+msgstr "Invitados de %s"
 
 msgid "Temporary"
-msgstr ""
+msgstr "Temporal"
 
 msgid "Virtual"
-msgstr ""
+msgstr "Virtual"
 
-#, fuzzy
 msgid "Manifest is being uploaded in task %{id}."
-msgstr "El manifiesto se está cargando en la tarea %{id}"
+msgstr "El manifiesto se está cargando en la tarea %{id}."
 
 msgid "Manifest upload failed"
 msgstr "Error al cargar el manifiesto"
@@ -2018,16 +1723,14 @@ msgstr "Error al cargar el manifiesto"
 msgid "Subscription manifest file"
 msgstr "Archivo del manifiesto de suscripción"
 
-#, fuzzy
 msgid "Manifest is being deleted in task %{id}."
-msgstr "El manifiesto se está borrando en la tarea %{id}"
+msgstr "Se está borrando el manifiesto en la tarea %{id}."
 
 msgid "Manifest deletion failed"
 msgstr "Error al borrar el manifiesto"
 
-#, fuzzy
 msgid "Manifest is being refreshed in task %{id}."
-msgstr "El manifiesto se está actualizando en la tarea %{id}"
+msgstr "El manifiesto se está actualizando en la tarea %{id}."
 
 msgid "Manifest refresh failed"
 msgstr "Error al actualizar el manifiesto"
@@ -2035,27 +1738,21 @@ msgstr "Error al actualizar el manifiesto"
 msgid "Status Message"
 msgstr "Mensaje de estado"
 
-# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
 msgid "Time"
 msgstr "Hora"
 
-# translation auto-copied from project Satellite6 Katello, version 6.1, document katello
 msgid "Interval"
 msgstr "Intervalo"
 
 msgid "Cron Expression"
-msgstr ""
+msgstr "Expresión Cron"
 
-# translation auto-copied from project subscription-manager, version 1.10.10, document keys
-#, fuzzy
 msgid "Recurring Logic ID"
-msgstr "ID"
+msgstr "ID de lógica recurrente"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Created at"
 msgstr "Creado"
 
-# translation auto-copied from project Satellite6 Hammer CLI Foreman, version 6.1, document hammer-cli-foreman
 msgid "Updated at"
 msgstr "Actualizado"
 
@@ -2063,18 +1760,17 @@ msgid "how often synchronization should run"
 msgstr "frecuencia con la que debería ejecutarse la sincronización"
 
 msgid "set this when interval is custom cron"
-msgstr ""
+msgstr "establecer esto cuando el intervalo es cron personalizado"
 
-# translation auto-copied from project control-center, version 3.8.6, document gnome-control-center-2.0
-#, fuzzy
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank current "
-"system time will be considered"
-msgstr "Hora"
+"Start date and time for the sync plan.Time is optional, if kept blank "
+"current system time will be considered"
+msgstr ""
+"Fecha y hora de inicio del plan de sincronización. La hora es opcional; si "
+"se deja en blanco, se tendrá en cuenta la hora actual del sistema."
 
-#, fuzzy
 msgid "Sync plan created."
-msgstr "Plan de sincronización creado"
+msgstr "Plan de sincronización creado."
 
 msgid "Could not create the sync plan"
 msgstr "No se ha podido crear el plan de sincronización"
@@ -2082,16 +1778,635 @@ msgstr "No se ha podido crear el plan de sincronización"
 msgid "start date and time of the synchronization"
 msgstr "fecha y hora de inicio de la sincronización"
 
-#, fuzzy
 msgid "Sync plan updated."
-msgstr "Plan de sincronización actualizado"
+msgstr "Plan de sincronización actualizado."
 
 msgid "Could not update the sync plan"
 msgstr "No se ha podido actualizar el plan de sincronización"
 
-#, fuzzy
 msgid "Sync plan destroyed."
-msgstr "Plan de sincronización destruido"
+msgstr "Plan de sincronización destruido."
 
 msgid "Could not destroy the sync plan"
 msgstr "No se ha podido destruir el plan de sincronización"
+
+msgid "Manipulate alternate content sources"
+msgstr ""
+
+msgid "Manipulate content credentials on the server"
+msgstr ""
+
+msgid "Manipulate deb packages"
+msgstr ""
+
+msgid "Manipulate content units"
+msgstr ""
+
+msgid "Prepare content for export to a disconnected Katello"
+msgstr ""
+
+msgid "Import content from an upstream archive."
+msgstr ""
+
+msgid "Manipulate source RPMs"
+msgstr ""
+
+msgid "Simple content access commands"
+msgstr ""
+
+msgid "Manipulate docker content"
+msgstr ""
+
+msgid "Alternate Content Source created."
+msgstr ""
+
+msgid "Could not create the Alternate Content Source."
+msgstr ""
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Alternate content source type"
+msgstr ""
+
+msgid "Upstream username"
+msgstr ""
+
+msgid "Verify SSL"
+msgstr ""
+
+msgid "SSL CA Cert"
+msgstr ""
+
+msgid "SSL Client Cert"
+msgstr ""
+
+msgid "SSL Client Key"
+msgstr ""
+
+msgid "Subpaths"
+msgstr ""
+
+msgid "Smart proxies"
+msgstr ""
+
+msgid "Download policy"
+msgstr ""
+
+msgid "Alternate Content Source updated."
+msgstr ""
+
+msgid "Could not update the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate Content Source deleted."
+msgstr ""
+
+msgid "Could not delete the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate content source is being refreshed in task %{id}."
+msgstr ""
+
+msgid "Could not refresh the alternate content source"
+msgstr ""
+
+msgid "Associated Hosts"
+msgstr ""
+
+msgid "Content Overrides"
+msgstr ""
+
+msgid "Content Label"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "System Purpose"
+msgstr ""
+
+msgid "Purpose Usage"
+msgstr ""
+
+msgid "Purpose Role"
+msgstr ""
+
+msgid "Purpose Addons"
+msgstr ""
+
+msgid "Content Source name"
+msgstr ""
+
+msgid "Kickstart repository name"
+msgstr ""
+
+msgid "Use %s instead"
+msgstr ""
+
+msgid "Content Credential created."
+msgstr ""
+
+msgid "Could not create Content Credential"
+msgstr ""
+
+msgid "Key file"
+msgstr ""
+
+msgid "Content Credential updated."
+msgstr ""
+
+msgid "Could not update Content Credential"
+msgstr ""
+
+msgid "Content Credential deleted."
+msgstr ""
+
+msgid "Could not delete the Content Credential"
+msgstr ""
+
+msgid ""
+"Writes export metadata to disk for use by the importing Katello. This "
+"command only needs to be used if the export was performed asynchronously or "
+"if the metadata was lost"
+msgstr ""
+
+msgid "Generate metadata based on output of the specified export task"
+msgstr ""
+
+msgid "Generate metadata based on specified export history"
+msgstr ""
+
+msgid ""
+"No export history was found. Verify the value given for --task-id or --id"
+msgstr ""
+
+msgid ""
+"Generates listing file on each directory of a syncable export. This command "
+"only needs to be used if the export was performed asynchronously or if the "
+"listing files were lost. Assumes the syncable export directory is accessible "
+"on disk"
+msgstr ""
+
+msgid "Generate listing files for a syncable export task"
+msgstr ""
+
+msgid "Generate listing files based on specified export history"
+msgstr ""
+
+msgid "Destination Server"
+msgstr ""
+
+msgid "Content View Version"
+msgstr ""
+
+msgid "Performs a full export a content view version"
+msgstr ""
+
+msgid "Performs a full export of the organization's library environment"
+msgstr ""
+
+msgid "Performs a full export of a repository"
+msgstr ""
+
+msgid "Could not fetch the export history"
+msgstr ""
+
+msgid ""
+"Once the task completes the listing files may be generated with the command:"
+msgstr ""
+
+msgid ""
+"Once the task completes the export metadata must be generated with the "
+"command:"
+msgstr ""
+
+msgid "Can not fetch export history from an unfinished task"
+msgstr ""
+
+msgid ""
+"Cannot generate listing files for this export since it is not syncable. It "
+"was not generated with --format=syncable."
+msgstr ""
+
+msgid ""
+"Export History does not have the path specified. The task may have errored "
+"out."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this version because it contains repositories "
+"without the 'immediate' download policy. Update the download policy and sync "
+"affected repositories. Once synced republish the content view and export the "
+"generated version."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this repository because it does not have the "
+"'immediate' download policy. Update the download policy, sync the repository "
+"and export."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this organization's library because it contains "
+"repositories without the 'immediate' download policy. Update the download "
+"policy and sync affected repositories to include them in the export."
+msgstr ""
+
+msgid ""
+"Use the following command to update the download policy of these "
+"repositories."
+msgstr ""
+
+msgid "Filter repositories by name."
+msgstr ""
+
+msgid "Library environment is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the library"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this organization are "
+"unexportable."
+msgstr ""
+
+msgid "Content view version is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the content view version"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this version are unexportable."
+msgstr ""
+
+msgid "Filter versions by version number."
+msgstr ""
+
+msgid "Performs an incremental export of a content view version"
+msgstr ""
+
+msgid ""
+"Performs an incremental export of the organization's library environment"
+msgstr ""
+
+msgid "Performs an incremental export of a repository"
+msgstr ""
+
+msgid ""
+"Location of the metadata.json file. This is not required if the metadata."
+"json file is already in the archive directory."
+msgstr ""
+
+msgid "Archive is being imported in task %{id}."
+msgstr ""
+
+msgid "Could not import the archive."
+msgstr ""
+
+msgid "Imports a content archive to a content view version"
+msgstr ""
+
+msgid ""
+"Imports a content archive to an organization's library lifecycle environment"
+msgstr ""
+
+msgid "Imports a repository"
+msgstr ""
+
+msgid "Solve Dependencies"
+msgstr ""
+
+msgid "Designate this Content View for importing from upstream servers only."
+msgstr ""
+
+msgid "Names for Lifecycle Environment"
+msgstr ""
+
+msgid "Content view id to search by"
+msgstr ""
+
+msgid "Content View Id"
+msgstr ""
+
+msgid "Component Id"
+msgstr ""
+
+msgid "Has Applied Filters"
+msgstr ""
+
+msgid "Applied Filters"
+msgstr ""
+
+msgid "Dependency Solving"
+msgstr ""
+
+msgid "Content view version updated."
+msgstr ""
+
+msgid "Could not update the content view version"
+msgstr ""
+
+msgid "Pulp ID"
+msgstr ""
+
+msgid "checksum"
+msgstr ""
+
+msgid "Nav"
+msgstr ""
+
+msgid "Nva"
+msgstr ""
+
+msgid "Available Host Count"
+msgstr ""
+
+msgid "Applicable Host Count"
+msgstr ""
+
+msgid "Manage docker manifests"
+msgstr ""
+
+msgid "Schema Version"
+msgstr ""
+
+msgid "Digest"
+msgstr ""
+
+msgid "Downloaded"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Manage docker tags"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Docker Manifest ID"
+msgstr ""
+
+msgid "Docker Manifest Name"
+msgstr ""
+
+msgid "Bugfix"
+msgstr ""
+
+msgid "Errata recalculation started."
+msgstr ""
+
+msgid "Trace Status"
+msgstr ""
+
+msgid "Content view environments"
+msgstr ""
+
+msgid "Content view"
+msgstr ""
+
+msgid "Lifecycle environment"
+msgstr ""
+
+msgid "Nvra"
+msgstr ""
+
+msgid "Content View id"
+msgstr ""
+
+msgid "Content View version"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Product name"
+msgstr ""
+
+msgid "Trace ID"
+msgstr ""
+
+msgid "Application"
+msgstr ""
+
+msgid "Helper"
+msgstr ""
+
+msgid "Traces are being resolved with task %{id}."
+msgstr ""
+
+msgid "Could not resolve traces"
+msgstr ""
+
+msgid "Organization title"
+msgstr ""
+
+msgid "Simple Content Access"
+msgstr ""
+
+msgid "Upstream Organization"
+msgstr ""
+
+msgid "Upstream Lifecycle Environment"
+msgstr ""
+
+msgid "Upstream Content View"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "SSL CA Credential ID"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Export Sync"
+msgstr ""
+
+msgid "Network Sync"
+msgstr ""
+
+msgid "Red Hat CDN"
+msgstr ""
+
+msgid "Custom CDN"
+msgstr ""
+
+msgid "Updated CDN configuration."
+msgstr ""
+
+msgid "Could not update CDN configuration."
+msgstr ""
+
+msgid "Source rpm"
+msgstr ""
+
+msgid "Nvrea"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Url"
+msgstr ""
+
+msgid "Build Time"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Requires"
+msgstr ""
+
+msgid "Provides"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Modular"
+msgstr ""
+
+msgid "message"
+msgstr ""
+
+msgid "Sync State (all)"
+msgstr ""
+
+msgid "Sync State (last)"
+msgstr ""
+
+msgid "Updates an HTTP Proxy for a product"
+msgstr ""
+
+msgid "Product proxy updated."
+msgstr ""
+
+msgid "Could not update the product HTTP Proxy."
+msgstr ""
+
+msgid "Location of the ansible collections requirements.yml file. "
+msgstr ""
+
+msgid ""
+"Limit the repository type to return. View available types with \"hammer "
+"repository types\""
+msgstr ""
+
+msgid "Mirroring Policy"
+msgstr ""
+
+msgid "Metadata Expiration"
+msgstr ""
+
+msgid "HTTP Proxy"
+msgstr ""
+
+msgid "HTTP Proxy Policy"
+msgstr ""
+
+msgid "Additive"
+msgstr ""
+
+msgid "Content Only"
+msgstr ""
+
+msgid "Complete Mirroring"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid ""
+"Type of repository to create. View available types with \"hammer repository "
+"types\""
+msgstr ""
+
+msgid "Container Image tag"
+msgstr ""
+
+msgid "Content types"
+msgstr ""
+
+msgid "Generic?"
+msgstr ""
+
+msgid "Removable?"
+msgstr ""
+
+msgid "Uploadable?"
+msgstr ""
+
+msgid "Indexed?"
+msgstr ""
+
+msgid ""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types "
+"with \"hammer repository types\""
+msgstr ""
+
+msgid "Do not wait for the task."
+msgstr ""
+
+msgid "Name of OSTree repository in archive."
+msgstr ""
+
+msgid "Successfully uploaded file %s"
+msgstr ""
+
+msgid "Could not upload the content."
+msgstr ""
+
+msgid ""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View "
+"removable types with \"hammer repository types\""
+msgstr ""
+
+msgid "Forces a republish of the specified repository."
+msgstr ""
+
+msgid "Repository republished."
+msgstr ""
+
+msgid "Could not republish the repository."
+msgstr ""
+
+msgid "Reclaim space from an On Demand repository"
+msgstr ""
+
+msgid "Repository space reclaimed."
+msgstr ""
+
+msgid "Could not reclaim the repository"
+msgstr ""
+
+msgid "This organization is not eligible for Simple Content Access"
+msgstr ""
+
+msgid "Simple Content Access Enabled."
+msgstr ""
+
+msgid "Could not enable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Simple Content Access Disabled."
+msgstr ""
+
+msgid "Could not disable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Time UTC"
+msgstr ""
+
+msgid "Next Sync"
+msgstr ""
