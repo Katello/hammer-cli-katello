@@ -6,12 +6,10 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ["2.7"]
-
+        ruby: ["2.7", "3.0", "3.1"]
     steps:
     - uses: actions/checkout@v2
     - name: Add hammer-cli-foreman to local gem file

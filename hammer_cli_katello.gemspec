@@ -75,6 +75,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'mocha'
   gem.add_development_dependency 'ci_reporter'
 
-  gem.add_development_dependency "rubocop", "0.42"
+  gem.add_development_dependency "rubocop", "~> 1.28.0"
   gem.add_development_dependency "rubocop-checkstyle_formatter"
 end
