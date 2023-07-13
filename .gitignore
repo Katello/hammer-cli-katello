@@ -33,3 +33,4 @@ doc/
 # Locale files
 locale/*/*.edit.po
 locale/*/*.po.time_stamp
+locale/*/LC_MESSAGES/*.mo
