@@ -1,3 +1,5 @@
+require 'hammer_cli_katello/acs_bulk_actions'
+
 module HammerCLIKatello
   class AcsCommand < HammerCLIKatello::Command
     resource :alternate_content_sources
@@ -95,6 +97,11 @@ module HammerCLIKatello
 
       build_options
     end
+
     autoload_subcommands
+
+    self.subcommand "bulk",
+               HammerCLIKatello::AcsBulkActionsCommand.desc,
+               HammerCLIKatello::AcsBulkActionsCommand
   end
 end
