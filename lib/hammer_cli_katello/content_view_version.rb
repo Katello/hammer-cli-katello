@@ -62,6 +62,27 @@ module HammerCLIKatello
             from :filter do
               field :id, _("Id")
               field :name, _("Name")
+              field :content, _('Type')
+              field :inclusion, _('Inclusion'), Fields::Boolean
+              field :original_packages, _('Original packages'), Fields::Boolean, hide_blank: true
+              # rubocop:disable Layout/LineLength
+              field :original_module_streams, _('Original module streams'), Fields::Boolean, hide_blank: true
+              # rubocop:enable Layout/LineLength
+            end
+            collection :rules, _("Rules"), hide_blank: true, hide_empty: true do
+              field :id, _('Id')
+              field :name, _('Name'), Fields::Field, hide_blank: true
+              field :uuid, _('UUID'), Fields::Field, hide_blank: true
+              field :module_stream_id, _('Module stream Id'), Fields::Field, hide_blank: true
+              collection :types, _('Types'), hide_blank: true, hide_empty: true do
+                field nil, _('')
+              end
+              field :architecture, _('Architecture'), Fields::Field, :hide_blank => true
+              field :content_view_filter_id, _('Content view filter Id')
+              field :errata_id, _('Errata Id'), Fields::Field, :hide_blank => true
+              field :date_type, _('Date type'), Fields::Field, :hide_blank => true
+              field :start_date, _('Start date'), Fields::Field, :hide_blank => true
+              field :end_date, _('End date'), Fields::Field, :hide_blank => true
             end
           end
           field :dependency_solving, _("Dependency Solving"), Fields::Field, :hide_blank => true
