@@ -6,14 +6,14 @@ module HammerCLIKatello
     it 'allows minimal options' do
       api_expects(:lifecycle_environments, :index)
 
-      run_cmd(%w(lifecycle-environment list))
+      run_cmd(%w[lifecycle-environment list])
     end
 
     describe 'allows organization' do
       it 'id' do
         api_expects(:lifecycle_environments, :index) { |p| p['organization_id'] == 1 }
 
-        run_cmd(%w(lifecycle-environment list --organization-id 1))
+        run_cmd(%w[lifecycle-environment list --organization-id 1])
       end
 
       it 'name' do
@@ -22,7 +22,7 @@ module HammerCLIKatello
 
         api_expects(:lifecycle_environments, :index) { |p| p['organization_id'] == 1 }
 
-        run_cmd(%w(lifecycle-environment list --organization org1))
+        run_cmd(%w[lifecycle-environment list --organization org1])
       end
 
       it 'label' do
@@ -31,7 +31,7 @@ module HammerCLIKatello
 
         api_expects(:lifecycle_environments, :index) { |p| p['organization_id'] == 1 }
 
-        run_cmd(%w(lifecycle-environment list --organization-label org1))
+        run_cmd(%w[lifecycle-environment list --organization-label org1])
       end
     end
   end

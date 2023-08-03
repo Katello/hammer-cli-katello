@@ -5,7 +5,7 @@ describe 'host subscription auto-attach' do
   include HostHelpers
 
   before do
-    @cmd = %w(host subscription auto-attach)
+    @cmd = %w[host subscription auto-attach]
   end
   it "auto-attach to a host" do
     params = ['--host-id=3']

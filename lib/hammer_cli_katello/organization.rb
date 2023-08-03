@@ -27,7 +27,7 @@ module HammerCLIKatello
             field :type_label, _("Type"), Fields::Field
             field :url, _("URL"), Fields::Field, hide_blank: true
             field :upstream_organization_label, _("Upstream Organization"),
-                                               Fields::Field, hide_blank: true
+                  Fields::Field, hide_blank: true
             field :upstream_lifecycle_environment_label,
                   _("Upstream Lifecycle Environment"), Fields::Field, hide_blank: true
             field :upstream_content_view_label, _("Upstream Content View"),

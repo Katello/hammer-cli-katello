@@ -15,7 +15,7 @@ describe "set a product's sync plan" do
 
     assert_equal(
       0,
-      run_cmd(%w(product set-sync-plan --id 1 --sync-plan-id 1)).exit_code
+      run_cmd(%w[product set-sync-plan --id 1 --sync-plan-id 1]).exit_code
     )
   end
 
@@ -27,7 +27,7 @@ describe "set a product's sync plan" do
 
     assert_equal(
       0,
-      run_cmd(%w(product set-sync-plan --organization-id 1 --id 1 --sync-plan syncplan1)).exit_code
+      run_cmd(%w[product set-sync-plan --organization-id 1 --id 1 --sync-plan syncplan1]).exit_code
     )
   end
 
@@ -40,10 +40,10 @@ describe "set a product's sync plan" do
 
     assert_equal(
       0,
-      run_cmd(%w(product set-sync-plan
+      run_cmd(%w[product set-sync-plan
                  --organization-id 1
                  --name product1
-                 --sync-plan syncplan1)).exit_code
+                 --sync-plan syncplan1]).exit_code
     )
   end
 end

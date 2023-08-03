@@ -1,4 +1,4 @@
-require_relative '../test_helper.rb'
+require_relative '../test_helper'
 require_relative '../organization/organization_helpers'
 require_relative '../content_view/content_view_helpers'
 require_relative '../repository/repository_helpers'
@@ -6,7 +6,6 @@ require_relative '../product/product_helpers'
 require_relative 'file_helpers'
 require 'hammer_cli_katello/file'
 
-# rubocop:disable ModuleLength
 module HammerCLIKatello
   describe FileCommand::InfoCommand do
     include FileHelpers
@@ -17,20 +16,20 @@ module HammerCLIKatello
 
     it 'allows minimal options' do
       expect_file_show('id' => '1')
-      run_cmd(%w(file info --id 1))
+      run_cmd(%w[file info --id 1])
     end
 
     describe 'requires' do
       describe 'organization options' do
         it 'to resolve product ID' do
           api_expects_no_call
-          result = run_cmd(%w(file list --product product1))
+          result = run_cmd(%w[file list --product product1])
           assert_match(/--organization-id/, result.err)
         end
 
         it 'to resolve content view ID' do
           api_expects_no_call
-          result = run_cmd(%w(file list --content-view cv1))
+          result = run_cmd(%w[file list --content-view cv1])
           assert_match(/--organization-id/, result.err)
         end
       end
@@ -38,7 +37,7 @@ module HammerCLIKatello
       describe 'product options' do
         it 'to resolve repository ID' do
           api_expects_no_call
-          result = run_cmd(%w(file list --repository repo1))
+          result = run_cmd(%w[file list --repository repo1])
           assert_match(/--product-id/, result.err)
         end
       end
@@ -47,12 +46,12 @@ module HammerCLIKatello
     describe 'allows filtering by' do
       it 'repository ID' do
         expect_file_search({'repository_id' => 2}, {})
-        run_cmd(%w(file list --repository-id 2))
+        run_cmd(%w[file list --repository-id 2])
       end
 
       it 'content view version ID' do
         expect_file_search({'content_view_version_id' => 2}, {})
-        run_cmd(%w(file list --content-view-version-id 2))
+        run_cmd(%w[file list --content-view-version-id 2])
       end
     end
 
@@ -60,7 +59,7 @@ module HammerCLIKatello
       it 'and repository ID' do
         expect_file_search({'repository_id' => '2', search: "name = \"foo\""}, 'id' => 1)
         expect_file_show('id' => 1)
-        run_cmd(%w(file info --name foo --repository-id 2))
+        run_cmd(%w[file info --name foo --repository-id 2])
       end
 
       describe 'repository name' do
@@ -68,7 +67,7 @@ module HammerCLIKatello
           expect_generic_repositories_search({'name' => 'repo2', 'product_id' => 1}, 'id' => 2)
           expect_file_search({'repository_id' => '2', search: "name = \"foo\""}, 'id' => 1)
           expect_file_show('id' => 1)
-          run_cmd(%w(file info --name foo --repository repo2 --product-id 1))
+          run_cmd(%w[file info --name foo --repository repo2 --product-id 1])
         end
 
         describe 'product name, and organization' do
@@ -77,8 +76,8 @@ module HammerCLIKatello
             expect_generic_repositories_search({'name' => 'repo2', 'product_id' => 1}, 'id' => 2)
             expect_file_search({'repository_id' => '2', search: "name = \"foo\""}, 'id' => 1)
             expect_file_show('id' => 1)
-            run_cmd(%w(file info --name foo --repository repo2 --product product1
-                       --organization-id 3))
+            run_cmd(%w[file info --name foo --repository repo2 --product product1
+                       --organization-id 3])
           end
 
           it 'name' do
@@ -87,8 +86,8 @@ module HammerCLIKatello
             expect_generic_repositories_search({'name' => 'repo2', 'product_id' => 1}, 'id' => 2)
             expect_file_search({'repository_id' => '2', search: "name = \"foo\""}, 'id' => 1)
             expect_file_show('id' => 1)
-            run_cmd(%w(file info --name foo --repository repo2 --product product1
-                       --organization org3))
+            run_cmd(%w[file info --name foo --repository repo2 --product product1
+                       --organization org3])
           end
 
           it 'label' do
@@ -97,8 +96,8 @@ module HammerCLIKatello
             expect_generic_repositories_search({'name' => 'repo2', 'product_id' => 1}, 'id' => 2)
             expect_file_search({'repository_id' => '2', search: "name = \"foo\""}, 'id' => 1)
             expect_file_show('id' => 1)
-            run_cmd(%w(file info --name foo --repository repo2 --product product1
-                       --organization-label org3))
+            run_cmd(%w[file info --name foo --repository repo2 --product product1
+                       --organization-label org3])
           end
         end
       end
@@ -106,7 +105,7 @@ module HammerCLIKatello
       it 'and content view version ID' do
         expect_file_search({'content_view_version_id' => '2', 'name' => 'foo'}, 'id' => 1)
         expect_file_show('id' => 1)
-        run_cmd(%w(file info --name foo --content-view-version-id 2))
+        run_cmd(%w[file info --name foo --content-view-version-id 2])
       end
 
       describe 'content view version' do
@@ -116,7 +115,7 @@ module HammerCLIKatello
           expect_file_search({'content_view_version_id' => '2',
                               search: "name = \"foo\""}, 'id' => 1)
           expect_file_show('id' => 1)
-          run_cmd(%w(file info --name foo --content-view-version 2.0 --content-view-id 3))
+          run_cmd(%w[file info --name foo --content-view-version 2.0 --content-view-id 3])
         end
 
         describe 'content view name, and organization' do
@@ -127,8 +126,8 @@ module HammerCLIKatello
             expect_file_search({'content_view_version_id' => '2',
                                 search: "name = \"foo\""}, 'id' => 1)
             expect_file_show('id' => 1)
-            run_cmd(%w(file info --name foo --content-view-version 2.0 --content-view cv3
-                       --organization-id 4))
+            run_cmd(%w[file info --name foo --content-view-version 2.0 --content-view cv3
+                       --organization-id 4])
           end
 
           it 'name' do
@@ -139,8 +138,8 @@ module HammerCLIKatello
             expect_file_search({'content_view_version_id' => '2',
                                 search: "name = \"foo\""}, 'id' => 1)
             expect_file_show('id' => 1)
-            run_cmd(%w(file info --name foo --content-view-version 2.0 --content-view cv3
-                       --organization org4))
+            run_cmd(%w[file info --name foo --content-view-version 2.0 --content-view cv3
+                       --organization org4])
           end
 
           it 'label' do
@@ -151,12 +150,11 @@ module HammerCLIKatello
             expect_file_search({'content_view_version_id' => '2',
                                 search: "name = \"foo\""}, 'id' => 1)
             expect_file_show('id' => 1)
-            run_cmd(%w(file info --name foo --content-view-version 2.0 --content-view cv3
-                       --organization-label org4))
+            run_cmd(%w[file info --name foo --content-view-version 2.0 --content-view cv3
+                       --organization-label org4])
           end
         end
       end
     end
   end
 end
-# rubocop:enable ModuleLength

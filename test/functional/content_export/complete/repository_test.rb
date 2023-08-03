@@ -11,7 +11,7 @@ describe 'content-export complete repository' do
   include RepositoryHelpers
 
   before do
-    @cmd = %w(content-export complete repository)
+    @cmd = %w[content-export complete repository]
   end
 
   let(:task_id) { '5' }

@@ -16,8 +16,8 @@ module HammerCLIKatello
       end
 
       base.validate_options :before, 'IdResolution' do
-        organization_options = [
-          :option_organization_id, :option_organization_name, :option_organization_label
+        organization_options = %i[
+          option_organization_id option_organization_name option_organization_label
         ]
 
         if option(:option_lifecycle_environment_name).exist? ||

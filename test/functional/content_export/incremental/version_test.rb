@@ -11,7 +11,7 @@ describe 'content-export incremental version' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(content-export incremental version)
+    @cmd = %w[content-export incremental version]
   end
 
   let(:task_id) { '5' }

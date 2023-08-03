@@ -5,7 +5,7 @@ describe 'Erratum Info' do
   include ErratumHelpers
 
   before do
-    @cmd = %w(erratum info)
+    @cmd = %w[erratum info]
   end
 
   it "prints module package info on run" do

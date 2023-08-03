@@ -11,7 +11,7 @@ describe 'content-export complete version' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(content-export complete version)
+    @cmd = %w[content-export complete version]
   end
 
   let(:task_id) { '5' }
@@ -28,7 +28,7 @@ describe 'content-export complete version' do
   let(:export_history) do
     {
       "id" => 1000,
-      "path" =>  "/tmp",
+      "path" => "/tmp",
       "metadata" => {}
     }
   end

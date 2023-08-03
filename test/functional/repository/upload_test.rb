@@ -8,7 +8,7 @@ describe 'upload repository' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(repository upload-content)
+    @cmd = %w[repository upload-content]
   end
 
   let(:org_id) { 1 }
@@ -40,7 +40,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -50,8 +49,7 @@ describe 'upload repository' do
                          :content_unit_id => nil,
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
-                      )
-    # rubocop:enable LineLength
+          )
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -76,7 +74,7 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
+    # rubocop:disable Layout/LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :content_type => 'srpm', :async => true,
                        :uploads => [{
@@ -86,8 +84,8 @@ describe 'upload repository' do
                          :content_unit_id => nil,
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
-                      )
-    # rubocop:enable LineLength
+          )
+    # rubocop:enable Layout/LineLength
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -113,7 +111,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -123,8 +120,7 @@ describe 'upload repository' do
                          :content_unit_id => nil,
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
-                      )
-    # rubocop:enable LineLength
+          )
 
     ex2.returns(400)
 
@@ -148,7 +144,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -158,8 +153,7 @@ describe 'upload repository' do
                          :content_unit_id => nil,
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
-                      )
-    # rubocop:enable LineLength
+          )
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -195,7 +189,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -205,8 +198,7 @@ describe 'upload repository' do
                          :content_unit_id => nil,
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
-                      )
-    # rubocop:enable LineLength
+          )
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -231,7 +223,6 @@ describe 'upload repository' do
          .with_params(:repository_id => repo_id, :size => file.size)
 
     ex.returns(upload_response)
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -241,8 +232,7 @@ describe 'upload repository' do
                          :content_unit_id => nil,
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
-                      )
-    # rubocop:enable LineLength
+          )
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
     expect_foreman_task(task_id)
@@ -270,7 +260,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
          .with_params(:id => repo_id, :sync_capsule => false, :publish_repository => false, :async => true,
                       :uploads => [{
@@ -280,8 +269,7 @@ describe 'upload repository' do
                         :content_unit_id => nil,
                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                       }]
-                     )
-    # rubocop:enable LineLength
+         )
 
     ex.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -299,7 +287,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                       :uploads => [{
@@ -309,8 +296,7 @@ describe 'upload repository' do
                         :content_unit_id => nil,
                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                       }]
-                     )
-    # rubocop:enable LineLength
+         )
 
     ex.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -339,19 +325,19 @@ describe 'upload repository' do
   describe 'requires' do
     it 'repository options' do
       api_expects_no_call
-      error = run_cmd(@cmd + %W(--path #{path})).err
+      error = run_cmd(@cmd + %W[--path #{path}]).err
       assert error.include?('--id, --name is required'), "Actual result: #{error}"
     end
 
     it 'product options when repository name is specified' do
       api_expects_no_call
-      error = run_cmd(@cmd + %W(--name repo1 --path #{path})).err
+      error = run_cmd(@cmd + %W[--name repo1 --path #{path}]).err
       assert(error.include?('--product, --product-id is required'), "Actual result: #{error}")
     end
 
     it 'organization options when product name is specified' do
       api_expects_no_call
-      error = run_cmd(@cmd + %W(--name repo1 --product product2 --path #{path})).err
+      error = run_cmd(@cmd + %W[--name repo1 --product product2 --path #{path}]).err
       assert(error.include?('--organization-id, --organization, --organization-label is required'),
              "Actual result: #{error}")
     end
@@ -360,7 +346,7 @@ describe 'upload repository' do
   describe 'disallows' do
     it 'product options when repository ID is specified' do
       api_expects_no_call
-      error = run_cmd(@cmd + %W(--id 1 --product product2 --path #{path})).err
+      error = run_cmd(@cmd + %W[--id 1 --product product2 --path #{path}]).err
       assert(error.include?('Cannot specify both product options and repository ID'),
              "Actual result: #{error}")
     end

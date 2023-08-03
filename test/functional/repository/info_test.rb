@@ -8,7 +8,7 @@ describe "get repository info" do
   include RepositoryHelpers
 
   before do
-    @cmd = %w(repository info)
+    @cmd = %w[repository info]
   end
 
   it "shows repository info by id" do

@@ -25,8 +25,8 @@ module HammerCLIKatello
             p['content_view_id'] == 3
         end
 
-        run_cmd(%w(activation-key create --organization org1 --name ak --content-view cv
-                   --lifecycle-environment test --unlimited-hosts))
+        run_cmd(%w[activation-key create --organization org1 --name ak --content-view cv
+                   --lifecycle-environment test --unlimited-hosts])
       end
     end
   end

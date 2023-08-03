@@ -13,8 +13,8 @@ module HammerCLIKatello
            default: 3, format: HammerCLI::Options::Normalizers::Number.new
 
     validate_options :before, 'IdResolution' do
-      organization_options = [:option_organization_id, :option_organization_name, \
-                              :option_organization_label]
+      organization_options = %i[option_organization_id option_organization_name
+                                option_organization_label]
 
       any(:option_name, :option_id).required
 
@@ -68,7 +68,9 @@ module HammerCLIKatello
       end
     end
 
-    private def purge_version(v)
+    private
+
+    def purge_version(v)
       if option_async?
         task = destroy(:content_view_versions, 'id' => v["id"])
         print_message _("Version '%{version}' of content view '%{view}' scheduled "\
@@ -81,7 +83,7 @@ module HammerCLIKatello
       end
     end
 
-    private def old_unused_versions
+    def old_unused_versions
       return @old_unused_versions if @old_unused_versions
 
       all_versions = []
@@ -93,6 +95,7 @@ module HammerCLIKatello
                                                  :per_page => per_page, :page => page)
         all_versions << versions
         break if versions.count < per_page
+
         page += 1
       end
       all_versions.flatten!

@@ -6,11 +6,11 @@ module HammerCLIKatello
     module PackageContentType
       def self.included(base)
         base.option('--packages',
-          'PACKAGES',
-          _("comma-separated list of packages to install"),
-          :required => true,
-          :format => HammerCLI::Options::Normalizers::List.new,
-          :attribute_name => :content)
+                    'PACKAGES',
+                    _("comma-separated list of packages to install"),
+                    :required => true,
+                    :format => HammerCLI::Options::Normalizers::List.new,
+                    :attribute_name => :content)
       end
 
       def content_type

@@ -7,7 +7,9 @@ module RepositoryHelpers
 
   def expect_repositories_search(org_id, names, ids)
     expect_generic_repositories_search({'names' => names, 'organization_id' => org_id},
-      ids.zip(names).map { |id, name| { 'id' => id, 'name' => name } })
+                                       ids.zip(names).map do |id, name|
+                                         { 'id' => id, 'name' => name }
+                                       end)
   end
 
   def expect_generic_repositories_search(params = {}, returns = [])

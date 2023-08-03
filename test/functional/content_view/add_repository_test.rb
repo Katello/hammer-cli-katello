@@ -14,7 +14,7 @@ module HammerCLIKatello
           p['name'] == 'cv' && p['organization_id'] == 1
         end
 
-        run_cmd(%w(content-view add-repository --organization org1 --name cv --repository-id 1))
+        run_cmd(%w[content-view add-repository --organization org1 --name cv --repository-id 1])
       end
     end
   end

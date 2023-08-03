@@ -5,11 +5,11 @@ module HammerCLIKatello
   describe HostCollection::UpdateCommand do
     it 'does not require organization options if id is specified' do
       api_expects(:host_collections, :update)
-      run_cmd(%w(host-collection update --id 1))
+      run_cmd(%w[host-collection update --id 1])
     end
 
     it 'requires organization options if name is specified' do
-      result = run_cmd(%w(host-collection update --name hc1))
+      result = run_cmd(%w[host-collection update --name hc1])
       expected_error = "Missing options to search organization"
       assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
       assert_equal(expected_error, result.err[/#{expected_error}/])
@@ -23,7 +23,7 @@ module HammerCLIKatello
         par['id'].to_i == 2
       end
 
-      run_cmd(%w(host-collection update --name hc1 --organization-id 1))
+      run_cmd(%w[host-collection update --name hc1 --organization-id 1])
     end
 
     it 'allows organization name' do
@@ -37,7 +37,7 @@ module HammerCLIKatello
         par['id'].to_i == 2
       end
 
-      run_cmd(%w(host-collection update --name hc1 --organization org1))
+      run_cmd(%w[host-collection update --name hc1 --organization org1])
     end
 
     it 'allows organization label' do
@@ -51,7 +51,7 @@ module HammerCLIKatello
         par['id'].to_i == 2
       end
 
-      run_cmd(%w(host-collection update --name hc1 --organization-label org1))
+      run_cmd(%w[host-collection update --name hc1 --organization-label org1])
     end
   end
 end

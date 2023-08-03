@@ -10,7 +10,7 @@ describe "get product info" do
     expect_product_show(:id => 1)
     assert_equal(
       0,
-      run_cmd(%w(product info --id 1)).exit_code
+      run_cmd(%w[product info --id 1]).exit_code
     )
   end
 
@@ -18,7 +18,7 @@ describe "get product info" do
     expect_product_show(:name => 'product1', :org_id => 1, :id => 1)
     assert_equal(
       0,
-      run_cmd(%w(product info --organization-id 1 --name product1)).exit_code
+      run_cmd(%w[product info --organization-id 1 --name product1]).exit_code
     )
   end
 
@@ -27,7 +27,7 @@ describe "get product info" do
     expect_product_show(:name => 'product1', :org_id => 1, :id => 1)
     assert_equal(
       0,
-      run_cmd(%w(product info --organization org1 --name product1)).exit_code
+      run_cmd(%w[product info --organization org1 --name product1]).exit_code
     )
   end
 end

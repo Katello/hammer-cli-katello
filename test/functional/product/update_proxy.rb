@@ -4,7 +4,7 @@ describe 'update an http proxy on a product' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(product update-proxy)
+    @cmd = %w[product update-proxy]
   end
 
   let(:sync_response) do

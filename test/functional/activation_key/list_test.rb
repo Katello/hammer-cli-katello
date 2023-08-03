@@ -5,7 +5,7 @@ describe 'listing activation-keys' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(activation-key list)
+    @cmd = %w[activation-key list]
   end
 
   let(:org_id) { 1 }

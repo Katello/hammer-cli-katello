@@ -1,10 +1,10 @@
 require_relative '../../test_helper'
 require 'hammer_cli_katello/content_view_component'
-# rubocop:disable Metrics/ModuleLength
+
 module HammerCLIKatello
   describe ContentViewComponent::UpdateCommand do
     before do
-      @cmd = %w(content-view component update)
+      @cmd = %w[content-view component update]
       @component_version = OpenStruct.new(:id => 666, :version => "1.0")
       @component = OpenStruct.new(:id => 6, :name => "component",
                                   :content_view_version => @component_version)

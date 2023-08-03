@@ -9,7 +9,7 @@ describe 'content-view version incremental-update' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(content-view version incremental-update)
+    @cmd = %w[content-view version incremental-update]
   end
 
   it "performs incremental update with no updates" do
@@ -18,7 +18,7 @@ describe 'content-view version incremental-update' do
 
     ex = api_expects(:content_view_versions, :incremental_update, 'Incremental Update') do |par|
       par['update_hosts'].nil? &&
-        par[:content_view_version_environments][0][:environment_ids] == %w(1 2 3) &&
+        par[:content_view_version_environments][0][:environment_ids] == %w[1 2 3] &&
         par[:content_view_version_environments][0][:content_view_version_id] == 5 &&
         par['add_content']['errata_ids'] == ['FOO2012']
     end
@@ -36,7 +36,7 @@ describe 'content-view version incremental-update' do
 
     ex = api_expects(:content_view_versions, :incremental_update, 'Incremental Update') do |par|
       par['update_hosts']['included'][:search] == '' &&
-        par[:content_view_version_environments][0][:environment_ids] == %w(1 2 3) &&
+        par[:content_view_version_environments][0][:environment_ids] == %w[1 2 3] &&
         par[:content_view_version_environments][0][:content_view_version_id] == 5 &&
         par['add_content']['errata_ids'] == ['FOO2012']
     end

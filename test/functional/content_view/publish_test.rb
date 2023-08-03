@@ -18,7 +18,7 @@ module HammerCLIKatello
         p['id'] == 3 && p['major'] == 5 && p['minor'] == 1
       end
 
-      run_cmd(%w(content-view publish --major 5 --minor 1 --organization org1 --name cv --async))
+      run_cmd(%w[content-view publish --major 5 --minor 1 --organization org1 --name cv --async])
     end
   end
 end

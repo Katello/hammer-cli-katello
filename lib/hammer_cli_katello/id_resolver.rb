@@ -3,31 +3,31 @@ require 'hammer_cli_katello/search_options_creators'
 module HammerCLIKatello
   class Searchables < HammerCLIForeman::Searchables
     SEARCHABLES = {
-      :activation_key =>        [s_name(_("Activation key name to search by"))],
-      :capsule =>               [s_name(_("Capsule name to search by"))],
-      :content_view =>          [s_name(_("Content view name to search by"))],
+      :activation_key => [s_name(_("Activation key name to search by"))],
+      :capsule => [s_name(_("Capsule name to search by"))],
+      :content_view => [s_name(_("Content view name to search by"))],
       :content_view_component => [],
-      :file_unit =>             [s_name(_("File name to search by")),
-                                 s("content_view_version_id", _("Content View Version ID")),
-                                 s("repository_id", _("Repository ID"))],
-      :module_stream =>         [s_name(_("Module stream name to search by")),
-                                 s("repository_id", _("Repository ID"))],
-      :gpg =>                   [s_name(_("Gpg key name to search by"))],
-      :host_collection =>       [s_name(_("Host collection name to search by"))],
-      :environment =>           [s_name(_("Lifecycle environment name to search by"))],
+      :file_unit => [s_name(_("File name to search by")),
+                     s("content_view_version_id", _("Content View Version ID")),
+                     s("repository_id", _("Repository ID"))],
+      :module_stream => [s_name(_("Module stream name to search by")),
+                         s("repository_id", _("Repository ID"))],
+      :gpg => [s_name(_("Gpg key name to search by"))],
+      :host_collection => [s_name(_("Host collection name to search by"))],
+      :environment => [s_name(_("Lifecycle environment name to search by"))],
       :lifecycle_environment => [s_name(_("Lifecycle environment name to search by"))],
-      :organization =>          [s_name(_("Organization name to search by")),
-                                 s("title", _("Organization title")),
-                                 s("label", _("Organization label to search by"),
-                                   :editable => false)
+      :organization => [s_name(_("Organization name to search by")),
+                        s("title", _("Organization title")),
+                        s("label", _("Organization label to search by"),
+                          :editable => false)
                                 ],
-      :product =>               [s_name(_("Product name to search by"))],
-      :operatingsystem =>       [s("title", _("Operating system title"), :editable => false)],
-      :repository =>            [s_name(_("Repository name to search by"))],
-      :repository_set =>        [s_name(_("Repository set name to search by"))],
-      :subscription =>          [s_name(_("Subscription name to search by"))],
-      :sync_plan =>             [s_name(_("Sync plan name to search by"))],
-      :task =>                  [s_name(_("Task name to search by"))],
+      :product => [s_name(_("Product name to search by"))],
+      :operatingsystem => [s("title", _("Operating system title"), :editable => false)],
+      :repository => [s_name(_("Repository name to search by"))],
+      :repository_set => [s_name(_("Repository set name to search by"))],
+      :subscription => [s_name(_("Subscription name to search by"))],
+      :sync_plan => [s_name(_("Sync plan name to search by"))],
+      :task => [s_name(_("Task name to search by"))],
       :content_view_version => [s("version", _("Content view version number"))],
       :content_export => [],
       :content_export_incremental => [],
@@ -100,6 +100,7 @@ module HammerCLIKatello
       find_resource(:repositories, options)['id']
     end
 
+    # rubocop:disable Metrics/CyclomaticComplexity
     def repository_ids(options)
       return options['option_repository_ids'] unless options['option_repository_ids'].nil?
 
@@ -117,8 +118,9 @@ module HammerCLIKatello
           .select { |repo| options[key_names].include? repo['name'] }.map { |repo| repo['id'] }
       end
     end
+    # rubocop:enable Metrics/CyclomaticComplexity
 
-    # rubocop:disable Style/EmptyElse
+    # rubocop:disable Style/EmptyElse, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
     def content_view_version_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
@@ -139,12 +141,12 @@ module HammerCLIKatello
           member_of_environment_ids.include? options[from_environment_id].to_s
         end
         results_in_from_environment
-          .sort { |a, b| a['version'].to_f <=> b['version'].to_f }.last['id']
+          .sort { |a, b| a['version'].to_f <=> b['version'].to_f }.last['id'] # rubocop:disable Style/RedundantSort
       else
         nil
       end
     end
-    # rubocop:enable Style/EmptyElse
+    # rubocop:enable Style/EmptyElse, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
     private
 
@@ -154,6 +156,7 @@ module HammerCLIKatello
       from_environment_id = HammerCLI.option_accessor_name("from_environment_id")
       from_environment_name = HammerCLI.option_accessor_name("from_environment_name")
       return nil if options[from_environment_id].nil? && options[from_environment_name].nil?
+
       search_options = options.dup.tap do |opts|
         opts[environment_name] = opts[from_environment_name]
         opts[environment_id] = opts[from_environment_id]
@@ -163,10 +166,9 @@ module HammerCLIKatello
 
     def search_and_rescue(search_function, resource, options)
       self.send(search_function, scoped_options(resource, options))
-    rescue HammerCLIForeman::MissingSearchOptions # rubocop:disable HandleExceptions
+    rescue HammerCLIForeman::MissingSearchOptions
       # Intentionally suppressing the exception,
       # These are not always required.
     end
   end
-  # rubocop:enable ClassLength
 end

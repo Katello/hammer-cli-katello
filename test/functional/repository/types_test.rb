@@ -1,9 +1,8 @@
-
 require File.join(File.dirname(__FILE__), '../test_helper')
 
 describe 'repository types' do
   before do
-    @cmd = %w(repository types)
+    @cmd = %w[repository types]
   end
 
   let(:empty_response) do

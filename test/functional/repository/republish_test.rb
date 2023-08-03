@@ -8,7 +8,7 @@ describe 'Republish a repository' do
   include ProductHelpers
 
   before do
-    @cmd = %w(repository republish)
+    @cmd = %w[repository republish]
   end
 
   let(:repo_id) { 1 }

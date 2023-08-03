@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 describe 'create content-credentials' do
   before do
-    @cmd = %w(content-credentials create)
+    @cmd = %w[content-credentials create]
     @base_params = ["--organization-id=#{org_id}", "--name=#{name}"]
   end
 

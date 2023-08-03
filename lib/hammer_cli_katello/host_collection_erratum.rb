@@ -9,11 +9,11 @@ module HammerCLIKatello
       failure_message _("Could not schedule installation of errata")
 
       option('--errata',
-        'ERRATA',
-        _("List of Errata to install"),
-        :required => true,
-        :format => HammerCLI::Options::Normalizers::List.new,
-        :attribute_name => :content)
+             'ERRATA',
+             _("List of Errata to install"),
+             :required => true,
+             :format => HammerCLI::Options::Normalizers::List.new,
+             :attribute_name => :content)
 
       def execute
         warn "This command uses katello agent and will be removed in favor of remote execution " \

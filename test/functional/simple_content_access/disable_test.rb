@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe 'simple-content-access disable' do
   before do
-    @cmd = %w(simple-content-access disable)
+    @cmd = %w[simple-content-access disable]
   end
 
   let(:organization_id) { 3 }

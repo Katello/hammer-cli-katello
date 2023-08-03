@@ -13,8 +13,8 @@ describe "create repository" do
         product_id: product_id,
         content_type: content_type)
 
-    command = %W(repository create --organization-id #{org_id} --product-id #{product_id}
-                 --content-type #{content_type} --name #{name})
+    command = %W[repository create --organization-id #{org_id} --product-id #{product_id}
+                 --content-type #{content_type} --name #{name}]
 
     assert_equal(0, run_cmd(command).exit_code)
   end

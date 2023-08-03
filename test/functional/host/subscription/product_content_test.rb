@@ -7,11 +7,11 @@ describe 'listing available product content' do
 
   let(:host_id) { 1 }
   let(:empty_response_table) do
-    <<eostring
----|------|------|-----|---------|-------|------------------|---------
-ID | NAME | TYPE | URL | GPG KEY | LABEL | DEFAULT ENABLED? | OVERRIDE
----|------|------|-----|---------|-------|------------------|---------
-eostring
+    <<~EOSTRING
+      ---|------|------|-----|---------|-------|------------------|---------
+      ID | NAME | TYPE | URL | GPG KEY | LABEL | DEFAULT ENABLED? | OVERRIDE
+      ---|------|------|-----|---------|-------|------------------|---------
+    EOSTRING
   end
 
   it "lists content available for a host" do
@@ -21,7 +21,7 @@ eostring
     ex.returns(index_response([]))
     assert_cmd(
       success_result(empty_response_table),
-      run_cmd(%w(host subscription product-content --host-id 1))
+      run_cmd(%w[host subscription product-content --host-id 1])
     )
   end
 end

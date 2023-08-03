@@ -6,7 +6,7 @@ module HammerCLIKatello
     it 'does not require organization options' do
       api_expects(:host_collections, :index)
 
-      run_cmd(%w(host-collection list))
+      run_cmd(%w[host-collection list])
     end
 
     it 'allows organization id' do
@@ -14,7 +14,7 @@ module HammerCLIKatello
         par['organization_id'].to_i == 1
       end
 
-      run_cmd(%w(host-collection list --organization-id 1))
+      run_cmd(%w[host-collection list --organization-id 1])
     end
 
     it 'allows organization name' do
@@ -25,7 +25,7 @@ module HammerCLIKatello
         par['organization_id'].to_i == 1
       end
 
-      run_cmd(%w(host-collection list --organization org1))
+      run_cmd(%w[host-collection list --organization org1])
     end
 
     it 'allows organization label' do
@@ -36,7 +36,7 @@ module HammerCLIKatello
         par['organization_id'].to_i == 1
       end
 
-      run_cmd(%w(host-collection list --organization-label org1))
+      run_cmd(%w[host-collection list --organization-label org1])
     end
 
     it 'allows host id' do
@@ -44,7 +44,7 @@ module HammerCLIKatello
         par['host_id'] == 1
       end
 
-      run_cmd(%w(host-collection list --host-id 1 --organization-id 1))
+      run_cmd(%w[host-collection list --host-id 1 --organization-id 1])
     end
 
     it 'allows host name' do
@@ -57,7 +57,7 @@ module HammerCLIKatello
         par['host_id'] == 1
       end
 
-      run_cmd(%w(host-collection list --host host1 --organization-id 1))
+      run_cmd(%w[host-collection list --host host1 --organization-id 1])
     end
   end
 end

@@ -5,7 +5,7 @@ describe('content-export generate-metadata') do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(content-export generate-metadata)
+    @cmd = %w[content-export generate-metadata]
     @params = []
     @export_history_id = 100
     @export_history = {

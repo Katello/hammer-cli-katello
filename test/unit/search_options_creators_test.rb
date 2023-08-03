@@ -1,18 +1,16 @@
 require_relative '../test_helper'
 
 class SearchOptionsCreatorsMock < HammerCLIKatello::IdResolver
-  def one
-  end
+  def one; end
 
-  def two
-  end
+  def two; end
 end
 
 describe HammerCLIKatello::SearchOptionsCreators do
   let(:api) { mock('api') }
   let(:searchables) { HammerCLIKatello::Searchables.new }
   let(:search_options_creators) { SearchOptionsCreatorsMock.new(api, searchables) }
-  let(:options) { Hash.new }
+  let(:options) { {} }
   let(:resource) { mock('ApipieBindings::Resource') }
 
   before(:each) do
@@ -127,7 +125,8 @@ describe HammerCLIKatello::SearchOptionsCreators do
         search_options_creators.create_organizations_search_options(:anything)
       end
     end
-  end # describe 'without the katello api'
+  end
+  # end describe 'without the katello api'
 
   describe '#create_search_options_with_katello_api' do
     let(:searchable1) { HammerCLIForeman::Searchable.new('one', '') }
@@ -141,5 +140,7 @@ describe HammerCLIKatello::SearchOptionsCreators do
         {'option_one' => 1, 'option_two' => 2}, resource
       ).must_equal('one' => '1', 'two' => '2')
     end
-  end # describe '#create_search_options_with_katello_api'
-end # describe HammerCLIKatello::SearchOptionsCreators
+  end
+  # end describe '#create_search_options_with_katello_api'
+end
+# end describe HammerCLIKatello::SearchOptionsCreators

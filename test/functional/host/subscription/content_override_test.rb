@@ -6,7 +6,7 @@ describe 'host subscription content-override' do
   include HostHelpers
 
   before do
-    @cmd = %w(host subscription content-override)
+    @cmd = %w[host subscription content-override]
   end
 
   it "attaches a content label" do
@@ -91,6 +91,6 @@ describe 'host subscription content-override' do
     result = run_cmd(@cmd + params)
 
     assert(result.err[/At least one of options --remove, --value is required/],
-               "Remove or Value must be provided")
+           "Remove or Value must be provided")
   end
 end

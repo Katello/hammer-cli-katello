@@ -5,7 +5,7 @@ describe 'host subscription attach' do
   include HostHelpers
 
   before do
-    @cmd = %w(host subscription attach)
+    @cmd = %w[host subscription attach]
   end
   it "attach a subscription to a host No Quantity" do
     params = ['--host-id=3', '--subscription-id=100']

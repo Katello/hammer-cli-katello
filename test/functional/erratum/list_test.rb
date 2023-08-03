@@ -6,7 +6,7 @@ module HammerCLIKatello
     it 'allows minimal options' do
       api_expects(:errata, :index)
 
-      run_cmd(%w(erratum list))
+      run_cmd(%w[erratum list])
     end
 
     describe 'product options' do
@@ -20,7 +20,7 @@ module HammerCLIKatello
           p['repository_id'] = 2
         end
 
-        run_cmd(%w(erratum list --product-id 1))
+        run_cmd(%w[erratum list --product-id 1])
       end
 
       it 'fail if more than one repository is found' do
@@ -29,14 +29,14 @@ module HammerCLIKatello
         end
         ex.returns(index_response([{'id' => 2}, {'id' => 3}]))
 
-        r = run_cmd(%w(erratum list --product-id 1))
+        r = run_cmd(%w[erratum list --product-id 1])
         assert r.err.include?("Found more than one repository."), r.err
       end
 
       it 'requires organization options to resolve ID by name' do
         api_expects_no_call
 
-        r = run_cmd(%w(erratum list --product product1))
+        r = run_cmd(%w[erratum list --product product1])
         assert r.err.include? "--organization-id, --organization, --organization-label is required"
       end
 
@@ -55,7 +55,7 @@ module HammerCLIKatello
           p['repository_id'] = 2
         end
 
-        run_cmd(%w(erratum list --product product1 --organization-id 3))
+        run_cmd(%w[erratum list --product product1 --organization-id 3])
       end
 
       it 'allows organization name when resolving ID by name' do
@@ -78,7 +78,7 @@ module HammerCLIKatello
           p['repository_id'] = 2
         end
 
-        run_cmd(%w(erratum list --product product1 --organization org3))
+        run_cmd(%w[erratum list --product product1 --organization org3])
       end
 
       it 'allows organization label when resolving ID by name' do
@@ -101,7 +101,7 @@ module HammerCLIKatello
           p['repository_id'] = 2
         end
 
-        run_cmd(%w(erratum list --product product1 --organization-label org3))
+        run_cmd(%w[erratum list --product product1 --organization-label org3])
       end
     end
   end

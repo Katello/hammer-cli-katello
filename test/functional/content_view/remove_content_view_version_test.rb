@@ -14,9 +14,9 @@ module HammerCLIKatello
       end
       ex.returns('id' => 1, 'component_ids' => [1, 3, 6])
       api_expects(:content_views, :update) do |p|
-        p['id'] == '1' && p['component_ids'] == %w(1 3)
+        p['id'] == '1' && p['component_ids'] == %w[1 3]
       end
-      run_cmd(%w(content-view remove-version --id 1 --content-view-version-id 6))
+      run_cmd(%w[content-view remove-version --id 1 --content-view-version-id 6])
     end
 
     it 'resolves content view version ID' do
@@ -30,15 +30,15 @@ module HammerCLIKatello
       end
       ex.returns('id' => 1, 'component_ids' => [1, 3])
       api_expects(:content_views, :update) do |p|
-        p['id'] == '1' && p['component_ids'] == %w(1 3)
+        p['id'] == '1' && p['component_ids'] == %w[1 3]
       end
-      run_cmd(%w(content-view remove-version --id 1 --content-view-id 3 --content-view-version 2.1))
+      run_cmd(%w[content-view remove-version --id 1 --content-view-id 3 --content-view-version 2.1])
     end
 
     describe 'OrganizationOptions' do
       it 'requires organization if content view name is supplied' do
         api_expects_no_call
-        result = run_cmd(%w(content-view remove-version --name cv1))
+        result = run_cmd(%w[content-view remove-version --name cv1])
         assert(result.err[/--organization-id, --organization, --organization-label is required/],
                "Organization option requirements are validated")
       end
@@ -50,10 +50,10 @@ module HammerCLIKatello
         end
         ex.returns('id' => 2, 'component_ids' => [1, 2, 3])
         api_expects(:content_views, :update) do |p|
-          p['id'] == 2 && p['component_ids'] == %w(1 2)
+          p['id'] == 2 && p['component_ids'] == %w[1 2]
         end
-        run_cmd(%w(content-view remove-version --name cv2 --organization-id 1
-                   --content-view-version-id 3))
+        run_cmd(%w[content-view remove-version --name cv2 --organization-id 1
+                   --content-view-version-id 3])
       end
 
       it 'allows organization name' do
@@ -64,10 +64,10 @@ module HammerCLIKatello
         end
         ex.returns('id' => 2, 'component_ids' => [1, 2, 3])
         api_expects(:content_views, :update) do |p|
-          p['id'] == 2 && p['component_ids'] == %w(1 2)
+          p['id'] == 2 && p['component_ids'] == %w[1 2]
         end
-        run_cmd(%w(content-view remove-version --name cv2 --organization org1
-                   --content-view-version-id 3))
+        run_cmd(%w[content-view remove-version --name cv2 --organization org1
+                   --content-view-version-id 3])
       end
 
       it 'allows organization label' do
@@ -78,10 +78,10 @@ module HammerCLIKatello
         end
         ex.returns('id' => 2, 'component_ids' => [1, 2, 3])
         api_expects(:content_views, :update) do |p|
-          p['id'] == 2 && p['component_ids'] == %w(1 2)
+          p['id'] == 2 && p['component_ids'] == %w[1 2]
         end
-        run_cmd(%w(content-view remove-version --name cv2 --organization-label org1
-                   --content-view-version-id 3))
+        run_cmd(%w[content-view remove-version --name cv2 --organization-label org1
+                   --content-view-version-id 3])
       end
     end
   end

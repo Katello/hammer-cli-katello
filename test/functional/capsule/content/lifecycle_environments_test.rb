@@ -11,7 +11,7 @@ module HammerCLIKatello
         it 'allows minimal options' do
           expect_lifecycle_environments_list(params: {'id' => 1}, returns: {})
 
-          run_cmd(%w(capsule content lifecycle-environments --id 1))
+          run_cmd(%w[capsule content lifecycle-environments --id 1])
         end
       end
     end

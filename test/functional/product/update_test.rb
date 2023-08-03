@@ -13,7 +13,7 @@ describe 'update a product' do
     end
     assert_equal(
       0,
-      run_cmd(%w(product update --organization-id 1 --id 1 --description new_description)).exit_code
+      run_cmd(%w[product update --organization-id 1 --id 1 --description new_description]).exit_code
     )
   end
 
@@ -23,7 +23,7 @@ describe 'update a product' do
       par['id'] == 1 &&
         par['description'] == 'new_description'
     end
-    command = %w(product update --organization-id 1 --name product1 --description new_description)
+    command = %w[product update --organization-id 1 --name product1 --description new_description]
     assert_equal(
       0,
       run_cmd(command).exit_code
@@ -37,7 +37,7 @@ describe 'update a product' do
       par['id'] == 1 &&
         par['description'] == 'new_description'
     end
-    command = %w(product update --organization org1 --name product1 --description new_description)
+    command = %w[product update --organization org1 --name product1 --description new_description]
     assert_equal(
       0,
       run_cmd(command).exit_code

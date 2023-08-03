@@ -5,7 +5,7 @@ describe 'host errata listing' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(host errata list)
+    @cmd = %w[host errata list]
   end
 
   let(:org_id) { 1 }

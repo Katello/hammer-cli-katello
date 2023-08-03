@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe 'simple-content-access status' do
   before do
-    @cmd = %w(simple-content-access status)
+    @cmd = %w[simple-content-access status]
   end
 
   let(:organization_id) { 3 }

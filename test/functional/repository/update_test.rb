@@ -2,7 +2,7 @@ require_relative '../test_helper'
 require_relative '../organization/organization_helpers'
 require 'hammer_cli_katello/repository'
 
-module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
+module HammerCLIKatello
   describe Repository::UpdateCommand do
     include OrganizationHelpers
 
@@ -11,7 +11,7 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
         p['id'] == 1 && p['name'] == 'rep1'
       end
 
-      run_cmd(%w(repository update --id 1 --new-name rep1))
+      run_cmd(%w[repository update --id 1 --new-name rep1])
     end
 
     describe 'tags docker images' do
@@ -40,7 +40,7 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
                              :digest => digest
                            }],
                            :content_type => "docker_tag"
-                          )
+              )
 
         ex2.returns("")
 
@@ -48,9 +48,7 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
               .with_params('id' => upload_id, 'repository_id' => repo_id)
 
         ex3.returns("")
-        # rubocop:disable LineLength
-        result = run_cmd(%W(repository update --id #{repo_id} --docker-tag #{tag_name} --docker-digest #{digest}))
-        # rubocop:enable LineLength
+        result = run_cmd(%W[repository update --id #{repo_id} --docker-tag #{tag_name} --docker-digest #{digest}])
         assert_equal(result.exit_code, 0)
       end
     end
@@ -58,7 +56,7 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
     describe 'resolves repository ID' do
       it 'by requiring product' do
         api_expects_no_call
-        result = run_cmd(%w(repository update --name repo1 --new-name rep1))
+        result = run_cmd(%w[repository update --name repo1 --new-name rep1])
         assert(result.err[/--product, --product-id is required/], 'Incorrect error message')
       end
 
@@ -72,14 +70,14 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
           p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository update --name repo1 --product-id 3 --new-name rep1))
+        run_cmd(%w[repository update --name repo1 --product-id 3 --new-name rep1])
       end
     end
 
     describe 'resolves product ID' do
       it 'by requiring organization options' do
         api_expects_no_call
-        result = run_cmd(%w(repository update --name repo1 --product prod1 --new-name rep1))
+        result = run_cmd(%w[repository update --name repo1 --product prod1 --new-name rep1])
         assert(result.err[/--organization-id, --organization, --organization-label is required/],
                "Organization option requirements must be validated")
       end
@@ -99,8 +97,8 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
           p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository update --name repo1 --product prod3 --organization-id 5
-                   --new-name rep1))
+        run_cmd(%w[repository update --name repo1 --product prod3 --organization-id 5
+                   --new-name rep1])
       end
 
       it 'by organization name' do
@@ -120,8 +118,8 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
           p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository update --name repo1 --product prod3 --organization org5
-                   --new-name rep1))
+        run_cmd(%w[repository update --name repo1 --product prod3 --organization org5
+                   --new-name rep1])
       end
 
       it 'by organization label' do
@@ -141,10 +139,9 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
           p['id'] == 1 && p['name'] == 'rep1'
         end
 
-        run_cmd(%w(repository update --name repo1 --product prod3 --organization-label org5
-                   --new-name rep1))
+        run_cmd(%w[repository update --name repo1 --product prod3 --organization-label org5
+                   --new-name rep1])
       end
     end
   end
 end
-# rubocop:enable ModuleLength

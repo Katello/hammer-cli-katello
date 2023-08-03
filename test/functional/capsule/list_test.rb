@@ -10,14 +10,14 @@ module HammerCLIKatello
       it 'allows minimal options' do
         expect_generic_capsule_search
 
-        run_cmd(%w(capsule list))
+        run_cmd(%w[capsule list])
       end
 
       it 'allows search' do
         expect_generic_capsule_search(
           params: { 'search' => 'search' }, returns: {})
 
-        run_cmd(%w(capsule list --search search))
+        run_cmd(%w[capsule list --search search])
       end
     end
   end

@@ -15,8 +15,8 @@ describe "create sync plan" do
                   'interval' => hourly,
                   'sync_date' => date,
                   'enabled' => true)
-    command = %W(sync-plan create --organization-id #{org_id} --name #{name}
-                 --interval #{hourly} --enabled 1 --sync-date #{date})
+    command = %W[sync-plan create --organization-id #{org_id} --name #{name}
+                 --interval #{hourly} --enabled 1 --sync-date #{date}]
     assert_equal(0, run_cmd(command).exit_code)
   end
 
@@ -29,32 +29,32 @@ describe "create sync plan" do
                   'sync_date' => date,
                   'enabled' => true)
     # end
-    command = %W(sync-plan create --organization-id #{org_id} --name #{name} --interval #{custom}
-                 --cron-expression #{cron} --enabled 1 --sync-date #{date})
+    command = %W[sync-plan create --organization-id #{org_id} --name #{name} --interval #{custom}
+                 --cron-expression #{cron} --enabled 1 --sync-date #{date}]
     assert_equal(0, run_cmd(command).exit_code)
   end
 
   it 'fails without organization-id' do
-    command = %w(sync-plan create --name #{name}
-                 --interval #{hourly} --enabled 1 --sync-date #{date})
+    command = %w[sync-plan create --name #{name}
+                 --interval #{hourly} --enabled 1 --sync-date #{date}]
     refute_equal(0, run_cmd(command).exit_code)
   end
 
   it 'fails without name' do
-    command = %w(sync-plan create --organization-id #{org_id}
-                 --interval #{hourly} --enabled 1 --sync-date #{date})
+    command = %w[sync-plan create --organization-id #{org_id}
+                 --interval #{hourly} --enabled 1 --sync-date #{date}]
     refute_equal(0, run_cmd(command).err)
   end
 
   it 'fails without interval' do
-    command = %w(sync-plan create --organization-id #{org_id} --name #{name}
-                 --enabled 1 --sync-date #{date})
+    command = %w[sync-plan create --organization-id #{org_id} --name #{name}
+                 --enabled 1 --sync-date #{date}]
     refute_equal(0, run_cmd(command).exit_code)
   end
 
   it 'fails without enabled' do
-    command = %w(sync-plan create --organization-id #{org_id} --name #{name}
-                 --interval #{hourly} --sync-date #{date})
+    command = %w[sync-plan create --organization-id #{org_id} --name #{name}
+                 --interval #{hourly} --sync-date #{date}]
     refute_equal(0, run_cmd(command).exit_code)
   end
 end

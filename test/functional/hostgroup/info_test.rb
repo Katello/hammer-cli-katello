@@ -5,7 +5,7 @@ module HammerCLIForeman
   describe Hostgroup do
     describe InfoCommand do
       before do
-        @cmd = %w(hostgroup info)
+        @cmd = %w[hostgroup info]
       end
 
       let(:hostgroup_id) { 1 }
@@ -27,6 +27,7 @@ module HammerCLIForeman
                            ['Name', 'Rhel 7']]
         expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
         expected_results.each { |expected|  assert_cmd(expected, result) }
+        # rubocop:enable Style/WordArray
       end
     end
   end

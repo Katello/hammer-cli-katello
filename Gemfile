@@ -6,15 +6,15 @@ gemspec
 gem 'gettext', '>= 3.1.3', '< 4.0.0'
 
 group :test do
-  gem 'rake', '~> 10.1.0'
-  gem 'thor'
+  gem 'ci_reporter', '>= 1.6.3', "< 2.0.0", :require => false
+  gem 'coveralls', '0.8.23', require: false
   gem 'minitest', '4.7.4'
   gem 'minitest-spec-context'
   gem 'mocha'
-  gem 'coveralls', '0.8.23', require: false
-  gem 'ci_reporter', '>= 1.6.3', "< 2.0.0", :require => false
-  gem 'rubocop', '0.42'
+  gem 'rake', '~> 10.1.0'
+  gem 'rubocop', '~> 1.28.0'
   gem 'rubocop-checkstyle_formatter'
+  gem 'thor'
 end
 
 # load local gemfile

@@ -12,7 +12,7 @@ describe 'delete a product' do
     end
     assert_equal(
       0,
-      run_cmd(%w(product delete --id 1)).exit_code
+      run_cmd(%w[product delete --id 1]).exit_code
     )
   end
 
@@ -23,7 +23,7 @@ describe 'delete a product' do
     end
     assert_equal(
       0,
-      run_cmd(%w(product delete --organization-id 1 --name product1)).exit_code
+      run_cmd(%w[product delete --organization-id 1 --name product1]).exit_code
     )
   end
 
@@ -35,7 +35,7 @@ describe 'delete a product' do
     end
     assert_equal(
       0,
-      run_cmd(%w(product delete --organization org1 --name product1)).exit_code
+      run_cmd(%w[product delete --organization org1 --name product1]).exit_code
     )
   end
 end

@@ -10,7 +10,7 @@ module HammerCLIKatello
       api_expects(:content_view_filter_rules, :destroy) do |p|
         p['content_view_filter_id'] == 1 && p['id'] == 9
       end
-      run_cmd(%w(content-view filter rule delete --content-view-filter-id 1 --id 9))
+      run_cmd(%w[content-view filter rule delete --content-view-filter-id 1 --id 9])
     end
 
     it 'resolves rule ID from rule name and filter ID' do
@@ -19,7 +19,7 @@ module HammerCLIKatello
       api_expects(:content_view_filter_rules, :destroy) do |p|
         p['content_view_filter_id'] == 1 && p['id'] == 9
       end
-      run_cmd(%w(content-view filter rule delete --content-view-filter-id 1 --name rule9))
+      run_cmd(%w[content-view filter rule delete --content-view-filter-id 1 --name rule9])
     end
 
     it 'allows name resolution of filter with content-view-id' do
@@ -31,8 +31,8 @@ module HammerCLIKatello
       api_expects(:content_view_filter_rules, :destroy) do |p|
         p['content_view_filter_id'] == 1 && p['id'] == 9
       end
-      run_cmd(%w(content-view filter rule delete --content-view-filter cvf1 --content-view-id 3
-                 --id 9))
+      run_cmd(%w[content-view filter rule delete --content-view-filter cvf1 --content-view-id 3
+                 --id 9])
     end
 
     describe 'organization' do
@@ -50,8 +50,8 @@ module HammerCLIKatello
         api_expects(:content_view_filter_rules, :destroy) do |p|
           p['content_view_filter_id'] == 1 && p['id'] == 9
         end
-        run_cmd(%w(content-view filter rule delete --content-view-filter cvf1 --organization-id 6
-                   --content-view cv3 --id 9))
+        run_cmd(%w[content-view filter rule delete --content-view-filter cvf1 --organization-id 6
+                   --content-view cv3 --id 9])
       end
 
       it 'name can be specified to resolve content view name' do
@@ -73,8 +73,8 @@ module HammerCLIKatello
         api_expects(:content_view_filter_rules, :destroy) do |p|
           p['content_view_filter_id'] == 1 && p['id'] == 9
         end
-        run_cmd(%w(content-view filter rule delete --content-view-filter cvf1 --organization org6
-                   --content-view cv3 --id 9))
+        run_cmd(%w[content-view filter rule delete --content-view-filter cvf1 --organization org6
+                   --content-view cv3 --id 9])
       end
 
       it 'label can be specified to resolve content view name' do
@@ -96,8 +96,8 @@ module HammerCLIKatello
         api_expects(:content_view_filter_rules, :destroy) do |p|
           p['content_view_filter_id'] == 1 && p['id'] == 9
         end
-        run_cmd(%w(content-view filter rule delete --content-view-filter cvf1 --organization-label
-                   org6 --content-view cv3 --id 9))
+        run_cmd(%w[content-view filter rule delete --content-view-filter cvf1 --organization-label
+                   org6 --content-view cv3 --id 9])
       end
     end
   end

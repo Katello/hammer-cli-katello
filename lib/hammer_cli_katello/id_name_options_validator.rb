@@ -46,15 +46,15 @@ module HammerCLIKatello
 
     def self.build_child_options(record_name)
       if record_name.nil?
-        %w(option_id option_name)
+        %w[option_id option_name]
       else
-        IdNameOptionsValidator.build_options(record_name, %w(id name))
+        IdNameOptionsValidator.build_options(record_name, %w[id name])
       end
     end
 
     def self.build_parent_options(parent)
       if parent.is_a?(String) || parent.is_a?(Symbol)
-        opts = parent.to_s == 'organization' ? %w(id name label) : %w(id name)
+        opts = parent.to_s == 'organization' ? %w[id name label] : %w[id name]
       elsif parent.is_a?(Hash)
         parent, opts = parent.first.to_a
       else

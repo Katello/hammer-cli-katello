@@ -15,8 +15,8 @@ module HammerCLIKatello
             p['id'] == '1' && p['organization_id'] == 1 && p['host_collection_ids'] == []
           end
 
-          run_cmd(%w(activation-key remove-host-collection --organization-id 1
-                     --host-collection-id 3 --id 1))
+          run_cmd(%w[activation-key remove-host-collection --organization-id 1
+                     --host-collection-id 3 --id 1])
         end
 
         it 'allows resolving host collection name' do
@@ -34,8 +34,8 @@ module HammerCLIKatello
             p['id'] == '1' && p['organization_id'] == 1 && p['host_collection_ids'] == []
           end
 
-          run_cmd(%w(activation-key remove-host-collection --organization-id 1
-                     --host-collection hc3 --id 1))
+          run_cmd(%w[activation-key remove-host-collection --organization-id 1
+                     --host-collection hc3 --id 1])
         end
 
         it 'allows resolving activation key name' do
@@ -53,8 +53,8 @@ module HammerCLIKatello
             p['id'] == 1 && p['organization_id'] == 1 && p['host_collection_ids'] == []
           end
 
-          run_cmd(%w(activation-key remove-host-collection --organization-id 1
-                     --host-collection-id 3 --name ak1))
+          run_cmd(%w[activation-key remove-host-collection --organization-id 1
+                     --host-collection-id 3 --name ak1])
         end
       end
     end

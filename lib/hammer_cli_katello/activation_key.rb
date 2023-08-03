@@ -179,14 +179,14 @@ module HammerCLIKatello
 
       def extend_data(data)
         data["format_consumed"] = _("#{data['consumed']} out of "\
-				    "#{data['quantity'] == -1 ? 'Unlimited' : data['quantity']}")
+            "#{data['quantity'] == -1 ? 'Unlimited' : data['quantity']}")
         data
       end
 
       option '--id', "ACTIVATION_KEY_ID", _("ID of the activation key"),
-        attribute_name: :option_activation_key_id
+             attribute_name: :option_activation_key_id
       option '--name', "ACTIVATION_KEY_NAME", _("Activation key name to search by"),
-        attribute_name: :option_activation_key_name
+             attribute_name: :option_activation_key_name
 
       validate_options :before, 'IdResolution' do
         any(:option_activation_key_id, :option_activation_key_name).required

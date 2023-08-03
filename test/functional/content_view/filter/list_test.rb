@@ -7,7 +7,7 @@ describe 'listing content view filters' do
   include OrganizationHelpers
 
   before do
-    @cmd = %w(content-view filter list)
+    @cmd = %w[content-view filter list]
   end
 
   let(:org_id) { 1 }

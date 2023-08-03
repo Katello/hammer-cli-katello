@@ -21,8 +21,8 @@ module HammerCLIKatello
 
     def self.included(base)
       base.option "--composite-content-view",
-             "COMPOSITE_CONTENT_VIEW_NAME", _("Name of the composite content view"),
-             :attribute_name => :option_composite_content_view_name
+                  "COMPOSITE_CONTENT_VIEW_NAME", _("Name of the composite content view"),
+                  :attribute_name => :option_composite_content_view_name
     end
   end
 end

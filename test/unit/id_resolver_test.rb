@@ -32,7 +32,7 @@ module HammerCLIKatello
           ]
         )
         id_resolver.repository_ids(
-          'option_names' => %w(repo1 repo2)
+          'option_names' => %w[repo1 repo2]
         ).must_equal [1, 2]
       end
     end

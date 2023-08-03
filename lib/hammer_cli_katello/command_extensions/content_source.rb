@@ -8,24 +8,22 @@ module HammerCLIKatello
       end
 
       request_params do |params, cmd_obj|
-        begin
-          resource_name = cmd_obj.resource.singular_name
-          if cmd_obj.option_content_source && !cmd_obj.option_content_source_id
-            resource_hash = if resource_name == 'hostgroup'
-                              params[resource_name]
-                            else
-                              params[resource_name]['content_facet_attributes']
-                            end
+        resource_name = cmd_obj.resource.singular_name
+        if cmd_obj.option_content_source && !cmd_obj.option_content_source_id
+          resource_hash = if resource_name == 'hostgroup'
+                            params[resource_name]
+                          else
+                            params[resource_name]['content_facet_attributes']
+                          end
 
-            proxy_options = {
-              HammerCLI.option_accessor_name('name') => cmd_obj.option_content_source
-            }
-            resource_hash['content_source_id'] = cmd_obj.resolver.smart_proxy_id(proxy_options)
-          end
-        rescue HammerCLIForeman::ResolverError => e
-          e.message.gsub!('smart_proxy', _('Content Source'))
-          raise e
+          proxy_options = {
+            HammerCLI.option_accessor_name('name') => cmd_obj.option_content_source
+          }
+          resource_hash['content_source_id'] = cmd_obj.resolver.smart_proxy_id(proxy_options)
         end
+      rescue HammerCLIForeman::ResolverError => e
+        e.message.gsub!('smart_proxy', _('Content Source'))
+        raise e
       end
     end
   end

@@ -1,22 +1,22 @@
 module ErratumHelpers
-  # rubocop:disable MethodLength
+  # rubocop:disable Metrics/MethodLength
   def make_erratum_response(with_packages = true, with_module_streams = true)
     packs = with_packages ? packages : []
-    if with_module_streams
-      module_streams = [
-        {
-          "name" => module_stream[:name],
-          "stream" => module_stream[:stream],
-          "version" => "20180730223407",
-          "context" => "deadbeef",
-          "arch" => "noarch",
-          "id" => 4,
-          "packages" => packs
-        }
-      ]
-    else
-      module_streams = []
-    end
+    module_streams = if with_module_streams
+                       [
+                         {
+                           "name" => module_stream[:name],
+                           "stream" => module_stream[:stream],
+                           "version" => "20180730223407",
+                           "context" => "deadbeef",
+                           "arch" => "noarch",
+                           "id" => 4,
+                           "packages" => packs
+                         }
+                       ]
+                     else
+                       []
+                     end
     {
       "id" => 6,
       "pulp_id" => "a4999071-2e2a-4293-9a72-219924032633",
@@ -88,4 +88,5 @@ module ErratumHelpers
     assert_includes(result_out, packages.first)
     assert_includes(result_out, packages.last)
   end
+  # rubocop:enable Metrics/MethodLength
 end

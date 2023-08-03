@@ -6,7 +6,7 @@ module HammerCLIKatello
     it 'allows ID' do
       api_expects(:module_streams, :show).with_params('id' => '1')
 
-      run_cmd(%w(module-stream info --id 1))
+      run_cmd(%w[module-stream info --id 1])
     end
 
     it 'resolves ID from name and repo id' do
@@ -17,7 +17,7 @@ module HammerCLIKatello
       api_expects(:module_streams, :show)
         .with_params(repository_id: 1, id: "1")
 
-      run_cmd(%w(module-stream info --name duck --repository-id 1))
+      run_cmd(%w[module-stream info --name duck --repository-id 1])
     end
 
     it 'resolves ID from name, repo name, and product id' do
@@ -32,7 +32,7 @@ module HammerCLIKatello
       api_expects(:module_streams, :show)
         .with_params(repository_id: 1, id: 1)
 
-      run_cmd(%w(module-stream info --name walrus --repository zoo --product-id 1))
+      run_cmd(%w[module-stream info --name walrus --repository zoo --product-id 1])
     end
 
     it 'resolves ID from name, repo name, product name, and org id' do
@@ -51,8 +51,8 @@ module HammerCLIKatello
       api_expects(:module_streams, :show)
         .with_params(repository_id: 1, id: 1)
 
-      run_cmd(%w(module-stream info --name walrus --repository zoo
-                 --product habitat --organization-id 1))
+      run_cmd(%w[module-stream info --name walrus --repository zoo
+                 --product habitat --organization-id 1])
     end
   end
 end

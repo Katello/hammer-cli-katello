@@ -8,7 +8,7 @@ module HammerCLIKatello
     include OrganizationHelpers
 
     before do
-      @cmd = %w(content-view filter info)
+      @cmd = %w[content-view filter info]
     end
 
     it 'accepts filter id' do

@@ -80,7 +80,7 @@ module HammerCLIKatello
              :attribute_name => :option_host_collection_name
 
       validate_options :before, 'IdResolution' do
-        host_collection_options = [:option_host_collection_id, :option_host_collection_name]
+        host_collection_options = %i[option_host_collection_id option_host_collection_name]
         any(*host_collection_options).required
       end
 

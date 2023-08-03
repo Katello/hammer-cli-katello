@@ -3,7 +3,7 @@ require 'hammer_cli_katello/content_view_component'
 module HammerCLIKatello
   describe ContentViewComponent::RemoveComponents do
     before do
-      @cmd = %w(content-view component remove)
+      @cmd = %w[content-view component remove]
 
       @component = OpenStruct.new(:id => 6, :name => "component")
       @component2 = OpenStruct.new(:id => 7, :name => "component2")

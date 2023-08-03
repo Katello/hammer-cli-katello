@@ -5,7 +5,7 @@ describe 'capsule content synchronization_status' do
   include CapsuleContentHelpers
 
   before do
-    @cmd = ['capsule', 'content', 'synchronization-status']
+    @cmd = %w[capsule content synchronization-status]
   end
 
   describe "output" do

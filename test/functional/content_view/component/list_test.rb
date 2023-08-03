@@ -3,7 +3,7 @@ require 'hammer_cli_katello/content_view_component'
 module HammerCLIKatello
   describe ContentViewComponent::ListCommand do
     before do
-      @cmd = %w(content-view component list)
+      @cmd = %w[content-view component list]
     end
 
     it 'expects composite_content_view_id as minimal options' do
@@ -17,7 +17,7 @@ module HammerCLIKatello
       api_expects(:content_views, :index) do |p|
         p['name'] == "lol" && p["organization_id"].to_s == "1"
       end
-      run_cmd(@cmd + %w(--composite-content-view=lol --organization-id=1))
+      run_cmd(@cmd + %w[--composite-content-view=lol --organization-id=1])
     end
 
     it 'label' do
@@ -33,7 +33,7 @@ module HammerCLIKatello
         p['name'] == "lol" && p["organization_id"].to_s == "1"
       end
 
-      run_cmd(@cmd + %w(--composite-content-view=lol --organization-label=org1))
+      run_cmd(@cmd + %w[--composite-content-view=lol --organization-label=org1])
     end
 
     it 'name' do
@@ -49,7 +49,7 @@ module HammerCLIKatello
         p['name'] == "lol" && p["organization_id"].to_s == "1"
       end
 
-      run_cmd(@cmd + %w(--composite-content-view=lol --organization=org1))
+      run_cmd(@cmd + %w[--composite-content-view=lol --organization=org1])
     end
   end
 end

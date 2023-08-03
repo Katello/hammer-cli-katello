@@ -1,4 +1,3 @@
-
 module HammerCLIKatello
   class ExceptionHandler < HammerCLIForeman::ExceptionHandler
     def mappings

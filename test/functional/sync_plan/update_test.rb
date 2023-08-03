@@ -16,8 +16,8 @@ describe 'update a sync plan' do
     api_expects(:sync_plans, :update, 'update a sync plan').
       with_params('description' => desc,
                   'id' => id)
-    command = %W(sync-plan update --organization-id #{org_id} --id #{id}
-                 --description #{desc})
+    command = %W[sync-plan update --organization-id #{org_id} --id #{id}
+                 --description #{desc}]
     assert_equal(0, run_cmd(command).exit_code)
   end
 
@@ -26,8 +26,8 @@ describe 'update a sync plan' do
     api_expects(:sync_plans, :update, 'update a sync plan').
       with_params('description' => desc,
                   'id' => id)
-    command = %W(sync-plan update --organization-id #{org_id} --name #{name}
-                 --description #{desc})
+    command = %W[sync-plan update --organization-id #{org_id} --name #{name}
+                 --description #{desc}]
     assert_equal(0, run_cmd(command).exit_code)
   end
 
@@ -37,8 +37,8 @@ describe 'update a sync plan' do
     api_expects(:sync_plans, :update, 'update a sync plan').
       with_params('description' => desc,
                   'id' => id)
-    command = %W(sync-plan update --organization #{org_name} --name #{name}
-                 --description #{desc})
+    command = %W[sync-plan update --organization #{org_name} --name #{name}
+                 --description #{desc}]
     assert_equal(0, run_cmd(command).exit_code)
   end
 end

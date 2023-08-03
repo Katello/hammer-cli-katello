@@ -8,13 +8,13 @@ module HammerCLIKatello
       api_expects(:repositories, :reclaim_space) do |p|
         p['id'] == 1
       end
-      run_cmd(%w(repository reclaim-space --id 1))
+      run_cmd(%w[repository reclaim-space --id 1])
     end
 
     describe 'resolves repository ID' do
       it 'by requiring product' do
         api_expects_no_call
-        result = run_cmd(%w(repository reclaim-space --name repo1))
+        result = run_cmd(%w[repository reclaim-space --name repo1])
         assert(result.err[/--product, --product-id is required/], 'Incorrect error message')
       end
 
@@ -28,14 +28,14 @@ module HammerCLIKatello
           p['id'] == 1
         end
 
-        run_cmd(%w(repository reclaim-space --name repo1 --product-id 3))
+        run_cmd(%w[repository reclaim-space --name repo1 --product-id 3])
       end
     end
 
     describe 'resolves product ID' do
       it 'by requiring organization options' do
         api_expects_no_call
-        result = run_cmd(%w(repository reclaim-space --name repo1 --product prod1))
+        result = run_cmd(%w[repository reclaim-space --name repo1 --product prod1])
         assert(result.err[/--organization-id, --organization, --organization-label is required/],
                "Organization option requirements must be validated")
       end
@@ -55,8 +55,8 @@ module HammerCLIKatello
           p['id'] == 1
         end
 
-        run_cmd(%w(repository reclaim-space --name repo1 --product prod3 --organization-id 5
-                  ))
+        run_cmd(%w[repository reclaim-space --name repo1 --product prod3 --organization-id 5
+                  ])
       end
 
       it 'by organization name' do
@@ -76,8 +76,8 @@ module HammerCLIKatello
           p['id'] == 1
         end
 
-        run_cmd(%w(repository reclaim-space --name repo1 --product prod3 --organization org5
-                  ))
+        run_cmd(%w[repository reclaim-space --name repo1 --product prod3 --organization org5
+                  ])
       end
 
       it 'by organization label' do
@@ -97,8 +97,8 @@ module HammerCLIKatello
           p['id'] == 1
         end
 
-        run_cmd(%w(repository reclaim-space --name repo1 --product prod3 --organization-label org5
-                  ))
+        run_cmd(%w[repository reclaim-space --name repo1 --product prod3 --organization-label org5
+                  ])
       end
     end
   end

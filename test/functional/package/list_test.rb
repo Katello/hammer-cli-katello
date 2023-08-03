@@ -5,7 +5,6 @@ require_relative '../organization/organization_helpers'
 require_relative '../lifecycle_environment/lifecycle_environment_helpers'
 require 'hammer_cli_katello/package'
 
-# rubocop:disable ModuleLength
 module HammerCLIKatello
   describe PackageCommand::ListCommand do
     include OrganizationHelpers
@@ -16,7 +15,7 @@ module HammerCLIKatello
     it 'allows minimal options' do
       api_expects(:packages, :index)
 
-      run_cmd(%w(package list))
+      run_cmd(%w[package list])
     end
 
     describe 'content view options' do
@@ -28,13 +27,13 @@ module HammerCLIKatello
           .with_params('content_view_version_id' => 5)
           .returns(index_response([{'id' => 1}, {'id' => 2}]))
 
-        run_cmd(%w(package list --content-view-id 1 --content-view-version 2.1))
+        run_cmd(%w[package list --content-view-id 1 --content-view-version 2.1])
       end
 
       it 'requires organization ID when given content view name' do
         api_expects_no_call
 
-        r = run_cmd(%w(package list --content-view cv1 --content-view-version 2.1))
+        r = run_cmd(%w[package list --content-view cv1 --content-view-version 2.1])
         expected_error = "--organization-id, --organization, --organization-label is required"
         assert(r.err.include?(expected_error), "Invalid error message")
       end
@@ -42,7 +41,7 @@ module HammerCLIKatello
       it 'requires content view ID when given content view version name' do
         api_expects_no_call
 
-        r = run_cmd(%w(package list --content-view-version cvv1))
+        r = run_cmd(%w[package list --content-view-version cvv1])
         assert(r.err.include?("--content-view-id, --content-view is required"),
                "Invalid error message")
       end
@@ -52,13 +51,13 @@ module HammerCLIKatello
       it 'may be specified by ID' do
         api_expects(:packages, :index).with_params('repository_id' => 1)
 
-        run_cmd(%w(package list --repository-id 1))
+        run_cmd(%w[package list --repository-id 1])
       end
 
       it 'require product ID when given repository name' do
         api_expects_no_call
 
-        r = run_cmd(%w(package list --repository repo1))
+        r = run_cmd(%w[package list --repository repo1])
         assert(r.err.include?("--product-id, --product is required"), "Invalid error message")
       end
 
@@ -67,7 +66,7 @@ module HammerCLIKatello
 
         api_expects(:packages, :index).with_params('repository_id' => 1)
 
-        run_cmd(%w(package list --repository repo1 --product-id 2))
+        run_cmd(%w[package list --repository repo1 --product-id 2])
       end
     end
 
@@ -82,12 +81,12 @@ module HammerCLIKatello
                                                    "environment_id" => expected_id,
                                                    "page" => 1, "per_page" => 1000)
 
-        run_cmd(%W(package list --environment=#{env_name} --organization-id=#{org_id}))
+        run_cmd(%W[package list --environment=#{env_name} --organization-id=#{org_id}])
       end
 
       it 'may be specified environment name no org fails' do
         api_expects_no_call
-        r = run_cmd(%w(package list --environment Library))
+        r = run_cmd(%w[package list --environment Library])
         expec_err = "Missing options to search organization"
         puts r.err
         assert(r.err.include?(expec_err), "Invalid error message")
@@ -102,7 +101,7 @@ module HammerCLIKatello
 
         api_expects(:packages, :index).with_params('repository_id' => 2)
 
-        run_cmd(%w(package list --product-id 1))
+        run_cmd(%w[package list --product-id 1])
       end
 
       it 'fail if more than one repository is found' do
@@ -110,14 +109,14 @@ module HammerCLIKatello
           .with_params('product_id' => 1)
           .returns(index_response([{'id' => 2}, {'id' => 3}]))
 
-        r = run_cmd(%w(package list --product-id 1))
+        r = run_cmd(%w[package list --product-id 1])
         assert(r.err.include?("Found more than one repository"), "Invalid error message: #{r.err}")
       end
 
       it 'requires organization options to resolve ID by name' do
         api_expects_no_call
 
-        r = run_cmd(%w(package list --product product1))
+        r = run_cmd(%w[package list --product product1])
         expected_error = "--organization-id, --organization, --organization-label is required"
         assert(r.err.include?(expected_error), "Invalid error message")
       end
@@ -129,7 +128,7 @@ module HammerCLIKatello
 
         api_expects(:packages, :index).with_params('repository_id' => 2)
 
-        run_cmd(%w(package list --product product1 --organization-id 3))
+        run_cmd(%w[package list --product product1 --organization-id 3])
       end
 
       it 'allows organization name when resolving ID by name' do
@@ -141,7 +140,7 @@ module HammerCLIKatello
 
         api_expects(:packages, :index).with_params('repository_id' => 2)
 
-        run_cmd(%w(package list --product product1 --organization org3))
+        run_cmd(%w[package list --product product1 --organization org3])
       end
 
       it 'allows organization label when resolving ID by name' do
@@ -153,7 +152,7 @@ module HammerCLIKatello
 
         api_expects(:packages, :index).with_params('repository_id' => 2)
 
-        run_cmd(%w(package list --product product1 --organization-label org3))
+        run_cmd(%w[package list --product product1 --organization-label org3])
       end
     end
   end

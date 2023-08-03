@@ -10,7 +10,7 @@ module HammerCLIKatello
       it 'allows minimal options' do
         expect_capsule_info('id' => '1')
 
-        run_cmd(%w(capsule info --id 1))
+        run_cmd(%w[capsule info --id 1])
       end
 
       it 'resolves capsule ID from name' do
@@ -18,7 +18,7 @@ module HammerCLIKatello
           params: { search: "name = \"capsule1\"" }, returns: {'id' => 1})
         expect_capsule_info('id' => 1)
 
-        run_cmd(%w(capsule info --name capsule1))
+        run_cmd(%w[capsule info --name capsule1])
       end
     end
   end
