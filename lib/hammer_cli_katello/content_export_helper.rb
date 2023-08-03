@@ -1,6 +1,6 @@
 require 'hammer_cli_katello/repository'
 require 'find'
-# rubocop:disable ModuleLength
+
 module HammerCLIKatello
   module ContentExportHelper
     include ApipieHelper
@@ -57,14 +57,16 @@ module HammerCLIKatello
 
     def fetch_export_history(export_history_id)
       return unless export_history_id
+
       index(:content_exports, :id => export_history_id).first
     end
 
     def fetch_export_history_from_task(task)
       # checking this here implies the task object was loaded recently
-      if %w(error warning).include?(task['result'])
+      if %w[error warning].include?(task['result'])
         raise _("Can not fetch export history from an unfinished task")
       end
+
       export_history_id = task.dig('output', 'export_history_id')
       fetch_export_history(export_history_id)
     end
@@ -75,10 +77,13 @@ module HammerCLIKatello
           + "it is not syncable. It was not generated with --format=syncable.")
       end
 
-      raise _("Export History does not have the path specified."\
-        + " The task may have errored out.") unless export_history["path"]
+      unless export_history["path"]
+        raise _("Export History does not have the path specified."\
+          + " The task may have errored out.")
+      end
     end
 
+    # rubocop:disable Metrics/CyclomaticComplexity
     def make_listing_files(export_history)
       check_export_history_syncable!(export_history)
       return unless Dir.exist?("#{export_history['path']}/content")
@@ -108,6 +113,7 @@ module HammerCLIKatello
         output.print_message(" hammer content-export generate-listing --id #{export_history['id']}")
       end
     end
+    # rubocop:enable Metrics/CyclomaticComplexity
 
     def generate_metadata_json(export_history)
       metadata_json = export_history["metadata"].to_json
@@ -196,8 +202,8 @@ module HammerCLIKatello
       base.failure_message _("Could not export the repository")
 
       base.option "--name", "NAME", _("Filter repositories by name."),
-                 :attribute_name => :option_name,
-                 :required => false
+                  :attribute_name => :option_name,
+                  :required => false
 
       base.build_options do |o|
         o.expand(:all).including(:products, :organizations)
@@ -212,7 +218,7 @@ module HammerCLIKatello
           ).required
           unless option(:option_product_id).exist?
             any(:option_organization_id, :option_organization_name, \
-                                :option_organization_label).required
+                :option_organization_label).required
           end
         end
       end
@@ -231,8 +237,8 @@ module HammerCLIKatello
       base.success_message _("Library environment is being exported in task %{id}.")
       base.failure_message _("Could not export the library")
       base.option "--fail-on-missing-content", :flag,
-                    _("Fails if any of the repositories belonging"\
-                      " to this organization are unexportable.")
+                  _("Fails if any of the repositories belonging"\
+                    " to this organization are unexportable.")
 
       base.build_options do |o|
         o.expand(:all).including(:organizations)
@@ -261,12 +267,12 @@ module HammerCLIKatello
 
     def self.setup_version_options(base)
       base.option "--fail-on-missing-content", :flag,
-                    _("Fails if any of the repositories belonging"\
-                      " to this version are unexportable.")
+                  _("Fails if any of the repositories belonging"\
+                    " to this version are unexportable.")
 
       base.option "--version", "VERSION", _("Filter versions by version number."),
-                 :attribute_name => :option_version,
-                 :required => false
+                  :attribute_name => :option_version,
+                  :required => false
 
       base.build_options do |o|
         o.expand(:all).including(:content_views, :organizations, :lifecycle_environments)
@@ -283,7 +289,7 @@ module HammerCLIKatello
           ).required
           unless option(:option_content_view_id).exist?
             any(:option_organization_id, :option_organization_name, \
-                                :option_organization_label).required
+                :option_organization_label).required
           end
         end
       end

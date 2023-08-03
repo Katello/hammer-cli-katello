@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe 'host list' do
   before do
-    @cmd = %w(host list)
+    @cmd = %w[host list]
   end
 
   it "list hosts" do

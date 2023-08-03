@@ -80,7 +80,7 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
-        %w(yum docker ostree).each do |content_type|
+        %w[yum docker ostree].each do |content_type|
           data["_#{content_type}_repositories"] = data["repositories"].select do |repo|
             repo["content_type"] == content_type
           end
@@ -124,8 +124,8 @@ module HammerCLIKatello
              :attribute_name => :option_new_name
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_name).exist?
           any(*organization_options).required
@@ -151,8 +151,8 @@ module HammerCLIKatello
       failure_message _("Could not update the content view")
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_name).exist? || option(:option_product_name).exist?
           any(*organization_options).required
@@ -175,8 +175,8 @@ module HammerCLIKatello
       failure_message _("Could not delete the content view")
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_name).exist?
           any(*organization_options).required
@@ -260,8 +260,8 @@ module HammerCLIKatello
 
       def request_params
         super.tap do |opts|
-          %w(content_view_version_ids environment_ids).each do |key|
-            opts[key] = opts[key].split(",") if opts[key] && opts[key].respond_to?(:split)
+          %w[content_view_version_ids environment_ids].each do |key|
+            opts[key] = opts[key].split(",") if opts[key].respond_to?(:split)
           end
         end
       end
@@ -301,8 +301,8 @@ module HammerCLIKatello
       end
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_name).exist?
           any(*organization_options).required
@@ -336,8 +336,8 @@ module HammerCLIKatello
       end
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_name).exist?
           any(*organization_options).required

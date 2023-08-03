@@ -11,7 +11,7 @@ describe "get content-credentials info" do
   include ProductHelpers
 
   before do
-    @cmd = %w(content-credentials info)
+    @cmd = %w[content-credentials info]
   end
 
   let(:org_id) { 1 }

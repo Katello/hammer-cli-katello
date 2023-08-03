@@ -3,7 +3,7 @@ require 'hammer_cli_katello/associating_commands'
 
 describe 'activation-key info' do
   before do
-    @cmd = %w(activation-key info)
+    @cmd = %w[activation-key info]
   end
 
   it "includes katello attributes" do

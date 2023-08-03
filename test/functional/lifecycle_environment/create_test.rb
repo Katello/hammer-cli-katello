@@ -8,7 +8,7 @@ module HammerCLIKatello
         p['name'] == 'le1' && p['prior_id'] == 3 && p['organization_id'] == 1
       end
 
-      run_cmd(%w(lifecycle-environment create --name le1 --prior-id 3 --organization-id 1))
+      run_cmd(%w[lifecycle-environment create --name le1 --prior-id 3 --organization-id 1])
     end
   end
 end

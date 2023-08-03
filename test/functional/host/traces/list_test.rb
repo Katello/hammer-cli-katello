@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe 'host trace listing' do
   before do
-    @cmd = %w(host traces list)
+    @cmd = %w[host traces list]
   end
 
   let(:host_id) { 2 }

@@ -5,7 +5,7 @@ describe 'host subscription remove' do
   include HostHelpers
 
   before do
-    @cmd = %w(host subscription remove)
+    @cmd = %w[host subscription remove]
   end
   it "remove a subscription to a host No Quantity" do
     params = ['--host-id=3', '--subscription-id=100']

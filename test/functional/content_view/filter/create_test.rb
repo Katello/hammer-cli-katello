@@ -4,7 +4,7 @@ require_relative '../../repository/repository_helpers'
 describe 'content-view filter create' do
   include RepositoryHelpers
   before do
-    @cmd = %w(content-view filter create)
+    @cmd = %w[content-view filter create]
     @base_params = ["--name=#{filter_name}", "--content-view-id=#{content_view_id}", "--type=rpm"]
   end
 
@@ -23,7 +23,7 @@ describe 'content-view filter create' do
 
   it 'creates a content-view filter with repository ids' do
     ids = repo_ids.join(',')
-    params = %W(--repository-ids=#{ids})
+    params = %W[--repository-ids=#{ids}]
 
     api_expects(:content_view_filters, :create, 'Create content-view filter')
       .with_params('name' => filter_name, 'repository_ids' => repo_ids.map(&:to_s))
@@ -35,7 +35,7 @@ describe 'content-view filter create' do
   end
 
   it 'creates a content-view filter with repository names' do
-    params = %W(--repositories=#{repo_names.join(',')} --product-id 3)
+    params = %W[--repositories=#{repo_names.join(',')} --product-id 3]
 
     expect_generic_repositories_search({'names' => repo_names, 'product_id' => 3}, repositories)
 

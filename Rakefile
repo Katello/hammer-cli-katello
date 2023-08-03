@@ -19,7 +19,7 @@ begin
             --format Rubocop::Formatter::CheckstyleFormatter \
             --no-color --out rubocop.xml")
   end
-rescue => _
+rescue StandardError => _e
   puts "Rubocop not loaded."
 end
 

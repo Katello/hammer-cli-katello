@@ -15,15 +15,15 @@ module HammerCLIKatello
         it 'allows minimal options' do
           expect_lifecycle_environment_remove('id' => 1, 'environment_id' => 2)
 
-          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --environment-id 2))
+          run_cmd(%w[capsule content remove-lifecycle-environment --id 1 --environment-id 2])
         end
 
         it 'resolves environment ID from name' do
           expect_lifecycle_environment_search('3', 'env2', 2)
           expect_lifecycle_environment_remove('id' => 1, 'environment_id' => 2)
 
-          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --environment env2
-                     --organization-id 3))
+          run_cmd(%w[capsule content remove-lifecycle-environment --id 1 --environment env2
+                     --organization-id 3])
         end
 
         it 'resolves organization ID from name' do
@@ -31,8 +31,8 @@ module HammerCLIKatello
           expect_lifecycle_environment_search(3, 'env2', 2)
           expect_lifecycle_environment_remove('id' => 1, 'environment_id' => 2)
 
-          run_cmd(%w(capsule content remove-lifecycle-environment --id 1 --environment env2
-                     --organization org3))
+          run_cmd(%w[capsule content remove-lifecycle-environment --id 1 --environment env2
+                     --organization org3])
         end
       end
     end

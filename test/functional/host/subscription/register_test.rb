@@ -10,7 +10,7 @@ describe 'host subscription register' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(host subscription register)
+    @cmd = %w[host subscription register]
   end
 
   it "subscribe a host" do

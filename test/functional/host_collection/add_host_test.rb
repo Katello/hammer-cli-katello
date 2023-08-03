@@ -6,30 +6,30 @@ module HammerCLIKatello
     describe 'handles individual host errors' do
       it 'for successful results' do
         api_expects(:host_collections, :add_hosts)
-          .with_params('id' => 1, 'host_ids' => %w(2 3))
+          .with_params('id' => 1, 'host_ids' => %w[2 3])
           .returns("displayMessages" => {"success" => ["Successfully added 2 Host(s)."],
                                          "error" => []})
-        result = run_cmd(%w(host-collection add-host --id 1 --host-ids 2,3))
+        result = run_cmd(%w[host-collection add-host --id 1 --host-ids 2,3])
         assert_match("The host(s) has been added", result.out)
       end
 
       it 'for mixed results' do
         api_expects(:host_collections, :add_hosts)
-          .with_params('id' => 1, 'host_ids' => %w(2 3))
+          .with_params('id' => 1, 'host_ids' => %w[2 3])
           .returns("displayMessages" => {"success" => ["Successfully added 1 Host(s)."],
                                          "error" => ["Host with ID 3 not found."]})
-        result = run_cmd(%w(host-collection add-host --id 1 --host-ids 2,3))
+        result = run_cmd(%w[host-collection add-host --id 1 --host-ids 2,3])
         assert_match("Could not add host(s)", result.out)
         assert_match("Host with ID 3 not found.", result.out)
       end
 
       it 'for errored results' do
         api_expects(:host_collections, :add_hosts)
-          .with_params('id' => 1, 'host_ids' => %w(2 3))
+          .with_params('id' => 1, 'host_ids' => %w[2 3])
           .returns("displayMessages" => {"success" => [], "error" => [
             "Host with ID 1 already exists in the host collection.",
             "Host with ID 3 not found."]})
-        result = run_cmd(%w(host-collection add-host --id 1 --host-ids 2,3))
+        result = run_cmd(%w[host-collection add-host --id 1 --host-ids 2,3])
         assert_match("Could not add host(s)", result.out)
         assert_match("Host with ID 1 already exists in the host collection.", result.out)
         assert_match("Host with ID 3 not found.", result.out)
@@ -38,11 +38,11 @@ module HammerCLIKatello
 
     it 'does not require organization options if id is specified' do
       api_expects(:host_collections, :add_hosts)
-      run_cmd(%w(host-collection add-host --id 1))
+      run_cmd(%w[host-collection add-host --id 1])
     end
 
     it 'requires organization options if name is specified' do
-      result = run_cmd(%w(host-collection add-host --name hc1))
+      result = run_cmd(%w[host-collection add-host --name hc1])
       expected_error = "Missing options to search organization"
       assert_equal(HammerCLI::EX_SOFTWARE, result.exit_code)
       assert_equal(expected_error, result.err[/#{expected_error}/])
@@ -56,7 +56,7 @@ module HammerCLIKatello
         par['id'].to_i == 2
       end
 
-      run_cmd(%w(host-collection add-host --name hc1 --organization-id 1))
+      run_cmd(%w[host-collection add-host --name hc1 --organization-id 1])
     end
 
     it 'allows organization name' do
@@ -70,7 +70,7 @@ module HammerCLIKatello
         par['id'].to_i == 2
       end
 
-      run_cmd(%w(host-collection add-host --name hc1 --organization org1))
+      run_cmd(%w[host-collection add-host --name hc1 --organization org1])
     end
 
     it 'allows organization label' do
@@ -84,7 +84,7 @@ module HammerCLIKatello
         par['id'].to_i == 2
       end
 
-      run_cmd(%w(host-collection add-host --name hc1 --organization-label org1))
+      run_cmd(%w[host-collection add-host --name hc1 --organization-label org1])
     end
   end
 end

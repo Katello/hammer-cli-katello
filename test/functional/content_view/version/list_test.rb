@@ -6,7 +6,7 @@ module HammerCLIKatello
     it 'allows minimal options' do
       api_expects(:content_view_versions, :index)
 
-      run_cmd(%w(content-view version list))
+      run_cmd(%w[content-view version list])
     end
 
     describe 'allows organization' do
@@ -15,7 +15,7 @@ module HammerCLIKatello
           p['organization_id'] == 1
         end
 
-        run_cmd(%w(content-view version list --organization-id 1))
+        run_cmd(%w[content-view version list --organization-id 1])
       end
 
       it 'name' do
@@ -26,7 +26,7 @@ module HammerCLIKatello
           p['organization_id'] == 1
         end
 
-        run_cmd(%w(content-view version list --organization org1))
+        run_cmd(%w[content-view version list --organization org1])
       end
 
       it 'label' do
@@ -37,7 +37,7 @@ module HammerCLIKatello
           p['organization_id'] == 1
         end
 
-        run_cmd(%w(content-view version list --organization-label org1))
+        run_cmd(%w[content-view version list --organization-label org1])
       end
     end
   end

@@ -7,7 +7,7 @@ module HammerCLIKatello
       def get_components(composite_content_view_id)
         component_options = {:composite_content_view_id => composite_content_view_id}
         components = ::HammerCLIForeman.foreman_resource(:content_view_components).call(:index,
-                                                         component_options)
+                                                                                        component_options)
         components["results"] || []
       end
 
@@ -56,6 +56,7 @@ module HammerCLIKatello
           if option_component_content_view_version_version && cv.nil?
             raise _("Please provide --component-content-view-id")
           end
+
           if option_component_content_view_version_version.nil?
             raise _("Please provide --component-content-view-version-id or" \
                    " --component-content-view-version or" \
@@ -150,7 +151,7 @@ module HammerCLIKatello
                   opts["composite_content_view_id"].nil?
 
         component = get_component_by_name_or_id(opts["composite_content_view_id"],
-                                          :id => opts["content_view_id"])
+                                                :id => opts["content_view_id"])
         opts["id"] = component["id"] if component
       end
 
@@ -181,23 +182,25 @@ module HammerCLIKatello
       command_name "remove"
 
       option ["--component-content-views"], "COMPONENT_CONTENT_VIEW_NAMES",
-         _("Array of component content view names to remove. Comma separated list of values"),
-         :attribute_name => :option_component_content_view_names
+             _("Array of component content view names to remove. Comma separated list of values"),
+             :attribute_name => :option_component_content_view_names
 
       option ["--component-content-view-ids"], "COMPONENT_CONTENT_VIEW_IDs",
-         _("Array of component content view identfiers to remove. Comma separated list of values"),
-         :attribute_name => :option_component_content_view_ids
+             _("Array of component content view identfiers to remove. Comma separated list of values"),
+             :attribute_name => :option_component_content_view_ids
 
       success_message _("Components removed from content view.")
       failure_message _("Could not remove the components")
 
       def component_content_view_names
         return [] unless option_component_content_view_names
+
         option_component_content_view_names.split(",").map(&:strip)
       end
 
       def component_content_view_ids
         return [] unless option_component_content_view_ids
+
         option_component_content_view_ids.split(",").map(&:strip)
       end
 

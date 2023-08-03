@@ -9,7 +9,7 @@ describe 'content-export incremental library' do
   include ContentExportHelpers
 
   before do
-    @cmd = %w(content-export incremental library)
+    @cmd = %w[content-export incremental library]
   end
 
   let(:task_id) { '5' }

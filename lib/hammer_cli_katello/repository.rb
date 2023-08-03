@@ -52,7 +52,7 @@ module HammerCLIKatello
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
-    # rubocop:disable ClassLength
+    # rubocop:disable Metrics/ClassLength
     class InfoCommand < HammerCLIKatello::InfoCommand
       extend RepositoryScopedToProduct
 
@@ -121,9 +121,9 @@ module HammerCLIKatello
           field :package_group_total, _("Package Groups"), Fields::Field, :hide_blank => true
           field :errata_total, _("Errata"), Fields::Field, :hide_blank => true
           field :docker_manifest_list_total, _("Container Image Manifest Lists"),
-                                           Fields::Field, :hide_blank => true
+                Fields::Field, :hide_blank => true
           field :docker_manifest_total, _("Container Image Manifests"), Fields::Field,
-                                           :hide_blank => true
+                :hide_blank => true
           field :docker_tag_total, _("Container Image Tags"), Fields::Field, :hide_blank => true
           field :file_total, _("Files"), Fields::Field, :hide_blank => true
           field :module_stream_total, _("Module Streams"), Fields::Field, :hide_blank => true
@@ -201,7 +201,7 @@ module HammerCLIKatello
         o.expand.including(:products, :organizations)
       end
     end
-    # rubocop:enable ClassLength
+    # rubocop:enable Metrics/ClassLength
 
     class SyncCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
@@ -249,8 +249,8 @@ module HammerCLIKatello
       failure_message _("Could not update the repository")
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_product_name).exist?
           any(*organization_options).required
@@ -299,7 +299,7 @@ module HammerCLIKatello
           }
         ], last_file: true)
         print_message _("Repository updated")
-      rescue => e
+      rescue StandardError => e
         @failure = true
         logger.error e
         output.print_error _("Failed to upload tag '%s' to repository.") % tag
@@ -360,7 +360,7 @@ module HammerCLIKatello
       build_options
     end
 
-    # rubocop:disable ClassLength
+    # rubocop:disable Metrics/ClassLength
     class UploadContentCommand < HammerCLIKatello::InfoCommand
       extend RepositoryScopedToProduct
       include HammerCLIForemanTasks::Helper
@@ -416,10 +416,10 @@ module HammerCLIKatello
       end
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name,
-                                :option_organization_label]
-        product_options = [:option_product_id, :option_product_name]
-        repository_options = [:option_id, :option_name]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
+        product_options = %i[option_product_id option_product_name]
+        repository_options = %i[option_id option_name]
 
         any(*repository_options).required
 
@@ -447,9 +447,9 @@ module HammerCLIKatello
       option "--async", :flag, _("Do not wait for the task.")
 
       option "--ostree-repository-name", "OSTREE REPOSITORY NAME",
-        _("Name of OSTree repository in archive."),
-        :attribute_name => :option_ostree_repository_name,
-        :required => false
+             _("Name of OSTree repository in archive."),
+             :attribute_name => :option_ostree_repository_name,
+             :required => false
 
       option "--path", "PATH", _("Upload file, directory of files, or glob of files " \
                                  "as content for a repository.\n" \
@@ -462,7 +462,7 @@ module HammerCLIKatello
       def upload_file(file, opts = {})
         total_size = File.size(file)
         checksum = Digest::SHA256.hexdigest(File.read(file))
-        content_type = options["option_content_type"] ? options["option_content_type"] : nil
+        content_type = options["option_content_type"] || nil
         filename = File.basename(file.path)
         upload_create_response = create_content_upload(total_size, checksum, content_type)
         upload_id = upload_create_response["upload_id"] || "duplicate"
@@ -495,8 +495,7 @@ module HammerCLIKatello
           :checksum => checksum,
           :content_type => content_type
         }
-        response = content_upload_resource.call(:create, params)
-        response
+        content_upload_resource.call(:create, params)
       end
 
       def update_content_upload(upload_id, repo_id, file)
@@ -533,12 +532,11 @@ module HammerCLIKatello
         if options["option_ostree_repository_name"]
           params[:ostree_repository_name] = options["option_ostree_repository_name"]
         end
-        results = if options["option_async"]
-                    resource.call(:import_uploads, params)
-                  else
-                    task_progress(resource.call(:import_uploads, params))
-                  end
-        results
+        if options["option_async"]
+          resource.call(:import_uploads, params)
+        else
+          task_progress(resource.call(:import_uploads, params))
+        end
       end
 
       def task_progress(task_or_id)
@@ -547,10 +545,10 @@ module HammerCLIKatello
         load_task(task_id)
       end
 
-      # rubocop:disable CyclomaticComplexity
-      # rubocop:disable PerceivedComplexity
+      # rubocop:disable Metrics/CyclomaticComplexity
+      # rubocop:disable Metrics/PerceivedComplexity
       def print_results(name, results, async)
-        if !%w(error warning).include?(results) && !async # task successful && no async flag used
+        if !%w[error warning].include?(results) && !async # task successful && no async flag used
           upload_results = results.dig('output', 'upload_results') || []
 
           if upload_results.empty?
@@ -572,8 +570,8 @@ module HammerCLIKatello
           print_message _("Could not upload the content.")
         end
       end
-      # rubocop:enable CyclomaticComplexity
-      # rubocop:enable PerceivedComplexity
+      # rubocop:enable Metrics/CyclomaticComplexity
+      # rubocop:enable Metrics/PerceivedComplexity
 
       def silence_warnings
         original_verbose = $VERBOSE
@@ -599,8 +597,8 @@ module HammerCLIKatello
       failure_message _("Could not remove content")
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_product_name).exist?
           any(*organization_options).required
@@ -632,8 +630,8 @@ module HammerCLIKatello
       failure_message _("Could not republish the repository.")
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_product_name).exist?
           any(*organization_options).required
@@ -658,8 +656,8 @@ module HammerCLIKatello
       failure_message _("Could not reclaim the repository")
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
 
         if option(:option_product_name).exist?
           any(*organization_options).required
@@ -670,7 +668,7 @@ module HammerCLIKatello
         o.expand.including(:products)
       end
     end
-    # rubocop:enable ClassLength
+    # rubocop:enable Metrics/ClassLength
     autoload_subcommands
   end
 end

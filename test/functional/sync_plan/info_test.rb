@@ -10,7 +10,7 @@ module HammerCLIKatello
     it 'allows ID' do
       api_expects(:sync_plans, :show).with_params('id' => 1)
 
-      run_cmd(%w(sync-plan info --id 1))
+      run_cmd(%w[sync-plan info --id 1])
     end
 
     it 'allows organization id and sync plan name' do

@@ -5,7 +5,7 @@ describe 'listing repositories' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(repository list)
+    @cmd = %w[repository list]
   end
 
   let(:org_id) { 1 }

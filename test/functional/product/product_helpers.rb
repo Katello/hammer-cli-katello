@@ -13,6 +13,7 @@ module ProductHelpers
 
     if options[:name]
       raise "#{__method__} used with :name also requires :org_id" unless options[:org_id]
+
       expect_product_search(options[:org_id], options[:name], options[:id])
     end
 

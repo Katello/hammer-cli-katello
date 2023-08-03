@@ -94,8 +94,8 @@ module HammerCLIKatello
   end # class PingCommand
 
   HammerCLIForeman::PingCommand.subcommand 'katello',
-                                            HammerCLIKatello::PingCommand.desc,
-                                            HammerCLIKatello::PingCommand
+                                           HammerCLIKatello::PingCommand.desc,
+                                           HammerCLIKatello::PingCommand
   HammerCLIForeman::PingCommand::ForemanCommand.extend_with(
     HammerCLIKatello::CommandExtensions::Ping.new
   )

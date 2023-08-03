@@ -27,8 +27,8 @@ module HammerCLIKatello
         p['id'] == 6 && p['environment_ids'] == [9]
       end
 
-      run_cmd(%w(content-view version promote --organization org1 --content-view cv
-                 --to-lifecycle-environment test --version 1 --async))
+      run_cmd(%w[content-view version promote --organization org1 --content-view cv
+                 --to-lifecycle-environment test --version 1 --async])
     end
 
     it 'allows promoting a content view without version name/id' do
@@ -68,8 +68,8 @@ module HammerCLIKatello
         p['id'] == 6 && p['environment_ids'] == [9]
       end
 
-      run_cmd(%w(content-view version promote --organization org1 --content-view cv
-                 --to-lifecycle-environment test --from-lifecycle-environment Library --async))
+      run_cmd(%w[content-view version promote --organization org1 --content-view cv
+                 --to-lifecycle-environment test --from-lifecycle-environment Library --async])
     end
   end
 end

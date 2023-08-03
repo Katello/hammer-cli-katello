@@ -3,7 +3,7 @@ require 'hammer_cli_katello/associating_commands'
 
 describe 'get acs info' do
   before do
-    @cmd = %w(alternate-content-source info)
+    @cmd = %w[alternate-content-source info]
   end
 
   it 'shows acs info by id' do

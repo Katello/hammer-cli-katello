@@ -5,7 +5,7 @@ describe 'capsule content info' do
   include CapsuleContentHelpers
 
   before do
-    @cmd = %w(capsule content info)
+    @cmd = %w[capsule content info]
   end
   let(:params) { ['--id=3'] }
 

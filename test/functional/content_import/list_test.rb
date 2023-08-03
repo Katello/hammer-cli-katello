@@ -23,13 +23,13 @@ describe 'content-import list' do
 
     ex.returns(empty_response)
 
-    # rubocop:disable LineLength
+    # rubocop:disable Layout/LineLength
     expected_result = success_result('---|------|------|----------------------|-------------------------|------------|-----------
 ID | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
 ---|------|------|----------------------|-------------------------|------------|-----------
 ')
-    # rubocop:enable LineLength
-    result = run_cmd(%w(content-import list))
+    # rubocop:enable Layout/LineLength
+    result = run_cmd(%w[content-import list])
     assert_cmd(expected_result, result)
   end
 
@@ -39,13 +39,13 @@ ID | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT |
     ex = api_expects(:content_imports, :index)
 
     ex.returns(empty_response)
-    # rubocop:disable LineLength
+    # rubocop:disable Layout/LineLength
     expected_result = success_result('---|------|------|----------------------|-------------------------|------------|-----------
 ID | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
 ---|------|------|----------------------|-------------------------|------------|-----------
 ')
-    # rubocop:enable LineLength
-    result = run_cmd(%w(content-import list --content-view-id=1))
+    # rubocop:enable Layout/LineLength
+    result = run_cmd(%w[content-import list --content-view-id=1])
     assert_cmd(expected_result, result)
   end
 
@@ -53,13 +53,13 @@ ID | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT |
     ex = api_expects(:content_imports, :index)
 
     ex.returns(empty_response)
-    # rubocop:disable LineLength
+    # rubocop:disable Layout/LineLength
     expected_result = success_result('---|------|------|----------------------|-------------------------|------------|-----------
 ID | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
 ---|------|------|----------------------|-------------------------|------------|-----------
 ')
-    # rubocop:enable LineLength
-    result = run_cmd(%w(content-import list --content-view-version-id=1))
+    # rubocop:enable Layout/LineLength
+    result = run_cmd(%w[content-import list --content-view-version-id=1])
     assert_cmd(expected_result, result)
   end
 end

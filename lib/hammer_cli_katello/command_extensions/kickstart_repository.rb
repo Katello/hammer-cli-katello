@@ -23,11 +23,12 @@ module HammerCLIKatello
           raise _('Please provide --lifecycle-environment-id') unless env_id
 
           raise _('Please provide --content-view-id') unless cv_id
-          # rubocop:disable LineLength
+
+          # rubocop:disable Layout/LineLength
           resource_hash['kickstart_repository_id'] = HammerCLIKatello::CommandExtensions::KickstartRepository.fetch_repo_id(
             cv_id, env_id, cmd_obj.option_kickstart_repository
           )
-          # rubocop:enable LineLength
+          # rubocop:enable Layout/LineLength
         end
       end
 

@@ -101,7 +101,7 @@ module HammerCLIKatello
     autoload_subcommands
 
     self.subcommand "bulk",
-               HammerCLIKatello::AcsBulkActionsCommand.desc,
-               HammerCLIKatello::AcsBulkActionsCommand
+                    HammerCLIKatello::AcsBulkActionsCommand.desc,
+                    HammerCLIKatello::AcsBulkActionsCommand
   end
 end

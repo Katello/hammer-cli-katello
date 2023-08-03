@@ -4,7 +4,7 @@ describe 'host trace resolve' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(host traces resolve)
+    @cmd = %w[host traces resolve]
   end
 
   let(:host_id) { '2' }

@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe 'host enabled-repositories listing' do
   before do
-    @cmd = %w(host subscription enabled-repositories)
+    @cmd = %w[host subscription enabled-repositories]
   end
 
   let(:host_id) { 1 }

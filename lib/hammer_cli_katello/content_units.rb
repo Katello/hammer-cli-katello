@@ -15,8 +15,8 @@ module HammerCLIKatello
       end
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name,
-                                :option_organization_label]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
         if any(:option_product_name, :option_content_view_name).exist?
           any(*organization_options).required
         end
@@ -36,12 +36,12 @@ module HammerCLIKatello
       end
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name,
-                                :option_organization_label]
-        product_options = [:option_product_id, :option_product_name]
-        repository_options = [:option_repository_id, :option_repository_name]
-        content_view_version_options = [:option_content_view_version_id,
-                                        :option_content_view_version_version]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
+        product_options = %i[option_product_id option_product_name]
+        repository_options = %i[option_repository_id option_repository_name]
+        content_view_version_options = %i[option_content_view_version_id
+                                          option_content_view_version_version]
 
         if option(:option_product_name).exist?
           any(*organization_options).required

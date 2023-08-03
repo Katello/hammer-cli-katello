@@ -15,7 +15,7 @@ describe "remove a product's sync plan" do
 
     assert_equal(
       0,
-      run_cmd(%w(product remove-sync-plan --id 1)).exit_code
+      run_cmd(%w[product remove-sync-plan --id 1]).exit_code
     )
   end
 
@@ -27,9 +27,9 @@ describe "remove a product's sync plan" do
 
     assert_equal(
       0,
-      run_cmd(%w(product remove-sync-plan
+      run_cmd(%w[product remove-sync-plan
                  --organization-id 1
-                 --name product1)).exit_code
+                 --name product1]).exit_code
     )
   end
 end

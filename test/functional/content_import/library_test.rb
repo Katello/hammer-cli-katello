@@ -5,7 +5,7 @@ describe 'content-import library' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(content-import library)
+    @cmd = %w[content-import library]
   end
 
   let(:task_id) { '5' }

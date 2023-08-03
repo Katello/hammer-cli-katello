@@ -6,7 +6,7 @@ require 'hammer_cli_katello/associating_commands'
 describe HammerCLIKatello::Organization::ConfigureCdnCommand do
   include OrganizationHelpers
   before do
-    @cmd = %w(organization configure-cdn)
+    @cmd = %w[organization configure-cdn]
   end
 
   it 'by updates with the right params' do

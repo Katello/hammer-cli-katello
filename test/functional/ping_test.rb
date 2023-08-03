@@ -27,10 +27,10 @@ describe 'ping' do
     }
   end
   let(:standard_response_keys) do
-    %w(katello_agent foreman_tasks candlepin candlepin_events
-       candlepin_auth katello_events pulp3 pulp3_content).sort
+    %w[katello_agent foreman_tasks candlepin candlepin_events
+       candlepin_auth katello_events pulp3 pulp3_content].sort
   end
-  let(:hammer_ping) { %w(ping katello) }
+  let(:hammer_ping) { %w[ping katello] }
 
   it 'does not require authentication' do
     api_expects(:ping, :index).returns(standard_response)
@@ -41,7 +41,7 @@ describe 'ping' do
   it "includes all keys" do
     api_expects(:ping, :index).returns(standard_response)
 
-    result = JSON.parse(run_cmd(%w(--output=json ping katello))&.out)&.first&.keys&.sort
+    result = JSON.parse(run_cmd(%w[--output=json ping katello])&.out)&.first&.keys&.sort
     expected = standard_response_keys
 
     assert_equal result, expected
@@ -50,11 +50,11 @@ describe 'ping' do
   it "skips katello_agent if not included in API response" do
     response_without_katello_agent = {
       'status' => 'ok',
-      'services' => standard_response_services.select { |k, _v| k != 'katello_agent' }
+      'services' => standard_response_services.reject { |k, _v| k == 'katello_agent' }
     }
     api_expects(:ping, :index).returns(response_without_katello_agent)
-    result = JSON.parse(run_cmd(%w(--output=json ping katello))&.out)&.first&.keys&.sort
-    expected = standard_response_keys.select { |k| k != 'katello_agent' }
+    result = JSON.parse(run_cmd(%w[--output=json ping katello])&.out)&.first&.keys&.sort
+    expected = standard_response_keys.reject { |k| k == 'katello_agent' }
 
     assert_equal result, expected
   end

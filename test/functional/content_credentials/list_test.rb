@@ -5,7 +5,7 @@ describe 'listing content credentials' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(content-credentials list)
+    @cmd = %w[content-credentials list]
   end
 
   let(:org_id) { 1 }

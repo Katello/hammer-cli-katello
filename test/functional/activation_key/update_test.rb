@@ -19,7 +19,7 @@ module HammerCLIKatello
           p['id'] == 6 && p['organization_id'] == 1
         end
 
-        run_cmd(%w(activation-key update --organization org1 --name ak --auto-attach false))
+        run_cmd(%w[activation-key update --organization org1 --name ak --auto-attach false])
       end
     end
   end

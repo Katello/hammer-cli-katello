@@ -8,7 +8,7 @@ module HammerCLIKatello
         p['new_name'] == 'le3' && p['id'] == 3
       end
 
-      run_cmd(%w(lifecycle-environment update --id 3 --new-name le3))
+      run_cmd(%w[lifecycle-environment update --id 3 --new-name le3])
     end
   end
 end

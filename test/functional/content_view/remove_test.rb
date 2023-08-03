@@ -8,17 +8,17 @@ module HammerCLIKatello
     describe 'content view version options' do
       it 'allows removing versions by ID' do
         ex = api_expects(:content_views, :remove) do |p|
-          p['id'] == 1 && p['content_view_version_ids'] == %w(6 7 8)
+          p['id'] == 1 && p['content_view_version_ids'] == %w[6 7 8]
         end
         ex.returns(id: '9')
 
         expect_foreman_task('9')
 
-        run_cmd(%w(content-view remove --id 1 --content-view-version-ids 6,7,8))
+        run_cmd(%w[content-view remove --id 1 --content-view-version-ids 6,7,8])
       end
 
       it 'allows removing versions by version number' do
-        versions = %w(6.0 7.0 8.0)
+        versions = %w[6.0 7.0 8.0]
         ids = [6, 7, 8]
 
         api_expects(:content_view_versions, :index).with_params(
@@ -32,26 +32,26 @@ module HammerCLIKatello
 
         expect_foreman_task('9')
 
-        run_cmd(%w(content-view remove --id 1 --content-view-versions 6.0,7.0,8.0))
+        run_cmd(%w[content-view remove --id 1 --content-view-versions 6.0,7.0,8.0])
       end
     end
 
     describe 'environment options' do
       it 'allows removing versions by ID' do
         ex = api_expects(:content_views, :remove) do |p|
-          p['id'] == 1 && p['environment_ids'] == %w(6 7 8)
+          p['id'] == 1 && p['environment_ids'] == %w[6 7 8]
         end
         ex.returns(id: '9')
 
         expect_foreman_task('9')
 
-        run_cmd(%w(content-view remove --id 1 --environment-ids 6,7,8))
+        run_cmd(%w[content-view remove --id 1 --environment-ids 6,7,8])
       end
 
       it 'requires organization options when removing environments by name' do
         api_expects_no_call
 
-        run_cmd(%w(content-view remove --id 1 --environments env6,env7,env8))
+        run_cmd(%w[content-view remove --id 1 --environments env6,env7,env8])
       end
 
       it 'allows removing environments by name' do
@@ -72,7 +72,7 @@ module HammerCLIKatello
 
         expect_foreman_task('9')
 
-        run_cmd(%w(content-view remove --id 1 --environments env6,env7,env8 --organization-id 1))
+        run_cmd(%w[content-view remove --id 1 --environments env6,env7,env8 --organization-id 1])
       end
     end
   end

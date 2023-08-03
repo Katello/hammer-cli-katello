@@ -5,7 +5,7 @@ describe 'listing content-views' do
   include LifecycleEnvironmentHelpers
 
   before do
-    @cmd = %w(content-view list)
+    @cmd = %w[content-view list]
   end
 
   let(:org_id) { 1 }

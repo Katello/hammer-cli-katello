@@ -4,7 +4,7 @@ describe 'apply an errata' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(host errata apply)
+    @cmd = %w[host errata apply]
   end
 
   let(:errata_id) { "RHEA-1111:1111" }

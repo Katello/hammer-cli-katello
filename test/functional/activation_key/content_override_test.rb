@@ -3,7 +3,7 @@ require 'hammer_cli_katello/activation_key'
 
 describe 'activation-key content-override' do
   before do
-    @cmd = %w(activation-key content-override)
+    @cmd = %w[activation-key content-override]
   end
   it "attaches a content label" do
     label = "foo"
@@ -87,6 +87,6 @@ describe 'activation-key content-override' do
     result = run_cmd(@cmd + params)
 
     assert(result.err[/At least one of options --remove, --value is required/],
-               "Remove or Value must be provided")
+           "Remove or Value must be provided")
   end
 end

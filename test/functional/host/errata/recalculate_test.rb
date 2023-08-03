@@ -4,7 +4,7 @@ describe 'recalculate errata' do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(host errata recalculate)
+    @cmd = %w[host errata recalculate]
   end
 
   let(:host_id) { 1 }

@@ -4,7 +4,7 @@ require 'hammer_cli_katello/associating_commands'
 
 describe HammerCLIKatello::Organization::InfoCommand do
   before do
-    @cmd = %w(organization info)
+    @cmd = %w[organization info]
   end
 
   let(:cdn_configuration) do

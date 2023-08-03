@@ -15,7 +15,7 @@ describe "create a product" do
 
     assert_equal(
       0,
-      run_cmd(%w(product create --organization-id 1 --name product1)).exit_code
+      run_cmd(%w[product create --organization-id 1 --name product1]).exit_code
     )
   end
 
@@ -26,7 +26,7 @@ describe "create a product" do
     end
     assert_equal(
       0,
-      run_cmd(%w(product create --organization org1 --name product1)).exit_code
+      run_cmd(%w[product create --organization org1 --name product1]).exit_code
     )
   end
 
@@ -38,7 +38,7 @@ describe "create a product" do
         par['name'] == 'product1' &&
         par['sync_plan_id'] == 1
     end
-    command = %w(product create --organization org1 --name product1 --sync-plan sync_plan1)
+    command = %w[product create --organization org1 --name product1 --sync-plan sync_plan1]
     assert_equal(
       0,
       run_cmd(command).exit_code
@@ -48,7 +48,7 @@ describe "create a product" do
   it 'fails if no organization is given' do
     refute_equal(
       0,
-      run_cmd(%w(product create --name product1)).exit_code
+      run_cmd(%w[product create --name product1]).exit_code
     )
   end
 end

@@ -65,9 +65,7 @@ module HammerCLIKatello
               field :content, _('Type')
               field :inclusion, _('Inclusion'), Fields::Boolean
               field :original_packages, _('Original packages'), Fields::Boolean, hide_blank: true
-              # rubocop:disable Layout/LineLength
               field :original_module_streams, _('Original module streams'), Fields::Boolean, hide_blank: true
-              # rubocop:enable Layout/LineLength
             end
             collection :rules, _("Rules"), hide_blank: true, hide_empty: true do
               field :id, _('Id')
@@ -133,7 +131,7 @@ module HammerCLIKatello
       option "--from-lifecycle-environment-id", "FROM_ENVIRONMENT_ID",
              _(["Id of the environment from where to promote its version ",
                 "from (if version is unknown)"].join),
-               :attribute_name => :option_from_environment_id
+             :attribute_name => :option_from_environment_id
 
       def environment_search_options
         {
@@ -240,7 +238,7 @@ module HammerCLIKatello
             )
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name]
+        organization_options = %i[option_organization_id option_organization_name]
 
         if option(:option_lifecycle_environment_ids).exist?
           any(*organization_options).rejected

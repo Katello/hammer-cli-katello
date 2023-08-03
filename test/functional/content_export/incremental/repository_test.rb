@@ -11,7 +11,7 @@ describe 'content-export incremental version' do
   include RepositoryHelpers
 
   before do
-    @cmd = %w(content-export incremental repository)
+    @cmd = %w[content-export incremental repository]
   end
 
   let(:task_id) { '5' }

@@ -15,13 +15,13 @@ module HammerCLIKatello
       end
       ex.returns(id: '8')
       expect_foreman_task('8')
-      run_cmd(%w(content-view delete --id 2))
+      run_cmd(%w[content-view delete --id 2])
     end
 
     describe 'OrganizationOptions' do
       it 'requires organization if content view name is supplied' do
         api_expects_no_call
-        result = run_cmd(%w(content-view delete --name cv2))
+        result = run_cmd(%w[content-view delete --name cv2])
         assert(result.err[/--organization-id, --organization, --organization-label is required/],
                "Organization option requirements are validated")
       end
@@ -33,7 +33,7 @@ module HammerCLIKatello
         end
         ex.returns(id: '8')
         expect_foreman_task('8')
-        run_cmd(%w(content-view delete --name cv2 --organization-id 1))
+        run_cmd(%w[content-view delete --name cv2 --organization-id 1])
       end
 
       it 'allows organization name' do
@@ -44,7 +44,7 @@ module HammerCLIKatello
         end
         ex.returns(id: '8')
         expect_foreman_task('8')
-        run_cmd(%w(content-view delete --name cv2 --organization org1))
+        run_cmd(%w[content-view delete --name cv2 --organization org1])
       end
 
       it 'allows organization label' do
@@ -55,7 +55,7 @@ module HammerCLIKatello
         end
         ex.returns(id: '8')
         expect_foreman_task('8')
-        run_cmd(%w(content-view delete --name cv2 --organization-label org1))
+        run_cmd(%w[content-view delete --name cv2 --organization-label org1])
       end
     end
   end

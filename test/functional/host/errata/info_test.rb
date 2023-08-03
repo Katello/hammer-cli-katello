@@ -4,7 +4,7 @@ require_relative '../../erratum/erratum_helpers'
 describe 'host Erratum Info' do
   include ErratumHelpers
   before do
-    @cmd = %w(host errata info)
+    @cmd = %w[host errata info]
   end
 
   it "prints module package info on run" do

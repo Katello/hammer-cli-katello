@@ -9,7 +9,7 @@ module HammerCLIForeman
         api_expects(:hostgroups, :update) do |p|
           p['id'] == '1' && p['hostgroup']['content_source_id'] == 1
         end
-        run_cmd(%w(hostgroup update --id 1 --content-source-id 1))
+        run_cmd(%w[hostgroup update --id 1 --content-source-id 1])
       end
 
       it 'allows content source name' do
@@ -34,7 +34,7 @@ module HammerCLIForeman
         api_expects(:hostgroups, :update) do |p|
           p['id'] == '1' && p['hostgroup']['content_view_id'] == 1
         end
-        run_cmd(%w(hostgroup update --id 1 --content-view-id 1))
+        run_cmd(%w[hostgroup update --id 1 --content-view-id 1])
       end
 
       it 'allows content view name' do
@@ -45,21 +45,21 @@ module HammerCLIForeman
         api_expects(:hostgroups, :update) do |p|
           p['id'] == '1' && p['hostgroup']['content_view_id'] == 1
         end
-        run_cmd(%w(hostgroup update --id 1 --content-view cv1 --query-organization-id 1))
+        run_cmd(%w[hostgroup update --id 1 --content-view cv1 --query-organization-id 1])
       end
 
       it 'requires organization options to resolve content view name' do
         api_expects_no_call
-        result = run_cmd(%w(hostgroup update --id 1 --content-view cv1))
+        result = run_cmd(%w[hostgroup update --id 1 --content-view cv1])
         assert_match(/--query-organization/, result.err)
       end
 
       it 'allows lifecycle environment id' do
         api_expects(:hostgroups, :update) do |p|
           p['id'] == '1' && p['hostgroup']['lifecycle_environment_id'] == 1 &&
-            p['hostgroup']['organization_ids'] == %w(1 2)
+            p['hostgroup']['organization_ids'] == %w[1 2]
         end
-        run_cmd(%w(hostgroup update --id 1 --lifecycle-environment-id 1 --organization-ids 1,2))
+        run_cmd(%w[hostgroup update --id 1 --lifecycle-environment-id 1 --organization-ids 1,2])
       end
 
       it 'allows lifecycle environment name' do
@@ -70,19 +70,19 @@ module HammerCLIForeman
         api_expects(:hostgroups, :update) do |p|
           p['id'] == '1' && p['hostgroup']['lifecycle_environment_id'] == 1
         end
-        run_cmd(%w(hostgroup update --id 1 --lifecycle-environment le1
-                   --query-organization-id 1 --organization-ids 1,2))
+        run_cmd(%w[hostgroup update --id 1 --lifecycle-environment le1
+                   --query-organization-id 1 --organization-ids 1,2])
       end
 
       it 'requires organization options to resolve lifecycle environment name' do
         api_expects_no_call
-        result = run_cmd(%w(hostgroup update --name hg1 --lifecycle-environment le1))
+        result = run_cmd(%w[hostgroup update --name hg1 --lifecycle-environment le1])
         assert_match(/--query-organization/, result.err)
       end
 
       it 'requires organization options to resolve lifecycle environment name' do
         api_expects_no_call
-        result = run_cmd(%w(hostgroup update --id 1 --lifecycle-environment le1))
+        result = run_cmd(%w[hostgroup update --id 1 --lifecycle-environment le1])
         assert_match(/--query-organization/, result.err)
       end
 

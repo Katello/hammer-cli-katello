@@ -2,7 +2,40 @@
 inherit_from: .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.7
+
+Metrics/BlockLength:
+  Enabled: false
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Style/CommentedKeyword:
+  Enabled: false
+
+Style/CaseLikeIf:
+  Enabled: false
+
+Style/StringConcatenation:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
 
 MethodLength:
   Description: 'Avoid methods longer than 30 lines of code.'
@@ -24,7 +57,7 @@ Encoding:
   Enabled: false
 
 LineLength:
-  Max: 100
+  Max: 120
 
 FormatString:
   Enabled: false # we use % for i18n
@@ -47,10 +80,7 @@ RescueModifier:
 AssignmentInCondition:
   Enabled: false
 
-AlignParameters:
-  Enabled: false # don't care if parameters are not aligned
-
-AlignParameters:
+ParameterAlignment:
   Enabled: false # don't care if parameters are not aligned
 
 WhileUntilModifier:
@@ -74,13 +104,10 @@ RedundantReturn:
 SingleLineBlockParams:
   Enabled: false
 
-FormatString:
-  Enabled: false # we use % for i18n
-
 Style/Alias:
   Enabled: false
 
-Style/IndentArray:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
 Style/MultilineMethodCallBraceLayout:

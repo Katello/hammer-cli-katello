@@ -66,9 +66,9 @@ module HammerCLIKatello
       failure_message _("Could not create the filter")
 
       validate_options :before, 'IdResolution' do
-        organization_options = [:option_organization_id, :option_organization_name, \
-                                :option_organization_label]
-        product_options = [:option_product_id, :option_product_name]
+        organization_options = %i[option_organization_id option_organization_name
+                                  option_organization_label]
+        product_options = %i[option_product_id option_product_name]
 
         if option(:option_product_name).exist? || option(:option_content_view_name).exist?
           any(*organization_options).required

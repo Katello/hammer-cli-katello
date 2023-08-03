@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '../../test_helper')
 
 describe 'host info' do
   before do
-    @cmd = %w(host info)
+    @cmd = %w[host info]
   end
 
   it "includes katello attributes" do
@@ -30,5 +30,6 @@ describe 'host info' do
                        ['Trace Status', 'Updated']]
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
     expected_results.each { |expected|  assert_cmd(expected, result) }
+    # rubocop:enable Style/WordArray
   end
 end

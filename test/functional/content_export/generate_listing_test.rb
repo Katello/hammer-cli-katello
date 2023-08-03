@@ -5,7 +5,7 @@ describe('content-export generate-listing') do
   include ForemanTaskHelpers
 
   before do
-    @cmd = %w(content-export generate-listing)
+    @cmd = %w[content-export generate-listing]
     @params = []
     @export_history_id = 100
     @path = '/tmp'

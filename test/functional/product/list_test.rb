@@ -5,18 +5,18 @@ describe "listing products" do
   include ProductHelpers
 
   let(:empty_response_table) do
-    <<eostring
----|------|-------------|--------------|--------------|-----------
-ID | NAME | DESCRIPTION | ORGANIZATION | REPOSITORIES | SYNC STATE
----|------|-------------|--------------|--------------|-----------
-eostring
+    <<~EOSTRING
+      ---|------|-------------|--------------|--------------|-----------
+      ID | NAME | DESCRIPTION | ORGANIZATION | REPOSITORIES | SYNC STATE
+      ---|------|-------------|--------------|--------------|-----------
+    EOSTRING
   end
 
   it 'displays the table properly' do
     api_expects(:products, :index, 'index products').returns(index_response([]))
     assert_cmd(
       success_result(empty_response_table),
-      run_cmd(%w(product list --organization-id 1))
+      run_cmd(%w[product list --organization-id 1])
     )
   end
 
@@ -28,7 +28,7 @@ eostring
 
     assert_equal(
       0,
-      run_cmd(%w(product list --organization-id 1)).exit_code
+      run_cmd(%w[product list --organization-id 1]).exit_code
     )
   end
 
@@ -40,7 +40,7 @@ eostring
 
     assert_equal(
       0,
-      run_cmd(%w(product list --organization-id 1 --subscription-id 1)).exit_code
+      run_cmd(%w[product list --organization-id 1 --subscription-id 1]).exit_code
     )
   end
 
@@ -52,7 +52,7 @@ eostring
 
     assert_equal(
       0,
-      run_cmd(%w(product list --organization-id 1 --sync-plan-id 1)).exit_code
+      run_cmd(%w[product list --organization-id 1 --sync-plan-id 1]).exit_code
     )
   end
 end

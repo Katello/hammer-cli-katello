@@ -52,7 +52,7 @@ module HammerCLIKatello
     it 'fails gracefully if count <= 0' do
       api_expects_no_call
 
-      r = run_cmd(%w(content-view purge --id 2 --count -1))
+      r = run_cmd(%w[content-view purge --id 2 --count -1])
       assert(r.err.include?('Invalid value for --count option'), 'Incorrect error message')
     end
 
@@ -61,7 +61,7 @@ module HammerCLIKatello
       ex = ex.with_params("content_view_id" => '2')
       ex.returns(versions)
 
-      r = run_cmd(%w(content-view purge --id 2 --count 3))
+      r = run_cmd(%w[content-view purge --id 2 --count 3])
       assert(r.err.include?('No versions to delete.'), 'Incorrect error message')
     end
 
@@ -77,7 +77,7 @@ module HammerCLIKatello
         expect_foreman_task('3')
       end
 
-      run_cmd(%w(content-view purge --id 2 --count 0))
+      run_cmd(%w[content-view purge --id 2 --count 0])
     end
 
     it 'allows for async purge of versions' do
@@ -91,7 +91,7 @@ module HammerCLIKatello
         ex.returns('id' => '3')
       end
 
-      run_cmd(%w(content-view purge --id 2 --count 0 --async))
+      run_cmd(%w[content-view purge --id 2 --count 0 --async])
     end
   end
 end

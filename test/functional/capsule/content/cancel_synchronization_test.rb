@@ -5,7 +5,7 @@ describe 'capsule content cancel-synchronization' do
   include CapsuleContentHelpers
 
   before do
-    @cmd = ['capsule', 'content', 'cancel-synchronization']
+    @cmd = %w[capsule content cancel-synchronization]
   end
 
   MESSAGE = "There's no running synchronization for this capsule.".freeze

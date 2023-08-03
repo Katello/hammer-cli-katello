@@ -45,7 +45,7 @@ module HammerCLIKatello
       success_message _("Sync plan created.")
       failure_message _("Could not create the sync plan")
 
-      build_options :without => [:interval, :sync_date]
+      build_options :without => %i[interval sync_date]
     end
 
     class UpdateCommand < HammerCLIKatello::UpdateCommand
@@ -57,7 +57,7 @@ module HammerCLIKatello
       success_message _("Sync plan updated.")
       failure_message _("Could not update the sync plan")
 
-      build_options :without => [:interval, :sync_date]
+      build_options :without => %i[interval sync_date]
     end
 
     class DeleteCommand < HammerCLIKatello::DeleteCommand

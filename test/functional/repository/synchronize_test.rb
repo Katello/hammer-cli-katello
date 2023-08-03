@@ -8,7 +8,7 @@ describe 'Synchronize a repository' do
   include RepositoryHelpers
 
   before do
-    @cmd = %w(repository synchronize)
+    @cmd = %w[repository synchronize]
   end
 
   let(:org_id) { 1 }

@@ -6,11 +6,11 @@ module HammerCLIKatello
     module PackageGroupContentType
       def self.included(base)
         base.option('--package-groups',
-          'PACKAGE-GROUPS',
-          _("comma-separated list of package-groups to install"),
-          :required => true,
-          :format => HammerCLI::Options::Normalizers::List.new,
-          :attribute_name => :content)
+                    'PACKAGE-GROUPS',
+                    _("comma-separated list of package-groups to install"),
+                    :required => true,
+                    :format => HammerCLI::Options::Normalizers::List.new,
+                    :attribute_name => :content)
       end
 
       def content_type

@@ -121,7 +121,7 @@ module HammerCLIKatello
 
       resource :products, :update
 
-      build_options :without => [:name, :label, :provider_id, :description, :gpg_key_id]
+      build_options :without => %i[name label provider_id description gpg_key_id]
     end
 
     class RemoveSyncPlanCommand < HammerCLIKatello::UpdateCommand

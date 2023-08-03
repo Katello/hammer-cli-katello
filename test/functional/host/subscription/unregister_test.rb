@@ -5,7 +5,7 @@ describe 'host subscription unregister' do
   include HostHelpers
 
   before do
-    @cmd = %w(host subscription unregister)
+    @cmd = %w[host subscription unregister]
   end
 
   it "unregisters the host" do

@@ -7,11 +7,11 @@ module HammerCLIKatello
     module ContentImportCommon
       def self.included(base)
         base.option "--metadata-file",
-                "METADATA_FILE", _("Location of the metadata.json file. "\
+                    "METADATA_FILE", _("Location of the metadata.json file. "\
                                    "This is not required if the metadata.json file"\
                                    " is already in the archive directory."),
-                 :attribute_name => :option_metadata_file,
-                 :required => false
+                    :attribute_name => :option_metadata_file,
+                    :required => false
 
         base.build_options do |o|
           o.expand(:all).including(:organizations).except(:metadata)
@@ -22,11 +22,12 @@ module HammerCLIKatello
           metadata_file = option(:option_metadata_file).value ||
                           File.join(option(:option_path).value, "metadata.json")
           begin
-            URI.open(metadata_file)
-          rescue Errno::ENOENT
+            File.exist?(File.expand_path(metadata_file)) || URI.parse(metadata_file).open
+          rescue => e # rubocop:disable Style/RescueStandardError
             msg = _("Unable to find '#{metadata_file}'. "\
                      "If the metadata.json file is at a different location "\
                      "provide it to the --metadata-file option ")
+            Logging.logger['HammerCLIKatello::ContentImport'].error(e)
             raise HammerCLI::Options::Validators::ValidationError, msg
           end
         end
@@ -37,7 +38,7 @@ module HammerCLIKatello
       def fetch_metadata_from_url(metadata_file:, url:)
         if metadata_file.nil?
           metadata_file = "/tmp/metadata.json"
-          IO.copy_stream(URI.open(url), metadata_file)
+          IO.copy_stream(URI.parse(url).open, metadata_file)
         end
         metadata_file
       end
@@ -45,7 +46,12 @@ module HammerCLIKatello
       def request_params
         super.tap do |opts|
           metadata_file = option_metadata_file || File.join(option_path, "metadata.json")
-          opts["metadata"] = JSON.parse(URI.open(metadata_file).read)
+          metadata = if File.exist?(File.expand_path(metadata_file))
+                       File.read(metadata_file)
+                     else
+                       URI.parse(metadata_file).open.read
+                     end
+          opts["metadata"] = JSON.parse(metadata)
         end
       end
     end
