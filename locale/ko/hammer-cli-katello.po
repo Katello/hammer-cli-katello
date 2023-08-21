@@ -9,12 +9,10 @@
 # Bryan Kearney <bryan.kearney@gmail.com>, 2022
 # 진선재, 2022
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-27 08:32-0500\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
 "Last-Translator: 진선재, 2022\n"
 "Language-Team: Korean (https://app.transifex.com/foreman/teams/114/ko/)\n"
@@ -30,19 +28,16 @@ msgstr ""
 msgid "Manipulate organizations"
 msgstr "조직 조정 "
 
-msgid "Manipulate GPG Key actions on the server"
+msgid "Manipulate alternate content sources"
+msgstr ""
+
+msgid "Manipulate content credentials on the server"
 msgstr ""
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr ""
 
-msgid "Get the status of the server"
-msgstr ""
-
 msgid "Manipulate products"
-msgstr ""
-
-msgid "View Puppet Module details"
 msgstr ""
 
 msgid "Manipulate repositories"
@@ -69,19 +64,37 @@ msgstr "Capsule 조정 "
 msgid "Manipulate packages"
 msgstr ""
 
+msgid "Manipulate deb packages"
+msgstr ""
+
 msgid "Manipulate package groups"
 msgstr ""
 
 msgid "Manipulate errata"
 msgstr ""
 
-msgid "Manipulate ostree branches"
-msgstr ""
-
 msgid "Manipulate files"
 msgstr ""
 
+msgid "Manipulate content units"
+msgstr ""
+
+msgid "Prepare content for export to a disconnected Katello"
+msgstr ""
+
+msgid "Import content from an upstream archive."
+msgstr ""
+
 msgid "View Module Streams"
+msgstr ""
+
+msgid "Manipulate source RPMs"
+msgstr ""
+
+msgid "Simple content access commands"
+msgstr ""
+
+msgid "Manipulate docker content"
 msgstr ""
 
 msgid "ID"
@@ -89,6 +102,84 @@ msgstr "ID"
 
 msgid "Name"
 msgstr "이름 "
+
+msgid "Type"
+msgstr "유형"
+
+msgid "Alternate Content Source created."
+msgstr ""
+
+msgid "Could not create the Alternate Content Source."
+msgstr ""
+
+msgid "Label"
+msgstr "레이블 "
+
+msgid "Description"
+msgstr "설명 "
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Alternate content source type"
+msgstr ""
+
+msgid "Upstream username"
+msgstr ""
+
+msgid "Verify SSL"
+msgstr ""
+
+msgid "SSL CA Cert"
+msgstr ""
+
+msgid "Id"
+msgstr "ID "
+
+msgid "SSL Client Cert"
+msgstr ""
+
+msgid "SSL Client Key"
+msgstr ""
+
+msgid "Subpaths"
+msgstr ""
+
+msgid "Products"
+msgstr "제품 "
+
+msgid "Organization ID"
+msgstr "조직 ID"
+
+msgid "Smart proxies"
+msgstr ""
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Download policy"
+msgstr ""
+
+msgid "Alternate Content Source updated."
+msgstr ""
+
+msgid "Could not update the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate Content Source deleted."
+msgstr ""
+
+msgid "Could not delete the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate content source is being refreshed in task %{id}."
+msgstr ""
+
+msgid "Could not refresh the alternate content source"
+msgstr ""
 
 msgid "Host Limit"
 msgstr "호스트 제한"
@@ -105,20 +196,41 @@ msgstr "제한 없음 "
 msgid "%{consumed} of %{limit}"
 msgstr " %{limit} 중 %{consumed}"
 
-msgid "Description"
-msgstr "설명 "
-
 msgid "Auto Attach"
+msgstr ""
+
+msgid "Release Version"
+msgstr "릴리즈 버전 "
+
+msgid "Associated Hosts"
+msgstr ""
+
+msgid "Host Collections"
+msgstr "호스트 컬렉션 "
+
+msgid "Content Overrides"
+msgstr ""
+
+msgid "Content Label"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "System Purpose"
 msgstr ""
 
 msgid "Service Level"
 msgstr "서비스 레벨 "
 
-msgid "Release Version"
-msgstr "릴리즈 버전 "
+msgid "Purpose Usage"
+msgstr ""
 
-msgid "Host Collections"
-msgstr "호스트 컬렉션 "
+msgid "Purpose Role"
+msgstr ""
+
+msgid "Purpose Addons"
+msgstr ""
 
 msgid "Activation key created."
 msgstr ""
@@ -171,19 +283,11 @@ msgstr "계약 "
 msgid "Account"
 msgstr "계정 "
 
-msgid ""
-"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : "
-"data['quantity']}"
-msgstr ""
-
 msgid "ID of the activation key"
 msgstr "활성키 ID"
 
 msgid "Activation key name to search by"
 msgstr "검색할 활성키 이름 "
-
-msgid "ID of subscription"
-msgstr ""
 
 msgid "Subscription added to activation key."
 msgstr ""
@@ -193,6 +297,9 @@ msgstr "활성키에 서브스크립션을 추가할 수 없습니다 "
 
 msgid "Remove subscription"
 msgstr "서브스크립션 삭제 "
+
+msgid "ID of subscription"
+msgstr ""
 
 msgid "Subscription removed from activation key."
 msgstr ""
@@ -257,9 +364,6 @@ msgstr ""
 msgid "Could not add the lifecycle environment to the capsule"
 msgstr "라이프 사이클 환경이 capsule에 추가할 수 없습니다 "
 
-msgid "Organization ID"
-msgstr "조직 ID"
-
 msgid "Organization name"
 msgstr "조직 이름 "
 
@@ -320,9 +424,6 @@ msgstr "컨텐츠"
 msgid "Hosts"
 msgstr "호스트"
 
-msgid "Products"
-msgstr "제품 "
-
 msgid "Yum repos"
 msgstr ""
 
@@ -338,10 +439,228 @@ msgstr ""
 msgid "Errata"
 msgstr "에라타 "
 
-msgid "Puppet modules"
+msgid "Content Source name"
 msgstr ""
 
+msgid "Content Source"
+msgstr "컨텐츠 소스 "
+
+msgid "Kickstart repository name"
+msgstr ""
+
+msgid "Please provide --lifecycle-environment-id"
+msgstr ""
+
+msgid "Please provide --content-view-id"
+msgstr ""
+
+msgid ""
+"No such repository with name %{name}, in lifecycle environment %{environment_i"
+"d} and content view %{content_view_id}"
+msgstr ""
+
+msgid "Use %s instead"
+msgstr ""
+
+msgid "Lifecycle environment name to search by"
+msgstr "검색할 라이프사이클 환경 이름 "
+
+msgid "Duration: %sms"
+msgstr "기간: %s (밀리초)"
+
+msgid "Message: %s"
+msgstr "메세지: %s"
+
 msgid "Name of the composite content view"
+msgstr ""
+
+msgid "Content Type"
+msgstr "컨텐츠 유형 "
+
+msgid "Product"
+msgstr "제품"
+
+msgid "Content Credential created."
+msgstr ""
+
+msgid "Could not create Content Credential"
+msgstr ""
+
+msgid "Key file"
+msgstr ""
+
+msgid "Content Credential updated."
+msgstr ""
+
+msgid "Could not update Content Credential"
+msgstr ""
+
+msgid "Content Credential deleted."
+msgstr ""
+
+msgid "Could not delete the Content Credential"
+msgstr ""
+
+msgid ""
+"Writes export metadata to disk for use by the importing Katello. This command "
+"only needs to be used if the export was performed asynchronously or if the met"
+"adata was lost"
+msgstr ""
+
+msgid "Generate metadata based on output of the specified export task"
+msgstr ""
+
+msgid "Generate metadata based on specified export history"
+msgstr ""
+
+msgid "No export history was found. Verify the value given for --task-id or --id"
+msgstr ""
+
+msgid ""
+"Generates listing file on each directory of a syncable export. This command on"
+"ly needs to be used if the export was performed asynchronously or if the listi"
+"ng files were lost. Assumes the syncable export directory is accessible on dis"
+"k"
+msgstr ""
+
+msgid "Generate listing files for a syncable export task"
+msgstr ""
+
+msgid "Generate listing files based on specified export history"
+msgstr ""
+
+msgid "Destination Server"
+msgstr ""
+
+msgid "Path"
+msgstr "경로 "
+
+msgid "Content View Version"
+msgstr ""
+
+msgid "Content View Version ID"
+msgstr ""
+
+msgid "Created at"
+msgstr "생성 일시 "
+
+msgid "Updated at"
+msgstr "업데이트 일시 "
+
+msgid "Performs a full export a content view version"
+msgstr ""
+
+msgid "Performs a full export of the organization's library environment"
+msgstr ""
+
+msgid "Performs a full export of a repository"
+msgstr ""
+
+msgid "Could not fetch the export history"
+msgstr ""
+
+msgid "Once the task completes the listing files may be generated with the command:"
+msgstr ""
+
+msgid ""
+"Once the task completes the export metadata must be generated with the command"
+":"
+msgstr ""
+
+msgid "Can not fetch export history from an unfinished task"
+msgstr ""
+
+msgid ""
+"Cannot generate listing files for this export since it is not syncable. It was"
+" not generated with --format=syncable."
+msgstr ""
+
+msgid ""
+"Export History does not have the path specified. The task may have errored out"
+"."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this version because it contains repositories wit"
+"hout the 'immediate' download policy. Update the download policy and sync affe"
+"cted repositories. Once synced republish the content view and export the gener"
+"ated version."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this repository because it does not have the 'imm"
+"ediate' download policy. Update the download policy, sync the repository and e"
+"xport."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this organization's library because it contains r"
+"epositories without the 'immediate' download policy. Update the download polic"
+"y and sync affected repositories to include them in the export."
+msgstr ""
+
+msgid "Use the following command to update the download policy of these repositories."
+msgstr ""
+
+msgid "Repository is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the repository"
+msgstr ""
+
+msgid "Filter repositories by name."
+msgstr ""
+
+msgid "Library environment is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the library"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this organization are unexportab"
+"le."
+msgstr ""
+
+msgid "Content view version is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the content view version"
+msgstr ""
+
+msgid "Fails if any of the repositories belonging to this version are unexportable."
+msgstr ""
+
+msgid "Filter versions by version number."
+msgstr ""
+
+msgid "Performs an incremental export of a content view version"
+msgstr ""
+
+msgid "Performs an incremental export of the organization's library environment"
+msgstr ""
+
+msgid "Performs an incremental export of a repository"
+msgstr ""
+
+msgid ""
+"Location of the metadata.json file. This is not required if the metadata.json "
+"file is already in the archive directory."
+msgstr ""
+
+msgid "Archive is being imported in task %{id}."
+msgstr ""
+
+msgid "Could not import the archive."
+msgstr ""
+
+msgid "Imports a content archive to a content view version"
+msgstr ""
+
+msgid "Imports a content archive to an organization's library lifecycle environment"
+msgstr ""
+
+msgid "Imports a repository"
 msgstr ""
 
 msgid "Override product content defaults"
@@ -368,16 +687,22 @@ msgstr ""
 msgid "Remove a content override"
 msgstr ""
 
+msgid "Version"
+msgstr "버전 "
+
+msgid "Filename"
+msgstr "파일 이름"
+
 msgid "Content View ID"
 msgstr "컨텐츠 뷰 ID"
-
-msgid "Label"
-msgstr "레이블 "
 
 msgid "Repository IDs"
 msgstr "리포지터리 ID"
 
 msgid "Content Host Count"
+msgstr ""
+
+msgid "Solve Dependencies"
 msgstr ""
 
 msgid "Yum Repositories"
@@ -389,19 +714,7 @@ msgstr ""
 msgid "OSTree Repositories"
 msgstr ""
 
-msgid "Puppet Modules"
-msgstr "Puppet 모듈 "
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Author"
-msgstr "저자 "
-
 msgid "Versions"
-msgstr "버전 "
-
-msgid "Version"
 msgstr "버전 "
 
 msgid "Published"
@@ -421,6 +734,9 @@ msgstr "컨텐츠 뷰를 생성할 수 없습니다 "
 
 msgid "Create a composite content view"
 msgstr "복합적인 컨텐츠 뷰 생성 "
+
+msgid "Designate this Content View for importing from upstream servers only."
+msgstr ""
 
 msgid "Copy a content view"
 msgstr ""
@@ -455,17 +771,14 @@ msgstr ""
 msgid "Could not publish the content view"
 msgstr "컨텐츠 뷰를 공개할 수 없습니다 "
 
+msgid "Names for Lifecycle Environment"
+msgstr ""
+
 msgid "Content view is being removed from environment with task %{id}."
 msgstr ""
 
 msgid "Could not remove the content view from environment"
 msgstr "환경에서 컨텐츠 뷰를 삭제할 수 없습니다 "
-
-msgid "Version ids to remove"
-msgstr ""
-
-msgid "Environment ids to remove"
-msgstr ""
 
 msgid "Content view objects are being removed task %{id}."
 msgstr ""
@@ -474,6 +787,9 @@ msgid "Could not remove objects from content view"
 msgstr "컨텐츠 뷰에서 객체를 삭제할 수 없습니다."
 
 msgid "Add a content view version to a composite view"
+msgstr ""
+
+msgid "Content view id to search by"
 msgstr ""
 
 msgid "The component version has been added."
@@ -491,8 +807,7 @@ msgstr ""
 msgid "Could not remove version"
 msgstr "버전을 삭제할 수 없습니다 "
 
-msgid ""
-"Content View identifier of the component who's latest version is desired"
+msgid "Content View identifier of the component who's latest version is desired"
 msgstr ""
 
 msgid "Content View name of the component who's latest version is desired"
@@ -502,8 +817,8 @@ msgid "Content View Version identifier of the component"
 msgstr ""
 
 msgid ""
-"Content View Version number of the component. Either use this or --component-"
-"content-view-version-id option"
+"Content View Version number of the component. Either use this or --component-c"
+"ontent-view-version-id option"
 msgstr ""
 
 msgid "Select the latest version of the components content view is desired"
@@ -513,12 +828,15 @@ msgid "Please provide --component-content-view-id"
 msgstr ""
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-"
-"view-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-view"
+"-version or --latest for the latest version"
 msgstr ""
 
-msgid "Id"
-msgstr "ID "
+msgid "Content View Id"
+msgstr ""
+
+msgid "Component Id"
+msgstr ""
 
 msgid "Current Version"
 msgstr ""
@@ -545,13 +863,13 @@ msgid "Could not update the content view component"
 msgstr ""
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of "
-"values"
+"Array of component content view names to remove. Comma separated list of value"
+"s"
 msgstr ""
 
 msgid ""
-"Array of component content view identfiers to remove. Comma separated list "
-"of values"
+"Array of component content view identfiers to remove. Comma separated list of "
+"values"
 msgstr ""
 
 msgid "Components removed from content view."
@@ -559,21 +877,6 @@ msgstr ""
 
 msgid "Could not remove the components"
 msgstr ""
-
-msgid "Latest(Currently %s)"
-msgstr "최신 (현재 %s)"
-
-msgid "Puppet module added to content view."
-msgstr ""
-
-msgid "Could not add the puppet module"
-msgstr "puppet 모듈을 추가할 수 없습니다 "
-
-msgid "Puppet module removed from content view."
-msgstr ""
-
-msgid "Couldn't remove puppet module from the content view"
-msgstr "컨텐츠 보기에서 puppet 모듈을 삭제할 수 없습니다 "
 
 msgid "Content View numeric identifier"
 msgstr ""
@@ -591,8 +894,8 @@ msgid "No versions to delete."
 msgstr ""
 
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in "
-"task '%{task_id}'."
+"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
+"'%{task_id}'."
 msgstr ""
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
@@ -607,6 +910,15 @@ msgstr "컨텐츠 뷰 레이블 "
 msgid "Repositories"
 msgstr "리포지터리 "
 
+msgid "Has Applied Filters"
+msgstr ""
+
+msgid "Applied Filters"
+msgstr ""
+
+msgid "Dependency Solving"
+msgstr ""
+
 msgid "Content View Version is being republished with task %{id}."
 msgstr ""
 
@@ -619,8 +931,7 @@ msgstr ""
 msgid "Could not promote the content view"
 msgstr "컨텐츠 뷰를 승격할 수 없습니다 "
 
-msgid ""
-"force content view promotion and bypass lifecycle environment restriction"
+msgid "force content view promotion and bypass lifecycle environment restriction"
 msgstr "컨텐츠 뷰 승격 강제 및 라이프 사이클 환경 제한을 무시  "
 
 msgid "Name of the target environment"
@@ -630,11 +941,17 @@ msgid "Id of the target environment"
 msgstr ""
 
 msgid ""
-"Environment name from where to promote its version from (if version is "
-"unknown)"
+"Environment name from where to promote its version from (if version is unknown"
+")"
 msgstr ""
 
 msgid "Id of the environment from where to promote its version "
+msgstr ""
+
+msgid "Content view version updated."
+msgstr ""
+
+msgid "Could not update the content view version"
 msgstr ""
 
 msgid "Incremental update is being performed with task %{id}."
@@ -646,8 +963,7 @@ msgstr ""
 msgid "list of lifecycle environment IDs to update the content view version in"
 msgstr ""
 
-msgid ""
-"list of lifecycle environment names to update the content view version in"
+msgid "list of lifecycle environment names to update the content view version in"
 msgstr ""
 
 msgid "Organization name for resolving lifecycle environment names"
@@ -657,79 +973,82 @@ msgid "Organization id for resolving lifecycle environment names"
 msgstr ""
 
 msgid ""
-"Update all editable and applicable hosts within the specified Content View "
-"and \\\n"
+"Update all editable and applicable hosts within the specified Content View and"
+" \\\n"
 "               Lifecycle Environments"
 msgstr ""
 
 msgid "IDs of hosts to update"
 msgstr ""
 
-msgid "Export a content view (deprecated)"
+msgid "Pulp ID"
 msgstr ""
 
-msgid "Content view is being exported in task %{id}."
+msgid "Uuid"
 msgstr ""
 
-msgid "Could not export the content view"
+msgid "checksum"
 msgstr ""
 
-msgid "Export a content view version"
-msgstr "컨텐츠 뷰 버전 내보내기"
+msgid "Architecture"
+msgstr "아키텍처 "
 
-msgid "Content view export is available in %{directory}."
+msgid "Nav"
 msgstr ""
 
-msgid "Content View Version numeric identifier"
+msgid "Nva"
 msgstr ""
 
-msgid "Directory to put content view version export into."
+msgid "Available Host Count"
 msgstr ""
 
-msgid ""
-"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is "
-"supported at this time. Please remove the repository from the Content View, "
-"republish and try the export again."
+msgid "Applicable Host Count"
 msgstr ""
 
-msgid "Import a content view version"
+msgid "Manage docker manifests"
 msgstr ""
 
-msgid "Content view imported."
+msgid "Schema Version"
 msgstr ""
 
-msgid "Could not import the content view"
+msgid "Digest"
 msgstr ""
 
-msgid "Organization numeric identifier"
+msgid "Downloaded"
 msgstr ""
 
-msgid "Location of export tar on disk"
+msgid "Tags"
 msgstr ""
 
-msgid "Export tar #{options['option_export_tar']} does not exist."
+msgid "Manage docker tags"
 msgstr ""
 
-msgid "Unable to sync repositories, no library repository found for %s"
+msgid "Tag"
+msgstr ""
+
+msgid "Repository ID"
+msgstr "리포지터리 ID"
+
+msgid "Docker Manifest ID"
+msgstr ""
+
+msgid "Docker Manifest Name"
 msgstr ""
 
 msgid "Errata ID"
 msgstr "에라타 ID"
 
-msgid "Type"
-msgstr "유형"
-
 msgid "Title"
 msgstr "제목"
 
-msgid "Reboot Suggested"
-msgstr "재부팅이 권장됩니다 "
+msgid "Issued"
+msgstr "발행됨 "
 
 msgid "Updated"
 msgstr "업데이트 일시 "
 
-msgid "Issued"
-msgstr "발행됨 "
+msgid "Reboot Suggested"
+msgstr "재부팅이 권장됩니다 "
 
 msgid "Release"
 msgstr "릴리즈 "
@@ -742,9 +1061,6 @@ msgstr "모듈 스트림"
 
 msgid "Stream"
 msgstr "스트림"
-
-msgid "Path"
-msgstr "경로 "
 
 msgid "Checksum"
 msgstr "체크섬 "
@@ -791,9 +1107,6 @@ msgstr "필터를 삭제할 수 없습니다 "
 msgid "Rule ID"
 msgstr "규칙 ID "
 
-msgid "Architecture"
-msgstr "아키텍처 "
-
 msgid "Date Type"
 msgstr "날짜 유형"
 
@@ -818,33 +1131,6 @@ msgstr ""
 msgid "Could not delete the filter rule"
 msgstr "필터 규칙을 삭제할 수 없습니다 "
 
-msgid "Content Type"
-msgstr "컨텐츠 유형 "
-
-msgid "Product"
-msgstr "제품"
-
-msgid "GPG Key created."
-msgstr ""
-
-msgid "Could not create GPG Key"
-msgstr "GPG 키를 생성할 수 없습니다 "
-
-msgid "GPG Key file"
-msgstr "GPG 키 파일 "
-
-msgid "GPG Key updated."
-msgstr ""
-
-msgid "Could not update GPG Key"
-msgstr "GPG 키를 업데이트할 수 없습니다 "
-
-msgid "GPG Key deleted."
-msgstr ""
-
-msgid "Could not delete the GPG Key"
-msgstr "GPG 키를 삭제할 수 없습니다 "
-
 msgid "Limit"
 msgstr "제한 "
 
@@ -862,6 +1148,15 @@ msgstr ""
 
 msgid "Host Collection Name"
 msgstr ""
+
+msgid "Security"
+msgstr "보안 "
+
+msgid "Bugfix"
+msgstr ""
+
+msgid "Enhancement"
+msgstr "기능 강화"
 
 msgid "Copy a host collection"
 msgstr ""
@@ -953,8 +1248,7 @@ msgstr ""
 msgid "comma-separated list of package-groups to install"
 msgstr ""
 
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
+msgid "Install package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled installation of package-group(s)."
@@ -963,8 +1257,7 @@ msgstr ""
 msgid "Could not schedule installation of package-group(s)"
 msgstr ""
 
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
+msgid "Update package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled update of package-groups(s)."
@@ -973,8 +1266,7 @@ msgstr ""
 msgid "Could not schedule update of package-group(s)"
 msgstr ""
 
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
+msgid "Remove package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled removal of package-groups(s)."
@@ -983,11 +1275,8 @@ msgstr ""
 msgid "Could not schedule removal of package-group(s)"
 msgstr ""
 
-msgid "Content Source name "
-msgstr ""
-
-msgid "Content Source"
-msgstr "컨텐츠 소스 "
+msgid "Arch"
+msgstr "아키텍처 "
 
 msgid "Errata is being applied with task %{id}."
 msgstr ""
@@ -1001,13 +1290,25 @@ msgstr ""
 msgid "Installable"
 msgstr "설치 가능 "
 
-msgid "Errata recalculated with task %{id}."
+msgid "Errata recalculation started."
 msgstr ""
 
 msgid "Could not recalculate errata"
 msgstr ""
 
+msgid "Trace Status"
+msgstr ""
+
 msgid "Content Information"
+msgstr ""
+
+msgid "Content view environments"
+msgstr ""
+
+msgid "Content view"
+msgstr ""
+
+msgid "Lifecycle environment"
 msgstr ""
 
 msgid "Kickstart Repository"
@@ -1022,14 +1323,8 @@ msgstr ""
 msgid "Applicable Errata"
 msgstr "적용 가능한 에라타 "
 
-msgid "Enhancement"
-msgstr "기능 강화"
-
 msgid "Bug Fix"
 msgstr "버그 수정"
-
-msgid "Security"
-msgstr "보안 "
 
 msgid "Subscription Information"
 msgstr ""
@@ -1049,21 +1344,7 @@ msgstr ""
 msgid "Registered by Activation Keys"
 msgstr ""
 
-msgid "Kickstart repository name "
-msgstr ""
-
-msgid "Please provide --lifecycle-environment-id"
-msgstr ""
-
-msgid "Please provide --content-view-id"
-msgstr ""
-
-msgid ""
-"No such repository with name %{name}, in lifecycle environment "
-"%{environment_id} and content view %{content_view_id}"
-msgstr ""
-
-msgid "NVRA"
+msgid "Nvra"
 msgstr ""
 
 msgid "Host unregistered."
@@ -1099,8 +1380,34 @@ msgstr ""
 msgid "Failed to remove subscriptions from the host"
 msgstr ""
 
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
+msgid "Remove the first instance of a subscription with matching id and quantity"
+msgstr ""
+
+msgid "Content View id"
+msgstr ""
+
+msgid "Content View version"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Product name"
+msgstr ""
+
+msgid "Trace ID"
+msgstr ""
+
+msgid "Application"
+msgstr ""
+
+msgid "Helper"
+msgstr ""
+
+msgid "Traces are being resolved with task %{id}."
+msgstr ""
+
+msgid "Could not resolve traces"
 msgstr ""
 
 msgid "Organization ID to search by"
@@ -1118,12 +1425,6 @@ msgstr "검색할 Capsule 이름 "
 msgid "File name to search by"
 msgstr ""
 
-msgid "Content View Version ID"
-msgstr ""
-
-msgid "Repository ID"
-msgstr "리포지터리 ID"
-
 msgid "Module stream name to search by"
 msgstr ""
 
@@ -1133,8 +1434,8 @@ msgstr "검색할 Gpg 키 이름 "
 msgid "Host collection name to search by"
 msgstr "검색할 호스트 컬렉션 이름 "
 
-msgid "Lifecycle environment name to search by"
-msgstr "검색할 라이프사이클 환경 이름 "
+msgid "Organization title"
+msgstr ""
 
 msgid "Product name to search by"
 msgstr "검색할 제품 이름 "
@@ -1156,15 +1457,6 @@ msgstr "검색할 동기화 계획 이름 "
 
 msgid "Task name to search by"
 msgstr "검색할 작업 이름 "
-
-msgid "Puppet module name to search by"
-msgstr "검색할 Puppet 모듈 이름  "
-
-msgid "Puppet module's author to search by"
-msgstr "검색할 Puppet 모듈의 저자 "
-
-msgid "Puppet module's UUID to search by"
-msgstr "검색할 Puppet 모듈의 UUID "
 
 msgid "Content view version number"
 msgstr ""
@@ -1226,10 +1518,43 @@ msgstr ""
 msgid "RPMs"
 msgstr "RPM"
 
-msgid "Red Hat Repository URL"
-msgstr "Red Hat 리포지터리 URL"
+msgid "Simple Content Access"
+msgstr ""
 
 msgid "Service Levels"
+msgstr ""
+
+msgid "Upstream Organization"
+msgstr ""
+
+msgid "Upstream Lifecycle Environment"
+msgstr ""
+
+msgid "Upstream Content View"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "SSL CA Credential ID"
+msgstr ""
+
+msgid "Enabled"
+msgstr "활성화됨 "
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Export Sync"
+msgstr ""
+
+msgid "Network Sync"
+msgstr ""
+
+msgid "Red Hat CDN"
+msgstr ""
+
+msgid "Custom CDN"
 msgstr ""
 
 msgid "Organization updated."
@@ -1250,20 +1575,11 @@ msgstr ""
 msgid "Could not delete the organization"
 msgstr "조직을 삭제할 수 없습니다 "
 
-msgid "version"
+msgid "Updated CDN configuration."
 msgstr ""
 
-msgid "Commit"
-msgstr "커밋 "
-
-msgid "Date"
-msgstr "날짜 "
-
-msgid "%s  %s"
-msgstr "%s  %s"
-
-msgid "Filename"
-msgstr "파일 이름"
+msgid "Could not update CDN configuration."
+msgstr ""
 
 msgid "Source RPM"
 msgstr "소스 RPM"
@@ -1271,8 +1587,20 @@ msgstr "소스 RPM"
 msgid "Epoch"
 msgstr ""
 
+msgid "Author"
+msgstr "저자 "
+
+msgid "Source rpm"
+msgstr ""
+
+msgid "Nvrea"
+msgstr ""
+
 msgid "Build Host"
 msgstr "빌드 호스트 "
+
+msgid "Children"
+msgstr ""
 
 msgid "Vendor"
 msgstr ""
@@ -1281,6 +1609,33 @@ msgid "License"
 msgstr "라이선스"
 
 msgid "Relative Path"
+msgstr ""
+
+msgid "Summary"
+msgstr "요약"
+
+msgid "Url"
+msgstr ""
+
+msgid "Build Time"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Requires"
+msgstr ""
+
+msgid "Provides"
+msgstr ""
+
+msgid "Files"
+msgstr "파일"
+
+msgid "Size"
+msgstr ""
+
+msgid "Modular"
 msgstr ""
 
 msgid "Package Group Name"
@@ -1301,17 +1656,14 @@ msgstr ""
 msgid "Optional Packages"
 msgstr ""
 
+msgid "message"
+msgstr ""
+
 msgid "Server Response"
 msgstr "서버 응답 "
 
 msgid "FAIL"
 msgstr "실패 "
-
-msgid "Duration: %sms"
-msgstr "기간: %s (밀리초)"
-
-msgid "Message: %s"
-msgstr "메세지: %s"
 
 msgid "Sync State"
 msgstr "동기화 상태 "
@@ -1321,6 +1673,12 @@ msgstr ""
 
 msgid "Could not create the product"
 msgstr "제품을 생성할 수 없습니다 "
+
+msgid "Sync State (all)"
+msgstr ""
+
+msgid "Sync State (last)"
+msgstr ""
 
 msgid "Sync Plan ID"
 msgstr "동기화 계획 ID "
@@ -1343,14 +1701,20 @@ msgstr "삭제 가능 "
 msgid "Repo Name"
 msgstr "리포지터리 이름 "
 
-msgid "URL"
-msgstr "URL"
-
 msgid "Product updated."
 msgstr ""
 
 msgid "Could not update the product"
 msgstr "제품을 업데이트할 수 없습니다 "
+
+msgid "Updates an HTTP Proxy for a product"
+msgstr ""
+
+msgid "Product proxy updated."
+msgstr ""
+
+msgid "Could not update the product HTTP Proxy."
+msgstr ""
 
 msgid "Product destroyed."
 msgstr ""
@@ -1391,26 +1755,13 @@ msgstr ""
 msgid "Override"
 msgstr "덮어쓰기 "
 
-msgid "Uuid"
+msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
-msgid "Summary"
-msgstr "요약"
-
-msgid "Project Page"
-msgstr "프로젝트 페이지 "
-
-msgid "Source"
-msgstr "소스 "
-
-msgid "Dependencies"
-msgstr "종속성 "
-
-msgid "File checksums"
-msgstr "파일 체크섬 "
-
-msgid "Tag List"
-msgstr "태그 목록 "
+msgid ""
+"Limit the repository type to return. View available types with \"hammer reposit"
+"ory types\""
+msgstr ""
 
 msgid "Red Hat Repository"
 msgstr "Red Hat 리포지터리 "
@@ -1418,8 +1769,8 @@ msgstr "Red Hat 리포지터리 "
 msgid "Checksum Type"
 msgstr "체크섬 유형 "
 
-msgid "Mirror on Sync"
-msgstr "동기화 시 미러링"
+msgid "Mirroring Policy"
+msgstr ""
 
 msgid "Publish Via HTTP"
 msgstr "HTTP를 통해 공개 "
@@ -1430,10 +1781,7 @@ msgstr "공개 일시 "
 msgid "Download Policy"
 msgstr "다운로드 정책"
 
-msgid "OSTree Upstream Sync Policy"
-msgstr ""
-
-msgid "OSTree Upstream Sync Depth"
+msgid "Metadata Expiration"
 msgstr ""
 
 msgid "Upstream Repository Name"
@@ -1446,6 +1794,12 @@ msgid "Container Repository Name"
 msgstr ""
 
 msgid "Ignorable Content Units"
+msgstr ""
+
+msgid "HTTP Proxy"
+msgstr ""
+
+msgid "HTTP Proxy Policy"
 msgstr ""
 
 msgid "Sync"
@@ -1472,17 +1826,20 @@ msgstr "컨테이너 이미지 매니페스트"
 msgid "Container Image Tags"
 msgstr "컨테이너 이미지 태그"
 
-msgid "OSTree Branches"
-msgstr "OSTree 분기"
-
-msgid "Files"
-msgstr "파일"
-
 msgid "yes"
 msgstr "예"
 
 msgid "no"
 msgstr "no"
+
+msgid "Additive"
+msgstr ""
+
+msgid "Content Only"
+msgstr ""
+
+msgid "Complete Mirroring"
+msgstr ""
 
 msgid "Not Synced"
 msgstr "동기화되지 않았습니다 "
@@ -1508,6 +1865,9 @@ msgstr "기다리는 중"
 msgid "Canceled"
 msgstr "취소함"
 
+msgid "Warning"
+msgstr ""
+
 msgid "Repository is being synchronized in task %{id}."
 msgstr ""
 
@@ -1519,6 +1879,11 @@ msgstr ""
 
 msgid "Could not create the repository"
 msgstr "리포지터리를 생성할 수 없습니다 "
+
+msgid ""
+"Type of repository to create. View available types with \"hammer repository typ"
+"es\""
+msgstr ""
 
 msgid "Repository updated."
 msgstr ""
@@ -1532,8 +1897,7 @@ msgstr ""
 msgid "--docker-tag required with --docker-digest"
 msgstr ""
 
-msgid ""
-"Optional custom Container Image tag to specify the value of the Docker digest"
+msgid "Container Image tag"
 msgstr ""
 
 msgid "Container Image manifest digest"
@@ -1551,6 +1915,26 @@ msgstr ""
 msgid "Could not delete the Repository"
 msgstr "리포지터리를 삭제할 수 없습니다 "
 
+msgid "Content types"
+msgstr ""
+
+msgid "Generic?"
+msgstr ""
+
+msgid "Removable?"
+msgstr ""
+
+msgid "Uploadable?"
+msgstr ""
+
+msgid "Indexed?"
+msgstr ""
+
+msgid ""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types w"
+"ith \"hammer repository types\""
+msgstr ""
+
 msgid "Could not find any files matching PATH"
 msgstr ""
 
@@ -1563,23 +1947,25 @@ msgstr ""
 msgid "Could not upload the content"
 msgstr "컨텐츠를 업로드할 수 없습니다 "
 
+msgid "Do not wait for the task."
+msgstr ""
+
+msgid "Name of OSTree repository in archive."
+msgstr ""
+
 msgid ""
-"Upload file, directory of files, or glob of files as content for a "
-"repository.\n"
+"Upload file, directory of files, or glob of files as content for a repository."
+"\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
 
-msgid ""
-"Failed to upload file '%s' to repository. Please check the file and try "
-"again."
-msgstr ""
-"리포지터리에 파일 '%s'을(를) 업로드 실패했습니다. 파일을 확인한 후 다시 시도"
-"하십시오. "
-
-msgid "Successfully uploaded file '%{name}'"
+msgid "Successfully uploaded file %s"
 msgstr ""
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
+msgstr ""
+
+msgid "Could not upload the content."
 msgstr ""
 
 msgid "Remove content from a repository"
@@ -1591,26 +1977,34 @@ msgstr ""
 msgid "Could not remove content"
 msgstr ""
 
-msgid "Export content from a repository to the configured directory"
+msgid ""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View removab"
+"le types with \"hammer repository types\""
 msgstr ""
 
-msgid "Repository is being exported in task %{id}."
+msgid "Forces a republish of the specified repository."
 msgstr ""
 
-msgid "Could not export the repository"
+msgid "Repository republished."
+msgstr ""
+
+msgid "Could not republish the repository."
+msgstr ""
+
+msgid "Reclaim space from an On Demand repository"
+msgstr ""
+
+msgid "Repository space reclaimed."
+msgstr ""
+
+msgid "Could not reclaim the repository"
 msgstr ""
 
 msgid "Enabled Repositories"
 msgstr "활성화된 리포지터리 "
 
-msgid "Arch"
-msgstr "아키텍처 "
-
 msgid "Registry Name"
 msgstr ""
-
-msgid "Enabled"
-msgstr "활성화됨 "
 
 msgid "Repository enabled."
 msgstr ""
@@ -1623,6 +2017,24 @@ msgstr ""
 
 msgid "Could not disable repository"
 msgstr "리포지터리를 비활성화할 수 없습니다 "
+
+msgid "This organization is not eligible for Simple Content Access"
+msgstr ""
+
+msgid "Simple Content Access Enabled."
+msgstr ""
+
+msgid "Could not enable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Simple Content Access Disabled."
+msgstr ""
+
+msgid "Could not disable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Time UTC"
+msgstr ""
 
 msgid "Consumed"
 msgstr "사용됨 "
@@ -1675,11 +2087,8 @@ msgstr ""
 msgid "Recurring Logic ID"
 msgstr ""
 
-msgid "Created at"
-msgstr "생성 일시 "
-
-msgid "Updated at"
-msgstr "업데이트 일시 "
+msgid "Next Sync"
+msgstr ""
 
 msgid "how often synchronization should run"
 msgstr "동기화 실행 빈도 "
@@ -1688,8 +2097,8 @@ msgid "set this when interval is custom cron"
 msgstr ""
 
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank "
-"current system time will be considered"
+"Start date and time for the sync plan.Time is optional, if kept blank current "
+"system time will be considered"
 msgstr ""
 
 msgid "Sync plan created."
@@ -1712,624 +2121,3 @@ msgstr ""
 
 msgid "Could not destroy the sync plan"
 msgstr "동기화 계획을 삭제할 수 없습니다 "
-
-msgid "Manipulate alternate content sources"
-msgstr ""
-
-msgid "Manipulate content credentials on the server"
-msgstr ""
-
-msgid "Manipulate deb packages"
-msgstr ""
-
-msgid "Manipulate content units"
-msgstr ""
-
-msgid "Prepare content for export to a disconnected Katello"
-msgstr ""
-
-msgid "Import content from an upstream archive."
-msgstr ""
-
-msgid "Manipulate source RPMs"
-msgstr ""
-
-msgid "Simple content access commands"
-msgstr ""
-
-msgid "Manipulate docker content"
-msgstr ""
-
-msgid "Alternate Content Source created."
-msgstr ""
-
-msgid "Could not create the Alternate Content Source."
-msgstr ""
-
-msgid "Base URL"
-msgstr ""
-
-msgid "Content type"
-msgstr ""
-
-msgid "Alternate content source type"
-msgstr ""
-
-msgid "Upstream username"
-msgstr ""
-
-msgid "Verify SSL"
-msgstr ""
-
-msgid "SSL CA Cert"
-msgstr ""
-
-msgid "SSL Client Cert"
-msgstr ""
-
-msgid "SSL Client Key"
-msgstr ""
-
-msgid "Subpaths"
-msgstr ""
-
-msgid "Smart proxies"
-msgstr ""
-
-msgid "Download policy"
-msgstr ""
-
-msgid "Alternate Content Source updated."
-msgstr ""
-
-msgid "Could not update the Alternate Content Source."
-msgstr ""
-
-msgid "Alternate Content Source deleted."
-msgstr ""
-
-msgid "Could not delete the Alternate Content Source."
-msgstr ""
-
-msgid "Alternate content source is being refreshed in task %{id}."
-msgstr ""
-
-msgid "Could not refresh the alternate content source"
-msgstr ""
-
-msgid "Associated Hosts"
-msgstr ""
-
-msgid "Content Overrides"
-msgstr ""
-
-msgid "Content Label"
-msgstr ""
-
-msgid "Value"
-msgstr ""
-
-msgid "System Purpose"
-msgstr ""
-
-msgid "Purpose Usage"
-msgstr ""
-
-msgid "Purpose Role"
-msgstr ""
-
-msgid "Purpose Addons"
-msgstr ""
-
-msgid "Content Source name"
-msgstr ""
-
-msgid "Kickstart repository name"
-msgstr ""
-
-msgid "Use %s instead"
-msgstr ""
-
-msgid "Content Credential created."
-msgstr ""
-
-msgid "Could not create Content Credential"
-msgstr ""
-
-msgid "Key file"
-msgstr ""
-
-msgid "Content Credential updated."
-msgstr ""
-
-msgid "Could not update Content Credential"
-msgstr ""
-
-msgid "Content Credential deleted."
-msgstr ""
-
-msgid "Could not delete the Content Credential"
-msgstr ""
-
-msgid ""
-"Writes export metadata to disk for use by the importing Katello. This "
-"command only needs to be used if the export was performed asynchronously or "
-"if the metadata was lost"
-msgstr ""
-
-msgid "Generate metadata based on output of the specified export task"
-msgstr ""
-
-msgid "Generate metadata based on specified export history"
-msgstr ""
-
-msgid ""
-"No export history was found. Verify the value given for --task-id or --id"
-msgstr ""
-
-msgid ""
-"Generates listing file on each directory of a syncable export. This command "
-"only needs to be used if the export was performed asynchronously or if the "
-"listing files were lost. Assumes the syncable export directory is accessible "
-"on disk"
-msgstr ""
-
-msgid "Generate listing files for a syncable export task"
-msgstr ""
-
-msgid "Generate listing files based on specified export history"
-msgstr ""
-
-msgid "Destination Server"
-msgstr ""
-
-msgid "Content View Version"
-msgstr ""
-
-msgid "Performs a full export a content view version"
-msgstr ""
-
-msgid "Performs a full export of the organization's library environment"
-msgstr ""
-
-msgid "Performs a full export of a repository"
-msgstr ""
-
-msgid "Could not fetch the export history"
-msgstr ""
-
-msgid ""
-"Once the task completes the listing files may be generated with the command:"
-msgstr ""
-
-msgid ""
-"Once the task completes the export metadata must be generated with the "
-"command:"
-msgstr ""
-
-msgid "Can not fetch export history from an unfinished task"
-msgstr ""
-
-msgid ""
-"Cannot generate listing files for this export since it is not syncable. It "
-"was not generated with --format=syncable."
-msgstr ""
-
-msgid ""
-"Export History does not have the path specified. The task may have errored "
-"out."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this version because it contains repositories "
-"without the 'immediate' download policy. Update the download policy and sync "
-"affected repositories. Once synced republish the content view and export the "
-"generated version."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this repository because it does not have the "
-"'immediate' download policy. Update the download policy, sync the repository "
-"and export."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this organization's library because it contains "
-"repositories without the 'immediate' download policy. Update the download "
-"policy and sync affected repositories to include them in the export."
-msgstr ""
-
-msgid ""
-"Use the following command to update the download policy of these "
-"repositories."
-msgstr ""
-
-msgid "Filter repositories by name."
-msgstr ""
-
-msgid "Library environment is being exported in task %{id}."
-msgstr ""
-
-msgid "Could not export the library"
-msgstr ""
-
-msgid ""
-"Fails if any of the repositories belonging to this organization are "
-"unexportable."
-msgstr ""
-
-msgid "Content view version is being exported in task %{id}."
-msgstr ""
-
-msgid "Could not export the content view version"
-msgstr ""
-
-msgid ""
-"Fails if any of the repositories belonging to this version are unexportable."
-msgstr ""
-
-msgid "Filter versions by version number."
-msgstr ""
-
-msgid "Performs an incremental export of a content view version"
-msgstr ""
-
-msgid ""
-"Performs an incremental export of the organization's library environment"
-msgstr ""
-
-msgid "Performs an incremental export of a repository"
-msgstr ""
-
-msgid ""
-"Location of the metadata.json file. This is not required if the metadata."
-"json file is already in the archive directory."
-msgstr ""
-
-msgid "Archive is being imported in task %{id}."
-msgstr ""
-
-msgid "Could not import the archive."
-msgstr ""
-
-msgid "Imports a content archive to a content view version"
-msgstr ""
-
-msgid ""
-"Imports a content archive to an organization's library lifecycle environment"
-msgstr ""
-
-msgid "Imports a repository"
-msgstr ""
-
-msgid "Solve Dependencies"
-msgstr ""
-
-msgid "Designate this Content View for importing from upstream servers only."
-msgstr ""
-
-msgid "Names for Lifecycle Environment"
-msgstr ""
-
-msgid "Content view id to search by"
-msgstr ""
-
-msgid "Content View Id"
-msgstr ""
-
-msgid "Component Id"
-msgstr ""
-
-msgid "Has Applied Filters"
-msgstr ""
-
-msgid "Applied Filters"
-msgstr ""
-
-msgid "Dependency Solving"
-msgstr ""
-
-msgid "Content view version updated."
-msgstr ""
-
-msgid "Could not update the content view version"
-msgstr ""
-
-msgid "Pulp ID"
-msgstr ""
-
-msgid "checksum"
-msgstr ""
-
-msgid "Nav"
-msgstr ""
-
-msgid "Nva"
-msgstr ""
-
-msgid "Available Host Count"
-msgstr ""
-
-msgid "Applicable Host Count"
-msgstr ""
-
-msgid "Manage docker manifests"
-msgstr ""
-
-msgid "Schema Version"
-msgstr ""
-
-msgid "Digest"
-msgstr ""
-
-msgid "Downloaded"
-msgstr ""
-
-msgid "Tags"
-msgstr ""
-
-msgid "Manage docker tags"
-msgstr ""
-
-msgid "Tag"
-msgstr ""
-
-msgid "Docker Manifest ID"
-msgstr ""
-
-msgid "Docker Manifest Name"
-msgstr ""
-
-msgid "Bugfix"
-msgstr ""
-
-msgid "Errata recalculation started."
-msgstr ""
-
-msgid "Trace Status"
-msgstr ""
-
-msgid "Content view environments"
-msgstr ""
-
-msgid "Content view"
-msgstr ""
-
-msgid "Lifecycle environment"
-msgstr ""
-
-msgid "Nvra"
-msgstr ""
-
-msgid "Content View id"
-msgstr ""
-
-msgid "Content View version"
-msgstr ""
-
-msgid "Environment name"
-msgstr ""
-
-msgid "Product name"
-msgstr ""
-
-msgid "Trace ID"
-msgstr ""
-
-msgid "Application"
-msgstr ""
-
-msgid "Helper"
-msgstr ""
-
-msgid "Traces are being resolved with task %{id}."
-msgstr ""
-
-msgid "Could not resolve traces"
-msgstr ""
-
-msgid "Organization title"
-msgstr ""
-
-msgid "Simple Content Access"
-msgstr ""
-
-msgid "Upstream Organization"
-msgstr ""
-
-msgid "Upstream Lifecycle Environment"
-msgstr ""
-
-msgid "Upstream Content View"
-msgstr ""
-
-msgid "Username"
-msgstr ""
-
-msgid "SSL CA Credential ID"
-msgstr ""
-
-msgid "Disabled"
-msgstr ""
-
-msgid "Export Sync"
-msgstr ""
-
-msgid "Network Sync"
-msgstr ""
-
-msgid "Red Hat CDN"
-msgstr ""
-
-msgid "Custom CDN"
-msgstr ""
-
-msgid "Updated CDN configuration."
-msgstr ""
-
-msgid "Could not update CDN configuration."
-msgstr ""
-
-msgid "Source rpm"
-msgstr ""
-
-msgid "Nvrea"
-msgstr ""
-
-msgid "Children"
-msgstr ""
-
-msgid "Url"
-msgstr ""
-
-msgid "Build Time"
-msgstr ""
-
-msgid "Group"
-msgstr ""
-
-msgid "Requires"
-msgstr ""
-
-msgid "Provides"
-msgstr ""
-
-msgid "Size"
-msgstr ""
-
-msgid "Modular"
-msgstr ""
-
-msgid "message"
-msgstr ""
-
-msgid "Sync State (all)"
-msgstr ""
-
-msgid "Sync State (last)"
-msgstr ""
-
-msgid "Updates an HTTP Proxy for a product"
-msgstr ""
-
-msgid "Product proxy updated."
-msgstr ""
-
-msgid "Could not update the product HTTP Proxy."
-msgstr ""
-
-msgid "Location of the ansible collections requirements.yml file. "
-msgstr ""
-
-msgid ""
-"Limit the repository type to return. View available types with \"hammer "
-"repository types\""
-msgstr ""
-
-msgid "Mirroring Policy"
-msgstr ""
-
-msgid "Metadata Expiration"
-msgstr ""
-
-msgid "HTTP Proxy"
-msgstr ""
-
-msgid "HTTP Proxy Policy"
-msgstr ""
-
-msgid "Additive"
-msgstr ""
-
-msgid "Content Only"
-msgstr ""
-
-msgid "Complete Mirroring"
-msgstr ""
-
-msgid "Warning"
-msgstr ""
-
-msgid ""
-"Type of repository to create. View available types with \"hammer repository "
-"types\""
-msgstr ""
-
-msgid "Container Image tag"
-msgstr ""
-
-msgid "Content types"
-msgstr ""
-
-msgid "Generic?"
-msgstr ""
-
-msgid "Removable?"
-msgstr ""
-
-msgid "Uploadable?"
-msgstr ""
-
-msgid "Indexed?"
-msgstr ""
-
-msgid ""
-"The type of content unit to upload (srpm, file, etc.). View uploadable types "
-"with \"hammer repository types\""
-msgstr ""
-
-msgid "Do not wait for the task."
-msgstr ""
-
-msgid "Name of OSTree repository in archive."
-msgstr ""
-
-msgid "Successfully uploaded file %s"
-msgstr ""
-
-msgid "Could not upload the content."
-msgstr ""
-
-msgid ""
-"The type of content unit to remove (srpm, docker_manifest, etc.). View "
-"removable types with \"hammer repository types\""
-msgstr ""
-
-msgid "Forces a republish of the specified repository."
-msgstr ""
-
-msgid "Repository republished."
-msgstr ""
-
-msgid "Could not republish the repository."
-msgstr ""
-
-msgid "Reclaim space from an On Demand repository"
-msgstr ""
-
-msgid "Repository space reclaimed."
-msgstr ""
-
-msgid "Could not reclaim the repository"
-msgstr ""
-
-msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
-
-msgid "Simple Content Access Enabled."
-msgstr ""
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Simple Content Access Disabled."
-msgstr ""
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Time UTC"
-msgstr ""
-
-msgid "Next Sync"
-msgstr ""
