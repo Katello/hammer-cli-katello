@@ -220,21 +220,6 @@ module HammerCLIKatello
       end
     end
 
-    class InstallContentBaseCommand < ContentBaseCommand
-      action :install_content
-      command_name "install"
-    end
-
-    class UpdateContentBaseCommand < ContentBaseCommand
-      action :update_content
-      command_name "update"
-    end
-
-    class RemoveContentBaseCommand < ContentBaseCommand
-      action :remove_content
-      command_name "remove"
-    end
-
     require 'hammer_cli_katello/host_collection_package'
     subcommand HammerCLIKatello::HostCollectionPackageCommand.command_name,
                HammerCLIKatello::HostCollectionPackageCommand.desc,
