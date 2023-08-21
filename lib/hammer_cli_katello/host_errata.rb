@@ -5,21 +5,13 @@ module HammerCLIKatello
     desc "Manage errata on your hosts"
 
     class ApplyCommand < HammerCLIKatello::SingleResourceCommand
-      include HammerCLIForemanTasks::Async
-      resource :host_errata, :apply
       command_name "apply"
-      success_message _("Errata is being applied with task %{id}.")
-      failure_message _("Could not apply errata")
 
-      build_options(without: ['ids'])
-
-      def execute
-        warn "This command uses katello agent and will be removed in favor of remote execution " \
-          "in Katello 4.10."
-        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
-          "katello_errata_install`."
-        super
+      def self.rex_feature
+        "katello_errata_install"
       end
+
+      include UnsupportedKatelloAgentCommandHelper
     end
 
     class ListCommand < HammerCLIKatello::ListCommand
