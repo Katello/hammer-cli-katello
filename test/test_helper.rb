@@ -4,7 +4,7 @@ require 'minitest/spec'
 require 'mocha/minitest'
 require 'hammer_cli'
 
-KATELLO_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '4.9')
+KATELLO_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '4.10')
 
 if HammerCLI.context[:api_connection]
   HammerCLI.context[:api_connection].create('foreman') do

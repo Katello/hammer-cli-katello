@@ -6,12 +6,10 @@
 # Translators:
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-27 08:32-0500\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022\n"
 "Language-Team: Georgian (https://app.transifex.com/foreman/teams/114/ka/)\n"
@@ -27,20 +25,17 @@ msgstr "აქტივაცის გასაღებების მარ�
 msgid "Manipulate organizations"
 msgstr "ორგანიზაციების მართვა"
 
-msgid "Manipulate GPG Key actions on the server"
-msgstr "სერვერზე GPG გასაღებების ქმედებების მართვა"
+msgid "Manipulate alternate content sources"
+msgstr ""
+
+msgid "Manipulate content credentials on the server"
+msgstr ""
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "სერვერზე lifecycle_environments -ის შეცვლა"
 
-msgid "Get the status of the server"
-msgstr "სერვერის სტატუსის მიღება"
-
 msgid "Manipulate products"
 msgstr "პროდუქტების მართვა"
-
-msgid "View Puppet Module details"
-msgstr "Puppet-ის მოდულის დეტალების ნახვა"
 
 msgid "Manipulate repositories"
 msgstr "რეპოზიტორიების მართვა"
@@ -66,26 +61,122 @@ msgstr "კაფსულის მართვა"
 msgid "Manipulate packages"
 msgstr "პაკეტების მართვა"
 
+msgid "Manipulate deb packages"
+msgstr ""
+
 msgid "Manipulate package groups"
 msgstr "პაკეტების ჯგუფის მართვა"
 
 msgid "Manipulate errata"
 msgstr "მორჩენილი შეცდომების მართვა"
 
-msgid "Manipulate ostree branches"
-msgstr "OSTree-ის ბრენჩების მართვა"
-
 msgid "Manipulate files"
 msgstr "ფაილების მართვა"
 
+msgid "Manipulate content units"
+msgstr ""
+
+msgid "Prepare content for export to a disconnected Katello"
+msgstr ""
+
+msgid "Import content from an upstream archive."
+msgstr ""
+
 msgid "View Module Streams"
 msgstr "მოდულის ნაკადების ნახვა"
+
+msgid "Manipulate source RPMs"
+msgstr ""
+
+msgid "Simple content access commands"
+msgstr ""
+
+msgid "Manipulate docker content"
+msgstr ""
 
 msgid "ID"
 msgstr "ID"
 
 msgid "Name"
 msgstr "სახელი"
+
+msgid "Type"
+msgstr "ტიპი"
+
+msgid "Alternate Content Source created."
+msgstr ""
+
+msgid "Could not create the Alternate Content Source."
+msgstr ""
+
+msgid "Label"
+msgstr "ჭდე"
+
+msgid "Description"
+msgstr "აღწერა"
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Alternate content source type"
+msgstr ""
+
+msgid "Upstream username"
+msgstr ""
+
+msgid "Verify SSL"
+msgstr ""
+
+msgid "SSL CA Cert"
+msgstr ""
+
+msgid "Id"
+msgstr "ID"
+
+msgid "SSL Client Cert"
+msgstr ""
+
+msgid "SSL Client Key"
+msgstr ""
+
+msgid "Subpaths"
+msgstr ""
+
+msgid "Products"
+msgstr "პროდუქტები"
+
+msgid "Organization ID"
+msgstr "ორგანზაციის ID"
+
+msgid "Smart proxies"
+msgstr ""
+
+msgid "URL"
+msgstr "ბმული"
+
+msgid "Download policy"
+msgstr ""
+
+msgid "Alternate Content Source updated."
+msgstr ""
+
+msgid "Could not update the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate Content Source deleted."
+msgstr ""
+
+msgid "Could not delete the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate content source is being refreshed in task %{id}."
+msgstr ""
+
+msgid "Could not refresh the alternate content source"
+msgstr ""
 
 msgid "Host Limit"
 msgstr "ჰოსტის ლიმიტი"
@@ -102,20 +193,41 @@ msgstr "შეუზღუდავი"
 msgid "%{consumed} of %{limit}"
 msgstr "%{consumed} %{limit}-დან"
 
-msgid "Description"
-msgstr "აღწერა"
-
 msgid "Auto Attach"
 msgstr "ავტომატური მიბმა"
-
-msgid "Service Level"
-msgstr "სერვისის დონე"
 
 msgid "Release Version"
 msgstr "რელიზის ვერსია"
 
+msgid "Associated Hosts"
+msgstr ""
+
 msgid "Host Collections"
 msgstr "ჰოსტების კოლექციები"
+
+msgid "Content Overrides"
+msgstr ""
+
+msgid "Content Label"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "System Purpose"
+msgstr ""
+
+msgid "Service Level"
+msgstr "სერვისის დონე"
+
+msgid "Purpose Usage"
+msgstr ""
+
+msgid "Purpose Role"
+msgstr ""
+
+msgid "Purpose Addons"
+msgstr ""
 
 msgid "Activation key created."
 msgstr "აქტივაციის გასაღები შეიქმნა."
@@ -168,21 +280,11 @@ msgstr "კონტრაქტი"
 msgid "Account"
 msgstr "ანგარიში"
 
-msgid ""
-"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : "
-"data['quantity']}"
-msgstr ""
-"#{data['consumed']} #{data['quantity'] == -1 ? 'Unlimited' : "
-"data['quantity']}-დან"
-
 msgid "ID of the activation key"
 msgstr "აქტივაციის გასაღების ID"
 
 msgid "Activation key name to search by"
 msgstr "მოსაძებნი აქტივაციის გასაღების სახელი"
-
-msgid "ID of subscription"
-msgstr "გამოწერის ID"
 
 msgid "Subscription added to activation key."
 msgstr "აქტივაციის გასაღებს გამოწერა დაემატა."
@@ -192,6 +294,9 @@ msgstr "აქტივაციის გასაღებზე გამო�
 
 msgid "Remove subscription"
 msgstr "გამოწერის წაშლა"
+
+msgid "ID of subscription"
+msgstr "გამოწერის ID"
 
 msgid "Subscription removed from activation key."
 msgstr "აქტივაციის გასაღებისდან გამოწერა გაუქმებულია."
@@ -256,9 +361,6 @@ msgstr "ცხოვრების ციკლის გარემო კა
 msgid "Could not add the lifecycle environment to the capsule"
 msgstr "კაფსულაში ცხოვრების ციკლის გარემოს ჩამატების შეცდომა"
 
-msgid "Organization ID"
-msgstr "ორგანზაციის ID"
-
 msgid "Organization name"
 msgstr "ორგანიზაციის სახელი"
 
@@ -319,9 +421,6 @@ msgstr "შემცველობა"
 msgid "Hosts"
 msgstr "ჰოსტები"
 
-msgid "Products"
-msgstr "პროდუქტები"
-
 msgid "Yum repos"
 msgstr "Yum-ის რეპოზიტორიები"
 
@@ -337,11 +436,231 @@ msgstr "პაკეტის ჯგუფები"
 msgid "Errata"
 msgstr "მორჩენილი შეცდომები"
 
-msgid "Puppet modules"
-msgstr "Puppet-ის მოდულები"
+msgid "Content Source name"
+msgstr ""
+
+msgid "Content Source"
+msgstr "შემცველობის წყარო"
+
+msgid "Kickstart repository name"
+msgstr ""
+
+msgid "Please provide --lifecycle-environment-id"
+msgstr "მიუთითეთ --lifecycle-environment-id"
+
+msgid "Please provide --content-view-id"
+msgstr "მიუთითეთ --content-view-id"
+
+msgid ""
+"No such repository with name %{name}, in lifecycle environment %{environment_i"
+"d} and content view %{content_view_id}"
+msgstr ""
+"სიცოცხლის ციკლის გარემოში %{environment_id} და შემცველობის ხედში %{content_vie"
+"w_id} რეპოზიტორია სახელად %{name} არ არსებობს"
+
+msgid "Use %s instead"
+msgstr ""
+
+msgid "Lifecycle environment name to search by"
+msgstr "ცხოვრების ციკლის სახელის მხიედვით ძებნა"
+
+msgid "Duration: %sms"
+msgstr "ხანგრძლოვობა: %sმწმ"
+
+msgid "Message: %s"
+msgstr "შეტყობინება: %s"
 
 msgid "Name of the composite content view"
 msgstr "კომპოზიტური შემცველობის ხედის სახელი"
+
+msgid "Content Type"
+msgstr "შემცველობის ტიპი"
+
+msgid "Product"
+msgstr "პროდუქტი"
+
+msgid "Content Credential created."
+msgstr ""
+
+msgid "Could not create Content Credential"
+msgstr ""
+
+msgid "Key file"
+msgstr ""
+
+msgid "Content Credential updated."
+msgstr ""
+
+msgid "Could not update Content Credential"
+msgstr ""
+
+msgid "Content Credential deleted."
+msgstr ""
+
+msgid "Could not delete the Content Credential"
+msgstr ""
+
+msgid ""
+"Writes export metadata to disk for use by the importing Katello. This command "
+"only needs to be used if the export was performed asynchronously or if the met"
+"adata was lost"
+msgstr ""
+
+msgid "Generate metadata based on output of the specified export task"
+msgstr ""
+
+msgid "Generate metadata based on specified export history"
+msgstr ""
+
+msgid "No export history was found. Verify the value given for --task-id or --id"
+msgstr ""
+
+msgid ""
+"Generates listing file on each directory of a syncable export. This command on"
+"ly needs to be used if the export was performed asynchronously or if the listi"
+"ng files were lost. Assumes the syncable export directory is accessible on dis"
+"k"
+msgstr ""
+
+msgid "Generate listing files for a syncable export task"
+msgstr ""
+
+msgid "Generate listing files based on specified export history"
+msgstr ""
+
+msgid "Destination Server"
+msgstr ""
+
+msgid "Path"
+msgstr "კონტური"
+
+msgid "Content View Version"
+msgstr ""
+
+msgid "Content View Version ID"
+msgstr "შემცველობის ხედის ვერსიის"
+
+msgid "Created at"
+msgstr "შექმნის დრო"
+
+msgid "Updated at"
+msgstr "განახლების დრო"
+
+msgid "Performs a full export a content view version"
+msgstr ""
+
+msgid "Performs a full export of the organization's library environment"
+msgstr ""
+
+msgid "Performs a full export of a repository"
+msgstr ""
+
+msgid "Could not fetch the export history"
+msgstr ""
+
+msgid "Once the task completes the listing files may be generated with the command:"
+msgstr ""
+
+msgid ""
+"Once the task completes the export metadata must be generated with the command"
+":"
+msgstr ""
+
+msgid "Can not fetch export history from an unfinished task"
+msgstr ""
+
+msgid ""
+"Cannot generate listing files for this export since it is not syncable. It was"
+" not generated with --format=syncable."
+msgstr ""
+
+msgid ""
+"Export History does not have the path specified. The task may have errored out"
+"."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this version because it contains repositories wit"
+"hout the 'immediate' download policy. Update the download policy and sync affe"
+"cted repositories. Once synced republish the content view and export the gener"
+"ated version."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this repository because it does not have the 'imm"
+"ediate' download policy. Update the download policy, sync the repository and e"
+"xport."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this organization's library because it contains r"
+"epositories without the 'immediate' download policy. Update the download polic"
+"y and sync affected repositories to include them in the export."
+msgstr ""
+
+msgid "Use the following command to update the download policy of these repositories."
+msgstr ""
+
+msgid "Repository is being exported in task %{id}."
+msgstr "ამოცანაში %{id} მიმდინარეობს რეპოზიტორიის გატანა."
+
+msgid "Could not export the repository"
+msgstr "რეპოზიტორიის გატანის შეცდომა"
+
+msgid "Filter repositories by name."
+msgstr ""
+
+msgid "Library environment is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the library"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this organization are unexportab"
+"le."
+msgstr ""
+
+msgid "Content view version is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the content view version"
+msgstr ""
+
+msgid "Fails if any of the repositories belonging to this version are unexportable."
+msgstr ""
+
+msgid "Filter versions by version number."
+msgstr ""
+
+msgid "Performs an incremental export of a content view version"
+msgstr ""
+
+msgid "Performs an incremental export of the organization's library environment"
+msgstr ""
+
+msgid "Performs an incremental export of a repository"
+msgstr ""
+
+msgid ""
+"Location of the metadata.json file. This is not required if the metadata.json "
+"file is already in the archive directory."
+msgstr ""
+
+msgid "Archive is being imported in task %{id}."
+msgstr ""
+
+msgid "Could not import the archive."
+msgstr ""
+
+msgid "Imports a content archive to a content view version"
+msgstr ""
+
+msgid "Imports a content archive to an organization's library lifecycle environment"
+msgstr ""
+
+msgid "Imports a repository"
+msgstr ""
 
 msgid "Override product content defaults"
 msgstr "პროდუქტის შემცველობის ნაგულისხმები პარამეტრების გადაფარვა"
@@ -366,23 +685,29 @@ msgstr ""
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
 msgstr ""
-"მნიშვნელობის გადაფარვა. დაიმახსოვრეთ, რომ რეპოზიტორიის ჩასართავად ლოგიკური "
-"მნიშვნელობა შეგიძლიათ გამოიყენოთ"
+"მნიშვნელობის გადაფარვა. დაიმახსოვრეთ, რომ რეპოზიტორიის ჩასართავად ლოგიკური მნი"
+"შვნელობა შეგიძლიათ გამოიყენოთ"
 
 msgid "Remove a content override"
 msgstr "შემცველობის გადაფარვის წაშლა"
 
+msgid "Version"
+msgstr "ვერსია"
+
+msgid "Filename"
+msgstr "ფაილის სახელი"
+
 msgid "Content View ID"
 msgstr "შემცველობის ხედის id"
-
-msgid "Label"
-msgstr "ჭდე"
 
 msgid "Repository IDs"
 msgstr "რეპოზიტორიების ID-ები"
 
 msgid "Content Host Count"
 msgstr "შემცველობის ჰოსტების რაოდენობა"
+
+msgid "Solve Dependencies"
+msgstr ""
 
 msgid "Yum Repositories"
 msgstr "Yum-ის რეპოზიტორიები"
@@ -393,20 +718,8 @@ msgstr "კონტეინერის ასლების რეპოზ�
 msgid "OSTree Repositories"
 msgstr "OSTree-ის რეპოზიტორიები"
 
-msgid "Puppet Modules"
-msgstr "Puppet-ის მოდულები"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Author"
-msgstr "ავტორი"
-
 msgid "Versions"
 msgstr "ვერსიები"
-
-msgid "Version"
-msgstr "ვერსია"
 
 msgid "Published"
 msgstr "გამოქვეყნებულია"
@@ -425,6 +738,9 @@ msgstr "შემცველობის ხედის შექმნის 
 
 msgid "Create a composite content view"
 msgstr "კომპოზიტური შემცველობის ხედის შექმნა"
+
+msgid "Designate this Content View for importing from upstream servers only."
+msgstr ""
 
 msgid "Copy a content view"
 msgstr "შემცველობის ხედის კოპირება"
@@ -459,17 +775,14 @@ msgstr "კაფსულის შემცველობა გამოქ�
 msgid "Could not publish the content view"
 msgstr "შემცველობის ხედის გამოქვეყნების შეცდომა"
 
+msgid "Names for Lifecycle Environment"
+msgstr ""
+
 msgid "Content view is being removed from environment with task %{id}."
 msgstr "შინაარსის ხედი იშლება გარემოდან დავალებით %{id}."
 
 msgid "Could not remove the content view from environment"
 msgstr "გარემოდან შემცველობის ხედის წაშლის შეცდომა"
-
-msgid "Version ids to remove"
-msgstr "ვერსიის წასაშლელი ID-ები"
-
-msgid "Environment ids to remove"
-msgstr "გარემოს წასაშლელი ID-ები"
 
 msgid "Content view objects are being removed task %{id}."
 msgstr "მიმდინარეობს შემცველობის ხედის ობიექტების წაშლა ამოცანიდან %{id}."
@@ -479,6 +792,9 @@ msgstr "შემცველობის ხედიდან ობიექ�
 
 msgid "Add a content view version to a composite view"
 msgstr "კომპოზიტურ ხედზე შემცველობის ხედის ვერსიის დამატება"
+
+msgid "Content view id to search by"
+msgstr ""
 
 msgid "The component version has been added."
 msgstr "კომპონენტის ვერსია დამატებულია."
@@ -495,25 +811,23 @@ msgstr "კომპონენტის ვერსია წაშლილ�
 msgid "Could not remove version"
 msgstr "ვერსიის წაშლის შეცდომა"
 
-msgid ""
-"Content View identifier of the component who's latest version is desired"
+msgid "Content View identifier of the component who's latest version is desired"
 msgstr ""
-"შემცველობის ხედის იდენტიფიკატორი კომპონენტისთვის, რომლის უახლესი ვერსიაც "
-"გნებავთ"
+"შემცველობის ხედის იდენტიფიკატორი კომპონენტისთვის, რომლის უახლესი ვერსიაც გნება"
+"ვთ"
 
 msgid "Content View name of the component who's latest version is desired"
-msgstr ""
-"შემცველობის ხედის სახელი კომპონენტისთვის, რომლის უახლესი ვერსიაც გნებავთ"
+msgstr "შემცველობის ხედის სახელი კომპონენტისთვის, რომლის უახლესი ვერსიაც გნებავთ"
 
 msgid "Content View Version identifier of the component"
 msgstr "კომპონენტის შემცველობის ხედის ვერსიის იდენტიფიკატორი"
 
 msgid ""
-"Content View Version number of the component. Either use this or --component-"
-"content-view-version-id option"
+"Content View Version number of the component. Either use this or --component-c"
+"ontent-view-version-id option"
 msgstr ""
-"კომპონენტის შემცველობის ხედის ვერსიის ნომერი. გამოიყენეთ ან ეს, ან პარამეტრი "
-"--component-content-view-version-id"
+"კომპონენტის შემცველობის ხედის ვერსიის ნომერი. გამოიყენეთ ან ეს, ან პარამეტრი -"
+"-component-content-view-version-id"
 
 msgid "Select the latest version of the components content view is desired"
 msgstr "აირიეთ სასურველი კომპონენტის შემცველობის უკანასკნელი ვერსია"
@@ -522,14 +836,17 @@ msgid "Please provide --component-content-view-id"
 msgstr "მიუთითეთ --component-content-view-id"
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-"
-"view-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-view"
+"-version or --latest for the latest version"
 msgstr ""
-"ბოლო ვერსიისთვის მიუთითეთ --component-content-view-version-id, --component-"
-"content-view-version ან --latest"
+"ბოლო ვერსიისთვის მიუთითეთ --component-content-view-version-id, --component-con"
+"tent-view-version ან --latest"
 
-msgid "Id"
-msgstr "ID"
+msgid "Content View Id"
+msgstr ""
+
+msgid "Component Id"
+msgstr ""
 
 msgid "Current Version"
 msgstr "მიმდინარე ვერსია"
@@ -556,39 +873,24 @@ msgid "Could not update the content view component"
 msgstr "შემცველობის ხედის კომპონენტის განახლების შეცდომა"
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of "
-"values"
+"Array of component content view names to remove. Comma separated list of value"
+"s"
 msgstr ""
-"წასაშლელი კომპონენტის შემცველობის ხედის სახელების მასივი. მნიშვნელობების "
-"მძიმით გამოყოფილი ჩამონათვალი"
+"წასაშლელი კომპონენტის შემცველობის ხედის სახელების მასივი. მნიშვნელობების მძიმი"
+"თ გამოყოფილი ჩამონათვალი"
 
 msgid ""
-"Array of component content view identfiers to remove. Comma separated list "
-"of values"
+"Array of component content view identfiers to remove. Comma separated list of "
+"values"
 msgstr ""
-"წასაშლელი კომპონენტის შემცველობის ხედის იდენტიფიკატორების მასივი. "
-"მნიშვნელობების მძიმით გამოყოფილი ჩამონათვალი"
+"წასაშლელი კომპონენტის შემცველობის ხედის იდენტიფიკატორების მასივი. მნიშვნელობებ"
+"ის მძიმით გამოყოფილი ჩამონათვალი"
 
 msgid "Components removed from content view."
 msgstr "შინაარსის ხედიდან ამოღებული კომპონენტები."
 
 msgid "Could not remove the components"
 msgstr "კომპონენტების წაშლის შეცდომა"
-
-msgid "Latest(Currently %s)"
-msgstr "უახლესი(მიმდინარე %s)"
-
-msgid "Puppet module added to content view."
-msgstr "Puppet-ის მოდული შემცველობის ხედში წარმატებით ჩაემატა."
-
-msgid "Could not add the puppet module"
-msgstr "Puppet-ის მოდულის დამატების შეცდომა"
-
-msgid "Puppet module removed from content view."
-msgstr "Puppet-ის მოდული წაშლილია შემცველობის ხედიდან."
-
-msgid "Couldn't remove puppet module from the content view"
-msgstr "შემცველობის ხედიდან Puppet-ის მოდულის წაშლის შეცდომა"
 
 msgid "Content View numeric identifier"
 msgstr "შემცველობის ხედის იდენტიფიკატორი"
@@ -606,11 +908,11 @@ msgid "No versions to delete."
 msgstr "წასაშლელი ვერსიების გარეშე."
 
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in "
-"task '%{task_id}'."
+"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
+"'%{task_id}'."
 msgstr ""
-"შემცველობის ხედის ('%{view}') ვერსიის ('%{version}') წაშლა დაგეგმილია "
-"ამოცანაში: '%{task_id}'."
+"შემცველობის ხედის ('%{view}') ვერსიის ('%{version}') წაშლა დაგეგმილია ამოცანაშ"
+"ი: '%{task_id}'."
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
 msgstr "შემცველობის ხედის '%{view}' ვერსია'%{version}' წაშლილია."
@@ -624,9 +926,17 @@ msgstr "შემცველობის ხედის ჭდე"
 msgid "Repositories"
 msgstr "საცავები"
 
-msgid "Content View Version is being republished with task %{id}."
+msgid "Has Applied Filters"
 msgstr ""
-"მიმდინარეობს შემცველობის ხედის ვერსიის თავიდან გამოცემა ამოცანით %{id}."
+
+msgid "Applied Filters"
+msgstr ""
+
+msgid "Dependency Solving"
+msgstr ""
+
+msgid "Content View Version is being republished with task %{id}."
+msgstr "მიმდინარეობს შემცველობის ხედის ვერსიის თავიდან გამოცემა ამოცანით %{id}."
 
 msgid "Could not republish the Content View"
 msgstr "შემცველობის ხედის თავიდან გამოქვეყნების შეცდომა"
@@ -637,11 +947,10 @@ msgstr "მიმდინარეობს შემცველობის �
 msgid "Could not promote the content view"
 msgstr "შემცველობის ხედის წახალისების შეცდომა"
 
-msgid ""
-"force content view promotion and bypass lifecycle environment restriction"
+msgid "force content view promotion and bypass lifecycle environment restriction"
 msgstr ""
-"შემცველობის ხედის ძალით დაწინაურება და სიცოცხლის ციკლის გარემოს შეზღუდვების "
-"გამოტოვება"
+"შემცველობის ხედის ძალით დაწინაურება და სიცოცხლის ციკლის გარემოს შეზღუდვების გა"
+"მოტოვება"
 
 msgid "Name of the target environment"
 msgstr "სამიზნე გარემოს სახელი"
@@ -650,13 +959,18 @@ msgid "Id of the target environment"
 msgstr "სამიზნე გარემოს ID"
 
 msgid ""
-"Environment name from where to promote its version from (if version is "
-"unknown)"
-msgstr ""
-"გარემოს სახელი, საიდანაც მისი ვერსიის წახალისება მოხდება (თუ ვერსია უცნობია)"
+"Environment name from where to promote its version from (if version is unknown"
+")"
+msgstr "გარემოს სახელი, საიდანაც მისი ვერსიის წახალისება მოხდება (თუ ვერსია უცნობია)"
 
 msgid "Id of the environment from where to promote its version "
 msgstr "გარემოს ID, საიდანაც მისი ვერსიის წახალისება მოხდება "
+
+msgid "Content view version updated."
+msgstr ""
+
+msgid "Could not update the content view version"
+msgstr ""
 
 msgid "Incremental update is being performed with task %{id}."
 msgstr "ამოცანასთან %{id} ერთად ინკრემენტული განახლებაც ხორციელდება."
@@ -666,14 +980,13 @@ msgstr "შემცველობის ხედის ინკრემე�
 
 msgid "list of lifecycle environment IDs to update the content view version in"
 msgstr ""
-"შემცველობის ხედის ვერსიის განსაახლებელი სიცოცხლის ციკლის გარემოს ID-ების "
-"ჩამონათვალი"
+"შემცველობის ხედის ვერსიის განსაახლებელი სიცოცხლის ციკლის გარემოს ID-ების ჩამონ"
+"ათვალი"
 
-msgid ""
-"list of lifecycle environment names to update the content view version in"
+msgid "list of lifecycle environment names to update the content view version in"
 msgstr ""
-"შემცველობის ხედის ვერსიის განსაახლებელი სიცოცხლის ციკლის გარემოს სახელების "
-"ჩამონათვალი"
+"შემცველობის ხედის ვერსიის განსაახლებელი სიცოცხლის ციკლის გარემოს სახელების ჩამ"
+"ონათვალი"
 
 msgid "Organization name for resolving lifecycle environment names"
 msgstr "ორგანიზაციის სახელი სიცოცხლის ციკლის გარემოს სახელების ამოსახსნელად"
@@ -682,8 +995,8 @@ msgid "Organization id for resolving lifecycle environment names"
 msgstr "ორგანიზაციის ID ცხოვრების ციკლის გარემოს სახელების ამოსახსნელად"
 
 msgid ""
-"Update all editable and applicable hosts within the specified Content View "
-"and \\\n"
+"Update all editable and applicable hosts within the specified Content View and"
+" \\\n"
 "               Lifecycle Environments"
 msgstr ""
 "მითითებულ შემცველობის ხედებში და სიცოცხლის ციკლის გარემოებში \\\n"
@@ -692,76 +1005,74 @@ msgstr ""
 msgid "IDs of hosts to update"
 msgstr "განსაახლებელი ჰოსტების ID-ები"
 
-msgid "Export a content view (deprecated)"
-msgstr "შემცველობის ხედის გატანა (მოძველებული)"
-
-msgid "Content view is being exported in task %{id}."
-msgstr "დავალებაში %{id} შემცველობის ხედის გატანა მიმდინარეობს."
-
-msgid "Could not export the content view"
-msgstr "შემცველობის ხედის გატანის შეცდომა"
-
-msgid "Export a content view version"
-msgstr "შემცველობის ხედის ვერსიის გატანა"
-
-msgid "Content view export is available in %{directory}."
-msgstr "გატანილი შემცველობის ხედი ხელმისაწვდომია საქაღალდეში %{directory}."
-
-msgid "Content View Version numeric identifier"
-msgstr "შემცველობის ხედვის ვერსიის რიცხვითი იდენტიფიკატორი"
-
-msgid "Directory to put content view version export into."
-msgstr "საქაღალდე, რომელშიც შემცველობის ხედის ვერსიის გატანა მოხდება."
-
-msgid ""
-"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is "
-"supported at this time. Please remove the repository from the Content View, "
-"republish and try the export again."
+msgid "Pulp ID"
 msgstr ""
-"რეპოზიტორია '#{repo['name']}' yum-ის რეპოზიტორია არაა. ამჟამად მხოლოდ Yum-ია "
-"მხარდაჭერილი. წაშალეთ რეპოზიტორია შემცველობის ხედიდან, თავიდან გამოაქვეყნეთ "
-"ის, და გატანა თავიდან სცადეთ."
 
-msgid "Import a content view version"
-msgstr "შემცველობის ხედის ვერსიის შემოტანა"
+msgid "Uuid"
+msgstr "Uuid"
 
-msgid "Content view imported."
-msgstr "შემცველობის ხედი შემოტანილია."
-
-msgid "Could not import the content view"
-msgstr "შემცველობის ხედის შემოტანის შეცდომა"
-
-msgid "Organization numeric identifier"
-msgstr "ორგანიზაციის რიცხვითი იდენტიფიკატორი"
-
-msgid "Location of export tar on disk"
-msgstr "გატანილი tar ფალის მდებარეობა დისკზე"
-
-msgid "Export tar #{options['option_export_tar']} does not exist."
-msgstr "გატანილი tar ფაილი #{options['option_export_tar']} არ არსებობს."
-
-msgid "Unable to sync repositories, no library repository found for %s"
+msgid "checksum"
 msgstr ""
-"რეპოზიტორიების სინქრონიზაცია შეუძლებელია. ბიბლიოთეკების რეპოზიტორიების პოვნა "
-"%s-სთვის შეუძლებელია"
+
+msgid "Architecture"
+msgstr "არქიტექტურა"
+
+msgid "Nav"
+msgstr ""
+
+msgid "Nva"
+msgstr ""
+
+msgid "Available Host Count"
+msgstr ""
+
+msgid "Applicable Host Count"
+msgstr ""
+
+msgid "Manage docker manifests"
+msgstr ""
+
+msgid "Schema Version"
+msgstr ""
+
+msgid "Digest"
+msgstr ""
+
+msgid "Downloaded"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Manage docker tags"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Repository ID"
+msgstr "რეპოზიტორიის ID"
+
+msgid "Docker Manifest ID"
+msgstr ""
+
+msgid "Docker Manifest Name"
+msgstr ""
 
 msgid "Errata ID"
 msgstr "მორჩენილი შეცდომის ID"
 
-msgid "Type"
-msgstr "ტიპი"
-
 msgid "Title"
 msgstr "სათაური"
 
-msgid "Reboot Suggested"
-msgstr "სჯობს გადატვირთოთ"
+msgid "Issued"
+msgstr "გამოშვება"
 
 msgid "Updated"
 msgstr "განახლდა"
 
-msgid "Issued"
-msgstr "გამოშვება"
+msgid "Reboot Suggested"
+msgstr "სჯობს გადატვირთოთ"
 
 msgid "Release"
 msgstr "გამოცემა"
@@ -774,9 +1085,6 @@ msgstr "მოდულის ნაკადები"
 
 msgid "Stream"
 msgstr "ნაკადი"
-
-msgid "Path"
-msgstr "კონტური"
 
 msgid "Checksum"
 msgstr "საკონტროლო რიცხვი"
@@ -823,9 +1131,6 @@ msgstr "ფილტრის წაშლის შეცდომა"
 msgid "Rule ID"
 msgstr "წესის ID"
 
-msgid "Architecture"
-msgstr "არქიტექტურა"
-
 msgid "Date Type"
 msgstr "თარიღის ტიპი"
 
@@ -850,33 +1155,6 @@ msgstr "ფილტრის წესი წაშლილია."
 msgid "Could not delete the filter rule"
 msgstr "ფილტრის წესის წაშლის შეცდომა"
 
-msgid "Content Type"
-msgstr "შემცველობის ტიპი"
-
-msgid "Product"
-msgstr "პროდუქტი"
-
-msgid "GPG Key created."
-msgstr "GPG გასაღები შეიქმნა."
-
-msgid "Could not create GPG Key"
-msgstr "GPG გასაღების შექმნის შეცდომა"
-
-msgid "GPG Key file"
-msgstr "GPG გასაღების ფაილი"
-
-msgid "GPG Key updated."
-msgstr "GPG გასაღები განახლდა."
-
-msgid "Could not update GPG Key"
-msgstr "GPG გასაღების განახლების შეცდომა"
-
-msgid "GPG Key deleted."
-msgstr "GPG გასაღები წაშლილია."
-
-msgid "Could not delete the GPG Key"
-msgstr "GPG გასაღების წაშლის შეცდომა"
-
 msgid "Limit"
 msgstr "ზღვარი"
 
@@ -894,6 +1172,15 @@ msgstr "ჰოსტის კოლექციის ID"
 
 msgid "Host Collection Name"
 msgstr "ჰოსტის კოლექციის სახელი"
+
+msgid "Security"
+msgstr "უსაფრთხოება"
+
+msgid "Bugfix"
+msgstr ""
+
+msgid "Enhancement"
+msgstr "გაფართოება"
 
 msgid "Copy a host collection"
 msgstr "ჰოსის კოლექციის კოპირება"
@@ -936,8 +1223,8 @@ msgstr "ჰოსტის კოლექციის მორჩენილ�
 
 msgid "Install errata on content hosts contained within a host collection"
 msgstr ""
-"მორჩენილი პაჩების დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია "
-"შეიცავს"
+"მორჩენილი პაჩების დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შ"
+"ეიცავს"
 
 msgid "Successfully scheduled installation of errata."
 msgstr "მორჩენილი პაჩების დაყენება წარმატებით დაიგეგმა."
@@ -955,8 +1242,7 @@ msgid "comma-separated list of packages to install"
 msgstr "დასაყენებელი პაკეტების მძიმით გამოყოფილი სია"
 
 msgid "Install packages on content hosts contained within a host collection"
-msgstr ""
-"პაკეტების დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
+msgstr "პაკეტების დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
 
 msgid "Successfully scheduled installation of package(s)."
 msgstr "პაკეტების დაყენება წარმატებით დაიგეგმა."
@@ -965,8 +1251,7 @@ msgid "Could not schedule installation of package(s)"
 msgstr "პაკეტების დაყენების განრიგში ჩასმა შეუძლებელია"
 
 msgid "Update packages on content hosts contained within a host collection"
-msgstr ""
-"პაკეტების განახლება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
+msgstr "პაკეტების განახლება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
 
 msgid "Successfully scheduled update of package(s)."
 msgstr "პაკეტების დაყენება განრიგში წარმატებით ჩაემატა."
@@ -975,8 +1260,7 @@ msgid "Could not schedule update of package(s)"
 msgstr "განრიგში პაკეტების განახლების ჩამატების შეცდომა"
 
 msgid "Remove packages on content hosts contained within a host collection"
-msgstr ""
-"პაკეტების წაშლა შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
+msgstr "პაკეტების წაშლა შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცავს"
 
 msgid "Successfully scheduled removal of package(s)."
 msgstr "პაკეტების წაშლა განრიგში წარმატებით ჩაემატა."
@@ -990,11 +1274,10 @@ msgstr "ჰოსტის კოლექციის პაკეტებს 
 msgid "comma-separated list of package-groups to install"
 msgstr "დასაყენებელი პაკეტების მძიმით გამოყოფილი ჯგუფების სია"
 
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
+msgid "Install package-groups on content hosts contained within a host collection"
 msgstr ""
-"პაკეტების ჯგუფის დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია "
-"შეიცავს"
+"პაკეტების ჯგუფის დაყენება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შე"
+"იცავს"
 
 msgid "Successfully scheduled installation of package-group(s)."
 msgstr "პაკეტების ჯგუფის დაყენება განრიგში წარმატებით ჩაემატა."
@@ -1002,11 +1285,10 @@ msgstr "პაკეტების ჯგუფის დაყენება 
 msgid "Could not schedule installation of package-group(s)"
 msgstr "განრიგში პაკეტების ჯგუფის ჩამატების შეცდომა"
 
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
+msgid "Update package-groups on content hosts contained within a host collection"
 msgstr ""
-"პაკეტების ჯგუფის განახლება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია "
-"შეიცავს"
+"პაკეტების ჯგუფის განახლება შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შ"
+"ეიცავს"
 
 msgid "Successfully scheduled update of package-groups(s)."
 msgstr "პაკეტის ჯგუფების განახლება განრიგში წარმატებით ჩაემატა."
@@ -1014,11 +1296,10 @@ msgstr "პაკეტის ჯგუფების განახლებ�
 msgid "Could not schedule update of package-group(s)"
 msgstr "პაკეტის ჯგუფების განახლების განრიგში ჩამატების შეცდომა"
 
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
+msgid "Remove package-groups on content hosts contained within a host collection"
 msgstr ""
-"პაკეტების ჯგუფის წაშლა შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია "
-"შეიცავს"
+"პაკეტების ჯგუფის წაშლა შემცველობის ჰოსტებზე, რომლებსაც ჰოსტების კოლექცია შეიცა"
+"ვს"
 
 msgid "Successfully scheduled removal of package-groups(s)."
 msgstr "განრიგში პაკეტის ჯგუფების დაყენება წარმატებით ჩაემატა."
@@ -1026,11 +1307,8 @@ msgstr "განრიგში პაკეტის ჯგუფების 
 msgid "Could not schedule removal of package-group(s)"
 msgstr "განრიგში პაკეტის ჯგუფების წაშლის ჩამატების შეცდომა"
 
-msgid "Content Source name "
-msgstr "შემცველობის წყაროს სახელი "
-
-msgid "Content Source"
-msgstr "შემცველობის წყარო"
+msgid "Arch"
+msgstr "არქიტექტურა"
 
 msgid "Errata is being applied with task %{id}."
 msgstr "მიმდინარეობს მორჩენილი პაჩების გადატარება დავალებით %{id}"
@@ -1044,14 +1322,26 @@ msgstr "შემორჩენილი პაჩის ID"
 msgid "Installable"
 msgstr "დაყენებადი"
 
-msgid "Errata recalculated with task %{id}."
-msgstr "მორჩენილი პაჩები გადათვლილია დავალებით %{id}"
+msgid "Errata recalculation started."
+msgstr ""
 
 msgid "Could not recalculate errata"
 msgstr "მორჩენილი პაჩების გადათვლის შეცდომა"
 
+msgid "Trace Status"
+msgstr ""
+
 msgid "Content Information"
 msgstr "ინფორმაცია შემცველობის შესახებ"
+
+msgid "Content view environments"
+msgstr ""
+
+msgid "Content view"
+msgstr ""
+
+msgid "Lifecycle environment"
+msgstr ""
 
 msgid "Kickstart Repository"
 msgstr "Kickstart-ის რეპოზიტორია"
@@ -1065,14 +1355,8 @@ msgstr "განახლებადი პაკეტები"
 msgid "Applicable Errata"
 msgstr "განკუთვნილი მორჩენილი პაჩები"
 
-msgid "Enhancement"
-msgstr "გაფართოება"
-
 msgid "Bug Fix"
 msgstr "შეცდომების გასწორება"
-
-msgid "Security"
-msgstr "უსაფრთხოება"
 
 msgid "Subscription Information"
 msgstr "გამოწერის ინფორმაცია"
@@ -1092,24 +1376,8 @@ msgstr "რეგისტრაციის დრო"
 msgid "Registered by Activation Keys"
 msgstr "რეგისტრირებულია აქტივაციის გასაღებებით"
 
-msgid "Kickstart repository name "
-msgstr "Kickstart-ის რეპოზიტორიის სახელი "
-
-msgid "Please provide --lifecycle-environment-id"
-msgstr "მიუთითეთ --lifecycle-environment-id"
-
-msgid "Please provide --content-view-id"
-msgstr "მიუთითეთ --content-view-id"
-
-msgid ""
-"No such repository with name %{name}, in lifecycle environment "
-"%{environment_id} and content view %{content_view_id}"
+msgid "Nvra"
 msgstr ""
-"სიცოცხლის ციკლის გარემოში %{environment_id} და შემცველობის ხედში "
-"%{content_view_id} რეპოზიტორია სახელად %{name} არ არსებობს"
-
-msgid "NVRA"
-msgstr "NVRA"
 
 msgid "Host unregistered."
 msgstr "ჰოსტის რეგისტრაცია მოხსნილია."
@@ -1144,10 +1412,35 @@ msgstr "ჰოსტიდან გამოწერა წარმატე�
 msgid "Failed to remove subscriptions from the host"
 msgstr "ჰოსტიდან გამოწერების წაშლის შეცდომა"
 
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
+msgid "Remove the first instance of a subscription with matching id and quantity"
+msgstr "შესაბამისი ID-ის და რაოდენობის მქონე გამოწერის პირველი გაშვებული ასლის წაშლა"
+
+msgid "Content View id"
 msgstr ""
-"შესაბამისი ID-ის და რაოდენობის მქონე გამოწერის პირველი გაშვებული ასლის წაშლა"
+
+msgid "Content View version"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Product name"
+msgstr ""
+
+msgid "Trace ID"
+msgstr ""
+
+msgid "Application"
+msgstr ""
+
+msgid "Helper"
+msgstr ""
+
+msgid "Traces are being resolved with task %{id}."
+msgstr ""
+
+msgid "Could not resolve traces"
+msgstr ""
 
 msgid "Organization ID to search by"
 msgstr "მოსაძებნი ორგანიზაციის ID"
@@ -1164,12 +1457,6 @@ msgstr "მოსაძებნი კაფსულის სახელი"
 msgid "File name to search by"
 msgstr "მოსაძებნი ფაილის სახელი"
 
-msgid "Content View Version ID"
-msgstr "შემცველობის ხედის ვერსიის"
-
-msgid "Repository ID"
-msgstr "რეპოზიტორიის ID"
-
 msgid "Module stream name to search by"
 msgstr "მოდულის მოსაძებნი ნაკადის სახელი"
 
@@ -1179,8 +1466,8 @@ msgstr "მოსაძებნი GPG გასაღები სახელ
 msgid "Host collection name to search by"
 msgstr "ჰოსტის მოსაძებნი კოლექციის სახელი"
 
-msgid "Lifecycle environment name to search by"
-msgstr "ცხოვრების ციკლის სახელის მხიედვით ძებნა"
+msgid "Organization title"
+msgstr ""
 
 msgid "Product name to search by"
 msgstr "პროდუქტის სახელით ძებნა"
@@ -1202,15 +1489,6 @@ msgstr "მოსაძებნი სინქის გეგმის სა
 
 msgid "Task name to search by"
 msgstr "მოსაძებნი ამოცანის სახელი"
-
-msgid "Puppet module name to search by"
-msgstr "Puppet-ის მოსაძებნი მოდულის სახელი"
-
-msgid "Puppet module's author to search by"
-msgstr "Puppet-ის მოდულის ავტორით ძებნა"
-
-msgid "Puppet module's UUID to search by"
-msgstr "Puppet-ის მოდულის UUID-ით ძებნა"
 
 msgid "Content view version number"
 msgstr "შემცველობის ხედის ვერსიის ნომერი"
@@ -1272,11 +1550,44 @@ msgstr "პროფილები"
 msgid "RPMs"
 msgstr "RPM-ები"
 
-msgid "Red Hat Repository URL"
-msgstr "Red Hat-ის რეპოზიტორიის URL"
+msgid "Simple Content Access"
+msgstr ""
 
 msgid "Service Levels"
 msgstr "მომსახურების დონეები"
+
+msgid "Upstream Organization"
+msgstr ""
+
+msgid "Upstream Lifecycle Environment"
+msgstr ""
+
+msgid "Upstream Content View"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "SSL CA Credential ID"
+msgstr ""
+
+msgid "Enabled"
+msgstr "ჩართულია"
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Export Sync"
+msgstr ""
+
+msgid "Network Sync"
+msgstr ""
+
+msgid "Red Hat CDN"
+msgstr ""
+
+msgid "Custom CDN"
+msgstr ""
 
 msgid "Organization updated."
 msgstr "ორგანიზაცია განახლდა."
@@ -1296,20 +1607,11 @@ msgstr "ორგანიზაცია წაიშალა."
 msgid "Could not delete the organization"
 msgstr "ორგანიზაციის წაშლის შეცდომა"
 
-msgid "version"
-msgstr "ვერსია"
+msgid "Updated CDN configuration."
+msgstr ""
 
-msgid "Commit"
-msgstr "გადაცემა"
-
-msgid "Date"
-msgstr "თარიღი"
-
-msgid "%s  %s"
-msgstr "%s  %s"
-
-msgid "Filename"
-msgstr "ფაილის სახელი"
+msgid "Could not update CDN configuration."
+msgstr ""
 
 msgid "Source RPM"
 msgstr "წყაროს RPM"
@@ -1317,8 +1619,20 @@ msgstr "წყაროს RPM"
 msgid "Epoch"
 msgstr "ეპოქა"
 
+msgid "Author"
+msgstr "ავტორი"
+
+msgid "Source rpm"
+msgstr ""
+
+msgid "Nvrea"
+msgstr ""
+
 msgid "Build Host"
 msgstr "აგების ჰოსტი"
+
+msgid "Children"
+msgstr ""
 
 msgid "Vendor"
 msgstr "მომწოდებელი"
@@ -1328,6 +1642,33 @@ msgstr "ლიცენზია"
 
 msgid "Relative Path"
 msgstr "შეფარდებითი ბილიკი"
+
+msgid "Summary"
+msgstr "შეჯამება"
+
+msgid "Url"
+msgstr ""
+
+msgid "Build Time"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Requires"
+msgstr ""
+
+msgid "Provides"
+msgstr ""
+
+msgid "Files"
+msgstr "ფაილები"
+
+msgid "Size"
+msgstr ""
+
+msgid "Modular"
+msgstr ""
 
 msgid "Package Group Name"
 msgstr "პაკეტების ჯგუფის სახელი"
@@ -1347,17 +1688,14 @@ msgstr "თითქმის ყოველთვის საჭირო პ
 msgid "Optional Packages"
 msgstr "არასავალდებული პაკეტები"
 
+msgid "message"
+msgstr ""
+
 msgid "Server Response"
 msgstr "სერვერის პასუხი"
 
 msgid "FAIL"
 msgstr "შეცდომა"
-
-msgid "Duration: %sms"
-msgstr "ხანგრძლოვობა: %sმწმ"
-
-msgid "Message: %s"
-msgstr "შეტყობინება: %s"
 
 msgid "Sync State"
 msgstr "სინქის მდგომარეობა"
@@ -1367,6 +1705,12 @@ msgstr "პროდუქტი შეიქმნა."
 
 msgid "Could not create the product"
 msgstr "პროდუქტის შექმნის შეცდომა"
+
+msgid "Sync State (all)"
+msgstr ""
+
+msgid "Sync State (last)"
+msgstr ""
 
 msgid "Sync Plan ID"
 msgstr "სინქის გეგმის ID"
@@ -1389,14 +1733,20 @@ msgstr "წაშლადი"
 msgid "Repo Name"
 msgstr "რეპოს სახელი"
 
-msgid "URL"
-msgstr "ბმული"
-
 msgid "Product updated."
 msgstr "პროდუქტი განახლდა."
 
 msgid "Could not update the product"
 msgstr "პროდუქტის განახლები შეცდომა"
+
+msgid "Updates an HTTP Proxy for a product"
+msgstr ""
+
+msgid "Product proxy updated."
+msgstr ""
+
+msgid "Could not update the product HTTP Proxy."
+msgstr ""
 
 msgid "Product destroyed."
 msgstr "პროდუქტი განადგურებულია."
@@ -1437,26 +1787,13 @@ msgstr "ჩავრთო ნაგულისხმებები?"
 msgid "Override"
 msgstr "გადაფარვა"
 
-msgid "Uuid"
-msgstr "Uuid"
+msgid "Location of the ansible collections requirements.yml file. "
+msgstr ""
 
-msgid "Summary"
-msgstr "შეჯამება"
-
-msgid "Project Page"
-msgstr "პროექტის გვერდი"
-
-msgid "Source"
-msgstr "წყარო"
-
-msgid "Dependencies"
-msgstr "დამოკიდებულებები"
-
-msgid "File checksums"
-msgstr "ფაილის საკონტროლო ჯამები"
-
-msgid "Tag List"
-msgstr "ჭდეების სია"
+msgid ""
+"Limit the repository type to return. View available types with \"hammer reposit"
+"ory types\""
+msgstr ""
 
 msgid "Red Hat Repository"
 msgstr "Red Hat-ის რეპოზიტორია"
@@ -1464,8 +1801,8 @@ msgstr "Red Hat-ის რეპოზიტორია"
 msgid "Checksum Type"
 msgstr "საკონტროლო ჯამის ტიპი"
 
-msgid "Mirror on Sync"
-msgstr "სინქრონიზაციისას სარკის შექმნა"
+msgid "Mirroring Policy"
+msgstr ""
 
 msgid "Publish Via HTTP"
 msgstr "HTTP-ით გამოქვეყნება"
@@ -1476,11 +1813,8 @@ msgstr "გამოქვეყნების დრო"
 msgid "Download Policy"
 msgstr "გადმოწერის წესები"
 
-msgid "OSTree Upstream Sync Policy"
-msgstr "OSTree -ის აღმავლის სინქრონიზაციის წესი"
-
-msgid "OSTree Upstream Sync Depth"
-msgstr "OSTree -ის აღმავლის სინქრონიზაციის სიღრმე"
+msgid "Metadata Expiration"
+msgstr ""
 
 msgid "Upstream Repository Name"
 msgstr "აღმავლის რეპოზიტორიის სახელი"
@@ -1493,6 +1827,12 @@ msgstr "კონტენერის რეპოზიტორიის ს�
 
 msgid "Ignorable Content Units"
 msgstr "შემცველობის იგნორირებადი ერთეულები"
+
+msgid "HTTP Proxy"
+msgstr ""
+
+msgid "HTTP Proxy Policy"
+msgstr ""
 
 msgid "Sync"
 msgstr "სინქრონიზაცია"
@@ -1518,17 +1858,20 @@ msgstr "კონტეინერის ასლების მანიფ�
 msgid "Container Image Tags"
 msgstr "კონტეინერის ასლის ჭდეები"
 
-msgid "OSTree Branches"
-msgstr "OSTree-ის ბრენჩები"
-
-msgid "Files"
-msgstr "ფაილები"
-
 msgid "yes"
 msgstr "დიახ"
 
 msgid "no"
 msgstr "არა"
+
+msgid "Additive"
+msgstr ""
+
+msgid "Content Only"
+msgstr ""
+
+msgid "Complete Mirroring"
+msgstr ""
 
 msgid "Not Synced"
 msgstr "სინქრონიზაცია არ მომხდარა"
@@ -1554,6 +1897,9 @@ msgstr "მოლოდინი"
 msgid "Canceled"
 msgstr "გაუქმებულია"
 
+msgid "Warning"
+msgstr ""
+
 msgid "Repository is being synchronized in task %{id}."
 msgstr "დავალებაში %{id} მიმდინარეობს რეპოზიტორიის სინქრონიზაცია."
 
@@ -1565,6 +1911,11 @@ msgstr "რეპოზიტორია შეიქმნა."
 
 msgid "Could not create the repository"
 msgstr "რეპოზიტორიის შექმნის შეცდომა"
+
+msgid ""
+"Type of repository to create. View available types with \"hammer repository typ"
+"es\""
+msgstr ""
 
 msgid "Repository updated."
 msgstr "რეპოზიტორია განახლდა."
@@ -1578,11 +1929,8 @@ msgstr "--docker-tag -თან ერთად საჭიროა --docker-d
 msgid "--docker-tag required with --docker-digest"
 msgstr "--docker-digest -თან ერთად საჭიროა --docker-tag -ის მითითება"
 
-msgid ""
-"Optional custom Container Image tag to specify the value of the Docker digest"
+msgid "Container Image tag"
 msgstr ""
-"Docker-ის დაიჯესტის მნიშვნელობაში მისათითებელი არასავალდებულო ხელით "
-"მითითებული კონტეინერის ასლის ჭდე"
 
 msgid "Container Image manifest digest"
 msgstr "კონტეინერის ასლის მანიფესტის დაიჯესტი"
@@ -1599,12 +1947,31 @@ msgstr "რეპოზიტორია წაიშალა."
 msgid "Could not delete the Repository"
 msgstr "რეპოზიტორიის წაშლის შეცდომა"
 
+msgid "Content types"
+msgstr ""
+
+msgid "Generic?"
+msgstr ""
+
+msgid "Removable?"
+msgstr ""
+
+msgid "Uploadable?"
+msgstr ""
+
+msgid "Indexed?"
+msgstr ""
+
+msgid ""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types w"
+"ith \"hammer repository types\""
+msgstr ""
+
 msgid "Could not find any files matching PATH"
 msgstr "ფაილების პოვნა, რომლებიც ემთხვევა PATH-ს, შეუძლებელია"
 
 msgid "Cannot specify both product options and repository ID."
-msgstr ""
-"პროდუქტის პარამეტრების და რეპოზიტორიის ID-ის ერთდროულად მითითება აკრძალულია."
+msgstr "პროდუქტის პარამეტრების და რეპოზიტორიის ID-ის ერთდროულად მითითება აკრძალულია."
 
 msgid "Repository content uploaded."
 msgstr "რეპოზიტორიის შემცველობა ატვირთულია."
@@ -1612,28 +1979,29 @@ msgstr "რეპოზიტორიის შემცველობა ა�
 msgid "Could not upload the content"
 msgstr "შემცველობის ატვირთვის შეცდომა"
 
+msgid "Do not wait for the task."
+msgstr ""
+
+msgid "Name of OSTree repository in archive."
+msgstr ""
+
 msgid ""
-"Upload file, directory of files, or glob of files as content for a "
-"repository.\n"
+"Upload file, directory of files, or glob of files as content for a repository."
+"\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
-"ატვირთეთ ფაილი, ფაილებიან საქაღალდე ან ფაილების გლობი, როგორც რეპოზიტორიის "
-"შემცველობა.\n"
+"ატვირთეთ ფაილი, ფაილებიან საქაღალდე ან ფაილების გლობი, როგორც რეპოზიტორიის შემ"
+"ცველობა.\n"
 "გლობები ერთ ან ორმაგი ბრჭყალებით უნდა იყოს გამოყოფილი"
 
-msgid ""
-"Failed to upload file '%s' to repository. Please check the file and try "
-"again."
+msgid "Successfully uploaded file %s"
 msgstr ""
-"ფალის (%s) რეპოზიტორიაში ატვირთვის შეცდომა. შეამოწმეთ ფაილი და თავიდან "
-"სცადეთ."
-
-msgid "Successfully uploaded file '%{name}'"
-msgstr "ფაილი წარმატებით აიტვირთა: '%{name}'"
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
+msgstr "მანიფეტის ფაილი სახელით '%{name}' დაიჯესტით '%{digest}' წარმატებით აიტვირთა"
+
+msgid "Could not upload the content."
 msgstr ""
-"მანიფეტის ფაილი სახელით '%{name}' დაიჯესტით '%{digest}' წარმატებით აიტვირთა"
 
 msgid "Remove content from a repository"
 msgstr "რეპოზიტორიიდან შემცველობის ნაწილის წაშლა"
@@ -1644,26 +2012,34 @@ msgstr "შემცველობის ნაწილი წაშლილ�
 msgid "Could not remove content"
 msgstr "შემცველობის ნაწილის წაშლის შეცდომა"
 
-msgid "Export content from a repository to the configured directory"
-msgstr "რეპოზიტორიიდან შემცველობის მითითებულ საქაღალდეში გატანა"
+msgid ""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View removab"
+"le types with \"hammer repository types\""
+msgstr ""
 
-msgid "Repository is being exported in task %{id}."
-msgstr "ამოცანაში %{id} მიმდინარეობს რეპოზიტორიის გატანა."
+msgid "Forces a republish of the specified repository."
+msgstr ""
 
-msgid "Could not export the repository"
-msgstr "რეპოზიტორიის გატანის შეცდომა"
+msgid "Repository republished."
+msgstr ""
+
+msgid "Could not republish the repository."
+msgstr ""
+
+msgid "Reclaim space from an On Demand repository"
+msgstr ""
+
+msgid "Repository space reclaimed."
+msgstr ""
+
+msgid "Could not reclaim the repository"
+msgstr ""
 
 msgid "Enabled Repositories"
 msgstr "ჩართული რეპოზიტორიები"
 
-msgid "Arch"
-msgstr "არქიტექტურა"
-
 msgid "Registry Name"
 msgstr "რეესტრის სახელი"
-
-msgid "Enabled"
-msgstr "ჩართულია"
 
 msgid "Repository enabled."
 msgstr "რეპოზიტორია ჩაირთო."
@@ -1676,6 +2052,24 @@ msgstr "რეპოზიტორია გაითიშა."
 
 msgid "Could not disable repository"
 msgstr "რეპოზიტორიის გათიშვის შეცდომა"
+
+msgid "This organization is not eligible for Simple Content Access"
+msgstr ""
+
+msgid "Simple Content Access Enabled."
+msgstr ""
+
+msgid "Could not enable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Simple Content Access Disabled."
+msgstr ""
+
+msgid "Could not disable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Time UTC"
+msgstr ""
 
 msgid "Consumed"
 msgstr "მოხმარებულია"
@@ -1728,11 +2122,8 @@ msgstr "Cron-ის გამოსახულება"
 msgid "Recurring Logic ID"
 msgstr "განმეორებადი ლოგიკის ID"
 
-msgid "Created at"
-msgstr "შექმნის დრო"
-
-msgid "Updated at"
-msgstr "განახლების დრო"
+msgid "Next Sync"
+msgstr ""
 
 msgid "how often synchronization should run"
 msgstr "სინქრონიზაციის გაშვების სიხშირე"
@@ -1741,11 +2132,11 @@ msgid "set this when interval is custom cron"
 msgstr "ხელით მითითებული კრონის ინტერვალის დაყენება"
 
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank "
-"current system time will be considered"
+"Start date and time for the sync plan.Time is optional, if kept blank current "
+"system time will be considered"
 msgstr ""
-"სინქის გეგმის დაწყების თარიღი და დრო. გაითვალისწინეთ, რომ დროის მითითება "
-"არასავალდებულოა. თუ ცარიელს დატოვებთ, სისტემური დრო იქნება გამოყენებული"
+"სინქის გეგმის დაწყების თარიღი და დრო. გაითვალისწინეთ, რომ დროის მითითება არასა"
+"ვალდებულოა. თუ ცარიელს დატოვებთ, სისტემური დრო იქნება გამოყენებული"
 
 msgid "Sync plan created."
 msgstr "სინქრონიზაციის გეგმის შეიქმნა."
@@ -1767,624 +2158,3 @@ msgstr "სინქის გეგმა წაიშალა."
 
 msgid "Could not destroy the sync plan"
 msgstr "სინქის გეგმის წაშლის შეცდომა"
-
-msgid "Manipulate alternate content sources"
-msgstr ""
-
-msgid "Manipulate content credentials on the server"
-msgstr ""
-
-msgid "Manipulate deb packages"
-msgstr ""
-
-msgid "Manipulate content units"
-msgstr ""
-
-msgid "Prepare content for export to a disconnected Katello"
-msgstr ""
-
-msgid "Import content from an upstream archive."
-msgstr ""
-
-msgid "Manipulate source RPMs"
-msgstr ""
-
-msgid "Simple content access commands"
-msgstr ""
-
-msgid "Manipulate docker content"
-msgstr ""
-
-msgid "Alternate Content Source created."
-msgstr ""
-
-msgid "Could not create the Alternate Content Source."
-msgstr ""
-
-msgid "Base URL"
-msgstr ""
-
-msgid "Content type"
-msgstr ""
-
-msgid "Alternate content source type"
-msgstr ""
-
-msgid "Upstream username"
-msgstr ""
-
-msgid "Verify SSL"
-msgstr ""
-
-msgid "SSL CA Cert"
-msgstr ""
-
-msgid "SSL Client Cert"
-msgstr ""
-
-msgid "SSL Client Key"
-msgstr ""
-
-msgid "Subpaths"
-msgstr ""
-
-msgid "Smart proxies"
-msgstr ""
-
-msgid "Download policy"
-msgstr ""
-
-msgid "Alternate Content Source updated."
-msgstr ""
-
-msgid "Could not update the Alternate Content Source."
-msgstr ""
-
-msgid "Alternate Content Source deleted."
-msgstr ""
-
-msgid "Could not delete the Alternate Content Source."
-msgstr ""
-
-msgid "Alternate content source is being refreshed in task %{id}."
-msgstr ""
-
-msgid "Could not refresh the alternate content source"
-msgstr ""
-
-msgid "Associated Hosts"
-msgstr ""
-
-msgid "Content Overrides"
-msgstr ""
-
-msgid "Content Label"
-msgstr ""
-
-msgid "Value"
-msgstr ""
-
-msgid "System Purpose"
-msgstr ""
-
-msgid "Purpose Usage"
-msgstr ""
-
-msgid "Purpose Role"
-msgstr ""
-
-msgid "Purpose Addons"
-msgstr ""
-
-msgid "Content Source name"
-msgstr ""
-
-msgid "Kickstart repository name"
-msgstr ""
-
-msgid "Use %s instead"
-msgstr ""
-
-msgid "Content Credential created."
-msgstr ""
-
-msgid "Could not create Content Credential"
-msgstr ""
-
-msgid "Key file"
-msgstr ""
-
-msgid "Content Credential updated."
-msgstr ""
-
-msgid "Could not update Content Credential"
-msgstr ""
-
-msgid "Content Credential deleted."
-msgstr ""
-
-msgid "Could not delete the Content Credential"
-msgstr ""
-
-msgid ""
-"Writes export metadata to disk for use by the importing Katello. This "
-"command only needs to be used if the export was performed asynchronously or "
-"if the metadata was lost"
-msgstr ""
-
-msgid "Generate metadata based on output of the specified export task"
-msgstr ""
-
-msgid "Generate metadata based on specified export history"
-msgstr ""
-
-msgid ""
-"No export history was found. Verify the value given for --task-id or --id"
-msgstr ""
-
-msgid ""
-"Generates listing file on each directory of a syncable export. This command "
-"only needs to be used if the export was performed asynchronously or if the "
-"listing files were lost. Assumes the syncable export directory is accessible "
-"on disk"
-msgstr ""
-
-msgid "Generate listing files for a syncable export task"
-msgstr ""
-
-msgid "Generate listing files based on specified export history"
-msgstr ""
-
-msgid "Destination Server"
-msgstr ""
-
-msgid "Content View Version"
-msgstr ""
-
-msgid "Performs a full export a content view version"
-msgstr ""
-
-msgid "Performs a full export of the organization's library environment"
-msgstr ""
-
-msgid "Performs a full export of a repository"
-msgstr ""
-
-msgid "Could not fetch the export history"
-msgstr ""
-
-msgid ""
-"Once the task completes the listing files may be generated with the command:"
-msgstr ""
-
-msgid ""
-"Once the task completes the export metadata must be generated with the "
-"command:"
-msgstr ""
-
-msgid "Can not fetch export history from an unfinished task"
-msgstr ""
-
-msgid ""
-"Cannot generate listing files for this export since it is not syncable. It "
-"was not generated with --format=syncable."
-msgstr ""
-
-msgid ""
-"Export History does not have the path specified. The task may have errored "
-"out."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this version because it contains repositories "
-"without the 'immediate' download policy. Update the download policy and sync "
-"affected repositories. Once synced republish the content view and export the "
-"generated version."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this repository because it does not have the "
-"'immediate' download policy. Update the download policy, sync the repository "
-"and export."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this organization's library because it contains "
-"repositories without the 'immediate' download policy. Update the download "
-"policy and sync affected repositories to include them in the export."
-msgstr ""
-
-msgid ""
-"Use the following command to update the download policy of these "
-"repositories."
-msgstr ""
-
-msgid "Filter repositories by name."
-msgstr ""
-
-msgid "Library environment is being exported in task %{id}."
-msgstr ""
-
-msgid "Could not export the library"
-msgstr ""
-
-msgid ""
-"Fails if any of the repositories belonging to this organization are "
-"unexportable."
-msgstr ""
-
-msgid "Content view version is being exported in task %{id}."
-msgstr ""
-
-msgid "Could not export the content view version"
-msgstr ""
-
-msgid ""
-"Fails if any of the repositories belonging to this version are unexportable."
-msgstr ""
-
-msgid "Filter versions by version number."
-msgstr ""
-
-msgid "Performs an incremental export of a content view version"
-msgstr ""
-
-msgid ""
-"Performs an incremental export of the organization's library environment"
-msgstr ""
-
-msgid "Performs an incremental export of a repository"
-msgstr ""
-
-msgid ""
-"Location of the metadata.json file. This is not required if the metadata."
-"json file is already in the archive directory."
-msgstr ""
-
-msgid "Archive is being imported in task %{id}."
-msgstr ""
-
-msgid "Could not import the archive."
-msgstr ""
-
-msgid "Imports a content archive to a content view version"
-msgstr ""
-
-msgid ""
-"Imports a content archive to an organization's library lifecycle environment"
-msgstr ""
-
-msgid "Imports a repository"
-msgstr ""
-
-msgid "Solve Dependencies"
-msgstr ""
-
-msgid "Designate this Content View for importing from upstream servers only."
-msgstr ""
-
-msgid "Names for Lifecycle Environment"
-msgstr ""
-
-msgid "Content view id to search by"
-msgstr ""
-
-msgid "Content View Id"
-msgstr ""
-
-msgid "Component Id"
-msgstr ""
-
-msgid "Has Applied Filters"
-msgstr ""
-
-msgid "Applied Filters"
-msgstr ""
-
-msgid "Dependency Solving"
-msgstr ""
-
-msgid "Content view version updated."
-msgstr ""
-
-msgid "Could not update the content view version"
-msgstr ""
-
-msgid "Pulp ID"
-msgstr ""
-
-msgid "checksum"
-msgstr ""
-
-msgid "Nav"
-msgstr ""
-
-msgid "Nva"
-msgstr ""
-
-msgid "Available Host Count"
-msgstr ""
-
-msgid "Applicable Host Count"
-msgstr ""
-
-msgid "Manage docker manifests"
-msgstr ""
-
-msgid "Schema Version"
-msgstr ""
-
-msgid "Digest"
-msgstr ""
-
-msgid "Downloaded"
-msgstr ""
-
-msgid "Tags"
-msgstr ""
-
-msgid "Manage docker tags"
-msgstr ""
-
-msgid "Tag"
-msgstr ""
-
-msgid "Docker Manifest ID"
-msgstr ""
-
-msgid "Docker Manifest Name"
-msgstr ""
-
-msgid "Bugfix"
-msgstr ""
-
-msgid "Errata recalculation started."
-msgstr ""
-
-msgid "Trace Status"
-msgstr ""
-
-msgid "Content view environments"
-msgstr ""
-
-msgid "Content view"
-msgstr ""
-
-msgid "Lifecycle environment"
-msgstr ""
-
-msgid "Nvra"
-msgstr ""
-
-msgid "Content View id"
-msgstr ""
-
-msgid "Content View version"
-msgstr ""
-
-msgid "Environment name"
-msgstr ""
-
-msgid "Product name"
-msgstr ""
-
-msgid "Trace ID"
-msgstr ""
-
-msgid "Application"
-msgstr ""
-
-msgid "Helper"
-msgstr ""
-
-msgid "Traces are being resolved with task %{id}."
-msgstr ""
-
-msgid "Could not resolve traces"
-msgstr ""
-
-msgid "Organization title"
-msgstr ""
-
-msgid "Simple Content Access"
-msgstr ""
-
-msgid "Upstream Organization"
-msgstr ""
-
-msgid "Upstream Lifecycle Environment"
-msgstr ""
-
-msgid "Upstream Content View"
-msgstr ""
-
-msgid "Username"
-msgstr ""
-
-msgid "SSL CA Credential ID"
-msgstr ""
-
-msgid "Disabled"
-msgstr ""
-
-msgid "Export Sync"
-msgstr ""
-
-msgid "Network Sync"
-msgstr ""
-
-msgid "Red Hat CDN"
-msgstr ""
-
-msgid "Custom CDN"
-msgstr ""
-
-msgid "Updated CDN configuration."
-msgstr ""
-
-msgid "Could not update CDN configuration."
-msgstr ""
-
-msgid "Source rpm"
-msgstr ""
-
-msgid "Nvrea"
-msgstr ""
-
-msgid "Children"
-msgstr ""
-
-msgid "Url"
-msgstr ""
-
-msgid "Build Time"
-msgstr ""
-
-msgid "Group"
-msgstr ""
-
-msgid "Requires"
-msgstr ""
-
-msgid "Provides"
-msgstr ""
-
-msgid "Size"
-msgstr ""
-
-msgid "Modular"
-msgstr ""
-
-msgid "message"
-msgstr ""
-
-msgid "Sync State (all)"
-msgstr ""
-
-msgid "Sync State (last)"
-msgstr ""
-
-msgid "Updates an HTTP Proxy for a product"
-msgstr ""
-
-msgid "Product proxy updated."
-msgstr ""
-
-msgid "Could not update the product HTTP Proxy."
-msgstr ""
-
-msgid "Location of the ansible collections requirements.yml file. "
-msgstr ""
-
-msgid ""
-"Limit the repository type to return. View available types with \"hammer "
-"repository types\""
-msgstr ""
-
-msgid "Mirroring Policy"
-msgstr ""
-
-msgid "Metadata Expiration"
-msgstr ""
-
-msgid "HTTP Proxy"
-msgstr ""
-
-msgid "HTTP Proxy Policy"
-msgstr ""
-
-msgid "Additive"
-msgstr ""
-
-msgid "Content Only"
-msgstr ""
-
-msgid "Complete Mirroring"
-msgstr ""
-
-msgid "Warning"
-msgstr ""
-
-msgid ""
-"Type of repository to create. View available types with \"hammer repository "
-"types\""
-msgstr ""
-
-msgid "Container Image tag"
-msgstr ""
-
-msgid "Content types"
-msgstr ""
-
-msgid "Generic?"
-msgstr ""
-
-msgid "Removable?"
-msgstr ""
-
-msgid "Uploadable?"
-msgstr ""
-
-msgid "Indexed?"
-msgstr ""
-
-msgid ""
-"The type of content unit to upload (srpm, file, etc.). View uploadable types "
-"with \"hammer repository types\""
-msgstr ""
-
-msgid "Do not wait for the task."
-msgstr ""
-
-msgid "Name of OSTree repository in archive."
-msgstr ""
-
-msgid "Successfully uploaded file %s"
-msgstr ""
-
-msgid "Could not upload the content."
-msgstr ""
-
-msgid ""
-"The type of content unit to remove (srpm, docker_manifest, etc.). View "
-"removable types with \"hammer repository types\""
-msgstr ""
-
-msgid "Forces a republish of the specified repository."
-msgstr ""
-
-msgid "Repository republished."
-msgstr ""
-
-msgid "Could not republish the repository."
-msgstr ""
-
-msgid "Reclaim space from an On Demand repository"
-msgstr ""
-
-msgid "Repository space reclaimed."
-msgstr ""
-
-msgid "Could not reclaim the repository"
-msgstr ""
-
-msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
-
-msgid "Simple Content Access Enabled."
-msgstr ""
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Simple Content Access Disabled."
-msgstr ""
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Time UTC"
-msgstr ""
-
-msgid "Next Sync"
-msgstr ""

@@ -6,12 +6,10 @@
 # Translators:
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2020
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-27 08:32-0500\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
 "Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>, 2020\n"
 "Language-Team: Greek (https://app.transifex.com/foreman/teams/114/el/)\n"
@@ -27,19 +25,16 @@ msgstr ""
 msgid "Manipulate organizations"
 msgstr ""
 
-msgid "Manipulate GPG Key actions on the server"
+msgid "Manipulate alternate content sources"
+msgstr ""
+
+msgid "Manipulate content credentials on the server"
 msgstr ""
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr ""
 
-msgid "Get the status of the server"
-msgstr ""
-
 msgid "Manipulate products"
-msgstr ""
-
-msgid "View Puppet Module details"
 msgstr ""
 
 msgid "Manipulate repositories"
@@ -66,19 +61,37 @@ msgstr ""
 msgid "Manipulate packages"
 msgstr ""
 
+msgid "Manipulate deb packages"
+msgstr ""
+
 msgid "Manipulate package groups"
 msgstr ""
 
 msgid "Manipulate errata"
 msgstr ""
 
-msgid "Manipulate ostree branches"
-msgstr ""
-
 msgid "Manipulate files"
 msgstr ""
 
+msgid "Manipulate content units"
+msgstr ""
+
+msgid "Prepare content for export to a disconnected Katello"
+msgstr ""
+
+msgid "Import content from an upstream archive."
+msgstr ""
+
 msgid "View Module Streams"
+msgstr ""
+
+msgid "Manipulate source RPMs"
+msgstr ""
+
+msgid "Simple content access commands"
+msgstr ""
+
+msgid "Manipulate docker content"
 msgstr ""
 
 msgid "ID"
@@ -86,6 +99,84 @@ msgstr "ID"
 
 msgid "Name"
 msgstr "Όνομα"
+
+msgid "Type"
+msgstr "Τύπος"
+
+msgid "Alternate Content Source created."
+msgstr ""
+
+msgid "Could not create the Alternate Content Source."
+msgstr ""
+
+msgid "Label"
+msgstr "Ετικέτα"
+
+msgid "Description"
+msgstr "Περιγραφή"
+
+msgid "Base URL"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Alternate content source type"
+msgstr ""
+
+msgid "Upstream username"
+msgstr ""
+
+msgid "Verify SSL"
+msgstr ""
+
+msgid "SSL CA Cert"
+msgstr ""
+
+msgid "Id"
+msgstr "Id"
+
+msgid "SSL Client Cert"
+msgstr ""
+
+msgid "SSL Client Key"
+msgstr ""
+
+msgid "Subpaths"
+msgstr ""
+
+msgid "Products"
+msgstr "Προϊόντα"
+
+msgid "Organization ID"
+msgstr "ID οργανισμού"
+
+msgid "Smart proxies"
+msgstr ""
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Download policy"
+msgstr ""
+
+msgid "Alternate Content Source updated."
+msgstr ""
+
+msgid "Could not update the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate Content Source deleted."
+msgstr ""
+
+msgid "Could not delete the Alternate Content Source."
+msgstr ""
+
+msgid "Alternate content source is being refreshed in task %{id}."
+msgstr ""
+
+msgid "Could not refresh the alternate content source"
+msgstr ""
 
 msgid "Host Limit"
 msgstr ""
@@ -102,19 +193,40 @@ msgstr "Απεριόριστο"
 msgid "%{consumed} of %{limit}"
 msgstr ""
 
-msgid "Description"
-msgstr "Περιγραφή"
-
 msgid "Auto Attach"
 msgstr "Αυτόματη επισύναψη"
-
-msgid "Service Level"
-msgstr "Επίπεδο υπηρεσίας"
 
 msgid "Release Version"
 msgstr "Έκδοση κυκλοφορίας"
 
+msgid "Associated Hosts"
+msgstr ""
+
 msgid "Host Collections"
+msgstr ""
+
+msgid "Content Overrides"
+msgstr ""
+
+msgid "Content Label"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "System Purpose"
+msgstr ""
+
+msgid "Service Level"
+msgstr "Επίπεδο υπηρεσίας"
+
+msgid "Purpose Usage"
+msgstr ""
+
+msgid "Purpose Role"
+msgstr ""
+
+msgid "Purpose Addons"
 msgstr ""
 
 msgid "Activation key created."
@@ -168,18 +280,10 @@ msgstr "Σύμβαση"
 msgid "Account"
 msgstr "Λογαριασμός"
 
-msgid ""
-"#{data['consumed']} out of #{data['quantity'] == -1 ? 'Unlimited' : "
-"data['quantity']}"
-msgstr ""
-
 msgid "ID of the activation key"
 msgstr ""
 
 msgid "Activation key name to search by"
-msgstr ""
-
-msgid "ID of subscription"
 msgstr ""
 
 msgid "Subscription added to activation key."
@@ -189,6 +293,9 @@ msgid "Could not add subscription to activation key"
 msgstr ""
 
 msgid "Remove subscription"
+msgstr ""
+
+msgid "ID of subscription"
 msgstr ""
 
 msgid "Subscription removed from activation key."
@@ -254,9 +361,6 @@ msgstr ""
 msgid "Could not add the lifecycle environment to the capsule"
 msgstr ""
 
-msgid "Organization ID"
-msgstr "ID οργανισμού"
-
 msgid "Organization name"
 msgstr "Όνομα οργανισμού"
 
@@ -317,9 +421,6 @@ msgstr "Περιεχόμενο"
 msgid "Hosts"
 msgstr ""
 
-msgid "Products"
-msgstr "Προϊόντα"
-
 msgid "Yum repos"
 msgstr ""
 
@@ -335,10 +436,228 @@ msgstr "Ομάδες πακέτου"
 msgid "Errata"
 msgstr ""
 
-msgid "Puppet modules"
-msgstr "Αρθρώματα Puppet"
+msgid "Content Source name"
+msgstr ""
+
+msgid "Content Source"
+msgstr "Πηγή περιεχομένου"
+
+msgid "Kickstart repository name"
+msgstr ""
+
+msgid "Please provide --lifecycle-environment-id"
+msgstr ""
+
+msgid "Please provide --content-view-id"
+msgstr ""
+
+msgid ""
+"No such repository with name %{name}, in lifecycle environment %{environment_i"
+"d} and content view %{content_view_id}"
+msgstr ""
+
+msgid "Use %s instead"
+msgstr ""
+
+msgid "Lifecycle environment name to search by"
+msgstr ""
+
+msgid "Duration: %sms"
+msgstr "Διάρκεια: %sms"
+
+msgid "Message: %s"
+msgstr "Μήνυμα: %s"
 
 msgid "Name of the composite content view"
+msgstr ""
+
+msgid "Content Type"
+msgstr "Τύπος περιεχομένου"
+
+msgid "Product"
+msgstr "Προϊόν"
+
+msgid "Content Credential created."
+msgstr ""
+
+msgid "Could not create Content Credential"
+msgstr ""
+
+msgid "Key file"
+msgstr ""
+
+msgid "Content Credential updated."
+msgstr ""
+
+msgid "Could not update Content Credential"
+msgstr ""
+
+msgid "Content Credential deleted."
+msgstr ""
+
+msgid "Could not delete the Content Credential"
+msgstr ""
+
+msgid ""
+"Writes export metadata to disk for use by the importing Katello. This command "
+"only needs to be used if the export was performed asynchronously or if the met"
+"adata was lost"
+msgstr ""
+
+msgid "Generate metadata based on output of the specified export task"
+msgstr ""
+
+msgid "Generate metadata based on specified export history"
+msgstr ""
+
+msgid "No export history was found. Verify the value given for --task-id or --id"
+msgstr ""
+
+msgid ""
+"Generates listing file on each directory of a syncable export. This command on"
+"ly needs to be used if the export was performed asynchronously or if the listi"
+"ng files were lost. Assumes the syncable export directory is accessible on dis"
+"k"
+msgstr ""
+
+msgid "Generate listing files for a syncable export task"
+msgstr ""
+
+msgid "Generate listing files based on specified export history"
+msgstr ""
+
+msgid "Destination Server"
+msgstr ""
+
+msgid "Path"
+msgstr "Διαδρομή"
+
+msgid "Content View Version"
+msgstr ""
+
+msgid "Content View Version ID"
+msgstr ""
+
+msgid "Created at"
+msgstr "Δημιουργήθηκε στις"
+
+msgid "Updated at"
+msgstr "Ενημερώθηκε στις"
+
+msgid "Performs a full export a content view version"
+msgstr ""
+
+msgid "Performs a full export of the organization's library environment"
+msgstr ""
+
+msgid "Performs a full export of a repository"
+msgstr ""
+
+msgid "Could not fetch the export history"
+msgstr ""
+
+msgid "Once the task completes the listing files may be generated with the command:"
+msgstr ""
+
+msgid ""
+"Once the task completes the export metadata must be generated with the command"
+":"
+msgstr ""
+
+msgid "Can not fetch export history from an unfinished task"
+msgstr ""
+
+msgid ""
+"Cannot generate listing files for this export since it is not syncable. It was"
+" not generated with --format=syncable."
+msgstr ""
+
+msgid ""
+"Export History does not have the path specified. The task may have errored out"
+"."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this version because it contains repositories wit"
+"hout the 'immediate' download policy. Update the download policy and sync affe"
+"cted repositories. Once synced republish the content view and export the gener"
+"ated version."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this repository because it does not have the 'imm"
+"ediate' download policy. Update the download policy, sync the repository and e"
+"xport."
+msgstr ""
+
+msgid ""
+"NOTE: Unable to fully export this organization's library because it contains r"
+"epositories without the 'immediate' download policy. Update the download polic"
+"y and sync affected repositories to include them in the export."
+msgstr ""
+
+msgid "Use the following command to update the download policy of these repositories."
+msgstr ""
+
+msgid "Repository is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the repository"
+msgstr "Αδυναμία εξαγωγής αποθετηρίου"
+
+msgid "Filter repositories by name."
+msgstr ""
+
+msgid "Library environment is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the library"
+msgstr ""
+
+msgid ""
+"Fails if any of the repositories belonging to this organization are unexportab"
+"le."
+msgstr ""
+
+msgid "Content view version is being exported in task %{id}."
+msgstr ""
+
+msgid "Could not export the content view version"
+msgstr ""
+
+msgid "Fails if any of the repositories belonging to this version are unexportable."
+msgstr ""
+
+msgid "Filter versions by version number."
+msgstr ""
+
+msgid "Performs an incremental export of a content view version"
+msgstr ""
+
+msgid "Performs an incremental export of the organization's library environment"
+msgstr ""
+
+msgid "Performs an incremental export of a repository"
+msgstr ""
+
+msgid ""
+"Location of the metadata.json file. This is not required if the metadata.json "
+"file is already in the archive directory."
+msgstr ""
+
+msgid "Archive is being imported in task %{id}."
+msgstr ""
+
+msgid "Could not import the archive."
+msgstr ""
+
+msgid "Imports a content archive to a content view version"
+msgstr ""
+
+msgid "Imports a content archive to an organization's library lifecycle environment"
+msgstr ""
+
+msgid "Imports a repository"
 msgstr ""
 
 msgid "Override product content defaults"
@@ -365,16 +684,22 @@ msgstr ""
 msgid "Remove a content override"
 msgstr ""
 
+msgid "Version"
+msgstr "Έκδοση"
+
+msgid "Filename"
+msgstr "Όνομα αρχείου"
+
 msgid "Content View ID"
 msgstr ""
-
-msgid "Label"
-msgstr "Ετικέτα"
 
 msgid "Repository IDs"
 msgstr ""
 
 msgid "Content Host Count"
+msgstr ""
+
+msgid "Solve Dependencies"
 msgstr ""
 
 msgid "Yum Repositories"
@@ -386,20 +711,8 @@ msgstr ""
 msgid "OSTree Repositories"
 msgstr ""
 
-msgid "Puppet Modules"
-msgstr "Αρθρώματα Puppet"
-
-msgid "UUID"
-msgstr "UUID"
-
-msgid "Author"
-msgstr "Δημιουργός"
-
 msgid "Versions"
 msgstr "Εκδόσεις"
-
-msgid "Version"
-msgstr "Έκδοση"
 
 msgid "Published"
 msgstr ""
@@ -417,6 +730,9 @@ msgid "Could not create the content view"
 msgstr ""
 
 msgid "Create a composite content view"
+msgstr ""
+
+msgid "Designate this Content View for importing from upstream servers only."
 msgstr ""
 
 msgid "Copy a content view"
@@ -452,16 +768,13 @@ msgstr ""
 msgid "Could not publish the content view"
 msgstr ""
 
+msgid "Names for Lifecycle Environment"
+msgstr ""
+
 msgid "Content view is being removed from environment with task %{id}."
 msgstr ""
 
 msgid "Could not remove the content view from environment"
-msgstr ""
-
-msgid "Version ids to remove"
-msgstr ""
-
-msgid "Environment ids to remove"
 msgstr ""
 
 msgid "Content view objects are being removed task %{id}."
@@ -471,6 +784,9 @@ msgid "Could not remove objects from content view"
 msgstr ""
 
 msgid "Add a content view version to a composite view"
+msgstr ""
+
+msgid "Content view id to search by"
 msgstr ""
 
 msgid "The component version has been added."
@@ -488,8 +804,7 @@ msgstr ""
 msgid "Could not remove version"
 msgstr ""
 
-msgid ""
-"Content View identifier of the component who's latest version is desired"
+msgid "Content View identifier of the component who's latest version is desired"
 msgstr ""
 
 msgid "Content View name of the component who's latest version is desired"
@@ -499,8 +814,8 @@ msgid "Content View Version identifier of the component"
 msgstr ""
 
 msgid ""
-"Content View Version number of the component. Either use this or --component-"
-"content-view-version-id option"
+"Content View Version number of the component. Either use this or --component-c"
+"ontent-view-version-id option"
 msgstr ""
 
 msgid "Select the latest version of the components content view is desired"
@@ -510,12 +825,15 @@ msgid "Please provide --component-content-view-id"
 msgstr ""
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-"
-"view-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-view"
+"-version or --latest for the latest version"
 msgstr ""
 
-msgid "Id"
-msgstr "Id"
+msgid "Content View Id"
+msgstr ""
+
+msgid "Component Id"
+msgstr ""
 
 msgid "Current Version"
 msgstr "Τρέχουσα έκδοση"
@@ -542,34 +860,19 @@ msgid "Could not update the content view component"
 msgstr ""
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of "
-"values"
+"Array of component content view names to remove. Comma separated list of value"
+"s"
 msgstr ""
 
 msgid ""
-"Array of component content view identfiers to remove. Comma separated list "
-"of values"
+"Array of component content view identfiers to remove. Comma separated list of "
+"values"
 msgstr ""
 
 msgid "Components removed from content view."
 msgstr ""
 
 msgid "Could not remove the components"
-msgstr ""
-
-msgid "Latest(Currently %s)"
-msgstr ""
-
-msgid "Puppet module added to content view."
-msgstr ""
-
-msgid "Could not add the puppet module"
-msgstr ""
-
-msgid "Puppet module removed from content view."
-msgstr ""
-
-msgid "Couldn't remove puppet module from the content view"
 msgstr ""
 
 msgid "Content View numeric identifier"
@@ -588,8 +891,8 @@ msgid "No versions to delete."
 msgstr ""
 
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in "
-"task '%{task_id}'."
+"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
+"'%{task_id}'."
 msgstr ""
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
@@ -604,6 +907,15 @@ msgstr ""
 msgid "Repositories"
 msgstr "Αποθετήρια"
 
+msgid "Has Applied Filters"
+msgstr ""
+
+msgid "Applied Filters"
+msgstr ""
+
+msgid "Dependency Solving"
+msgstr ""
+
 msgid "Content View Version is being republished with task %{id}."
 msgstr ""
 
@@ -616,8 +928,7 @@ msgstr ""
 msgid "Could not promote the content view"
 msgstr ""
 
-msgid ""
-"force content view promotion and bypass lifecycle environment restriction"
+msgid "force content view promotion and bypass lifecycle environment restriction"
 msgstr ""
 
 msgid "Name of the target environment"
@@ -627,11 +938,17 @@ msgid "Id of the target environment"
 msgstr ""
 
 msgid ""
-"Environment name from where to promote its version from (if version is "
-"unknown)"
+"Environment name from where to promote its version from (if version is unknown"
+")"
 msgstr ""
 
 msgid "Id of the environment from where to promote its version "
+msgstr ""
+
+msgid "Content view version updated."
+msgstr ""
+
+msgid "Could not update the content view version"
 msgstr ""
 
 msgid "Incremental update is being performed with task %{id}."
@@ -643,8 +960,7 @@ msgstr ""
 msgid "list of lifecycle environment IDs to update the content view version in"
 msgstr ""
 
-msgid ""
-"list of lifecycle environment names to update the content view version in"
+msgid "list of lifecycle environment names to update the content view version in"
 msgstr ""
 
 msgid "Organization name for resolving lifecycle environment names"
@@ -654,79 +970,82 @@ msgid "Organization id for resolving lifecycle environment names"
 msgstr ""
 
 msgid ""
-"Update all editable and applicable hosts within the specified Content View "
-"and \\\n"
+"Update all editable and applicable hosts within the specified Content View and"
+" \\\n"
 "               Lifecycle Environments"
 msgstr ""
 
 msgid "IDs of hosts to update"
 msgstr ""
 
-msgid "Export a content view (deprecated)"
+msgid "Pulp ID"
 msgstr ""
 
-msgid "Content view is being exported in task %{id}."
+msgid "Uuid"
+msgstr "Uuid"
+
+msgid "checksum"
 msgstr ""
 
-msgid "Could not export the content view"
+msgid "Architecture"
+msgstr "Αρχιτεκτονική"
+
+msgid "Nav"
 msgstr ""
 
-msgid "Export a content view version"
+msgid "Nva"
 msgstr ""
 
-msgid "Content view export is available in %{directory}."
+msgid "Available Host Count"
 msgstr ""
 
-msgid "Content View Version numeric identifier"
+msgid "Applicable Host Count"
 msgstr ""
 
-msgid "Directory to put content view version export into."
+msgid "Manage docker manifests"
 msgstr ""
 
-msgid ""
-"The Repository '#{repo['name']}' is a non-yum repository. Only Yum is "
-"supported at this time. Please remove the repository from the Content View, "
-"republish and try the export again."
+msgid "Schema Version"
 msgstr ""
 
-msgid "Import a content view version"
+msgid "Digest"
 msgstr ""
 
-msgid "Content view imported."
+msgid "Downloaded"
 msgstr ""
 
-msgid "Could not import the content view"
+msgid "Tags"
 msgstr ""
 
-msgid "Organization numeric identifier"
+msgid "Manage docker tags"
 msgstr ""
 
-msgid "Location of export tar on disk"
+msgid "Tag"
 msgstr ""
 
-msgid "Export tar #{options['option_export_tar']} does not exist."
+msgid "Repository ID"
+msgstr "ID αποθετηρίου"
+
+msgid "Docker Manifest ID"
 msgstr ""
 
-msgid "Unable to sync repositories, no library repository found for %s"
+msgid "Docker Manifest Name"
 msgstr ""
 
 msgid "Errata ID"
 msgstr ""
 
-msgid "Type"
-msgstr "Τύπος"
-
 msgid "Title"
 msgstr "Τίτλος"
 
-msgid "Reboot Suggested"
-msgstr ""
+msgid "Issued"
+msgstr "Εκδόθηκε"
 
 msgid "Updated"
 msgstr "Ενημερωμένο"
 
-msgid "Issued"
-msgstr "Εκδόθηκε"
+msgid "Reboot Suggested"
+msgstr ""
 
 msgid "Release"
 msgstr "Έκδοση"
@@ -739,9 +1058,6 @@ msgstr ""
 
 msgid "Stream"
 msgstr ""
-
-msgid "Path"
-msgstr "Διαδρομή"
 
 msgid "Checksum"
 msgstr "Checksum"
@@ -788,9 +1104,6 @@ msgstr ""
 msgid "Rule ID"
 msgstr ""
 
-msgid "Architecture"
-msgstr "Αρχιτεκτονική"
-
 msgid "Date Type"
 msgstr "Τύπος ημερομηνίας"
 
@@ -815,33 +1128,6 @@ msgstr ""
 msgid "Could not delete the filter rule"
 msgstr ""
 
-msgid "Content Type"
-msgstr "Τύπος περιεχομένου"
-
-msgid "Product"
-msgstr "Προϊόν"
-
-msgid "GPG Key created."
-msgstr ""
-
-msgid "Could not create GPG Key"
-msgstr ""
-
-msgid "GPG Key file"
-msgstr "Αρχείο κλειδιού GPG"
-
-msgid "GPG Key updated."
-msgstr "Ενημερώθηκε το κλειδί GPG."
-
-msgid "Could not update GPG Key"
-msgstr ""
-
-msgid "GPG Key deleted."
-msgstr "Διαγράφηκε το κλειδί GPG."
-
-msgid "Could not delete the GPG Key"
-msgstr ""
-
 msgid "Limit"
 msgstr "Όριο"
 
@@ -858,6 +1144,15 @@ msgid "Host Collection ID"
 msgstr ""
 
 msgid "Host Collection Name"
+msgstr ""
+
+msgid "Security"
+msgstr "Ασφάλεια"
+
+msgid "Bugfix"
+msgstr ""
+
+msgid "Enhancement"
 msgstr ""
 
 msgid "Copy a host collection"
@@ -950,8 +1245,7 @@ msgstr ""
 msgid "comma-separated list of package-groups to install"
 msgstr ""
 
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
+msgid "Install package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled installation of package-group(s)."
@@ -960,8 +1254,7 @@ msgstr ""
 msgid "Could not schedule installation of package-group(s)"
 msgstr ""
 
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
+msgid "Update package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled update of package-groups(s)."
@@ -970,8 +1263,7 @@ msgstr ""
 msgid "Could not schedule update of package-group(s)"
 msgstr ""
 
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
+msgid "Remove package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled removal of package-groups(s)."
@@ -980,11 +1272,8 @@ msgstr ""
 msgid "Could not schedule removal of package-group(s)"
 msgstr ""
 
-msgid "Content Source name "
-msgstr "Όνομα πηγής περιεχομένου"
-
-msgid "Content Source"
-msgstr "Πηγή περιεχομένου"
+msgid "Arch"
+msgstr "Αρχιτεκτονική"
 
 msgid "Errata is being applied with task %{id}."
 msgstr ""
@@ -998,14 +1287,26 @@ msgstr ""
 msgid "Installable"
 msgstr ""
 
-msgid "Errata recalculated with task %{id}."
+msgid "Errata recalculation started."
 msgstr ""
 
 msgid "Could not recalculate errata"
 msgstr ""
 
+msgid "Trace Status"
+msgstr ""
+
 msgid "Content Information"
 msgstr "Πληροφορίες περιεχομένου"
+
+msgid "Content view environments"
+msgstr ""
+
+msgid "Content view"
+msgstr ""
+
+msgid "Lifecycle environment"
+msgstr ""
 
 msgid "Kickstart Repository"
 msgstr ""
@@ -1019,14 +1320,8 @@ msgstr ""
 msgid "Applicable Errata"
 msgstr ""
 
-msgid "Enhancement"
-msgstr ""
-
 msgid "Bug Fix"
 msgstr "Διόρθωση σφάλματος"
-
-msgid "Security"
-msgstr "Ασφάλεια"
 
 msgid "Subscription Information"
 msgstr ""
@@ -1046,22 +1341,8 @@ msgstr ""
 msgid "Registered by Activation Keys"
 msgstr ""
 
-msgid "Kickstart repository name "
+msgid "Nvra"
 msgstr ""
-
-msgid "Please provide --lifecycle-environment-id"
-msgstr ""
-
-msgid "Please provide --content-view-id"
-msgstr ""
-
-msgid ""
-"No such repository with name %{name}, in lifecycle environment "
-"%{environment_id} and content view %{content_view_id}"
-msgstr ""
-
-msgid "NVRA"
-msgstr "NVRA"
 
 msgid "Host unregistered."
 msgstr ""
@@ -1096,8 +1377,34 @@ msgstr ""
 msgid "Failed to remove subscriptions from the host"
 msgstr ""
 
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
+msgid "Remove the first instance of a subscription with matching id and quantity"
+msgstr ""
+
+msgid "Content View id"
+msgstr ""
+
+msgid "Content View version"
+msgstr ""
+
+msgid "Environment name"
+msgstr ""
+
+msgid "Product name"
+msgstr ""
+
+msgid "Trace ID"
+msgstr ""
+
+msgid "Application"
+msgstr ""
+
+msgid "Helper"
+msgstr ""
+
+msgid "Traces are being resolved with task %{id}."
+msgstr ""
+
+msgid "Could not resolve traces"
 msgstr ""
 
 msgid "Organization ID to search by"
@@ -1115,12 +1422,6 @@ msgstr ""
 msgid "File name to search by"
 msgstr ""
 
-msgid "Content View Version ID"
-msgstr ""
-
-msgid "Repository ID"
-msgstr "ID αποθετηρίου"
-
 msgid "Module stream name to search by"
 msgstr ""
 
@@ -1130,7 +1431,7 @@ msgstr ""
 msgid "Host collection name to search by"
 msgstr ""
 
-msgid "Lifecycle environment name to search by"
+msgid "Organization title"
 msgstr ""
 
 msgid "Product name to search by"
@@ -1152,15 +1453,6 @@ msgid "Sync plan name to search by"
 msgstr ""
 
 msgid "Task name to search by"
-msgstr ""
-
-msgid "Puppet module name to search by"
-msgstr ""
-
-msgid "Puppet module's author to search by"
-msgstr ""
-
-msgid "Puppet module's UUID to search by"
 msgstr ""
 
 msgid "Content view version number"
@@ -1223,10 +1515,43 @@ msgstr "Προφίλ"
 msgid "RPMs"
 msgstr "RPMs"
 
-msgid "Red Hat Repository URL"
+msgid "Simple Content Access"
 msgstr ""
 
 msgid "Service Levels"
+msgstr ""
+
+msgid "Upstream Organization"
+msgstr ""
+
+msgid "Upstream Lifecycle Environment"
+msgstr ""
+
+msgid "Upstream Content View"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "SSL CA Credential ID"
+msgstr ""
+
+msgid "Enabled"
+msgstr "Ενεργοποιημένο"
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Export Sync"
+msgstr ""
+
+msgid "Network Sync"
+msgstr ""
+
+msgid "Red Hat CDN"
+msgstr ""
+
+msgid "Custom CDN"
 msgstr ""
 
 msgid "Organization updated."
@@ -1247,20 +1572,11 @@ msgstr ""
 msgid "Could not delete the organization"
 msgstr ""
 
-msgid "version"
-msgstr "έκδοση"
+msgid "Updated CDN configuration."
+msgstr ""
 
-msgid "Commit"
-msgstr "Υποβολή"
-
-msgid "Date"
-msgstr "Ημερομηνία"
-
-msgid "%s  %s"
-msgstr "%s  %s"
-
-msgid "Filename"
-msgstr "Όνομα αρχείου"
+msgid "Could not update CDN configuration."
+msgstr ""
 
 msgid "Source RPM"
 msgstr "Πηγή RPM"
@@ -1268,7 +1584,19 @@ msgstr "Πηγή RPM"
 msgid "Epoch"
 msgstr ""
 
+msgid "Author"
+msgstr "Δημιουργός"
+
+msgid "Source rpm"
+msgstr ""
+
+msgid "Nvrea"
+msgstr ""
+
 msgid "Build Host"
+msgstr ""
+
+msgid "Children"
 msgstr ""
 
 msgid "Vendor"
@@ -1278,6 +1606,33 @@ msgid "License"
 msgstr "Άδεια χρήσης"
 
 msgid "Relative Path"
+msgstr ""
+
+msgid "Summary"
+msgstr "Περίληψη"
+
+msgid "Url"
+msgstr ""
+
+msgid "Build Time"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Requires"
+msgstr ""
+
+msgid "Provides"
+msgstr ""
+
+msgid "Files"
+msgstr "Αρχεία"
+
+msgid "Size"
+msgstr ""
+
+msgid "Modular"
 msgstr ""
 
 msgid "Package Group Name"
@@ -1298,17 +1653,14 @@ msgstr ""
 msgid "Optional Packages"
 msgstr "Προαιρετικά πακέτα"
 
+msgid "message"
+msgstr ""
+
 msgid "Server Response"
 msgstr ""
 
 msgid "FAIL"
 msgstr "ΑΠΟΤΥΧΙΑ"
-
-msgid "Duration: %sms"
-msgstr "Διάρκεια: %sms"
-
-msgid "Message: %s"
-msgstr "Μήνυμα: %s"
 
 msgid "Sync State"
 msgstr "Κατάσταση συγχρονισμού"
@@ -1317,6 +1669,12 @@ msgid "Product created."
 msgstr ""
 
 msgid "Could not create the product"
+msgstr ""
+
+msgid "Sync State (all)"
+msgstr ""
+
+msgid "Sync State (last)"
 msgstr ""
 
 msgid "Sync Plan ID"
@@ -1340,14 +1698,20 @@ msgstr ""
 msgid "Repo Name"
 msgstr "Όνομα αποθετηρίου"
 
-msgid "URL"
-msgstr "URL"
-
 msgid "Product updated."
 msgstr "Το προϊόν ενημερώθηκε."
 
 msgid "Could not update the product"
 msgstr "Αδυναμία ενημέρωσης προϊόντος"
+
+msgid "Updates an HTTP Proxy for a product"
+msgstr ""
+
+msgid "Product proxy updated."
+msgstr ""
+
+msgid "Could not update the product HTTP Proxy."
+msgstr ""
 
 msgid "Product destroyed."
 msgstr "Το προϊόν καταστράφηκε."
@@ -1388,26 +1752,13 @@ msgstr ""
 msgid "Override"
 msgstr ""
 
-msgid "Uuid"
-msgstr "Uuid"
-
-msgid "Summary"
-msgstr "Περίληψη"
-
-msgid "Project Page"
-msgstr "Σελίδα έργου"
-
-msgid "Source"
-msgstr "Πηγή"
-
-msgid "Dependencies"
-msgstr "Εξαρτήσεις"
-
-msgid "File checksums"
+msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
-msgid "Tag List"
-msgstr "Λίστα ετικετών"
+msgid ""
+"Limit the repository type to return. View available types with \"hammer reposit"
+"ory types\""
+msgstr ""
 
 msgid "Red Hat Repository"
 msgstr ""
@@ -1415,7 +1766,7 @@ msgstr ""
 msgid "Checksum Type"
 msgstr ""
 
-msgid "Mirror on Sync"
+msgid "Mirroring Policy"
 msgstr ""
 
 msgid "Publish Via HTTP"
@@ -1427,10 +1778,7 @@ msgstr ""
 msgid "Download Policy"
 msgstr "Πολιτική λήψης"
 
-msgid "OSTree Upstream Sync Policy"
-msgstr ""
-
-msgid "OSTree Upstream Sync Depth"
+msgid "Metadata Expiration"
 msgstr ""
 
 msgid "Upstream Repository Name"
@@ -1443,6 +1791,12 @@ msgid "Container Repository Name"
 msgstr ""
 
 msgid "Ignorable Content Units"
+msgstr ""
+
+msgid "HTTP Proxy"
+msgstr ""
+
+msgid "HTTP Proxy Policy"
 msgstr ""
 
 msgid "Sync"
@@ -1469,17 +1823,20 @@ msgstr ""
 msgid "Container Image Tags"
 msgstr ""
 
-msgid "OSTree Branches"
-msgstr ""
-
-msgid "Files"
-msgstr "Αρχεία"
-
 msgid "yes"
 msgstr "ναι"
 
 msgid "no"
 msgstr "όχι"
+
+msgid "Additive"
+msgstr ""
+
+msgid "Content Only"
+msgstr ""
+
+msgid "Complete Mirroring"
+msgstr ""
 
 msgid "Not Synced"
 msgstr "Μη συγχρονισμένο"
@@ -1505,6 +1862,9 @@ msgstr "Αναμονή"
 msgid "Canceled"
 msgstr "Ακυρώθηκε"
 
+msgid "Warning"
+msgstr ""
+
 msgid "Repository is being synchronized in task %{id}."
 msgstr ""
 
@@ -1515,6 +1875,11 @@ msgid "Repository created."
 msgstr "Το αποθετήριο δημιουργήθηκε."
 
 msgid "Could not create the repository"
+msgstr ""
+
+msgid ""
+"Type of repository to create. View available types with \"hammer repository typ"
+"es\""
 msgstr ""
 
 msgid "Repository updated."
@@ -1529,8 +1894,7 @@ msgstr ""
 msgid "--docker-tag required with --docker-digest"
 msgstr ""
 
-msgid ""
-"Optional custom Container Image tag to specify the value of the Docker digest"
+msgid "Container Image tag"
 msgstr ""
 
 msgid "Container Image manifest digest"
@@ -1548,6 +1912,26 @@ msgstr "Το αποθετήριο διαγράφηκε."
 msgid "Could not delete the Repository"
 msgstr "Αδυναμία διαγραφής αποθετηρίου"
 
+msgid "Content types"
+msgstr ""
+
+msgid "Generic?"
+msgstr ""
+
+msgid "Removable?"
+msgstr ""
+
+msgid "Uploadable?"
+msgstr ""
+
+msgid "Indexed?"
+msgstr ""
+
+msgid ""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types w"
+"ith \"hammer repository types\""
+msgstr ""
+
 msgid "Could not find any files matching PATH"
 msgstr ""
 
@@ -1560,21 +1944,25 @@ msgstr ""
 msgid "Could not upload the content"
 msgstr "Αδυναμία μεταφόρτωσης περιεχομένου"
 
+msgid "Do not wait for the task."
+msgstr ""
+
+msgid "Name of OSTree repository in archive."
+msgstr ""
+
 msgid ""
-"Upload file, directory of files, or glob of files as content for a "
-"repository.\n"
+"Upload file, directory of files, or glob of files as content for a repository."
+"\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
 
-msgid ""
-"Failed to upload file '%s' to repository. Please check the file and try "
-"again."
-msgstr ""
-
-msgid "Successfully uploaded file '%{name}'"
+msgid "Successfully uploaded file %s"
 msgstr ""
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
+msgstr ""
+
+msgid "Could not upload the content."
 msgstr ""
 
 msgid "Remove content from a repository"
@@ -1586,26 +1974,34 @@ msgstr ""
 msgid "Could not remove content"
 msgstr "Αδυναμία αφαίρεσης περιεχομένου"
 
-msgid "Export content from a repository to the configured directory"
+msgid ""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View removab"
+"le types with \"hammer repository types\""
 msgstr ""
 
-msgid "Repository is being exported in task %{id}."
+msgid "Forces a republish of the specified repository."
 msgstr ""
 
-msgid "Could not export the repository"
-msgstr "Αδυναμία εξαγωγής αποθετηρίου"
+msgid "Repository republished."
+msgstr ""
+
+msgid "Could not republish the repository."
+msgstr ""
+
+msgid "Reclaim space from an On Demand repository"
+msgstr ""
+
+msgid "Repository space reclaimed."
+msgstr ""
+
+msgid "Could not reclaim the repository"
+msgstr ""
 
 msgid "Enabled Repositories"
 msgstr "Ενεργοποίηση αποθετηρίων"
 
-msgid "Arch"
-msgstr "Αρχιτεκτονική"
-
 msgid "Registry Name"
 msgstr "Όνομα μητρώου"
-
-msgid "Enabled"
-msgstr "Ενεργοποιημένο"
 
 msgid "Repository enabled."
 msgstr "Το αποθετήριο ενεργοποιήθηκε."
@@ -1618,6 +2014,24 @@ msgstr "Το αποθετήριο απενεργοποιήθηκε."
 
 msgid "Could not disable repository"
 msgstr "Αδυναμία απενεργοποίησης αποθετηρίου"
+
+msgid "This organization is not eligible for Simple Content Access"
+msgstr ""
+
+msgid "Simple Content Access Enabled."
+msgstr ""
+
+msgid "Could not enable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Simple Content Access Disabled."
+msgstr ""
+
+msgid "Could not disable Simple Content Access for this organization"
+msgstr ""
+
+msgid "Time UTC"
+msgstr ""
 
 msgid "Consumed"
 msgstr ""
@@ -1670,11 +2084,8 @@ msgstr ""
 msgid "Recurring Logic ID"
 msgstr ""
 
-msgid "Created at"
-msgstr "Δημιουργήθηκε στις"
-
-msgid "Updated at"
-msgstr "Ενημερώθηκε στις"
+msgid "Next Sync"
+msgstr ""
 
 msgid "how often synchronization should run"
 msgstr ""
@@ -1683,8 +2094,8 @@ msgid "set this when interval is custom cron"
 msgstr ""
 
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank "
-"current system time will be considered"
+"Start date and time for the sync plan.Time is optional, if kept blank current "
+"system time will be considered"
 msgstr ""
 
 msgid "Sync plan created."
@@ -1707,624 +2118,3 @@ msgstr "Το πλάνο συγχρονισμού καταστράφηκε."
 
 msgid "Could not destroy the sync plan"
 msgstr "Αδυναμία καταστροφής πλάνου συγχρονισμού"
-
-msgid "Manipulate alternate content sources"
-msgstr ""
-
-msgid "Manipulate content credentials on the server"
-msgstr ""
-
-msgid "Manipulate deb packages"
-msgstr ""
-
-msgid "Manipulate content units"
-msgstr ""
-
-msgid "Prepare content for export to a disconnected Katello"
-msgstr ""
-
-msgid "Import content from an upstream archive."
-msgstr ""
-
-msgid "Manipulate source RPMs"
-msgstr ""
-
-msgid "Simple content access commands"
-msgstr ""
-
-msgid "Manipulate docker content"
-msgstr ""
-
-msgid "Alternate Content Source created."
-msgstr ""
-
-msgid "Could not create the Alternate Content Source."
-msgstr ""
-
-msgid "Base URL"
-msgstr ""
-
-msgid "Content type"
-msgstr ""
-
-msgid "Alternate content source type"
-msgstr ""
-
-msgid "Upstream username"
-msgstr ""
-
-msgid "Verify SSL"
-msgstr ""
-
-msgid "SSL CA Cert"
-msgstr ""
-
-msgid "SSL Client Cert"
-msgstr ""
-
-msgid "SSL Client Key"
-msgstr ""
-
-msgid "Subpaths"
-msgstr ""
-
-msgid "Smart proxies"
-msgstr ""
-
-msgid "Download policy"
-msgstr ""
-
-msgid "Alternate Content Source updated."
-msgstr ""
-
-msgid "Could not update the Alternate Content Source."
-msgstr ""
-
-msgid "Alternate Content Source deleted."
-msgstr ""
-
-msgid "Could not delete the Alternate Content Source."
-msgstr ""
-
-msgid "Alternate content source is being refreshed in task %{id}."
-msgstr ""
-
-msgid "Could not refresh the alternate content source"
-msgstr ""
-
-msgid "Associated Hosts"
-msgstr ""
-
-msgid "Content Overrides"
-msgstr ""
-
-msgid "Content Label"
-msgstr ""
-
-msgid "Value"
-msgstr ""
-
-msgid "System Purpose"
-msgstr ""
-
-msgid "Purpose Usage"
-msgstr ""
-
-msgid "Purpose Role"
-msgstr ""
-
-msgid "Purpose Addons"
-msgstr ""
-
-msgid "Content Source name"
-msgstr ""
-
-msgid "Kickstart repository name"
-msgstr ""
-
-msgid "Use %s instead"
-msgstr ""
-
-msgid "Content Credential created."
-msgstr ""
-
-msgid "Could not create Content Credential"
-msgstr ""
-
-msgid "Key file"
-msgstr ""
-
-msgid "Content Credential updated."
-msgstr ""
-
-msgid "Could not update Content Credential"
-msgstr ""
-
-msgid "Content Credential deleted."
-msgstr ""
-
-msgid "Could not delete the Content Credential"
-msgstr ""
-
-msgid ""
-"Writes export metadata to disk for use by the importing Katello. This "
-"command only needs to be used if the export was performed asynchronously or "
-"if the metadata was lost"
-msgstr ""
-
-msgid "Generate metadata based on output of the specified export task"
-msgstr ""
-
-msgid "Generate metadata based on specified export history"
-msgstr ""
-
-msgid ""
-"No export history was found. Verify the value given for --task-id or --id"
-msgstr ""
-
-msgid ""
-"Generates listing file on each directory of a syncable export. This command "
-"only needs to be used if the export was performed asynchronously or if the "
-"listing files were lost. Assumes the syncable export directory is accessible "
-"on disk"
-msgstr ""
-
-msgid "Generate listing files for a syncable export task"
-msgstr ""
-
-msgid "Generate listing files based on specified export history"
-msgstr ""
-
-msgid "Destination Server"
-msgstr ""
-
-msgid "Content View Version"
-msgstr ""
-
-msgid "Performs a full export a content view version"
-msgstr ""
-
-msgid "Performs a full export of the organization's library environment"
-msgstr ""
-
-msgid "Performs a full export of a repository"
-msgstr ""
-
-msgid "Could not fetch the export history"
-msgstr ""
-
-msgid ""
-"Once the task completes the listing files may be generated with the command:"
-msgstr ""
-
-msgid ""
-"Once the task completes the export metadata must be generated with the "
-"command:"
-msgstr ""
-
-msgid "Can not fetch export history from an unfinished task"
-msgstr ""
-
-msgid ""
-"Cannot generate listing files for this export since it is not syncable. It "
-"was not generated with --format=syncable."
-msgstr ""
-
-msgid ""
-"Export History does not have the path specified. The task may have errored "
-"out."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this version because it contains repositories "
-"without the 'immediate' download policy. Update the download policy and sync "
-"affected repositories. Once synced republish the content view and export the "
-"generated version."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this repository because it does not have the "
-"'immediate' download policy. Update the download policy, sync the repository "
-"and export."
-msgstr ""
-
-msgid ""
-"NOTE: Unable to fully export this organization's library because it contains "
-"repositories without the 'immediate' download policy. Update the download "
-"policy and sync affected repositories to include them in the export."
-msgstr ""
-
-msgid ""
-"Use the following command to update the download policy of these "
-"repositories."
-msgstr ""
-
-msgid "Filter repositories by name."
-msgstr ""
-
-msgid "Library environment is being exported in task %{id}."
-msgstr ""
-
-msgid "Could not export the library"
-msgstr ""
-
-msgid ""
-"Fails if any of the repositories belonging to this organization are "
-"unexportable."
-msgstr ""
-
-msgid "Content view version is being exported in task %{id}."
-msgstr ""
-
-msgid "Could not export the content view version"
-msgstr ""
-
-msgid ""
-"Fails if any of the repositories belonging to this version are unexportable."
-msgstr ""
-
-msgid "Filter versions by version number."
-msgstr ""
-
-msgid "Performs an incremental export of a content view version"
-msgstr ""
-
-msgid ""
-"Performs an incremental export of the organization's library environment"
-msgstr ""
-
-msgid "Performs an incremental export of a repository"
-msgstr ""
-
-msgid ""
-"Location of the metadata.json file. This is not required if the metadata."
-"json file is already in the archive directory."
-msgstr ""
-
-msgid "Archive is being imported in task %{id}."
-msgstr ""
-
-msgid "Could not import the archive."
-msgstr ""
-
-msgid "Imports a content archive to a content view version"
-msgstr ""
-
-msgid ""
-"Imports a content archive to an organization's library lifecycle environment"
-msgstr ""
-
-msgid "Imports a repository"
-msgstr ""
-
-msgid "Solve Dependencies"
-msgstr ""
-
-msgid "Designate this Content View for importing from upstream servers only."
-msgstr ""
-
-msgid "Names for Lifecycle Environment"
-msgstr ""
-
-msgid "Content view id to search by"
-msgstr ""
-
-msgid "Content View Id"
-msgstr ""
-
-msgid "Component Id"
-msgstr ""
-
-msgid "Has Applied Filters"
-msgstr ""
-
-msgid "Applied Filters"
-msgstr ""
-
-msgid "Dependency Solving"
-msgstr ""
-
-msgid "Content view version updated."
-msgstr ""
-
-msgid "Could not update the content view version"
-msgstr ""
-
-msgid "Pulp ID"
-msgstr ""
-
-msgid "checksum"
-msgstr ""
-
-msgid "Nav"
-msgstr ""
-
-msgid "Nva"
-msgstr ""
-
-msgid "Available Host Count"
-msgstr ""
-
-msgid "Applicable Host Count"
-msgstr ""
-
-msgid "Manage docker manifests"
-msgstr ""
-
-msgid "Schema Version"
-msgstr ""
-
-msgid "Digest"
-msgstr ""
-
-msgid "Downloaded"
-msgstr ""
-
-msgid "Tags"
-msgstr ""
-
-msgid "Manage docker tags"
-msgstr ""
-
-msgid "Tag"
-msgstr ""
-
-msgid "Docker Manifest ID"
-msgstr ""
-
-msgid "Docker Manifest Name"
-msgstr ""
-
-msgid "Bugfix"
-msgstr ""
-
-msgid "Errata recalculation started."
-msgstr ""
-
-msgid "Trace Status"
-msgstr ""
-
-msgid "Content view environments"
-msgstr ""
-
-msgid "Content view"
-msgstr ""
-
-msgid "Lifecycle environment"
-msgstr ""
-
-msgid "Nvra"
-msgstr ""
-
-msgid "Content View id"
-msgstr ""
-
-msgid "Content View version"
-msgstr ""
-
-msgid "Environment name"
-msgstr ""
-
-msgid "Product name"
-msgstr ""
-
-msgid "Trace ID"
-msgstr ""
-
-msgid "Application"
-msgstr ""
-
-msgid "Helper"
-msgstr ""
-
-msgid "Traces are being resolved with task %{id}."
-msgstr ""
-
-msgid "Could not resolve traces"
-msgstr ""
-
-msgid "Organization title"
-msgstr ""
-
-msgid "Simple Content Access"
-msgstr ""
-
-msgid "Upstream Organization"
-msgstr ""
-
-msgid "Upstream Lifecycle Environment"
-msgstr ""
-
-msgid "Upstream Content View"
-msgstr ""
-
-msgid "Username"
-msgstr ""
-
-msgid "SSL CA Credential ID"
-msgstr ""
-
-msgid "Disabled"
-msgstr ""
-
-msgid "Export Sync"
-msgstr ""
-
-msgid "Network Sync"
-msgstr ""
-
-msgid "Red Hat CDN"
-msgstr ""
-
-msgid "Custom CDN"
-msgstr ""
-
-msgid "Updated CDN configuration."
-msgstr ""
-
-msgid "Could not update CDN configuration."
-msgstr ""
-
-msgid "Source rpm"
-msgstr ""
-
-msgid "Nvrea"
-msgstr ""
-
-msgid "Children"
-msgstr ""
-
-msgid "Url"
-msgstr ""
-
-msgid "Build Time"
-msgstr ""
-
-msgid "Group"
-msgstr ""
-
-msgid "Requires"
-msgstr ""
-
-msgid "Provides"
-msgstr ""
-
-msgid "Size"
-msgstr ""
-
-msgid "Modular"
-msgstr ""
-
-msgid "message"
-msgstr ""
-
-msgid "Sync State (all)"
-msgstr ""
-
-msgid "Sync State (last)"
-msgstr ""
-
-msgid "Updates an HTTP Proxy for a product"
-msgstr ""
-
-msgid "Product proxy updated."
-msgstr ""
-
-msgid "Could not update the product HTTP Proxy."
-msgstr ""
-
-msgid "Location of the ansible collections requirements.yml file. "
-msgstr ""
-
-msgid ""
-"Limit the repository type to return. View available types with \"hammer "
-"repository types\""
-msgstr ""
-
-msgid "Mirroring Policy"
-msgstr ""
-
-msgid "Metadata Expiration"
-msgstr ""
-
-msgid "HTTP Proxy"
-msgstr ""
-
-msgid "HTTP Proxy Policy"
-msgstr ""
-
-msgid "Additive"
-msgstr ""
-
-msgid "Content Only"
-msgstr ""
-
-msgid "Complete Mirroring"
-msgstr ""
-
-msgid "Warning"
-msgstr ""
-
-msgid ""
-"Type of repository to create. View available types with \"hammer repository "
-"types\""
-msgstr ""
-
-msgid "Container Image tag"
-msgstr ""
-
-msgid "Content types"
-msgstr ""
-
-msgid "Generic?"
-msgstr ""
-
-msgid "Removable?"
-msgstr ""
-
-msgid "Uploadable?"
-msgstr ""
-
-msgid "Indexed?"
-msgstr ""
-
-msgid ""
-"The type of content unit to upload (srpm, file, etc.). View uploadable types "
-"with \"hammer repository types\""
-msgstr ""
-
-msgid "Do not wait for the task."
-msgstr ""
-
-msgid "Name of OSTree repository in archive."
-msgstr ""
-
-msgid "Successfully uploaded file %s"
-msgstr ""
-
-msgid "Could not upload the content."
-msgstr ""
-
-msgid ""
-"The type of content unit to remove (srpm, docker_manifest, etc.). View "
-"removable types with \"hammer repository types\""
-msgstr ""
-
-msgid "Forces a republish of the specified repository."
-msgstr ""
-
-msgid "Repository republished."
-msgstr ""
-
-msgid "Could not republish the repository."
-msgstr ""
-
-msgid "Reclaim space from an On Demand repository"
-msgstr ""
-
-msgid "Repository space reclaimed."
-msgstr ""
-
-msgid "Could not reclaim the repository"
-msgstr ""
-
-msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
-
-msgid "Simple Content Access Enabled."
-msgstr ""
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Simple Content Access Disabled."
-msgstr ""
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Time UTC"
-msgstr ""
-
-msgid "Next Sync"
-msgstr ""
