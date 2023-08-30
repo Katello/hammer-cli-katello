@@ -1,49 +1,24 @@
 module HammerCLIKatello
   class HostPackageGroup < HammerCLIKatello::Command
-    desc "Manage package-groups on your hosts"
+    desc "Manage package-groups on your hosts. These commands are no longer available"\
+          "\n Use the remote execution equivalent"
 
     class InstallCommand < HammerCLIKatello::SingleResourceCommand
-      include HammerCLIForemanTasks::Async
-      resource :host_packages, :install
       command_name "install"
-      success_message "Package-groups installed successfully."
-      failure_message "Could not install package-groups"
-
-      validate_options do
-        option(:option_groups).required
+      def self.rex_feature
+        "katello_group_install"
       end
 
-      build_options :without => [:packages]
-
-      def execute
-        warn "This command uses katello agent and will be removed in favor of remote execution " \
-          "in Katello 4.10."
-        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
-          "katello_group_install`."
-        super
-      end
+      include UnsupportedKatelloAgentCommandHelper
     end
 
     class RemoveCommand < HammerCLIKatello::SingleResourceCommand
-      include HammerCLIForemanTasks::Async
-      resource :host_packages, :remove
       command_name "remove"
-      success_message "Package-groups removed successfully."
-      failure_message "Could not remove package-groups"
-
-      validate_options do
-        option(:option_groups).required
+      def self.rex_feature
+        "katello_group_remove"
       end
 
-      build_options :without => [:packages]
-
-      def execute
-        warn "This command uses katello agent and will be removed in favor of remote execution " \
-          "in Katello 4.10."
-        warn "The remote execution equivalent is `hammer job-invocation create --feature " \
-          "katello_group_remove`."
-        super
-      end
+      include UnsupportedKatelloAgentCommandHelper
     end
 
     autoload_subcommands

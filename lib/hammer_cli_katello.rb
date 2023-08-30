@@ -31,7 +31,7 @@ module HammerCLIKatello
   require 'hammer_cli_katello/local_helper'
   require 'hammer_cli_katello/apipie_helper'
   require 'hammer_cli_katello/content_export_helper'
-
+  require 'hammer_cli_katello/unsupported_katello_agent_command_helper'
   # commands
   HammerCLI::MainCommand.lazy_subcommand("activation-key", _("Manipulate activation keys"),
                                          'HammerCLIKatello::ActivationKeyCommand',
