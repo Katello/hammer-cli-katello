@@ -100,6 +100,7 @@ module HammerCLIKatello
         paths.each do |dir|
           directories = Dir.chdir(dir) { Dir['*'] }
           File.write("#{dir}/listing", directories.join("\n"))
+          File.chmod(0o644, "#{dir}/listing")
         end
       rescue SystemCallError
         output.print_message _("Unable to access/write listing files"\
