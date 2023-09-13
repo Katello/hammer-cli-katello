@@ -16,7 +16,7 @@ module HammerCLIKatello
         field :label, _("Label")
         field :composite, _("Composite")
         field :last_published, _("Last Published"), Fields::Date, :hide_blank => true
-        field :repository_ids, _("Repository IDs"), Fields::List
+        field :repository_ids, _("Repository IDs"), Fields::List, :max_width => 300
       end
 
       build_options
