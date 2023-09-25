@@ -6,6 +6,7 @@ module HammerCLIKatello
 
     class ListCommand < HammerCLIKatello::ListCommand
       extend RepositoryScopedToProduct
+      include LifecycleEnvironmentNameMapping
 
       validate_repo_name_requires_product_options(:option_repository_name)
 
@@ -30,6 +31,8 @@ module HammerCLIKatello
       build_options do |o|
         o.expand.including(:products, :organizations, :content_views)
       end
+
+      extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 
     class InfoCommand < HammerCLIKatello::ErratumInfoCommand
