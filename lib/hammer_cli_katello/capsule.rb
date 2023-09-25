@@ -74,6 +74,18 @@ module HammerCLIKatello
         extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
       end
 
+      class ReclaimSpaceCommand < HammerCLIKatello::SingleResourceCommand
+        include HammerCLIForemanTasks::Async
+
+        resource :capsule_content, :reclaim_space
+        command_name "reclaim-space"
+
+        success_message _("Capsule reclaim space has been started in task %{id}.")
+        failure_message _("Capsule reclaim space was unsuccessful.")
+
+        build_options
+      end
+
       class SyncCommand < HammerCLIKatello::SingleResourceCommand
         include HammerCLIForemanTasks::Async
         include LifecycleEnvironmentNameMapping
