@@ -1,4 +1,5 @@
 require_relative '../../test_helper'
+require 'hammer_cli_katello/content_view_version'
 
 module HammerCLIKatello
   describe ContentViewVersion::PromoteCommand do
