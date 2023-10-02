@@ -76,6 +76,9 @@ module HammerCLIKatello
         if params.key?('simple_content_access')
           params["organization"] = params.fetch('organization', {}).merge(
             "_simple_content_access" => params['simple_content_access'])
+          unless params['simple_content_access']
+            warn "Simple Content Access will be required for all organizations in Katello 4.12."
+          end
         end
         params
       end
