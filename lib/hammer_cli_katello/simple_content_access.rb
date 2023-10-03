@@ -45,6 +45,11 @@ module HammerCLIKatello
       failure_message _("Could not disable Simple Content Access for this organization")
 
       build_options
+
+      def execute
+        warn "Simple Content Access will be required for all organizations in Katello 4.12."
+        super
+      end
     end
 
     autoload_subcommands
