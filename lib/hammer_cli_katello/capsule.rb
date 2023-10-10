@@ -105,6 +105,22 @@ module HammerCLIKatello
         extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
       end
 
+      class UpdateCountsCommand < HammerCLIKatello::SingleResourceCommand
+        include HammerCLIForemanTasks::Async
+
+        resource :capsule_content, :update_counts
+        command_name "update-counts"
+
+        success_message _("Capsule content counts are being updated in task %{id}.")
+        failure_message _("Could not update capsule content counts")
+
+        option "--organization-id", "ID", _("Organization ID"),
+               :attribute_name => :option_organization_id
+        option "--organization", "NAME", _("Organization name"),
+               :attribute_name => :option_organization_name
+        build_options
+      end
+
       class SyncStatusCommand < HammerCLIKatello::InfoCommand
         resource :capsule_content, :sync_status
         command_name "synchronization-status"
@@ -170,19 +186,57 @@ module HammerCLIKatello
               field nil, _("Name"), Fields::Reference
               field :composite, _('Composite'), Fields::Boolean
               field :last_published, _('Last Published'), Fields::Date
-              label _('Content') do
-                from :counts do
-                  field :content_hosts, _('Hosts')
-                  field :products, _('Products')
-                  field :yum_repositories, _('Yum repos')
-                  field :docker_repositories, _('Container Image repos')
-                  field :packages, _('Packages')
-                  field :package_groups, _('Package groups')
-                  field :errata, _('Errata')
+              collection :repositories, _('Repositories') do
+                field :id, _("Repository ID")
+                field :name, _("Repository Name")
+                label _('Content Counts') do
+                  from :_content_counts do
+                    field :warning, _('Warning')
+                    field :rpm, _('Packages')
+                    field :srpm, _('SRPMs')
+                    field :module_stream, _('Module Streams')
+                    field :package_group, _('Package Groups')
+                    field :erratum, _('Errata')
+                    field :deb, _('Debian Packages')
+                    field :docker_tag, _('Container Tags')
+                    field :docker_manifest, _('Container Manifests')
+                    field :docker_manifest_list, _('Container Manifest Lists')
+                    field :file, _('Files')
+                    field :ansible_collection, _('Ansible Collections')
+                    field :ostree_ref, _('OSTree Refs')
+                    field :python_package, _('Python Packages')
+                  end
                 end
               end
             end
           end
+        end
+
+        private
+
+        def extend_data(data)
+          data["lifecycle_environments"].each do |lce|
+            lce["content_views"].each do |cv|
+              cv["repositories"].each do |repo|
+                if cv["up_to_date"]
+                  cvv_count_repos = data.dig("content_counts", "content_view_versions",
+                    cv["cvv_id"].to_s, "repositories")
+                  cvv_count_repos.each do |_repo_id, counts_and_metadata|
+                    if counts_and_metadata.
+                       dig("metadata", "library_instance_id") == repo["library_id"] &&
+                       counts_and_metadata.dig("metadata", "env_id") == lce["id"]
+                      repo["_content_counts"] = counts_and_metadata["counts"]
+                    end
+                  end
+                else
+                  repo["_content_counts"] = {}
+                  repo["_content_counts"]["warning"] =
+                    _("Content view must be synced to see content counts")
+                end
+              end
+            end
+          end
+          data
         end
 
         build_options
