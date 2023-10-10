@@ -1,8 +1,8 @@
 {
-    "library":true,
-    "id":4,
-    "name":"Library",
-    "label":"Library",
+    "library":false,
+    "id":5,
+    "name":"Test",
+    "label":"Test",
     "description":null,
     "organization_id":1,
     "organization":{
@@ -23,7 +23,7 @@
             "name":"Zoo View",
             "composite":false,
             "last_published":"2023-10-09 19:18:15 UTC",
-            "default":false,"up_to_date":true,
+            "default":false,"up_to_date":false,
             "counts":{"repositories":1},
             "repositories":[{"id":2,"name":"Zoo","library_id":1}]
         }

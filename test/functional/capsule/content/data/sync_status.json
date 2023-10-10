@@ -2,5 +2,9 @@
     "last_sync_time": "2016-01-10 00:27:51 +0100",
     "active_sync_tasks": [],
     "last_failed_sync_tasks": [],
-    "lifecycle_environments": []
+    "lifecycle_environments": [],
+    "content_counts": {
+        "content_view_versions":{
+            "2":{"repositories":{"42":{"metadata":{"env_id":4,"product_id":1,"content_type":"yum","library_instance_id":1},"counts":{"rpm":32,"erratum":4}}}}}
+    }
 }

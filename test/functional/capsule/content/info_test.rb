@@ -12,7 +12,8 @@ describe 'capsule content info' do
   it "lists content counts" do
     @sync_status = load_json('./data/sync_status.json', __FILE__)
     @sync_status['lifecycle_environments'] = [
-      load_json('./data/library_env.json', __FILE__)
+      load_json('./data/library_env.json', __FILE__),
+      load_json('./data/unsynced_env.json', __FILE__)
     ]
 
     ex = api_expects(:capsule_content, :sync_status, 'Get sync info') do |par|
@@ -25,17 +26,26 @@ describe 'capsule content info' do
       " 1) Name:          Library",
       "    Organization:  Default Organization",
       "    Content Views:",
-      "     1) Name:           CV1",
+      "     1) Name:           Zoo View",
       "        Composite:      no",
-      "        Last Published: 2016/01/08 15:44:10",
-      "        Content:",
-      "            Hosts:                 0",
-      "            Products:              3",
-      "            Yum repos:             1",
-      "            Container Image repos: 0",
-      "            Packages:              32",
-      "            Package groups:        2",
-      "            Errata:                4"
+      "        Last Published: 2023/10/09 19:18:15",
+      "        Repositories:",
+      "         1) Repository ID:   2",
+      "            Repository Name: Zoo",
+      "            Content Counts:",
+      "                Packages: 32",
+      "                Errata:   4",
+      " 2) Name:          Test",
+      "    Organization:  Default Organization",
+      "    Content Views:",
+      "     1) Name:           Zoo View",
+      "        Composite:      no",
+      "        Last Published: 2023/10/09 19:18:15",
+      "        Repositories:",
+      "         1) Repository ID:   2",
+      "            Repository Name: Zoo",
+      "            Content Counts:",
+      "                Warning: Content view must be synced to see content counts"
     ])
     expected_result = success_result(output)
 
