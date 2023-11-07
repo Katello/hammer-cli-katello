@@ -25,12 +25,18 @@ module HammerCLIKatello
           result['option_environment_id'] = @command.resolver.lifecycle_environment_id(
             @command.resolver.scoped_options(lifecycle_environment_resource_name, result, :single))
         end
+        if result['option_lifecycle_environment_id'] && result['option_environment_id'].nil?
+          result['option_environment_id'] = result['option_lifecycle_environment_id']
+        end
       end
 
       def legacy_option_ids(result)
         if result['option_environment_names'] && result['option_environment_ids'].nil?
           result['option_environment_ids'] = @command.resolver.lifecycle_environment_ids(
             @command.resolver.scoped_options(lifecycle_environment_resource_name, result, :multi))
+        end
+        if result['option_lifecycle_environment_ids'] && result['option_environment_ids'].nil?
+          result['option_environment_ids'] = result['option_lifecycle_environment_ids']
         end
       end
 
