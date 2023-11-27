@@ -7,17 +7,21 @@
 # mbacovsky <martin.bacovsky@gmail.com>, 2017
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2017
 # tim123, 2017
-# Bryan Kearney <bryan.kearney@gmail.com>, 2019
-# Amit Upadhye <aupadhye@redhat.com>, 2022
+# Amit Upadhye <aupadhye@redhat.com>, 2023
+# Bryan Kearney <bryan.kearney@gmail.com>, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2023
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.11.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
-"Language-Team: Chinese (China) (https://app.transifex.com/foreman/teams/114/zh"
-"_CN/)\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
+"+transifex@kohlvanwijngaarden.nl>, 2023\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/foreman/teams/114/"
+"zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -121,10 +125,10 @@ msgid "Description"
 msgstr "描述"
 
 msgid "Base URL"
-msgstr ""
+msgstr "基本 URL"
 
 msgid "Content type"
-msgstr ""
+msgstr "內容类型"
 
 msgid "Alternate content source type"
 msgstr ""
@@ -133,22 +137,22 @@ msgid "Upstream username"
 msgstr ""
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "验证 SSL"
 
 msgid "SSL CA Cert"
-msgstr ""
+msgstr "SSL CA 证书"
 
 msgid "Id"
 msgstr "ID"
 
 msgid "SSL Client Cert"
-msgstr ""
+msgstr "SSL 客户端证书"
 
 msgid "SSL Client Key"
-msgstr ""
+msgstr "Pulp 客户端密钥"
 
 msgid "Subpaths"
-msgstr ""
+msgstr "子路径"
 
 msgid "Products"
 msgstr "产品"
@@ -217,10 +221,10 @@ msgid "Content Label"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 msgid "System Purpose"
-msgstr ""
+msgstr "系统目的"
 
 msgid "Service Level"
 msgstr "服务等级"
@@ -457,9 +461,11 @@ msgid "Please provide --content-view-id"
 msgstr "请提供 --content-view-id"
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment %{environment_i"
-"d} and content view %{content_view_id}"
-msgstr "在生命周期环境 %{environment_id} 和内容视图 %{content_view_id} 中没有名称为 %{name} 的仓库。"
+"No such repository with name %{name}, in lifecycle environment "
+"%{environment_id} and content view %{content_view_id}"
+msgstr ""
+"在生命周期环境 %{environment_id} 和内容视图 %{content_view_id} 中没有名称为 "
+"%{name} 的仓库。"
 
 msgid "Use %s instead"
 msgstr ""
@@ -504,9 +510,9 @@ msgid "Could not delete the Content Credential"
 msgstr ""
 
 msgid ""
-"Writes export metadata to disk for use by the importing Katello. This command "
-"only needs to be used if the export was performed asynchronously or if the met"
-"adata was lost"
+"Writes export metadata to disk for use by the importing Katello. This "
+"command only needs to be used if the export was performed asynchronously or "
+"if the metadata was lost"
 msgstr ""
 
 msgid "Generate metadata based on output of the specified export task"
@@ -515,14 +521,15 @@ msgstr ""
 msgid "Generate metadata based on specified export history"
 msgstr ""
 
-msgid "No export history was found. Verify the value given for --task-id or --id"
+msgid ""
+"No export history was found. Verify the value given for --task-id or --id"
 msgstr ""
 
 msgid ""
-"Generates listing file on each directory of a syncable export. This command on"
-"ly needs to be used if the export was performed asynchronously or if the listi"
-"ng files were lost. Assumes the syncable export directory is accessible on dis"
-"k"
+"Generates listing file on each directory of a syncable export. This command "
+"only needs to be used if the export was performed asynchronously or if the "
+"listing files were lost. Assumes the syncable export directory is accessible "
+"on disk"
 msgstr ""
 
 msgid "Generate listing files for a syncable export task"
@@ -538,7 +545,7 @@ msgid "Path"
 msgstr "路径"
 
 msgid "Content View Version"
-msgstr ""
+msgstr "內容视图版本"
 
 msgid "Content View Version ID"
 msgstr "內容视图版本 ID"
@@ -561,47 +568,50 @@ msgstr ""
 msgid "Could not fetch the export history"
 msgstr ""
 
-msgid "Once the task completes the listing files may be generated with the command:"
+msgid ""
+"Once the task completes the listing files may be generated with the command:"
 msgstr ""
 
 msgid ""
-"Once the task completes the export metadata must be generated with the command"
-":"
+"Once the task completes the export metadata must be generated with the "
+"command:"
 msgstr ""
 
 msgid "Can not fetch export history from an unfinished task"
 msgstr ""
 
 msgid ""
-"Cannot generate listing files for this export since it is not syncable. It was"
-" not generated with --format=syncable."
+"Cannot generate listing files for this export since it is not syncable. It "
+"was not generated with --format=syncable."
 msgstr ""
 
 msgid ""
-"Export History does not have the path specified. The task may have errored out"
-"."
+"Export History does not have the path specified. The task may have errored "
+"out."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this version because it contains repositories wit"
-"hout the 'immediate' download policy. Update the download policy and sync affe"
-"cted repositories. Once synced republish the content view and export the gener"
-"ated version."
+"NOTE: Unable to fully export this version because it contains repositories "
+"without the 'immediate' download policy. Update the download policy and sync "
+"affected repositories. Once synced republish the content view and export the "
+"generated version."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this repository because it does not have the 'imm"
-"ediate' download policy. Update the download policy, sync the repository and e"
-"xport."
+"NOTE: Unable to fully export this repository because it does not have the "
+"'immediate' download policy. Update the download policy, sync the repository "
+"and export."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this organization's library because it contains r"
-"epositories without the 'immediate' download policy. Update the download polic"
-"y and sync affected repositories to include them in the export."
+"NOTE: Unable to fully export this organization's library because it contains "
+"repositories without the 'immediate' download policy. Update the download "
+"policy and sync affected repositories to include them in the export."
 msgstr ""
 
-msgid "Use the following command to update the download policy of these repositories."
+msgid ""
+"Use the following command to update the download policy of these "
+"repositories."
 msgstr ""
 
 msgid "Repository is being exported in task %{id}."
@@ -620,8 +630,8 @@ msgid "Could not export the library"
 msgstr ""
 
 msgid ""
-"Fails if any of the repositories belonging to this organization are unexportab"
-"le."
+"Fails if any of the repositories belonging to this organization are "
+"unexportable."
 msgstr ""
 
 msgid "Content view version is being exported in task %{id}."
@@ -630,7 +640,8 @@ msgstr ""
 msgid "Could not export the content view version"
 msgstr ""
 
-msgid "Fails if any of the repositories belonging to this version are unexportable."
+msgid ""
+"Fails if any of the repositories belonging to this version are unexportable."
 msgstr ""
 
 msgid "Filter versions by version number."
@@ -639,15 +650,16 @@ msgstr ""
 msgid "Performs an incremental export of a content view version"
 msgstr ""
 
-msgid "Performs an incremental export of the organization's library environment"
+msgid ""
+"Performs an incremental export of the organization's library environment"
 msgstr ""
 
 msgid "Performs an incremental export of a repository"
 msgstr ""
 
 msgid ""
-"Location of the metadata.json file. This is not required if the metadata.json "
-"file is already in the archive directory."
+"Location of the metadata.json file. This is not required if the metadata."
+"json file is already in the archive directory."
 msgstr ""
 
 msgid "Archive is being imported in task %{id}."
@@ -659,7 +671,8 @@ msgstr ""
 msgid "Imports a content archive to a content view version"
 msgstr ""
 
-msgid "Imports a content archive to an organization's library lifecycle environment"
+msgid ""
+"Imports a content archive to an organization's library lifecycle environment"
 msgstr ""
 
 msgid "Imports a repository"
@@ -708,7 +721,7 @@ msgid "Content Host Count"
 msgstr "內容主机数"
 
 msgid "Solve Dependencies"
-msgstr ""
+msgstr "解决依赖关系"
 
 msgid "Yum Repositories"
 msgstr "Yum 仓库"
@@ -812,7 +825,8 @@ msgstr "组件版本已删除"
 msgid "Could not remove version"
 msgstr "无法删除版本"
 
-msgid "Content View identifier of the component who's latest version is desired"
+msgid ""
+"Content View identifier of the component who's latest version is desired"
 msgstr "需要最新版本的组件的内容视图的标识符"
 
 msgid "Content View name of the component who's latest version is desired"
@@ -822,9 +836,10 @@ msgid "Content View Version identifier of the component"
 msgstr "组件内容视图版本的标识符"
 
 msgid ""
-"Content View Version number of the component. Either use this or --component-c"
-"ontent-view-version-id option"
-msgstr "组件的内容视图版本号。使用此选项或 --component-content-view-version-id 选项"
+"Content View Version number of the component. Either use this or --component-"
+"content-view-version-id option"
+msgstr ""
+"组件的内容视图版本号。使用此选项或 --component-content-view-version-id 选项"
 
 msgid "Select the latest version of the components content view is desired"
 msgstr "选择需要组件内容视图的最新版本"
@@ -833,11 +848,11 @@ msgid "Please provide --component-content-view-id"
 msgstr "请提供 --component-content-view-id"
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-view"
-"-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-"
+"view-version or --latest for the latest version"
 msgstr ""
-"请提供 --component-content-view-version-id 或 --component-content-view-version 或 -"
-"-latest 用于最新版本"
+"请提供 --component-content-view-version-id 或 --component-content-view-"
+"version 或 --latest 用于最新版本"
 
 msgid "Content View Id"
 msgstr ""
@@ -870,13 +885,13 @@ msgid "Could not update the content view component"
 msgstr "无法更新内容视图组件"
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of value"
-"s"
+"Array of component content view names to remove. Comma separated list of "
+"values"
 msgstr "要删除的组件内容视图名称的数组。以逗号分隔的值列表"
 
 msgid ""
-"Array of component content view identfiers to remove. Comma separated list of "
-"values"
+"Array of component content view identfiers to remove. Comma separated list "
+"of values"
 msgstr "要删除的组件内容视图标识符数组。以逗号分隔的值列表"
 
 msgid "Components removed from content view."
@@ -901,8 +916,8 @@ msgid "No versions to delete."
 msgstr "没有要删除的版本。"
 
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
-"'%{task_id}'."
+"Version '%{version}' of content view '%{view}' scheduled for deletion in "
+"task '%{task_id}'."
 msgstr "删除的内容视图 '%{view}' 的版本 '%{version}'（任务 '%{task_id}'）。"
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
@@ -938,7 +953,8 @@ msgstr "内容视图被提升（任务 %{id}）。"
 msgid "Could not promote the content view"
 msgstr "无法提升内容视图"
 
-msgid "force content view promotion and bypass lifecycle environment restriction"
+msgid ""
+"force content view promotion and bypass lifecycle environment restriction"
 msgstr "强制内容视图推广，并绕过生命周期环境限制"
 
 msgid "Name of the target environment"
@@ -948,8 +964,8 @@ msgid "Id of the target environment"
 msgstr "目标环境的 ID"
 
 msgid ""
-"Environment name from where to promote its version from (if version is unknown"
-")"
+"Environment name from where to promote its version from (if version is "
+"unknown)"
 msgstr "从何处升级其版本的环境名称（如果版本未知）"
 
 msgid "Id of the environment from where to promote its version "
@@ -970,7 +986,8 @@ msgstr "逐步更新内容视图时发生错误"
 msgid "list of lifecycle environment IDs to update the content view version in"
 msgstr "用于更新内容视图版本的生命周期环境 ID 列表"
 
-msgid "list of lifecycle environment names to update the content view version in"
+msgid ""
+"list of lifecycle environment names to update the content view version in"
 msgstr "用于更新内容视图版本的生命周期环境名称列表"
 
 msgid "Organization name for resolving lifecycle environment names"
@@ -980,8 +997,8 @@ msgid "Organization id for resolving lifecycle environment names"
 msgstr "用于解析生命周期环境名称的机构 ID"
 
 msgid ""
-"Update all editable and applicable hosts within the specified Content View and"
-" \\\n"
+"Update all editable and applicable hosts within the specified Content View "
+"and \\\n"
 "               Lifecycle Environments"
 msgstr ""
 "在指定的内容视图和生命周期环境中更新所有\\\n"
@@ -1018,16 +1035,16 @@ msgid "Manage docker manifests"
 msgstr ""
 
 msgid "Schema Version"
-msgstr ""
+msgstr "模式版本"
 
 msgid "Digest"
-msgstr ""
+msgstr "文摘值"
 
 msgid "Downloaded"
 msgstr ""
 
 msgid "Tags"
-msgstr ""
+msgstr "标签"
 
 msgid "Manage docker tags"
 msgstr ""
@@ -1162,7 +1179,7 @@ msgid "Security"
 msgstr "安全"
 
 msgid "Bugfix"
-msgstr ""
+msgstr "程序漏洞修正"
 
 msgid "Enhancement"
 msgstr "功能增强"
@@ -1257,7 +1274,8 @@ msgstr "为一个主机集合处理软件包组"
 msgid "comma-separated list of package-groups to install"
 msgstr "以逗号分隔的要安装的软件包组列表"
 
-msgid "Install package-groups on content hosts contained within a host collection"
+msgid ""
+"Install package-groups on content hosts contained within a host collection"
 msgstr "在主机集合中包含的内容主机上安装软件包组"
 
 msgid "Successfully scheduled installation of package-group(s)."
@@ -1266,7 +1284,8 @@ msgstr "成功调度了软件包组安装"
 msgid "Could not schedule installation of package-group(s)"
 msgstr "无法调度软件包组安装"
 
-msgid "Update package-groups on content hosts contained within a host collection"
+msgid ""
+"Update package-groups on content hosts contained within a host collection"
 msgstr "在主机集合中包含的内容主机上更新软件包组"
 
 msgid "Successfully scheduled update of package-groups(s)."
@@ -1275,7 +1294,8 @@ msgstr "成功调度了软件包组的更新"
 msgid "Could not schedule update of package-group(s)"
 msgstr "无法调度软件包组的更新"
 
-msgid "Remove package-groups on content hosts contained within a host collection"
+msgid ""
+"Remove package-groups on content hosts contained within a host collection"
 msgstr "在主机集合中包含的内容主机上删除软件包组"
 
 msgid "Successfully scheduled removal of package-groups(s)."
@@ -1315,10 +1335,10 @@ msgid "Content view environments"
 msgstr ""
 
 msgid "Content view"
-msgstr ""
+msgstr "内容视图"
 
 msgid "Lifecycle environment"
-msgstr ""
+msgstr "生命周期环境"
 
 msgid "Kickstart Repository"
 msgstr "Kickstart 仓库"
@@ -1389,11 +1409,12 @@ msgstr "订阅已成功从主机中删除。"
 msgid "Failed to remove subscriptions from the host"
 msgstr "从主机上删除订阅失败"
 
-msgid "Remove the first instance of a subscription with matching id and quantity"
+msgid ""
+"Remove the first instance of a subscription with matching id and quantity"
 msgstr "删除第一个匹配 ID 和数量的订阅实例"
 
 msgid "Content View id"
-msgstr ""
+msgstr "内容视图 ID"
 
 msgid "Content View version"
 msgstr ""
@@ -1402,16 +1423,16 @@ msgid "Environment name"
 msgstr ""
 
 msgid "Product name"
-msgstr ""
+msgstr "产品名称"
 
 msgid "Trace ID"
 msgstr ""
 
 msgid "Application"
-msgstr ""
+msgstr "应用"
 
 msgid "Helper"
-msgstr ""
+msgstr "帮助"
 
 msgid "Traces are being resolved with task %{id}."
 msgstr ""
@@ -1528,7 +1549,7 @@ msgid "RPMs"
 msgstr "RPM"
 
 msgid "Simple Content Access"
-msgstr ""
+msgstr "简单内容访问"
 
 msgid "Service Levels"
 msgstr "服务等级"
@@ -1555,16 +1576,16 @@ msgid "Disabled"
 msgstr ""
 
 msgid "Export Sync"
-msgstr ""
+msgstr "导出同步"
 
 msgid "Network Sync"
-msgstr ""
+msgstr "网络同步"
 
 msgid "Red Hat CDN"
-msgstr ""
+msgstr "Red Hat CDN"
 
 msgid "Custom CDN"
-msgstr ""
+msgstr "自定义 CDN"
 
 msgid "Organization updated."
 msgstr "已更新组织。"
@@ -1627,16 +1648,16 @@ msgid "Url"
 msgstr ""
 
 msgid "Build Time"
-msgstr ""
+msgstr "构建时间"
 
 msgid "Group"
-msgstr ""
+msgstr "组"
 
 msgid "Requires"
-msgstr ""
+msgstr "需要"
 
 msgid "Provides"
-msgstr ""
+msgstr "提供"
 
 msgid "Files"
 msgstr "文件"
@@ -1645,7 +1666,7 @@ msgid "Size"
 msgstr ""
 
 msgid "Modular"
-msgstr ""
+msgstr "模块化"
 
 msgid "Package Group Name"
 msgstr "软件包组名称"
@@ -1768,8 +1789,8 @@ msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
 msgid ""
-"Limit the repository type to return. View available types with \"hammer reposit"
-"ory types\""
+"Limit the repository type to return. View available types with \"hammer "
+"repository types\""
 msgstr ""
 
 msgid "Red Hat Repository"
@@ -1779,7 +1800,7 @@ msgid "Checksum Type"
 msgstr "Checksum 类型"
 
 msgid "Mirroring Policy"
-msgstr ""
+msgstr "镜像策略"
 
 msgid "Publish Via HTTP"
 msgstr "经过 HTTP 发布"
@@ -1809,7 +1830,7 @@ msgid "HTTP Proxy"
 msgstr ""
 
 msgid "HTTP Proxy Policy"
-msgstr ""
+msgstr "HTTP 代理策略"
 
 msgid "Sync"
 msgstr "同步"
@@ -1842,13 +1863,13 @@ msgid "no"
 msgstr "否"
 
 msgid "Additive"
-msgstr ""
+msgstr "Additive"
 
 msgid "Content Only"
-msgstr ""
+msgstr "只包括内容"
 
 msgid "Complete Mirroring"
-msgstr ""
+msgstr "完整镜像"
 
 msgid "Not Synced"
 msgstr "未同步"
@@ -1890,8 +1911,8 @@ msgid "Could not create the repository"
 msgstr "无法创建仓库"
 
 msgid ""
-"Type of repository to create. View available types with \"hammer repository typ"
-"es\""
+"Type of repository to create. View available types with \"hammer repository "
+"types\""
 msgstr ""
 
 msgid "Repository updated."
@@ -1940,8 +1961,8 @@ msgid "Indexed?"
 msgstr ""
 
 msgid ""
-"The type of content unit to upload (srpm, file, etc.). View uploadable types w"
-"ith \"hammer repository types\""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types "
+"with \"hammer repository types\""
 msgstr ""
 
 msgid "Could not find any files matching PATH"
@@ -1963,10 +1984,12 @@ msgid "Name of OSTree repository in archive."
 msgstr ""
 
 msgid ""
-"Upload file, directory of files, or glob of files as content for a repository."
-"\n"
+"Upload file, directory of files, or glob of files as content for a "
+"repository.\n"
 "Globs must be escaped by single or double quotes"
-msgstr "上载文件，文件目录或 glob 文件作为仓库的内容。Globs 必须用单引号或双引号引起来"
+msgstr ""
+"上载文件，文件目录或 glob 文件作为仓库的内容。Globs 必须用单引号或双引号引起"
+"来"
 
 msgid "Successfully uploaded file %s"
 msgstr ""
@@ -1987,8 +2010,8 @@ msgid "Could not remove content"
 msgstr "无法删除内容"
 
 msgid ""
-"The type of content unit to remove (srpm, docker_manifest, etc.). View removab"
-"le types with \"hammer repository types\""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View "
+"removable types with \"hammer repository types\""
 msgstr ""
 
 msgid "Forces a republish of the specified repository."
@@ -2001,7 +2024,7 @@ msgid "Could not republish the repository."
 msgstr ""
 
 msgid "Reclaim space from an On Demand repository"
-msgstr ""
+msgstr "重新声明来自 On Demand 存储库的空间"
 
 msgid "Repository space reclaimed."
 msgstr ""
@@ -2097,7 +2120,7 @@ msgid "Recurring Logic ID"
 msgstr "重复逻辑 ID"
 
 msgid "Next Sync"
-msgstr ""
+msgstr "下一个同步"
 
 msgid "how often synchronization should run"
 msgstr "应该执行同步的频率"
@@ -2106,9 +2129,10 @@ msgid "set this when interval is custom cron"
 msgstr "当间隔是自定义 cron 时设置"
 
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank current "
-"system time will be considered"
-msgstr "同步计划的开始日期和时间。时间是可选的，如果保留为空白，则会考虑当前系统时间"
+"Start date and time for the sync plan.Time is optional, if kept blank "
+"current system time will be considered"
+msgstr ""
+"同步计划的开始日期和时间。时间是可选的，如果保留为空白，则会考虑当前系统时间"
 
 msgid "Sync plan created."
 msgstr "创建同步计划。"
@@ -2130,3 +2154,96 @@ msgstr "销毁同步计划。"
 
 msgid "Could not destroy the sync plan"
 msgstr "无法销毁同步计划"
+
+msgid "Refresh all alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr ""
+
+msgid "Could not refresh all alternate content sources"
+msgstr ""
+
+msgid "Refresh alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr ""
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr ""
+
+msgid "Destroy alternate content sources"
+msgstr ""
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr ""
+
+msgid "Could not destroy the specified alternate content sources"
+msgstr ""
+
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr ""
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr ""
+
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr ""
+
+msgid "Could not update capsule content counts"
+msgstr ""
+
+msgid "SRPMs"
+msgstr ""
+
+msgid "Debian Packages"
+msgstr ""
+
+msgid "Container Tags"
+msgstr ""
+
+msgid "Container Manifests"
+msgstr ""
+
+msgid "Container Manifest Lists"
+msgstr ""
+
+msgid "Ansible Collections"
+msgstr ""
+
+msgid "OSTree Refs"
+msgstr ""
+
+msgid "Python Packages"
+msgstr ""
+
+msgid "Content view must be synced to see content counts"
+msgstr ""
+
+msgid "Original packages"
+msgstr ""
+
+msgid "Original module streams"
+msgstr ""
+
+msgid "UUID"
+msgstr ""
+
+msgid "Module stream Id"
+msgstr ""
+
+msgid "Content view filter Id"
+msgstr ""
+
+msgid "Errata Id"
+msgstr ""
+
+msgid "Date type"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
