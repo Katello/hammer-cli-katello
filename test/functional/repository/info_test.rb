@@ -69,7 +69,7 @@ describe "get repository info" do
                        ['Updated', '2020/08/05 15:35:36'],
                        ['Content Counts', ''],
                        ['Packages', '1'],
-                       ['Source RPMS', '0'],
+                       ['SRPMs', '0'],
                        ['Package Groups', '0'],
                        ['Errata', '1'],
                        ['Module Streams', '0']]
@@ -145,7 +145,7 @@ describe "get repository info" do
                        ['Updated', '2020/08/05 15:35:36'],
                        ['Content Counts', ''],
                        ['Packages', '1'],
-                       ['Source RPMS', '0'],
+                       ['SRPMs', '0'],
                        ['Package Groups', '0'],
                        ['Errata', '1'],
                        ['Module Streams', '0']]

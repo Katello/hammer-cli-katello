@@ -116,17 +116,34 @@ module HammerCLIKatello
         field :updated_at, _("Updated"), Fields::Date
 
         label _("Content Counts") do
-          field :package_total, _("Packages"), Fields::Field, :hide_blank => true
-          field :srpm_total, _("Source RPMS"), Fields::Field, :hide_blank => true
-          field :package_group_total, _("Package Groups"), Fields::Field, :hide_blank => true
-          field :errata_total, _("Errata"), Fields::Field, :hide_blank => true
-          field :docker_manifest_list_total, _("Container Image Manifest Lists"),
-                                           Fields::Field, :hide_blank => true
-          field :docker_manifest_total, _("Container Image Manifests"), Fields::Field,
-                                           :hide_blank => true
-          field :docker_tag_total, _("Container Image Tags"), Fields::Field, :hide_blank => true
-          field :file_total, _("Files"), Fields::Field, :hide_blank => true
-          field :module_stream_total, _("Module Streams"), Fields::Field, :hide_blank => true
+          from :content_counts do
+            field :rpm, _('Packages'), Fields::Field,
+              :hide_blank => true
+            field :srpm, _('SRPMs'), Fields::Field,
+              :hide_blank => true
+            field :module_stream, _('Module Streams'), Fields::Field,
+              :hide_blank => true
+            field :package_group, _('Package Groups'), Fields::Field,
+              :hide_blank => true
+            field :erratum, _('Errata'), Fields::Field,
+              :hide_blank => true
+            field :deb, _('Debian Packages'), Fields::Field,
+              :hide_blank => true
+            field :docker_tag, _('Container Tags'), Fields::Field,
+              :hide_blank => true
+            field :docker_manifest, _('Container Manifests'), Fields::Field,
+              :hide_blank => true
+            field :docker_manifest_list, _('Container Manifest Lists'), Fields::Field,
+              :hide_blank => true
+            field :file, _('Files'), Fields::Field,
+              :hide_blank => true
+            field :ansible_collection, _('Ansible Collections'), Fields::Field,
+              :hide_blank => true
+            field :ostree_ref, _('OSTree Refs'), Fields::Field,
+              :hide_blank => true
+            field :python_package, _('Python Packages'), Fields::Field,
+              :hide_blank => true
+          end
         end
       end
 
