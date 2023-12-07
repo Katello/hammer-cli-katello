@@ -191,20 +191,34 @@ module HammerCLIKatello
                 field :name, _("Repository Name")
                 label _('Content Counts') do
                   from :_content_counts do
-                    field :warning, _('Warning')
-                    field :rpm, _('Packages')
-                    field :srpm, _('SRPMs')
-                    field :module_stream, _('Module Streams')
-                    field :package_group, _('Package Groups')
-                    field :erratum, _('Errata')
-                    field :deb, _('Debian Packages')
-                    field :docker_tag, _('Container Tags')
-                    field :docker_manifest, _('Container Manifests')
-                    field :docker_manifest_list, _('Container Manifest Lists')
-                    field :file, _('Files')
-                    field :ansible_collection, _('Ansible Collections')
-                    field :ostree_ref, _('OSTree Refs')
-                    field :python_package, _('Python Packages')
+                    field :warning, _('Warning'), Fields::Field,
+                      :hide_blank => true
+                    field :rpm, _('Packages'), Fields::Field,
+                      :hide_blank => true
+                    field :srpm, _('SRPMs'), Fields::Field,
+                      :hide_blank => true
+                    field :module_stream, _('Module Streams'), Fields::Field,
+                      :hide_blank => true
+                    field :package_group, _('Package Groups'), Fields::Field,
+                      :hide_blank => true
+                    field :erratum, _('Errata'), Fields::Field,
+                      :hide_blank => true
+                    field :deb, _('Debian Packages'), Fields::Field,
+                      :hide_blank => true
+                    field :docker_tag, _('Container Tags'), Fields::Field,
+                      :hide_blank => true
+                    field :docker_manifest, _('Container Manifests'), Fields::Field,
+                      :hide_blank => true
+                    field :docker_manifest_list, _('Container Manifest Lists'), Fields::Field,
+                      :hide_blank => true
+                    field :file, _('Files'), Fields::Field,
+                      :hide_blank => true
+                    field :ansible_collection, _('Ansible Collections'), Fields::Field,
+                      :hide_blank => true
+                    field :ostree_ref, _('OSTree Refs'), Fields::Field,
+                      :hide_blank => true
+                    field :python_package, _('Python Packages'), Fields::Field,
+                      :hide_blank => true
                   end
                 end
               end
