@@ -1,5 +1,7 @@
 module HammerCLIKatello
   class SimpleContentAccess < HammerCLIKatello::Command
+    resource :simple_content_access
+
     desc "Toggle simple content access mode across organization"
 
     module EligibleCheck
@@ -47,7 +49,7 @@ module HammerCLIKatello
       build_options
 
       def execute
-        warn "Simple Content Access will be required for all organizations in Katello 4.12."
+        warn _("Simple Content Access will be required for all organizations in the next release.")
         super
       end
     end
