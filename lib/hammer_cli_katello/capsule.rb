@@ -218,7 +218,7 @@ module HammerCLIKatello
           data["lifecycle_environments"].each do |lce|
             lce["content_views"].each do |cv|
               cv["repositories"].each do |repo|
-                if cv["up_to_date"]
+                if cv["up_to_date"] && !data.dig("content_counts").nil?
                   cvv_count_repos = data.dig("content_counts", "content_view_versions",
                     cv["cvv_id"].to_s, "repositories")
                   cvv_count_repos.each do |_repo_id, counts_and_metadata|
