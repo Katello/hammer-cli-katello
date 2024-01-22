@@ -1,27 +1,18 @@
-name: Run unit tests
+name: CI
 
-on:
-  - push
-  - pull_request
+on: pull_request
+
+concurrency:
+  group: ${{ github.ref_name }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 jobs:
+  rubocop:
+    name: Rubocop
+    uses: theforeman/actions/.github/workflows/rubocop.yml@v0
+
   test:
-
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby: ["2.7"]
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Add hammer-cli-foreman to local gem file
-      run: echo "gem 'hammer_cli_foreman', :git => 'https://github.com/theforeman/hammer-cli-foreman.git'" > Gemfile.local
-    - name: Add hammer-cli to local gem file
-      run: echo "gem 'hammer_cli', :git => 'https://github.com/theforeman/hammer-cli.git'" >> Gemfile.local
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-        bundler-cache: true
-    - name: Run tests
-      run: bundle exec rake
+    name: Tests
+    uses: theforeman/actions/.github/workflows/test-gem.yml@v0
+    with:
+      command: bundle exec rake test
