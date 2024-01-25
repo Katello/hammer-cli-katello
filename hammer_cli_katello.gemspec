@@ -75,6 +75,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'mocha', '~> 2.0'
   gem.add_development_dependency 'rake', '~> 10.0'
   gem.add_development_dependency 'rubocop', '0.42'
-  gem.add_development_dependency 'rubocop-checkstyle_formatter', '~> 0.4'
   gem.add_development_dependency 'thor', '~> 1.0'
 end
