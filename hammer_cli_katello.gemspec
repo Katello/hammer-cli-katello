@@ -63,7 +63,7 @@ Gem::Specification.new do |gem|
   gem.name = 'hammer_cli_katello'
   gem.require_paths = ['lib']
   gem.version = HammerCLIKatello.version
-  gem.required_ruby_version = '>= 2.7'
+  gem.required_ruby_version = '>= 2.7', '< 3.2'
 
   gem.add_dependency 'hammer_cli_foreman', '~> 3.9'
   gem.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.20'
@@ -73,7 +73,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'minitest', '4.7.4'
   gem.add_development_dependency 'minitest-spec-context', '~> 0.0.5'
   gem.add_development_dependency 'mocha', '~> 2.0'
-  gem.add_development_dependency 'rake', '~> 13.0'
+  gem.add_development_dependency 'rake', '~> 10.0'
   gem.add_development_dependency 'rubocop', '0.42'
   gem.add_development_dependency 'rubocop-checkstyle_formatter', '~> 0.4'
   gem.add_development_dependency 'thor', '~> 1.0'
