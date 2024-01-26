@@ -41,7 +41,7 @@ module HammerCLIKatello
         repos = repo_resource.call(:index, index_options)['results']
         if repos.empty?
           raise _("No such repository with name %{name}, in lifecycle environment"\
-                    " %{environment_id} and content view %{content_view_id}" % index_options)
+                    " %{environment_id} and content view %{content_view_id}") % index_options
         end
         repos.first['id']
       end

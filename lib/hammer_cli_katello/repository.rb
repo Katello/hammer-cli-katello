@@ -571,7 +571,7 @@ module HammerCLIKatello
           upload_results = results.dig('output', 'upload_results') || []
 
           if upload_results.empty?
-            print_message _("Successfully uploaded file %s" % name)
+            print_message _("Successfully uploaded file %s") % name
           else
             upload_results.each do |result|
               if result['type'] == 'docker_manifest'
@@ -579,7 +579,7 @@ module HammerCLIKatello
                   _("Successfully uploaded manifest file '%{name}' with digest '%{digest}'") % {
                     :name => name, :digest => result['digest'] })
               else
-                print_message _("Successfully uploaded file %s" % name)
+                print_message _("Successfully uploaded file %s") % name
               end
             end
           end
