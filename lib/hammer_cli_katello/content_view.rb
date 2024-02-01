@@ -14,7 +14,7 @@ module HammerCLIKatello
         field :id, _("Content View ID")
         field :name, _("Name")
         field :label, _("Label")
-        field :composite, _("Composite")
+        field :composite, _("Composite"), Fields::Boolean
         field :last_published, _("Last Published"), Fields::Date, :hide_blank => true
         field :repository_ids, _("Repository IDs"), Fields::List, :max_width => 300
       end
@@ -26,33 +26,64 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       include OrganizationOptions
+      # rubocop:disable Layout/LineLength
 
       output do
         field :id, _("Id")
         field :name, _("Name")
         field :label, _("Label")
-        field :composite, _("Composite")
+        field :composite, _("Composite"), Fields::Boolean
         field :description, _("Description")
         field :content_host_count, _("Content Host Count")
-        field :solve_dependencies, _("Solve Dependencies")
+        field :solve_dependencies, _("Solve Dependencies"), Fields::Boolean
 
         from :organization do
           field :name, _("Organization")
         end
 
-        collection :_yum_repositories, _("Yum Repositories") do
+        collection :_yum_repositories, _("Yum Repositories"), hide_blank: true, hide_empty: true do
           field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
-        collection :_docker_repositories, _("Container Image Repositories") do
+        collection :_file_repositories, _("File Repositories"), hide_blank: true, hide_empty: true do
           field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
         end
 
-        collection :_ostree_repositories, _("OSTree Repositories") do
+        collection :_docker_repositories, _("Container Image Repositories"), hide_blank: true, hide_empty: true do
+          field :id, _("Id")
+          field :name, _("Name")
+          field :label, _("Label")
+        end
+
+        collection :_ostree_repositories, _("OSTree Repositories"), hide_blank: true, hide_empty: true do
+          field :id, _("Id")
+          field :name, _("Name")
+          field :label, _("Label")
+        end
+
+        collection :_ansible_collection_repositories, _("Ansible Repositories"), hide_blank: true, hide_empty: true do
+          field :id, _("Id")
+          field :name, _("Name")
+          field :label, _("Label")
+        end
+
+        collection :_file_repositories, _("File Repositories"), hide_blank: true, hide_empty: true do
+          field :id, _("Id")
+          field :name, _("Name")
+          field :label, _("Label")
+        end
+
+        collection :_deb_repositories, _("Debian Repositories"), hide_blank: true, hide_empty: true do
+          field :id, _("Id")
+          field :name, _("Name")
+          field :label, _("Label")
+        end
+
+        collection :_python_repositories, _("Python Repositories"), hide_blank: true, hide_empty: true do
           field :id, _("Id")
           field :name, _("Name")
           field :label, _("Label")
@@ -69,18 +100,18 @@ module HammerCLIKatello
           field :published, _("Published"), Fields::Date
         end
 
-        collection :components, _("Components") do
+        collection :components, _("Components"), hide_blank: true, hide_empty: true do
           field :id, _("Id")
           field :name, _("Name")
         end
 
-        collection :activation_keys, _("Activation Keys") do
+        collection :activation_keys, _("Activation Keys"), hide_blank: true, hide_empty: true do
           custom_field Fields::Reference
         end
       end
 
       def extend_data(data)
-        %w(yum docker ostree).each do |content_type|
+        %w(yum docker ostree file deb ansible_collection python).each do |content_type|
           data["_#{content_type}_repositories"] = data["repositories"].select do |repo|
             repo["content_type"] == content_type
           end
@@ -91,6 +122,7 @@ module HammerCLIKatello
 
       build_options
     end
+    # rubocop:enable Layout/LineLength
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Content view created.")
