@@ -154,12 +154,6 @@ module HammerCLIKatello
                                         'hammer_cli_katello/srpm'
                                         )
 
-  HammerCLI::MainCommand.lazy_subcommand("simple-content-access",
-                                         _("Simple content access commands"),
-                                         'HammerCLIKatello::SimpleContentAccess',
-                                         'hammer_cli_katello/simple_content_access'
-                                        )
-
   HammerCLI::MainCommand.lazy_subcommand("docker", _("Manipulate docker content"),
                                          'HammerCLIKatello::DockerCommand',
                                          'hammer_cli_katello/docker'
