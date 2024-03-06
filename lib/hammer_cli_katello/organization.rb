@@ -20,7 +20,6 @@ module HammerCLIKatello
       output do
         field :label, _("Label")
         field :description, _("Description")
-        field :simple_content_access_label, _("Simple Content Access")
         field :service_levels, _("Service Levels"), Fields::List
         from :cdn_configuration do
           label "CDN configuration", hide_blank: true do
@@ -39,11 +38,6 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
-        data["simple_content_access_label"] = if data["simple_content_access"]
-                                                _("Enabled")
-                                              else
-                                                _("Disabled")
-                                              end
         setup_cdn_type(data)
         data
       end
@@ -67,23 +61,6 @@ module HammerCLIKatello
 
       success_message _("Organization updated.")
       failure_message _("Could not update the organization")
-
-      def request_params
-        params = super
-        # This is so Hammer doesn't say "Nothing to update" when toggling SCA.
-        # (see hammer-cli-foreman)
-        # Rails will safely ignore the extra parameter.
-        if params.key?('simple_content_access')
-          params["organization"] = params.fetch('organization', {}).merge(
-            "_simple_content_access" => params['simple_content_access'])
-          unless params['simple_content_access']
-            warn(
-              _("Simple Content Access will be required for all organizations in the next release.")
-            )
-          end
-        end
-        params
-      end
 
       build_options do |o|
         o.expand(:all).except(:environments)
