@@ -100,9 +100,12 @@ module HammerCLIKatello
           field :published, _("Published"), Fields::Date
         end
 
-        collection :components, _("Components"), hide_blank: true, hide_empty: true do
+        collection :cv_components, _("Components"), hide_blank: true, hide_empty: true do
           field :id, _("Id")
           field :name, _("Name")
+          field :latest, _("Latest version"), Fields::Boolean
+          field :unpublished, _("Not yet published"), Fields::Boolean
+          field :always_latest, _("Always update to the latest"), Fields::Boolean
         end
 
         collection :activation_keys, _("Activation Keys"), hide_blank: true, hide_empty: true do
@@ -117,6 +120,18 @@ module HammerCLIKatello
           end
         end
 
+        if data["composite"]
+          data["cv_components"] = data["content_view_components"]&.map do |component|
+            cv_latest = component.dig("content_view", "latest_version")
+            {
+              "id" => component.dig("content_view_version", "id"),
+              "name" => component.dig("content_view_version", "name") || component.dig("content_view", "name"),
+              "always_latest" => component["latest"],
+              "latest" => cv_latest == component.dig("content_view_version", "version"),
+              "unpublished" => component["content_view_version"].nil?
+            }
+          end
+        end
         data
       end
 
