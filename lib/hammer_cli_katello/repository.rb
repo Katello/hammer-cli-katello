@@ -85,6 +85,11 @@ module HammerCLIKatello
               Fields::Field, :hide_blank => true
         field :ignorable_content, _("Ignorable Content Units"), Fields::List, :hide_blank => true
 
+        label _("Publish Settings") do
+          field :restrict_to_arch, _("Restrict to architecture")
+          field :restrict_to_os_versions, _("Restrict to OS Version")
+        end
+
         label _("HTTP Proxy") do
           from :http_proxy do
             field :id, _("Id"), Fields::Field, :hide_blank => true
@@ -156,11 +161,20 @@ module HammerCLIKatello
           data["gpg_key_name"] = data["gpg_key"]["name"]
         end
 
+        setup_arch_and_os(data)
         setup_sync_state(data)
         setup_booleans(data)
         setup_mirroring_policy(data)
         setup_content_counts(data) if data["content_counts"]
         data
+      end
+
+      def setup_arch_and_os(data)
+        arch = data["arch"]
+        data["restrict_to_arch"] = arch == 'noarch' ? _('No restriction') : arch
+        os_versions = data["os_versions"] || []
+        data["restrict_to_os_versions"] = _('No restriction')
+        data["restrict_to_os_versions"] = os_versions.join(", ") unless os_versions.empty?
       end
 
       def setup_booleans(data)
