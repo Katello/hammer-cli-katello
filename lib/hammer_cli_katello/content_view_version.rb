@@ -109,6 +109,19 @@ module HammerCLIKatello
       end
     end
 
+    class VerifyChecksum < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+
+      action :verify_checksum
+      command_name "verify-checksum"
+
+      success_message _("Verifying checksum of Content View Version repositories with task %{id}.")
+      failure_message _("Could not verify checksum of repositories in the Content View Version")
+      build_options do |o|
+        o.expand(:all).including(:content_views, :organizations)
+      end
+    end
+
     class PromoteCommand < HammerCLIKatello::SingleResourceCommand
       include HammerCLIForemanTasks::Async
       include LifecycleEnvironmentNameMapping
