@@ -6,25 +6,28 @@
 # Translators:
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2017
 # Arnold Bechtoldt <mail@arnoldbechtoldt.com>, 2017
+# Wiederoder <stefanwiederoder@googlemail.com>, 2017
 # Lukas K. <kallies@puzzle.ch>, 2017
 # Michael Moll, 2017
 # mbacovsky <martin.bacovsky@gmail.com>, 2017
 # abf90805572190d649c59f7a021d76cb, 2017
-# Wiederoder <stefanwiederoder@googlemail.com>, 2017
 # simon11 <transifex@stieger.co>, 2017
 # Martin Zimmermann <martin.zimmermann@gmx.com>, 2018
-# Bryan Kearney <bryan.kearney@gmail.com>, 2019
-# Crited <Alexander.Stoll@netways.de>, 2019
 # 47388d0d0847859fcc07f8955b27d2a7_d1cb104 <93875580def0fcc1a566b016c3948752_122921>, 2020
-# pdolinic, 2021
+# Crited <Alexander.Stoll@netways.de>, 2023
+# Markus Bucher <bucher@atix.de>, 2023
+# Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2023
+# pdolinic, 2023
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.11.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, 2023\n"
+"Last-Translator: pdolinic, 2023\n"
 "Language-Team: German (https://app.transifex.com/foreman/teams/114/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -129,10 +132,10 @@ msgid "Description"
 msgstr "Beschreibung"
 
 msgid "Base URL"
-msgstr ""
+msgstr "Basis URL"
 
 msgid "Content type"
-msgstr ""
+msgstr "Inhaltstyp"
 
 msgid "Alternate content source type"
 msgstr ""
@@ -141,19 +144,19 @@ msgid "Upstream username"
 msgstr ""
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "SSL überprüfen"
 
 msgid "SSL CA Cert"
-msgstr ""
+msgstr "SSL-CA-Zertifikat"
 
 msgid "Id"
 msgstr "ID"
 
 msgid "SSL Client Cert"
-msgstr ""
+msgstr "SSL-Client-Zertifikat"
 
 msgid "SSL Client Key"
-msgstr ""
+msgstr "SSL-Clientschlüssel"
 
 msgid "Subpaths"
 msgstr ""
@@ -225,10 +228,10 @@ msgid "Content Label"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Wert"
 
 msgid "System Purpose"
-msgstr ""
+msgstr "Systemzweck"
 
 msgid "Service Level"
 msgstr "Servicelevel "
@@ -465,11 +468,11 @@ msgid "Please provide --content-view-id"
 msgstr "Es wird der Parameter --content-view-id benötigt."
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment %{environment_i"
-"d} and content view %{content_view_id}"
+"No such repository with name %{name}, in lifecycle environment "
+"%{environment_id} and content view %{content_view_id}"
 msgstr ""
-"Kein solches Repository mit dem Namen %{name}, in der Lebenszyklusumgebung %{e"
-"nvironment_id} und der Inhaltsansicht %{content_view_id}"
+"Kein solches Repository mit dem Namen %{name}, in der Lebenszyklusumgebung "
+"%{environment_id} und der Inhaltsansicht %{content_view_id}"
 
 msgid "Use %s instead"
 msgstr ""
@@ -514,9 +517,9 @@ msgid "Could not delete the Content Credential"
 msgstr ""
 
 msgid ""
-"Writes export metadata to disk for use by the importing Katello. This command "
-"only needs to be used if the export was performed asynchronously or if the met"
-"adata was lost"
+"Writes export metadata to disk for use by the importing Katello. This "
+"command only needs to be used if the export was performed asynchronously or "
+"if the metadata was lost"
 msgstr ""
 
 msgid "Generate metadata based on output of the specified export task"
@@ -525,14 +528,15 @@ msgstr ""
 msgid "Generate metadata based on specified export history"
 msgstr ""
 
-msgid "No export history was found. Verify the value given for --task-id or --id"
+msgid ""
+"No export history was found. Verify the value given for --task-id or --id"
 msgstr ""
 
 msgid ""
-"Generates listing file on each directory of a syncable export. This command on"
-"ly needs to be used if the export was performed asynchronously or if the listi"
-"ng files were lost. Assumes the syncable export directory is accessible on dis"
-"k"
+"Generates listing file on each directory of a syncable export. This command "
+"only needs to be used if the export was performed asynchronously or if the "
+"listing files were lost. Assumes the syncable export directory is accessible "
+"on disk"
 msgstr ""
 
 msgid "Generate listing files for a syncable export task"
@@ -548,7 +552,7 @@ msgid "Path"
 msgstr "Pfad"
 
 msgid "Content View Version"
-msgstr ""
+msgstr "Version der Inhaltsansicht"
 
 msgid "Content View Version ID"
 msgstr "Versions-ID der Inhaltsansicht"
@@ -571,47 +575,50 @@ msgstr ""
 msgid "Could not fetch the export history"
 msgstr ""
 
-msgid "Once the task completes the listing files may be generated with the command:"
+msgid ""
+"Once the task completes the listing files may be generated with the command:"
 msgstr ""
 
 msgid ""
-"Once the task completes the export metadata must be generated with the command"
-":"
+"Once the task completes the export metadata must be generated with the "
+"command:"
 msgstr ""
 
 msgid "Can not fetch export history from an unfinished task"
 msgstr ""
 
 msgid ""
-"Cannot generate listing files for this export since it is not syncable. It was"
-" not generated with --format=syncable."
+"Cannot generate listing files for this export since it is not syncable. It "
+"was not generated with --format=syncable."
 msgstr ""
 
 msgid ""
-"Export History does not have the path specified. The task may have errored out"
-"."
+"Export History does not have the path specified. The task may have errored "
+"out."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this version because it contains repositories wit"
-"hout the 'immediate' download policy. Update the download policy and sync affe"
-"cted repositories. Once synced republish the content view and export the gener"
-"ated version."
+"NOTE: Unable to fully export this version because it contains repositories "
+"without the 'immediate' download policy. Update the download policy and sync "
+"affected repositories. Once synced republish the content view and export the "
+"generated version."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this repository because it does not have the 'imm"
-"ediate' download policy. Update the download policy, sync the repository and e"
-"xport."
+"NOTE: Unable to fully export this repository because it does not have the "
+"'immediate' download policy. Update the download policy, sync the repository "
+"and export."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this organization's library because it contains r"
-"epositories without the 'immediate' download policy. Update the download polic"
-"y and sync affected repositories to include them in the export."
+"NOTE: Unable to fully export this organization's library because it contains "
+"repositories without the 'immediate' download policy. Update the download "
+"policy and sync affected repositories to include them in the export."
 msgstr ""
 
-msgid "Use the following command to update the download policy of these repositories."
+msgid ""
+"Use the following command to update the download policy of these "
+"repositories."
 msgstr ""
 
 msgid "Repository is being exported in task %{id}."
@@ -630,8 +637,8 @@ msgid "Could not export the library"
 msgstr ""
 
 msgid ""
-"Fails if any of the repositories belonging to this organization are unexportab"
-"le."
+"Fails if any of the repositories belonging to this organization are "
+"unexportable."
 msgstr ""
 
 msgid "Content view version is being exported in task %{id}."
@@ -640,7 +647,8 @@ msgstr ""
 msgid "Could not export the content view version"
 msgstr ""
 
-msgid "Fails if any of the repositories belonging to this version are unexportable."
+msgid ""
+"Fails if any of the repositories belonging to this version are unexportable."
 msgstr ""
 
 msgid "Filter versions by version number."
@@ -649,15 +657,16 @@ msgstr ""
 msgid "Performs an incremental export of a content view version"
 msgstr ""
 
-msgid "Performs an incremental export of the organization's library environment"
+msgid ""
+"Performs an incremental export of the organization's library environment"
 msgstr ""
 
 msgid "Performs an incremental export of a repository"
 msgstr ""
 
 msgid ""
-"Location of the metadata.json file. This is not required if the metadata.json "
-"file is already in the archive directory."
+"Location of the metadata.json file. This is not required if the metadata."
+"json file is already in the archive directory."
 msgstr ""
 
 msgid "Archive is being imported in task %{id}."
@@ -669,7 +678,8 @@ msgstr ""
 msgid "Imports a content archive to a content view version"
 msgstr ""
 
-msgid "Imports a content archive to an organization's library lifecycle environment"
+msgid ""
+"Imports a content archive to an organization's library lifecycle environment"
 msgstr ""
 
 msgid "Imports a repository"
@@ -693,13 +703,14 @@ msgid ""
 "Default value: enabled"
 msgstr ""
 "Parameterschlüssel oder -name überschreiben.\n"
-"Um ein Repository zu aktivieren oder zu deaktivieren, wählen Sie 'aktiviert'.\n"
+"Um ein Repository zu aktivieren oder zu deaktivieren, wählen Sie "
+"'aktiviert'.\n"
 "Standardwert: aktiviert"
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
 msgstr ""
-"Wert überschreiben. Hinweis für die Repo-Aktivierung können Sie einen boolesch"
-"en Wert verwenden"
+"Wert überschreiben. Hinweis für die Repo-Aktivierung können Sie einen "
+"booleschen Wert verwenden"
 
 msgid "Remove a content override"
 msgstr "Inhaltsüberschreibung entfernen"
@@ -720,7 +731,7 @@ msgid "Content Host Count"
 msgstr "Anzahl der Host-Counts"
 
 msgid "Solve Dependencies"
-msgstr ""
+msgstr "Abhängigkeiten lösen"
 
 msgid "Yum Repositories"
 msgstr "Yum-Repositorys"
@@ -792,7 +803,8 @@ msgid "Names for Lifecycle Environment"
 msgstr ""
 
 msgid "Content view is being removed from environment with task %{id}."
-msgstr "Die Inhaltsansicht wird mit der Aufgabe %{id} aus der Umgebung entfernt."
+msgstr ""
+"Die Inhaltsansicht wird mit der Aufgabe %{id} aus der Umgebung entfernt."
 
 msgid "Could not remove the content view from environment"
 msgstr "Inhaltsansicht konnte nicht aus Umgebung entfernt werden"
@@ -804,7 +816,8 @@ msgid "Could not remove objects from content view"
 msgstr "Objekte konnten nicht aus Inhaltsansicht entfernt werden"
 
 msgid "Add a content view version to a composite view"
-msgstr "Hinzufügen einer Inhaltsansichtsversion zu einer zusammengesetzten Ansicht"
+msgstr ""
+"Hinzufügen einer Inhaltsansichtsversion zu einer zusammengesetzten Ansicht"
 
 msgid "Content view id to search by"
 msgstr ""
@@ -816,7 +829,8 @@ msgid "Could not add version"
 msgstr "Version konnte nicht hinzugefügt werden"
 
 msgid "Remove a content view version from a composite view"
-msgstr "Entfernen einer Inhaltsansichtsversion aus einer zusammengesetzten Ansicht"
+msgstr ""
+"Entfernen einer Inhaltsansichtsversion aus einer zusammengesetzten Ansicht"
 
 msgid "The component version has been removed."
 msgstr "Die Komponentenversion wurde entfernt."
@@ -824,34 +838,39 @@ msgstr "Die Komponentenversion wurde entfernt."
 msgid "Could not remove version"
 msgstr "Version konnte nicht entfernt werden"
 
-msgid "Content View identifier of the component who's latest version is desired"
-msgstr "Inhaltsansichts-ID der Komponente, deren neueste Version gewünscht wird"
+msgid ""
+"Content View identifier of the component who's latest version is desired"
+msgstr ""
+"Inhaltsansichts-ID der Komponente, deren neueste Version gewünscht wird"
 
 msgid "Content View name of the component who's latest version is desired"
-msgstr "Inhaltsansichtsname der Komponente, deren neueste Version gewünscht wird"
+msgstr ""
+"Inhaltsansichtsname der Komponente, deren neueste Version gewünscht wird"
 
 msgid "Content View Version identifier of the component"
 msgstr "Inhaltsansicht Versionskennung der Komponente"
 
 msgid ""
-"Content View Version number of the component. Either use this or --component-c"
-"ontent-view-version-id option"
+"Content View Version number of the component. Either use this or --component-"
+"content-view-version-id option"
 msgstr ""
-"Inhaltsansicht Versionsnummer der Komponente. Verwenden Sie entweder diese ode"
-"r die Option --component-content-view-version-id"
+"Inhaltsansicht Versionsnummer der Komponente. Verwenden Sie entweder diese "
+"oder die Option --component-content-view-version-id"
 
 msgid "Select the latest version of the components content view is desired"
-msgstr "Wählen Sie die neueste Version der Komponenteninhaltsansicht die erwünscht ist"
+msgstr ""
+"Wählen Sie die neueste Version der Komponenteninhaltsansicht die erwünscht "
+"ist"
 
 msgid "Please provide --component-content-view-id"
 msgstr "Bitte geben Sie --component-content-view-id an"
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-view"
-"-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-"
+"view-version or --latest for the latest version"
 msgstr ""
-"Bitte geben Sie --component-content-view-version-id oder --component-content-v"
-"iew-version oder --latest für die neueste Version an"
+"Bitte geben Sie --component-content-view-version-id oder --component-content-"
+"view-version oder --latest für die neueste Version an"
 
 msgid "Content View Id"
 msgstr ""
@@ -884,18 +903,18 @@ msgid "Could not update the content view component"
 msgstr "Inhaltsansichtskomponente konnte nicht aktualisiert werden"
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of value"
-"s"
-msgstr ""
-"Array von zu entfernenden Komponenteninhaltsansichtsnamen. Kommagetrennte Wert"
-"eliste"
-
-msgid ""
-"Array of component content view identfiers to remove. Comma separated list of "
+"Array of component content view names to remove. Comma separated list of "
 "values"
 msgstr ""
-"Array von zu entfernenden Komponenteninhaltsansichts-IDs. Kommagetrennte Werte"
-"liste"
+"Array von zu entfernenden Komponenteninhaltsansichtsnamen. Kommagetrennte "
+"Werteliste"
+
+msgid ""
+"Array of component content view identfiers to remove. Comma separated list "
+"of values"
+msgstr ""
+"Array von zu entfernenden Komponenteninhaltsansichts-IDs. Kommagetrennte "
+"Werteliste"
 
 msgid "Components removed from content view."
 msgstr "Komponenten aus der Inhaltsansicht entfernt."
@@ -919,11 +938,11 @@ msgid "No versions to delete."
 msgstr "Keine Versionen zum Löschen."
 
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
-"'%{task_id}'."
+"Version '%{version}' of content view '%{view}' scheduled for deletion in "
+"task '%{task_id}'."
 msgstr ""
-"Version '%{version}' der Inhaltsansicht '%{view}' zum Löschen in Aufgabe '%{ta"
-"sk_id}' geplant."
+"Version '%{version}' der Inhaltsansicht '%{view}' zum Löschen in Aufgabe "
+"'%{task_id}' geplant."
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
 msgstr "Version '%{version}' der Inhaltsansicht '%{view}' gelöscht."
@@ -947,7 +966,8 @@ msgid "Dependency Solving"
 msgstr ""
 
 msgid "Content View Version is being republished with task %{id}."
-msgstr "Die Inhaltsansichtsversion wird mit der Aufgabe %{id} erneut veröffentlicht."
+msgstr ""
+"Die Inhaltsansichtsversion wird mit der Aufgabe %{id} erneut veröffentlicht."
 
 msgid "Could not republish the Content View"
 msgstr "Inhaltsansicht konnte nicht erneut veröffentlicht werden"
@@ -958,10 +978,11 @@ msgstr "Inhaltsansicht wird mit Aufgabe %{id} hochgestuft."
 msgid "Could not promote the content view"
 msgstr "Inhaltsansicht konnte nicht übertragen werden"
 
-msgid "force content view promotion and bypass lifecycle environment restriction"
+msgid ""
+"force content view promotion and bypass lifecycle environment restriction"
 msgstr ""
-"Erzwingen Sie die Werbung für die Inhaltsansicht und umgehen Sie die Einschrän"
-"kung der Lebenszyklusumgebung"
+"Erzwingen Sie die Werbung für die Inhaltsansicht und umgehen Sie die "
+"Einschränkung der Lebenszyklusumgebung"
 
 msgid "Name of the target environment"
 msgstr "Name der Zielumgebung"
@@ -970,11 +991,11 @@ msgid "Id of the target environment"
 msgstr "ID der Zielumgebung"
 
 msgid ""
-"Environment name from where to promote its version from (if version is unknown"
-")"
+"Environment name from where to promote its version from (if version is "
+"unknown)"
 msgstr ""
-"Umgebungsname, von dem aus seine Version hochgestuft werden soll (wenn die Ver"
-"sion unbekannt ist)"
+"Umgebungsname, von dem aus seine Version hochgestuft werden soll (wenn die "
+"Version unbekannt ist)"
 
 msgid "Id of the environment from where to promote its version "
 msgstr "ID der Umgebung, von der aus ihre Version promoted werden soll"
@@ -990,18 +1011,19 @@ msgstr "Inkrementelles Update wird mit Aufgabe %{id} durchgeführt."
 
 msgid "An error occurred incrementally updating the content view"
 msgstr ""
-"Beim inkrementellen Aktualisieren der Inhaltsansicht ist ein Fehler aufgetrete"
-"n"
+"Beim inkrementellen Aktualisieren der Inhaltsansicht ist ein Fehler "
+"aufgetreten"
 
 msgid "list of lifecycle environment IDs to update the content view version in"
 msgstr ""
-"Liste der Lebenszyklusumgebungs-IDs zum Aktualisieren der Inhaltsansichtsversi"
-"on in"
+"Liste der Lebenszyklusumgebungs-IDs zum Aktualisieren der "
+"Inhaltsansichtsversion in"
 
-msgid "list of lifecycle environment names to update the content view version in"
+msgid ""
+"list of lifecycle environment names to update the content view version in"
 msgstr ""
-"Liste der Lebenszyklusumgebungsnamen zum Aktualisieren der Inhaltsansichtsvers"
-"ion in"
+"Liste der Lebenszyklusumgebungsnamen zum Aktualisieren der "
+"Inhaltsansichtsversion in"
 
 msgid "Organization name for resolving lifecycle environment names"
 msgstr "Organisationsname zum Auflösen von Lebenszyklusumgebungsnamen"
@@ -1010,12 +1032,12 @@ msgid "Organization id for resolving lifecycle environment names"
 msgstr "Organisations-ID zum Auflösen von Lebenszyklusumgebungsnamen"
 
 msgid ""
-"Update all editable and applicable hosts within the specified Content View and"
-" \\\n"
+"Update all editable and applicable hosts within the specified Content View "
+"and \\\n"
 "               Lifecycle Environments"
 msgstr ""
-"Aktualisieren Sie alle bearbeitbaren und anwendbaren Hosts innerhalb der angeg"
-"ebenen Inhaltsansicht und \\ \n"
+"Aktualisieren Sie alle bearbeitbaren und anwendbaren Hosts innerhalb der "
+"angegebenen Inhaltsansicht und \\ \n"
 "Lebenszyklusumgebungen"
 
 msgid "IDs of hosts to update"
@@ -1049,10 +1071,10 @@ msgid "Manage docker manifests"
 msgstr ""
 
 msgid "Schema Version"
-msgstr ""
+msgstr "Schemaversion"
 
 msgid "Digest"
-msgstr ""
+msgstr "Digest"
 
 msgid "Downloaded"
 msgstr ""
@@ -1193,7 +1215,7 @@ msgid "Security"
 msgstr "Sicherheit"
 
 msgid "Bugfix"
-msgstr ""
+msgstr "Bugfix"
 
 msgid "Enhancement"
 msgstr "Erweiterung"
@@ -1238,7 +1260,9 @@ msgid "Manipulate errata for a host collection"
 msgstr "Errata für Hostsammlung bearbeiten"
 
 msgid "Install errata on content hosts contained within a host collection"
-msgstr "Errata auf Inhaltshosts installieren, die in einer Hostsammlung enthalten sind"
+msgstr ""
+"Errata auf Inhaltshosts installieren, die in einer Hostsammlung enthalten "
+"sind"
 
 msgid "Successfully scheduled installation of errata."
 msgstr "Erfolgreich geplante Installation von Errata."
@@ -1256,7 +1280,9 @@ msgid "comma-separated list of packages to install"
 msgstr "durch Kommas getrennte Liste der zu installierenden Pakete"
 
 msgid "Install packages on content hosts contained within a host collection"
-msgstr "Pakete auf Inhaltshosts installieren, die in einer Hostsammlung enthalten sind"
+msgstr ""
+"Pakete auf Inhaltshosts installieren, die in einer Hostsammlung enthalten "
+"sind"
 
 msgid "Successfully scheduled installation of package(s)."
 msgstr "Erfolgreich geplante Installation von Paket(en)."
@@ -1266,8 +1292,8 @@ msgstr "Installation von Paket(en) konnte nicht geplant werden"
 
 msgid "Update packages on content hosts contained within a host collection"
 msgstr ""
-"Pakete auf Inhaltshosts aktualisieren, die in einer Hostsammlung enthalten sin"
-"d"
+"Pakete auf Inhaltshosts aktualisieren, die in einer Hostsammlung enthalten "
+"sind"
 
 msgid "Successfully scheduled update of package(s)."
 msgstr "Erfolgreich geplantes Update von Paket(en)."
@@ -1276,7 +1302,8 @@ msgid "Could not schedule update of package(s)"
 msgstr "Aktualisierung von Paket(en) konnte nicht geplant werden"
 
 msgid "Remove packages on content hosts contained within a host collection"
-msgstr "Pakete auf Inhaltshosts entfernen, die in einer Hostsammlung enthalten sind"
+msgstr ""
+"Pakete auf Inhaltshosts entfernen, die in einer Hostsammlung enthalten sind"
 
 msgid "Successfully scheduled removal of package(s)."
 msgstr "Erfolgreich geplantes Entfernen von Paketen."
@@ -1290,8 +1317,10 @@ msgstr "Paketgruppen für eine Hostsammlung manipulieren"
 msgid "comma-separated list of package-groups to install"
 msgstr "durch Kommas getrennte Liste der zu installierenden Paketgruppen"
 
-msgid "Install package-groups on content hosts contained within a host collection"
-msgstr "Install package-groups on content hosts contained within a host collection"
+msgid ""
+"Install package-groups on content hosts contained within a host collection"
+msgstr ""
+"Install package-groups on content hosts contained within a host collection"
 
 msgid "Successfully scheduled installation of package-group(s)."
 msgstr "Erfolgreich geplante Installation der Paketgruppe(n)."
@@ -1299,10 +1328,11 @@ msgstr "Erfolgreich geplante Installation der Paketgruppe(n)."
 msgid "Could not schedule installation of package-group(s)"
 msgstr "Installation von Paketgruppe(n) konnte nicht geplant werden"
 
-msgid "Update package-groups on content hosts contained within a host collection"
+msgid ""
+"Update package-groups on content hosts contained within a host collection"
 msgstr ""
-"Paketgruppen auf Inhaltshosts aktualisieren, die in einer Hostsammlung enthalt"
-"en sind"
+"Paketgruppen auf Inhaltshosts aktualisieren, die in einer Hostsammlung "
+"enthalten sind"
 
 msgid "Successfully scheduled update of package-groups(s)."
 msgstr "Erfolgreich geplantes Update der Paketgruppe(n)."
@@ -1310,10 +1340,11 @@ msgstr "Erfolgreich geplantes Update der Paketgruppe(n)."
 msgid "Could not schedule update of package-group(s)"
 msgstr "Aktualisierung der Paketgruppe(n) konnte nicht geplant werden"
 
-msgid "Remove package-groups on content hosts contained within a host collection"
+msgid ""
+"Remove package-groups on content hosts contained within a host collection"
 msgstr ""
-"Paketgruppen auf Inhaltshosts entfernen, die in einer Hostsammlung enthalten s"
-"ind"
+"Paketgruppen auf Inhaltshosts entfernen, die in einer Hostsammlung enthalten "
+"sind"
 
 msgid "Successfully scheduled removal of package-groups(s)."
 msgstr "Erfolgreich geplantes Entfernen der Paketgruppe(n)."
@@ -1352,10 +1383,10 @@ msgid "Content view environments"
 msgstr ""
 
 msgid "Content view"
-msgstr ""
+msgstr "Inhaltsansicht"
 
 msgid "Lifecycle environment"
-msgstr ""
+msgstr "Lebenszyklusumgebung"
 
 msgid "Kickstart Repository"
 msgstr "Kickstart-Repository"
@@ -1412,7 +1443,8 @@ msgid "Failed to attach subscriptions to the host"
 msgstr "Fehler beim Anhängen von Abonnements an den Host"
 
 msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "Anzahl dieser Abonnements, die hinzugefügt werden sollen. Standardmäßig 1"
+msgstr ""
+"Anzahl dieser Abonnements, die hinzugefügt werden sollen. Standardmäßig 1"
 
 msgid "Auto attached subscriptions to the host successfully."
 msgstr "Automatisches Anhängen von Abonnements an den Host erfolgreich."
@@ -1426,13 +1458,14 @@ msgstr "Abonnement erfolgreich vom Host entfernt."
 msgid "Failed to remove subscriptions from the host"
 msgstr "Abonnements konnten nicht vom Host entfernt werden"
 
-msgid "Remove the first instance of a subscription with matching id and quantity"
+msgid ""
+"Remove the first instance of a subscription with matching id and quantity"
 msgstr ""
-"Entfernen Sie die erste Instanz eines Abonnements mit übereinstimmender ID und"
-" Menge"
+"Entfernen Sie die erste Instanz eines Abonnements mit übereinstimmender ID "
+"und Menge"
 
 msgid "Content View id"
-msgstr ""
+msgstr "Content View id"
 
 msgid "Content View version"
 msgstr ""
@@ -1441,16 +1474,16 @@ msgid "Environment name"
 msgstr ""
 
 msgid "Product name"
-msgstr ""
+msgstr "Produktname"
 
 msgid "Trace ID"
 msgstr ""
 
 msgid "Application"
-msgstr ""
+msgstr "Anwendung"
 
 msgid "Helper"
-msgstr ""
+msgstr "Helfer"
 
 msgid "Traces are being resolved with task %{id}."
 msgstr ""
@@ -1567,7 +1600,7 @@ msgid "RPMs"
 msgstr "RPMs"
 
 msgid "Simple Content Access"
-msgstr ""
+msgstr "Einfacher Inhaltszugriff"
 
 msgid "Service Levels"
 msgstr "Servicelevel "
@@ -1663,28 +1696,28 @@ msgid "Summary"
 msgstr "Zusammenfassung"
 
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 msgid "Build Time"
-msgstr ""
+msgstr "Build Zeit"
 
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 msgid "Requires"
-msgstr ""
+msgstr "Erfordert"
 
 msgid "Provides"
-msgstr ""
+msgstr "Bietet"
 
 msgid "Files"
 msgstr "Dateien"
 
 msgid "Size"
-msgstr ""
+msgstr "Größe"
 
 msgid "Modular"
-msgstr ""
+msgstr "Modular"
 
 msgid "Package Group Name"
 msgstr "Paketgruppenname"
@@ -1807,8 +1840,8 @@ msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
 msgid ""
-"Limit the repository type to return. View available types with \"hammer reposit"
-"ory types\""
+"Limit the repository type to return. View available types with \"hammer "
+"repository types\""
 msgstr ""
 
 msgid "Red Hat Repository"
@@ -1848,7 +1881,7 @@ msgid "HTTP Proxy"
 msgstr ""
 
 msgid "HTTP Proxy Policy"
-msgstr ""
+msgstr "HTTP Proxy Policy"
 
 msgid "Sync"
 msgstr "Synchronisation"
@@ -1929,8 +1962,8 @@ msgid "Could not create the repository"
 msgstr "Repository konnte nicht erstellt werden"
 
 msgid ""
-"Type of repository to create. View available types with \"hammer repository typ"
-"es\""
+"Type of repository to create. View available types with \"hammer repository "
+"types\""
 msgstr ""
 
 msgid "Repository updated."
@@ -1979,15 +2012,16 @@ msgid "Indexed?"
 msgstr ""
 
 msgid ""
-"The type of content unit to upload (srpm, file, etc.). View uploadable types w"
-"ith \"hammer repository types\""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types "
+"with \"hammer repository types\""
 msgstr ""
 
 msgid "Could not find any files matching PATH"
 msgstr "Es konnten keine Dateien gefunden werden, die mit PATH übereinstimmen"
 
 msgid "Cannot specify both product options and repository ID."
-msgstr "Produktoptionen und Repository-ID können nicht gleichzeitig angegeben werden."
+msgstr ""
+"Produktoptionen und Repository-ID können nicht gleichzeitig angegeben werden."
 
 msgid "Repository content uploaded."
 msgstr "Repository-Inhalte hochgeladen."
@@ -2002,12 +2036,12 @@ msgid "Name of OSTree repository in archive."
 msgstr ""
 
 msgid ""
-"Upload file, directory of files, or glob of files as content for a repository."
-"\n"
+"Upload file, directory of files, or glob of files as content for a "
+"repository.\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
-"Laden Sie eine Datei, ein Dateiverzeichnis oder einen Dateiglob als Inhalt für"
-" ein Repository hoch.\n"
+"Laden Sie eine Datei, ein Dateiverzeichnis oder einen Dateiglob als Inhalt "
+"für ein Repository hoch.\n"
 "Globs müssen durch einfache oder doppelte Anführungszeichen maskiert werden"
 
 msgid "Successfully uploaded file %s"
@@ -2029,8 +2063,8 @@ msgid "Could not remove content"
 msgstr "Inhalt  konnte nicht entfernt werden"
 
 msgid ""
-"The type of content unit to remove (srpm, docker_manifest, etc.). View removab"
-"le types with \"hammer repository types\""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View "
+"removable types with \"hammer repository types\""
 msgstr ""
 
 msgid "Forces a republish of the specified repository."
@@ -2139,7 +2173,7 @@ msgid "Recurring Logic ID"
 msgstr "Wiederkehrende Logik-ID"
 
 msgid "Next Sync"
-msgstr ""
+msgstr "Nächste Synchronisation"
 
 msgid "how often synchronization should run"
 msgstr "Häufigkeit der Synchronisation"
@@ -2148,11 +2182,11 @@ msgid "set this when interval is custom cron"
 msgstr "Stellen Sie dies ein, wenn das Intervall benutzerdefinierter Cron ist"
 
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank current "
-"system time will be considered"
+"Start date and time for the sync plan.Time is optional, if kept blank "
+"current system time will be considered"
 msgstr ""
-"Startdatum und -uhrzeit für den Synchronisierungsplan. Die Zeit ist optional, "
-"wenn sie leer bleibt, wird die aktuelle Systemzeit berücksichtigt"
+"Startdatum und -uhrzeit für den Synchronisierungsplan. Die Zeit ist "
+"optional, wenn sie leer bleibt, wird die aktuelle Systemzeit berücksichtigt"
 
 msgid "Sync plan created."
 msgstr "Synchronisationsplan erstellt."
@@ -2174,3 +2208,96 @@ msgstr "Synchronisationsplan gelöscht."
 
 msgid "Could not destroy the sync plan"
 msgstr "Synchronisationsplan konnte nicht gelöscht werden"
+
+msgid "Refresh all alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr ""
+
+msgid "Could not refresh all alternate content sources"
+msgstr ""
+
+msgid "Refresh alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr ""
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr ""
+
+msgid "Destroy alternate content sources"
+msgstr ""
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr ""
+
+msgid "Could not destroy the specified alternate content sources"
+msgstr ""
+
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr ""
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr ""
+
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr ""
+
+msgid "Could not update capsule content counts"
+msgstr ""
+
+msgid "SRPMs"
+msgstr ""
+
+msgid "Debian Packages"
+msgstr ""
+
+msgid "Container Tags"
+msgstr ""
+
+msgid "Container Manifests"
+msgstr ""
+
+msgid "Container Manifest Lists"
+msgstr ""
+
+msgid "Ansible Collections"
+msgstr ""
+
+msgid "OSTree Refs"
+msgstr ""
+
+msgid "Python Packages"
+msgstr ""
+
+msgid "Content view must be synced to see content counts"
+msgstr ""
+
+msgid "Original packages"
+msgstr ""
+
+msgid "Original module streams"
+msgstr ""
+
+msgid "UUID"
+msgstr ""
+
+msgid "Module stream Id"
+msgstr ""
+
+msgid "Content view filter Id"
+msgstr ""
+
+msgid "Errata Id"
+msgstr ""
+
+msgid "Date type"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
