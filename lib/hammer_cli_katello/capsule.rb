@@ -121,6 +121,26 @@ module HammerCLIKatello
         build_options
       end
 
+      class VerifyChecksumCommand < HammerCLIKatello::SingleResourceCommand
+        include HammerCLIForemanTasks::Async
+        include LifecycleEnvironmentNameMapping
+
+        resource :capsule_content, :verify_checksum
+        command_name "verify-checksum"
+
+        success_message _("Capsule content checksum is being verified in task %{id}.")
+        failure_message _("Could not verify capsule content checksum")
+
+        option "--organization-id", "ID", _("Organization ID"),
+               :attribute_name => :option_organization_id
+        option "--organization", "NAME", _("Organization name"),
+               :attribute_name => :option_organization_name
+
+        build_options
+
+        extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
+      end
+
       class SyncStatusCommand < HammerCLIKatello::InfoCommand
         resource :capsule_content, :sync_status
         command_name "synchronization-status"
