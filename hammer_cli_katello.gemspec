@@ -67,13 +67,4 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'hammer_cli_foreman', '~> 3.9'
   gem.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.20'
-
-  gem.add_development_dependency 'ci_reporter', '>= 1.6.3', "< 2.0.0"
-  gem.add_development_dependency 'gettext', '>= 3.1.3', '< 4.0.0'
-  gem.add_development_dependency 'minitest', '4.7.4'
-  gem.add_development_dependency 'minitest-spec-context', '~> 0.0.5'
-  gem.add_development_dependency 'mocha', '~> 2.0'
-  gem.add_development_dependency 'rake', '~> 10.0'
-  gem.add_development_dependency 'rubocop', '0.42'
-  gem.add_development_dependency 'thor', '~> 1.0'
 end
