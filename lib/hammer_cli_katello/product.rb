@@ -78,6 +78,7 @@ module HammerCLIKatello
     end
 
     class UpdateProxyCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
       desc _("Updates an HTTP Proxy for a product")
       resource :products_bulk_actions, :update_http_proxy
       command_name 'update-proxy'
@@ -88,6 +89,22 @@ module HammerCLIKatello
       validate_options do
         option(:option_ids).required
         option(:option_http_proxy_policy).required
+      end
+
+      build_options
+    end
+
+    class VerifyChecksumCommand < HammerCLIKatello::SingleResourceCommand
+      include HammerCLIForemanTasks::Async
+      desc _("Verify checksum for one or more products")
+      resource :products_bulk_actions, :verify_checksum_products
+      command_name 'verify-checksum'
+
+      success_message _("Verified checksum of product repositories with task %{id}.")
+      failure_message _("Could not verify checksum of repositories in the product")
+
+      validate_options do
+        option(:option_ids).required
       end
 
       build_options

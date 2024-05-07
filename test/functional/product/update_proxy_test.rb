@@ -9,9 +9,8 @@ describe 'update an http proxy on a product' do
 
   let(:sync_response) do
     {
-      'id' => 1,
-      'state' => 'planned',
-      'action' => 'Update http proxy'
+      'id' => '1',
+      'state' => 'planned'
     }
   end
 
@@ -23,8 +22,8 @@ describe 'update an http proxy on a product' do
     ]
 
     ex = api_expects(:products_bulk_actions, :update_http_proxy, 'update an http-proxy')
-         .with_params('ids' => '1', 'http_proxy_policy' => 'use_selected_http_proxy',
-                      'http_proxy_id' => '1')
+         .with_params("ids" => [1], "http_proxy_policy" => "use_selected_http_proxy",
+                      "http_proxy_id" => 1)
     ex.returns(sync_response)
 
     expect_foreman_task('3')
@@ -34,15 +33,10 @@ describe 'update an http proxy on a product' do
   end
 
   it 'fails with missing required params' do
-    params = ['--proxy-id=1']
-
-    ex = api_expects(:products_bulk_actions, :update_http_proxy, 'update an http-proxy')
-         .with_params('proxy_id' => '1')
-    ex.returns(
-      'proxy_id' => '1'
-    )
-
+    params = ['--http-proxy-id=1']
+    api_expects_no_call
     result = run_cmd(@cmd + params)
-    assert_equal(result.exit_code, 70)
+    assert(result.err[/--ids is required/],
+       "ids requirements must be validated")
   end
 end

@@ -676,6 +676,32 @@ module HammerCLIKatello
       end
     end
 
+    class VerifyChecksum < HammerCLIKatello::SingleResourceCommand
+      extend RepositoryScopedToProduct
+      include HammerCLIForemanTasks::Async
+      include OrganizationOptions
+
+      validate_repo_name_requires_product_options
+      action :verify_checksum
+      command_name "verify-checksum"
+
+      success_message _("Verified checksum of repository with task %{id}.")
+      failure_message _("Could not verify checksum of repository")
+
+      validate_options :before, 'IdResolution' do
+        organization_options = [:option_organization_id, :option_organization_name, \
+                                :option_organization_label]
+
+        if option(:option_product_name).exist?
+          any(*organization_options).required
+        end
+      end
+
+      build_options do |o|
+        o.expand(:all).including(:products)
+      end
+    end
+
     class ReclaimSpaceCommand < HammerCLIKatello::SingleResourceCommand
       extend RepositoryScopedToProduct
       include HammerCLIForemanTasks::Async
