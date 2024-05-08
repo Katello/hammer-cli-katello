@@ -8,7 +8,7 @@ describe 'delete a sync plan' do
 
   let(:org_id) { 1 }
   let(:id) { 1 }
-  let(:name) { "sync_plan1" }
+  let(:sync_plan_name) { "sync_plan1" }
   let(:org_name) { "org1" }
 
   it 'by organization ID and sync plan id' do
@@ -23,7 +23,7 @@ describe 'delete a sync plan' do
     expect_sync_plan_search(1, 'sync_plan1', 1)
     api_expects(:sync_plans, :destroy, 'delete a sync plan').
       with_params('id' => id)
-    command = %W(sync-plan delete --organization-id #{org_id} --name #{name})
+    command = %W(sync-plan delete --organization-id #{org_id} --name #{sync_plan_name})
     assert_equal(0, run_cmd(command).exit_code)
   end
 
@@ -32,7 +32,7 @@ describe 'delete a sync plan' do
     expect_sync_plan_search(1, 'sync_plan1', 1)
     api_expects(:sync_plans, :destroy, 'delete a sync plan').
       with_params('id' => id)
-    command = %W(sync-plan delete --organization #{org_name} --name #{name})
+    command = %W(sync-plan delete --organization #{org_name} --name #{sync_plan_name})
     assert_equal(0, run_cmd(command).exit_code)
   end
 

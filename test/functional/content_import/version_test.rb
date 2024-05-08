@@ -21,7 +21,7 @@ describe 'content-import version' do
     File.dirname(__FILE__)
   end
 
-  let(:metadata) do
+  let(:metadata_json) do
     JSON.parse(File.read("#{path}/metadata.json"))
   end
 
@@ -34,7 +34,8 @@ describe 'content-import version' do
       '--async'
     ]
     api_expects(:content_imports, :version)
-      .with_params('organization_id' => organization_id, 'path' => path, 'metadata' => metadata)
+      .with_params('organization_id' => organization_id, 'path' => path,
+                   'metadata' => metadata_json)
       .returns(response)
 
     result = run_cmd(@cmd + params)
@@ -50,7 +51,8 @@ describe 'content-import version' do
     ]
 
     api_expects(:content_imports, :version)
-      .with_params('organization_id' => organization_id, 'path' => path, 'metadata' => metadata)
+      .with_params('organization_id' => organization_id, 'path' => path,
+                   'metadata' => metadata_json)
       .returns(response)
 
     expect_foreman_task(task_id)

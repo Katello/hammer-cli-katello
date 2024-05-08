@@ -3,11 +3,11 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 describe 'create content-credentials' do
   before do
     @cmd = %w(content-credentials create)
-    @base_params = ["--organization-id=#{org_id}", "--name=#{name}"]
+    @base_params = ["--organization-id=#{org_id}", "--name=#{cred_name}"]
   end
 
   let(:org_id) { 1 }
-  let(:name) { 'sslcert' }
+  let(:cred_name) { 'sslcert' }
   let(:cert) { File.join(File.dirname(__FILE__), 'data', 'test_cert.json') }
 
   it 'Creates a SSL Content Credential' do
