@@ -8,7 +8,7 @@ describe 'update a sync plan' do
 
   let(:org_id) { 1 }
   let(:id) { 1 }
-  let(:name) { "sync_plan1" }
+  let(:sync_plan_name) { "sync_plan1" }
   let(:org_name) { "org1" }
   let(:desc) { "New Description" }
 
@@ -22,22 +22,22 @@ describe 'update a sync plan' do
   end
 
   it 'with organization ID and sync plan name' do
-    expect_sync_plan_search(org_id, name, id)
+    expect_sync_plan_search(org_id, sync_plan_name, id)
     api_expects(:sync_plans, :update, 'update a sync plan').
       with_params('description' => desc,
                   'id' => id)
-    command = %W(sync-plan update --organization-id #{org_id} --name #{name}
+    command = %W(sync-plan update --organization-id #{org_id} --name #{sync_plan_name}
                  --description #{desc})
     assert_equal(0, run_cmd(command).exit_code)
   end
 
   it 'with organization name and sync plan name' do
     expect_organization_search(org_name, org_id)
-    expect_sync_plan_search(org_id, name, id)
+    expect_sync_plan_search(org_id, sync_plan_name, id)
     api_expects(:sync_plans, :update, 'update a sync plan').
       with_params('description' => desc,
                   'id' => id)
-    command = %W(sync-plan update --organization #{org_name} --name #{name}
+    command = %W(sync-plan update --organization #{org_name} --name #{sync_plan_name}
                  --description #{desc})
     assert_equal(0, run_cmd(command).exit_code)
   end

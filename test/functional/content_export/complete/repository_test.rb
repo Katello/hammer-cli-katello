@@ -40,7 +40,7 @@ describe 'content-export complete repository' do
   let(:product_id) { '77' }
   let(:repository_id) { '1001' }
 
-  let(:name) { 'repo' }
+  let(:repo_name) { 'repo' }
 
   it "performs export with required options and async" do
     params = [
@@ -111,7 +111,7 @@ describe 'content-export complete repository' do
   end
 
   it 'fails on missing product missing org' do
-    params = ["--product=lol", "--name=#{name}"]
+    params = ["--product=lol", "--name=#{repo_name}"]
     result = run_cmd(@cmd + params)
     expected_error = "At least one of options --organization-id,"\
                         " --organization, --organization-label is required"
@@ -122,13 +122,13 @@ describe 'content-export complete repository' do
 
   it 'correctly resolves product_id and repository name' do
     params = ["--product-id=#{product_id}",
-              "--name=#{name}",
+              "--name=#{repo_name}",
               "--async"]
     expects_repository(repository_id, default_repository_options)
 
     cvv_expect = api_expects(:repositories, :index) do |p|
       assert_equal p['product_id'].to_s, product_id.to_s
-      assert_equal p["name"], name
+      assert_equal p["name"], repo_name
     end
 
     cvv_expect.at_least_once.
@@ -203,11 +203,11 @@ describe 'content-export complete repository' do
 
   it 'should accept product and get the right repository' do
     params = ["--product-id=#{product_id}",
-              "--name=#{name}"]
-    expect_repository_search(product_id.to_i, name, repository_id).at_least_once
+              "--name=#{repo_name}"]
+    expect_repository_search(product_id.to_i, repo_name, repository_id).at_least_once
     repo_search = api_expects(:repositories, :index, 'Find a repository') do |p|
       assert_equal p["product_id"].to_s, product_id.to_s
-      assert_equal p["name"], name
+      assert_equal p["name"], repo_name
     end
     repo_search.returns(index_response([{'id' => repository_id}]))
 

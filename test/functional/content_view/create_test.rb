@@ -3,10 +3,10 @@ require_relative '../test_helper'
 describe 'content-view create' do
   before do
     @cmd = %w(content-view create)
-    @base_params = ["--organization-id=#{org_id}", "--name=#{name}"]
+    @base_params = ["--organization-id=#{org_id}", "--name=#{cv_name}"]
   end
   let(:error_heading) { "Could not create the content view" }
-  let(:name) { 'test-cv' }
+  let(:cv_name) { 'test-cv' }
   let(:org_id) { 1 }
   let(:repositories) do
     [
@@ -22,7 +22,7 @@ describe 'content-view create' do
     params = %W(--repository-ids=#{ids.join(',')})
 
     api_expects(:content_views, :create, 'Create content view') do |par|
-      par['name'] == name &&
+      par['name'] == cv_name &&
         par['repository_ids'] == ids &&
         par['organization_id'] == org_id
     end
