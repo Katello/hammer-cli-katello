@@ -3,6 +3,7 @@ require 'minitest/autorun'
 require 'minitest/spec'
 require 'mocha/minitest'
 require 'hammer_cli'
+require 'ostruct'
 
 KATELLO_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '4.10')
 

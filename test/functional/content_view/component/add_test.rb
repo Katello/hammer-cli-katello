@@ -5,11 +5,11 @@ module HammerCLIKatello
   describe ContentViewComponent::AddComponents do
     before do
       @cmd = %w(content-view component add)
-      @composite = OpenStruct.new(:id => 2, :name => "composite")
-      @component_version = OpenStruct.new(:id => 666, :version => "1.0")
-      @component = OpenStruct.new(:id => 6, :name => "component",
+      @composite = ::OpenStruct.new(:id => 2, :name => "composite")
+      @component_version = ::OpenStruct.new(:id => 666, :version => "1.0")
+      @component = ::OpenStruct.new(:id => 6, :name => "component",
                                   :content_view_version => @component_version)
-      @organization = OpenStruct.new(:id => 1, :name => "great", :label => "label")
+      @organization = ::OpenStruct.new(:id => 1, :name => "great", :label => "label")
     end
 
     def setup_org_expectations

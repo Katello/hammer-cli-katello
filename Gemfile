@@ -11,11 +11,11 @@ end
 gem 'gettext', '>= 3.1.3', '< 4.0.0'
 
 group :test do
-  gem 'ci_reporter_minitest', :require => false
+  gem 'ci_reporter_minitest', '~> 1.0.0', :require => false
   gem 'minitest', '~> 5.18'
   gem 'minitest-spec-context', '~> 0.0.5'
   gem 'mocha', '~> 2.0'
-  gem 'rake', '~> 10.0'
-  gem 'rubocop', '0.42'
-  gem 'thor', '~> 1.0'
+  gem 'rake'
+  gem 'rubocop'
+  gem 'thor'
 end

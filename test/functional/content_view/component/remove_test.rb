@@ -5,18 +5,18 @@ module HammerCLIKatello
     before do
       @cmd = %w(content-view component remove)
 
-      @component = OpenStruct.new(:id => 6, :name => "component")
-      @component2 = OpenStruct.new(:id => 7, :name => "component2")
+      @component = ::OpenStruct.new(:id => 6, :name => "component")
+      @component2 = ::OpenStruct.new(:id => 7, :name => "component2")
 
-      @content_view_component = OpenStruct.new(:id => 1444,
+      @content_view_component = ::OpenStruct.new(:id => 1444,
                                                :content_view => @component)
 
-      @content_view_component2 = OpenStruct.new(:id => 1445,
+      @content_view_component2 = ::OpenStruct.new(:id => 1445,
                                                 :content_view => @component2)
 
-      @composite = OpenStruct.new(:id => 2, :name => "composite",
+      @composite = ::OpenStruct.new(:id => 2, :name => "composite",
                                   :content_view_components => [@content_view_component])
-      @organization = OpenStruct.new(:id => 1, :name => "great", :label => "label")
+      @organization = ::OpenStruct.new(:id => 1, :name => "great", :label => "label")
       @content_view_components = [@content_view_component, @content_view_component2]
     end
 
