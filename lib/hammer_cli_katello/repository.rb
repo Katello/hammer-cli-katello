@@ -578,7 +578,6 @@ module HammerCLIKatello
         load_task(task_id)
       end
 
-      # rubocop:disable CyclomaticComplexity
       # rubocop:disable PerceivedComplexity
       def print_results(name, results, async)
         if !%w(error warning).include?(results) && !async # task successful && no async flag used
@@ -603,7 +602,6 @@ module HammerCLIKatello
           print_message _("Could not upload the content.")
         end
       end
-      # rubocop:enable CyclomaticComplexity
       # rubocop:enable PerceivedComplexity
 
       def silence_warnings

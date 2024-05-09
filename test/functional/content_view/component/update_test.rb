@@ -5,16 +5,16 @@ module HammerCLIKatello
   describe ContentViewComponent::UpdateCommand do
     before do
       @cmd = %w(content-view component update)
-      @component_version = OpenStruct.new(:id => 666, :version => "1.0")
-      @component = OpenStruct.new(:id => 6, :name => "component",
+      @component_version = ::OpenStruct.new(:id => 666, :version => "1.0")
+      @component = ::OpenStruct.new(:id => 6, :name => "component",
                                   :content_view_version => @component_version)
-      @content_view_component = OpenStruct.new(:id => 1444,
+      @content_view_component = ::OpenStruct.new(:id => 1444,
                                                :content_view => @component,
                                                :content_view_version => @component_version)
 
-      @composite = OpenStruct.new(:id => 2, :name => "composite",
+      @composite = ::OpenStruct.new(:id => 2, :name => "composite",
                                   :content_view_components => [@content_view_component])
-      @organization = OpenStruct.new(:id => 1, :name => "great", :label => "label")
+      @organization = ::OpenStruct.new(:id => 1, :name => "great", :label => "label")
     end
 
     def setup_org_expectations
