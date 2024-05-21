@@ -1,5 +1,6 @@
 # See the documentation for more information:
 # https://packit.dev/docs/configuration/
+#
 
 specfile_path: rubygem-hammer_cli_katello.spec
 
