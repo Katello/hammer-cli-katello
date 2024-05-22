@@ -6,15 +6,17 @@
 # Translators:
 # mbacovsky <martin.bacovsky@gmail.com>, 2022
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2022
-# Bryan Kearney <bryan.kearney@gmail.com>, 2022
-# 진선재, 2022
+# 진선재, 2023
+# Bryan Kearney <bryan.kearney@gmail.com>, 2023
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.13.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: 진선재, 2022\n"
+"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>, 2023\n"
 "Language-Team: Korean (https://app.transifex.com/foreman/teams/114/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,19 +133,19 @@ msgid "Upstream username"
 msgstr ""
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "SSL 확인 "
 
 msgid "SSL CA Cert"
-msgstr ""
+msgstr "SSL CA 인증서"
 
 msgid "Id"
 msgstr "ID "
 
 msgid "SSL Client Cert"
-msgstr ""
+msgstr "SSL 클라이언트 인증서"
 
 msgid "SSL Client Key"
-msgstr ""
+msgstr "SSL 클라이언트 키"
 
 msgid "Subpaths"
 msgstr ""
@@ -215,10 +217,10 @@ msgid "Content Label"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "값 "
 
 msgid "System Purpose"
-msgstr ""
+msgstr "시스템 목적"
 
 msgid "Service Level"
 msgstr "서비스 레벨 "
@@ -455,8 +457,8 @@ msgid "Please provide --content-view-id"
 msgstr ""
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment %{environment_i"
-"d} and content view %{content_view_id}"
+"No such repository with name %{name}, in lifecycle environment "
+"%{environment_id} and content view %{content_view_id}"
 msgstr ""
 
 msgid "Use %s instead"
@@ -502,9 +504,9 @@ msgid "Could not delete the Content Credential"
 msgstr ""
 
 msgid ""
-"Writes export metadata to disk for use by the importing Katello. This command "
-"only needs to be used if the export was performed asynchronously or if the met"
-"adata was lost"
+"Writes export metadata to disk for use by the importing Katello. This "
+"command only needs to be used if the export was performed asynchronously or "
+"if the metadata was lost"
 msgstr ""
 
 msgid "Generate metadata based on output of the specified export task"
@@ -513,14 +515,15 @@ msgstr ""
 msgid "Generate metadata based on specified export history"
 msgstr ""
 
-msgid "No export history was found. Verify the value given for --task-id or --id"
+msgid ""
+"No export history was found. Verify the value given for --task-id or --id"
 msgstr ""
 
 msgid ""
-"Generates listing file on each directory of a syncable export. This command on"
-"ly needs to be used if the export was performed asynchronously or if the listi"
-"ng files were lost. Assumes the syncable export directory is accessible on dis"
-"k"
+"Generates listing file on each directory of a syncable export. This command "
+"only needs to be used if the export was performed asynchronously or if the "
+"listing files were lost. Assumes the syncable export directory is accessible "
+"on disk"
 msgstr ""
 
 msgid "Generate listing files for a syncable export task"
@@ -536,7 +539,7 @@ msgid "Path"
 msgstr "경로 "
 
 msgid "Content View Version"
-msgstr ""
+msgstr "컨텐츠 뷰 버전 "
 
 msgid "Content View Version ID"
 msgstr ""
@@ -559,47 +562,50 @@ msgstr ""
 msgid "Could not fetch the export history"
 msgstr ""
 
-msgid "Once the task completes the listing files may be generated with the command:"
+msgid ""
+"Once the task completes the listing files may be generated with the command:"
 msgstr ""
 
 msgid ""
-"Once the task completes the export metadata must be generated with the command"
-":"
+"Once the task completes the export metadata must be generated with the "
+"command:"
 msgstr ""
 
 msgid "Can not fetch export history from an unfinished task"
 msgstr ""
 
 msgid ""
-"Cannot generate listing files for this export since it is not syncable. It was"
-" not generated with --format=syncable."
+"Cannot generate listing files for this export since it is not syncable. It "
+"was not generated with --format=syncable."
 msgstr ""
 
 msgid ""
-"Export History does not have the path specified. The task may have errored out"
-"."
+"Export History does not have the path specified. The task may have errored "
+"out."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this version because it contains repositories wit"
-"hout the 'immediate' download policy. Update the download policy and sync affe"
-"cted repositories. Once synced republish the content view and export the gener"
-"ated version."
+"NOTE: Unable to fully export this version because it contains repositories "
+"without the 'immediate' download policy. Update the download policy and sync "
+"affected repositories. Once synced republish the content view and export the "
+"generated version."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this repository because it does not have the 'imm"
-"ediate' download policy. Update the download policy, sync the repository and e"
-"xport."
+"NOTE: Unable to fully export this repository because it does not have the "
+"'immediate' download policy. Update the download policy, sync the repository "
+"and export."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this organization's library because it contains r"
-"epositories without the 'immediate' download policy. Update the download polic"
-"y and sync affected repositories to include them in the export."
+"NOTE: Unable to fully export this organization's library because it contains "
+"repositories without the 'immediate' download policy. Update the download "
+"policy and sync affected repositories to include them in the export."
 msgstr ""
 
-msgid "Use the following command to update the download policy of these repositories."
+msgid ""
+"Use the following command to update the download policy of these "
+"repositories."
 msgstr ""
 
 msgid "Repository is being exported in task %{id}."
@@ -618,8 +624,8 @@ msgid "Could not export the library"
 msgstr ""
 
 msgid ""
-"Fails if any of the repositories belonging to this organization are unexportab"
-"le."
+"Fails if any of the repositories belonging to this organization are "
+"unexportable."
 msgstr ""
 
 msgid "Content view version is being exported in task %{id}."
@@ -628,7 +634,8 @@ msgstr ""
 msgid "Could not export the content view version"
 msgstr ""
 
-msgid "Fails if any of the repositories belonging to this version are unexportable."
+msgid ""
+"Fails if any of the repositories belonging to this version are unexportable."
 msgstr ""
 
 msgid "Filter versions by version number."
@@ -637,15 +644,16 @@ msgstr ""
 msgid "Performs an incremental export of a content view version"
 msgstr ""
 
-msgid "Performs an incremental export of the organization's library environment"
+msgid ""
+"Performs an incremental export of the organization's library environment"
 msgstr ""
 
 msgid "Performs an incremental export of a repository"
 msgstr ""
 
 msgid ""
-"Location of the metadata.json file. This is not required if the metadata.json "
-"file is already in the archive directory."
+"Location of the metadata.json file. This is not required if the metadata."
+"json file is already in the archive directory."
 msgstr ""
 
 msgid "Archive is being imported in task %{id}."
@@ -657,7 +665,8 @@ msgstr ""
 msgid "Imports a content archive to a content view version"
 msgstr ""
 
-msgid "Imports a content archive to an organization's library lifecycle environment"
+msgid ""
+"Imports a content archive to an organization's library lifecycle environment"
 msgstr ""
 
 msgid "Imports a repository"
@@ -807,7 +816,8 @@ msgstr ""
 msgid "Could not remove version"
 msgstr "버전을 삭제할 수 없습니다 "
 
-msgid "Content View identifier of the component who's latest version is desired"
+msgid ""
+"Content View identifier of the component who's latest version is desired"
 msgstr ""
 
 msgid "Content View name of the component who's latest version is desired"
@@ -817,8 +827,8 @@ msgid "Content View Version identifier of the component"
 msgstr ""
 
 msgid ""
-"Content View Version number of the component. Either use this or --component-c"
-"ontent-view-version-id option"
+"Content View Version number of the component. Either use this or --component-"
+"content-view-version-id option"
 msgstr ""
 
 msgid "Select the latest version of the components content view is desired"
@@ -828,8 +838,8 @@ msgid "Please provide --component-content-view-id"
 msgstr ""
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-view"
-"-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-"
+"view-version or --latest for the latest version"
 msgstr ""
 
 msgid "Content View Id"
@@ -863,13 +873,13 @@ msgid "Could not update the content view component"
 msgstr ""
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of value"
-"s"
+"Array of component content view names to remove. Comma separated list of "
+"values"
 msgstr ""
 
 msgid ""
-"Array of component content view identfiers to remove. Comma separated list of "
-"values"
+"Array of component content view identfiers to remove. Comma separated list "
+"of values"
 msgstr ""
 
 msgid "Components removed from content view."
@@ -894,8 +904,8 @@ msgid "No versions to delete."
 msgstr ""
 
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
-"'%{task_id}'."
+"Version '%{version}' of content view '%{view}' scheduled for deletion in "
+"task '%{task_id}'."
 msgstr ""
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
@@ -931,7 +941,8 @@ msgstr ""
 msgid "Could not promote the content view"
 msgstr "컨텐츠 뷰를 승격할 수 없습니다 "
 
-msgid "force content view promotion and bypass lifecycle environment restriction"
+msgid ""
+"force content view promotion and bypass lifecycle environment restriction"
 msgstr "컨텐츠 뷰 승격 강제 및 라이프 사이클 환경 제한을 무시  "
 
 msgid "Name of the target environment"
@@ -941,8 +952,8 @@ msgid "Id of the target environment"
 msgstr ""
 
 msgid ""
-"Environment name from where to promote its version from (if version is unknown"
-")"
+"Environment name from where to promote its version from (if version is "
+"unknown)"
 msgstr ""
 
 msgid "Id of the environment from where to promote its version "
@@ -963,7 +974,8 @@ msgstr ""
 msgid "list of lifecycle environment IDs to update the content view version in"
 msgstr ""
 
-msgid "list of lifecycle environment names to update the content view version in"
+msgid ""
+"list of lifecycle environment names to update the content view version in"
 msgstr ""
 
 msgid "Organization name for resolving lifecycle environment names"
@@ -973,8 +985,8 @@ msgid "Organization id for resolving lifecycle environment names"
 msgstr ""
 
 msgid ""
-"Update all editable and applicable hosts within the specified Content View and"
-" \\\n"
+"Update all editable and applicable hosts within the specified Content View "
+"and \\\n"
 "               Lifecycle Environments"
 msgstr ""
 
@@ -1009,10 +1021,10 @@ msgid "Manage docker manifests"
 msgstr ""
 
 msgid "Schema Version"
-msgstr ""
+msgstr "스키마 버전"
 
 msgid "Digest"
-msgstr ""
+msgstr "요약"
 
 msgid "Downloaded"
 msgstr ""
@@ -1153,7 +1165,7 @@ msgid "Security"
 msgstr "보안 "
 
 msgid "Bugfix"
-msgstr ""
+msgstr "버그 수정 "
 
 msgid "Enhancement"
 msgstr "기능 강화"
@@ -1248,7 +1260,8 @@ msgstr ""
 msgid "comma-separated list of package-groups to install"
 msgstr ""
 
-msgid "Install package-groups on content hosts contained within a host collection"
+msgid ""
+"Install package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled installation of package-group(s)."
@@ -1257,7 +1270,8 @@ msgstr ""
 msgid "Could not schedule installation of package-group(s)"
 msgstr ""
 
-msgid "Update package-groups on content hosts contained within a host collection"
+msgid ""
+"Update package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled update of package-groups(s)."
@@ -1266,7 +1280,8 @@ msgstr ""
 msgid "Could not schedule update of package-group(s)"
 msgstr ""
 
-msgid "Remove package-groups on content hosts contained within a host collection"
+msgid ""
+"Remove package-groups on content hosts contained within a host collection"
 msgstr ""
 
 msgid "Successfully scheduled removal of package-groups(s)."
@@ -1380,7 +1395,8 @@ msgstr ""
 msgid "Failed to remove subscriptions from the host"
 msgstr ""
 
-msgid "Remove the first instance of a subscription with matching id and quantity"
+msgid ""
+"Remove the first instance of a subscription with matching id and quantity"
 msgstr ""
 
 msgid "Content View id"
@@ -1393,16 +1409,16 @@ msgid "Environment name"
 msgstr ""
 
 msgid "Product name"
-msgstr ""
+msgstr "제품 이름 "
 
 msgid "Trace ID"
 msgstr ""
 
 msgid "Application"
-msgstr ""
+msgstr "애플리케이션 "
 
 msgid "Helper"
-msgstr ""
+msgstr "도우미"
 
 msgid "Traces are being resolved with task %{id}."
 msgstr ""
@@ -1543,7 +1559,7 @@ msgid "Enabled"
 msgstr "활성화됨 "
 
 msgid "Disabled"
-msgstr ""
+msgstr "사용 안함"
 
 msgid "Export Sync"
 msgstr ""
@@ -1615,19 +1631,19 @@ msgid "Summary"
 msgstr "요약"
 
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 msgid "Build Time"
-msgstr ""
+msgstr "빌드 시간"
 
 msgid "Group"
-msgstr ""
+msgstr "모음"
 
 msgid "Requires"
-msgstr ""
+msgstr "요구 사항 "
 
 msgid "Provides"
-msgstr ""
+msgstr "제공 "
 
 msgid "Files"
 msgstr "파일"
@@ -1636,7 +1652,7 @@ msgid "Size"
 msgstr ""
 
 msgid "Modular"
-msgstr ""
+msgstr "모듈식의"
 
 msgid "Package Group Name"
 msgstr ""
@@ -1759,8 +1775,8 @@ msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
 msgid ""
-"Limit the repository type to return. View available types with \"hammer reposit"
-"ory types\""
+"Limit the repository type to return. View available types with \"hammer "
+"repository types\""
 msgstr ""
 
 msgid "Red Hat Repository"
@@ -1770,7 +1786,7 @@ msgid "Checksum Type"
 msgstr "체크섬 유형 "
 
 msgid "Mirroring Policy"
-msgstr ""
+msgstr "미러링 정책"
 
 msgid "Publish Via HTTP"
 msgstr "HTTP를 통해 공개 "
@@ -1797,10 +1813,10 @@ msgid "Ignorable Content Units"
 msgstr ""
 
 msgid "HTTP Proxy"
-msgstr ""
+msgstr "HTTP 프록시"
 
 msgid "HTTP Proxy Policy"
-msgstr ""
+msgstr "HTTP 프록시 정책"
 
 msgid "Sync"
 msgstr "동기화 "
@@ -1833,13 +1849,13 @@ msgid "no"
 msgstr "no"
 
 msgid "Additive"
-msgstr ""
+msgstr "추가"
 
 msgid "Content Only"
-msgstr ""
+msgstr "컨텐츠만"
 
 msgid "Complete Mirroring"
-msgstr ""
+msgstr "미러링 완료"
 
 msgid "Not Synced"
 msgstr "동기화되지 않았습니다 "
@@ -1881,8 +1897,8 @@ msgid "Could not create the repository"
 msgstr "리포지터리를 생성할 수 없습니다 "
 
 msgid ""
-"Type of repository to create. View available types with \"hammer repository typ"
-"es\""
+"Type of repository to create. View available types with \"hammer repository "
+"types\""
 msgstr ""
 
 msgid "Repository updated."
@@ -1931,8 +1947,8 @@ msgid "Indexed?"
 msgstr ""
 
 msgid ""
-"The type of content unit to upload (srpm, file, etc.). View uploadable types w"
-"ith \"hammer repository types\""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types "
+"with \"hammer repository types\""
 msgstr ""
 
 msgid "Could not find any files matching PATH"
@@ -1954,8 +1970,8 @@ msgid "Name of OSTree repository in archive."
 msgstr ""
 
 msgid ""
-"Upload file, directory of files, or glob of files as content for a repository."
-"\n"
+"Upload file, directory of files, or glob of files as content for a "
+"repository.\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
 
@@ -1978,8 +1994,8 @@ msgid "Could not remove content"
 msgstr ""
 
 msgid ""
-"The type of content unit to remove (srpm, docker_manifest, etc.). View removab"
-"le types with \"hammer repository types\""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View "
+"removable types with \"hammer repository types\""
 msgstr ""
 
 msgid "Forces a republish of the specified repository."
@@ -2088,7 +2104,7 @@ msgid "Recurring Logic ID"
 msgstr ""
 
 msgid "Next Sync"
-msgstr ""
+msgstr "다음 동기화 "
 
 msgid "how often synchronization should run"
 msgstr "동기화 실행 빈도 "
@@ -2097,8 +2113,8 @@ msgid "set this when interval is custom cron"
 msgstr ""
 
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank current "
-"system time will be considered"
+"Start date and time for the sync plan.Time is optional, if kept blank "
+"current system time will be considered"
 msgstr ""
 
 msgid "Sync plan created."
