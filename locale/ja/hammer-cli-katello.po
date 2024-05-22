@@ -7,15 +7,19 @@
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2017
 # e93ed3aa97dec2eb31063731872555fc_1460a05 <71305a0095156d8e18373a5b7cfeb79e_8587>, 2017
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2017
-# Bryan Kearney <bryan.kearney@gmail.com>, 2019
+# Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Amit Upadhye <aupadhye@redhat.com>, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.10.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.13.0.pre.master\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2023\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
+"+transifex@kohlvanwijngaarden.nl>, 2024\n"
 "Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -120,10 +124,10 @@ msgid "Description"
 msgstr "説明"
 
 msgid "Base URL"
-msgstr ""
+msgstr "ベース URL"
 
 msgid "Content type"
-msgstr ""
+msgstr "コンテンツタイプ"
 
 msgid "Alternate content source type"
 msgstr ""
@@ -132,22 +136,22 @@ msgid "Upstream username"
 msgstr ""
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "SSL の確認"
 
 msgid "SSL CA Cert"
-msgstr ""
+msgstr "SSL CA 証明書"
 
 msgid "Id"
 msgstr "ID"
 
 msgid "SSL Client Cert"
-msgstr ""
+msgstr "SSL クライアント証明書"
 
 msgid "SSL Client Key"
-msgstr ""
+msgstr "SSL クライアントキー"
 
 msgid "Subpaths"
-msgstr ""
+msgstr "サブパス"
 
 msgid "Products"
 msgstr "製品"
@@ -156,7 +160,7 @@ msgid "Organization ID"
 msgstr "組織 ID"
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "Smart Proxy"
 
 msgid "URL"
 msgstr "URL"
@@ -216,10 +220,10 @@ msgid "Content Label"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "値"
 
 msgid "System Purpose"
-msgstr ""
+msgstr "システム目的"
 
 msgid "Service Level"
 msgstr "サービスレベル"
@@ -456,11 +460,11 @@ msgid "Please provide --content-view-id"
 msgstr "--content-view-id を指定してください"
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment %{environment_i"
-"d} and content view %{content_view_id}"
+"No such repository with name %{name}, in lifecycle environment "
+"%{environment_id} and content view %{content_view_id}"
 msgstr ""
-"ライフサイクル環境 %{environment_id} とコンテンツビュー %{content_view_id} に名前が %{name} のリポジトリーが"
-"ありません"
+"ライフサイクル環境 %{environment_id} とコンテンツビュー %{content_view_id} に"
+"名前が %{name} のリポジトリーがありません"
 
 msgid "Use %s instead"
 msgstr ""
@@ -505,9 +509,9 @@ msgid "Could not delete the Content Credential"
 msgstr ""
 
 msgid ""
-"Writes export metadata to disk for use by the importing Katello. This command "
-"only needs to be used if the export was performed asynchronously or if the met"
-"adata was lost"
+"Writes export metadata to disk for use by the importing Katello. This "
+"command only needs to be used if the export was performed asynchronously or "
+"if the metadata was lost"
 msgstr ""
 
 msgid "Generate metadata based on output of the specified export task"
@@ -516,14 +520,15 @@ msgstr ""
 msgid "Generate metadata based on specified export history"
 msgstr ""
 
-msgid "No export history was found. Verify the value given for --task-id or --id"
+msgid ""
+"No export history was found. Verify the value given for --task-id or --id"
 msgstr ""
 
 msgid ""
-"Generates listing file on each directory of a syncable export. This command on"
-"ly needs to be used if the export was performed asynchronously or if the listi"
-"ng files were lost. Assumes the syncable export directory is accessible on dis"
-"k"
+"Generates listing file on each directory of a syncable export. This command "
+"only needs to be used if the export was performed asynchronously or if the "
+"listing files were lost. Assumes the syncable export directory is accessible "
+"on disk"
 msgstr ""
 
 msgid "Generate listing files for a syncable export task"
@@ -539,7 +544,7 @@ msgid "Path"
 msgstr "パス"
 
 msgid "Content View Version"
-msgstr ""
+msgstr "コンテンツビューのバージョン"
 
 msgid "Content View Version ID"
 msgstr "コンテンツビューのバージョン ID"
@@ -562,47 +567,50 @@ msgstr ""
 msgid "Could not fetch the export history"
 msgstr ""
 
-msgid "Once the task completes the listing files may be generated with the command:"
+msgid ""
+"Once the task completes the listing files may be generated with the command:"
 msgstr ""
 
 msgid ""
-"Once the task completes the export metadata must be generated with the command"
-":"
+"Once the task completes the export metadata must be generated with the "
+"command:"
 msgstr ""
 
 msgid "Can not fetch export history from an unfinished task"
 msgstr ""
 
 msgid ""
-"Cannot generate listing files for this export since it is not syncable. It was"
-" not generated with --format=syncable."
+"Cannot generate listing files for this export since it is not syncable. It "
+"was not generated with --format=syncable."
 msgstr ""
 
 msgid ""
-"Export History does not have the path specified. The task may have errored out"
-"."
+"Export History does not have the path specified. The task may have errored "
+"out."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this version because it contains repositories wit"
-"hout the 'immediate' download policy. Update the download policy and sync affe"
-"cted repositories. Once synced republish the content view and export the gener"
-"ated version."
+"NOTE: Unable to fully export this version because it contains repositories "
+"without the 'immediate' download policy. Update the download policy and sync "
+"affected repositories. Once synced republish the content view and export the "
+"generated version."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this repository because it does not have the 'imm"
-"ediate' download policy. Update the download policy, sync the repository and e"
-"xport."
+"NOTE: Unable to fully export this repository because it does not have the "
+"'immediate' download policy. Update the download policy, sync the repository "
+"and export."
 msgstr ""
 
 msgid ""
-"NOTE: Unable to fully export this organization's library because it contains r"
-"epositories without the 'immediate' download policy. Update the download polic"
-"y and sync affected repositories to include them in the export."
+"NOTE: Unable to fully export this organization's library because it contains "
+"repositories without the 'immediate' download policy. Update the download "
+"policy and sync affected repositories to include them in the export."
 msgstr ""
 
-msgid "Use the following command to update the download policy of these repositories."
+msgid ""
+"Use the following command to update the download policy of these "
+"repositories."
 msgstr ""
 
 msgid "Repository is being exported in task %{id}."
@@ -621,8 +629,8 @@ msgid "Could not export the library"
 msgstr ""
 
 msgid ""
-"Fails if any of the repositories belonging to this organization are unexportab"
-"le."
+"Fails if any of the repositories belonging to this organization are "
+"unexportable."
 msgstr ""
 
 msgid "Content view version is being exported in task %{id}."
@@ -631,7 +639,8 @@ msgstr ""
 msgid "Could not export the content view version"
 msgstr ""
 
-msgid "Fails if any of the repositories belonging to this version are unexportable."
+msgid ""
+"Fails if any of the repositories belonging to this version are unexportable."
 msgstr ""
 
 msgid "Filter versions by version number."
@@ -640,15 +649,16 @@ msgstr ""
 msgid "Performs an incremental export of a content view version"
 msgstr ""
 
-msgid "Performs an incremental export of the organization's library environment"
+msgid ""
+"Performs an incremental export of the organization's library environment"
 msgstr ""
 
 msgid "Performs an incremental export of a repository"
 msgstr ""
 
 msgid ""
-"Location of the metadata.json file. This is not required if the metadata.json "
-"file is already in the archive directory."
+"Location of the metadata.json file. This is not required if the metadata."
+"json file is already in the archive directory."
 msgstr ""
 
 msgid "Archive is being imported in task %{id}."
@@ -660,7 +670,8 @@ msgstr ""
 msgid "Imports a content archive to a content view version"
 msgstr ""
 
-msgid "Imports a content archive to an organization's library lifecycle environment"
+msgid ""
+"Imports a content archive to an organization's library lifecycle environment"
 msgstr ""
 
 msgid "Imports a repository"
@@ -688,7 +699,8 @@ msgstr ""
 "デフォルト値: 有効化"
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
-msgstr "値を上書きします。リポジトリーの有効化については、ブール値を使用できます。"
+msgstr ""
+"値を上書きします。リポジトリーの有効化については、ブール値を使用できます。"
 
 msgid "Remove a content override"
 msgstr "コンテンツの上書きの削除"
@@ -709,7 +721,7 @@ msgid "Content Host Count"
 msgstr "コンテンツホスト数"
 
 msgid "Solve Dependencies"
-msgstr ""
+msgstr "依存関係の解決"
 
 msgid "Yum Repositories"
 msgstr "Yum リポジトリー"
@@ -813,7 +825,8 @@ msgstr "コンポーネントのバージョンが削除されました。"
 msgid "Could not remove version"
 msgstr "バージョンを削除できませんでした"
 
-msgid "Content View identifier of the component who's latest version is desired"
+msgid ""
+"Content View identifier of the component who's latest version is desired"
 msgstr "最新バージョンが必要なコンポーネントのコンテンツビュー ID"
 
 msgid "Content View name of the component who's latest version is desired"
@@ -823,11 +836,11 @@ msgid "Content View Version identifier of the component"
 msgstr "コンポーネントのコンテンツビューのバージョン ID"
 
 msgid ""
-"Content View Version number of the component. Either use this or --component-c"
-"ontent-view-version-id option"
+"Content View Version number of the component. Either use this or --component-"
+"content-view-version-id option"
 msgstr ""
-"コンポーネントのコンテンツビューバージョン番号。これを使用するか、--component-content-view-version-id オプションを使用し"
-"てください。"
+"コンポーネントのコンテンツビューバージョン番号。これを使用するか、--"
+"component-content-view-version-id オプションを使用してください。"
 
 msgid "Select the latest version of the components content view is desired"
 msgstr "コンポーネントのコンテンツビューの最新版が必要な場合には選択します"
@@ -836,11 +849,11 @@ msgid "Please provide --component-content-view-id"
 msgstr "--component-content-view-id を指定してください"
 
 msgid ""
-"Please provide --component-content-view-version-id or --component-content-view"
-"-version or --latest for the latest version"
+"Please provide --component-content-view-version-id or --component-content-"
+"view-version or --latest for the latest version"
 msgstr ""
-"-component-content-view-version-id または --component-content-view-version を指定するか"
-"、最新版は --latest を指定してください。"
+"-component-content-view-version-id または --component-content-view-version を"
+"指定するか、最新版は --latest を指定してください。"
 
 msgid "Content View Id"
 msgstr ""
@@ -873,14 +886,15 @@ msgid "Could not update the content view component"
 msgstr "コンテンツビューのコンポーネントを更新できませんでした"
 
 msgid ""
-"Array of component content view names to remove. Comma separated list of value"
-"s"
+"Array of component content view names to remove. Comma separated list of "
+"values"
 msgstr "削除するコンポーネントコンテンツビュー名の配列。コンマ区切りの値リスト"
 
 msgid ""
-"Array of component content view identfiers to remove. Comma separated list of "
-"values"
-msgstr "削除するコンポーネントコンテンツビュー識別子の配列。コンマ区切りの値リスト"
+"Array of component content view identfiers to remove. Comma separated list "
+"of values"
+msgstr ""
+"削除するコンポーネントコンテンツビュー識別子の配列。コンマ区切りの値リスト"
 
 msgid "Components removed from content view."
 msgstr "コンポーネントがコンテンツビューから削除されました。"
@@ -904,12 +918,15 @@ msgid "No versions to delete."
 msgstr "削除するバージョンはありません。"
 
 msgid ""
-"Version '%{version}' of content view '%{view}' scheduled for deletion in task "
-"'%{task_id}'."
-msgstr "コンテンツビュー '%{view}' のバージョン '%{version}' がタスク '%{task_id}' で削除予定です。"
+"Version '%{version}' of content view '%{view}' scheduled for deletion in "
+"task '%{task_id}'."
+msgstr ""
+"コンテンツビュー '%{view}' のバージョン '%{version}' がタスク '%{task_id}' で"
+"削除予定です。"
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
-msgstr "コンテンツビュー '%{view}' のバージョン '%{version}' が削除されました。"
+msgstr ""
+"コンテンツビュー '%{view}' のバージョン '%{version}' が削除されました。"
 
 msgid "Content View Name"
 msgstr "コンテンツビュー名"
@@ -941,8 +958,10 @@ msgstr "タスク %{id} でコンテンツビューがプロモートされて�
 msgid "Could not promote the content view"
 msgstr "コンテンツビューをプロモートできませんでした"
 
-msgid "force content view promotion and bypass lifecycle environment restriction"
-msgstr "コンテンツビューを強制的にプロモートしてライフサイクル環境の制限を無視する"
+msgid ""
+"force content view promotion and bypass lifecycle environment restriction"
+msgstr ""
+"コンテンツビューを強制的にプロモートしてライフサイクル環境の制限を無視する"
 
 msgid "Name of the target environment"
 msgstr "ターゲット環境の名前"
@@ -951,8 +970,8 @@ msgid "Id of the target environment"
 msgstr "ターゲット環境の ID"
 
 msgid ""
-"Environment name from where to promote its version from (if version is unknown"
-")"
+"Environment name from where to promote its version from (if version is "
+"unknown)"
 msgstr "バージョンのプロモート元の環境名 (バージョンが不明な場合)"
 
 msgid "Id of the environment from where to promote its version "
@@ -973,7 +992,8 @@ msgstr "コンテンツビューの増分更新中にエラーが発生しまし
 msgid "list of lifecycle environment IDs to update the content view version in"
 msgstr "コンテンツビューを更新するライフサイクル環境 ID のリスト"
 
-msgid "list of lifecycle environment names to update the content view version in"
+msgid ""
+"list of lifecycle environment names to update the content view version in"
 msgstr "コンテンツビューを更新するライフサイクル環境名のリスト"
 
 msgid "Organization name for resolving lifecycle environment names"
@@ -983,11 +1003,12 @@ msgid "Organization id for resolving lifecycle environment names"
 msgstr "ライフサイクル環境名を解決するための組織 ID"
 
 msgid ""
-"Update all editable and applicable hosts within the specified Content View and"
-" \\\n"
+"Update all editable and applicable hosts within the specified Content View "
+"and \\\n"
 "               Lifecycle Environments"
 msgstr ""
-"指定のコンテンツビューおよびライフサイクル環境で編集可能かつ適用可能なホストを \\\n"
+"指定のコンテンツビューおよびライフサイクル環境で編集可能かつ適用可能なホスト"
+"を \\\n"
 "               更新します"
 
 msgid "IDs of hosts to update"
@@ -1021,22 +1042,22 @@ msgid "Manage docker manifests"
 msgstr ""
 
 msgid "Schema Version"
-msgstr ""
+msgstr "スキーマバージョン"
 
 msgid "Digest"
-msgstr ""
+msgstr "ダイジェスト"
 
 msgid "Downloaded"
 msgstr ""
 
 msgid "Tags"
-msgstr ""
+msgstr "タグ"
 
 msgid "Manage docker tags"
 msgstr ""
 
 msgid "Tag"
-msgstr ""
+msgstr "タグ"
 
 msgid "Repository ID"
 msgstr "リポジトリー ID"
@@ -1165,7 +1186,7 @@ msgid "Security"
 msgstr "セキュリティー"
 
 msgid "Bugfix"
-msgstr ""
+msgstr "バグ修正"
 
 msgid "Enhancement"
 msgstr "機能強化"
@@ -1210,7 +1231,8 @@ msgid "Manipulate errata for a host collection"
 msgstr "ホストコレクションのエラータを操作します"
 
 msgid "Install errata on content hosts contained within a host collection"
-msgstr "ホストコレクション内に含まれるコンテンツホストにエラータをインストールします"
+msgstr ""
+"ホストコレクション内に含まれるコンテンツホストにエラータをインストールします"
 
 msgid "Successfully scheduled installation of errata."
 msgstr "エラータのインストールが正常にスケジュールされました。"
@@ -1228,7 +1250,9 @@ msgid "comma-separated list of packages to install"
 msgstr "インストールするパッケージのコンマ区切りリスト"
 
 msgid "Install packages on content hosts contained within a host collection"
-msgstr "ホストコレクション内に含まれるコンテンツホストにパッケージをインストールします"
+msgstr ""
+"ホストコレクション内に含まれるコンテンツホストにパッケージをインストールしま"
+"す"
 
 msgid "Successfully scheduled installation of package(s)."
 msgstr "パッケージのインストールが正常にスケジュールされました。"
@@ -1260,8 +1284,11 @@ msgstr "ホストコレクションのパッケージグループを操作しま
 msgid "comma-separated list of package-groups to install"
 msgstr "インストールするパッケージグループのコンマ区切りリスト"
 
-msgid "Install package-groups on content hosts contained within a host collection"
-msgstr "ホストコレクション内に含まれるコンテンツホストにパッケージグループをインストールします"
+msgid ""
+"Install package-groups on content hosts contained within a host collection"
+msgstr ""
+"ホストコレクション内に含まれるコンテンツホストにパッケージグループをインス"
+"トールします"
 
 msgid "Successfully scheduled installation of package-group(s)."
 msgstr "パッケージグループのインストールが正常にスケジュールされました。"
@@ -1269,8 +1296,11 @@ msgstr "パッケージグループのインストールが正常にスケジュ
 msgid "Could not schedule installation of package-group(s)"
 msgstr "パッケージグループのインストールをスケジュールできませんでした"
 
-msgid "Update package-groups on content hosts contained within a host collection"
-msgstr "ホストコレクション内に含まれるコンテンツホストでパッケージグループを更新します"
+msgid ""
+"Update package-groups on content hosts contained within a host collection"
+msgstr ""
+"ホストコレクション内に含まれるコンテンツホストでパッケージグループを更新しま"
+"す"
 
 msgid "Successfully scheduled update of package-groups(s)."
 msgstr "パッケージグループの更新が正常にスケジュールされました。"
@@ -1278,8 +1308,11 @@ msgstr "パッケージグループの更新が正常にスケジュールされ
 msgid "Could not schedule update of package-group(s)"
 msgstr "パッケージグループの更新をスケジュールできませんでした"
 
-msgid "Remove package-groups on content hosts contained within a host collection"
-msgstr "ホストコレクション内に含まれるコンテンツホストでパッケージグループを削除します"
+msgid ""
+"Remove package-groups on content hosts contained within a host collection"
+msgstr ""
+"ホストコレクション内に含まれるコンテンツホストでパッケージグループを削除しま"
+"す"
 
 msgid "Successfully scheduled removal of package-groups(s)."
 msgstr "パッケージグループの削除が正常にスケジュールされました。"
@@ -1318,10 +1351,10 @@ msgid "Content view environments"
 msgstr ""
 
 msgid "Content view"
-msgstr ""
+msgstr "コンテンツビュー"
 
 msgid "Lifecycle environment"
-msgstr ""
+msgstr "ライフサイクル環境"
 
 msgid "Kickstart Repository"
 msgstr "Kickstart リポジトリー"
@@ -1392,29 +1425,31 @@ msgstr "サブスクリプションがホストから正常に削除されまし
 msgid "Failed to remove subscriptions from the host"
 msgstr "ホストからのサブスクリプションの削除に失敗しました"
 
-msgid "Remove the first instance of a subscription with matching id and quantity"
-msgstr "ID および数量が一致するサブスクリプションの最初のインスタンスを削除する"
+msgid ""
+"Remove the first instance of a subscription with matching id and quantity"
+msgstr ""
+"ID および数量が一致するサブスクリプションの最初のインスタンスを削除する"
 
 msgid "Content View id"
-msgstr ""
+msgstr "コンテンツビュー ID"
 
 msgid "Content View version"
 msgstr ""
 
 msgid "Environment name"
-msgstr ""
+msgstr "環境名"
 
 msgid "Product name"
-msgstr ""
+msgstr "製品名"
 
 msgid "Trace ID"
 msgstr ""
 
 msgid "Application"
-msgstr ""
+msgstr "アプリケーション"
 
 msgid "Helper"
-msgstr ""
+msgstr "ヘルパー"
 
 msgid "Traces are being resolved with task %{id}."
 msgstr ""
@@ -1531,7 +1566,7 @@ msgid "RPMs"
 msgstr "RPM"
 
 msgid "Simple Content Access"
-msgstr ""
+msgstr "シンプルコンテンツアクセス"
 
 msgid "Service Levels"
 msgstr "サービスレベル"
@@ -1546,7 +1581,7 @@ msgid "Upstream Content View"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "ãƒ¦ãƒ¼ã‚¶ãƒ¼å��"
 
 msgid "SSL CA Credential ID"
 msgstr ""
@@ -1555,19 +1590,19 @@ msgid "Enabled"
 msgstr "有効化済み"
 
 msgid "Disabled"
-msgstr ""
+msgstr "無効化済み"
 
 msgid "Export Sync"
-msgstr ""
+msgstr "エクスポートの同期"
 
 msgid "Network Sync"
-msgstr ""
+msgstr "ネットワークの同期"
 
 msgid "Red Hat CDN"
-msgstr ""
+msgstr "Red Hat CDN"
 
 msgid "Custom CDN"
-msgstr ""
+msgstr "カスタム CDN"
 
 msgid "Organization updated."
 msgstr "組織が更新されました。"
@@ -1627,28 +1662,28 @@ msgid "Summary"
 msgstr "要約"
 
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 msgid "Build Time"
-msgstr ""
+msgstr "ビルド時間"
 
 msgid "Group"
-msgstr ""
+msgstr "グループ"
 
 msgid "Requires"
-msgstr ""
+msgstr "必須:"
 
 msgid "Provides"
-msgstr ""
+msgstr "提供"
 
 msgid "Files"
 msgstr "ファイル"
 
 msgid "Size"
-msgstr ""
+msgstr "ã‚µã‚¤ã‚º"
 
 msgid "Modular"
-msgstr ""
+msgstr "モジュラー"
 
 msgid "Package Group Name"
 msgstr "パッケージグループ名"
@@ -1771,8 +1806,8 @@ msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
 msgid ""
-"Limit the repository type to return. View available types with \"hammer reposit"
-"ory types\""
+"Limit the repository type to return. View available types with \"hammer "
+"repository types\""
 msgstr ""
 
 msgid "Red Hat Repository"
@@ -1782,7 +1817,7 @@ msgid "Checksum Type"
 msgstr "チェックサムタイプ"
 
 msgid "Mirroring Policy"
-msgstr ""
+msgstr "ミラーリングポリシー"
 
 msgid "Publish Via HTTP"
 msgstr "HTTP での公開"
@@ -1809,10 +1844,10 @@ msgid "Ignorable Content Units"
 msgstr "無視できるコンテンツユニット"
 
 msgid "HTTP Proxy"
-msgstr ""
+msgstr "HTTP ãƒ—ãƒ­ã‚­ã‚·ãƒ¼"
 
 msgid "HTTP Proxy Policy"
-msgstr ""
+msgstr "HTTPプロキシーポリシー"
 
 msgid "Sync"
 msgstr "同期"
@@ -1845,13 +1880,13 @@ msgid "no"
 msgstr "no"
 
 msgid "Additive"
-msgstr ""
+msgstr "付加"
 
 msgid "Content Only"
-msgstr ""
+msgstr "コンテンツのみ"
 
 msgid "Complete Mirroring"
-msgstr ""
+msgstr "完全ミラーリング"
 
 msgid "Not Synced"
 msgstr "同期なし"
@@ -1878,7 +1913,7 @@ msgid "Canceled"
 msgstr "取り消されました"
 
 msgid "Warning"
-msgstr ""
+msgstr "è­¦å‘Š"
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "タスク %{id} でリポジトリーを同期中です。"
@@ -1893,8 +1928,8 @@ msgid "Could not create the repository"
 msgstr "リポジトリーを作成できませんでした"
 
 msgid ""
-"Type of repository to create. View available types with \"hammer repository typ"
-"es\""
+"Type of repository to create. View available types with \"hammer repository "
+"types\""
 msgstr ""
 
 msgid "Repository updated."
@@ -1943,8 +1978,8 @@ msgid "Indexed?"
 msgstr ""
 
 msgid ""
-"The type of content unit to upload (srpm, file, etc.). View uploadable types w"
-"ith \"hammer repository types\""
+"The type of content unit to upload (srpm, file, etc.). View uploadable types "
+"with \"hammer repository types\""
 msgstr ""
 
 msgid "Could not find any files matching PATH"
@@ -1966,18 +2001,21 @@ msgid "Name of OSTree repository in archive."
 msgstr ""
 
 msgid ""
-"Upload file, directory of files, or glob of files as content for a repository."
-"\n"
+"Upload file, directory of files, or glob of files as content for a "
+"repository.\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
-"リポジトリーのコンテンツとしてファイル、ファイルのディレクトリー、ファイルのグロブをアップロードします。\n"
+"リポジトリーのコンテンツとしてファイル、ファイルのディレクトリー、ファイルの"
+"グロブをアップロードします。\n"
 "グロブは、一重および二重引用符でエスケープする必要があります"
 
 msgid "Successfully uploaded file %s"
 msgstr ""
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
-msgstr "ダイジェスト '%{digest}' でマニフェストファイル '%{name}' が正常にアップロードされました"
+msgstr ""
+"ダイジェスト '%{digest}' でマニフェストファイル '%{name}' が正常にアップロー"
+"ドされました"
 
 msgid "Could not upload the content."
 msgstr ""
@@ -1992,8 +2030,8 @@ msgid "Could not remove content"
 msgstr "コンテンツを削除できませんでした"
 
 msgid ""
-"The type of content unit to remove (srpm, docker_manifest, etc.). View removab"
-"le types with \"hammer repository types\""
+"The type of content unit to remove (srpm, docker_manifest, etc.). View "
+"removable types with \"hammer repository types\""
 msgstr ""
 
 msgid "Forces a republish of the specified repository."
@@ -2006,7 +2044,7 @@ msgid "Could not republish the repository."
 msgstr ""
 
 msgid "Reclaim space from an On Demand repository"
-msgstr ""
+msgstr "オンデマンドリポジトリーからの領域の再利用"
 
 msgid "Repository space reclaimed."
 msgstr ""
@@ -2102,7 +2140,7 @@ msgid "Recurring Logic ID"
 msgstr "再帰論理 ID"
 
 msgid "Next Sync"
-msgstr ""
+msgstr "次の同期"
 
 msgid "how often synchronization should run"
 msgstr "同期の実行頻度"
@@ -2111,9 +2149,11 @@ msgid "set this when interval is custom cron"
 msgstr "間隔がカスタム cron の場合にはこれを設定します"
 
 msgid ""
-"Start date and time for the sync plan.Time is optional, if kept blank current "
-"system time will be considered"
-msgstr "同期プランの開始日時。時間はオプションです。空白にすると、現在のシステム時間が使用されます"
+"Start date and time for the sync plan.Time is optional, if kept blank "
+"current system time will be considered"
+msgstr ""
+"同期プランの開始日時。時間はオプションです。空白にすると、現在のシステム時間"
+"が使用されます"
 
 msgid "Sync plan created."
 msgstr "同期プランが作成されました。"
