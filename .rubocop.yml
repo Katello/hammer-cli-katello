@@ -1,18 +1,16 @@
 # TODO: remove this
 inherit_from: .rubocop_todo.yml
 
+inherit_gem:
+  theforeman-rubocop:
+    - lenient.yml
+
 AllCops:
   TargetRubyVersion: 2.7
 
 MethodLength:
   Description: 'Avoid methods longer than 30 lines of code.'
   Max: 30 # default is 10
-
-Documentation:
-  Enabled: false
-
-StringLiterals:
-  Enabled: false
 
 HashSyntax:
   Enabled: false
@@ -69,12 +67,6 @@ RedundantReturn:
   Enabled: false
 
 SingleLineBlockParams:
-  Enabled: false
-
-FormatString:
-  Enabled: false # we use % for i18n
-
-Style/Alias:
   Enabled: false
 
 Style/MultilineMethodCallBraceLayout:
