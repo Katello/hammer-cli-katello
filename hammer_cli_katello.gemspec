@@ -65,6 +65,8 @@ Gem::Specification.new do |gem|
   gem.version = HammerCLIKatello.version
   gem.required_ruby_version = '>= 2.7', '< 3.2'
 
+  gem.add_dependency 'theforeman-rubocop', '~> 0.1.0'
+
   gem.add_dependency 'hammer_cli_foreman', '~> 3.9'
   gem.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.20'
 end
