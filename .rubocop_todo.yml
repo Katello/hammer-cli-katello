@@ -57,8 +57,8 @@ Layout/ExtraSpacing:
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
-# Offense count: 25
-# This cop supports safe autocorrection (--autocorrect).
+# Offense count: 17
+# Cop supports --auto-correct.
 # Configuration parameters: AllowMultipleStyles, EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle.
 # SupportedHashRocketStyles: key, separator, table
 # SupportedColonStyles: key, separator, table
@@ -67,9 +67,6 @@ Layout/HashAlignment:
   Exclude:
     - 'lib/hammer_cli_katello/id_resolver.rb'
     - 'test/functional/content_export/complete/version_test.rb'
-    - 'test/functional/content_view/component/add_test.rb'
-    - 'test/functional/content_view/component/remove_test.rb'
-    - 'test/functional/content_view/component/update_test.rb'
 
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).
