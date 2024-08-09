@@ -22,16 +22,27 @@ module HammerCLIKatello
       validate_options :before, 'IdResolution' do
         organization_options = [:option_organization_id, :option_organization_name, \
                                 :option_organization_label]
+        content_view_options = [:option_content_view_id, :option_content_view_name]
 
-        if option(:option_product_name).exist?
+        if option(:option_product_name).exist? || option(:option_content_view_name).exist?
           any(*organization_options).required
+        end
+
+        if option(:option_content_view_version_version).exist?
+          any(*content_view_options).required
+        end
+
+        if any(*content_view_options).exist?
+          any(:option_content_view_version_id,
+              :option_content_view_version_version,
+              :option_environment_id,
+              :option_environment_name).required
         end
       end
 
       build_options do |o|
         o.expand.including(:products, :organizations, :content_views)
       end
-
       extend_with(HammerCLIKatello::CommandExtensions::LifecycleEnvironment.new)
     end
 

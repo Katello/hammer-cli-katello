@@ -119,6 +119,9 @@ module HammerCLIKatello
     end
 
     # rubocop:disable Style/EmptyElse
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/CyclomaticComplexity
+    # rubocop:disable Metrics/PerceivedComplexity
     def content_view_version_id(options)
       key_id = HammerCLI.option_accessor_name("id")
       key_content_view_id = HammerCLI.option_accessor_name("content_view_id")
@@ -128,7 +131,16 @@ module HammerCLIKatello
 
       options[key_content_view_id] ||= search_and_rescue(:content_view_id, "content_view", options)
 
+      if options[key_content_view_id] && options['option_environment_name'] &&
+         options['option_environment_id'].nil?
+        lifecycle_environment_resource_name = (HammerCLIForeman.param_to_resource('environment') ||
+         HammerCLIForeman.param_to_resource('lifecycle_environment')).singular_name
+        options['option_environment_id'] = lifecycle_environment_id(
+          scoped_options(lifecycle_environment_resource_name, options, :single))
+      end
+
       results = find_resources(:content_view_versions, options)
+
       options[from_environment_id] ||= from_lifecycle_environment_id(options)
 
       return pick_result(results, @api.resource(:content_view_versions))['id'] if results.size == 1
@@ -145,6 +157,9 @@ module HammerCLIKatello
       end
     end
     # rubocop:enable Style/EmptyElse
+    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/CyclomaticComplexity
+    # rubocop:enable Metrics/PerceivedComplexity
 
     private
 
