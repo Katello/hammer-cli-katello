@@ -63,7 +63,7 @@ Gem::Specification.new do |gem|
   gem.name = 'hammer_cli_katello'
   gem.require_paths = ['lib']
   gem.version = HammerCLIKatello.version
-  gem.required_ruby_version = '>= 2.7', '< 3.2'
+  gem.required_ruby_version = '>= 2.7', '< 4'
 
   gem.add_development_dependency 'theforeman-rubocop', '~> 0.1.0'
 
