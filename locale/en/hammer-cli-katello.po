@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.13.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.14.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 17:04+0000\n"
+"POT-Creation-Date: 2024-09-19 09:52-0400\n"
 "PO-Revision-Date: 2023-07-12 17:04+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,9 +84,6 @@ msgid "View Module Streams"
 msgstr ""
 
 msgid "Manipulate source RPMs"
-msgstr ""
-
-msgid "Simple content access commands"
 msgstr ""
 
 msgid "Manipulate docker content"
@@ -174,6 +171,33 @@ msgid "Alternate content source is being refreshed in task %{id}."
 msgstr ""
 
 msgid "Could not refresh the alternate content source"
+msgstr ""
+
+msgid "Refresh all alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr ""
+
+msgid "Could not refresh all alternate content sources"
+msgstr ""
+
+msgid "Refresh alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr ""
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr ""
+
+msgid "Destroy alternate content sources"
+msgstr ""
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr ""
+
+msgid "Could not destroy the specified alternate content sources"
 msgstr ""
 
 msgid "Host Limit"
@@ -368,10 +392,28 @@ msgstr ""
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr ""
 
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr ""
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr ""
+
 msgid "Capsule content is being synchronized in task %{id}."
 msgstr ""
 
 msgid "Could not synchronize capsule content"
+msgstr ""
+
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr ""
+
+msgid "Could not update capsule content counts"
+msgstr ""
+
+msgid "Capsule content checksum is being verified in task %{id}."
+msgstr ""
+
+msgid "Could not verify capsule content checksum"
 msgstr ""
 
 msgid "Last sync"
@@ -413,25 +455,61 @@ msgstr ""
 msgid "Last Published"
 msgstr ""
 
-msgid "Content"
+msgid "Repositories"
 msgstr ""
 
-msgid "Hosts"
+msgid "Repository ID"
 msgstr ""
 
-msgid "Yum repos"
+msgid "Repository Name"
 msgstr ""
 
-msgid "Container Image repos"
+msgid "Content Counts"
+msgstr ""
+
+msgid "Warning"
 msgstr ""
 
 msgid "Packages"
 msgstr ""
 
-msgid "Package groups"
+msgid "SRPMs"
+msgstr ""
+
+msgid "Module Streams"
+msgstr ""
+
+msgid "Package Groups"
 msgstr ""
 
 msgid "Errata"
+msgstr ""
+
+msgid "Debian Packages"
+msgstr ""
+
+msgid "Container Tags"
+msgstr ""
+
+msgid "Container Manifests"
+msgstr ""
+
+msgid "Container Manifest Lists"
+msgstr ""
+
+msgid "Files"
+msgstr ""
+
+msgid "Ansible Collections"
+msgstr ""
+
+msgid "OSTree Refs"
+msgstr ""
+
+msgid "Python Packages"
+msgstr ""
+
+msgid "Content view must be synced to see content counts"
 msgstr ""
 
 msgid "Content Source name"
@@ -473,6 +551,9 @@ msgid "Content Type"
 msgstr ""
 
 msgid "Product"
+msgstr ""
+
+msgid "Content"
 msgstr ""
 
 msgid "Content Credential created."
@@ -710,10 +791,22 @@ msgstr ""
 msgid "Yum Repositories"
 msgstr ""
 
+msgid "File Repositories"
+msgstr ""
+
 msgid "Container Image Repositories"
 msgstr ""
 
 msgid "OSTree Repositories"
+msgstr ""
+
+msgid "Ansible Repositories"
+msgstr ""
+
+msgid "Debian Repositories"
+msgstr ""
+
+msgid "Python Repositories"
 msgstr ""
 
 msgid "Versions"
@@ -723,6 +816,15 @@ msgid "Published"
 msgstr ""
 
 msgid "Components"
+msgstr ""
+
+msgid "Latest version"
+msgstr ""
+
+msgid "Not yet published"
+msgstr ""
+
+msgid "Always update to the latest"
 msgstr ""
 
 msgid "Activation Keys"
@@ -910,13 +1012,49 @@ msgstr ""
 msgid "Content View Label"
 msgstr ""
 
-msgid "Repositories"
-msgstr ""
-
 msgid "Has Applied Filters"
 msgstr ""
 
 msgid "Applied Filters"
+msgstr ""
+
+msgid "Inclusion"
+msgstr ""
+
+msgid "Original packages"
+msgstr ""
+
+msgid "Original module streams"
+msgstr ""
+
+msgid "Rules"
+msgstr ""
+
+msgid "UUID"
+msgstr ""
+
+msgid "Module stream Id"
+msgstr ""
+
+msgid "Types"
+msgstr ""
+
+msgid "Architecture"
+msgstr ""
+
+msgid "Content view filter Id"
+msgstr ""
+
+msgid "Errata Id"
+msgstr ""
+
+msgid "Date type"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
 msgstr ""
 
 msgid "Dependency Solving"
@@ -926,6 +1064,13 @@ msgid "Content View Version is being republished with task %{id}."
 msgstr ""
 
 msgid "Could not republish the Content View"
+msgstr ""
+
+msgid ""
+"Verifying checksum of Content View Version repositories with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repositories in the Content View Version"
 msgstr ""
 
 msgid "Content view is being promoted with task %{id}."
@@ -995,9 +1140,6 @@ msgstr ""
 msgid "checksum"
 msgstr ""
 
-msgid "Architecture"
-msgstr ""
-
 msgid "Nav"
 msgstr ""
 
@@ -1031,9 +1173,6 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-msgid "Repository ID"
-msgstr ""
-
 msgid "Docker Manifest ID"
 msgstr ""
 
@@ -1061,9 +1200,6 @@ msgstr ""
 msgid "Solution"
 msgstr ""
 
-msgid "Module Streams"
-msgstr ""
-
 msgid "Stream"
 msgstr ""
 
@@ -1073,19 +1209,10 @@ msgstr ""
 msgid "Filter ID"
 msgstr ""
 
-msgid "Inclusion"
-msgstr ""
-
-msgid "Rules"
-msgstr ""
-
 msgid "Minimum Version"
 msgstr ""
 
 msgid "Maximum Version"
-msgstr ""
-
-msgid "Types"
 msgstr ""
 
 msgid "Created"
@@ -1199,97 +1326,7 @@ msgstr ""
 msgid "Could not remove host(s)"
 msgstr ""
 
-msgid "Manipulate errata for a host collection"
-msgstr ""
-
-msgid "Install errata on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled installation of errata."
-msgstr ""
-
-msgid "Could not schedule installation of errata"
-msgstr ""
-
-msgid "List of Errata to install"
-msgstr ""
-
-msgid "Manipulate packages for a host collection"
-msgstr ""
-
-msgid "comma-separated list of packages to install"
-msgstr ""
-
-msgid "Install packages on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled installation of package(s)."
-msgstr ""
-
-msgid "Could not schedule installation of package(s)"
-msgstr ""
-
-msgid "Update packages on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled update of package(s)."
-msgstr ""
-
-msgid "Could not schedule update of package(s)"
-msgstr ""
-
-msgid "Remove packages on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled removal of package(s)."
-msgstr ""
-
-msgid "Could not schedule removal of package(s)"
-msgstr ""
-
-msgid "Manipulate package-groups for a host collection"
-msgstr ""
-
-msgid "comma-separated list of package-groups to install"
-msgstr ""
-
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled installation of package-group(s)."
-msgstr ""
-
-msgid "Could not schedule installation of package-group(s)"
-msgstr ""
-
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled update of package-groups(s)."
-msgstr ""
-
-msgid "Could not schedule update of package-group(s)"
-msgstr ""
-
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled removal of package-groups(s)."
-msgstr ""
-
-msgid "Could not schedule removal of package-group(s)"
-msgstr ""
-
 msgid "Arch"
-msgstr ""
-
-msgid "Errata is being applied with task %{id}."
-msgstr ""
-
-msgid "Could not apply errata"
 msgstr ""
 
 msgid "Erratum ID"
@@ -1304,6 +1341,9 @@ msgstr ""
 msgid "Could not recalculate errata"
 msgstr ""
 
+msgid "Lifecycle environment"
+msgstr ""
+
 msgid "Trace Status"
 msgstr ""
 
@@ -1314,9 +1354,6 @@ msgid "Content view environments"
 msgstr ""
 
 msgid "Content view"
-msgstr ""
-
-msgid "Lifecycle environment"
 msgstr ""
 
 msgid "Kickstart Repository"
@@ -1527,9 +1564,6 @@ msgstr ""
 msgid "RPMs"
 msgstr ""
 
-msgid "Simple Content Access"
-msgstr ""
-
 msgid "Service Levels"
 msgstr ""
 
@@ -1546,12 +1580,6 @@ msgid "Username"
 msgstr ""
 
 msgid "SSL CA Credential ID"
-msgstr ""
-
-msgid "Enabled"
-msgstr ""
-
-msgid "Disabled"
 msgstr ""
 
 msgid "Export Sync"
@@ -1638,9 +1666,6 @@ msgstr ""
 msgid "Provides"
 msgstr ""
 
-msgid "Files"
-msgstr ""
-
 msgid "Size"
 msgstr ""
 
@@ -1648,9 +1673,6 @@ msgid "Modular"
 msgstr ""
 
 msgid "Package Group Name"
-msgstr ""
-
-msgid "Repository Name"
 msgstr ""
 
 msgid "Default Packages"
@@ -1723,6 +1745,15 @@ msgid "Product proxy updated."
 msgstr ""
 
 msgid "Could not update the product HTTP Proxy."
+msgstr ""
+
+msgid "Verify checksum for one or more products"
+msgstr ""
+
+msgid "Verified checksum of product repositories with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repositories in the product"
 msgstr ""
 
 msgid "Product destroyed."
@@ -1805,6 +1836,15 @@ msgstr ""
 msgid "Ignorable Content Units"
 msgstr ""
 
+msgid "Publish Settings"
+msgstr ""
+
+msgid "Restrict to architecture"
+msgstr ""
+
+msgid "Restrict to OS Version"
+msgstr ""
+
 msgid "HTTP Proxy"
 msgstr ""
 
@@ -1817,22 +1857,7 @@ msgstr ""
 msgid "Last Sync Date"
 msgstr ""
 
-msgid "Content Counts"
-msgstr ""
-
-msgid "Source RPMS"
-msgstr ""
-
-msgid "Package Groups"
-msgstr ""
-
-msgid "Container Image Manifest Lists"
-msgstr ""
-
-msgid "Container Image Manifests"
-msgstr ""
-
-msgid "Container Image Tags"
+msgid "No restriction"
 msgstr ""
 
 msgid "yes"
@@ -1872,9 +1897,6 @@ msgid "Waiting"
 msgstr ""
 
 msgid "Canceled"
-msgstr ""
-
-msgid "Warning"
 msgstr ""
 
 msgid "Repository is being synchronized in task %{id}."
@@ -2000,6 +2022,12 @@ msgstr ""
 msgid "Could not republish the repository."
 msgstr ""
 
+msgid "Verified checksum of repository with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repository"
+msgstr ""
+
 msgid "Reclaim space from an On Demand repository"
 msgstr ""
 
@@ -2015,6 +2043,9 @@ msgstr ""
 msgid "Registry Name"
 msgstr ""
 
+msgid "Enabled"
+msgstr ""
+
 msgid "Repository enabled."
 msgstr ""
 
@@ -2025,21 +2056,6 @@ msgid "Repository disabled."
 msgstr ""
 
 msgid "Could not disable repository"
-msgstr ""
-
-msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
-
-msgid "Simple Content Access Enabled."
-msgstr ""
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Simple Content Access Disabled."
-msgstr ""
-
-msgid "Could not disable Simple Content Access for this organization"
 msgstr ""
 
 msgid "Time UTC"
