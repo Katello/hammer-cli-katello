@@ -56,41 +56,61 @@ module HammerCLIKatello
         field :id, _("Id")
         field :description, _("Description"), Fields::Field, :hide_blank => true
         field :format_consumed, _("Host Limit")
-        field :auto_attach, _("Auto Attach")
+        field :multi_content_view_environment, _("Multi Content View Environment"), Fields::Boolean
         field :release_version, _("Release Version"), Fields::Field, :hide_blank => true
 
-        from :environment do
-          field :name, _("Lifecycle Environment")
-        end
-        from :content_view do
-          field :name, _("Content View")
+        collection :organization, _("Organization") do
+          field :id, _("Id"), Fields::Field, :hide_blank => true
+          field :name, _("Name"), Fields::Field, :hide_blank => true
         end
 
-        collection :hosts, _("Associated Hosts") do
-          field :id, _('Id')
-          field :name, _("Name")
+        collection :content_view_environments, _('Content view environments') do
+          from :content_view do
+            label _("Content view") do
+              field :id, _("Id")
+              field :name, _("Name")
+              field :content_view_version, _("Version")
+              field :content_view_version_id, _("Content view version Id")
+              field :composite, _("Composite"), Fields::Boolean
+            end
+          end
+          from :lifecycle_environment do
+            label _("Lifecycle environment") do
+              field :id, _("Id")
+              field :name, _("Name")
+            end
+          end
+          field :candlepin_name, _("Candlepin Name")
         end
 
-        collection :host_collections, _("Host Collections") do
-          field :id, _("Id")
-          field :name, _("Name")
+        collection :hosts, _("Associated Hosts"), hide_blank: true, hide_empty: true do
+          field :id, _('Id'), Fields::Field, :hide_blank => true
+          field :name, _("Name"), Fields::Field, :hide_blank => true
         end
 
-        collection :content_overrides, _("Content Overrides") do
-          field :content_label, _("Content Label")
-          field :name, _("Name")
-          field :value, _("Value")
+        collection :host_collections, _("Host Collections"), hide_blank: true, hide_empty: true do
+          field :id, _("Id"), Fields::Field, :hide_blank => true
+          field :name, _("Name"), Fields::Field, :hide_blank => true
         end
 
-        label _("System Purpose") do
-          field :service_level, _('Service Level')
-          field :purpose_usage, _('Purpose Usage')
-          field :purpose_role, _('Purpose Role')
-          field :purpose_addons, _('Purpose Addons'), Fields::List
+        collection :content_overrides, _("Content Overrides"), hide_blank: true, hide_empty: true do
+          field :content_label, _("Content Label"), Fields::Field, :hide_blank => true
+          field :name, _("Name"), Fields::Field, :hide_blank => true
+          field :value, _("Value"), Fields::Field, :hide_blank => true
+        end
+
+        label _("System Purpose"), hide_blank: true, hide_empty: true do
+          field :service_level, _('Service Level'), Fields::Field, :hide_blank => true
+          field :purpose_usage, _('Purpose Usage'), Fields::Field, :hide_blank => true
+          field :purpose_role, _('Purpose Role'), Fields::Field, :hide_blank => true
+          field :purpose_addons, _('Purpose Addons'), Fields::List, :hide_blank => true
         end
       end
 
       def extend_data(data)
+        # rubocop:disable Layout/LineLength
+        # Hack to hide purpose addons if it's not set since it's not possible to hide the Fields::List values
+        data["purpose_addons"].length.positive? ? data["purpose_addons"] = data["purpose_addons"] : data["purpose_addons"] = nil
         limit = data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
 
         data["format_consumed"] = _("%{consumed} of %{limit}") %
@@ -99,6 +119,7 @@ module HammerCLIKatello
                                     :limit => limit
                                   }
         data
+        # rubocop:enable Layout/LineLength
       end
 
       build_options
