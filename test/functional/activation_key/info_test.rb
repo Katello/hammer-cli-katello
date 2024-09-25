@@ -17,11 +17,37 @@ describe 'activation-key info' do
 
     result = run_cmd(@cmd + params)
 
-    expected_fields = [['Description', 'Activation key'],
+    expected_fields = [['Name', 'test key2'],
+                       ['Id', '1'],
+                       ['Description', 'Activation key'],
                        ['Purpose Usage', 'Usage'],
                        ['Purpose Role', 'Role'],
                        ['Purpose Addons', 'Test Addon1, Test Addon2'],
-                       ['Lifecycle Environment', 'Library']]
+                       ['Multi Content View Environment', 'yes'],
+                       ['Organization', ''],
+                       ['Id', '1'],
+                       ['Name', 'Default Organization'],
+                       ['Content view environments', ''],
+                       ['Content view', ''],
+                       ['Id', '2'],
+                       ['Name', 'RHEL-8'],
+                       ['Version', '1.0'],
+                       ['Content view version Id', '4'],
+                       ['Composite', 'no'],
+                       ['Lifecycle environment', ''],
+                       ['Id', '1'],
+                       ['Name', 'Library'],
+                       ['Candlepin Name', 'Library/RHEL-8'],
+                       ['Content view', ''],
+                       ['Id', '4'],
+                       ['Name', 'Zoo'],
+                       ['Version', '1.0'],
+                       ['Content view version Id', '2'],
+                       ['Composite', 'no'],
+                       ['Lifecycle environment', ''],
+                       ['Id', '2'],
+                       ['Name', 'Dev'],
+                       ['Candlepin Name', 'Dev/Zoo']]
 
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
     expected_results.each { |expected|  assert_cmd(expected, result) }

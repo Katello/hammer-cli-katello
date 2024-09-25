@@ -13,5 +13,47 @@
     "name": "Library",
     "id": 1
   },
-  "purpose_addons": "Test Addon1, Test Addon2"
+  "purpose_addons": "Test Addon1, Test Addon2",
+  "multi_content_view_environment": true,
+  "organization": {
+    "name": "Default Organization",
+    "label": "Default_Organization",
+    "id": 1
+  },
+  "content_view_environments": [
+    {
+      "content_view": {
+        "id": 2,
+        "name": "RHEL-8",
+        "composite": false,
+        "content_view_version": "1.0",
+        "content_view_version_id": 4,
+        "content_view_version_latest": true,
+        "content_view_default": false
+      },
+      "lifecycle_environment": {
+        "id": 1,
+        "name": "Library",
+        "lifecycle_environment_library": true
+      },
+      "candlepin_name": "Library/RHEL-8"
+    },
+    {
+      "content_view": {
+        "id": 4,
+        "name": "Zoo",
+        "composite": false,
+        "content_view_version": "1.0",
+        "content_view_version_id": 2,
+        "content_view_version_latest": true,
+        "content_view_default": false
+      },
+      "lifecycle_environment": {
+        "id": 2,
+        "name": "Dev",
+        "lifecycle_environment_library": false
+      },
+      "candlepin_name": "Dev/Zoo"
+    }
+  ]
 }
