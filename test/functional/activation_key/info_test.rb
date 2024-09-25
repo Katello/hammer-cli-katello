@@ -1,5 +1,6 @@
 require_relative '../test_helper'
 require 'hammer_cli_katello/associating_commands'
+require 'json'
 
 describe 'activation-key info' do
   before do
@@ -13,17 +14,16 @@ describe 'activation-key info' do
     end
 
     json_file = File.join(File.dirname(__FILE__), 'data', 'activation_key.json')
-    ex.returns(JSON.parse(File.read(json_file)))
+    json_data = JSON.parse(File.read(json_file))
+    ex.returns(json_data)
+
+    expected_fields = json_data.map do |key, value|
+      [key.split('_').map(&:capitalize).join(' '), value.nil? ? '' : value.to_s]
+    end
 
     result = run_cmd(@cmd + params)
 
-    expected_fields = [['Description', 'Activation key'],
-                       ['Purpose Usage', 'Usage'],
-                       ['Purpose Role', 'Role'],
-                       ['Purpose Addons', 'Test Addon1, Test Addon2'],
-                       ['Lifecycle Environment', 'Library']]
-
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
-    expected_results.each { |expected|  assert_cmd(expected, result) }
+    expected_results.each { |expected| assert_cmd(expected, result) }
   end
 end
