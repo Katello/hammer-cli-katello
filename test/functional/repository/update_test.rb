@@ -27,7 +27,6 @@ module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
         }
       end
       it "adds a tag to an image" do
-        skip "Until we  https://projects.theforeman.org/issues/34817 is resolved"
         ex = api_expects(:content_uploads, :create)
              .with_params('repository_id' => repo_id, :size => 0)
 
