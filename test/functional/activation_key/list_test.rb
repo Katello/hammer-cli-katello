@@ -35,15 +35,16 @@ describe 'listing activation-keys' do
     end
 
     ex.returns(empty_response)
-
-    expected_result = success_result("---|------|------------|-----------------------|-------------
-ID | NAME | HOST LIMIT | LIFECYCLE ENVIRONMENT | CONTENT VIEW
----|------|------------|-----------------------|-------------
+    # rubocop:disable Layout/LineLength
+    expected_result = success_result("---|------|------------|---------------------------|-------------------------------
+ID | NAME | HOST LIMIT | CONTENT VIEW ENVIRONMENTS | MULTI CONTENT VIEW ENVIRONMENT
+---|------|------------|---------------------------|-------------------------------
 ")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
   end
+  # rubocop:enable Layout/LineLength
 
   it "lists the activation-keys belonging to a lifecycle environment by name" do
     params = ["--organization-id=#{org_id}", '--lifecycle-environment=test']
@@ -56,13 +57,14 @@ ID | NAME | HOST LIMIT | LIFECYCLE ENVIRONMENT | CONTENT VIEW
     end
 
     ex.returns(empty_response)
-
-    expected_result = success_result("---|------|------------|-----------------------|-------------
-ID | NAME | HOST LIMIT | LIFECYCLE ENVIRONMENT | CONTENT VIEW
----|------|------------|-----------------------|-------------
+    # rubocop:disable Layout/LineLength
+    expected_result = success_result("---|------|------------|---------------------------|-------------------------------
+ID | NAME | HOST LIMIT | CONTENT VIEW ENVIRONMENTS | MULTI CONTENT VIEW ENVIRONMENT
+---|------|------------|---------------------------|-------------------------------
 ")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
   end
+  # rubocop:enable Layout/LineLength
 end

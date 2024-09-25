@@ -51,7 +51,7 @@ Gem::Specification.new do |gem|
     "Zach Huntington-Meath"
   ]
   gem.email = ['katello@lists.fedorahosted.org']
-  gem.license = "GPL-3.0"
+  gem.license = "GPL-3.0-or-later"
   gem.description = 'Hammer-CLI-Katello is a plugin for Hammer to provide' \
     ' connectivity to a Katello server.'
   gem.summary = 'Katello commands for Hammer'
