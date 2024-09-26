@@ -1,6 +1,5 @@
 require_relative '../test_helper'
 require 'hammer_cli_katello/associating_commands'
-require 'json'
 
 describe 'activation-key info' do
   before do
@@ -14,16 +13,43 @@ describe 'activation-key info' do
     end
 
     json_file = File.join(File.dirname(__FILE__), 'data', 'activation_key.json')
-    json_data = JSON.parse(File.read(json_file))
-    ex.returns(json_data)
-
-    expected_fields = json_data.map do |key, value|
-      [key.split('_').map(&:capitalize).join(' '), value.nil? ? '' : value.to_s]
-    end
+    ex.returns(JSON.parse(File.read(json_file)))
 
     result = run_cmd(@cmd + params)
 
+    expected_fields = [['Name', 'test key2'],
+                       ['Id', '1'],
+                       ['Description', 'Activation key'],
+                       ['Purpose Usage', 'Usage'],
+                       ['Purpose Role', 'Role'],
+                       ['Purpose Addons', 'Test Addon1, Test Addon2'],
+                       ['Multi Content View Environment', 'yes'],
+                       ['Organization', ''],
+                       ['Id', '1'],
+                       ['Name', 'Default Organization'],
+                       ['Content view environments', ''],
+                       ['Content view', ''],
+                       ['Id', '2'],
+                       ['Name', 'RHEL-8'],
+                       ['Version', '1.0'],
+                       ['Content view version Id', '4'],
+                       ['Composite', 'no'],
+                       ['Lifecycle environment', ''],
+                       ['Id', '1'],
+                       ['Name', 'Library'],
+                       ['Candlepin Name', 'Library/RHEL-8'],
+                       ['Content view', ''],
+                       ['Id', '4'],
+                       ['Name', 'Zoo'],
+                       ['Version', '1.0'],
+                       ['Content view version Id', '2'],
+                       ['Composite', 'no'],
+                       ['Lifecycle environment', ''],
+                       ['Id', '2'],
+                       ['Name', 'Dev'],
+                       ['Candlepin Name', 'Dev/Zoo']]
+
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
-    expected_results.each { |expected| assert_cmd(expected, result) }
+    expected_results.each { |expected|  assert_cmd(expected, result) }
   end
 end
