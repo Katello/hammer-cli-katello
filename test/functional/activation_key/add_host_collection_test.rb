@@ -12,11 +12,11 @@ module HammerCLIKatello
           ex.returns('id' => 1, host_collections: [{}])
 
           api_expects(:activation_keys, :update) do |p|
-            p['id'] == '1' && p['organization_id'] == 1 && p['host_collection_ids'] == ['3']
+            p['name'] == 'teskey' && p['organization_id'] == 1 && p['host_collection_ids'] == ['3']
           end
 
           run_cmd(%w(activation-key add-host-collection --organization-id 1
-                     --host-collection-id 3 --id 1))
+                     --host-collection-id 3 --id 1 --name teskey))
         end
 
         it 'allows resolving host collection name' do
@@ -31,11 +31,11 @@ module HammerCLIKatello
           ex.returns(id: 1, host_collection_ids: [])
 
           api_expects(:activation_keys, :update) do |p|
-            p['id'] == '1' && p['organization_id'] == 1 && p['host_collection_ids'] == ['3']
+            p['name'] == 'testkey' && p['organization_id'] == 1 && p['host_collection_ids'] == ['3']
           end
 
           run_cmd(%w(activation-key add-host-collection --organization-id 1
-                     --host-collection hc3 --id 1))
+                     --host-collection hc3 --id 1 --name testkey))
         end
 
         it 'allows resolving activation key name' do
