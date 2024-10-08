@@ -60,6 +60,12 @@ module HammerCLIKatello
                                          'hammer_cli_katello/lifecycle_environment'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("content-view-environment",
+                                         _("Manipulate content view environments"),
+                                         'HammerCLIKatello::ContentViewEnvironment',
+                                         'hammer_cli_katello/content_view_environment'
+                                        )
+
   HammerCLI::MainCommand.lazy_subcommand("product", _("Manipulate products"),
                                          'HammerCLIKatello::Product',
                                          'hammer_cli_katello/product'
