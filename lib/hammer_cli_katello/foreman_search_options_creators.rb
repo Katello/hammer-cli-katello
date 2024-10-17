@@ -28,6 +28,10 @@ module HammerCLIKatello
       create_search_options_without_katello_api(options, api.resource(:operatingsystems), mode)
     end
 
+    def create_debs_search_options(options, mode = nil)
+      create_search_options_without_katello_api(options, api.resource(:debs), mode)
+    end
+
     def create_domains_search_options(options, mode = nil)
       create_search_options_without_katello_api(options, api.resource(:domains), mode)
     end
