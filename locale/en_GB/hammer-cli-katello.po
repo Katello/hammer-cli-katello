@@ -5,16 +5,16 @@
 #
 # Translators:
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2022
-# Andi Chandler <andi@gowling.com>, 2023
+# Andi Chandler <andi@gowling.com>, 2024
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.13.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.15.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>, 2023\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2024\n"
 "Language-Team: English (United Kingdom) (https://app.transifex.com/foreman/"
 "teams/114/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -192,7 +192,7 @@ msgid "Content View"
 msgstr ""
 
 msgid "Unlimited"
-msgstr ""
+msgstr "Unlimited"
 
 msgid "%{consumed} of %{limit}"
 msgstr ""
@@ -390,7 +390,7 @@ msgid "Currently running sync tasks"
 msgstr ""
 
 msgid "Task id"
-msgstr ""
+msgstr "Task id"
 
 msgid "Progress"
 msgstr ""
@@ -1029,7 +1029,7 @@ msgid "Downloaded"
 msgstr ""
 
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 msgid "Manage docker tags"
 msgstr ""
@@ -1050,7 +1050,7 @@ msgid "Errata ID"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 msgid "Issued"
 msgstr ""
@@ -1627,7 +1627,7 @@ msgid "Relative Path"
 msgstr ""
 
 msgid "Summary"
-msgstr ""
+msgstr "Summary"
 
 msgid "Url"
 msgstr ""

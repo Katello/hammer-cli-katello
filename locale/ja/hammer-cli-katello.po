@@ -14,7 +14,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.13.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.15.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
@@ -34,10 +34,10 @@ msgid "Manipulate organizations"
 msgstr "組織の操作"
 
 msgid "Manipulate alternate content sources"
-msgstr ""
+msgstr "代替コンテンツソースの操作"
 
 msgid "Manipulate content credentials on the server"
-msgstr ""
+msgstr "サーバーでのコンテンツ認証情報の操作"
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "サーバーでの lifecycle_environments の操作"
@@ -70,7 +70,7 @@ msgid "Manipulate packages"
 msgstr "パッケージの操作"
 
 msgid "Manipulate deb packages"
-msgstr ""
+msgstr "deb パッケージの操作"
 
 msgid "Manipulate package groups"
 msgstr "パッケージグループの操作"
@@ -82,25 +82,25 @@ msgid "Manipulate files"
 msgstr "ファイルの操作"
 
 msgid "Manipulate content units"
-msgstr ""
+msgstr "コンテンツユニットの操作"
 
 msgid "Prepare content for export to a disconnected Katello"
-msgstr ""
+msgstr "接続されていない Katello にエクスポートするためのコンテンツの準備"
 
 msgid "Import content from an upstream archive."
-msgstr ""
+msgstr "アップストリームのアーカイブからコンテンツをインポートします。"
 
 msgid "View Module Streams"
 msgstr "モジュールストリームの表示"
 
 msgid "Manipulate source RPMs"
-msgstr ""
+msgstr "ソース RPM の操作"
 
 msgid "Simple content access commands"
-msgstr ""
+msgstr "Simple Content Access コマンド"
 
 msgid "Manipulate docker content"
-msgstr ""
+msgstr "Docker コンテンツの操作"
 
 msgid "ID"
 msgstr "ID"
@@ -112,10 +112,10 @@ msgid "Type"
 msgstr "タイプ"
 
 msgid "Alternate Content Source created."
-msgstr ""
+msgstr "代替コンテンツソースが作成されました。"
 
 msgid "Could not create the Alternate Content Source."
-msgstr ""
+msgstr "代替コンテンツソースを作成できませんでした。"
 
 msgid "Label"
 msgstr "ラベル"
@@ -130,10 +130,10 @@ msgid "Content type"
 msgstr "コンテンツタイプ"
 
 msgid "Alternate content source type"
-msgstr ""
+msgstr "代替コンテンツソースのタイプ"
 
 msgid "Upstream username"
-msgstr ""
+msgstr "アップストリームのユーザー名"
 
 msgid "Verify SSL"
 msgstr "SSL の確認"
@@ -166,25 +166,25 @@ msgid "URL"
 msgstr "URL"
 
 msgid "Download policy"
-msgstr ""
+msgstr "ダウンロードポリシー"
 
 msgid "Alternate Content Source updated."
-msgstr ""
+msgstr "代替コンテンツソースが更新されました。"
 
 msgid "Could not update the Alternate Content Source."
-msgstr ""
+msgstr "代替コンテンツソースを更新できませんでした。"
 
 msgid "Alternate Content Source deleted."
-msgstr ""
+msgstr "代替コンテンツソースが削除されました。"
 
 msgid "Could not delete the Alternate Content Source."
-msgstr ""
+msgstr "代替コンテンツソースを削除できませんでした。"
 
 msgid "Alternate content source is being refreshed in task %{id}."
-msgstr ""
+msgstr "タスク %{id} で代替コンテンツソースを更新中です。"
 
 msgid "Could not refresh the alternate content source"
-msgstr ""
+msgstr "代替コンテンツソースを更新できませんでした"
 
 msgid "Host Limit"
 msgstr "ホストの制限"
@@ -208,16 +208,16 @@ msgid "Release Version"
 msgstr "リリースバージョン"
 
 msgid "Associated Hosts"
-msgstr ""
+msgstr "関連付けられたホスト"
 
 msgid "Host Collections"
 msgstr "ホストコレクション"
 
 msgid "Content Overrides"
-msgstr ""
+msgstr "コンテンツオーバーライド"
 
 msgid "Content Label"
-msgstr ""
+msgstr "コンテンツラベル"
 
 msgid "Value"
 msgstr "値"
@@ -229,13 +229,13 @@ msgid "Service Level"
 msgstr "サービスレベル"
 
 msgid "Purpose Usage"
-msgstr ""
+msgstr "目的の用途"
 
 msgid "Purpose Role"
-msgstr ""
+msgstr "目的のロール"
 
 msgid "Purpose Addons"
-msgstr ""
+msgstr "目的のアドオン"
 
 msgid "Activation key created."
 msgstr "アクティベーションキーが作成されました。"
@@ -445,13 +445,13 @@ msgid "Errata"
 msgstr "エラータ"
 
 msgid "Content Source name"
-msgstr ""
+msgstr "コンテンツソース名"
 
 msgid "Content Source"
 msgstr "コンテンツソース"
 
 msgid "Kickstart repository name"
-msgstr ""
+msgstr "Kickstart リポジトリー名"
 
 msgid "Please provide --lifecycle-environment-id"
 msgstr "--lifecycle-environment-id を指定してください"
@@ -467,7 +467,7 @@ msgstr ""
 "名前が %{name} のリポジトリーがありません"
 
 msgid "Use %s instead"
-msgstr ""
+msgstr "代わりに %s を使用する"
 
 msgid "Lifecycle environment name to search by"
 msgstr "検索するライフサイクル環境名"
@@ -488,41 +488,46 @@ msgid "Product"
 msgstr "製品"
 
 msgid "Content Credential created."
-msgstr ""
+msgstr "コンテンツ認証情報が作成されました。"
 
 msgid "Could not create Content Credential"
-msgstr ""
+msgstr "コンテンツ認証情報を作成できませんでした"
 
 msgid "Key file"
-msgstr ""
+msgstr "キーファイル"
 
 msgid "Content Credential updated."
-msgstr ""
+msgstr "コンテンツ認証情報が更新されました。"
 
 msgid "Could not update Content Credential"
-msgstr ""
+msgstr "コンテンツ認証情報を更新できませんでした"
 
 msgid "Content Credential deleted."
-msgstr ""
+msgstr "コンテンツ認証情報が削除されました。"
 
 msgid "Could not delete the Content Credential"
-msgstr ""
+msgstr "コンテンツ認証情報を削除できませんでした"
 
 msgid ""
 "Writes export metadata to disk for use by the importing Katello. This "
 "command only needs to be used if the export was performed asynchronously or "
 "if the metadata was lost"
 msgstr ""
+"インポートする Katello で使用するために、エクスポートメタデータをディスクに書"
+"き込みます。このコマンドは、エクスポートが非同期で実行された場合、またはメタ"
+"データが失われた場合にのみ使用する必要があります"
 
 msgid "Generate metadata based on output of the specified export task"
-msgstr ""
+msgstr "指定のエクスポートタスクの出力に基づいてメタデータを生成"
 
 msgid "Generate metadata based on specified export history"
-msgstr ""
+msgstr "指定のエクスポート履歴に基づいてメタデータを生成"
 
 msgid ""
 "No export history was found. Verify the value given for --task-id or --id"
 msgstr ""
+"エクスポート履歴が見つかりません。--task-id または --id に指定された値を確認"
+"してください"
 
 msgid ""
 "Generates listing file on each directory of a syncable export. This command "
@@ -530,15 +535,19 @@ msgid ""
 "listing files were lost. Assumes the syncable export directory is accessible "
 "on disk"
 msgstr ""
+"同期可能なエクスポートの各ディレクトリーにリストファイルを生成します。このコ"
+"マンドは、エクスポートが非同期で実行された場合、またはリストファイルが失われ"
+"た場合にのみ使用する必要があります。同期可能なエクスポートディレクトリーが"
+"ディスク上でアクセス可能であることを前提としています"
 
 msgid "Generate listing files for a syncable export task"
-msgstr ""
+msgstr "同期可能なエクスポートタスクのリストファイルを生成"
 
 msgid "Generate listing files based on specified export history"
-msgstr ""
+msgstr "指定のエクスポート履歴に基づいてリストファイルを生成"
 
 msgid "Destination Server"
-msgstr ""
+msgstr "宛先サーバー"
 
 msgid "Path"
 msgstr "パス"
@@ -556,38 +565,44 @@ msgid "Updated at"
 msgstr "更新:"
 
 msgid "Performs a full export a content view version"
-msgstr ""
+msgstr "コンテンツビューバージョンの完全なエクスポートを実行"
 
 msgid "Performs a full export of the organization's library environment"
-msgstr ""
+msgstr "組織のライブラリー環境の完全なエクスポートを実行"
 
 msgid "Performs a full export of a repository"
-msgstr ""
+msgstr "リポジトリーの完全なエクスポートを実行"
 
 msgid "Could not fetch the export history"
-msgstr ""
+msgstr "エクスポート履歴を取得できませんでした"
 
 msgid ""
 "Once the task completes the listing files may be generated with the command:"
-msgstr ""
+msgstr "タスクが完了したら、次のコマンドでリストファイルを生成できます:"
 
 msgid ""
 "Once the task completes the export metadata must be generated with the "
 "command:"
 msgstr ""
+"タスクが完了したら、次のコマンドでエクスポートメタデータを生成する必要があり"
+"ます:"
 
 msgid "Can not fetch export history from an unfinished task"
-msgstr ""
+msgstr "未完了のタスクからエクスポート履歴を取得することはできません"
 
 msgid ""
 "Cannot generate listing files for this export since it is not syncable. It "
 "was not generated with --format=syncable."
 msgstr ""
+"このエクスポートは同期できないため、リストファイルを生成できません。--"
+"format=syncable を使用して生成されていません。"
 
 msgid ""
 "Export History does not have the path specified. The task may have errored "
 "out."
 msgstr ""
+"エクスポート履歴にパスが指定されていません。タスクでエラーが発生した可能性が"
+"あります。"
 
 msgid ""
 "NOTE: Unable to fully export this version because it contains repositories "
@@ -595,23 +610,37 @@ msgid ""
 "affected repositories. Once synced republish the content view and export the "
 "generated version."
 msgstr ""
+"注記: このバージョンは、完全にはエクスポートできません。'即時' ダウンロードポ"
+"リシーが設定されていないリポジトリーがバージョンに含まれているためです。ダウ"
+"ンロードポリシーを更新し、影響を受けるリポジトリーを同期してください。同期し"
+"たら、コンテンツビューを再公開し、生成されたバージョンをエクスポートしてくだ"
+"さい。"
 
 msgid ""
 "NOTE: Unable to fully export this repository because it does not have the "
 "'immediate' download policy. Update the download policy, sync the repository "
 "and export."
 msgstr ""
+"注記: このリポジトリーは、完全にはエクスポートできません。'即時' ダウンロード"
+"ポリシーがリポジトリーに設定されてないためです。ダウンロードポリシーを更新"
+"し、リポジトリーを同期してエクスポートしてください。"
 
 msgid ""
 "NOTE: Unable to fully export this organization's library because it contains "
 "repositories without the 'immediate' download policy. Update the download "
 "policy and sync affected repositories to include them in the export."
 msgstr ""
+"注記: この組織のライブラリーは、完全にはエクスポートできません。'即時' ダウン"
+"ロードポリシーが設定されてないリポジトリーがライブラリーに含まれているためで"
+"す。ダウンロードポリシーを更新し、影響を受けるリポジトリーを同期してエクス"
+"ポートに含まれるようにください。"
 
 msgid ""
 "Use the following command to update the download policy of these "
 "repositories."
 msgstr ""
+"これらのリポジトリーのダウンロードポリシーを更新するには、次のコマンドを使用"
+"してください。"
 
 msgid "Repository is being exported in task %{id}."
 msgstr "タスク %{id} でリポジトリーをエクスポートしています。"
@@ -620,62 +649,68 @@ msgid "Could not export the repository"
 msgstr "リポジトリーをエクスポートできませんでした"
 
 msgid "Filter repositories by name."
-msgstr ""
+msgstr "リポジトリーを名前で絞り込みます。"
 
 msgid "Library environment is being exported in task %{id}."
-msgstr ""
+msgstr "タスク %{id} でライブラリー環境をエクスポート中です。"
 
 msgid "Could not export the library"
-msgstr ""
+msgstr "ライブラリーをエクスポートできませんでした"
 
 msgid ""
 "Fails if any of the repositories belonging to this organization are "
 "unexportable."
 msgstr ""
+"この組織に属するリポジトリーのいずれかがエクスポートできない場合は失敗しま"
+"す。"
 
 msgid "Content view version is being exported in task %{id}."
-msgstr ""
+msgstr "タスク %{id} でコンテンツビューバージョンをエクスポート中です。"
 
 msgid "Could not export the content view version"
-msgstr ""
+msgstr "コンテンツビューバージョンをエクスポートできませんでした"
 
 msgid ""
 "Fails if any of the repositories belonging to this version are unexportable."
 msgstr ""
+"このバージョンに属するリポジトリーのいずれかがエクスポートできない場合は失敗"
+"します。"
 
 msgid "Filter versions by version number."
-msgstr ""
+msgstr "バージョンをバージョン番号で絞り込みます。"
 
 msgid "Performs an incremental export of a content view version"
-msgstr ""
+msgstr "コンテンツビューバージョンの増分エクスポートを実行"
 
 msgid ""
 "Performs an incremental export of the organization's library environment"
-msgstr ""
+msgstr "組織のライブラリー環境の増分エクスポートを実行"
 
 msgid "Performs an incremental export of a repository"
-msgstr ""
+msgstr "リポジトリーの増分エクスポートを実行"
 
 msgid ""
 "Location of the metadata.json file. This is not required if the metadata."
 "json file is already in the archive directory."
 msgstr ""
+"metadata.json ファイルの場所。metadata.json ファイルがすでにアーカイブディレ"
+"クトリーにある場合、これは不要です。"
 
 msgid "Archive is being imported in task %{id}."
-msgstr ""
+msgstr "タスク %{id} でアーカイブをインポート中です。"
 
 msgid "Could not import the archive."
-msgstr ""
+msgstr "アーカイブをインポートできませんでした。"
 
 msgid "Imports a content archive to a content view version"
-msgstr ""
+msgstr "コンテンツアーカイブをコンテンツビューバージョンにインポート"
 
 msgid ""
 "Imports a content archive to an organization's library lifecycle environment"
-msgstr ""
+msgstr "コンテンツアーカイブを組織のライブラリーライフサイクル環境にインポート"
 
 msgid "Imports a repository"
-msgstr ""
+msgstr "リポジトリーのインポート"
 
 msgid "Override product content defaults"
 msgstr "製品コンテンツのデフォルトを上書きします"
@@ -755,6 +790,8 @@ msgstr "複合コンテンツビューを作成します"
 
 msgid "Designate this Content View for importing from upstream servers only."
 msgstr ""
+"このコンテンツビューをアップストリームサーバーからのインポート専用に指定しま"
+"す。"
 
 msgid "Copy a content view"
 msgstr "コンテンツビューをコピーします"
@@ -790,7 +827,7 @@ msgid "Could not publish the content view"
 msgstr "コンテンツビューを公開できませんでした"
 
 msgid "Names for Lifecycle Environment"
-msgstr ""
+msgstr "ライフサイクル環境の名前"
 
 msgid "Content view is being removed from environment with task %{id}."
 msgstr "タスク %{id} でコンテンツビューを環境から削除しています"
@@ -808,7 +845,7 @@ msgid "Add a content view version to a composite view"
 msgstr "コンテンツビューバージョンを複合ビューに追加します"
 
 msgid "Content view id to search by"
-msgstr ""
+msgstr "検索するコンテンツビュー ID"
 
 msgid "The component version has been added."
 msgstr "コンポーネントバージョンが追加されました。"
@@ -856,10 +893,10 @@ msgstr ""
 "指定するか、最新版は --latest を指定してください。"
 
 msgid "Content View Id"
-msgstr ""
+msgstr "コンテンツビュー ID"
 
 msgid "Component Id"
-msgstr ""
+msgstr "コンポーネント ID"
 
 msgid "Current Version"
 msgstr "現行バージョン"
@@ -938,13 +975,13 @@ msgid "Repositories"
 msgstr "リポジトリー"
 
 msgid "Has Applied Filters"
-msgstr ""
+msgstr "フィルターが適用済み"
 
 msgid "Applied Filters"
-msgstr ""
+msgstr "適用されたフィルター"
 
 msgid "Dependency Solving"
-msgstr ""
+msgstr "依存関係の解決"
 
 msgid "Content View Version is being republished with task %{id}."
 msgstr "タスク %{id} でコンテンツビューバージョンが再公開されています"
@@ -978,10 +1015,10 @@ msgid "Id of the environment from where to promote its version "
 msgstr "バージョンのプロモート元の環境 ID "
 
 msgid "Content view version updated."
-msgstr ""
+msgstr "コンテンツビューバージョンが更新されました。"
 
 msgid "Could not update the content view version"
-msgstr ""
+msgstr "コンテンツビューバージョンを更新できませんでした"
 
 msgid "Incremental update is being performed with task %{id}."
 msgstr "増分更新がタスク %{id} で実行されています。"
@@ -1015,31 +1052,31 @@ msgid "IDs of hosts to update"
 msgstr "更新するホストの ID"
 
 msgid "Pulp ID"
-msgstr ""
+msgstr "Pulp ID"
 
 msgid "Uuid"
 msgstr "UUID"
 
 msgid "checksum"
-msgstr ""
+msgstr "チェックサム"
 
 msgid "Architecture"
 msgstr "アーキテクチャー"
 
 msgid "Nav"
-msgstr ""
+msgstr "Nav"
 
 msgid "Nva"
-msgstr ""
+msgstr "Nva"
 
 msgid "Available Host Count"
-msgstr ""
+msgstr "利用可能なホスト数"
 
 msgid "Applicable Host Count"
-msgstr ""
+msgstr "適用可能なホスト数"
 
 msgid "Manage docker manifests"
-msgstr ""
+msgstr "Docker マニフェストの管理"
 
 msgid "Schema Version"
 msgstr "スキーマバージョン"
@@ -1048,13 +1085,13 @@ msgid "Digest"
 msgstr "ダイジェスト"
 
 msgid "Downloaded"
-msgstr ""
+msgstr "ダウンロード済み"
 
 msgid "Tags"
 msgstr "タグ"
 
 msgid "Manage docker tags"
-msgstr ""
+msgstr "Docker タグの管理"
 
 msgid "Tag"
 msgstr "タグ"
@@ -1063,10 +1100,10 @@ msgid "Repository ID"
 msgstr "リポジトリー ID"
 
 msgid "Docker Manifest ID"
-msgstr ""
+msgstr "Docker マニフェスト ID"
 
 msgid "Docker Manifest Name"
-msgstr ""
+msgstr "Docker マニフェスト名"
 
 msgid "Errata ID"
 msgstr "エラータ ID"
@@ -1324,7 +1361,7 @@ msgid "Arch"
 msgstr "アーキテクチャー"
 
 msgid "Errata is being applied with task %{id}."
-msgstr "エラータはタスク %{id} で適用されます。"
+msgstr "タスク %{id} でエラータを適用中です。"
 
 msgid "Could not apply errata"
 msgstr "エラータを適用できませんでした"
@@ -1336,19 +1373,19 @@ msgid "Installable"
 msgstr "インストール可能"
 
 msgid "Errata recalculation started."
-msgstr ""
+msgstr "エラータの再計算を開始しました。"
 
 msgid "Could not recalculate errata"
 msgstr "エラータを再計算できませんでした"
 
 msgid "Trace Status"
-msgstr ""
+msgstr "トレースステータス"
 
 msgid "Content Information"
 msgstr "コンテンツ情報"
 
 msgid "Content view environments"
-msgstr ""
+msgstr "コンテンツビュー環境"
 
 msgid "Content view"
 msgstr "コンテンツビュー"
@@ -1390,7 +1427,7 @@ msgid "Registered by Activation Keys"
 msgstr "アクティベーションキーでの登録"
 
 msgid "Nvra"
-msgstr ""
+msgstr "Nvra"
 
 msgid "Host unregistered."
 msgstr "ホストの登録が解除されました。"
@@ -1434,7 +1471,7 @@ msgid "Content View id"
 msgstr "コンテンツビュー ID"
 
 msgid "Content View version"
-msgstr ""
+msgstr "コンテンツビューバージョン"
 
 msgid "Environment name"
 msgstr "環境名"
@@ -1443,7 +1480,7 @@ msgid "Product name"
 msgstr "製品名"
 
 msgid "Trace ID"
-msgstr ""
+msgstr "トレース ID"
 
 msgid "Application"
 msgstr "アプリケーション"
@@ -1452,10 +1489,10 @@ msgid "Helper"
 msgstr "ヘルパー"
 
 msgid "Traces are being resolved with task %{id}."
-msgstr ""
+msgstr "タスク %{id} でトレースを解決中です。"
 
 msgid "Could not resolve traces"
-msgstr ""
+msgstr "トレースを解決できませんでした"
 
 msgid "Organization ID to search by"
 msgstr "検索する組織 ID"
@@ -1482,7 +1519,7 @@ msgid "Host collection name to search by"
 msgstr "検索するホストコレクション名"
 
 msgid "Organization title"
-msgstr ""
+msgstr "組織タイトル"
 
 msgid "Product name to search by"
 msgstr "検索する製品名"
@@ -1572,19 +1609,19 @@ msgid "Service Levels"
 msgstr "サービスレベル"
 
 msgid "Upstream Organization"
-msgstr ""
+msgstr "アップストリームの組織"
 
 msgid "Upstream Lifecycle Environment"
-msgstr ""
+msgstr "アップストリームのライフサイクル環境"
 
 msgid "Upstream Content View"
-msgstr ""
+msgstr "アップストリームのコンテンツビュー"
 
 msgid "Username"
-msgstr "ãƒ¦ãƒ¼ã‚¶ãƒ¼å��"
+msgstr "ユーザー名"
 
 msgid "SSL CA Credential ID"
-msgstr ""
+msgstr "SSL CA 認証情報 ID"
 
 msgid "Enabled"
 msgstr "有効化済み"
@@ -1623,10 +1660,10 @@ msgid "Could not delete the organization"
 msgstr "組織を削除できませんでした"
 
 msgid "Updated CDN configuration."
-msgstr ""
+msgstr "CDN 設定を更新しました。"
 
 msgid "Could not update CDN configuration."
-msgstr ""
+msgstr "CDN 設定を更新できませんでした。"
 
 msgid "Source RPM"
 msgstr "ソース RPM"
@@ -1638,16 +1675,16 @@ msgid "Author"
 msgstr "作成者"
 
 msgid "Source rpm"
-msgstr ""
+msgstr "ソース rpm"
 
 msgid "Nvrea"
-msgstr ""
+msgstr "Nvrea"
 
 msgid "Build Host"
 msgstr "ホストのビルド"
 
 msgid "Children"
-msgstr ""
+msgstr "子"
 
 msgid "Vendor"
 msgstr "ベンダー"
@@ -1704,7 +1741,7 @@ msgid "Optional Packages"
 msgstr "オプションパッケージ"
 
 msgid "message"
-msgstr ""
+msgstr "メッセージ"
 
 msgid "Server Response"
 msgstr "サーバーの応答"
@@ -1722,10 +1759,10 @@ msgid "Could not create the product"
 msgstr "製品を作成できませんでした"
 
 msgid "Sync State (all)"
-msgstr ""
+msgstr "同期の状態 (すべて)"
 
 msgid "Sync State (last)"
-msgstr ""
+msgstr "同期の状態 (直近)"
 
 msgid "Sync Plan ID"
 msgstr "同期プラン ID"
@@ -1755,13 +1792,13 @@ msgid "Could not update the product"
 msgstr "製品を更新できませんでした"
 
 msgid "Updates an HTTP Proxy for a product"
-msgstr ""
+msgstr "製品の HTTP プロキシーの更新"
 
 msgid "Product proxy updated."
-msgstr ""
+msgstr "製品のプロキシーが更新されました。"
 
 msgid "Could not update the product HTTP Proxy."
-msgstr ""
+msgstr "製品の HTTP プロキシーを更新できませんでした。"
 
 msgid "Product destroyed."
 msgstr "製品が破棄されました。"
@@ -1803,12 +1840,14 @@ msgid "Override"
 msgstr "上書き"
 
 msgid "Location of the ansible collections requirements.yml file. "
-msgstr ""
+msgstr "Ansible コレクションの requirements.yml ファイルの場所。 "
 
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
 msgstr ""
+"返すリポジトリーのタイプを制限します。利用可能なタイプは \"hammer repository "
+"types\" で確認してください"
 
 msgid "Red Hat Repository"
 msgstr "Red Hat リポジトリー"
@@ -1829,7 +1868,7 @@ msgid "Download Policy"
 msgstr "ダウンロードポリシー"
 
 msgid "Metadata Expiration"
-msgstr ""
+msgstr "メタデータの有効期限"
 
 msgid "Upstream Repository Name"
 msgstr "アップストリームのリポジトリー名"
@@ -1931,6 +1970,8 @@ msgid ""
 "Type of repository to create. View available types with \"hammer repository "
 "types\""
 msgstr ""
+"作成するリポジトリータイプ。利用可能なタイプは \"hammer repository types\" で"
+"確認してください"
 
 msgid "Repository updated."
 msgstr "リポジトリーが更新されました。"
@@ -1945,7 +1986,7 @@ msgid "--docker-tag required with --docker-digest"
 msgstr "--docker-digest で必要な --docker-tag"
 
 msgid "Container Image tag"
-msgstr ""
+msgstr "コンテナーイメージタグ"
 
 msgid "Container Image manifest digest"
 msgstr "コンテナーイメージのマニフェストダイジェスト"
@@ -1963,24 +2004,26 @@ msgid "Could not delete the Repository"
 msgstr "リポジトリーを削除できませんでした"
 
 msgid "Content types"
-msgstr ""
+msgstr "コンテンツタイプ"
 
 msgid "Generic?"
-msgstr ""
+msgstr "汎用?"
 
 msgid "Removable?"
-msgstr ""
+msgstr "削除可能?"
 
 msgid "Uploadable?"
-msgstr ""
+msgstr "アップロード可能?"
 
 msgid "Indexed?"
-msgstr ""
+msgstr "インデックス付き?"
 
 msgid ""
 "The type of content unit to upload (srpm, file, etc.). View uploadable types "
 "with \"hammer repository types\""
 msgstr ""
+"アップロードするコンテンツユニットのタイプ (srpm、ファイルなど)。アップロード"
+"可能なタイプは \"hammer repository types\" で確認してください"
 
 msgid "Could not find any files matching PATH"
 msgstr "PATH に一致するファイルが見つかりませんでした"
@@ -1995,10 +2038,10 @@ msgid "Could not upload the content"
 msgstr "コンテンツをアップロードできませんでした"
 
 msgid "Do not wait for the task."
-msgstr ""
+msgstr "タスクを待機しないでください。"
 
 msgid "Name of OSTree repository in archive."
-msgstr ""
+msgstr "アーカイブ内の OSTree リポジトリーの名前。"
 
 msgid ""
 "Upload file, directory of files, or glob of files as content for a "
@@ -2010,7 +2053,7 @@ msgstr ""
 "グロブは、一重および二重引用符でエスケープする必要があります"
 
 msgid "Successfully uploaded file %s"
-msgstr ""
+msgstr "ファイル %s が正常にアップロードされました"
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
 msgstr ""
@@ -2018,7 +2061,7 @@ msgstr ""
 "ドされました"
 
 msgid "Could not upload the content."
-msgstr ""
+msgstr "コンテンツをアップロードできませんでした。"
 
 msgid "Remove content from a repository"
 msgstr "リポジトリーからコンテンツを削除します"
@@ -2033,24 +2076,26 @@ msgid ""
 "The type of content unit to remove (srpm, docker_manifest, etc.). View "
 "removable types with \"hammer repository types\""
 msgstr ""
+"削除するコンテンツユニットのタイプ (srpm、docker_manifest など)。削除可能なタ"
+"イプは \"hammer repository types\" で確認してください"
 
 msgid "Forces a republish of the specified repository."
-msgstr ""
+msgstr "指定のリポジトリーを強制的に再公開します。"
 
 msgid "Repository republished."
-msgstr ""
+msgstr "リポジトリーが再公開されました。"
 
 msgid "Could not republish the repository."
-msgstr ""
+msgstr "リポジトリーを再公開できませんでした。"
 
 msgid "Reclaim space from an On Demand repository"
 msgstr "オンデマンドリポジトリーからの領域の再利用"
 
 msgid "Repository space reclaimed."
-msgstr ""
+msgstr "リポジトリーの領域が回収されました。"
 
 msgid "Could not reclaim the repository"
-msgstr ""
+msgstr "リポジトリーを回収できませんでした"
 
 msgid "Enabled Repositories"
 msgstr "有効化されたリポジトリー"
@@ -2071,22 +2116,22 @@ msgid "Could not disable repository"
 msgstr "リポジトリーを無効化できませんでした"
 
 msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
+msgstr "この組織は Simple Content Access の対象外です"
 
 msgid "Simple Content Access Enabled."
-msgstr ""
+msgstr "Simple Content Access が有効になりました。"
 
 msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
+msgstr "この組織に対して Simple Content Access を有効にできませんでした"
 
 msgid "Simple Content Access Disabled."
-msgstr ""
+msgstr "Simple Content Access が無効になりました。"
 
 msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
+msgstr "この組織に対して Simple Content Access を無効にできませんでした"
 
 msgid "Time UTC"
-msgstr ""
+msgstr "時刻 UTC"
 
 msgid "Consumed"
 msgstr "使用済み"
