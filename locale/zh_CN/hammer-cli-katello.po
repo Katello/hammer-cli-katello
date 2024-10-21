@@ -14,7 +14,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.13.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.15.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
@@ -29,16 +29,16 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Manipulate activation keys"
-msgstr "处理激活码"
+msgstr "操作激活码"
 
 msgid "Manipulate organizations"
 msgstr "操作机构"
 
 msgid "Manipulate alternate content sources"
-msgstr ""
+msgstr "操作备用的内容源"
 
 msgid "Manipulate content credentials on the server"
-msgstr ""
+msgstr "操作服务器上的内容凭证"
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "在服务器上处理 lifecycle_environments"
@@ -62,46 +62,46 @@ msgid "Manipulate host collections"
 msgstr "操作主机集"
 
 msgid "Manipulate content views"
-msgstr "处理内容视图"
+msgstr "操作内容视图"
 
 msgid "Manipulate capsule"
 msgstr "操作 capsule"
 
 msgid "Manipulate packages"
-msgstr "处理软件包"
+msgstr "操作软件包"
 
 msgid "Manipulate deb packages"
-msgstr ""
+msgstr "操作 deb 软件包"
 
 msgid "Manipulate package groups"
-msgstr "处理软件包组"
+msgstr "操作软件包组"
 
 msgid "Manipulate errata"
-msgstr "处理勘误"
+msgstr "操作勘误"
 
 msgid "Manipulate files"
-msgstr "处理文件"
+msgstr "操作文件"
 
 msgid "Manipulate content units"
-msgstr ""
+msgstr "操作内容单元"
 
 msgid "Prepare content for export to a disconnected Katello"
-msgstr ""
+msgstr "准备内容以导出到断开连接的 Katello"
 
 msgid "Import content from an upstream archive."
-msgstr ""
+msgstr "从上游存档导入内容。"
 
 msgid "View Module Streams"
 msgstr "查看模块流"
 
 msgid "Manipulate source RPMs"
-msgstr ""
+msgstr "操作源 RPM"
 
 msgid "Simple content access commands"
-msgstr ""
+msgstr "简单内容访问命令"
 
 msgid "Manipulate docker content"
-msgstr ""
+msgstr "操作 docker 内容"
 
 msgid "ID"
 msgstr "ID"
@@ -113,10 +113,10 @@ msgid "Type"
 msgstr "类型"
 
 msgid "Alternate Content Source created."
-msgstr ""
+msgstr "创建了备用内容源。"
 
 msgid "Could not create the Alternate Content Source."
-msgstr ""
+msgstr "无法创建备用内容源。"
 
 msgid "Label"
 msgstr "标签"
@@ -131,10 +131,10 @@ msgid "Content type"
 msgstr "內容类型"
 
 msgid "Alternate content source type"
-msgstr ""
+msgstr "备用内容源类型"
 
 msgid "Upstream username"
-msgstr ""
+msgstr "上游用户名"
 
 msgid "Verify SSL"
 msgstr "验证 SSL"
@@ -161,31 +161,31 @@ msgid "Organization ID"
 msgstr "机构 ID"
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "智能代理"
 
 msgid "URL"
 msgstr "URL"
 
 msgid "Download policy"
-msgstr ""
+msgstr "下载政策"
 
 msgid "Alternate Content Source updated."
-msgstr ""
+msgstr "上传了备用内容源类型。"
 
 msgid "Could not update the Alternate Content Source."
-msgstr ""
+msgstr "无法更新备用内容源。"
 
 msgid "Alternate Content Source deleted."
-msgstr ""
+msgstr "删除了备用内容源。"
 
 msgid "Could not delete the Alternate Content Source."
-msgstr ""
+msgstr "无法删除备用内容源。"
 
 msgid "Alternate content source is being refreshed in task %{id}."
-msgstr ""
+msgstr "在任务 %{id} 中刷新了备用内容源。"
 
 msgid "Could not refresh the alternate content source"
-msgstr ""
+msgstr "无法刷新备用内容源"
 
 msgid "Host Limit"
 msgstr "主机限制"
@@ -209,16 +209,16 @@ msgid "Release Version"
 msgstr "发行版本"
 
 msgid "Associated Hosts"
-msgstr ""
+msgstr "关联的主机"
 
 msgid "Host Collections"
 msgstr "主机集合"
 
 msgid "Content Overrides"
-msgstr ""
+msgstr "内容覆盖"
 
 msgid "Content Label"
-msgstr ""
+msgstr "内容标签"
 
 msgid "Value"
 msgstr "值"
@@ -230,13 +230,13 @@ msgid "Service Level"
 msgstr "服务等级"
 
 msgid "Purpose Usage"
-msgstr ""
+msgstr "目的使用"
 
 msgid "Purpose Role"
-msgstr ""
+msgstr "目的角色"
 
 msgid "Purpose Addons"
-msgstr ""
+msgstr "目的插件"
 
 msgid "Activation key created."
 msgstr "创建激活码。"
@@ -254,13 +254,13 @@ msgid "Could not copy the activation key"
 msgstr "无法复制激活码"
 
 msgid "Activation key updated."
-msgstr "更新激活码"
+msgstr "更新激活码。"
 
 msgid "Could not update the activation key"
 msgstr "无法更新激活码"
 
 msgid "Activation key deleted."
-msgstr "删除激活码"
+msgstr "删除激活码。"
 
 msgid "Could not delete the activation key"
 msgstr "无法删除激活码"
@@ -380,7 +380,7 @@ msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "无法从 capsule 中移除生命周期环境"
 
 msgid "Capsule content is being synchronized in task %{id}."
-msgstr "Capsule 內容正在任务（%{id}）中被同步"
+msgstr "Capsule 內容正在任务（%{id}）中被同步。"
 
 msgid "Could not synchronize capsule content"
 msgstr "无法同步 capsule 內容"
@@ -446,13 +446,13 @@ msgid "Errata"
 msgstr "勘误"
 
 msgid "Content Source name"
-msgstr ""
+msgstr "内容源名称"
 
 msgid "Content Source"
 msgstr "内容源"
 
 msgid "Kickstart repository name"
-msgstr ""
+msgstr "Kickstart 仓库名称"
 
 msgid "Please provide --lifecycle-environment-id"
 msgstr "请提供 --lifecycle-environment-id"
@@ -464,11 +464,11 @@ msgid ""
 "No such repository with name %{name}, in lifecycle environment "
 "%{environment_id} and content view %{content_view_id}"
 msgstr ""
-"在生命周期环境 %{environment_id} 和内容视图 %{content_view_id} 中没有名称为 "
-"%{name} 的仓库。"
+"在生命周期环境 %{name} 和内容视图 %{content_view_id} 中没有名称为 "
+"%{environment_id} 的仓库"
 
 msgid "Use %s instead"
-msgstr ""
+msgstr "使用 %s 代替"
 
 msgid "Lifecycle environment name to search by"
 msgstr "用来进行搜索的生命周期环境"
@@ -489,41 +489,43 @@ msgid "Product"
 msgstr "产品"
 
 msgid "Content Credential created."
-msgstr ""
+msgstr "创建了内容凭证。"
 
 msgid "Could not create Content Credential"
-msgstr ""
+msgstr "无法创建內容凭证"
 
 msgid "Key file"
-msgstr ""
+msgstr "密钥文件"
 
 msgid "Content Credential updated."
-msgstr ""
+msgstr "內容凭证已更新。"
 
 msgid "Could not update Content Credential"
-msgstr ""
+msgstr "无法创建內容凭证"
 
 msgid "Content Credential deleted."
-msgstr ""
+msgstr "內容凭证已删除。"
 
 msgid "Could not delete the Content Credential"
-msgstr ""
+msgstr "无法删除内容凭证"
 
 msgid ""
 "Writes export metadata to disk for use by the importing Katello. This "
 "command only needs to be used if the export was performed asynchronously or "
 "if the metadata was lost"
 msgstr ""
+"通过导入 Katello 向磁盘写入要使用的导出元数据。只有在异步执行导出或元数据丢失"
+"时才需要使用此命令"
 
 msgid "Generate metadata based on output of the specified export task"
-msgstr ""
+msgstr "根据指定导出任务的输出生成元数据"
 
 msgid "Generate metadata based on specified export history"
-msgstr ""
+msgstr "根据指定导出历史的输出生成元数据"
 
 msgid ""
 "No export history was found. Verify the value given for --task-id or --id"
-msgstr ""
+msgstr "未找到导出历史记录。验证 --task-id 或 --id 的值"
 
 msgid ""
 "Generates listing file on each directory of a syncable export. This command "
@@ -531,15 +533,17 @@ msgid ""
 "listing files were lost. Assumes the syncable export directory is accessible "
 "on disk"
 msgstr ""
+"在一个可同步导出的每个目录中生成列出文件。只有在异步执行导出，或者列表文件丢"
+"失时，才需要使用此命令。假定可同步导出目录可在磁盘上访问"
 
 msgid "Generate listing files for a syncable export task"
-msgstr ""
+msgstr "为可同步导出任务生成列出文件"
 
 msgid "Generate listing files based on specified export history"
-msgstr ""
+msgstr "根据指定导出历史生成列出文件"
 
 msgid "Destination Server"
-msgstr ""
+msgstr "目标服务器"
 
 msgid "Path"
 msgstr "路径"
@@ -557,38 +561,40 @@ msgid "Updated at"
 msgstr "更新於"
 
 msgid "Performs a full export a content view version"
-msgstr ""
+msgstr "执行内容视图版本的完全导出"
 
 msgid "Performs a full export of the organization's library environment"
-msgstr ""
+msgstr "执行机构库环境的完全导出"
 
 msgid "Performs a full export of a repository"
-msgstr ""
+msgstr "执行一个仓库的完全导出"
 
 msgid "Could not fetch the export history"
-msgstr ""
+msgstr "无法获取导出历史"
 
 msgid ""
 "Once the task completes the listing files may be generated with the command:"
-msgstr ""
+msgstr "任务完成后，可以使用以下命令生成列出文件："
 
 msgid ""
 "Once the task completes the export metadata must be generated with the "
 "command:"
-msgstr ""
+msgstr "任务完成后，需要使用以下命令生成列出文件："
 
 msgid "Can not fetch export history from an unfinished task"
-msgstr ""
+msgstr "无法从一个未完成的任务中获取导出历史"
 
 msgid ""
 "Cannot generate listing files for this export since it is not syncable. It "
 "was not generated with --format=syncable."
 msgstr ""
+"无法为这个导出生成列出文件，因为它不可同步。它不是通过 --format=syncable 生成"
+"的。"
 
 msgid ""
 "Export History does not have the path specified. The task may have errored "
 "out."
-msgstr ""
+msgstr "没有指定导出历史的路径。任务可能出错。"
 
 msgid ""
 "NOTE: Unable to fully export this version because it contains repositories "
@@ -596,23 +602,29 @@ msgid ""
 "affected repositories. Once synced republish the content view and export the "
 "generated version."
 msgstr ""
+"注意：无法完全导出这个版本，因为它包括没有 'immediate' 下载策略的仓库。更新下"
+"载策论并同步受影响的仓库。在同步重新发布的内容视图后，导入生成的版本。"
 
 msgid ""
 "NOTE: Unable to fully export this repository because it does not have the "
 "'immediate' download policy. Update the download policy, sync the repository "
 "and export."
 msgstr ""
+"注意：无法完全导出这个仓库，因为它没有 'immediate' 下载策略。更新下载策略，同"
+"步仓库并导出。"
 
 msgid ""
 "NOTE: Unable to fully export this organization's library because it contains "
 "repositories without the 'immediate' download policy. Update the download "
 "policy and sync affected repositories to include them in the export."
 msgstr ""
+"注意：无法完全导出此机构的库，因为它包含没有 'immediate' 下载策略的仓库。更新"
+"下载策略并同步受影响的仓库，以将其包括在导出中。"
 
 msgid ""
 "Use the following command to update the download policy of these "
 "repositories."
-msgstr ""
+msgstr "使用以下命令更新这些仓库的下载策略。"
 
 msgid "Repository is being exported in task %{id}."
 msgstr "仓库被导出（任务%{id}）。"
@@ -621,62 +633,64 @@ msgid "Could not export the repository"
 msgstr "无法导出仓库"
 
 msgid "Filter repositories by name."
-msgstr ""
+msgstr "按名称过滤仓库。"
 
 msgid "Library environment is being exported in task %{id}."
-msgstr ""
+msgstr "库环境在任务 %{id} 中导出。"
 
 msgid "Could not export the library"
-msgstr ""
+msgstr "无法导出库"
 
 msgid ""
 "Fails if any of the repositories belonging to this organization are "
 "unexportable."
-msgstr ""
+msgstr "如果属于该机构的任何仓库都无法导出，则失败。"
 
 msgid "Content view version is being exported in task %{id}."
-msgstr ""
+msgstr "内容视图在任务 %{id} 中导出。"
 
 msgid "Could not export the content view version"
-msgstr ""
+msgstr "无法导出内容视图版本"
 
 msgid ""
 "Fails if any of the repositories belonging to this version are unexportable."
-msgstr ""
+msgstr "如果属于该版本的任何仓库都无法导出，则失败。"
 
 msgid "Filter versions by version number."
-msgstr ""
+msgstr "按版本号过滤版本。"
 
 msgid "Performs an incremental export of a content view version"
-msgstr ""
+msgstr "执行内容视图版本的增量导出"
 
 msgid ""
 "Performs an incremental export of the organization's library environment"
-msgstr ""
+msgstr "执行机构库环境的增量导出"
 
 msgid "Performs an incremental export of a repository"
-msgstr ""
+msgstr "执行一个仓库的增量导出"
 
 msgid ""
 "Location of the metadata.json file. This is not required if the metadata."
 "json file is already in the archive directory."
 msgstr ""
+"metadata.json 文件的位置。如果 metadata.json 文件已在存档目录中，则不需要此"
+"项。"
 
 msgid "Archive is being imported in task %{id}."
-msgstr ""
+msgstr "归档在任务 %{id} 中导入。"
 
 msgid "Could not import the archive."
-msgstr ""
+msgstr "无法导入归档。"
 
 msgid "Imports a content archive to a content view version"
-msgstr ""
+msgstr "将内容存档导入到内容视图版本"
 
 msgid ""
 "Imports a content archive to an organization's library lifecycle environment"
-msgstr ""
+msgstr "将内容存档导入到机构的库生命周期环境"
 
 msgid "Imports a repository"
-msgstr ""
+msgstr "导入软件仓库"
 
 msgid "Override product content defaults"
 msgstr "覆盖产品内容的默认值"
@@ -754,7 +768,7 @@ msgid "Create a composite content view"
 msgstr "创建复合内容视图"
 
 msgid "Designate this Content View for importing from upstream servers only."
-msgstr ""
+msgstr "将此内容视图指定为仅从上游服务器导入。"
 
 msgid "Copy a content view"
 msgstr "复制一个内容视图"
@@ -790,7 +804,7 @@ msgid "Could not publish the content view"
 msgstr "无法发布内容视图"
 
 msgid "Names for Lifecycle Environment"
-msgstr ""
+msgstr "生命周期环境的名称"
 
 msgid "Content view is being removed from environment with task %{id}."
 msgstr "内容视图从环境中删除（任务 %{id}）。"
@@ -808,7 +822,7 @@ msgid "Add a content view version to a composite view"
 msgstr "将内容视图版本添加到复合视图"
 
 msgid "Content view id to search by"
-msgstr ""
+msgstr "用来进行搜索的内容视图 Id"
 
 msgid "The component version has been added."
 msgstr "组件版本已添加。"
@@ -820,7 +834,7 @@ msgid "Remove a content view version from a composite view"
 msgstr "从复合视图中删除内容视图版本"
 
 msgid "The component version has been removed."
-msgstr "组件版本已删除"
+msgstr "组件版本已删除。"
 
 msgid "Could not remove version"
 msgstr "无法删除版本"
@@ -855,10 +869,10 @@ msgstr ""
 "version 或 --latest 用于最新版本"
 
 msgid "Content View Id"
-msgstr ""
+msgstr "内容视图 Id"
 
 msgid "Component Id"
-msgstr ""
+msgstr "组件 Id"
 
 msgid "Current Version"
 msgstr "当前版本"
@@ -873,13 +887,13 @@ msgid "No Published Version"
 msgstr "没有发布的版本"
 
 msgid "Component added to content view."
-msgstr "组件已被增加到内容视图"
+msgstr "组件已被增加到内容视图。"
 
 msgid "Could not add the component"
 msgstr "无法添加组件"
 
 msgid "Content view component updated."
-msgstr "内容视图组件更新"
+msgstr "内容视图组件更新。"
 
 msgid "Could not update the content view component"
 msgstr "无法更新内容视图组件"
@@ -895,7 +909,7 @@ msgid ""
 msgstr "要删除的组件内容视图标识符数组。以逗号分隔的值列表"
 
 msgid "Components removed from content view."
-msgstr "从内容视图中删除的组件"
+msgstr "从内容视图中删除的组件。"
 
 msgid "Could not remove the components"
 msgstr "无法删除组件"
@@ -918,7 +932,8 @@ msgstr "没有要删除的版本。"
 msgid ""
 "Version '%{version}' of content view '%{view}' scheduled for deletion in "
 "task '%{task_id}'."
-msgstr "删除的内容视图 '%{view}' 的版本 '%{version}'（任务 '%{task_id}'）。"
+msgstr ""
+"在任务 '%{task_id}' 中调度了删除内容视图 '%{view}' 的版本 '%{version}'。"
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
 msgstr "删除内容视图 '%{view}' 的版本 '%{version}'。"
@@ -933,13 +948,13 @@ msgid "Repositories"
 msgstr "软件仓库"
 
 msgid "Has Applied Filters"
-msgstr ""
+msgstr "有应用的过滤"
 
 msgid "Applied Filters"
-msgstr ""
+msgstr "应用的过滤"
 
 msgid "Dependency Solving"
-msgstr ""
+msgstr "解决依赖项"
 
 msgid "Content View Version is being republished with task %{id}."
 msgstr "内容视图版本被重新发布（任务 %{id}）。"
@@ -972,10 +987,10 @@ msgid "Id of the environment from where to promote its version "
 msgstr "从何处提升其版本的环境 ID "
 
 msgid "Content view version updated."
-msgstr ""
+msgstr "更新內容视图版本。"
 
 msgid "Could not update the content view version"
-msgstr ""
+msgstr "无法更新内容视图版本"
 
 msgid "Incremental update is being performed with task %{id}."
 msgstr "正在执行增量更新（任务 %{id}）。"
@@ -1008,31 +1023,31 @@ msgid "IDs of hosts to update"
 msgstr "更新的主机ID"
 
 msgid "Pulp ID"
-msgstr ""
+msgstr "Pulp ID"
 
 msgid "Uuid"
 msgstr "Uuid"
 
 msgid "checksum"
-msgstr ""
+msgstr "校验和"
 
 msgid "Architecture"
 msgstr "架构"
 
 msgid "Nav"
-msgstr ""
+msgstr "Nav"
 
 msgid "Nva"
-msgstr ""
+msgstr "Nva"
 
 msgid "Available Host Count"
-msgstr ""
+msgstr "可用的主机计数"
 
 msgid "Applicable Host Count"
-msgstr ""
+msgstr "适用的主机计数"
 
 msgid "Manage docker manifests"
-msgstr ""
+msgstr "管理 docker 清单"
 
 msgid "Schema Version"
 msgstr "模式版本"
@@ -1041,25 +1056,25 @@ msgid "Digest"
 msgstr "文摘值"
 
 msgid "Downloaded"
-msgstr ""
+msgstr "下载"
 
 msgid "Tags"
 msgstr "标签"
 
 msgid "Manage docker tags"
-msgstr ""
+msgstr "管理 Docker 标签"
 
 msgid "Tag"
-msgstr ""
+msgstr "标签"
 
 msgid "Repository ID"
 msgstr "仓库 ID"
 
 msgid "Docker Manifest ID"
-msgstr ""
+msgstr "Docker 清单 ID"
 
 msgid "Docker Manifest Name"
-msgstr ""
+msgstr "Docker 清单名称"
 
 msgid "Errata ID"
 msgstr "勘误 ID"
@@ -1227,7 +1242,7 @@ msgid "Install errata on content hosts contained within a host collection"
 msgstr "在主机集合中包含的内容主机上安装勘误"
 
 msgid "Successfully scheduled installation of errata."
-msgstr "成功调度了勘误安装"
+msgstr "成功调度了勘误安装。"
 
 msgid "Could not schedule installation of errata"
 msgstr "无法调度勘误安装"
@@ -1245,7 +1260,7 @@ msgid "Install packages on content hosts contained within a host collection"
 msgstr "在主机集合中包含的内容主机上安装软件包"
 
 msgid "Successfully scheduled installation of package(s)."
-msgstr "成功调度了软件包安装"
+msgstr "成功调度了软件包安装。"
 
 msgid "Could not schedule installation of package(s)"
 msgstr "无法安排软件包安装"
@@ -1254,7 +1269,7 @@ msgid "Update packages on content hosts contained within a host collection"
 msgstr "更新主机集合中包含的内容主机上的软件包"
 
 msgid "Successfully scheduled update of package(s)."
-msgstr "成功调度了软件包更新"
+msgstr "成功调度了软件包更新。"
 
 msgid "Could not schedule update of package(s)"
 msgstr "无法调度软件包更新"
@@ -1263,7 +1278,7 @@ msgid "Remove packages on content hosts contained within a host collection"
 msgstr "删除主机集合中包含的内容主机上的软件包"
 
 msgid "Successfully scheduled removal of package(s)."
-msgstr "成功调度了软件包删除"
+msgstr "成功调度了软件包删除。"
 
 msgid "Could not schedule removal of package(s)"
 msgstr "无法调度软件包删除"
@@ -1279,7 +1294,7 @@ msgid ""
 msgstr "在主机集合中包含的内容主机上安装软件包组"
 
 msgid "Successfully scheduled installation of package-group(s)."
-msgstr "成功调度了软件包组安装"
+msgstr "成功调度了软件包组安装。"
 
 msgid "Could not schedule installation of package-group(s)"
 msgstr "无法调度软件包组安装"
@@ -1289,7 +1304,7 @@ msgid ""
 msgstr "在主机集合中包含的内容主机上更新软件包组"
 
 msgid "Successfully scheduled update of package-groups(s)."
-msgstr "成功调度了软件包组的更新"
+msgstr "成功调度了软件包组的更新。"
 
 msgid "Could not schedule update of package-group(s)"
 msgstr "无法调度软件包组的更新"
@@ -1320,19 +1335,19 @@ msgid "Installable"
 msgstr "可安装"
 
 msgid "Errata recalculation started."
-msgstr ""
+msgstr "勘误重新计算已启动。"
 
 msgid "Could not recalculate errata"
 msgstr "无法重新计算勘误"
 
 msgid "Trace Status"
-msgstr ""
+msgstr "跟踪状态"
 
 msgid "Content Information"
 msgstr "内容信息"
 
 msgid "Content view environments"
-msgstr ""
+msgstr "内容视图环境"
 
 msgid "Content view"
 msgstr "内容视图"
@@ -1374,7 +1389,7 @@ msgid "Registered by Activation Keys"
 msgstr "通过激活密钥注册"
 
 msgid "Nvra"
-msgstr ""
+msgstr "Nvra"
 
 msgid "Host unregistered."
 msgstr "主机未注册。"
@@ -1417,7 +1432,7 @@ msgid "Content View id"
 msgstr "内容视图 ID"
 
 msgid "Content View version"
-msgstr ""
+msgstr "内容视图版本"
 
 msgid "Environment name"
 msgstr "環境名稱"
@@ -1426,7 +1441,7 @@ msgid "Product name"
 msgstr "产品名称"
 
 msgid "Trace ID"
-msgstr ""
+msgstr "跟踪 ID"
 
 msgid "Application"
 msgstr "应用"
@@ -1435,10 +1450,10 @@ msgid "Helper"
 msgstr "帮助"
 
 msgid "Traces are being resolved with task %{id}."
-msgstr ""
+msgstr "跟踪正在通过任务 %{id} 解析。"
 
 msgid "Could not resolve traces"
-msgstr ""
+msgstr "无法解析跟踪"
 
 msgid "Organization ID to search by"
 msgstr "用來进行搜索的机构 ID"
@@ -1465,7 +1480,7 @@ msgid "Host collection name to search by"
 msgstr "用來進行搜尋的主機集名稱"
 
 msgid "Organization title"
-msgstr ""
+msgstr "机构名称"
 
 msgid "Product name to search by"
 msgstr "用来进行搜索的产品名称"
@@ -1555,25 +1570,25 @@ msgid "Service Levels"
 msgstr "服务等级"
 
 msgid "Upstream Organization"
-msgstr ""
+msgstr "上游机构"
 
 msgid "Upstream Lifecycle Environment"
-msgstr ""
+msgstr "上游生命周期环境"
 
 msgid "Upstream Content View"
-msgstr ""
+msgstr "上游内容视图"
 
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 msgid "SSL CA Credential ID"
-msgstr ""
+msgstr "SSL CA 凭证 ID"
 
 msgid "Enabled"
 msgstr "启用"
 
 msgid "Disabled"
-msgstr ""
+msgstr "禁用"
 
 msgid "Export Sync"
 msgstr "导出同步"
@@ -1606,10 +1621,10 @@ msgid "Could not delete the organization"
 msgstr "无法删除机构"
 
 msgid "Updated CDN configuration."
-msgstr ""
+msgstr "更新的 CDN 配置。"
 
 msgid "Could not update CDN configuration."
-msgstr ""
+msgstr "无法更新 CDN 配置。"
 
 msgid "Source RPM"
 msgstr "源 RPM"
@@ -1621,16 +1636,16 @@ msgid "Author"
 msgstr "作者"
 
 msgid "Source rpm"
-msgstr ""
+msgstr "源 RPM"
 
 msgid "Nvrea"
-msgstr ""
+msgstr "Nvrea"
 
 msgid "Build Host"
 msgstr "构建主机"
 
 msgid "Children"
-msgstr ""
+msgstr "子"
 
 msgid "Vendor"
 msgstr "供应商"
@@ -1645,7 +1660,7 @@ msgid "Summary"
 msgstr "摘要"
 
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 msgid "Build Time"
 msgstr "构建时间"
@@ -1663,7 +1678,7 @@ msgid "Files"
 msgstr "文件"
 
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 msgid "Modular"
 msgstr "模块化"
@@ -1687,7 +1702,7 @@ msgid "Optional Packages"
 msgstr "可选软件包"
 
 msgid "message"
-msgstr ""
+msgstr "信息"
 
 msgid "Server Response"
 msgstr "服务器响应"
@@ -1705,10 +1720,10 @@ msgid "Could not create the product"
 msgstr "无法创建产品"
 
 msgid "Sync State (all)"
-msgstr ""
+msgstr "同步状态（所有）"
 
 msgid "Sync State (last)"
-msgstr ""
+msgstr "同步状态（最后）"
 
 msgid "Sync Plan ID"
 msgstr "同步計劃 ID"
@@ -1738,16 +1753,16 @@ msgid "Could not update the product"
 msgstr "无法更新产品"
 
 msgid "Updates an HTTP Proxy for a product"
-msgstr ""
+msgstr "为产品更新 HTTP 代理"
 
 msgid "Product proxy updated."
-msgstr ""
+msgstr "更新了智能代理。"
 
 msgid "Could not update the product HTTP Proxy."
-msgstr ""
+msgstr "无法更新产品 HTTP 代理。"
 
 msgid "Product destroyed."
-msgstr "产品已销毁"
+msgstr "产品已销毁。"
 
 msgid "Could not destroy the product"
 msgstr "无法销毁产品"
@@ -1786,12 +1801,12 @@ msgid "Override"
 msgstr "覆盖"
 
 msgid "Location of the ansible collections requirements.yml file. "
-msgstr ""
+msgstr "ansible 集合 requirements.yml 文件的位置。 "
 
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
-msgstr ""
+msgstr "限制返回的仓库类型。使用 \"hammer repository types\" 查看可用类型"
 
 msgid "Red Hat Repository"
 msgstr "Red Hat 软件仓库"
@@ -1812,7 +1827,7 @@ msgid "Download Policy"
 msgstr "下载政策"
 
 msgid "Metadata Expiration"
-msgstr ""
+msgstr "元数据过期"
 
 msgid "Upstream Repository Name"
 msgstr "上游仓库名称"
@@ -1827,7 +1842,7 @@ msgid "Ignorable Content Units"
 msgstr "可忽略的内容单元"
 
 msgid "HTTP Proxy"
-msgstr ""
+msgstr "HTTP 代理"
 
 msgid "HTTP Proxy Policy"
 msgstr "HTTP 代理策略"
@@ -1896,7 +1911,7 @@ msgid "Canceled"
 msgstr "已取消"
 
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "仓库正在同步（任务 %{id}）"
@@ -1913,7 +1928,7 @@ msgstr "无法创建仓库"
 msgid ""
 "Type of repository to create. View available types with \"hammer repository "
 "types\""
-msgstr ""
+msgstr "创建的仓库类型。使用 \"hammer repository types\" 查看可用类型"
 
 msgid "Repository updated."
 msgstr "仓库已更新。"
@@ -1928,7 +1943,7 @@ msgid "--docker-tag required with --docker-digest"
 msgstr "--docker-tag 需要 --docker-digest"
 
 msgid "Container Image tag"
-msgstr ""
+msgstr "容器镜像标签"
 
 msgid "Container Image manifest digest"
 msgstr "容器镜像清单文摘"
@@ -1946,24 +1961,26 @@ msgid "Could not delete the Repository"
 msgstr "无法删除仓库"
 
 msgid "Content types"
-msgstr ""
+msgstr "內容类型"
 
 msgid "Generic?"
-msgstr ""
+msgstr "通用?"
 
 msgid "Removable?"
-msgstr ""
+msgstr "可移动？"
 
 msgid "Uploadable?"
-msgstr ""
+msgstr "可上传?"
 
 msgid "Indexed?"
-msgstr ""
+msgstr "索引？"
 
 msgid ""
 "The type of content unit to upload (srpm, file, etc.). View uploadable types "
 "with \"hammer repository types\""
 msgstr ""
+"要上传的内容单元类型 (srpm、文件等)。使用 \"hammer repository types\" 查看可"
+"上传的类型"
 
 msgid "Could not find any files matching PATH"
 msgstr "找不到与 PATH 匹配的任何文件"
@@ -1978,10 +1995,10 @@ msgid "Could not upload the content"
 msgstr "无法上传内容"
 
 msgid "Do not wait for the task."
-msgstr ""
+msgstr "不要等待任务。"
 
 msgid "Name of OSTree repository in archive."
-msgstr ""
+msgstr "归档中的 OSTree 仓库的名称。"
 
 msgid ""
 "Upload file, directory of files, or glob of files as content for a "
@@ -1992,19 +2009,19 @@ msgstr ""
 "来"
 
 msgid "Successfully uploaded file %s"
-msgstr ""
+msgstr "成功上传文件 %s"
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
 msgstr "成功上传带有摘要 '%{digest}' 的清单文件 '%{name}'"
 
 msgid "Could not upload the content."
-msgstr ""
+msgstr "无法上传内容。"
 
 msgid "Remove content from a repository"
 msgstr "从仓库中删除内容"
 
 msgid "Repository content removed."
-msgstr "删除仓库内容"
+msgstr "删除仓库内容。"
 
 msgid "Could not remove content"
 msgstr "无法删除内容"
@@ -2013,24 +2030,26 @@ msgid ""
 "The type of content unit to remove (srpm, docker_manifest, etc.). View "
 "removable types with \"hammer repository types\""
 msgstr ""
+"要删除的内容单元类型 (srpm、docker_manifest 等)。使用 \"hammer repository "
+"types\" 查看可移动类型"
 
 msgid "Forces a republish of the specified repository."
-msgstr ""
+msgstr "强制重新发布指定的仓库。"
 
 msgid "Repository republished."
-msgstr ""
+msgstr "重新发布的仓库。"
 
 msgid "Could not republish the repository."
-msgstr ""
+msgstr "无法重新发布仓库。"
 
 msgid "Reclaim space from an On Demand repository"
 msgstr "重新声明来自 On Demand 存储库的空间"
 
 msgid "Repository space reclaimed."
-msgstr ""
+msgstr "回收的仓库空间。"
 
 msgid "Could not reclaim the repository"
-msgstr ""
+msgstr "无法回收仓库"
 
 msgid "Enabled Repositories"
 msgstr "启用的仓库"
@@ -2051,22 +2070,22 @@ msgid "Could not disable repository"
 msgstr "无法禁用软件仓库"
 
 msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
+msgstr "此机构没有资格使用简单内容访问"
 
 msgid "Simple Content Access Enabled."
-msgstr ""
+msgstr "启用简单内容访问。"
 
 msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
+msgstr "无法为这个机构启用简单内容访问"
 
 msgid "Simple Content Access Disabled."
-msgstr ""
+msgstr "禁用简单内容访问。"
 
 msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
+msgstr "无法为此机构禁用简单内容访问"
 
 msgid "Time UTC"
-msgstr ""
+msgstr "时间 UTC"
 
 msgid "Consumed"
 msgstr "已消耗"

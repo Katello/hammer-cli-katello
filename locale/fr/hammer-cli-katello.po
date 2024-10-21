@@ -10,17 +10,18 @@
 # Claer <transiblu@claer.hammock.fr>, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Amit Upadhye <aupadhye@redhat.com>, 2023
-# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2023
 # Baptiste Agasse <baptiste.agasse@gmail.com>, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.13.0.pre.master\n"
+"Project-Id-Version: hammer-cli-katello 1.15.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Baptiste Agasse <baptiste.agasse@gmail.com>, 2023\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
+"+transifex@kohlvanwijngaarden.nl>, 2024\n"
 "Language-Team: French (https://app.transifex.com/foreman/teams/114/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,10 +37,10 @@ msgid "Manipulate organizations"
 msgstr "Manipuler les organisations"
 
 msgid "Manipulate alternate content sources"
-msgstr ""
+msgstr "Manipuler des sources de contenu alternatives"
 
 msgid "Manipulate content credentials on the server"
-msgstr ""
+msgstr "Manipuler les informations d'identification du contenu sur le serveur"
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "Manipuler les lifecycle_environments sur le serveur"
@@ -72,7 +73,7 @@ msgid "Manipulate packages"
 msgstr "Manipuler les paquets"
 
 msgid "Manipulate deb packages"
-msgstr ""
+msgstr "Manipuler les paquets deb"
 
 msgid "Manipulate package groups"
 msgstr "Manipuler les groupes de paquets"
@@ -84,25 +85,25 @@ msgid "Manipulate files"
 msgstr "Manipuler des fichiers"
 
 msgid "Manipulate content units"
-msgstr ""
+msgstr "Manipuler les unités de contenu"
 
 msgid "Prepare content for export to a disconnected Katello"
-msgstr ""
+msgstr "Préparer le contenu pour l'exportation vers un Katello déconnecté"
 
 msgid "Import content from an upstream archive."
-msgstr ""
+msgstr "Importer du contenu à partir d'une archive en amont."
 
 msgid "View Module Streams"
 msgstr "Voir les flux de modules"
 
 msgid "Manipulate source RPMs"
-msgstr ""
+msgstr "Manipuler les RPM sources"
 
 msgid "Simple content access commands"
-msgstr ""
+msgstr "Commandes simples d'accès au contenu"
 
 msgid "Manipulate docker content"
-msgstr ""
+msgstr "Manipuler le contenu docker"
 
 msgid "ID"
 msgstr "ID"
@@ -114,10 +115,10 @@ msgid "Type"
 msgstr "Type"
 
 msgid "Alternate Content Source created."
-msgstr ""
+msgstr "Source de contenu alternative créée."
 
 msgid "Could not create the Alternate Content Source."
-msgstr ""
+msgstr "Impossible de créer la source de contenu alternative."
 
 msgid "Label"
 msgstr "Balise"
@@ -132,10 +133,10 @@ msgid "Content type"
 msgstr "Type de contenu"
 
 msgid "Alternate content source type"
-msgstr ""
+msgstr "Le type de source de contenu alternatif"
 
 msgid "Upstream username"
-msgstr ""
+msgstr "Nom d'utilisateur en amont"
 
 msgid "Verify SSL"
 msgstr "Vérifier SSL"
@@ -162,31 +163,33 @@ msgid "Organization ID"
 msgstr "ID de l’organisation"
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "Smart Proxies"
 
 msgid "URL"
 msgstr "URL"
 
 msgid "Download policy"
-msgstr ""
+msgstr "Télécharger la politique"
 
 msgid "Alternate Content Source updated."
-msgstr ""
+msgstr "Source de contenu alternative mise à jour."
 
 msgid "Could not update the Alternate Content Source."
-msgstr ""
+msgstr "Impossible de mettre à jour la source de contenu alternative."
 
 msgid "Alternate Content Source deleted."
-msgstr ""
+msgstr "Source de contenu alternative supprimée."
 
 msgid "Could not delete the Alternate Content Source."
-msgstr ""
+msgstr "Impossible de supprimer la source de contenu alternative."
 
 msgid "Alternate content source is being refreshed in task %{id}."
 msgstr ""
+"La source de contenu alternative est en cours d'actualisation dans la tâche"
+"%{id} ."
 
 msgid "Could not refresh the alternate content source"
-msgstr ""
+msgstr "Impossible d'actualiser la source de contenu alternative"
 
 msgid "Host Limit"
 msgstr "Limite d'hôtes"
@@ -210,16 +213,16 @@ msgid "Release Version"
 msgstr "Version de sortie"
 
 msgid "Associated Hosts"
-msgstr ""
+msgstr "Hôtes associés"
 
 msgid "Host Collections"
 msgstr "Collections d'hôtes"
 
 msgid "Content Overrides"
-msgstr ""
+msgstr "Remplacements de contenu"
 
 msgid "Content Label"
-msgstr ""
+msgstr "Libellés de contenu"
 
 msgid "Value"
 msgstr "Valeur"
@@ -231,13 +234,13 @@ msgid "Service Level"
 msgstr "Niveau de service"
 
 msgid "Purpose Usage"
-msgstr ""
+msgstr "Objectif - Utilisation"
 
 msgid "Purpose Role"
-msgstr ""
+msgstr "Objectif - Rôle"
 
 msgid "Purpose Addons"
-msgstr ""
+msgstr "Objectif - Addons"
 
 msgid "Activation key created."
 msgstr "Clé d'activation activée."
@@ -449,13 +452,13 @@ msgid "Errata"
 msgstr "Errata"
 
 msgid "Content Source name"
-msgstr ""
+msgstr "Nom de la source du contenu"
 
 msgid "Content Source"
 msgstr "Source de contenu"
 
 msgid "Kickstart repository name"
-msgstr ""
+msgstr "Nom du référentiel Kickstart"
 
 msgid "Please provide --lifecycle-environment-id"
 msgstr "Veuillez fournir --lifecycle-environment-id"
@@ -471,7 +474,7 @@ msgstr ""
 "%{environment_id} et la vue de contenu % {content_view_id} n’existe"
 
 msgid "Use %s instead"
-msgstr ""
+msgstr "Utilisez plutôt %s"
 
 msgid "Lifecycle environment name to search by"
 msgstr ""
@@ -493,41 +496,51 @@ msgid "Product"
 msgstr "Produit"
 
 msgid "Content Credential created."
-msgstr ""
+msgstr "Informations d'identification de contenu créées."
 
 msgid "Could not create Content Credential"
-msgstr ""
+msgstr "Impossible de créer les informations d'identification du contenu"
 
 msgid "Key file"
-msgstr ""
+msgstr "Fichier clé"
 
 msgid "Content Credential updated."
-msgstr ""
+msgstr "Informations d'identification de contenu mises à jour."
 
 msgid "Could not update Content Credential"
 msgstr ""
+"Impossible de mettre à jour les informations d'identification du contenu"
 
 msgid "Content Credential deleted."
-msgstr ""
+msgstr "Informations d'identification de contenu supprimées."
 
 msgid "Could not delete the Content Credential"
-msgstr ""
+msgstr "Impossible de supprimer les informations d'identification du contenu"
 
 msgid ""
 "Writes export metadata to disk for use by the importing Katello. This "
 "command only needs to be used if the export was performed asynchronously or "
 "if the metadata was lost"
 msgstr ""
+"Écrit les métadonnées d'exportation sur le disque pour être utilisées par le "
+"Katello importateur. Cette commande ne doit être utilisée que si "
+"l'exportation a été effectuée de manière asynchrone ou si les métadonnées "
+"ont été perdues"
 
 msgid "Generate metadata based on output of the specified export task"
 msgstr ""
+"Générer des métadonnées en fonction de la sortie de la tâche d'exportation "
+"spécifiée"
 
 msgid "Generate metadata based on specified export history"
 msgstr ""
+"Générer des métadonnées en fonction de l'historique d'exportation spécifié"
 
 msgid ""
 "No export history was found. Verify the value given for --task-id or --id"
 msgstr ""
+"Aucun historique d'exportation n'a été trouvé. Vérifiez la valeur donnée "
+"pour --task-id ou --id"
 
 msgid ""
 "Generates listing file on each directory of a syncable export. This command "
@@ -535,15 +548,23 @@ msgid ""
 "listing files were lost. Assumes the syncable export directory is accessible "
 "on disk"
 msgstr ""
+"Génère un fichier de liste sur chaque répertoire d'une exportation "
+"synchronisable. Cette commande ne doit être utilisée que si l'exportation a "
+"été effectuée de manière asynchrone ou si les fichiers de liste ont été "
+"perdus. Suppose que le répertoire d'exportation synchronisable est "
+"accessible sur le disque"
 
 msgid "Generate listing files for a syncable export task"
 msgstr ""
+"Générer des fichiers de liste pour une tâche d'exportation synchronisable"
 
 msgid "Generate listing files based on specified export history"
 msgstr ""
+"Générer des fichiers de liste en fonction de l'historique d'exportation "
+"spécifié"
 
 msgid "Destination Server"
-msgstr ""
+msgstr "Serveur de destination"
 
 msgid "Path"
 msgstr "Chemin"
@@ -561,38 +582,49 @@ msgid "Updated at"
 msgstr "Mis à jour le"
 
 msgid "Performs a full export a content view version"
-msgstr ""
+msgstr "Effectue une exportation complète d'une version d'affichage de contenu"
 
 msgid "Performs a full export of the organization's library environment"
 msgstr ""
+"Effectue une exportation complète de l'environnement de la bibliothèque de "
+"l'organisation"
 
 msgid "Performs a full export of a repository"
-msgstr ""
+msgstr "Effectue une exportation complète d'un référentiel"
 
 msgid "Could not fetch the export history"
-msgstr ""
+msgstr "Impossible de récupérer l'historique des exportations"
 
 msgid ""
 "Once the task completes the listing files may be generated with the command:"
 msgstr ""
+"Une fois la tâche terminée, les fichiers de liste peuvent être générés avec "
+"la commande :"
 
 msgid ""
 "Once the task completes the export metadata must be generated with the "
 "command:"
 msgstr ""
+"Une fois la tâche terminée, les métadonnées d'exportation doivent être "
+"générées avec la commande :"
 
 msgid "Can not fetch export history from an unfinished task"
 msgstr ""
+"Impossible de récupérer l'historique d'exportation d'une tâche inachevée"
 
 msgid ""
 "Cannot generate listing files for this export since it is not syncable. It "
 "was not generated with --format=syncable."
 msgstr ""
+"Impossible de générer des fichiers de liste pour cette exportation car elle "
+"n'est pas synchronisable. Elle n'a pas été générée avec --format=syncable."
 
 msgid ""
 "Export History does not have the path specified. The task may have errored "
 "out."
 msgstr ""
+"L'historique d'exportation n'a pas le chemin spécifié. La tâche a peut-être "
+"généré une erreur."
 
 msgid ""
 "NOTE: Unable to fully export this version because it contains repositories "
@@ -600,23 +632,37 @@ msgid ""
 "affected repositories. Once synced republish the content view and export the "
 "generated version."
 msgstr ""
+"REMARQUE : impossible d'exporter entièrement cette version, car elle "
+"contient des référentiels sans la politique de téléchargement « immédiat ». "
+"Mettez à jour la politique de téléchargement et synchronisez les "
+"référentiels concernés. Une fois la synchronisation effectuée, republiez la "
+"vue de contenu et exportez la version générée."
 
 msgid ""
 "NOTE: Unable to fully export this repository because it does not have the "
 "'immediate' download policy. Update the download policy, sync the repository "
 "and export."
 msgstr ""
+"REMARQUE : impossible d'exporter entièrement ce référentiel, car il ne "
+"dispose pas de la politique de téléchargement « immédiat ». Mettez à jour la "
+"politique de téléchargement, synchronisez le référentiel et exportez."
 
 msgid ""
 "NOTE: Unable to fully export this organization's library because it contains "
 "repositories without the 'immediate' download policy. Update the download "
 "policy and sync affected repositories to include them in the export."
 msgstr ""
+"REMARQUE : impossible d'exporter entièrement la bibliothèque de cette "
+"organisation, car elle contient des référentiels sans la politique de "
+"téléchargement « immédiat ». Mettez à jour la politique de téléchargement et "
+"synchronisez les référentiels concernés pour les inclure dans l'exportation."
 
 msgid ""
 "Use the following command to update the download policy of these "
 "repositories."
 msgstr ""
+"Utilisez la commande suivante pour mettre à jour la politique de "
+"téléchargement de ces référentiels."
 
 msgid "Repository is being exported in task %{id}."
 msgstr "Le référentiel est exporté dans la tâche %{id}."
@@ -625,62 +671,77 @@ msgid "Could not export the repository"
 msgstr "Impossible d'exporter le référentiel"
 
 msgid "Filter repositories by name."
-msgstr ""
+msgstr "Filtrer les référentiels par nom."
 
 msgid "Library environment is being exported in task %{id}."
 msgstr ""
+"L'environnement de la bibliothèque est en cours d'exportation dans la tâche"
+"%{id} ."
 
 msgid "Could not export the library"
-msgstr ""
+msgstr "Impossible d'exporter la bibliothèque"
 
 msgid ""
 "Fails if any of the repositories belonging to this organization are "
 "unexportable."
 msgstr ""
+"Échoue si l’un des référentiels appartenant à cette organisation n’est pas "
+"exportable."
 
 msgid "Content view version is being exported in task %{id}."
 msgstr ""
+"La version de la vue de contenu est en cours d'exportation dans la tâche"
+"%{id} ."
 
 msgid "Could not export the content view version"
-msgstr ""
+msgstr "Impossible d'exporter la version d'affichage du contenu"
 
 msgid ""
 "Fails if any of the repositories belonging to this version are unexportable."
 msgstr ""
+"Échoue si l’un des référentiels appartenant à cette version n’est pas "
+"exportable."
 
 msgid "Filter versions by version number."
-msgstr ""
+msgstr "Filtrer les versions par numéro de version."
 
 msgid "Performs an incremental export of a content view version"
 msgstr ""
+"Effectue une exportation incrémentielle d'une version de vue du contenu"
 
 msgid ""
 "Performs an incremental export of the organization's library environment"
 msgstr ""
+"Effectue une exportation incrémentielle de l'environnement de la "
+"bibliothèque de l'organisation"
 
 msgid "Performs an incremental export of a repository"
-msgstr ""
+msgstr "Effectue une exportation incrémentielle d'un référentiel"
 
 msgid ""
 "Location of the metadata.json file. This is not required if the metadata."
 "json file is already in the archive directory."
 msgstr ""
+"Emplacement du fichier metadata.json. Ceci n'est pas nécessaire si le "
+"fichier metadata.json se trouve déjà dans le répertoire d'archive."
 
 msgid "Archive is being imported in task %{id}."
-msgstr ""
+msgstr "L'archive est en cours d'importation dans la tâche%{id} ."
 
 msgid "Could not import the archive."
-msgstr ""
+msgstr "Impossible d'importer l'archive."
 
 msgid "Imports a content archive to a content view version"
-msgstr ""
+msgstr "Importe une archive de contenu vers une version d'affichage de contenu"
 
 msgid ""
 "Imports a content archive to an organization's library lifecycle environment"
 msgstr ""
+"Importe une archive de contenu dans l'environnement du cycle de vie de la "
+"bibliothèque d'une organisation"
 
 msgid "Imports a repository"
-msgstr ""
+msgstr "Importe un référentiel"
 
 msgid "Override product content defaults"
 msgstr "Remplacer les valeurs par défaut du contenu du produit"
@@ -761,6 +822,8 @@ msgstr "Créer une vue de contenu composite"
 
 msgid "Designate this Content View for importing from upstream servers only."
 msgstr ""
+"Désigne cette vue de contenu pour l'importation à partir de serveurs en "
+"amont uniquement."
 
 msgid "Copy a content view"
 msgstr "Afficher un affichage de contenu"
@@ -798,7 +861,7 @@ msgid "Could not publish the content view"
 msgstr "Impossible de publier la vue de contenu"
 
 msgid "Names for Lifecycle Environment"
-msgstr ""
+msgstr "Noms pour l'environnement du cycle de vie"
 
 msgid "Content view is being removed from environment with task %{id}."
 msgstr ""
@@ -820,7 +883,7 @@ msgid "Add a content view version to a composite view"
 msgstr "Ajouter une version de la vue de contenu à une vue composite"
 
 msgid "Content view id to search by"
-msgstr ""
+msgstr "ID de la vue de contenu à rechercher"
 
 msgid "The component version has been added."
 msgstr "La version du composant a été ajoutée."
@@ -874,10 +937,10 @@ msgstr ""
 "view-version ou --latest pour la dernière version"
 
 msgid "Content View Id"
-msgstr ""
+msgstr "ID d’affichage de contenu"
 
 msgid "Component Id"
-msgstr ""
+msgstr "ID Composant"
 
 msgid "Current Version"
 msgstr "Version actuelle"
@@ -960,13 +1023,13 @@ msgid "Repositories"
 msgstr "Référentiels"
 
 msgid "Has Applied Filters"
-msgstr ""
+msgstr "A appliqué des filtres"
 
 msgid "Applied Filters"
-msgstr ""
+msgstr "A appliqué des filtres"
 
 msgid "Dependency Solving"
-msgstr ""
+msgstr "Résolution des dépendances"
 
 msgid "Content View Version is being republished with task %{id}."
 msgstr ""
@@ -1004,10 +1067,10 @@ msgid "Id of the environment from where to promote its version "
 msgstr "Id de l'environnement à partir duquel promouvoir sa version "
 
 msgid "Content view version updated."
-msgstr ""
+msgstr "Version d'affichage de contenu mise à jour"
 
 msgid "Could not update the content view version"
-msgstr ""
+msgstr "Impossible de mettre à jour la version d'affichage du contenu"
 
 msgid "Incremental update is being performed with task %{id}."
 msgstr ""
@@ -1052,31 +1115,31 @@ msgid "IDs of hosts to update"
 msgstr "ID des hôtes à mettre à jour"
 
 msgid "Pulp ID"
-msgstr ""
+msgstr "ID Pulp"
 
 msgid "Uuid"
 msgstr "Uuid"
 
 msgid "checksum"
-msgstr ""
+msgstr "somme de contrôle"
 
 msgid "Architecture"
 msgstr "Architecture"
 
 msgid "Nav"
-msgstr ""
+msgstr "Nav"
 
 msgid "Nva"
-msgstr ""
+msgstr "Nva"
 
 msgid "Available Host Count"
-msgstr ""
+msgstr "Nombre d'hôtes disponibles"
 
 msgid "Applicable Host Count"
-msgstr ""
+msgstr "Nombre d'hôtes applicables"
 
 msgid "Manage docker manifests"
-msgstr ""
+msgstr "Gérer les manifestes Docker"
 
 msgid "Schema Version"
 msgstr "Version du schéma"
@@ -1085,13 +1148,13 @@ msgid "Digest"
 msgstr "Digest"
 
 msgid "Downloaded"
-msgstr ""
+msgstr "Téléchargé"
 
 msgid "Tags"
 msgstr "Balises"
 
 msgid "Manage docker tags"
-msgstr ""
+msgstr "Gérer les balises Docker"
 
 msgid "Tag"
 msgstr "Étiquette"
@@ -1100,10 +1163,10 @@ msgid "Repository ID"
 msgstr "ID référentiel"
 
 msgid "Docker Manifest ID"
-msgstr ""
+msgstr "ID du manifeste Docker"
 
 msgid "Docker Manifest Name"
-msgstr ""
+msgstr "Nom du manifeste Docker"
 
 msgid "Errata ID"
 msgstr "ID des errata"
@@ -1387,13 +1450,13 @@ msgid "Could not recalculate errata"
 msgstr "Impossible de recalculer les errata"
 
 msgid "Trace Status"
-msgstr ""
+msgstr "Statut de la trace"
 
 msgid "Content Information"
 msgstr "Informations sur le contenu"
 
 msgid "Content view environments"
-msgstr ""
+msgstr "Environnements d'affichage de contenu"
 
 msgid "Content view"
 msgstr "Affichage de contenu"
@@ -1435,7 +1498,7 @@ msgid "Registered by Activation Keys"
 msgstr "Enregistré par les clés d'activation"
 
 msgid "Nvra"
-msgstr ""
+msgstr "Nvra"
 
 msgid "Host unregistered."
 msgstr "Hôte non enregistré."
@@ -1480,7 +1543,7 @@ msgid "Content View id"
 msgstr "ID de la vue de contenu"
 
 msgid "Content View version"
-msgstr ""
+msgstr "Version d'affichage de contenu"
 
 msgid "Environment name"
 msgstr "Nom de l'environnement"
@@ -1489,7 +1552,7 @@ msgid "Product name"
 msgstr "Nom du produit"
 
 msgid "Trace ID"
-msgstr ""
+msgstr "ID de trace"
 
 msgid "Application"
 msgstr "Application"
@@ -1498,10 +1561,10 @@ msgid "Helper"
 msgstr "Aide"
 
 msgid "Traces are being resolved with task %{id}."
-msgstr ""
+msgstr "Les traces sont en cours de résolution avec la tâche%{id} ."
 
 msgid "Could not resolve traces"
-msgstr ""
+msgstr "Impossible de résoudre les traces"
 
 msgid "Organization ID to search by"
 msgstr "ID de l'organisation à rechercher"
@@ -1529,7 +1592,7 @@ msgid "Host collection name to search by"
 msgstr "Nom de la collection d'hôte avec lequel effectuer la recherche"
 
 msgid "Organization title"
-msgstr ""
+msgstr "Nom de l'organisation"
 
 msgid "Product name to search by"
 msgstr "Nom du produit avec lequel effectuer la recherche"
@@ -1619,25 +1682,25 @@ msgid "Service Levels"
 msgstr "Niveaux de service"
 
 msgid "Upstream Organization"
-msgstr ""
+msgstr "Organisation en amont"
 
 msgid "Upstream Lifecycle Environment"
-msgstr ""
+msgstr "Environnement du cycle de vie en amont"
 
 msgid "Upstream Content View"
-msgstr ""
+msgstr "Affichage du contenu en amont"
 
 msgid "Username"
-msgstr ""
+msgstr "Nom d'utilisateur"
 
 msgid "SSL CA Credential ID"
-msgstr ""
+msgstr "ID d'identification de l'autorité de certification SSL"
 
 msgid "Enabled"
 msgstr "Activé"
 
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 msgid "Export Sync"
 msgstr "Synchronisation des exportations"
@@ -1670,10 +1733,10 @@ msgid "Could not delete the organization"
 msgstr "Impossible de supprimer l'organisation"
 
 msgid "Updated CDN configuration."
-msgstr ""
+msgstr "Configuration CDN mise à jour."
 
 msgid "Could not update CDN configuration."
-msgstr ""
+msgstr "Impossible de mettre à jour la configuration du CDN."
 
 msgid "Source RPM"
 msgstr "RPM source"
@@ -1685,16 +1748,16 @@ msgid "Author"
 msgstr "Auteur"
 
 msgid "Source rpm"
-msgstr ""
+msgstr "RPM source"
 
 msgid "Nvrea"
-msgstr ""
+msgstr "Nvrea"
 
 msgid "Build Host"
 msgstr "Création des hôtes"
 
 msgid "Children"
-msgstr ""
+msgstr "Dépendants"
 
 msgid "Vendor"
 msgstr "Vendeur"
@@ -1727,7 +1790,7 @@ msgid "Files"
 msgstr "Fichiers"
 
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 msgid "Modular"
 msgstr "Modulaire"
@@ -1751,7 +1814,7 @@ msgid "Optional Packages"
 msgstr "Packages optionnels"
 
 msgid "message"
-msgstr ""
+msgstr "message"
 
 msgid "Server Response"
 msgstr "Réponse du serveur"
@@ -1769,10 +1832,10 @@ msgid "Could not create the product"
 msgstr "Impossible de créer le produit"
 
 msgid "Sync State (all)"
-msgstr ""
+msgstr "État de Sync (all)"
 
 msgid "Sync State (last)"
-msgstr ""
+msgstr "État de Sync (dernier)"
 
 msgid "Sync Plan ID"
 msgstr "ID du plan de synchronisation"
@@ -1802,13 +1865,13 @@ msgid "Could not update the product"
 msgstr "Impossible de mettre à jour le produit"
 
 msgid "Updates an HTTP Proxy for a product"
-msgstr ""
+msgstr "Met à jour un proxy HTTP pour un produit"
 
 msgid "Product proxy updated."
-msgstr ""
+msgstr "Proxy du produit mis à jour."
 
 msgid "Could not update the product HTTP Proxy."
-msgstr ""
+msgstr "Impossible de mettre à jour le proxy HTTP du produit."
 
 msgid "Product destroyed."
 msgstr "Produit détruit."
@@ -1852,12 +1915,14 @@ msgid "Override"
 msgstr "Remplacement"
 
 msgid "Location of the ansible collections requirements.yml file. "
-msgstr ""
+msgstr "Emplacement du fichier requirements.yml des collections ansible. "
 
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
 msgstr ""
+"Limitez le type de référentiel à renvoyer. Affichez les types disponibles "
+"avec « types de référentiel hammer »"
 
 msgid "Red Hat Repository"
 msgstr "Référentiel Red Hat"
@@ -1878,7 +1943,7 @@ msgid "Download Policy"
 msgstr "Télécharger la politique"
 
 msgid "Metadata Expiration"
-msgstr ""
+msgstr "Expiration des métadonnées"
 
 msgid "Upstream Repository Name"
 msgstr "Nom du référentiel en amont"
@@ -1893,7 +1958,7 @@ msgid "Ignorable Content Units"
 msgstr "Unités de contenu ignorables"
 
 msgid "HTTP Proxy"
-msgstr ""
+msgstr "Proxy HTTP"
 
 msgid "HTTP Proxy Policy"
 msgstr "Politique de proxy HTTP"
@@ -1980,6 +2045,8 @@ msgid ""
 "Type of repository to create. View available types with \"hammer repository "
 "types\""
 msgstr ""
+"Type de dépôt à créer. Voir les types disponibles avec « types de dépôt "
+"hammer »"
 
 msgid "Repository updated."
 msgstr "Référentiel mis à jour."
@@ -1994,7 +2061,7 @@ msgid "--docker-tag required with --docker-digest"
 msgstr "--docker-tag requis avec --docker-digest"
 
 msgid "Container Image tag"
-msgstr ""
+msgstr "Balise d'image du conteneur"
 
 msgid "Container Image manifest digest"
 msgstr "Conteneur Image manifeste digest"
@@ -2012,24 +2079,26 @@ msgid "Could not delete the Repository"
 msgstr "Impossible de supprimer le référentiel"
 
 msgid "Content types"
-msgstr ""
+msgstr "Types de contenu"
 
 msgid "Generic?"
-msgstr ""
+msgstr "Générique ?"
 
 msgid "Removable?"
-msgstr ""
+msgstr "Amovible ?"
 
 msgid "Uploadable?"
-msgstr ""
+msgstr "Téléchargeable ?"
 
 msgid "Indexed?"
-msgstr ""
+msgstr "Indexé ?"
 
 msgid ""
 "The type of content unit to upload (srpm, file, etc.). View uploadable types "
 "with \"hammer repository types\""
 msgstr ""
+"Le type d'unité de contenu à télécharger (srpm, fichier, etc.). Afficher les "
+"types téléchargeables avec « types de référentiel Hammer »"
 
 msgid "Could not find any files matching PATH"
 msgstr "Impossible de trouver des fichiers correspondant à PATH"
@@ -2046,10 +2115,10 @@ msgid "Could not upload the content"
 msgstr "Impossible de télécharger le contenu"
 
 msgid "Do not wait for the task."
-msgstr ""
+msgstr "N'attendez pas la tâche."
 
 msgid "Name of OSTree repository in archive."
-msgstr ""
+msgstr "Nom du référentiel OSTree dans l'archive."
 
 msgid ""
 "Upload file, directory of files, or glob of files as content for a "
@@ -2061,7 +2130,7 @@ msgstr ""
 "Les Globs doivent être séparés par des guillemets simples ou doubles"
 
 msgid "Successfully uploaded file %s"
-msgstr ""
+msgstr "Fichier téléchargé avec succès %s"
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
 msgstr ""
@@ -2069,7 +2138,7 @@ msgstr ""
 "'%{digest}'"
 
 msgid "Could not upload the content."
-msgstr ""
+msgstr "Impossible de télécharger le contenu."
 
 msgid "Remove content from a repository"
 msgstr "Supprimer le contenu d'un référentiel"
@@ -2084,24 +2153,26 @@ msgid ""
 "The type of content unit to remove (srpm, docker_manifest, etc.). View "
 "removable types with \"hammer repository types\""
 msgstr ""
+"Le type d'unité de contenu à supprimer (srpm, docker_manifest, etc.). "
+"Afficher les types amovibles avec « types de référentiel Hammer »"
 
 msgid "Forces a republish of the specified repository."
-msgstr ""
+msgstr "Force une republication du référentiel spécifié."
 
 msgid "Repository republished."
-msgstr ""
+msgstr "Référentiel réédité."
 
 msgid "Could not republish the repository."
-msgstr ""
+msgstr "Impossible de republier le référentiel."
 
 msgid "Reclaim space from an On Demand repository"
 msgstr "Récupérer l’espace en provenance d’un référentiel Sur demande"
 
 msgid "Repository space reclaimed."
-msgstr ""
+msgstr "Espace de référentiel récupéré."
 
 msgid "Could not reclaim the repository"
-msgstr ""
+msgstr "Impossible de récupérer le référentiel"
 
 msgid "Enabled Repositories"
 msgstr "Référentiels activés"
@@ -2122,22 +2193,23 @@ msgid "Could not disable repository"
 msgstr "Impossible de désactiver le référentiel"
 
 msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
+msgstr "Cette organisation n'est pas éligible à l'accès au contenu simple"
 
 msgid "Simple Content Access Enabled."
-msgstr ""
+msgstr "Accès simple au contenu activé."
 
 msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
+msgstr "Impossible d'activer l'accès simple au contenu pour cette organisation"
 
 msgid "Simple Content Access Disabled."
-msgstr ""
+msgstr "Désactivez l'accès au contenu simple"
 
 msgid "Could not disable Simple Content Access for this organization"
 msgstr ""
+"Impossible de désactiver l'accès simple au contenu pour cette organisation"
 
 msgid "Time UTC"
-msgstr ""
+msgstr "Heure UTC"
 
 msgid "Consumed"
 msgstr "Consommé"
