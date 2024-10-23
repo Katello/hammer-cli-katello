@@ -6,7 +6,7 @@ module HammerCLIKatello
       output do
         field :id, _("Id")
         field :label, _("Label")
-        from :environment do
+        from :lifecycle_environment do
           field :name, _("Lifecycle Environment")
         end
         from :content_view do
@@ -14,6 +14,7 @@ module HammerCLIKatello
         end
         field :default, _("Default")
         field :hosts_count, _("Hosts Count")
+        field :activation_keys_count, _("Activation Keys Count")
         from :organization do
           field :name, _("Organization")
         end
