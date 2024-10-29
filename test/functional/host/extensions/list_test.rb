@@ -13,8 +13,8 @@ describe 'host list' do
 
     result = run_cmd(@cmd)
 
-    fields = ['CONTENT VIEW', 'LIFECYCLE ENVIRONMENT', 'TRACE STATUS']
-    values = ['Default Organization View', 'Library', 'updated']
+    fields = ['CONTENT VIEW ENVIRONMENTS', 'MULTI CONTENT VIEW ENVIRONMENT', 'TRACE STATUS']
+    values = ['Library', 'no', 'updated']
     expected_result = success_result(IndexMatcher.new([fields, values]))
     assert_cmd(expected_result, result)
   end
