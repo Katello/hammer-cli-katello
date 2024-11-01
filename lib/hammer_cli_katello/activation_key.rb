@@ -55,7 +55,7 @@ module HammerCLIKatello
         field :format_consumed, _("Host Limit")
         field :multi_content_view_environment, _("Multi Content View Environment"), Fields::Boolean
         field :release_version, _("Release Version"), Fields::Field, :hide_blank => true
-        field :content_view_environment_labels, _("Content View Environments"), Fields::Field
+        field :content_view_environment_labels, _("Content View Environment Labels"), Fields::Field
 
         collection :organization, _("Organization") do
           field :id, _("Id"), Fields::Field, :hide_blank => true

@@ -95,6 +95,27 @@
                "id":1,
                "name":"Library"
             },
+            "content_view_environment_labels": "Library",
+            "multi_content_view_environment": false,
+            "content_view_environments": [
+               {
+                  "content_view": {
+                        "id": 1,
+                        "name": "Default Organization View",
+                        "composite": false,
+                        "content_view_version": "1.0",
+                        "content_view_version_id": 1,
+                        "content_view_version_latest": true,
+                        "content_view_default": true
+                  },
+                  "lifecycle_environment": {
+                        "id": 1,
+                        "name": "Library",
+                        "lifecycle_environment_library": true
+                  },
+                  "label": "Library"
+               }
+            ],
             "errata_counts":{
                "security":0,
                "bugfix":0,

@@ -26,12 +26,10 @@ module HammerCLIKatello
     ::HammerCLIForeman::Host::ListCommand.instance_eval do
       output do
         from :content_facet_attributes do
-          from :content_view do
-            field :name, _('Content View'), Fields::List
-          end
-          from :lifecycle_environment do
-            field :name, _('Lifecycle environment'), Fields::List
-          end
+          field :content_view_environment_labels, _("Content View Environments"),
+                                              Fields::List, :max_width => 300
+          field :multi_content_view_environment,
+                _("Multi Content View Environment"), Fields::Boolean
           from :errata_counts do
             field :security, _("Security"), nil, :sets => ['ALL']
             field :bugfix, _("Bugfix"), nil, :sets => ['ALL']
@@ -46,7 +44,9 @@ module HammerCLIKatello
       output do
         label _('Content Information') do
           from :content_facet_attributes do
-            collection :content_view_environments, _('Content view environments') do
+            field :content_view_environment_labels,
+                  _("Content View Environment Labels"), Fields::Field
+            collection :content_view_environments, _('Content View Environments') do
               from :content_view do
                 label _("Content view") do
                   field :id, _("Id")
@@ -60,6 +60,7 @@ module HammerCLIKatello
                   field :name, _("Name")
                 end
               end
+              field :label, _("Label")
             end
 
             label _("Content Source") do
