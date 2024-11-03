@@ -98,7 +98,15 @@
       "lifecycle_environment_library?":true,
       "katello_agent_installed":true,
       "applicable_package_count": 5,
-      "upgradable_package_count": 4
+      "upgradable_package_count": 4,
+      "bootc_booted_image":"potato",
+      "bootc_booted_digest":"sha256:a68293b8402890ba802f11fc2fab26e23c665be9e645836c3f32cbfe9e07f9ae",
+      "bootc_available_image":"potato2",
+      "bootc_available_digest":"sha256:a68293b8402890ba802f11fc2fab26e23c665be9e645836c3f32cbfe9e07f9a2",
+      "bootc_staged_image":"potato3",
+      "bootc_staged_digest":"sha256:a68293b8402890ba802f11fc2fab26e23c665be9e645836c3f32cbfe9e07f9a1",
+      "bootc_rollback_image":"potato4",
+      "bootc_rollback_digest":"sha256:a68293b8402890ba802f11fc2fab26e23c665be9e645836c3f32cbfe9e07f9a9"
    },
    "traces_status_label":"Updated",
    "subscription_facet_attributes":{

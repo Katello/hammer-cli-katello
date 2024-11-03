@@ -139,6 +139,9 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Max: 264
 
+Metrics/ModuleLength:
+  Max: 120
+
 # Offense count: 5
 # Configuration parameters: IgnoredMethods.
 Metrics/CyclomaticComplexity:

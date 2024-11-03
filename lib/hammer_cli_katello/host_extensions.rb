@@ -35,6 +35,14 @@ module HammerCLIKatello
             field :bugfix, _("Bugfix"), nil, :sets => ['ALL']
             field :enhancement, _("Enhancement"), nil, :sets => ['ALL']
           end
+          field :bootc_booted_image, _('Running image'), nil, :sets => ['ALL']
+          field :bootc_booted_digest, _('Running image digest'), nil, :sets => ['ALL']
+          field :bootc_staged_image, _('Staged image'), nil, :sets => ['ALL']
+          field :bootc_staged_digest, _('Staged image digest'), nil, :sets => ['ALL']
+          field :bootc_available_image, _('Available image'), nil, :sets => ['ALL']
+          field :bootc_available_digest, _('Available image digest'), nil, :sets => ['ALL']
+          field :bootc_rollback_image, _('Rollback image'), nil, :sets => ['ALL']
+          field :bootc_rollback_digest, _('Rollback image digest'), nil, :sets => ['ALL']
         end
         field :traces_status_label, _('Trace Status')
       end
@@ -103,6 +111,19 @@ module HammerCLIKatello
               field :purpose_role, _('Purpose Role')
               field :purpose_addons, _('Purpose Addons'), Fields::List
             end
+          end
+        end
+
+        label _('bootc Image Information') do
+          from :content_facet_attributes do
+            field :bootc_booted_image, _('Running image')
+            field :bootc_booted_digest, _('Running image digest')
+            field :bootc_staged_image, _('Staged image')
+            field :bootc_staged_digest, _('Staged image digest')
+            field :bootc_available_image, _('Available image')
+            field :bootc_available_digest, _('Available image digest')
+            field :bootc_rollback_image, _('Rollback image')
+            field :bootc_rollback_digest, _('Rollback image digest')
           end
         end
 

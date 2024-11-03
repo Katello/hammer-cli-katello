@@ -2,7 +2,7 @@ require_relative '../test_helper'
 require_relative '../organization/organization_helpers'
 require 'hammer_cli_katello/repository'
 
-module HammerCLIKatello # rubocop:disable Metrics/ModuleLength
+module HammerCLIKatello
   describe Repository::UpdateCommand do
     include OrganizationHelpers
 
