@@ -1,6 +1,5 @@
 require_relative '../../test_helper'
 require 'hammer_cli_katello/content_view_component'
-# rubocop:disable Metrics/ModuleLength
 module HammerCLIKatello
   describe ContentViewComponent::UpdateCommand do
     before do

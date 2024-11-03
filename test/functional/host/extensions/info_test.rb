@@ -27,7 +27,10 @@ describe 'host info' do
                        ['Purpose Usage', 'Production'],
                        ['Purpose Role', 'Role'],
                        ['Purpose Addons', 'Test Addon1, Test Addon2'],
-                       ['Trace Status', 'Updated']]
+                       ['Trace Status', 'Updated'],
+                       ['Running image', 'potato'],
+                       ['Running image digest',
+                        'sha256:a68293b8402890ba802f11fc2fab26e23c665be9e645836c3f32cbfe9e07f9ae']]
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
     expected_results.each { |expected|  assert_cmd(expected, result) }
   end

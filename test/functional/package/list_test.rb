@@ -5,7 +5,6 @@ require_relative '../organization/organization_helpers'
 require_relative '../lifecycle_environment/lifecycle_environment_helpers'
 require 'hammer_cli_katello/package'
 
-# rubocop:disable ModuleLength
 module HammerCLIKatello
   describe PackageCommand::ListCommand do
     include OrganizationHelpers
