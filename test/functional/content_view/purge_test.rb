@@ -52,8 +52,19 @@ module HammerCLIKatello
     it 'fails gracefully if count <= 0' do
       api_expects_no_call
 
-      r = run_cmd(%w(content-view purge --id 2 --count -1))
-      assert(r.err.include?('Invalid value for --count option'), 'Incorrect error message')
+      r = run_cmd(%w(content-view purge --id 2 --versions-to-keep -1))
+      assert(r.err.include?('Invalid value for --versions-to-keep'), 'Incorrect error message')
+    end
+
+    it 'gives a deprecation warning with the --count option' do
+      ex = api_expects(:content_view_versions, :index)
+      ex = ex.with_params("content_view_id" => '2')
+      ex.returns(versions)
+
+      r = run_cmd(%w(content-view purge --id 2 --count 3))
+      dep_warning = 'The --count option is deprecated and will be removed in the next release.'
+      _(r.err.lines.first.strip).must_equal(dep_warning)
+      assert(r.err.include?('No versions to delete.'), 'Incorrect error message')
     end
 
     it 'fails gracefully when there are no versions to delete' do
@@ -61,7 +72,7 @@ module HammerCLIKatello
       ex = ex.with_params("content_view_id" => '2')
       ex.returns(versions)
 
-      r = run_cmd(%w(content-view purge --id 2 --count 3))
+      r = run_cmd(%w(content-view purge --id 2 --versions-to-keep 3))
       assert(r.err.include?('No versions to delete.'), 'Incorrect error message')
     end
 
@@ -77,7 +88,7 @@ module HammerCLIKatello
         expect_foreman_task('3')
       end
 
-      run_cmd(%w(content-view purge --id 2 --count 0))
+      run_cmd(%w(content-view purge --id 2 --versions-to-keep 0))
     end
 
     it 'allows for async purge of versions' do
@@ -91,7 +102,7 @@ module HammerCLIKatello
         ex.returns('id' => '3')
       end
 
-      run_cmd(%w(content-view purge --id 2 --count 0 --async))
+      run_cmd(%w(content-view purge --id 2 --versions-to-keep 0 --async))
     end
   end
 end
