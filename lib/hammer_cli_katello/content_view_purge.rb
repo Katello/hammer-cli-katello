@@ -7,9 +7,11 @@ module HammerCLIKatello
     command_name "purge"
     desc "Delete old versions of a content view"
 
-    option "--id", "ID", _("Content View numeric identifier")
-    option "--name", "NAME", _("Content View name")
-    option "--count", "COUNT", _("count of unused versions to keep"),
+    option "--id", "Id", _("Content View numeric identifier")
+    option "--name", "Name", _("Content View name")
+    option "--count", "Count", _("(deprecated) Number of versions to keep"),
+           :deprecated => true, format: HammerCLI::Options::Normalizers::Number.new
+    option "--versions-to-keep", "Versions to keep", _("Number of unused versions to keep"),
            default: 3, format: HammerCLI::Options::Normalizers::Number.new
 
     validate_options :before, 'IdResolution' do
@@ -49,17 +51,23 @@ module HammerCLIKatello
     end
 
     def execute
-      if option_count.negative?
-        output.print_error _("Invalid value for --count option: value must be 0 or greater.")
+      options['option_versions_to_keep'] = option_versions_to_keep
+      if option_versions_to_keep.negative?
+        output.print_error _("Invalid value for --versions-to-keep: value must be 0 or greater.")
         return HammerCLI::EX_USAGE
       end
 
       # Check if there is something to do
-      if option_count >= old_unused_versions.size
+      if option_count
+        warn _("The --count option is deprecated and will be removed in the next release.")
+        options['option_versions_to_keep'] = option_count
+      end
+      if options['option_versions_to_keep'] >= old_unused_versions.size
         output.print_error _("No versions to delete.")
         HammerCLI::EX_NOT_FOUND
       else
-        versions_to_purge = old_unused_versions.slice(0, old_unused_versions.size - option_count)
+        versions_to_purge = old_unused_versions.slice(0, old_unused_versions.size -
+          options['option_versions_to_keep'])
 
         versions_to_purge.each do |v|
           purge_version(v)
