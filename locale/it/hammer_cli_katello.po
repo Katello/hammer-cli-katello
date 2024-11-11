@@ -12,7 +12,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.15.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 1.16.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
@@ -469,10 +469,10 @@ msgid "Lifecycle environment name to search by"
 msgstr "Nome ambiente ciclo di vita per la ricerca"
 
 msgid "Duration: %sms"
-msgstr "Durata: %sms"
+msgstr ""
 
 msgid "Message: %s"
-msgstr "Messaggio: %s"
+msgstr ""
 
 msgid "Name of the composite content view"
 msgstr ""
