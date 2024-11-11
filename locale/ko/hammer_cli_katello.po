@@ -8,15 +8,17 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2022
 # 진선재, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-katello 1.15.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 1.16.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>, 2023\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden "
+"<ewoud+transifex@kohlvanwijngaarden.nl>, 2024\n"
 "Language-Team: Korean (https://app.transifex.com/foreman/teams/114/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,31 +27,31 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Manipulate activation keys"
-msgstr ""
+msgstr "활성화 키 조정"
 
 msgid "Manipulate organizations"
-msgstr "조직 조정 "
+msgstr "조직 조정"
 
 msgid "Manipulate alternate content sources"
-msgstr ""
+msgstr "대체 콘텐츠 소스 조정"
 
 msgid "Manipulate content credentials on the server"
-msgstr ""
+msgstr "서버에서 콘텐츠 자격 증명 조정"
 
 msgid "Manipulate lifecycle_environments on the server"
-msgstr ""
+msgstr "서버에서 lifecycle_environments 조정"
 
 msgid "Manipulate products"
-msgstr ""
+msgstr "제품 조정"
 
 msgid "Manipulate repositories"
 msgstr "리포지터리 조정 "
 
 msgid "Manipulate repository sets on the server"
-msgstr ""
+msgstr "서버에서 리포지토리 세트 조정"
 
 msgid "Manipulate subscriptions"
-msgstr ""
+msgstr "서브스크립션 조정"
 
 msgid "Manipulate sync plans"
 msgstr "동기화 계획 조정 "
@@ -58,46 +60,46 @@ msgid "Manipulate host collections"
 msgstr "호스트 컬렉션을 조정합니다 "
 
 msgid "Manipulate content views"
-msgstr ""
+msgstr "콘텐츠 뷰 조정"
 
 msgid "Manipulate capsule"
-msgstr "Capsule 조정 "
+msgstr "캡슐 조정 "
 
 msgid "Manipulate packages"
-msgstr ""
+msgstr "패키지 조정"
 
 msgid "Manipulate deb packages"
-msgstr ""
+msgstr "deb 패키지 조정"
 
 msgid "Manipulate package groups"
-msgstr ""
+msgstr "패키지 그룹 조정"
 
 msgid "Manipulate errata"
-msgstr ""
+msgstr "에라타 조정"
 
 msgid "Manipulate files"
-msgstr ""
+msgstr "파일 조정"
 
 msgid "Manipulate content units"
-msgstr ""
+msgstr "콘텐츠 단위 조정"
 
 msgid "Prepare content for export to a disconnected Katello"
-msgstr ""
+msgstr "연결이 끊긴 Katello로 내보낼 콘텐츠 준비"
 
 msgid "Import content from an upstream archive."
-msgstr ""
+msgstr "업스트림 아카이브에서 콘텐츠를 가져옵니다."
 
 msgid "View Module Streams"
-msgstr ""
+msgstr "모듈 스트림 보기"
 
 msgid "Manipulate source RPMs"
-msgstr ""
+msgstr "소스 RPM 조정"
 
 msgid "Simple content access commands"
-msgstr ""
+msgstr "간단한 콘텐츠 액세스 명령"
 
 msgid "Manipulate docker content"
-msgstr ""
+msgstr "docker 콘텐츠 조정"
 
 msgid "ID"
 msgstr "ID"
@@ -109,10 +111,10 @@ msgid "Type"
 msgstr "유형"
 
 msgid "Alternate Content Source created."
-msgstr ""
+msgstr "대체 콘텐츠 소스가 생성되었습니다."
 
 msgid "Could not create the Alternate Content Source."
-msgstr ""
+msgstr "대체 콘텐츠 소스를 만들 수 없습니다."
 
 msgid "Label"
 msgstr "레이블 "
@@ -121,16 +123,16 @@ msgid "Description"
 msgstr "설명 "
 
 msgid "Base URL"
-msgstr ""
+msgstr "기본 URL"
 
 msgid "Content type"
-msgstr ""
+msgstr "콘텐츠 유형"
 
 msgid "Alternate content source type"
-msgstr ""
+msgstr "대체 콘텐츠 소스 유형"
 
 msgid "Upstream username"
-msgstr ""
+msgstr "업스트림 사용자 이름"
 
 msgid "Verify SSL"
 msgstr "SSL 확인 "
@@ -148,7 +150,7 @@ msgid "SSL Client Key"
 msgstr "SSL 클라이언트 키"
 
 msgid "Subpaths"
-msgstr ""
+msgstr "하위 경로"
 
 msgid "Products"
 msgstr "제품 "
@@ -157,31 +159,31 @@ msgid "Organization ID"
 msgstr "조직 ID"
 
 msgid "Smart proxies"
-msgstr ""
+msgstr "스마트 프록시"
 
 msgid "URL"
 msgstr "URL"
 
 msgid "Download policy"
-msgstr ""
+msgstr "다운로드 정책"
 
 msgid "Alternate Content Source updated."
-msgstr ""
+msgstr "대체 콘텐츠 소스가 업데이트되었습니다."
 
 msgid "Could not update the Alternate Content Source."
-msgstr ""
+msgstr "대체 콘텐츠 소스를 업데이트할 수 없습니다."
 
 msgid "Alternate Content Source deleted."
-msgstr ""
+msgstr "대체 콘텐츠 소스가 삭제되었습니다."
 
 msgid "Could not delete the Alternate Content Source."
-msgstr ""
+msgstr "대체 콘텐츠 소스를 삭제할 수 없습니다."
 
 msgid "Alternate content source is being refreshed in task %{id}."
-msgstr ""
+msgstr "작업에서 대체 콘텐츠 소스가 새로 고침되고 있습니다.%{id} ."
 
 msgid "Could not refresh the alternate content source"
-msgstr ""
+msgstr "대체 콘텐츠 소스를 새로 고침할 수 없습니다."
 
 msgid "Host Limit"
 msgstr "호스트 제한"
@@ -199,22 +201,22 @@ msgid "%{consumed} of %{limit}"
 msgstr " %{limit} 중 %{consumed}"
 
 msgid "Auto Attach"
-msgstr ""
+msgstr "자동 첨부"
 
 msgid "Release Version"
 msgstr "릴리즈 버전 "
 
 msgid "Associated Hosts"
-msgstr ""
+msgstr "연관된 호스트"
 
 msgid "Host Collections"
 msgstr "호스트 컬렉션 "
 
 msgid "Content Overrides"
-msgstr ""
+msgstr "콘텐츠 재정의"
 
 msgid "Content Label"
-msgstr ""
+msgstr "콘텐츠 레이블"
 
 msgid "Value"
 msgstr "값 "
@@ -226,16 +228,16 @@ msgid "Service Level"
 msgstr "서비스 레벨 "
 
 msgid "Purpose Usage"
-msgstr ""
+msgstr "목적 사용"
 
 msgid "Purpose Role"
-msgstr ""
+msgstr "목적 역할"
 
 msgid "Purpose Addons"
-msgstr ""
+msgstr "목적 애드온"
 
 msgid "Activation key created."
-msgstr ""
+msgstr "활성화 키가 생성되었습니다."
 
 msgid "Could not create the activation key"
 msgstr "활성키를 생성할 수 없습니다 "
@@ -244,19 +246,19 @@ msgid "Copy an activation key"
 msgstr "활성키 복사 "
 
 msgid "Activation key copied."
-msgstr ""
+msgstr "활성화 키가 복사되었습니다."
 
 msgid "Could not copy the activation key"
-msgstr ""
+msgstr "활성화 키를 복사할 수 없습니다."
 
 msgid "Activation key updated."
-msgstr ""
+msgstr "활성화 키가 업데이트되었습니다."
 
 msgid "Could not update the activation key"
 msgstr "활성키를 업데이트할 수 없습니다 "
 
 msgid "Activation key deleted."
-msgstr ""
+msgstr "활성화 키가 삭제되었습니다."
 
 msgid "Could not delete the activation key"
 msgstr "활성키를 삭제할 수 없습니다 "
@@ -292,7 +294,7 @@ msgid "Activation key name to search by"
 msgstr "검색할 활성키 이름 "
 
 msgid "Subscription added to activation key."
-msgstr ""
+msgstr "서브스크립션이 활성화 키에 추가되었습니다."
 
 msgid "Could not add subscription to activation key"
 msgstr "활성키에 서브스크립션을 추가할 수 없습니다 "
@@ -301,10 +303,10 @@ msgid "Remove subscription"
 msgstr "서브스크립션 삭제 "
 
 msgid "ID of subscription"
-msgstr ""
+msgstr "서브스크립션 ID"
 
 msgid "Subscription removed from activation key."
-msgstr ""
+msgstr "서브스크립션이 활성화 키에서 제거되었습니다."
 
 msgid "Could not remove subscription from activation key"
 msgstr "활성키에서 서브스크립션을 삭제할 수 없습니다 "
@@ -313,100 +315,100 @@ msgid "List associated host collections"
 msgstr "관련된 호스트 컬렉션 목록 나열 "
 
 msgid "ID of activation key"
-msgstr ""
+msgstr "활성화 키 ID"
 
 msgid "Name of activation key"
-msgstr ""
+msgstr "활성화 키 이름"
 
 msgid "The repository has been associated."
-msgstr ""
+msgstr "리포지터리가 연결되었습니다."
 
 msgid "Could not add repository"
 msgstr "리포지터리를 추가할 수 없습니다 "
 
 msgid "The repository has been removed."
-msgstr ""
+msgstr "리포지터리가 제거되었습니다."
 
 msgid "Could not remove repository"
 msgstr "리포지터리를 삭제할 수 없습니다 "
 
 msgid "The host collection has been associated."
-msgstr ""
+msgstr "호스트 컬렉션이 연결되었습니다."
 
 msgid "Could not add host collection"
 msgstr "호스트 컬렉션을 추가할 수 없습니다 "
 
 msgid "The host collection has been removed."
-msgstr ""
+msgstr "호스트 컬렉션이 제거되었습니다."
 
 msgid "Could not remove host collection"
 msgstr "호스트 컬렉션을 삭제할 수 없습니다 "
 
 msgid "The host has been added."
-msgstr ""
+msgstr "호스트가 추가되었습니다."
 
 msgid "Could not add host"
-msgstr ""
+msgstr "호스트를 추가할 수 없습니다"
 
 msgid "The host has been removed."
-msgstr ""
+msgstr "호스트가 제거되었습니다."
 
 msgid "Could not remove host"
-msgstr ""
+msgstr "호스트를 제거할 수 없습니다."
 
 msgid "Manage the capsule content"
-msgstr "capsule 컨텐츠 관리 "
+msgstr "캡슐 컨텐츠 관리 "
 
 msgid "Organization"
 msgstr "조직 "
 
 msgid "Lifecycle environment successfully added to the capsule."
-msgstr ""
+msgstr "캡슐에 라이프사이클 환경이 성공적으로 추가되었습니다."
 
 msgid "Could not add the lifecycle environment to the capsule"
-msgstr "라이프 사이클 환경이 capsule에 추가할 수 없습니다 "
+msgstr "라이프 사이클 환경을 캡슐에 추가할 수 없습니다 "
 
 msgid "Organization name"
 msgstr "조직 이름 "
 
 msgid "Lifecycle environment successfully removed from the capsule."
-msgstr ""
+msgstr "캡슐에서 라이프사이클 환경이 성공적으로 제거되었습니다."
 
 msgid "Could not remove the lifecycle environment from the capsule"
-msgstr "라이프 사이클 환경을 capsule에서 삭제할 수 없습니다 "
+msgstr "라이프 사이클 환경을 캡슐에서 삭제할 수 없습니다 "
 
 msgid "Capsule content is being synchronized in task %{id}."
-msgstr ""
+msgstr "캡슐 콘텐츠가 작업에서 동기화되고 있습니다.%{id} ."
 
 msgid "Could not synchronize capsule content"
-msgstr "capsule 컨텐츠를 동기화할 수 없습니다 "
+msgstr "캡슐 컨텐츠를 동기화할 수 없습니다 "
 
 msgid "Last sync"
-msgstr ""
+msgstr "마지막 동기화"
 
 msgid "Status"
 msgstr "상태 "
 
 msgid "Currently running sync tasks"
-msgstr ""
+msgstr "현재 동기화 작업을 실행 중입니다."
 
 msgid "Task id"
-msgstr ""
+msgstr "작업 ID"
 
 msgid "Progress"
-msgstr ""
+msgstr "진행 중"
 
 msgid "Last failure"
-msgstr ""
+msgstr "마지막 실패"
 
 msgid "Messages"
-msgstr ""
+msgstr "메시지"
 
 msgid "Capsule is synchronized"
-msgstr ""
+msgstr "캡슐이 동기화되었습니다"
 
 msgid "%{count} environment(s) can be synchronized: %{names}"
-msgstr ""
+msgstr "%{count} 환경은 동기화될 수 있습니다: %{names}"
 
 msgid "Lifecycle Environments"
 msgstr "라이프사이클 환경 "
@@ -427,54 +429,56 @@ msgid "Hosts"
 msgstr "호스트"
 
 msgid "Yum repos"
-msgstr ""
+msgstr "Yum 리포지터리"
 
 msgid "Container Image repos"
-msgstr ""
+msgstr "컨테이너 이미지 리포지터리"
 
 msgid "Packages"
 msgstr "패키지 "
 
 msgid "Package groups"
-msgstr ""
+msgstr "패키지 그룹"
 
 msgid "Errata"
 msgstr "에라타 "
 
 msgid "Content Source name"
-msgstr ""
+msgstr "콘텐츠 소스 이름"
 
 msgid "Content Source"
 msgstr "컨텐츠 소스 "
 
 msgid "Kickstart repository name"
-msgstr ""
+msgstr "킥스타트 리포지터리 이름"
 
 msgid "Please provide --lifecycle-environment-id"
-msgstr ""
+msgstr "--lifecycle-environment-id를 제공해 주세요."
 
 msgid "Please provide --content-view-id"
-msgstr ""
+msgstr "--content-view-id를 제공해 주세요"
 
 msgid ""
 "No such repository with name %{name}, in lifecycle environment "
 "%{environment_id} and content view %{content_view_id}"
 msgstr ""
+"이름 %{name}, 라이프사이클 환경 %{environment_id} 콘텐츠 뷰 "
+"%{content_view_id}에 해당 리포지토리가 없습니다."
 
 msgid "Use %s instead"
-msgstr ""
+msgstr "대신 %s 사용"
 
 msgid "Lifecycle environment name to search by"
 msgstr "검색할 라이프사이클 환경 이름 "
 
 msgid "Duration: %sms"
-msgstr "기간: %s (밀리초)"
+msgstr "기간: %sms"
 
 msgid "Message: %s"
-msgstr "메세지: %s"
+msgstr "메시지: %s"
 
 msgid "Name of the composite content view"
-msgstr ""
+msgstr "복합 콘텐츠 뷰의 이름"
 
 msgid "Content Type"
 msgstr "컨텐츠 유형 "
@@ -483,41 +487,46 @@ msgid "Product"
 msgstr "제품"
 
 msgid "Content Credential created."
-msgstr ""
+msgstr "콘텐츠 인증 정보가 생성되었습니다."
 
 msgid "Could not create Content Credential"
-msgstr ""
+msgstr "콘텐츠 인증 정보를 생성할 수 없습니다."
 
 msgid "Key file"
-msgstr ""
+msgstr "키 파일"
 
 msgid "Content Credential updated."
-msgstr ""
+msgstr "콘텐츠 인증 정보가 업데이트되었습니다."
 
 msgid "Could not update Content Credential"
-msgstr ""
+msgstr "콘텐츠 인증 정보를 업데이트할 수 없습니다."
 
 msgid "Content Credential deleted."
-msgstr ""
+msgstr "콘텐츠 인증 정보가 삭제되었습니다."
 
 msgid "Could not delete the Content Credential"
-msgstr ""
+msgstr "콘텐츠 인증 정보를 삭제할 수 없습니다."
 
 msgid ""
 "Writes export metadata to disk for use by the importing Katello. This "
 "command only needs to be used if the export was performed asynchronously or "
 "if the metadata was lost"
 msgstr ""
+"Katello에서 가져오기 위해 디스크에 내보내기 메타데이터를 씁니다. 이 명령은 내"
+"보내기가 비동기적으로 수행되었거나 메타데이터가 손실된 경우에만 사용해야 합니"
+"다."
 
 msgid "Generate metadata based on output of the specified export task"
-msgstr ""
+msgstr "지정된 내보내기 작업의 출력을 기반으로 메타데이터를 생성합니다."
 
 msgid "Generate metadata based on specified export history"
-msgstr ""
+msgstr "지정된 내보내기 기록을 기반으로 메타데이터 생성"
 
 msgid ""
 "No export history was found. Verify the value given for --task-id or --id"
 msgstr ""
+"내보내기 기록을 찾을 수 없습니다. --task-id 또는 --id에 대해 제공된 값을 확인"
+"하십시오."
 
 msgid ""
 "Generates listing file on each directory of a syncable export. This command "
@@ -525,15 +534,19 @@ msgid ""
 "listing files were lost. Assumes the syncable export directory is accessible "
 "on disk"
 msgstr ""
+"동기화 가능한 내보내기의 각 디렉토리에 목록 파일을 생성합니다. 이 명령은 내보"
+"내기가 비동기적으로 수행되었거나 목록 파일이 손실된 경우에만 사용해야 합니"
+"다. 동기화 가능한 내보내기 디렉토리가 디스크에서 액세스 가능하다고 가정합니"
+"다."
 
 msgid "Generate listing files for a syncable export task"
-msgstr ""
+msgstr "동기화 가능한 내보내기 작업에 대한 목록 파일 생성"
 
 msgid "Generate listing files based on specified export history"
-msgstr ""
+msgstr "지정된 내보내기 기록을 기반으로 목록 파일 생성"
 
 msgid "Destination Server"
-msgstr ""
+msgstr "목적지 서버"
 
 msgid "Path"
 msgstr "경로 "
@@ -542,7 +555,7 @@ msgid "Content View Version"
 msgstr "컨텐츠 뷰 버전 "
 
 msgid "Content View Version ID"
-msgstr ""
+msgstr "콘텐츠 보기 버전 ID"
 
 msgid "Created at"
 msgstr "생성 일시 "
@@ -551,38 +564,43 @@ msgid "Updated at"
 msgstr "업데이트 일시 "
 
 msgid "Performs a full export a content view version"
-msgstr ""
+msgstr "콘텐츠 보기 버전의 전체 내보내기를 수행합니다."
 
 msgid "Performs a full export of the organization's library environment"
-msgstr ""
+msgstr "조직의 라이브러리 환경에 대한 전체 내보내기를 수행합니다."
 
 msgid "Performs a full export of a repository"
-msgstr ""
+msgstr "리포지터리의 전체 내보내기를 수행합니다."
 
 msgid "Could not fetch the export history"
-msgstr ""
+msgstr "내보내기 기록을 가져올 수 없습니다."
 
 msgid ""
 "Once the task completes the listing files may be generated with the command:"
-msgstr ""
+msgstr "작업이 완료되면 다음 명령을 사용하여 목록 파일을 생성할 수 있습니다."
 
 msgid ""
 "Once the task completes the export metadata must be generated with the "
 "command:"
 msgstr ""
+"작업이 완료되면 다음 명령을 사용하여 내보내기 메타데이터를 생성해야 합니다."
 
 msgid "Can not fetch export history from an unfinished task"
-msgstr ""
+msgstr "완료되지 않은 작업에서 내보내기 기록을 가져올 수 없습니다."
 
 msgid ""
 "Cannot generate listing files for this export since it is not syncable. It "
 "was not generated with --format=syncable."
 msgstr ""
+"동기화할 수 없으므로 이 내보내기에 대한 목록 파일을 생성할 수 없습니다. --"
+"format=syncable로 생성되지 않았습니다."
 
 msgid ""
 "Export History does not have the path specified. The task may have errored "
 "out."
 msgstr ""
+"내역 내보내기에 지정된 경로가 없습니다. 작업이 오류로 인해 종료되었을 수 있습"
+"니다."
 
 msgid ""
 "NOTE: Unable to fully export this version because it contains repositories "
@@ -590,96 +608,109 @@ msgid ""
 "affected repositories. Once synced republish the content view and export the "
 "generated version."
 msgstr ""
+"참고: '즉시' 다운로드 정책이 없는 리포지토리가 포함되어 있기 때문에 이 버전"
+"을 완전히 내보낼 수 없습니다. 다운로드 정책을 업데이트하고 영향을 받는 리포지"
+"토리를 동기화합니다. 동기화되면 콘텐츠 뷰를 다시 게시하고 생성된 버전을 내보"
+"냅니다."
 
 msgid ""
 "NOTE: Unable to fully export this repository because it does not have the "
 "'immediate' download policy. Update the download policy, sync the repository "
 "and export."
 msgstr ""
+"참고: '즉시' 다운로드 정책이 없기 때문에 이 리포지토리를 완전히 내보낼 수 없"
+"습니다. 다운로드 정책을 업데이트하고 리포지토리를 동기화한 다음 내보내기하세"
+"요."
 
 msgid ""
 "NOTE: Unable to fully export this organization's library because it contains "
 "repositories without the 'immediate' download policy. Update the download "
 "policy and sync affected repositories to include them in the export."
 msgstr ""
+"참고: '즉시' 다운로드 정책이 없는 리포지토리가 포함되어 있기 때문에 이 조직"
+"의 라이브러리를 완전히 내보낼 수 없습니다. 다운로드 정책을 업데이트하고 영향"
+"을 받는 리포지토리를 동기화하여 내보내기에 포함시킵니다."
 
 msgid ""
 "Use the following command to update the download policy of these "
 "repositories."
 msgstr ""
+"다음 명령을 사용하여 이러한 리포지토리의 다운로드 정책을 업데이트합니다."
 
 msgid "Repository is being exported in task %{id}."
-msgstr ""
+msgstr "작업 %{id}에서 리포지토리를 내보내고 있습니다."
 
 msgid "Could not export the repository"
-msgstr ""
+msgstr "리포지토리를 내보낼 수 없습니다."
 
 msgid "Filter repositories by name."
-msgstr ""
+msgstr "이름으로 리포지토리를 필터링합니다."
 
 msgid "Library environment is being exported in task %{id}."
-msgstr ""
+msgstr "라이브러리 환경이 %{id} 작업에서 내보내지고 있습니다."
 
 msgid "Could not export the library"
-msgstr ""
+msgstr "라이브러리를 내보낼 수 없습니다."
 
 msgid ""
 "Fails if any of the repositories belonging to this organization are "
 "unexportable."
-msgstr ""
+msgstr "이 조직에 속한 리포지토리가 내보낼 수 없는 경우 실패합니다."
 
 msgid "Content view version is being exported in task %{id}."
-msgstr ""
+msgstr "%{id} 작업에서 콘텐츠 보기 버전을 내보내고 있습니다."
 
 msgid "Could not export the content view version"
-msgstr ""
+msgstr "콘텐츠 보기 버전을 내보낼 수 없습니다."
 
 msgid ""
 "Fails if any of the repositories belonging to this version are unexportable."
-msgstr ""
+msgstr "이 버전에 속한 리포지토리가 내보낼 수 없는 경우 실패합니다."
 
 msgid "Filter versions by version number."
-msgstr ""
+msgstr "버전 번호로 버전을 필터링합니다."
 
 msgid "Performs an incremental export of a content view version"
-msgstr ""
+msgstr "콘텐츠 보기 버전의 증분 내보내기를 수행합니다."
 
 msgid ""
 "Performs an incremental export of the organization's library environment"
-msgstr ""
+msgstr "조직의 라이브러리 환경에 대한 증분 내보내기를 수행합니다."
 
 msgid "Performs an incremental export of a repository"
-msgstr ""
+msgstr "리포지토리의 증분 내보내기를 수행합니다."
 
 msgid ""
 "Location of the metadata.json file. This is not required if the metadata."
 "json file is already in the archive directory."
 msgstr ""
+"metadata.json 파일의 위치. metadata.json 파일이 이미 보관 디렉토리에 있는 경"
+"우 필요하지 않습니다."
 
 msgid "Archive is being imported in task %{id}."
-msgstr ""
+msgstr "%{id} 작업에서 아카이브를 가져오고 있습니다."
 
 msgid "Could not import the archive."
-msgstr ""
+msgstr "보관 파일을 가져올 수 없습니다."
 
 msgid "Imports a content archive to a content view version"
-msgstr ""
+msgstr "콘텐츠 보관소를 콘텐츠 보기 버전으로 가져옵니다."
 
 msgid ""
 "Imports a content archive to an organization's library lifecycle environment"
-msgstr ""
+msgstr "조직의 라이브러리 라이프사이클 환경으로 콘텐츠 아카이브를 가져옵니다."
 
 msgid "Imports a repository"
-msgstr ""
+msgstr "리포지토리를 가져옵니다"
 
 msgid "Override product content defaults"
-msgstr ""
+msgstr "제품 콘텐츠 기본값 재정의"
 
 msgid "Updated content override."
-msgstr ""
+msgstr "콘텐츠 재정의 업데이트"
 
 msgid "Could not update content override"
-msgstr ""
+msgstr "콘텐츠 재정의를 업데이트할 수 없습니다."
 
 msgid "Label of the content"
 msgstr "컨텐츠 레이블 "
@@ -689,12 +720,16 @@ msgid ""
 "To enable or disable a repo select 'enabled'.\n"
 "Default value: enabled"
 msgstr ""
+"매개변수 키 또는 이름을 재정의합니다. repo를 활성화 또는 비활성화하려면 '활성"
+"화'를 선택합니다. 기본값: 활성화"
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
 msgstr ""
+"값을 재정의합니다. repo 활성화에 대한 참고 사항은 부울 값을 사용할 수 있습니"
+"다."
 
 msgid "Remove a content override"
-msgstr ""
+msgstr "콘텐츠 재정의 제거"
 
 msgid "Version"
 msgstr "버전 "
@@ -709,19 +744,19 @@ msgid "Repository IDs"
 msgstr "리포지터리 ID"
 
 msgid "Content Host Count"
-msgstr ""
+msgstr "콘텐츠 호스트 수"
 
 msgid "Solve Dependencies"
-msgstr ""
+msgstr "종속성 해결"
 
 msgid "Yum Repositories"
 msgstr "Yum 리포지터리 "
 
 msgid "Container Image Repositories"
-msgstr ""
+msgstr "컨테이너 이미지 리포지터리"
 
 msgid "OSTree Repositories"
-msgstr ""
+msgstr "OSTree 리포지터리"
 
 msgid "Versions"
 msgstr "버전 "
@@ -736,7 +771,7 @@ msgid "Activation Keys"
 msgstr "활성키 "
 
 msgid "Content view created."
-msgstr ""
+msgstr "콘텐츠 보기가 생성되었습니다."
 
 msgid "Could not create the content view"
 msgstr "컨텐츠 뷰를 생성할 수 없습니다 "
@@ -745,10 +780,10 @@ msgid "Create a composite content view"
 msgstr "복합적인 컨텐츠 뷰 생성 "
 
 msgid "Designate this Content View for importing from upstream servers only."
-msgstr ""
+msgstr "이 콘텐츠 보기를 업스트림 서버에서만 가져오기로 지정하세요."
 
 msgid "Copy a content view"
-msgstr ""
+msgstr "콘텐츠 보기 복사"
 
 msgid "Content view name to search by"
 msgstr "검색할 컨텐츠 뷰 이름 "
@@ -757,159 +792,165 @@ msgid "New content view name"
 msgstr "새 컨텐츠 뷰 이름 "
 
 msgid "Content view copied."
-msgstr ""
+msgstr "콘텐츠 뷰가 복사되었습니다."
 
 msgid "Could not copy the content view"
-msgstr ""
+msgstr "콘텐츠 뷰를 복사할 수 없습니다."
 
 msgid "Content view updated."
-msgstr ""
+msgstr "콘텐츠 뷰가 업데이트되었습니다."
 
 msgid "Could not update the content view"
 msgstr "컨텐츠 뷰를 업데이트할 수 없습니다 "
 
 msgid "Content view is being deleted with task %{id}."
-msgstr ""
+msgstr "%{id} 작업으로 인해 콘텐츠 보기가 삭제됩니다."
 
 msgid "Could not delete the content view"
 msgstr "컨텐츠 뷰를 삭제할 수 없습니다 "
 
 msgid "Content view is being published with task %{id}."
-msgstr ""
+msgstr "콘텐츠 보기가 %{id} 작업과 함께 게시되고 있습니다."
 
 msgid "Could not publish the content view"
 msgstr "컨텐츠 뷰를 공개할 수 없습니다 "
 
 msgid "Names for Lifecycle Environment"
-msgstr ""
+msgstr "라이프사이클 환경의 이름"
 
 msgid "Content view is being removed from environment with task %{id}."
-msgstr ""
+msgstr "%{id} 작업으로 환경에서 콘텐츠 보기가 제거되고 있습니다."
 
 msgid "Could not remove the content view from environment"
 msgstr "환경에서 컨텐츠 뷰를 삭제할 수 없습니다 "
 
 msgid "Content view objects are being removed task %{id}."
-msgstr ""
+msgstr "콘텐츠 뷰 객체가 작업 %{id}에서 제거됩니다."
 
 msgid "Could not remove objects from content view"
 msgstr "컨텐츠 뷰에서 객체를 삭제할 수 없습니다."
 
 msgid "Add a content view version to a composite view"
-msgstr ""
+msgstr "복합 뷰에 콘텐츠 뷰 버전 추가"
 
 msgid "Content view id to search by"
-msgstr ""
+msgstr "검색할 콘텐츠 뷰 ID"
 
 msgid "The component version has been added."
-msgstr ""
+msgstr "구성 요소 버전이 추가되었습니다."
 
 msgid "Could not add version"
 msgstr "버전을 추가할 수 없습니다 "
 
 msgid "Remove a content view version from a composite view"
-msgstr ""
+msgstr "복합 뷰에서 콘텐츠 뷰 버전 제거"
 
 msgid "The component version has been removed."
-msgstr ""
+msgstr "구성 요소 버전이 제거되었습니다."
 
 msgid "Could not remove version"
 msgstr "버전을 삭제할 수 없습니다 "
 
 msgid ""
 "Content View identifier of the component who's latest version is desired"
-msgstr ""
+msgstr "최신 버전이 필요한 구성 요소의 콘텐츠 뷰 식별자"
 
 msgid "Content View name of the component who's latest version is desired"
-msgstr ""
+msgstr "최신 버전이 필요한 구성 요소의 콘텐츠 보기 이름"
 
 msgid "Content View Version identifier of the component"
-msgstr ""
+msgstr "구성 요소의 콘텐츠 보기 버전 식별자"
 
 msgid ""
 "Content View Version number of the component. Either use this or --component-"
 "content-view-version-id option"
 msgstr ""
+"구성 요소의 콘텐츠 보기 버전 번호입니다. 이 옵션이나 --component-content-"
+"view-version-id 옵션을 사용하세요."
 
 msgid "Select the latest version of the components content view is desired"
-msgstr ""
+msgstr "최신 버전의 구성 요소 콘텐츠 보기를 선택하세요"
 
 msgid "Please provide --component-content-view-id"
-msgstr ""
+msgstr "--component-content-view-id를 제공해 주세요."
 
 msgid ""
 "Please provide --component-content-view-version-id or --component-content-"
 "view-version or --latest for the latest version"
 msgstr ""
+"최신 버전의 경우 --component-content-view-version-id 또는 --component-"
+"content-view-version 또는 --latest를 제공하세요."
 
 msgid "Content View Id"
-msgstr ""
+msgstr "콘텐츠 뷰 ID"
 
 msgid "Component Id"
-msgstr ""
+msgstr "구성 요소 ID"
 
 msgid "Current Version"
-msgstr ""
+msgstr "현재 버전"
 
 msgid "Version Id"
-msgstr ""
+msgstr "버전 ID"
 
 msgid "Latest"
-msgstr ""
+msgstr "최신"
 
 msgid "No Published Version"
-msgstr ""
+msgstr "게시된 버전 없음"
 
 msgid "Component added to content view."
-msgstr ""
+msgstr "콘텐츠 보기에 구성 요소가 추가되었습니다."
 
 msgid "Could not add the component"
-msgstr ""
+msgstr "구성요소를 추가할 수 없습니다."
 
 msgid "Content view component updated."
-msgstr ""
+msgstr "콘텐츠 뷰 구성 요소가 업데이트되었습니다."
 
 msgid "Could not update the content view component"
-msgstr ""
+msgstr "콘텐츠 뷰 구성 요소를 업데이트할 수 없습니다."
 
 msgid ""
 "Array of component content view names to remove. Comma separated list of "
 "values"
-msgstr ""
+msgstr "제거할 구성 요소 콘텐츠 뷰 이름 배열. 값의 쉼표로 구분된 목록"
 
 msgid ""
 "Array of component content view identfiers to remove. Comma separated list "
 "of values"
-msgstr ""
+msgstr "제거할 구성 요소 콘텐츠 뷰 식별자 배열. 값의 쉼표로 구분된 목록"
 
 msgid "Components removed from content view."
-msgstr ""
+msgstr "콘텐츠 보기에서 구성 요소가 제거되었습니다."
 
 msgid "Could not remove the components"
-msgstr ""
+msgstr "구성 요소를 제거할 수 없습니다."
 
 msgid "Content View numeric identifier"
-msgstr ""
+msgstr "콘텐츠 보기 숫자 식별자"
 
 msgid "Content View name"
-msgstr ""
+msgstr "콘텐츠 뷰 이름"
 
 msgid "count of unused versions to keep"
-msgstr ""
+msgstr "사용하지 않는 버전의 수를 유지"
 
 msgid "Invalid value for --count option: value must be 0 or greater."
-msgstr ""
+msgstr "--count 옵션 값이 잘못되었습니다. 값은 0 이상이어야 합니다."
 
 msgid "No versions to delete."
-msgstr ""
+msgstr "삭제할 버전이 없습니다."
 
 msgid ""
 "Version '%{version}' of content view '%{view}' scheduled for deletion in "
 "task '%{task_id}'."
 msgstr ""
+"콘텐츠 뷰 '%{view}'의 버전 '%{version}'이 작업 '%{task_id}'에서 삭제 예약되었"
+"습니다."
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
-msgstr ""
+msgstr "콘텐츠 뷰 '%{view}'의 버전 '%{version}'이 삭제되었습니다."
 
 msgid "Content View Name"
 msgstr "컨텐츠 뷰 이름 "
@@ -921,22 +962,22 @@ msgid "Repositories"
 msgstr "리포지터리 "
 
 msgid "Has Applied Filters"
-msgstr ""
+msgstr "필터가 적용되었습니다"
 
 msgid "Applied Filters"
-msgstr ""
+msgstr "필터가 적용되었습니다"
 
 msgid "Dependency Solving"
-msgstr ""
+msgstr "종속성 해결"
 
 msgid "Content View Version is being republished with task %{id}."
-msgstr ""
+msgstr "콘텐츠 보기 버전이 %{id} 작업과 함께 다시 게시됩니다."
 
 msgid "Could not republish the Content View"
-msgstr ""
+msgstr "콘텐츠 보기를 다시 게시할 수 없습니다."
 
 msgid "Content view is being promoted with task %{id}."
-msgstr ""
+msgstr "콘텐츠 보기가 %{id} 작업으로 승격됩니다."
 
 msgid "Could not promote the content view"
 msgstr "컨텐츠 뷰를 승격할 수 없습니다 "
@@ -946,79 +987,81 @@ msgid ""
 msgstr "컨텐츠 뷰 승격 강제 및 라이프 사이클 환경 제한을 무시  "
 
 msgid "Name of the target environment"
-msgstr ""
+msgstr "대상 환경의 이름"
 
 msgid "Id of the target environment"
-msgstr ""
+msgstr "대상 환경의 ID"
 
 msgid ""
 "Environment name from where to promote its version from (if version is "
 "unknown)"
-msgstr ""
+msgstr "버전을 승격할 환경 이름(버전을 알 수 없는 경우)"
 
 msgid "Id of the environment from where to promote its version "
-msgstr ""
+msgstr "버전을 승격할 환경의 ID "
 
 msgid "Content view version updated."
-msgstr ""
+msgstr "콘텐츠 보기 버전이 업데이트되었습니다."
 
 msgid "Could not update the content view version"
-msgstr ""
+msgstr "콘텐츠 보기 버전을 업데이트할 수 없습니다."
 
 msgid "Incremental update is being performed with task %{id}."
-msgstr ""
+msgstr "%{id} 작업으로 증분 업데이트가 수행되고 있습니다."
 
 msgid "An error occurred incrementally updating the content view"
-msgstr ""
+msgstr "콘텐츠 뷰를 점진적으로 업데이트하는 중 오류가 발생했습니다."
 
 msgid "list of lifecycle environment IDs to update the content view version in"
-msgstr ""
+msgstr "콘텐츠 보기 버전을 업데이트하기 위한 라이프사이클 환경 ID 목록"
 
 msgid ""
 "list of lifecycle environment names to update the content view version in"
-msgstr ""
+msgstr "콘텐츠 뷰 버전을 업데이트하기 위한 라이프사이클 환경 이름 목록"
 
 msgid "Organization name for resolving lifecycle environment names"
-msgstr ""
+msgstr "라이프사이클 환경 이름을 확인하기 위한 조직 이름"
 
 msgid "Organization id for resolving lifecycle environment names"
-msgstr ""
+msgstr "라이프사이클 환경 이름을 확인하기 위한 조직 ID"
 
 msgid ""
 "Update all editable and applicable hosts within the specified Content View "
 "and \\\n"
 "               Lifecycle Environments"
 msgstr ""
+"지정된 콘텐츠 보기 및 \\ 라이프 사이클 환경 내의 모든 편집 가능하고 적용 가능"
+"한 호스트를 업데이트합니다."
 
 msgid "IDs of hosts to update"
-msgstr ""
+msgstr "업데이트할 호스트의 ID"
 
 msgid "Pulp ID"
-msgstr ""
+msgstr "Pulp ID"
 
 msgid "Uuid"
-msgstr ""
+msgstr "UUID"
 
 msgid "checksum"
-msgstr ""
+msgstr "체크섬"
 
 msgid "Architecture"
 msgstr "아키텍처 "
 
 msgid "Nav"
-msgstr ""
+msgstr "탐색"
 
 msgid "Nva"
-msgstr ""
+msgstr "Nva"
 
 msgid "Available Host Count"
-msgstr ""
+msgstr "사용 가능한 호스트 수"
 
 msgid "Applicable Host Count"
-msgstr ""
+msgstr "적용 가능한 호스트 수"
 
 msgid "Manage docker manifests"
-msgstr ""
+msgstr "Docker 매니페스트 관리"
 
 msgid "Schema Version"
 msgstr "스키마 버전"
@@ -1027,25 +1070,25 @@ msgid "Digest"
 msgstr "요약"
 
 msgid "Downloaded"
-msgstr ""
+msgstr "다운로드됨"
 
 msgid "Tags"
-msgstr ""
+msgstr "태그"
 
 msgid "Manage docker tags"
-msgstr ""
+msgstr "docker 태그 관리"
 
 msgid "Tag"
-msgstr ""
+msgstr "태그"
 
 msgid "Repository ID"
 msgstr "리포지터리 ID"
 
 msgid "Docker Manifest ID"
-msgstr ""
+msgstr "Docker 매니페스트 ID"
 
 msgid "Docker Manifest Name"
-msgstr ""
+msgstr "Docker 매니페스트 이름"
 
 msgid "Errata ID"
 msgstr "에라타 ID"
@@ -1099,19 +1142,19 @@ msgid "Created"
 msgstr "생성 일시 "
 
 msgid "Filter created."
-msgstr ""
+msgstr "필터가 생성되었습니다."
 
 msgid "Could not create the filter"
 msgstr "필터를 생성할 수 없습니다 "
 
 msgid "Filter updated."
-msgstr ""
+msgstr "필터가 업데이트되었습니다."
 
 msgid "Could not update the filter"
 msgstr "필터를 업데이트할 수 없습니다 "
 
 msgid "Filter deleted."
-msgstr ""
+msgstr "필터가 삭제되었습니다."
 
 msgid "Could not delete the filter"
 msgstr "필터를 삭제할 수 없습니다 "
@@ -1123,22 +1166,22 @@ msgid "Date Type"
 msgstr "날짜 유형"
 
 msgid "Filter rule created."
-msgstr ""
+msgstr "필터 규칙이 생성되었습니다."
 
 msgid "Could not create the filter rule"
 msgstr "필터 규칙을 생성할 수 없습니다 "
 
 msgid "Package and package group names"
-msgstr ""
+msgstr "패키지 및 패키지 그룹 이름"
 
 msgid "Filter rule updated."
-msgstr ""
+msgstr "필터 규칙이 업데이트되었습니다."
 
 msgid "Could not update the filter rule"
 msgstr "필터 규칙을 업데이트할 수 없습니다 "
 
 msgid "Filter rule deleted."
-msgstr ""
+msgstr "필터 규칙이 삭제되었습니다."
 
 msgid "Could not delete the filter rule"
 msgstr "필터 규칙을 삭제할 수 없습니다 "
@@ -1147,19 +1190,19 @@ msgid "Limit"
 msgstr "제한 "
 
 msgid "Host collection created."
-msgstr ""
+msgstr "호스트 컬렉션이 생성되었습니다."
 
 msgid "Could not create the host collection"
 msgstr "호스트 컬렉션을 생성할 수 없습니다 "
 
 msgid "Total Hosts"
-msgstr ""
+msgstr "총 호스트"
 
 msgid "Host Collection ID"
-msgstr ""
+msgstr "호스트 컬렉션 ID"
 
 msgid "Host Collection Name"
-msgstr ""
+msgstr "호스트 컬렉션 이름"
 
 msgid "Security"
 msgstr "보안 "
@@ -1171,169 +1214,169 @@ msgid "Enhancement"
 msgstr "기능 강화"
 
 msgid "Copy a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 복사"
 
 msgid "New host collection name"
 msgstr "새 호스트 컬렉션 이름 "
 
 msgid "New host collection created."
-msgstr ""
+msgstr "새로운 호스트 컬렉션이 생성되었습니다."
 
 msgid "Could not create the new host collection"
-msgstr ""
+msgstr "새 호스트 컬렉션을 만들 수 없습니다."
 
 msgid "Host collection updated."
-msgstr ""
+msgstr "호스트 컬렉션이 업데이트되었습니다."
 
 msgid "Could not update the the host collection"
 msgstr "호스트 컬렉션을 업데이트할 수 없습니다 "
 
 msgid "Host collection deleted."
-msgstr ""
+msgstr "호스트 컬렉션이 삭제되었습니다."
 
 msgid "Could not delete the host collection"
 msgstr "호스트 컬렉션을 삭제할 수 없습니다 "
 
 msgid "The host(s) has been added."
-msgstr ""
+msgstr "호스트가 추가되었습니다."
 
 msgid "Could not add host(s)"
-msgstr ""
+msgstr "호스트를 추가할 수 없습니다"
 
 msgid "The host(s) has been removed."
-msgstr ""
+msgstr "호스트가 제거되었습니다."
 
 msgid "Could not remove host(s)"
-msgstr ""
+msgstr "호스트를 제거할 수 없습니다."
 
 msgid "Manipulate errata for a host collection"
-msgstr ""
+msgstr "호스트 컬렉션의 에라타 조정"
 
 msgid "Install errata on content hosts contained within a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에 에라타 설치"
 
 msgid "Successfully scheduled installation of errata."
-msgstr ""
+msgstr "에라타 설치가 성공적으로 예약되었습니다."
 
 msgid "Could not schedule installation of errata"
-msgstr ""
+msgstr "에라타 설치를 예약할 수 없습니다."
 
 msgid "List of Errata to install"
-msgstr ""
+msgstr "설치할 에라타 목록"
 
 msgid "Manipulate packages for a host collection"
-msgstr ""
+msgstr "호스트 컬렉션의 패키지 조정"
 
 msgid "comma-separated list of packages to install"
-msgstr ""
+msgstr "설치할 패키지의 쉼표로 구분된 목록"
 
 msgid "Install packages on content hosts contained within a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에 패키지 설치"
 
 msgid "Successfully scheduled installation of package(s)."
-msgstr ""
+msgstr "패키지 설치가 성공적으로 예약되었습니다."
 
 msgid "Could not schedule installation of package(s)"
-msgstr ""
+msgstr "패키지 설치를 예약할 수 없습니다."
 
 msgid "Update packages on content hosts contained within a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트의 패키지 업데이트"
 
 msgid "Successfully scheduled update of package(s)."
-msgstr ""
+msgstr "패키지 업데이트가 성공적으로 예약되었습니다."
 
 msgid "Could not schedule update of package(s)"
-msgstr ""
+msgstr "패키지 업데이트를 예약할 수 없습니다."
 
 msgid "Remove packages on content hosts contained within a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에서 패키지 제거"
 
 msgid "Successfully scheduled removal of package(s)."
-msgstr ""
+msgstr "패키지 제거가 성공적으로 예약되었습니다."
 
 msgid "Could not schedule removal of package(s)"
-msgstr ""
+msgstr "패키지 제거 일정을 정할 수 없습니다."
 
 msgid "Manipulate package-groups for a host collection"
-msgstr ""
+msgstr "호스트 컬렉션에 대한 패키지 그룹 조정"
 
 msgid "comma-separated list of package-groups to install"
-msgstr ""
+msgstr "설치할 패키지 그룹의 쉼표로 구분된 목록"
 
 msgid ""
 "Install package-groups on content hosts contained within a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에 패키지 그룹 설치"
 
 msgid "Successfully scheduled installation of package-group(s)."
-msgstr ""
+msgstr "패키지 그룹의 설치가 성공적으로 예약되었습니다."
 
 msgid "Could not schedule installation of package-group(s)"
-msgstr ""
+msgstr "패키지 그룹 설치를 예약할 수 없습니다."
 
 msgid ""
 "Update package-groups on content hosts contained within a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트의 패키지 그룹 업데이트"
 
 msgid "Successfully scheduled update of package-groups(s)."
-msgstr ""
+msgstr "패키지 그룹 업데이트가 성공적으로 예약되었습니다."
 
 msgid "Could not schedule update of package-group(s)"
-msgstr ""
+msgstr "패키지 그룹 업데이트를 예약할 수 없습니다."
 
 msgid ""
 "Remove package-groups on content hosts contained within a host collection"
-msgstr ""
+msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에서 패키지 그룹 제거"
 
 msgid "Successfully scheduled removal of package-groups(s)."
-msgstr ""
+msgstr "패키지 그룹 제거가 성공적으로 예약되었습니다."
 
 msgid "Could not schedule removal of package-group(s)"
-msgstr ""
+msgstr "패키지 그룹 제거를 예약할 수 없습니다."
 
 msgid "Arch"
 msgstr "아키텍처 "
 
 msgid "Errata is being applied with task %{id}."
-msgstr ""
+msgstr "에라타는 %{id} 작업에 적용 중입니다."
 
 msgid "Could not apply errata"
-msgstr ""
+msgstr "에라타를 적용할 수 없습니다."
 
 msgid "Erratum ID"
-msgstr ""
+msgstr "에라타 ID"
 
 msgid "Installable"
 msgstr "설치 가능 "
 
 msgid "Errata recalculation started."
-msgstr ""
+msgstr "에라타 재계산이 시작되었습니다."
 
 msgid "Could not recalculate errata"
-msgstr ""
+msgstr "에라타를 다시 계산할 수 없습니다."
 
 msgid "Trace Status"
-msgstr ""
+msgstr "상태 추적"
 
 msgid "Content Information"
-msgstr ""
+msgstr "콘텐츠 정보"
 
 msgid "Content view environments"
-msgstr ""
+msgstr "콘텐츠 보기 환경"
 
 msgid "Content view"
-msgstr ""
+msgstr "콘텐츠 뷰"
 
 msgid "Lifecycle environment"
-msgstr ""
+msgstr "라이프사이클 환경"
 
 msgid "Kickstart Repository"
-msgstr ""
+msgstr "킥스타트 리포지터리"
 
 msgid "Applicable Packages"
 msgstr "적용 가능한 패키지"
 
 msgid "Upgradable Packages"
-msgstr ""
+msgstr "업그레이드 가능한 패키지"
 
 msgid "Applicable Errata"
 msgstr "적용 가능한 에라타 "
@@ -1342,7 +1385,7 @@ msgid "Bug Fix"
 msgstr "버그 수정"
 
 msgid "Subscription Information"
-msgstr ""
+msgstr "서브스크립션 정보"
 
 msgid "Last Checkin"
 msgstr "마지막 체크인 "
@@ -1351,68 +1394,69 @@ msgid "Autoheal"
 msgstr "자동 복구"
 
 msgid "Registered To"
-msgstr ""
+msgstr "등록 대상"
 
 msgid "Registered At"
-msgstr ""
+msgstr "등록 위치"
 
 msgid "Registered by Activation Keys"
-msgstr ""
+msgstr "활성화 키로 등록됨"
 
 msgid "Nvra"
-msgstr ""
+msgstr "Nvra"
 
 msgid "Host unregistered."
-msgstr ""
+msgstr "호스트가 등록되지 않았습니다."
 
 msgid "Could not unregister the host"
-msgstr ""
+msgstr "호스트 등록을 취소할 수 없습니다."
 
 msgid "Host successfully registered."
-msgstr ""
+msgstr "호스트가 성공적으로 등록되었습니다."
 
 msgid "Failed to register host"
-msgstr ""
+msgstr "호스트 등록에 실패했습니다"
 
 msgid "Subscription attached to the host successfully."
-msgstr ""
+msgstr "서브스크립션이 호스트에 성공적으로 연결되었습니다."
 
 msgid "Failed to attach subscriptions to the host"
-msgstr ""
+msgstr "호스트에 서브스크립션을 첨부하지 못했습니다."
 
 msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr ""
+msgstr "추가할 이 서브스크립션의 수량입니다. 기본값은 1입니다."
 
 msgid "Auto attached subscriptions to the host successfully."
-msgstr ""
+msgstr "호스트에 서브스크립션을 자동으로 연결했습니다."
 
 msgid "Failed to auto attach subscriptions to the host"
-msgstr ""
+msgstr "호스트에 서브스크립션을을 자동으로 첨부하지 못했습니다."
 
 msgid "Subscription removed from the host successfully."
-msgstr ""
+msgstr "서브스크립션이 호스트에서 성공적으로 제거되었습니다."
 
 msgid "Failed to remove subscriptions from the host"
-msgstr ""
+msgstr "호스트에서 서브스크립션을 제거하지 못했습니다."
 
 msgid ""
 "Remove the first instance of a subscription with matching id and quantity"
 msgstr ""
+"일치하는 ID 및 수량을 가진 서브스크립션의 첫 번째 인스턴스를 제거합니다."
 
 msgid "Content View id"
-msgstr ""
+msgstr "콘텐츠 뷰 ID"
 
 msgid "Content View version"
-msgstr ""
+msgstr "콘텐츠 뷰 버전"
 
 msgid "Environment name"
-msgstr ""
+msgstr "환경 이름"
 
 msgid "Product name"
 msgstr "제품 이름 "
 
 msgid "Trace ID"
-msgstr ""
+msgstr "추적 ID"
 
 msgid "Application"
 msgstr "애플리케이션 "
@@ -1421,13 +1465,13 @@ msgid "Helper"
 msgstr "도우미"
 
 msgid "Traces are being resolved with task %{id}."
-msgstr ""
+msgstr "%{id} 작업을 통해 추적을 해결하고 있습니다."
 
 msgid "Could not resolve traces"
-msgstr ""
+msgstr "추적을 해결할 수 없습니다"
 
 msgid "Organization ID to search by"
-msgstr ""
+msgstr "검색할 조직 ID"
 
 msgid "Organization name to search by"
 msgstr "검색할 조직 이름 "
@@ -1436,13 +1480,13 @@ msgid "Organization label to search by"
 msgstr "검색할 조직 레이블 "
 
 msgid "Capsule name to search by"
-msgstr "검색할 Capsule 이름 "
+msgstr "검색할 캡슐 이름 "
 
 msgid "File name to search by"
-msgstr ""
+msgstr "검색할 파일 이름"
 
 msgid "Module stream name to search by"
-msgstr ""
+msgstr "검색할 모듈 스트림 이름"
 
 msgid "Gpg key name to search by"
 msgstr "검색할 Gpg 키 이름 "
@@ -1451,7 +1495,7 @@ msgid "Host collection name to search by"
 msgstr "검색할 호스트 컬렉션 이름 "
 
 msgid "Organization title"
-msgstr ""
+msgstr "조직명"
 
 msgid "Product name to search by"
 msgstr "검색할 제품 이름 "
@@ -1475,13 +1519,13 @@ msgid "Task name to search by"
 msgstr "검색할 작업 이름 "
 
 msgid "Content view version number"
-msgstr ""
+msgstr "콘텐츠 뷰 버전 번호"
 
 msgid "Name to search by"
 msgstr "검색할 이름 "
 
 msgid "Name of the prior environment"
-msgstr ""
+msgstr "이전 환경의 이름"
 
 msgid "Prior"
 msgstr "이전 "
@@ -1502,58 +1546,58 @@ msgid "Registry Name Pattern"
 msgstr "레지스트리 이름 패턴"
 
 msgid "Environment created."
-msgstr ""
+msgstr "환경이 생성되었습니다."
 
 msgid "Could not create environment"
 msgstr "환경을 생성할 수 없습니다 "
 
 msgid "Environment updated."
-msgstr ""
+msgstr "환경이 업데이트되었습니다."
 
 msgid "Could not update environment"
 msgstr "환경을 업데이트할 수 없습니다 "
 
 msgid "Environment deleted."
-msgstr ""
+msgstr "환경이 삭제되었습니다."
 
 msgid "Could not delete environment"
 msgstr "환경을 삭제할 수 없습니다 "
 
 msgid "Module Stream Name"
-msgstr ""
+msgstr "모듈 스트림 이름"
 
 msgid "Context"
 msgstr "컨텍스트"
 
 msgid "Artifacts"
-msgstr ""
+msgstr "아티팩트"
 
 msgid "Profiles"
-msgstr ""
+msgstr "프로필"
 
 msgid "RPMs"
 msgstr "RPM"
 
 msgid "Simple Content Access"
-msgstr ""
+msgstr "간단한 콘텐츠 액세스"
 
 msgid "Service Levels"
-msgstr ""
+msgstr "서비스 수준"
 
 msgid "Upstream Organization"
-msgstr ""
+msgstr "업스트림 조직"
 
 msgid "Upstream Lifecycle Environment"
-msgstr ""
+msgstr "업스트림 라이프사이클 환경"
 
 msgid "Upstream Content View"
-msgstr ""
+msgstr "업스트림 콘텐츠 뷰"
 
 msgid "Username"
-msgstr ""
+msgstr "사용자 이름"
 
 msgid "SSL CA Credential ID"
-msgstr ""
+msgstr "SSL CA 인증 정보 ID"
 
 msgid "Enabled"
 msgstr "활성화됨 "
@@ -1562,70 +1606,70 @@ msgid "Disabled"
 msgstr "사용 안함"
 
 msgid "Export Sync"
-msgstr ""
+msgstr "내보내기 동기화"
 
 msgid "Network Sync"
-msgstr ""
+msgstr "네트워크 동기화"
 
 msgid "Red Hat CDN"
-msgstr ""
+msgstr "Red Hat CDN"
 
 msgid "Custom CDN"
-msgstr ""
+msgstr "사용자 정의 CDN"
 
 msgid "Organization updated."
-msgstr ""
+msgstr "조직이 업데이트되었습니다."
 
 msgid "Could not update the organization"
 msgstr "조직을 업데이트할 수 없습니다 "
 
 msgid "Organization created."
-msgstr ""
+msgstr "조직이 생성되었습니다."
 
 msgid "Could not create the organization"
 msgstr "조직을 생성할 수 없습니다 "
 
 msgid "Organization deleted."
-msgstr ""
+msgstr "조직이 삭제되었습니다."
 
 msgid "Could not delete the organization"
 msgstr "조직을 삭제할 수 없습니다 "
 
 msgid "Updated CDN configuration."
-msgstr ""
+msgstr "CDN 구성이 업데이트되었습니다."
 
 msgid "Could not update CDN configuration."
-msgstr ""
+msgstr "CDN 구성을 업데이트할 수 없습니다."
 
 msgid "Source RPM"
 msgstr "소스 RPM"
 
 msgid "Epoch"
-msgstr ""
+msgstr "시기"
 
 msgid "Author"
 msgstr "저자 "
 
 msgid "Source rpm"
-msgstr ""
+msgstr "소스 rpm"
 
 msgid "Nvrea"
-msgstr ""
+msgstr "Nvrea"
 
 msgid "Build Host"
 msgstr "빌드 호스트 "
 
 msgid "Children"
-msgstr ""
+msgstr "하위"
 
 msgid "Vendor"
-msgstr ""
+msgstr "공급업체"
 
 msgid "License"
 msgstr "라이선스"
 
 msgid "Relative Path"
-msgstr ""
+msgstr "상대 경로"
 
 msgid "Summary"
 msgstr "요약"
@@ -1649,31 +1693,31 @@ msgid "Files"
 msgstr "파일"
 
 msgid "Size"
-msgstr ""
+msgstr "크기"
 
 msgid "Modular"
-msgstr "모듈식의"
+msgstr "모듈식"
 
 msgid "Package Group Name"
-msgstr ""
+msgstr "패키지 그룹 이름"
 
 msgid "Repository Name"
 msgstr "리포지터리 이름 "
 
 msgid "Default Packages"
-msgstr ""
+msgstr "기본 패키지"
 
 msgid "Mandatory Packages"
-msgstr ""
+msgstr "필수 패키지"
 
 msgid "Conditional Packages"
-msgstr ""
+msgstr "조건부 패키지"
 
 msgid "Optional Packages"
-msgstr ""
+msgstr "옵션 패키지"
 
 msgid "message"
-msgstr ""
+msgstr "메시지"
 
 msgid "Server Response"
 msgstr "서버 응답 "
@@ -1685,16 +1729,16 @@ msgid "Sync State"
 msgstr "동기화 상태 "
 
 msgid "Product created."
-msgstr ""
+msgstr "제품이 생성되었습니다."
 
 msgid "Could not create the product"
 msgstr "제품을 생성할 수 없습니다 "
 
 msgid "Sync State (all)"
-msgstr ""
+msgstr "동기화 상태(전체)"
 
 msgid "Sync State (last)"
-msgstr ""
+msgstr "동기화 상태(마지막)"
 
 msgid "Sync Plan ID"
 msgstr "동기화 계획 ID "
@@ -1718,66 +1762,68 @@ msgid "Repo Name"
 msgstr "리포지터리 이름 "
 
 msgid "Product updated."
-msgstr ""
+msgstr "제품이 업데이트되었습니다."
 
 msgid "Could not update the product"
 msgstr "제품을 업데이트할 수 없습니다 "
 
 msgid "Updates an HTTP Proxy for a product"
-msgstr ""
+msgstr "제품에 대한 HTTP 프록시를 업데이트합니다."
 
 msgid "Product proxy updated."
-msgstr ""
+msgstr "제품 프록시가 업데이트되었습니다."
 
 msgid "Could not update the product HTTP Proxy."
-msgstr ""
+msgstr "제품 HTTP 프록시를 업데이트할 수 없습니다."
 
 msgid "Product destroyed."
-msgstr ""
+msgstr "제품이 삭제되었습니다."
 
 msgid "Could not destroy the product"
 msgstr "제품을 삭제할 수 없습니다 "
 
 msgid "Product repositories are being synchronized in task %{id}."
-msgstr ""
+msgstr "제품 리포지토리가 %{id} 작업에서 동기화되고 있습니다."
 
 msgid "Could not synchronize the product repositories"
-msgstr ""
+msgstr "제품 리포지토리를 동기화할 수 없습니다."
 
 msgid "Assign sync plan to product"
-msgstr ""
+msgstr "제품에 동기화 계획 할당"
 
 msgid "Synchronization plan assigned."
 msgstr "동기화 계획이 할당되었습니다. "
 
 msgid "Could not assign synchronization plan"
-msgstr ""
+msgstr "동기화 계획을 할당할 수 없습니다."
 
 msgid "Delete assignment sync plan and product"
-msgstr ""
+msgstr "할당 동기화 계획 및 제품 삭제"
 
 msgid "Synchronization plan removed."
 msgstr "동기화 계획이 삭제되었습니다. "
 
 msgid "Could not remove synchronization plan"
-msgstr ""
+msgstr "동기화 계획을 제거할 수 없습니다."
 
 msgid "List associated products"
-msgstr ""
+msgstr "연관 제품 목록"
 
 msgid "Default Enabled?"
-msgstr ""
+msgstr "기본적으로 활성화되어 있나요?"
 
 msgid "Override"
 msgstr "덮어쓰기 "
 
 msgid "Location of the ansible collections requirements.yml file. "
-msgstr ""
+msgstr "ansible 컬렉션 requirements.yml 파일의 위치. "
 
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
 msgstr ""
+"반환할 리포지토리 유형을 제한합니다. \"hammer repository types\"로 사용 가능"
+"한 유형 확인"
 
 msgid "Red Hat Repository"
 msgstr "Red Hat 리포지터리 "
@@ -1798,19 +1844,19 @@ msgid "Download Policy"
 msgstr "다운로드 정책"
 
 msgid "Metadata Expiration"
-msgstr ""
+msgstr "메타데이터 만료"
 
 msgid "Upstream Repository Name"
 msgstr "업스트림 리포지터리 이름 "
 
 msgid "Container Image Tags Filter"
-msgstr ""
+msgstr "컨테이너 이미지 태그 필터"
 
 msgid "Container Repository Name"
-msgstr ""
+msgstr "컨테이너 리포지터리 이름"
 
 msgid "Ignorable Content Units"
-msgstr ""
+msgstr "무시할 수 있는 콘텐츠 단위"
 
 msgid "HTTP Proxy"
 msgstr "HTTP 프록시"
@@ -1828,7 +1874,7 @@ msgid "Content Counts"
 msgstr "컨텐츠 수 "
 
 msgid "Source RPMS"
-msgstr ""
+msgstr "소스 RPMS"
 
 msgid "Package Groups"
 msgstr "패키지 그룹 "
@@ -1882,16 +1928,16 @@ msgid "Canceled"
 msgstr "취소함"
 
 msgid "Warning"
-msgstr ""
+msgstr "경고"
 
 msgid "Repository is being synchronized in task %{id}."
-msgstr ""
+msgstr "%{id} 작업에서 리포지토리가 동기화되고 있습니다."
 
 msgid "Could not synchronize the repository"
 msgstr "리포지터리를 동기화할 수 없습니다 "
 
 msgid "Repository created."
-msgstr ""
+msgstr "리포지토리가 생성되었습니다."
 
 msgid "Could not create the repository"
 msgstr "리포지터리를 생성할 수 없습니다 "
@@ -1900,157 +1946,167 @@ msgid ""
 "Type of repository to create. View available types with \"hammer repository "
 "types\""
 msgstr ""
+"생성할 리포지토리 유형입니다. \"hammer repository types\"로 사용 가능한 유형 "
+"확인"
 
 msgid "Repository updated."
-msgstr ""
+msgstr "리포지토리가 업데이트되었습니다."
 
 msgid "Could not update the repository"
 msgstr "리포지터리를 업데이트할 수 없습니다 "
 
 msgid "--docker-digest required with --docker-tag"
-msgstr ""
+msgstr "--docker-tag와 함께 --docker-digest가 필요합니다."
 
 msgid "--docker-tag required with --docker-digest"
-msgstr ""
+msgstr "--docker-digest와 함께 --docker-tag가 필요합니다."
 
 msgid "Container Image tag"
-msgstr ""
+msgstr "컨테이너 이미지 태그"
 
 msgid "Container Image manifest digest"
-msgstr ""
+msgstr "컨테이너 이미지 매니페스트 다이제스트"
 
 msgid "Repository updated"
 msgstr "리포지터리가 업데이트되었습니다 "
 
 msgid "Failed to upload tag '%s' to repository."
-msgstr ""
+msgstr "리포지터리에 태그 '%s' 업로드를 실패했습니다."
 
 msgid "Repository deleted."
-msgstr ""
+msgstr "리포지터리가 삭제되었습니다."
 
 msgid "Could not delete the Repository"
 msgstr "리포지터리를 삭제할 수 없습니다 "
 
 msgid "Content types"
-msgstr ""
+msgstr "콘텐츠 유형"
 
 msgid "Generic?"
-msgstr ""
+msgstr "일반적인?"
 
 msgid "Removable?"
-msgstr ""
+msgstr "제거 가능?"
 
 msgid "Uploadable?"
-msgstr ""
+msgstr "업로드 가능?"
 
 msgid "Indexed?"
-msgstr ""
+msgstr "인덱싱됨?"
 
 msgid ""
 "The type of content unit to upload (srpm, file, etc.). View uploadable types "
 "with \"hammer repository types\""
 msgstr ""
+"업로드할 콘텐츠 단위의 유형(srpm, 파일 등). \"hammer repository types\"로 업"
+"로드 가능한 유형 보기"
 
 msgid "Could not find any files matching PATH"
-msgstr ""
+msgstr "PATH와 일치하는 파일을 찾을 수 없습니다."
 
 msgid "Cannot specify both product options and repository ID."
-msgstr ""
+msgstr "제품 옵션과 리포지터리 ID를 모두 지정할 수 없습니다."
 
 msgid "Repository content uploaded."
-msgstr ""
+msgstr "리포지터리 콘텐츠가 업로드되었습니다."
 
 msgid "Could not upload the content"
 msgstr "컨텐츠를 업로드할 수 없습니다 "
 
 msgid "Do not wait for the task."
-msgstr ""
+msgstr "작업을 기다리지 마세요."
 
 msgid "Name of OSTree repository in archive."
-msgstr ""
+msgstr "아카이브에 있는 OSTree 저장소의 이름입니다."
 
 msgid ""
 "Upload file, directory of files, or glob of files as content for a "
 "repository.\n"
 "Globs must be escaped by single or double quotes"
 msgstr ""
+"파일, 파일 디렉토리 또는 파일 glob을 리포지터리의 콘텐츠로 업로드합니다. "
+"Globs은 작은따옴표나 큰따옴표로 이스케이프해야 합니다."
 
 msgid "Successfully uploaded file %s"
-msgstr ""
+msgstr "%s 파일을 성공적으로 업로드했습니다"
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
 msgstr ""
+"다이제스트 '%{digest}'를 포함한 매니페스트 파일 '%{name}'을 성공적으로 업로드"
+"했습니다."
 
 msgid "Could not upload the content."
-msgstr ""
+msgstr "콘텐츠를 업로드할 수 없습니다."
 
 msgid "Remove content from a repository"
-msgstr ""
+msgstr "리포지토리에서 콘텐츠 제거"
 
 msgid "Repository content removed."
-msgstr ""
+msgstr "리포지터리 콘텐츠가 제거되었습니다."
 
 msgid "Could not remove content"
-msgstr ""
+msgstr "컨텐츠를 제거할 수 없습니다."
 
 msgid ""
 "The type of content unit to remove (srpm, docker_manifest, etc.). View "
 "removable types with \"hammer repository types\""
 msgstr ""
+"제거할 콘텐츠 단위의 유형(srpm, docker_manifest 등). \"hammer repository "
+"types\"로 제거 가능한 유형 보기"
 
 msgid "Forces a republish of the specified repository."
-msgstr ""
+msgstr "지정된 리포지토리를 강제로 다시 게시합니다."
 
 msgid "Repository republished."
-msgstr ""
+msgstr "리포지토리가 다시 게시되었습니다."
 
 msgid "Could not republish the repository."
-msgstr ""
+msgstr "리포지토리를 다시 게시할 수 없습니다."
 
 msgid "Reclaim space from an On Demand repository"
-msgstr ""
+msgstr "주문형 리포지토리에서 공간 회수"
 
 msgid "Repository space reclaimed."
-msgstr ""
+msgstr "리포지토리 공간이 회수되었습니다."
 
 msgid "Could not reclaim the repository"
-msgstr ""
+msgstr "리포지토리를 회수할 수 없습니다."
 
 msgid "Enabled Repositories"
 msgstr "활성화된 리포지터리 "
 
 msgid "Registry Name"
-msgstr ""
+msgstr "레지스트리 이름"
 
 msgid "Repository enabled."
-msgstr ""
+msgstr "리포지토리가 활성화되었습니다."
 
 msgid "Could not enable repository"
 msgstr "리포지터리를 활성화할 수 없습니다 "
 
 msgid "Repository disabled."
-msgstr ""
+msgstr "리포지토리가 비활성화되었습니다."
 
 msgid "Could not disable repository"
 msgstr "리포지터리를 비활성화할 수 없습니다 "
 
 msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
+msgstr "이 조직은 간단한 콘텐츠 액세스에 적합하지 않습니다."
 
 msgid "Simple Content Access Enabled."
-msgstr ""
+msgstr "간단한 콘텐츠 액세스가 활성화되었습니다."
 
 msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
+msgstr "이 조직에 대해 간단한 콘텐츠 액세스를 활성화할 수 없습니다."
 
 msgid "Simple Content Access Disabled."
-msgstr ""
+msgstr "간단한 콘텐츠 액세스가 비활성화되었습니다."
 
 msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
+msgstr "이 조직에 대해 간단한 콘텐츠 액세스를 비활성화할 수 없습니다."
 
 msgid "Time UTC"
-msgstr ""
+msgstr "시간 UTC"
 
 msgid "Consumed"
 msgstr "사용됨 "
@@ -2059,7 +2115,7 @@ msgid "Physical"
 msgstr "물리적 "
 
 msgid "Guests of %s"
-msgstr ""
+msgstr "%s의 게스트"
 
 msgid "Temporary"
 msgstr "임시"
@@ -2068,7 +2124,7 @@ msgid "Virtual"
 msgstr "가상 "
 
 msgid "Manifest is being uploaded in task %{id}."
-msgstr ""
+msgstr "매니페스트가 %{id} 작업으로 업로드되고 있습니다."
 
 msgid "Manifest upload failed"
 msgstr "매니페스트 업로드를 실패했습니다 "
@@ -2077,13 +2133,13 @@ msgid "Subscription manifest file"
 msgstr "서브스크립션 매니페스트 파일 "
 
 msgid "Manifest is being deleted in task %{id}."
-msgstr ""
+msgstr "매니페스트가 %{id} 작업에서 삭제되고 있습니다."
 
 msgid "Manifest deletion failed"
 msgstr "매니페스트 삭제가 실패했습니다 "
 
 msgid "Manifest is being refreshed in task %{id}."
-msgstr ""
+msgstr "매니페스트가 %{id} 작업에서 새로고침되고 있습니다."
 
 msgid "Manifest refresh failed"
 msgstr "매니페스트 새로 고침에  실패했습니다 "
@@ -2098,10 +2154,10 @@ msgid "Interval"
 msgstr "간격 "
 
 msgid "Cron Expression"
-msgstr ""
+msgstr "Cron 표현식"
 
 msgid "Recurring Logic ID"
-msgstr ""
+msgstr "반복 논리 ID"
 
 msgid "Next Sync"
 msgstr "다음 동기화 "
@@ -2110,15 +2166,17 @@ msgid "how often synchronization should run"
 msgstr "동기화 실행 빈도 "
 
 msgid "set this when interval is custom cron"
-msgstr ""
+msgstr "간격이 사용자 정의 cron인 경우 이것을 설정합니다."
 
 msgid ""
 "Start date and time for the sync plan.Time is optional, if kept blank "
 "current system time will be considered"
 msgstr ""
+"동기화 계획의 시작 날짜 및 시간입니다. 시간은 선택 사항이며, 비워 두면 현재 "
+"시스템 시간이 고려됩니다."
 
 msgid "Sync plan created."
-msgstr ""
+msgstr "동기화 계획이 생성되었습니다."
 
 msgid "Could not create the sync plan"
 msgstr "동기화 계획을 생성할 수 없습니다 "
@@ -2127,13 +2185,13 @@ msgid "start date and time of the synchronization"
 msgstr "동기화 시작 날짜 및 시간 "
 
 msgid "Sync plan updated."
-msgstr ""
+msgstr "동기화 계획이 업데이트되었습니다."
 
 msgid "Could not update the sync plan"
 msgstr "동기화 계획을 업데이트할 수 없습니다 "
 
 msgid "Sync plan destroyed."
-msgstr ""
+msgstr "동기화 계획이 삭제되었습니다."
 
 msgid "Could not destroy the sync plan"
 msgstr "동기화 계획을 삭제할 수 없습니다 "
