@@ -6,7 +6,7 @@ require 'hammer_cli_katello/version'
 # rubocop:disable Layout/LineLength
 begin
   Dir["locale/**/*.po"].each do |po|
-    mo = po.sub(/hammer-cli-katello\.po$/, "LC_MESSAGES/hammer-cli-katello.mo")
+    mo = po.sub(/hammer_cli_katello\.po$/, "LC_MESSAGES/hammer_cli_katello.mo")
     STDERR.puts "WARNING: File #{mo} does not exist, generate with 'make all-mo'!" unless File.exist?(mo)
     STDERR.puts "WARNING: File #{mo} outdated, regenerate with 'make all-mo'" if File.mtime(po) > File.mtime(mo)
     # Adding this so you can actually build the gem and the warnings come out, without this
