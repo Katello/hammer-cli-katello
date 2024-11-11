@@ -12,7 +12,7 @@ module HammerCLIKatello
       end
 
       def domain_name
-        'hammer-cli-katello'
+        'hammer_cli_katello'
       end
     end
   end
