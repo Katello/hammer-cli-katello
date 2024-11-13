@@ -53,6 +53,37 @@ describe 'capsule content info' do
     assert_cmd(expected_result, result)
   end
 
+  it "works with content counts being an empty hash" do
+    @sync_status = load_json('./data/sync_status_no_counts.json', __FILE__)
+    @sync_status['lifecycle_environments'] = [
+      load_json('./data/library_env.json', __FILE__),
+      load_json('./data/empty_counts.json', __FILE__)
+    ]
+
+    ex = api_expects(:capsule_content, :sync_status, 'Get sync info') do |par|
+      par['id'] == 3
+    end
+    ex.returns(@sync_status)
+
+    output = OutputMatcher.new([
+      "Lifecycle Environments:",
+      " 1) Name:          Library",
+      "    Organization:  Default Organization",
+      "    Content Views:",
+      "     1) Name:           Zoo View",
+      "        Composite:      no",
+      "        Last Published: 2023/10/09 19:18:15",
+      "        Repositories:",
+      "         1) Repository ID:   2",
+      "            Repository Name: Zoo",
+      "            Content Counts:"
+    ])
+    expected_result = success_result(output)
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
   it "works with no content counts" do
     @sync_status = load_json('./data/sync_status_no_counts.json', __FILE__)
     @sync_status['lifecycle_environments'] = [
