@@ -248,14 +248,16 @@ module HammerCLIKatello
 
         private
 
+        # rubocop:disable Metrics/CyclomaticComplexity
+        # rubocop:disable Metrics/PerceivedComplexity
         def extend_data(data)
-          data["lifecycle_environments"].each do |lce|
-            lce["content_views"].each do |cv|
-              cv["repositories"].each do |repo|
+          data["lifecycle_environments"]&.each do |lce|
+            lce["content_views"]&.each do |cv|
+              cv["repositories"]&.each do |repo|
                 if cv["up_to_date"] && !data.dig("content_counts").nil?
                   cvv_count_repos = data.dig("content_counts", "content_view_versions",
                     cv["cvv_id"].to_s, "repositories")
-                  cvv_count_repos.each do |_repo_id, counts_and_metadata|
+                  cvv_count_repos&.each do |_repo_id, counts_and_metadata|
                     if counts_and_metadata.
                        dig("metadata", "library_instance_id") == repo["library_id"] &&
                        counts_and_metadata.dig("metadata", "env_id") == lce["id"]
@@ -272,7 +274,8 @@ module HammerCLIKatello
           end
           data
         end
-
+        # rubocop:enable Metrics/CyclomaticComplexity
+        # rubocop:enable Metrics/PerceivedComplexity
         build_options
       end
 
