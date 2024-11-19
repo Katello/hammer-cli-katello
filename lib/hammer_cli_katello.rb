@@ -165,6 +165,10 @@ module HammerCLIKatello
                                          'hammer_cli_katello/docker'
                                         )
 
+  HammerCLI::MainCommand.lazy_subcommand("flatpak-remote", _("Manipulate flatpak remotes"),
+                                         'HammerCLIKatello::FlatpakRemoteCommand',
+                                         'hammer_cli_katello/flatpak_remote'
+  )
   # subcommands to hammer_cli_foreman commands
   require 'hammer_cli_katello/host'
   require 'hammer_cli_katello/hostgroup'

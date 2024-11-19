@@ -4,6 +4,19 @@ module HammerCLIKatello
   module SearchOptionsCreators
     include HammerCLIKatello::ForemanSearchOptionsCreators
 
+    def create_flatpak_remotes_search_options(options, _mode = nil)
+      name = options[HammerCLI.option_accessor_name('name')]
+      organization_id = options[HammerCLI.option_accessor_name("organization_id")] ||
+                        organization_id(scoped_options('organization', options, :single))
+
+      search_options = {}
+      search_options['name'] = name if name
+      if options['option_flatpak_remote_name'] || name
+        search_options['organization_id'] = organization_id
+      end
+      search_options
+    end
+
     def create_repository_sets_search_options(options, mode = nil)
       create_search_options(options, api.resource(:repository_sets), mode).merge(
         'product_id' => options[HammerCLI.option_accessor_name('product_id')],
