@@ -41,7 +41,6 @@ module HammerCLIKatello
         assert(r.err.include?("--product, --product-id is required"), "Invalid error message")
       end
 
-      # rubocop:disable LineLength
       it 'may be specified by name and product ID' do
         expect_repository_search(2, 'repo1', 1)
 
@@ -49,7 +48,6 @@ module HammerCLIKatello
           .with_params('content_type' => 'python_package', 'repository_id' => 1)
         run_cmd(%w(content-units list --content-type python_package --repository repo1 --product-id 2))
       end
-      # rubocop:enable LineLength
     end
 
     describe 'organization options' do
@@ -78,7 +76,6 @@ module HammerCLIKatello
     end
 
     describe 'content-view options' do
-      # rubocop:disable LineLength
       it 'may be specified by ID' do
         api_expects(:content_view_versions, :index)
           .with_params('content_view_id' => 1, 'version' => '2.1')
@@ -100,7 +97,6 @@ module HammerCLIKatello
         expected_error = "--organization-id, --organization, --organization-label is required"
         assert(r.err.include?(expected_error), "Invalid error message")
       end
-      # rubocop:enable LineLength
     end
   end
 end

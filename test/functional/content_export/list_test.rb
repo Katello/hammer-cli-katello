@@ -22,12 +22,10 @@ describe 'content-export list' do
     ex = api_expects(:content_exports, :index)
 
     ex.returns(empty_response)
-    # rubocop:disable LineLength
     expected_result = success_result('---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
 ---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ')
-    # rubocop:enable LineLength
     result = run_cmd(%w(content-export list))
     assert_cmd(expected_result, result)
   end
@@ -38,12 +36,10 @@ ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERS
     ex = api_expects(:content_exports, :index)
 
     ex.returns(empty_response)
-    # rubocop:disable LineLength
     expected_result = success_result('---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
 ---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ')
-    # rubocop:enable LineLength
     result = run_cmd(%w(content-export list --content-view-id=1))
     assert_cmd(expected_result, result)
   end
@@ -52,12 +48,10 @@ ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERS
     ex = api_expects(:content_exports, :index)
 
     ex.returns(empty_response)
-    # rubocop:disable LineLength
     expected_result = success_result('---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ID | DESTINATION SERVER | PATH | TYPE | CONTENT VIEW VERSION | CONTENT VIEW VERSION ID | CREATED AT | UPDATED AT
 ---|--------------------|------|------|----------------------|-------------------------|------------|-----------
 ')
-    # rubocop:enable LineLength
     result = run_cmd(%w(content-export list --content-view-version-id=1))
     assert_cmd(expected_result, result)
   end
