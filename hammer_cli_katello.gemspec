@@ -3,7 +3,6 @@ $LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
 
 require 'hammer_cli_katello/version'
 
-# rubocop:disable Layout/LineLength
 begin
   Dir["locale/**/*.po"].each do |po|
     mo = po.sub(/hammer_cli_katello\.po$/, "LC_MESSAGES/hammer_cli_katello.mo")
@@ -15,7 +14,6 @@ begin
 rescue => e
   puts "#{e} not found"
 end
-# rubocop:enable Layout/LineLength
 
 Gem::Specification.new do |gem|
   gem.authors = [

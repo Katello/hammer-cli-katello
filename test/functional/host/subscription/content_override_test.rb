@@ -9,9 +9,9 @@ describe 'host subscription content-override' do
     @cmd = %w(host subscription content-override)
   end
 
-  it "attaches a content label" do
+  it "attaches a content override" do
     label = "foo"
-    value = 'default'
+    value = 'enabled'
     id = '20'
     params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}"]
     ex = api_expects(:host_subscriptions, :content_override, "content override") do |par|
@@ -27,9 +27,9 @@ describe 'host subscription content-override' do
     assert_cmd(expected_result, result)
   end
 
-  it "attaches a content label with name" do
+  it "attaches a content override with name" do
     label = "foo"
-    value = '1'
+    value = 'enabled'
     id = '20'
     name = 'protected'
     params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}",
@@ -45,6 +45,36 @@ describe 'host subscription content-override' do
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected_result, result)
+  end
+
+  it "attaches a content override with value other than enabled using --force" do
+    label = "foo"
+    value = 'enabled'
+    id = '20'
+    name = 'protected'
+    params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}",
+              "--override-name=#{name}", "--force"]
+    ex = api_expects(:host_subscriptions, :content_override, "content override") do |par|
+      par['host_id'].to_s == id && par["content_overrides"][0]['content_label'] == label &&
+        par['content_overrides'][0]['value'] == value &&
+        par['content_overrides'][0]['name'] == name
+    end
+    ex.returns({})
+
+    expected_result = success_result("Updated content override.\n")
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(expected_result, result)
+  end
+
+  it "does not attach a content override with value other than enabled without --force" do
+    api_expects_no_call
+    error_msg = "Could not update content override:\n" \
+            "  You must use --force to set a value other than 'enabled'"
+
+    assert_failure run_cmd(%w(host subscription content-override --host-id=20 --content-label=foo --value=1 --override-name=protected)), error_msg
+    result = run_cmd(%w(host subscription content-override --host-id=20 --content-label=foo --value=1 --override-name=protected))
+    assert_equal 64, result.exit_code
   end
 
   it "removes override" do

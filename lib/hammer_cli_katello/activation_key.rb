@@ -107,9 +107,8 @@ module HammerCLIKatello
       end
 
       def extend_data(data)
-        # rubocop:disable Layout/LineLength
         # Hack to hide purpose addons if it's not set since it's not possible to hide the Fields::List values
-        data["purpose_addons"].length.positive? ? data["purpose_addons"] = data["purpose_addons"] : data["purpose_addons"] = nil
+        data["purpose_addons"] = data["purpose_addons"].length.positive? ? data["purpose_addons"] : nil
         limit = data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
 
         data["format_consumed"] = _("%{consumed} of %{limit}") %
@@ -118,7 +117,6 @@ module HammerCLIKatello
                                     :limit => limit
                                   }
         data
-        # rubocop:enable Layout/LineLength
       end
 
       build_options
