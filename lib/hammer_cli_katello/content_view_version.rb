@@ -65,9 +65,7 @@ module HammerCLIKatello
               field :content, _('Type')
               field :inclusion, _('Inclusion'), Fields::Boolean
               field :original_packages, _('Original packages'), Fields::Boolean, hide_blank: true
-              # rubocop:disable Layout/LineLength
               field :original_module_streams, _('Original module streams'), Fields::Boolean, hide_blank: true
-              # rubocop:enable Layout/LineLength
             end
             collection :rules, _("Rules"), hide_blank: true, hide_empty: true do
               field :id, _('Id')

@@ -8,6 +8,9 @@ module HammerCLIKatello
         success_message _("Updated content override.")
         failure_message _("Could not update content override")
 
+        option "--force", "FORCE", _("Force the override"),
+                :attribute_name => :option_force, default: false
+
         option "--content-label", "CONTENT_LABEL", _("Label of the content"),
                :attribute_name => :option_content_label, :required => true
 
@@ -28,6 +31,10 @@ module HammerCLIKatello
           if option(:option_remove).exist?
             option(:option_value).rejected
           elsif option(:option_value).exist?
+            if !@option_values['option_value'].casecmp('enabled').zero? &&
+               @option_values['option_force'] == false
+              raise ArgumentError, _("You must use --force to set a value other than 'enabled'")
+            end
             option(:option_remove).rejected
           end
         end

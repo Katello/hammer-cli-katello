@@ -40,7 +40,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -51,7 +50,6 @@ describe 'upload repository' do
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
                       )
-    # rubocop:enable LineLength
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -76,7 +74,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :content_type => 'srpm', :async => true,
                        :uploads => [{
@@ -87,7 +84,6 @@ describe 'upload repository' do
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
                       )
-    # rubocop:enable LineLength
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -113,7 +109,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -124,7 +119,6 @@ describe 'upload repository' do
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
                       )
-    # rubocop:enable LineLength
 
     ex2.returns(400)
 
@@ -148,7 +142,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -159,7 +152,6 @@ describe 'upload repository' do
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
                       )
-    # rubocop:enable LineLength
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -195,7 +187,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -206,7 +197,6 @@ describe 'upload repository' do
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
                       )
-    # rubocop:enable LineLength
 
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -231,7 +221,6 @@ describe 'upload repository' do
          .with_params(:repository_id => repo_id, :size => file.size)
 
     ex.returns(upload_response)
-    # rubocop:disable LineLength
     ex2 = api_expects(:repositories, :import_uploads, 'Take in an upload')
           .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                        :uploads => [{
@@ -242,7 +231,6 @@ describe 'upload repository' do
                          :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                        }]
                       )
-    # rubocop:enable LineLength
     ex2.returns(import_uploads_response)
     expect_foreman_task(task_id)
     expect_foreman_task(task_id)
@@ -270,7 +258,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
          .with_params(:id => repo_id, :sync_capsule => false, :publish_repository => false, :async => true,
                       :uploads => [{
@@ -281,7 +268,6 @@ describe 'upload repository' do
                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                       }]
                      )
-    # rubocop:enable LineLength
 
     ex.returns(import_uploads_response)
     expect_foreman_task(task_id)
@@ -299,7 +285,6 @@ describe 'upload repository' do
 
     ex.returns(upload_response)
 
-    # rubocop:disable LineLength
     ex = api_expects(:repositories, :import_uploads, 'Take in an upload')
          .with_params(:id => repo_id, :sync_capsule => true, :publish_repository => true, :async => true,
                       :uploads => [{
@@ -310,7 +295,6 @@ describe 'upload repository' do
                         :checksum => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
                       }]
                      )
-    # rubocop:enable LineLength
 
     ex.returns(import_uploads_response)
     expect_foreman_task(task_id)

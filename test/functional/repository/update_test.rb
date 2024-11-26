@@ -47,9 +47,7 @@ module HammerCLIKatello
               .with_params('id' => upload_id, 'repository_id' => repo_id)
 
         ex3.returns("")
-        # rubocop:disable LineLength
         result = run_cmd(%W(repository update --id #{repo_id} --docker-tag #{tag_name} --docker-digest #{digest}))
-        # rubocop:enable LineLength
         assert_equal(result.exit_code, 0)
       end
     end

@@ -26,7 +26,6 @@ module HammerCLIKatello
 
     class InfoCommand < HammerCLIKatello::InfoCommand
       include OrganizationOptions
-      # rubocop:disable Layout/LineLength
 
       output do
         field :id, _("Id")
@@ -137,7 +136,6 @@ module HammerCLIKatello
 
       build_options
     end
-    # rubocop:enable Layout/LineLength
 
     class CreateCommand < HammerCLIKatello::CreateCommand
       success_message _("Content view created.")
