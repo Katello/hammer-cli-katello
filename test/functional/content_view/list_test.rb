@@ -36,9 +36,9 @@ describe 'listing content-views' do
 
     ex.returns(empty_response)
     expected_result = success_result(
-      "----------------|------|-------|-----------|----------------|---------------
-CONTENT VIEW ID | NAME | LABEL | COMPOSITE | LAST PUBLISHED | REPOSITORY IDS
-----------------|------|-------|-----------|----------------|---------------
+      "----------------|------|-------|-----------|---------|----------------|---------------
+CONTENT VIEW ID | NAME | LABEL | COMPOSITE | ROLLING | LAST PUBLISHED | REPOSITORY IDS
+----------------|------|-------|-----------|---------|----------------|---------------
 ")
 
     result = run_cmd(@cmd + params)
@@ -57,9 +57,9 @@ CONTENT VIEW ID | NAME | LABEL | COMPOSITE | LAST PUBLISHED | REPOSITORY IDS
 
     ex.returns(empty_response)
     expected_result = success_result(
-      "----------------|------|-------|-----------|----------------|---------------
-CONTENT VIEW ID | NAME | LABEL | COMPOSITE | LAST PUBLISHED | REPOSITORY IDS
-----------------|------|-------|-----------|----------------|---------------
+      "----------------|------|-------|-----------|---------|----------------|---------------
+CONTENT VIEW ID | NAME | LABEL | COMPOSITE | ROLLING | LAST PUBLISHED | REPOSITORY IDS
+----------------|------|-------|-----------|---------|----------------|---------------
 ")
 
     result = run_cmd(@cmd + params)

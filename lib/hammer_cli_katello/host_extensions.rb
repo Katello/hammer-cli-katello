@@ -61,6 +61,7 @@ module HammerCLIKatello
                   field :id, _("Id")
                   field :name, _("Name")
                   field :composite, _("Composite"), Fields::Boolean
+                  field :rolling, _("Rolling"), Fields::Boolean
                 end
               end
               from :lifecycle_environment do
