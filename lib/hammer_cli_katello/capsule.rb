@@ -205,6 +205,7 @@ module HammerCLIKatello
             collection :content_views, _("Content Views") do
               field nil, _("Name"), Fields::Reference
               field :composite, _('Composite'), Fields::Boolean
+              field :rolling, _('Rolling'), Fields::Boolean
               field :last_published, _('Last Published'), Fields::Date
               collection :repositories, _('Repositories') do
                 field :id, _("Repository ID")

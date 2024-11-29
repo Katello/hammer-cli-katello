@@ -70,6 +70,7 @@ module HammerCLIKatello
               field :content_view_version, _("Version")
               field :content_view_version_id, _("Content View version Id")
               field :composite, _("Composite"), Fields::Boolean
+              field :rolling, _("Rolling"), Fields::Boolean
               field :content_view_environment_id, _("Content View Environment id"), Fields::Field
             end
           end
