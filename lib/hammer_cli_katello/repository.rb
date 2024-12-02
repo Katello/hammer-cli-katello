@@ -110,6 +110,7 @@ module HammerCLIKatello
             field :id, _("Id"), Fields::Field, :hide_blank => true
             field :name, _("Name"), Fields::Field, :hide_blank => true
           end
+          field :full_gpg_key_path, _("GPG Key Path"), Fields::Field, :hide_blank => true
         end
 
         label _("Sync") do
