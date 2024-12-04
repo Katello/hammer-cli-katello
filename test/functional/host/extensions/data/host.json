@@ -117,7 +117,6 @@
       "release_version":"7Server",
       "purpose_usage":"Production",
       "purpose_role":"Role",
-      "purpose_addons":"Test Addon1, Test Addon2",
       "autoheal":true,
       "registered_at":"2016-05-26 10:46:22 -0400",
       "activation_keys":[
