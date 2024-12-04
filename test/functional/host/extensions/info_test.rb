@@ -26,7 +26,6 @@ describe 'host info' do
                        ['Upgradable Packages', '4'],
                        ['Purpose Usage', 'Production'],
                        ['Purpose Role', 'Role'],
-                       ['Purpose Addons', 'Test Addon1, Test Addon2'],
                        ['Trace Status', 'Updated'],
                        ['Running image', 'potato'],
                        ['Running image digest',

@@ -102,13 +102,10 @@ module HammerCLIKatello
           field :service_level, _('Service Level'), Fields::Field, :hide_blank => true
           field :purpose_usage, _('Purpose Usage'), Fields::Field, :hide_blank => true
           field :purpose_role, _('Purpose Role'), Fields::Field, :hide_blank => true
-          field :purpose_addons, _('Purpose Addons'), Fields::List, :hide_blank => true
         end
       end
 
       def extend_data(data)
-        # Hack to hide purpose addons if it's not set since it's not possible to hide the Fields::List values
-        data["purpose_addons"] = data["purpose_addons"].length.positive? ? data["purpose_addons"] : nil
         limit = data["unlimited_hosts"] ? _("Unlimited") : data["max_hosts"]
 
         data["format_consumed"] = _("%{consumed} of %{limit}") %
