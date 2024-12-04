@@ -109,7 +109,6 @@ module HammerCLIKatello
               field :service_level, _('Service Level')
               field :purpose_usage, _('Purpose Usage')
               field :purpose_role, _('Purpose Role')
-              field :purpose_addons, _('Purpose Addons'), Fields::List
             end
           end
         end

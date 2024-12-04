@@ -22,7 +22,6 @@ describe 'activation-key info' do
                        ['Description', 'Activation key'],
                        ['Purpose Usage', 'Usage'],
                        ['Purpose Role', 'Role'],
-                       ['Purpose Addons', 'Test Addon1, Test Addon2'],
                        ['Multi Content View Environment', 'yes'],
                        ['Organization', ''],
                        ['Id', '1'],
