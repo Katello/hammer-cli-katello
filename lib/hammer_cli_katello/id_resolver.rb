@@ -29,6 +29,7 @@ module HammerCLIKatello
       :sync_plan =>             [s_name(_("Sync plan name to search by"))],
       :task =>                  [s_name(_("Task name to search by"))],
       :content_view_version => [s("version", _("Content view version number"))],
+      :flatpak_remote => [s_name(_("Flatpak remote name to search by"))],
       :content_export => [],
       :content_export_incremental => [],
       :content_import => []
