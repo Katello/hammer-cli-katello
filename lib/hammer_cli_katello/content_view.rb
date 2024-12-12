@@ -15,6 +15,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :label, _("Label")
         field :composite, _("Composite"), Fields::Boolean
+        field :rolling, _("Rolling"), Fields::Boolean
         field :last_published, _("Last Published"), Fields::Date, :hide_blank => true
         field :repository_ids, _("Repository IDs"), Fields::List, :max_width => 300
       end
@@ -32,6 +33,7 @@ module HammerCLIKatello
         field :name, _("Name")
         field :label, _("Label")
         field :composite, _("Composite"), Fields::Boolean
+        field :rolling, _("Rolling"), Fields::Boolean
         field :description, _("Description")
         field :content_host_count, _("Content Host Count")
         field :solve_dependencies, _("Solve Dependencies"), Fields::Boolean
@@ -142,11 +144,13 @@ module HammerCLIKatello
       failure_message _("Could not create the content view")
 
       option ["--composite"], :flag, _("Create a composite content view")
+      option ["--rolling"], :flag, _("Create a rolling content view")
       option ["--import-only"], :flag, _("Designate this Content View for "\
                                          "importing from upstream servers only.")
       def request_params
         super.tap do |opts|
           opts['composite'] = option_composite? || false
+          opts['rolling'] = option_rolling? || false
           opts['import_only'] = option_import_only? || false
         end
       end
