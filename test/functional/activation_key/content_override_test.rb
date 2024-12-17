@@ -66,7 +66,7 @@ describe 'activation-key content-override' do
   it "does not attach a content override with value other than enabled without --force" do
     api_expects_no_call
     error_msg = "Could not update content override:\n" \
-            "  You must use --force to set a value other than 'enabled'"
+            "  You must use --force to set an override other than 'enabled'"
 
     assert_failure run_cmd(%w(activation-key content-override --id=20 --content-label=foo --value=1 --override-name=protected)), error_msg
     result = run_cmd(%w(activation-key content-override id=20 --content-label=foo --value=1 --override-name=protected))
