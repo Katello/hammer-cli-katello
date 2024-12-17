@@ -11,7 +11,7 @@ describe 'host subscription content-override' do
 
   it "attaches a content override" do
     label = "foo"
-    value = 'enabled'
+    value = 'true'
     id = '20'
     params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}"]
     ex = api_expects(:host_subscriptions, :content_override, "content override") do |par|
@@ -29,15 +29,15 @@ describe 'host subscription content-override' do
 
   it "attaches a content override with name" do
     label = "foo"
-    value = 'enabled'
+    override_name = 'enabled'
+    value = '1'
     id = '20'
-    name = 'protected'
     params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}",
-              "--override-name=#{name}"]
+              "--override-name=#{override_name}"]
     ex = api_expects(:host_subscriptions, :content_override, "content override") do |par|
       par['host_id'].to_s == id && par["content_overrides"][0]['content_label'] == label &&
         par['content_overrides'][0]['value'] == value &&
-        par['content_overrides'][0]['name'] == name
+        par['content_overrides'][0]['name'] == override_name
     end
     ex.returns({})
 
@@ -49,15 +49,15 @@ describe 'host subscription content-override' do
 
   it "attaches a content override with value other than enabled using --force" do
     label = "foo"
-    value = 'enabled'
+    value = '1'
     id = '20'
-    name = 'protected'
+    override_name = 'protected'
     params = ["--host-id=#{id}", "--content-label=#{label}", "--value=#{value}",
-              "--override-name=#{name}", "--force"]
+              "--override-name=#{override_name}", "--force"]
     ex = api_expects(:host_subscriptions, :content_override, "content override") do |par|
       par['host_id'].to_s == id && par["content_overrides"][0]['content_label'] == label &&
         par['content_overrides'][0]['value'] == value &&
-        par['content_overrides'][0]['name'] == name
+        par['content_overrides'][0]['name'] == override_name
     end
     ex.returns({})
 
@@ -70,7 +70,7 @@ describe 'host subscription content-override' do
   it "does not attach a content override with value other than enabled without --force" do
     api_expects_no_call
     error_msg = "Could not update content override:\n" \
-            "  You must use --force to set a value other than 'enabled'"
+            "  You must use --force to set an override other than 'enabled'"
 
     assert_failure run_cmd(%w(host subscription content-override --host-id=20 --content-label=foo --value=1 --override-name=protected)), error_msg
     result = run_cmd(%w(host subscription content-override --host-id=20 --content-label=foo --value=1 --override-name=protected))
