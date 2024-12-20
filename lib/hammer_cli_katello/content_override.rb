@@ -31,9 +31,9 @@ module HammerCLIKatello
           if option(:option_remove).exist?
             option(:option_value).rejected
           elsif option(:option_value).exist?
-            if !@option_values['option_value'].casecmp('enabled').zero? &&
+            if !@option_values['option_override_name'].casecmp('enabled').zero? &&
                @option_values['option_force'] == false
-              raise ArgumentError, _("You must use --force to set a value other than 'enabled'")
+              raise ArgumentError, _("You must use --force to set an override other than 'enabled'")
             end
             option(:option_remove).rejected
           end
