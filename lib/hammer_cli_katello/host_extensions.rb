@@ -4,6 +4,7 @@ require 'hammer_cli_katello/host_subscription'
 require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_package_group'
 require 'hammer_cli_katello/host_traces'
+require 'hammer_cli_katello/host_bootc'
 
 module HammerCLIKatello
   module HostExtensions

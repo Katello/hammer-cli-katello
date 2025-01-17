@@ -6,6 +6,7 @@ require 'hammer_cli_katello/host_package'
 require 'hammer_cli_katello/host_deb'
 require 'hammer_cli_katello/host_package_group'
 require 'hammer_cli_katello/host_traces'
+require 'hammer_cli_katello/host_bootc'
 
 module HammerCLIKatello
   HammerCLIForeman::Host.subcommand "errata",
@@ -31,4 +32,8 @@ module HammerCLIKatello
   HammerCLIForeman::Host.subcommand "traces",
                                     HammerCLIKatello::HostTraces.desc,
                                     HammerCLIKatello::HostTraces
+
+  HammerCLIForeman::Host.subcommand "bootc",
+                                    HammerCLIKatello::HostBootc.desc,
+                                    HammerCLIKatello::HostBootc
 end
