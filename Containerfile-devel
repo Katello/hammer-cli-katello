@@ -1,0 +1,10 @@
+FROM registry.access.redhat.com/ubi9/ruby-33
+RUN wget https://partha.fedorapeople.org/devel/hammer.tgz
+RUN tar zxf hammer.tgz
+RUN mkdir hammer-cli-katello
+RUN cat <<EOF > /opt/app-root/src/.gitconfig
+[safe]
+	directory = /opt/app-root/src/hammer-cli-katello
+EOF
+WORKDIR hammer-cli-katello
+CMD bundle install && bundle exec bash
