@@ -1,10 +1,28 @@
 FROM registry.access.redhat.com/ubi9/ruby-33
-RUN wget https://partha.fedorapeople.org/devel/hammer.tgz
-RUN tar zxf hammer.tgz
+RUN mkdir -p .hammer/cli.modules.d
+RUN cat <<EOF > .hammer/cli.modules.d/foreman.yml
+:foreman:
+  :enable_module: true
+  :host: 'http://localhost:3000/'
+  :username: 'admin'
+  :password: 'changeme'
+EOF
+
+RUN cat <<EOF > .hammer/cli.modules.d/katello.yml
+:katello:
+  :enable_module: true
+EOF
+
+RUN cat <<EOF > .hammer/cli_config.yml
+:reload_cache: true
+:log_dir: '~/.hammer/log'
+:log_level: 'debug'
+EOF
+
 RUN mkdir hammer-cli-katello
-RUN cat <<EOF > /opt/app-root/src/.gitconfig
+RUN cat <<EOF > .gitconfig
 [safe]
-	directory = /opt/app-root/src/hammer-cli-katello
+	directory = ~/hammer-cli-katello
 EOF
 WORKDIR hammer-cli-katello
 CMD bundle install && bundle exec bash
