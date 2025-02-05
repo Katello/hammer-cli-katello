@@ -5,7 +5,16 @@ hammer-cli development docs for [help](https://github.com/theforeman/hammer-cli/
 
 ## Development setup
 
-The easiest way to set up a hammer development environment is to use the centos7-hammer-devel box in
+The easiest way to set up a hammer development environment is to use the `hammer-devel-container.sh` script.
+* Clone this repo.
+* Run the following commands
+```bash
+$ cd hammer-cli-katello
+$ hammer-devel-container.sh
+```
+This should start a container that points to your localhost foreman server
+
+Alternately you can use the centos7-hammer-devel box in
 [forklift](https://github.com/theforeman/forklift).
 
 ## Configuration
