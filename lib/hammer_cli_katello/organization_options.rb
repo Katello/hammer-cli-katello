@@ -8,6 +8,8 @@ module HammerCLIKatello
               _('Organization name to search by'), attribute_name: :option_organization_name
         child '--organization-label', 'ORGANIZATION_LABEL',
               _('Organization label to search by'), attribute_name: :option_organization_label
+        child '--organization-title', 'ORGANIZATION_TITLE',
+              _('Organization title to search by'), attribute_name: :option_organization_title
       end
     end
 
@@ -15,7 +17,8 @@ module HammerCLIKatello
       {
         HammerCLI.option_accessor_name("organization_id") => options["option_organization_id"],
         HammerCLI.option_accessor_name("organization_name") => options["option_organization_name"],
-        HammerCLI.option_accessor_name("organization_label") => options["option_organization_label"]
+        HammerCLI.option_accessor_name("organization_label") => options["option_organization_label"],
+        HammerCLI.option_accessor_name("organization_title") => options["option_organization_title"]
       }
     end
   end
