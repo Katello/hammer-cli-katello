@@ -17,10 +17,84 @@ This should start a container that points to your localhost foreman server
 Alternately you can use the centos7-hammer-devel box in
 [forklift](https://github.com/theforeman/forklift).
 
+### From the source
+
+If you don't want to use any of the automated setups above, you can always set hammer up to be used with Katello
+manually. The easiest way is to follow these steps:
+
+1. Clone the mandatory repos:
+
+This is the core, but without any auth capabilities or commands.
+```bash
+git clone git@github.com:theforeman/hammer-cli.git
+```
+This is a plugin with Foreman commands and auth capabilities.
+```bash
+git clone git@github.com:theforeman/hammer-cli-foreman.git
+```
+This is a plugin with Katello commands.
+```bash
+git clone git@github.com:Katello/hammer-cli-katello.git
+```
+_Note: you might want to add more plugins (e.g. foreman-virt-who-configure), the steps are the same._
+
+2. Create a local Gemfile to point to your plugins:
+```bash
+cd hammer-cli && touch Gemfile.local
+```
+```bash
+cat > Gemfile.local <<'PLUGINS'
+path '../' do
+  gem "hammer_cli_foreman"
+  gem "hammer_cli_katello"
+end
+PLUGINS
+```
+```bash
+bundle install
+```
+3. Configure hammer and plugins:
+
+Adjust `cli_config.yml` per your needs.
+```bash
+mkdir -p ~/.hammer && cp hammer-cli/config/cli_config.template.yml ~/.hammer/cli_config.yml
+```
+```bash
+mkdir -p ~/.hammer/cli.modules.d && cp hammer-cli-foreman/config/foreman.yml ~/.hammer/cli.modules.d/foreman.yml
+```
+```bash
+cp hammer-cli-katello/config/katello.yml ~/.hammer/cli.modules.d/katello.yml
+```
+If you don't want to be prompted each time, you'd rather put values at least for `:host:`, `:username:` and `:password:`.
+```bash
+cat > ~/.hammer/cli.modules.d/foreman.yml <<'CONFIG'
+:foreman:
+  :enable_module: true
+  :host: https://foreman.example.com:443
+  :username: 'admin'
+  :password: 'changeme'
+CONFIG
+```
+4. Try running a command to see if hammer works:
+```bash
+cd hammer-cli && bundle exec ./bin/hammer ping
+```
+5. (Optional) Set up an alias for convenience:
+```bash
+# Add to your ~/.bashrc or ~/.bash_profile
+alias hammer='BUNDLE_GEMFILE=/home/vagrant/hammer-cli/Gemfile bundle exec hammer'
+```
+_Note: You might encounter an SSL issue on first run and if so, there are two ways to fix that. There should also be a help message from hammer itself._
+1. Fetch the CA from the server:
+```bash
+hammer --fetch-ca-cert https://foreman.example.com
+```
+2. Or disable SSL verification either in `~/.hammer/cli_config.yml` or run a hammer command with `--verify-ssl` false option.
+
 ## Configuration
 
 Configuration files for all hammer plugins are found at
-`~/.hammer/cli.modules.d`. The centos7-hammer-devel box configures hammer for
+`~/.hammer/cli.modules.d`. The centos9-hammer-devel box configures hammer for
 you, but you may change the configuration files directly as well.
 The `hammer-cli-katello` configuration is located at
 `~/.hammer/cli.modules.d/katello.yml`.
