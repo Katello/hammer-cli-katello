@@ -18,6 +18,7 @@ module HammerCLIKatello
         field :end_date, _("End Date"), Fields::Date
         field :format_quantity, _("Quantity")
         field :consumed, _("Consumed")
+        field :product_host_count, _("Product Host Count")
       end
 
       def extend_data(data)
