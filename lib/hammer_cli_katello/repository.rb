@@ -33,6 +33,7 @@ module HammerCLIKatello
         field :content_type, _("Content Type")
         field :content_label, _("Content Label")
         field :url, _("Url")
+        field :docker_upstream_name, _('Upstream Repository Name'), nil, :sets => ['ALL']
       end
 
       content_type_msg = _("Limit the repository type to return." \

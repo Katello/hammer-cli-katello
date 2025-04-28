@@ -103,4 +103,23 @@ ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
     result = run_cmd(@cmd + params)
     assert_cmd(expected, result)
   end
+
+  it "lists the repositories with container upstream name" do
+    params = ['--organization-id=1', '--fields=ALL']
+
+    ex = api_expects(:repositories, :index, 'repositories list with upstream container name') do |par|
+      par['organization_id'] == org_id && par['page'] == 1 &&
+        par['per_page'] == 1000
+    end
+
+    ex.returns(empty_response)
+
+    expected = CommandExpectation.new("---|------|---------|--------------|---------------|-----|-------------------------
+ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL | UPSTREAM REPOSITORY NAME
+---|------|---------|--------------|---------------|-----|-------------------------
+")
+
+    result = run_cmd(@cmd + params)
+    assert_cmd(expected, result)
+  end
 end
