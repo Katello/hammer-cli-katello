@@ -6,6 +6,7 @@ require 'hammer_cli_katello/host_package_group'
 require 'hammer_cli_katello/host_traces'
 require 'hammer_cli_katello/host_bootc'
 
+# rubocop:disable Metrics/ModuleLength
 module HammerCLIKatello
   module HostExtensions
     ::HammerCLIForeman::Host::CreateCommand.instance_eval do
@@ -57,18 +58,34 @@ module HammerCLIKatello
                   _("Content View Environment Labels"), Fields::Field
             collection :content_view_environments, _('Content View Environments') do
               from :content_view do
-                label _("Content view") do
-                  field :id, _("Id")
-                  field :name, _("Name")
-                  field :composite, _("Composite"), Fields::Boolean
-                  field :rolling, _("Rolling"), Fields::Boolean
+                # Deprecated label. To be removed in future versions.
+                label _("Content view"), :sets => ['ALL'] do
+                  field :id, _("Id"), Fields::Field,
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('CV Id')].join('/')
+                  field :name, _("Name"), Fields::Field,
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('CV Name')].join('/')
+                  field :composite, _("Composite"), Fields::Boolean,
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Composite CV')].join('/')
+                  field :rolling, _("Rolling"), Fields::Boolean,
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Rolling CV')].join('/')
                 end
+
+                field :id, _("CV Id")
+                field :name, _("CV Name")
+                field :composite, _("Composite CV"), Fields::Boolean
+                field :rolling, _("Rolling CV"), Fields::Boolean
               end
               from :lifecycle_environment do
-                label _("Lifecycle environment") do
-                  field :id, _("Id")
-                  field :name, _("Name")
+                # Deprecated label. To be removed in future versions.
+                label _("Lifecycle environment"), :sets => ['ALL'] do
+                  field :id, _("Id"), Fields::Field,
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('LE Id')].join('/')
+                  field :name, _("Name"), Fields::Field,
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('LE Name')].join('/')
                 end
+
+                field :id, _("LE Id")
+                field :name, _("LE Name")
               end
               field :label, _("Label")
             end
@@ -138,3 +155,4 @@ module HammerCLIKatello
     end
   end
 end
+# rubocop:enable Metrics/ModuleLength
