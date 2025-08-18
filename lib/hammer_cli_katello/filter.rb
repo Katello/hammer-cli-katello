@@ -49,6 +49,7 @@ module HammerCLIKatello
           field :start_date, _("Start Date"), Fields::Field, :hide_blank => true
           field :end_date, _("End Date"), Fields::Field, :hide_blank => true
           field :types, _("Types"), Fields::List, :hide_blank => true
+          field :module_stream_id, _("Module Stream ID"), Fields::Field, :hide_blank => true
           field :created_at, _("Created"), Fields::Date
           field :updated_at, _("Updated"), Fields::Date
         end
