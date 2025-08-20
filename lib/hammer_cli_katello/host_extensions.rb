@@ -66,11 +66,14 @@ module HammerCLIKatello
                     :replaced_by => [_('Content Information'), _('Content View Environments'), _('CV Name')].join('/')
                   field :composite, _("Composite"), Fields::Boolean,
                     :replaced_by => [_('Content Information'), _('Content View Environments'), _('Composite CV')].join('/')
+                  field :rolling, _("Rolling"), Fields::Boolean,
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Rolling CV')].join('/')
                 end
 
                 field :id, _("CV Id")
                 field :name, _("CV Name")
                 field :composite, _("Composite CV"), Fields::Boolean
+                field :rolling, _("Rolling CV"), Fields::Boolean
               end
               from :lifecycle_environment do
                 # Deprecated label. To be removed in future versions.
