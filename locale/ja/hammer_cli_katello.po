@@ -9,17 +9,17 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2017
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Amit Upadhye <aupadhye@redhat.com>, 2023
-# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer_cli_katello 1.16.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 1.19.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden "
-"<ewoud+transifex@kohlvanwijngaarden.nl>, 2024\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
+"+transifex@kohlvanwijngaarden.nl>, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -388,7 +388,7 @@ msgid "Last sync"
 msgstr "最終同期"
 
 msgid "Status"
-msgstr "状態"
+msgstr "ステータス"
 
 msgid "Currently running sync tasks"
 msgstr "現在実行中の同期タスク"
@@ -1717,7 +1717,7 @@ msgid "Files"
 msgstr "ファイル"
 
 msgid "Size"
-msgstr "ã‚µã‚¤ã‚º"
+msgstr "サイズ"
 
 msgid "Modular"
 msgstr "モジュラー"
@@ -1883,7 +1883,7 @@ msgid "Ignorable Content Units"
 msgstr "無視できるコンテンツユニット"
 
 msgid "HTTP Proxy"
-msgstr "HTTP ãƒ—ãƒ­ã‚­ã‚·ãƒ¼"
+msgstr "HTTP プロキシー"
 
 msgid "HTTP Proxy Policy"
 msgstr "HTTPプロキシーポリシー"
@@ -1952,7 +1952,7 @@ msgid "Canceled"
 msgstr "取り消されました"
 
 msgid "Warning"
-msgstr "è­¦å‘Š"
+msgstr "警告"
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "タスク %{id} でリポジトリーを同期中です。"
