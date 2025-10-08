@@ -11,17 +11,17 @@
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Amit Upadhye <aupadhye@redhat.com>, 2023
 # Baptiste Agasse <baptiste.agasse@gmail.com>, 2023
-# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer_cli_katello 1.16.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 1.19.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden "
-"<ewoud+transifex@kohlvanwijngaarden.nl>, 2024\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
+"+transifex@kohlvanwijngaarden.nl>, 2025\n"
 "Language-Team: French (https://app.transifex.com/foreman/teams/114/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -185,8 +185,8 @@ msgstr "Impossible de supprimer la source de contenu alternative."
 
 msgid "Alternate content source is being refreshed in task %{id}."
 msgstr ""
-"La source de contenu alternative est en cours d'actualisation dans la "
-"tâche%{id} ."
+"La source de contenu alternative est en cours d'actualisation dans la tâche"
+"%{id} ."
 
 msgid "Could not refresh the alternate content source"
 msgstr "Impossible d'actualiser la source de contenu alternative"
@@ -204,7 +204,7 @@ msgid "Unlimited"
 msgstr "Illimité"
 
 msgid "%{consumed} of %{limit}"
-msgstr "%{consumed} de %{limit} "
+msgstr "%{consumed} de %{limit}"
 
 msgid "Auto Attach"
 msgstr "Auto-Attach"
@@ -446,7 +446,7 @@ msgid "Packages"
 msgstr "Packages"
 
 msgid "Package groups"
-msgstr "Groupes de packages"
+msgstr "Groupes de paquets"
 
 msgid "Errata"
 msgstr "Errata"
@@ -471,7 +471,7 @@ msgid ""
 "%{environment_id} and content view %{content_view_id}"
 msgstr ""
 "Aucun référentiel avec le nom %{name}, dans l'environnement de cycle de vie "
-"%{environment_id} et la vue de contenu % {content_view_id} n’existe"
+"%{environment_id} et la vue de contenu %{content_view_id} n’existe"
 
 msgid "Use %s instead"
 msgstr "Utilisez plutôt %s"
@@ -675,8 +675,8 @@ msgstr "Filtrer les référentiels par nom."
 
 msgid "Library environment is being exported in task %{id}."
 msgstr ""
-"L'environnement de la bibliothèque est en cours d'exportation dans la "
-"tâche%{id} ."
+"L'environnement de la bibliothèque est en cours d'exportation dans la tâche"
+"%{id} ."
 
 msgid "Could not export the library"
 msgstr "Impossible d'exporter la bibliothèque"
@@ -690,8 +690,8 @@ msgstr ""
 
 msgid "Content view version is being exported in task %{id}."
 msgstr ""
-"La version de la vue de contenu est en cours d'exportation dans la "
-"tâche%{id} ."
+"La version de la vue de contenu est en cours d'exportation dans la tâche"
+"%{id} ."
 
 msgid "Could not export the content view version"
 msgstr "Impossible d'exporter la version d'affichage du contenu"
@@ -1008,7 +1008,7 @@ msgid ""
 "task '%{task_id}'."
 msgstr ""
 "Version '%{version}' d’affichage de contenu '%{view}' prévu d’être supprimé "
-"dans la tâche '{task_id}'."
+"dans la tâche '%{task_id}'."
 
 msgid "Version '%{version}' of content view '%{view}' deleted."
 msgstr "Version '%{version}' d’affichage de contenu '%{view}' supprimée."
@@ -1157,7 +1157,7 @@ msgid "Manage docker tags"
 msgstr "Gérer les balises Docker"
 
 msgid "Tag"
-msgstr "Étiquette"
+msgstr "Balise"
 
 msgid "Repository ID"
 msgstr "ID référentiel"
@@ -1169,7 +1169,7 @@ msgid "Docker Manifest Name"
 msgstr "Nom du manifeste Docker"
 
 msgid "Errata ID"
-msgstr "ID des errata"
+msgstr "ID d'errata"
 
 msgid "Title"
 msgstr "Titre"
@@ -1178,7 +1178,7 @@ msgid "Issued"
 msgstr "Publié"
 
 msgid "Updated"
-msgstr "Mis à jour "
+msgstr "Mis à jour"
 
 msgid "Reboot Suggested"
 msgstr "Redémarrage suggéré"
@@ -1332,17 +1332,17 @@ msgstr "Manipuler les errata pour une collection d’hôte"
 
 msgid "Install errata on content hosts contained within a host collection"
 msgstr ""
-"Installer les errata sur les hôtes de contenu contenus dans une collection "
+"Installation d'errata sur les hôtes de contenu contenus dans une collection "
 "d'hôte"
 
 msgid "Successfully scheduled installation of errata."
-msgstr "L'installation des errata a été programmée avec succès."
+msgstr "L'installation de l'errata a été programmée avec succès."
 
 msgid "Could not schedule installation of errata"
-msgstr "Impossible de programmer l'installation des errata"
+msgstr "Impossible de programmer l'installation de l'errata"
 
 msgid "List of Errata to install"
-msgstr "Liste des errata à installer"
+msgstr "Liste d'errata à installer"
 
 msgid "Manipulate packages for a host collection"
 msgstr "Manipuler les paquets pour une collection d'hôte"
@@ -1432,10 +1432,10 @@ msgid "Arch"
 msgstr "Arch"
 
 msgid "Errata is being applied with task %{id}."
-msgstr "Les errata seront appliqué avec la tâche %{id}."
+msgstr "L'errata est appliqué avec la tâche %{id}."
 
 msgid "Could not apply errata"
-msgstr "Impossible d'appliquer les errata"
+msgstr "Impossible d'appliquer l'errata"
 
 msgid "Erratum ID"
 msgstr "ID Erratum"
@@ -1444,7 +1444,7 @@ msgid "Installable"
 msgstr "Installable"
 
 msgid "Errata recalculation started."
-msgstr "Recalcul des errata démarré."
+msgstr "Le recalcul des errata a commencé."
 
 msgid "Could not recalculate errata"
 msgstr "Impossible de recalculer les errata"
@@ -1519,7 +1519,7 @@ msgid "Failed to attach subscriptions to the host"
 msgstr "Échec de l'attachement des abonnements à l'hôte"
 
 msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "Quantité de cet abonnement à ajouter"
+msgstr "Quantité de cet abonnement à ajouter. Valeur par défaut 1"
 
 msgid "Auto attached subscriptions to the host successfully."
 msgstr "Abonnements attachés automatiquement à l'hôte."
@@ -1676,7 +1676,7 @@ msgid "RPMs"
 msgstr "RPMs"
 
 msgid "Simple Content Access"
-msgstr "Accès simple au contenu"
+msgstr "Accès simple au contenu "
 
 msgid "Service Levels"
 msgstr "Niveaux de service"
@@ -1796,7 +1796,7 @@ msgid "Modular"
 msgstr "Modulaire"
 
 msgid "Package Group Name"
-msgstr "Nom de groupe de packages"
+msgstr "Nom de groupe de paquets"
 
 msgid "Repository Name"
 msgstr "Nom du référentiel"
@@ -1811,7 +1811,7 @@ msgid "Conditional Packages"
 msgstr "Paquets conditionnels"
 
 msgid "Optional Packages"
-msgstr "Packages optionnels"
+msgstr "Paquets optionnels"
 
 msgid "message"
 msgstr "message"
@@ -1976,7 +1976,7 @@ msgid "Source RPMS"
 msgstr "Source RPMS"
 
 msgid "Package Groups"
-msgstr "Groupes de packages"
+msgstr "Groupes de paquets"
 
 msgid "Container Image Manifest Lists"
 msgstr "Listes de manifestes d'images de conteneur"
@@ -2045,8 +2045,8 @@ msgid ""
 "Type of repository to create. View available types with \"hammer repository "
 "types\""
 msgstr ""
-"Type de dépôt à créer. Voir les types disponibles avec « types de dépôt "
-"hammer »"
+"Type de référentiel à créer. Voir les types disponibles avec « types de "
+"référentiel hammer »"
 
 msgid "Repository updated."
 msgstr "Référentiel mis à jour."
@@ -2064,7 +2064,7 @@ msgid "Container Image tag"
 msgstr "Balise d'image du conteneur"
 
 msgid "Container Image manifest digest"
-msgstr "Conteneur Image manifeste digest"
+msgstr "Résumé du Manifeste d’images de conteneurs (digest)"
 
 msgid "Repository updated"
 msgstr "Référentiel mis à jour"
@@ -2134,7 +2134,7 @@ msgstr "Fichier téléchargé avec succès %s"
 
 msgid "Successfully uploaded manifest file '%{name}' with digest '%{digest}'"
 msgstr ""
-"Le fichier manifeste '%{name}' a été téléchargé avec succès avec le digest "
+"Le fichier manifeste '%{name}' a été téléchargé avec succès avec digest "
 "'%{digest}'"
 
 msgid "Could not upload the content."
@@ -2231,7 +2231,7 @@ msgstr ""
 "Le fichier manifeste est en cours de téléchargement dans la tâche%{id}."
 
 msgid "Manifest upload failed"
-msgstr "Échec du téléchargement du manifeste "
+msgstr "Échec du téléchargement du manifeste"
 
 msgid "Subscription manifest file"
 msgstr "Fichier manifeste d'abonnement"

@@ -5,16 +5,16 @@
 #
 # Translators:
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2022
-# Andi Chandler <andi@gowling.com>, 2024
+# Andi Chandler <andi@gowling.com>, 2025
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer_cli_katello 1.16.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 1.19.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>, 2024\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2025\n"
 "Language-Team: English (United Kingdom) (https://app.transifex.com/foreman/"
 "teams/114/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -120,7 +120,7 @@ msgid "Description"
 msgstr "Description"
 
 msgid "Base URL"
-msgstr ""
+msgstr "Base URL"
 
 msgid "Content type"
 msgstr ""
@@ -132,7 +132,7 @@ msgid "Upstream username"
 msgstr ""
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "Verify SSL"
 
 msgid "SSL CA Cert"
 msgstr ""
@@ -276,7 +276,7 @@ msgid "End Date"
 msgstr ""
 
 msgid "Support"
-msgstr ""
+msgstr "Support"
 
 msgid "Contract"
 msgstr ""
@@ -544,7 +544,7 @@ msgid "Content View Version ID"
 msgstr ""
 
 msgid "Created at"
-msgstr ""
+msgstr "Created at"
 
 msgid "Updated at"
 msgstr ""
@@ -1002,7 +1002,7 @@ msgid "checksum"
 msgstr ""
 
 msgid "Architecture"
-msgstr ""
+msgstr "Architecture"
 
 msgid "Nav"
 msgstr ""
@@ -1408,7 +1408,7 @@ msgid "Environment name"
 msgstr ""
 
 msgid "Product name"
-msgstr ""
+msgstr "Product name"
 
 msgid "Trace ID"
 msgstr ""

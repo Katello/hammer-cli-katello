@@ -9,7 +9,7 @@
 # mbacovsky <martin.bacovsky@gmail.com>, 2017
 # francis <hackgo@gmail.com>, 2017
 # Carmela Rubiños <carmela.rubinos@gmail.com>, 2017
-# Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2017
+# Sergio Ocón-Cárdenas, 2017
 # Amit Upadhye <aupadhye@redhat.com>, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
@@ -17,12 +17,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer_cli_katello 1.16.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 1.19.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden "
-"<ewoud+transifex@kohlvanwijngaarden.nl>, 2024\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
+"+transifex@kohlvanwijngaarden.nl>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/foreman/teams/114/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
