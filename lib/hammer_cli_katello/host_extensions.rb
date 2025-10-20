@@ -118,7 +118,6 @@ module HammerCLIKatello
             field :uuid, _('Uuid')
             field :last_checkin, _('Last Checkin')
             field :release_version, _('Release Version')
-            field :autoheal, _('Autoheal')
             field :registered_through, _('Registered To')
             field :registered_at, _('Registered At')
             collection :activation_keys, _('Registered by Activation Keys'), :hide_blank => true do

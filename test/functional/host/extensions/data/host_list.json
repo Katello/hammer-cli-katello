@@ -72,8 +72,6 @@
          "model_name":"Standard PC (i440FX + PIIX, 1996)",
          "errata_status":1,
          "errata_status_label":"Could not calculate errata status, ensure host is registered and katello-agent is installed",
-         "subscription_status":0,
-         "subscription_status_label":"Fully entitled",
          "traces_status":0,
          "traces_status_label":"updated",
          "name":"robot.example.com",
@@ -137,7 +135,6 @@
             "last_checkin":"2016-05-26 10:46:18 -0400",
             "service_level":null,
             "release_version":"{\"releaseVer\"=>nil}",
-            "autoheal":true,
             "registered_at":"2016-05-26 10:46:22 -0400"
          },
          "content_host_id":2
