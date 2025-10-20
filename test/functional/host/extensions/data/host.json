@@ -61,8 +61,6 @@
    "model_name":"Standard PC (i440FX + PIIX, 1996)",
    "errata_status":1,
    "errata_status_label":"Could not calculate errata status, ensure host is registered and katello-agent is installed",
-   "subscription_status":0,
-   "subscription_status_label":"Fully entitled",
    "name":"robot.example.com",
    "id":1,
    "hostgroup_name":null,
@@ -117,7 +115,6 @@
       "release_version":"7Server",
       "purpose_usage":"Production",
       "purpose_role":"Role",
-      "autoheal":true,
       "registered_at":"2016-05-26 10:46:22 -0400",
       "activation_keys":[
 
