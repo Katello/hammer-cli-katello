@@ -61,31 +61,31 @@ module HammerCLIKatello
                 # Deprecated label. To be removed in future versions.
                 label _("Content view"), :sets => ['ALL'] do
                   field :id, _("Id"), Fields::Field,
-                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('CV Id')].join('/')
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('ContentView ID')].join('/')
                   field :name, _("Name"), Fields::Field,
-                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('CV Name')].join('/')
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Content View Name')].join('/')
                   field :composite, _("Composite"), Fields::Boolean,
-                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Composite CV')].join('/')
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Composite Content View')].join('/')
                   field :rolling, _("Rolling"), Fields::Boolean,
-                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Rolling CV')].join('/')
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Rolling Content View')].join('/')
                 end
 
-                field :id, _("CV Id")
-                field :name, _("CV Name")
-                field :composite, _("Composite CV"), Fields::Boolean
-                field :rolling, _("Rolling CV"), Fields::Boolean
+                field :id, _("ContentView ID")
+                field :name, _("Content View Name")
+                field :composite, _("Composite Content View"), Fields::Boolean
+                field :rolling, _("Rolling Content View"), Fields::Boolean
               end
               from :lifecycle_environment do
                 # Deprecated label. To be removed in future versions.
                 label _("Lifecycle environment"), :sets => ['ALL'] do
                   field :id, _("Id"), Fields::Field,
-                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('LE Id')].join('/')
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Lifecycle Environment Id')].join('/')
                   field :name, _("Name"), Fields::Field,
-                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('LE Name')].join('/')
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Lifecycle Environment Name')].join('/')
                 end
 
-                field :id, _("LE Id")
-                field :name, _("LE Name")
+                field :id, _("Lifecycle Environment Id")
+                field :name, _("Lifecycle Environment Name")
               end
               field :label, _("Label")
             end
