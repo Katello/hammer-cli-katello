@@ -61,7 +61,7 @@ module HammerCLIKatello
                 # Deprecated label. To be removed in future versions.
                 label _("Content view"), :sets => ['ALL'] do
                   field :id, _("Id"), Fields::Field,
-                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('ContentView ID')].join('/')
+                    :replaced_by => [_('Content Information'), _('Content View Environments'), _('Content View ID')].join('/')
                   field :name, _("Name"), Fields::Field,
                     :replaced_by => [_('Content Information'), _('Content View Environments'), _('Content View Name')].join('/')
                   field :composite, _("Composite"), Fields::Boolean,
@@ -70,7 +70,7 @@ module HammerCLIKatello
                     :replaced_by => [_('Content Information'), _('Content View Environments'), _('Rolling Content View')].join('/')
                 end
 
-                field :id, _("ContentView ID")
+                field :id, _("Content View ID")
                 field :name, _("Content View Name")
                 field :composite, _("Composite Content View"), Fields::Boolean
                 field :rolling, _("Rolling Content View"), Fields::Boolean
