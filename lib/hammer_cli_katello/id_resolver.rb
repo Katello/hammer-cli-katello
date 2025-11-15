@@ -48,8 +48,8 @@ module HammerCLIKatello
     include HammerCLIKatello::SearchOptionsCreators
 
     # alias_method_chain :create_search_options, :katello_api
-    alias_method :create_search_options_without_katello_api, :create_search_options
-    alias_method :create_search_options, :create_search_options_with_katello_api
+    # alias_method :create_search_options_without_katello_api, :create_search_options
+    # alias_method :create_search_options, :create_search_options_with_katello_api
 
     def file_unit_id(options)
       if options['option_content_view_version_version']
