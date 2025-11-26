@@ -7,6 +7,7 @@ module HammerCLIKatello
 
       output do
         field :nvra, _("Nvra")
+        field :persistence, _("Persistence")
       end
 
       build_options
