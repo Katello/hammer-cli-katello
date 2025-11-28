@@ -7,7 +7,7 @@ module HammerCLIKatello
 
       output do
         field :nvra, _("Nvra")
-        field :persistence, _("Persistence")
+        field :persistence, _("Persistence"), nil, :sets => ['ALL']
       end
 
       build_options
