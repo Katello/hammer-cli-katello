@@ -52,6 +52,19 @@ module HammerCLIKatello
       include UnsupportedKatelloAgentCommandHelper
     end
 
+    class ContainerfileInstallCommand < HammerCLIKatello::Command
+      desc _("Generate a Containerfile RUN command from transiently installed packages on image mode hosts")
+      resource :host_packages, :containerfile_install_command
+      command_name "containerfile-install-command"
+
+      output do
+        field :command, nil, Fields::Field, :hide_blank => true
+        field :message, _("Message"), Fields::Field, :hide_blank => true
+      end
+
+      build_options
+    end
+
     autoload_subcommands
   end
 end
