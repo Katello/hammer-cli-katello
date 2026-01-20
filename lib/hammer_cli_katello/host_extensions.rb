@@ -47,6 +47,9 @@ module HammerCLIKatello
           field :bootc_rollback_digest, _('Rollback image digest'), nil, :sets => ['ALL']
         end
         field :traces_status_label, _('Trace Status')
+        from :subscription_facet_attributes do
+          field :last_checkin, _("Last Checkin")
+        end
       end
     end
 
