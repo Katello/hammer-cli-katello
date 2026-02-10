@@ -59,7 +59,19 @@ module HammerCLIKatello
 
       output do
         field :command, nil, Fields::Field, :hide_blank => true
-        field :message, _("Message"), Fields::Field, :hide_blank => true
+      end
+
+      def execute
+        response = send_request
+        package_count = response['packageCount'] || 0
+
+        if package_count.zero?
+          output.print_error _("No transient packages found")
+          HammerCLI::EX_NOT_FOUND
+        else
+          print_data(response)
+          HammerCLI::EX_OK
+        end
       end
 
       build_options
