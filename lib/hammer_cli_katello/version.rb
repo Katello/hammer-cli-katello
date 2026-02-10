@@ -1,5 +1,5 @@
 module HammerCLIKatello
   def self.version
-    @version ||= Gem::Version.new('1.20.0-main')
+    @version ||= Gem::Version.new('1.21.0-main')
   end
 end
