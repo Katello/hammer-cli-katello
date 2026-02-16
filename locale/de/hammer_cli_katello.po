@@ -14,7 +14,7 @@
 # simon11 <transifex@stieger.co>, 2017
 # Martin Zimmermann <martin.zimmermann@gmx.com>, 2018
 # 47388d0d0847859fcc07f8955b27d2a7_d1cb104 <93875580def0fcc1a566b016c3948752_122921>, 2020
-# Crited <Alexander.Stoll@netways.de>, 2023
+# Alexander Stoll <Alexander.Stoll@netways.de>, 2023
 # Markus Bucher <bucher@atix.de>, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2023
@@ -23,7 +23,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer_cli_katello 1.19.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 1.21.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
