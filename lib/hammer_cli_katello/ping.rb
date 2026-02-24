@@ -28,14 +28,6 @@ module HammerCLIKatello
           end
         end
 
-        label "candlepin_events" do
-          from "candlepin_events" do
-            field "status", _("Status")
-            field "message", _("message")
-            field "_response", _("Server Response")
-          end
-        end
-
         label "katello_events" do
           from "katello_events" do
             field "status", _("Status")
