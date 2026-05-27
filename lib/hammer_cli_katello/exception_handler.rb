@@ -4,7 +4,8 @@ module HammerCLIKatello
     def mappings
       super + [
         [RestClient::InternalServerError, :handle_internal_error],
-        [RestClient::BadRequest, :handle_bad_request]
+        [RestClient::BadRequest, :handle_bad_request],
+        [RestClient::UnprocessableEntity, :handle_unprocessable_entity]
       ]
     end
 
