@@ -11,7 +11,7 @@ jobs:
     name: Release gem
     runs-on: ubuntu-latest
     environment: release
-    if: github.repository_owner == 'theforeman'
+    if: github.repository_owner == 'Katello'
 
     permissions:
       id-token: write
