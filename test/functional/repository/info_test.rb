@@ -29,7 +29,9 @@ describe "get repository info" do
       'content_type' => 'yum',
       'product' => {
         'id' => 79,
-        'name' => 'test'
+        'name' => 'test',
+        'orphaned' => false,
+        'redhat' => false
       },
       'download_policy' => 'immediate',
       'unprotected' => true,
@@ -52,6 +54,7 @@ describe "get repository info" do
                        ['Description', 'hammertime'],
                        ['Organization', 'Default Organization'],
                        ['Red Hat Repository', 'no'],
+                       ['Orphaned', 'no'],
                        ['Content Type', 'yum'],
                        ['Mirroring Policy', 'Additive'],
                        ['Publish Via HTTP', 'yes'],
@@ -105,7 +108,9 @@ describe "get repository info" do
       'content_type' => 'yum',
       'product' => {
         'id' => 79,
-        'name' => 'Test_Product'
+        'name' => 'Test_Product',
+        'orphaned' => true,
+        'redhat' => false
       },
       'download_policy' => 'immediate',
       'unprotected' => true,
@@ -128,6 +133,7 @@ describe "get repository info" do
                        ['Description', 'hammertime'],
                        ['Organization', 'Default Organization'],
                        ['Red Hat Repository', 'no'],
+                       ['Orphaned', 'yes'],
                        ['Content Type', 'yum'],
                        ['Mirroring Policy', 'Complete Mirroring'],
                        ['Publish Via HTTP', 'yes'],

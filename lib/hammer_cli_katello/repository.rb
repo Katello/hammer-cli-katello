@@ -29,6 +29,7 @@ module HammerCLIKatello
         field :name, _("Name")
         from :product do
           field :name, _("Product")
+          field :orphaned, _("Orphaned"), Fields::Boolean
         end
         field :content_type, _("Content Type")
         field :content_label, _("Content Label")
@@ -68,6 +69,7 @@ module HammerCLIKatello
           field :name, _("Organization")
         end
         field :_redhat_repo, _("Red Hat Repository")
+        field :_orphaned, _("Orphaned")
         field :content_type, _("Content Type")
         field :content_label, _("Content Label")
         field :checksum_type, _("Checksum Type"), Fields::Field, :hide_blank => true
@@ -181,6 +183,7 @@ module HammerCLIKatello
 
       def setup_booleans(data)
         data["_redhat_repo"] = data.dig("product", "redhat") ? _("yes") : _("no")
+        data["_orphaned"] = data.dig("product", "orphaned") ? _("yes") : _("no")
         data["_publish_via_http"] = data["unprotected"] ? _("yes") : _("no")
       end
 
