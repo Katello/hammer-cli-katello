@@ -36,9 +36,9 @@ describe 'listing repositories' do
 
     ex.returns(empty_response)
 
-    expected = success_result("---|------|---------|--------------|---------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
----|------|---------|--------------|---------------|----
+    expected = success_result("---|------|---------|----------|--------------|---------------|----
+ID | NAME | PRODUCT | ORPHANED | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|----------|--------------|---------------|----
 ")
 
     result = run_cmd(@cmd + params)
@@ -57,9 +57,9 @@ ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
 
     ex.returns(empty_response)
 
-    expected = CommandExpectation.new("---|------|---------|--------------|---------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
----|------|---------|--------------|---------------|----
+    expected = CommandExpectation.new("---|------|---------|----------|--------------|---------------|----
+ID | NAME | PRODUCT | ORPHANED | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|----------|--------------|---------------|----
 ", "Warning: Option --environment is deprecated. Use --lifecycle-environment instead\n")
 
     result = run_cmd(@cmd + params)
@@ -76,9 +76,9 @@ ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
 
     ex.returns(empty_response)
 
-    expected = CommandExpectation.new("---|------|---------|--------------|---------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
----|------|---------|--------------|---------------|----
+    expected = CommandExpectation.new("---|------|---------|----------|--------------|---------------|----
+ID | NAME | PRODUCT | ORPHANED | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|----------|--------------|---------------|----
 ")
 
     result = run_cmd(@cmd + params)
@@ -95,9 +95,9 @@ ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
 
     ex.returns(empty_response)
 
-    expected = CommandExpectation.new("---|------|---------|--------------|---------------|----
-ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
----|------|---------|--------------|---------------|----
+    expected = CommandExpectation.new("---|------|---------|----------|--------------|---------------|----
+ID | NAME | PRODUCT | ORPHANED | CONTENT TYPE | CONTENT LABEL | URL
+---|------|---------|----------|--------------|---------------|----
 ")
 
     result = run_cmd(@cmd + params)
@@ -114,12 +114,55 @@ ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL
 
     ex.returns(empty_response)
 
-    expected = CommandExpectation.new("---|------|---------|--------------|---------------|-----|-------------------------
-ID | NAME | PRODUCT | CONTENT TYPE | CONTENT LABEL | URL | UPSTREAM REPOSITORY NAME
----|------|---------|--------------|---------------|-----|-------------------------
+    expected = CommandExpectation.new("---|------|---------|----------|--------------|---------------|-----|-------------------------
+ID | NAME | PRODUCT | ORPHANED | CONTENT TYPE | CONTENT LABEL | URL | UPSTREAM REPOSITORY NAME
+---|------|---------|----------|--------------|---------------|-----|-------------------------
 ")
 
     result = run_cmd(@cmd + params)
     assert_cmd(expected, result)
+  end
+
+  it "shows orphaned status from product in repository list" do
+    params = ["--organization-id=#{org_id}"]
+
+    ex = api_expects(:repositories, :index, 'Organizations repositories list with orphaned') do |par|
+      par['organization_id'] == org_id && par['page'] == 1 &&
+        par['per_page'] == 1000
+    end
+
+    ex.returns(
+      "total" => 1,
+      "subtotal" => 1,
+      "page" => "1",
+      "per_page" => "1000",
+      "error" => nil,
+      "search" => nil,
+      "sort" => {
+        "by" => nil,
+        "order" => nil
+      },
+      "results" => [
+        {
+          "id" => 2,
+          "name" => "RHEL ELS Optional",
+          "content_type" => "yum",
+          "content_label" => "rhel-7-server-els-optional-rpms",
+          "url" => "https://cdn.redhat.com/content/els/rhel/server/7/7Server/x86_64/optional/os",
+          "product" => {
+            "id" => 250,
+            "name" => "RHEL ELS",
+            "orphaned" => true,
+            "redhat" => true
+          }
+        }
+      ]
+    )
+
+    result = run_cmd(@cmd + params)
+    assert_equal 0, result.exit_code
+    assert_match(/ORPHANED/, result.out)
+    assert_match(/RHEL ELS Optional/, result.out)
+    assert_match(/\byes\b|\btrue\b/i, result.out)
   end
 end
