@@ -106,7 +106,18 @@ module HammerCLIKatello
             field :applicable_package_count, _('Applicable Packages')
             field :upgradable_package_count, _('Upgradable Packages')
 
+            # errata_counts top-level keys are installable; nested :applicable is applicable
             label _('Applicable Errata') do
+              from :errata_counts do
+                from :applicable do
+                  field :enhancement, _('Enhancement')
+                  field :bugfix, _('Bug Fix')
+                  field :security, _('Security')
+                end
+              end
+            end
+
+            label _('Installable Errata') do
               from :errata_counts do
                 field :enhancement, _('Enhancement')
                 field :bugfix, _('Bug Fix')
