@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer_cli_katello 1.21.0.pre.main\n"
+"Project-Id-Version: hammer_cli_katello 5.1.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 17:04+0000\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
@@ -451,8 +451,8 @@ msgid "Please provide --content-view-id"
 msgstr ""
 
 msgid ""
-"No such repository with name %{name}, in lifecycle environment "
-"%{environment_id} and content view %{content_view_id}"
+"No such repository with name %{name}, in lifecycle environment %"
+"{environment_id} and content view %{content_view_id}"
 msgstr ""
 
 msgid "Use %s instead"
@@ -646,8 +646,8 @@ msgid "Performs an incremental export of a repository"
 msgstr ""
 
 msgid ""
-"Location of the metadata.json file. This is not required if the metadata."
-"json file is already in the archive directory."
+"Location of the metadata.json file. This is not required if the "
+"metadata.json file is already in the archive directory."
 msgstr ""
 
 msgid "Archive is being imported in task %{id}."
