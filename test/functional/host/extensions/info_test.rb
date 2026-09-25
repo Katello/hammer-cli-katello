@@ -20,6 +20,7 @@ describe 'host info' do
                        ['Release Version', '7Server'],
                        ['Name', 'Rhel 7'],
                        ['Name', 'capsule'],
+                       ['Bug Fix', '12'],
                        ['Bug Fix', '0'],
                        ['Name', 'my host collection'],
                        ['Applicable Packages', '5'],
@@ -32,5 +33,10 @@ describe 'host info' do
                         'sha256:a68293b8402890ba802f11fc2fab26e23c665be9e645836c3f32cbfe9e07f9ae']]
     expected_results = expected_fields.map { |field| success_result(FieldMatcher.new(*field)) }
     expected_results.each { |expected|  assert_cmd(expected, result) }
+    # Applicable Errata must use nested errata_counts.applicable (#39782)
+    assert_match(/Applicable Errata/, result.out)
+    assert_match(/Installable Errata/, result.out)
+    assert_includes result.out, '12'
+    assert_includes result.out, '5'
   end
 end
