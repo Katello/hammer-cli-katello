@@ -2,8 +2,7 @@ require 'hammer_cli_katello/foreman_search_options_creators'
 
 module HammerCLIKatello
   module SearchOptionsCreators
-    include HammerCLIKatello::ForemanSearchOptionsCreators
-
+    #include HammerCLIKatello::ForemanSearchOptionsCreators
     def create_flatpak_remotes_search_options(options, _mode = nil)
       name = options[HammerCLI.option_accessor_name('name')]
       organization_id = options[HammerCLI.option_accessor_name("organization_id")] ||
@@ -22,21 +21,6 @@ module HammerCLIKatello
         'product_id' => options[HammerCLI.option_accessor_name('product_id')],
         'organization_id' => options[HammerCLI.option_accessor_name('organization_id')]
       )
-    end
-
-    def create_module_streams_search_options(options, mode = nil)
-      create_search_options_without_katello_api(options, api.resource(:module_streams), mode)
-        .merge(create_search_options(options, api.resource(:module_streams), mode))
-    end
-
-    def create_file_units_search_options(options, mode = nil)
-      create_search_options_without_katello_api(options, api.resource(:file_units), mode)
-        .merge(create_search_options(options, api.resource(:file_units), mode))
-    end
-
-    def create_content_view_filter_rules_search_options(options, mode = nil)
-      create_search_options_without_katello_api(
-        options, api.resource(:content_view_filter_rules), mode)
     end
 
     def create_repositories_search_options(options, _mode = nil)
