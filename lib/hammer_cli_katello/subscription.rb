@@ -106,6 +106,61 @@ module HammerCLIKatello
       build_options
     end
 
+    class ManifestInfoCommand < HammerCLIKatello::InfoCommand
+      resource :organizations, :show
+      command_name "manifest-info"
+
+      output do
+        field :manifest_name, _("Manifest Name")
+        field :manifest_uuid, _("UUID")
+        field :manifest_expiration_date, _("Expiration Date"), Fields::Date
+        field :manifest_import_date, _("Import Date"), Fields::Date
+        field :account_number, _("Account Number")
+      end
+
+      def extend_data(data)
+        # Check if manifest is imported
+        upstream = data.dig('owner_details', 'upstreamConsumer')
+
+        if upstream.nil?
+          raise HammerCLI::OperationError, _("No subscription manifest found for this organization")
+        end
+
+        # Extract manifest info from owner_details
+        data['manifest_name'] = upstream['name']
+        data['manifest_uuid'] = upstream['uuid']
+        data['account_number'] = data['redhat_account_number']
+
+        # Get import date from manifest history
+        data['manifest_import_date'] = fetch_import_date(data['id'])
+
+        data
+      end
+
+      def fetch_import_date(org_id)
+        # Use subscriptions resource to fetch manifest history
+        subscriptions_resource = HammerCLIKatello.foreman_resource(:subscriptions)
+        history_params = {'organization_id' => org_id}
+        history = subscriptions_resource.call(:manifest_history, history_params)
+
+        if history.present?
+          # Get the most recent import (last successful one)
+          successful_imports = history.select { |h| h['status'] == 'SUCCESS' }
+          return successful_imports.last['created'] if successful_imports.any?
+        end
+
+        nil
+      rescue StandardError => e
+        # If we can't fetch history, just return nil
+        logger.debug "Could not fetch manifest history: #{e.message}" if defined?(logger)
+        nil
+      end
+
+      build_options do |o|
+        o.without(:location_id)
+      end
+    end
+
     autoload_subcommands
   end
 end
