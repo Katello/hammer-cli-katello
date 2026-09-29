@@ -1,24 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-katello package.
+# This file is distributed under the same license as the hammer_cli_katello package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
 # mbacovsky <martin.bacovsky@gmail.com>, 2022
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2022
-# 진선재, 2023
-# Bryan Kearney <bryan.kearney@gmail.com>, 2023
-# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
+# Bryan Kearney <bryan.kearney@gmail.com>, 2026
+# 진선재, 2026
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2026
+# Ondřej Gajdušek, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_katello 5.1.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 17:04+0000\n"
+"POT-Creation-Date: 2026-09-22 19:21+0200\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden "
-"<ewoud+transifex@kohlvanwijngaarden.nl>, 2025\n"
+"Last-Translator: Ondřej Gajdušek, 2026\n"
 "Language-Team: Korean (https://app.transifex.com/foreman/teams/114/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,6 +40,9 @@ msgstr "서버에서 콘텐츠 자격 증명 조정"
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "서버에서 lifecycle_environments 조정"
+
+msgid "Manipulate content view environments"
+msgstr "콘텐츠 뷰 환경 조작"
 
 msgid "Manipulate products"
 msgstr "제품 조정"
@@ -95,11 +98,11 @@ msgstr "모듈 스트림 보기"
 msgid "Manipulate source RPMs"
 msgstr "소스 RPM 조정"
 
-msgid "Simple content access commands"
-msgstr "간단한 콘텐츠 액세스 명령"
-
 msgid "Manipulate docker content"
 msgstr "docker 콘텐츠 조정"
+
+msgid "Manipulate flatpak remotes"
+msgstr "Flatpak 원격 저장소 조작"
 
 msgid "ID"
 msgstr "ID"
@@ -135,7 +138,7 @@ msgid "Upstream username"
 msgstr "업스트림 사용자 이름"
 
 msgid "Verify SSL"
-msgstr "SSL 확인 "
+msgstr "SSL 확인"
 
 msgid "SSL CA Cert"
 msgstr "SSL CA 인증서"
@@ -185,14 +188,41 @@ msgstr "작업에서 대체 콘텐츠 소스가 새로 고침되고 있습니다
 msgid "Could not refresh the alternate content source"
 msgstr "대체 콘텐츠 소스를 새로 고침할 수 없습니다."
 
+msgid "Refresh all alternate content sources"
+msgstr "모든 대체 콘텐츠 소스 새로 고침"
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr "모든 대체 콘텐츠 소스가 성공적으로 새로 고쳐졌습니다."
+
+msgid "Could not refresh all alternate content sources"
+msgstr "모든 대체 콘텐츠 소스를 새로 고치지 못했습니다."
+
+msgid "Refresh alternate content sources"
+msgstr "대체 콘텐츠 소스 새로 고침"
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr "지정된 대체 콘텐츠 소스가 성공적으로 새로 고쳐졌습니다."
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr "지정된 대체 콘텐츠 소스를 새로 고치지 못했습니다."
+
+msgid "Destroy alternate content sources"
+msgstr "대체 콘텐츠 소스 삭제"
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr "지정된 대체 콘텐츠 소스가 성공적으로 삭제되었습니다."
+
+msgid "Could not destroy the specified alternate content sources"
+msgstr "지정된 대체 콘텐츠 소스를 삭제하지 못했습니다."
+
 msgid "Host Limit"
 msgstr "호스트 제한"
 
-msgid "Lifecycle Environment"
-msgstr "라이프사이클 환경 "
+msgid "Content View Environments"
+msgstr "콘텐츠 뷰 환경"
 
-msgid "Content View"
-msgstr "컨텐츠 뷰 "
+msgid "Multi Content View Environment"
+msgstr "다중 콘텐츠 뷰 환경"
 
 msgid "Unlimited"
 msgstr "제한 없음 "
@@ -200,11 +230,35 @@ msgstr "제한 없음 "
 msgid "%{consumed} of %{limit}"
 msgstr " %{limit} 중 %{consumed}"
 
-msgid "Auto Attach"
-msgstr "자동 첨부"
-
 msgid "Release Version"
 msgstr "릴리즈 버전 "
+
+msgid "Content View Environment Labels"
+msgstr "콘텐츠 뷰 환경 레이블"
+
+msgid "Organization"
+msgstr "조직 "
+
+msgid "Content View"
+msgstr "컨텐츠 뷰 "
+
+msgid "Version"
+msgstr "버전 "
+
+msgid "Content View version Id"
+msgstr "콘텐츠 뷰 버전 ID"
+
+msgid "Composite"
+msgstr "복합 "
+
+msgid "Rolling"
+msgstr "롤링"
+
+msgid "Content View Environment id"
+msgstr "콘텐츠 뷰 환경 ID"
+
+msgid "Lifecycle environment"
+msgstr "라이프사이클 환경"
 
 msgid "Associated Hosts"
 msgstr "연관된 호스트"
@@ -233,9 +287,6 @@ msgstr "목적 사용"
 msgid "Purpose Role"
 msgstr "목적 역할"
 
-msgid "Purpose Addons"
-msgstr "목적 애드온"
-
 msgid "Activation key created."
 msgstr "활성화 키가 생성되었습니다."
 
@@ -262,54 +313,6 @@ msgstr "활성화 키가 삭제되었습니다."
 
 msgid "Could not delete the activation key"
 msgstr "활성키를 삭제할 수 없습니다 "
-
-msgid "List associated subscriptions"
-msgstr "관련된 서브스크립션 목록 나열 "
-
-msgid "Attached"
-msgstr "첨부됨  "
-
-msgid "Quantity"
-msgstr "수량 "
-
-msgid "Start Date"
-msgstr "시작 날짜 "
-
-msgid "End Date"
-msgstr "종료 날짜  "
-
-msgid "Support"
-msgstr "지원"
-
-msgid "Contract"
-msgstr "계약 "
-
-msgid "Account"
-msgstr "계정 "
-
-msgid "ID of the activation key"
-msgstr "활성키 ID"
-
-msgid "Activation key name to search by"
-msgstr "검색할 활성키 이름 "
-
-msgid "Subscription added to activation key."
-msgstr "서브스크립션이 활성화 키에 추가되었습니다."
-
-msgid "Could not add subscription to activation key"
-msgstr "활성키에 서브스크립션을 추가할 수 없습니다 "
-
-msgid "Remove subscription"
-msgstr "서브스크립션 삭제 "
-
-msgid "ID of subscription"
-msgstr "서브스크립션 ID"
-
-msgid "Subscription removed from activation key."
-msgstr "서브스크립션이 활성화 키에서 제거되었습니다."
-
-msgid "Could not remove subscription from activation key"
-msgstr "활성키에서 서브스크립션을 삭제할 수 없습니다 "
 
 msgid "List associated host collections"
 msgstr "관련된 호스트 컬렉션 목록 나열 "
@@ -359,9 +362,6 @@ msgstr "호스트를 제거할 수 없습니다."
 msgid "Manage the capsule content"
 msgstr "캡슐 컨텐츠 관리 "
 
-msgid "Organization"
-msgstr "조직 "
-
 msgid "Lifecycle environment successfully added to the capsule."
 msgstr "캡슐에 라이프사이클 환경이 성공적으로 추가되었습니다."
 
@@ -377,17 +377,35 @@ msgstr "캡슐에서 라이프사이클 환경이 성공적으로 제거되었�
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "라이프 사이클 환경을 캡슐에서 삭제할 수 없습니다 "
 
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr "작업 %{id}에서 Capsule 공간 회수가 시작되었습니다."
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr "Capsule 공간을 회수하지 못했습니다."
+
 msgid "Capsule content is being synchronized in task %{id}."
 msgstr "캡슐 콘텐츠가 작업에서 동기화되고 있습니다.%{id} ."
 
 msgid "Could not synchronize capsule content"
 msgstr "캡슐 컨텐츠를 동기화할 수 없습니다 "
 
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr "작업 %{id}에서 Capsule 콘텐츠 수를 업데이트하고 있습니다."
+
+msgid "Could not update capsule content counts"
+msgstr "Capsule 콘텐츠 수를 업데이트하지 못했습니다."
+
+msgid "Capsule content checksum is being verified in task %{id}."
+msgstr "작업 %{id}에서 Capsule 콘텐츠 체크섬을 확인하고 있습니다."
+
+msgid "Could not verify capsule content checksum"
+msgstr "Capsule 콘텐츠 체크섬을 확인하지 못했습니다."
+
 msgid "Last sync"
 msgstr "마지막 동기화"
 
 msgid "Status"
-msgstr "상태 "
+msgstr "상태"
 
 msgid "Currently running sync tasks"
 msgstr "현재 동기화 작업을 실행 중입니다."
@@ -416,32 +434,65 @@ msgstr "라이프사이클 환경 "
 msgid "Content Views"
 msgstr "컨텐츠 뷰 "
 
-msgid "Composite"
-msgstr "복합 "
-
 msgid "Last Published"
 msgstr "마지막 공개 일시 "
 
-msgid "Content"
-msgstr "컨텐츠"
+msgid "Repositories"
+msgstr "리포지터리 "
 
-msgid "Hosts"
-msgstr "호스트"
+msgid "Repository ID"
+msgstr "리포지터리 ID"
 
-msgid "Yum repos"
-msgstr "Yum 리포지터리"
+msgid "Repository Name"
+msgstr "리포지터리 이름 "
 
-msgid "Container Image repos"
-msgstr "컨테이너 이미지 리포지터리"
+msgid "Content Counts"
+msgstr "컨텐츠 수 "
+
+msgid "Warning"
+msgstr "경고"
 
 msgid "Packages"
 msgstr "패키지 "
 
-msgid "Package groups"
-msgstr "패키지 그룹"
+msgid "SRPMs"
+msgstr "SRPM"
+
+msgid "Module Streams"
+msgstr "모듈 스트림"
+
+msgid "Package Groups"
+msgstr "패키지 그룹 "
 
 msgid "Errata"
 msgstr "에라타 "
+
+msgid "Debian Packages"
+msgstr "Debian 패키지"
+
+msgid "Container Tags"
+msgstr "컨테이너 태그"
+
+msgid "Container Manifests"
+msgstr "컨테이너 매니페스트"
+
+msgid "Container Manifest Lists"
+msgstr "컨테이너 매니페스트 목록"
+
+msgid "Files"
+msgstr "파일"
+
+msgid "Ansible Collections"
+msgstr "권한 컬렉션"
+
+msgid "OSTree Refs"
+msgstr "OSTree 참조"
+
+msgid "Python Packages"
+msgstr "Python 패키지"
+
+msgid "Content view must be synced to see content counts"
+msgstr "콘텐츠 수를 확인하려면 콘텐츠 뷰를 동기화해야 합니다."
 
 msgid "Content Source name"
 msgstr "콘텐츠 소스 이름"
@@ -485,6 +536,9 @@ msgstr "컨텐츠 유형 "
 
 msgid "Product"
 msgstr "제품"
+
+msgid "Content"
+msgstr "컨텐츠"
 
 msgid "Content Credential created."
 msgstr "콘텐츠 인증 정보가 생성되었습니다."
@@ -712,6 +766,12 @@ msgstr "콘텐츠 재정의 업데이트"
 msgid "Could not update content override"
 msgstr "콘텐츠 재정의를 업데이트할 수 없습니다."
 
+msgid "You must use --force to set an override other than 'enabled'"
+msgstr "'enabled' 이외의 값으로 재정의하려면 --force 옵션을 사용해야 합니다."
+
+msgid "Force the override. Required for overrides other than 'enabled'"
+msgstr "강제로 재정의합니다. 'enabled'이외의 재정의에는 필수입니다."
+
 msgid "Label of the content"
 msgstr "컨텐츠 레이블 "
 
@@ -731,9 +791,6 @@ msgstr ""
 msgid "Remove a content override"
 msgstr "콘텐츠 재정의 제거"
 
-msgid "Version"
-msgstr "버전 "
-
 msgid "Filename"
 msgstr "파일 이름"
 
@@ -752,11 +809,23 @@ msgstr "종속성 해결"
 msgid "Yum Repositories"
 msgstr "Yum 리포지터리 "
 
+msgid "File Repositories"
+msgstr "파일 리포지토리"
+
 msgid "Container Image Repositories"
 msgstr "컨테이너 이미지 리포지터리"
 
 msgid "OSTree Repositories"
 msgstr "OSTree 리포지터리"
+
+msgid "Ansible Repositories"
+msgstr "Ansible 리포지토리"
+
+msgid "Debian Repositories"
+msgstr "Debian 리포지토리"
+
+msgid "Python Repositories"
+msgstr "Python 리포지토리"
 
 msgid "Versions"
 msgstr "버전 "
@@ -766,6 +835,15 @@ msgstr "공개 일시 "
 
 msgid "Components"
 msgstr "구성 요소"
+
+msgid "Latest version"
+msgstr "최신 버전"
+
+msgid "Not yet published"
+msgstr "아직 공개되지 않았습니다 "
+
+msgid "Always update to the latest"
+msgstr "항상 최신 버전으로 업데이트"
 
 msgid "Activation Keys"
 msgstr "활성키 "
@@ -778,6 +856,9 @@ msgstr "컨텐츠 뷰를 생성할 수 없습니다 "
 
 msgid "Create a composite content view"
 msgstr "복합적인 컨텐츠 뷰 생성 "
+
+msgid "Create a rolling content view"
+msgstr "롤링 콘텐츠 뷰 생성"
 
 msgid "Designate this Content View for importing from upstream servers only."
 msgstr "이 콘텐츠 보기를 업스트림 서버에서만 가져오기로 지정하세요."
@@ -927,17 +1008,74 @@ msgstr "콘텐츠 보기에서 구성 요소가 제거되었습니다."
 msgid "Could not remove the components"
 msgstr "구성 요소를 제거할 수 없습니다."
 
+msgid "Lifecycle Environment"
+msgstr "라이프사이클 환경 "
+
+msgid "Default"
+msgstr "기본값 "
+
+msgid "Hosts Count"
+msgstr "호스트 수"
+
+msgid "Activation Keys Count"
+msgstr "활성화 키 수"
+
+msgid "Hostgroups Count"
+msgstr "호스트 그룹 수"
+
+msgid "Created At"
+msgstr "생성 일시"
+
+msgid "Updated At"
+msgstr "업데이트 일시"
+
+msgid "Organization Id"
+msgstr "조직 ID"
+
+msgid "Organization Label"
+msgstr "조직 레이블"
+
+msgid "Content View Label"
+msgstr "컨텐츠 뷰 레이블 "
+
+msgid "Default Content View"
+msgstr "기본 콘텐츠 뷰"
+
+msgid "Lifecycle Environment Id"
+msgstr "라이프사이클 환경 ID"
+
+msgid "Lifecycle Environment Label"
+msgstr "라이프사이클 환경 라벨"
+
+msgid "Library"
+msgstr "라이브러리"
+
+msgid "Hostgroups"
+msgstr "호스트 그룹 "
+
+msgid "Title"
+msgstr "제목"
+
 msgid "Content View numeric identifier"
 msgstr "콘텐츠 보기 숫자 식별자"
 
 msgid "Content View name"
 msgstr "콘텐츠 뷰 이름"
 
-msgid "count of unused versions to keep"
-msgstr "사용하지 않는 버전의 수를 유지"
+msgid "(deprecated) Number of versions to keep"
+msgstr "(더 이상 사용되지 않음) 유지할 버전 수"
 
-msgid "Invalid value for --count option: value must be 0 or greater."
-msgstr "--count 옵션 값이 잘못되었습니다. 값은 0 이상이어야 합니다."
+msgid "Number of unused versions to keep"
+msgstr "보관할 사용하지 않는 버전 수"
+
+msgid "Invalid value for --versions-to-keep: value must be 0 or greater."
+msgstr ""
+"--versions-to-keep에 잘못된 값이 사용되었습니다. 값은 0 이상이어야 합니다."
+
+msgid ""
+"The --count option is deprecated and will be removed in the next release."
+msgstr ""
+"--count 옵션은 더 이상 사용되지 않으며 다음 릴리스에서 제거될 예정입니다."
 
 msgid "No versions to delete."
 msgstr "삭제할 버전이 없습니다."
@@ -955,17 +1093,50 @@ msgstr "콘텐츠 뷰 '%{view}'의 버전 '%{version}'이 삭제되었습니다.
 msgid "Content View Name"
 msgstr "컨텐츠 뷰 이름 "
 
-msgid "Content View Label"
-msgstr "컨텐츠 뷰 레이블 "
-
-msgid "Repositories"
-msgstr "리포지터리 "
-
 msgid "Has Applied Filters"
 msgstr "필터가 적용되었습니다"
 
 msgid "Applied Filters"
 msgstr "필터가 적용되었습니다"
+
+msgid "Inclusion"
+msgstr "포함 사항 "
+
+msgid "Original packages"
+msgstr "원본 패키지"
+
+msgid "Original module streams"
+msgstr "원본 모듈 스트림"
+
+msgid "Rules"
+msgstr "규칙 "
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "Module stream Id"
+msgstr "모듈 스트림 ID"
+
+msgid "Types"
+msgstr "유형 "
+
+msgid "Architecture"
+msgstr "아키텍처 "
+
+msgid "Content view filter Id"
+msgstr "콘텐츠 뷰 필터 ID"
+
+msgid "Errata Id"
+msgstr "에라타 ID"
+
+msgid "Date type"
+msgstr "날짜 유형"
+
+msgid "Start date"
+msgstr "시작 날짜"
+
+msgid "End date"
+msgstr "종료일"
 
 msgid "Dependency Solving"
 msgstr "종속성 해결"
@@ -975,6 +1146,13 @@ msgstr "콘텐츠 보기 버전이 %{id} 작업과 함께 다시 게시됩니다
 
 msgid "Could not republish the Content View"
 msgstr "콘텐츠 보기를 다시 게시할 수 없습니다."
+
+msgid ""
+"Verifying checksum of Content View Version repositories with task %{id}."
+msgstr "작업 %{id}에서 콘텐츠 뷰 버전 리포지토리의 체크섬을 확인하고 있습니다."
+
+msgid "Could not verify checksum of repositories in the Content View Version"
+msgstr "콘텐츠 뷰 버전의 리포지토리 체크섬을 확인하지 못했습니다."
 
 msgid "Content view is being promoted with task %{id}."
 msgstr "콘텐츠 보기가 %{id} 작업으로 승격됩니다."
@@ -1045,9 +1223,6 @@ msgstr "UUID"
 msgid "checksum"
 msgstr "체크섬"
 
-msgid "Architecture"
-msgstr "아키텍처 "
-
 msgid "Nav"
 msgstr "탐색"
 
@@ -1081,9 +1256,6 @@ msgstr "docker 태그 관리"
 msgid "Tag"
 msgstr "태그"
 
-msgid "Repository ID"
-msgstr "리포지터리 ID"
-
 msgid "Docker Manifest ID"
 msgstr "Docker 매니페스트 ID"
 
@@ -1092,9 +1264,6 @@ msgstr "Docker 매니페스트 이름"
 
 msgid "Errata ID"
 msgstr "에라타 ID"
-
-msgid "Title"
-msgstr "제목"
 
 msgid "Issued"
 msgstr "발행됨 "
@@ -1111,9 +1280,6 @@ msgstr "릴리즈 "
 msgid "Solution"
 msgstr "솔루션 "
 
-msgid "Module Streams"
-msgstr "모듈 스트림"
-
 msgid "Stream"
 msgstr "스트림"
 
@@ -1123,20 +1289,20 @@ msgstr "체크섬 "
 msgid "Filter ID"
 msgstr "필터 ID"
 
-msgid "Inclusion"
-msgstr "포함 사항 "
-
-msgid "Rules"
-msgstr "규칙 "
-
 msgid "Minimum Version"
 msgstr "최소 버전 "
 
 msgid "Maximum Version"
 msgstr "최대 버전 "
 
-msgid "Types"
-msgstr "유형 "
+msgid "Start Date"
+msgstr "시작 날짜 "
+
+msgid "End Date"
+msgstr "종료 날짜  "
+
+msgid "Module Stream ID"
+msgstr "모듈 스트림 ID"
 
 msgid "Created"
 msgstr "생성 일시 "
@@ -1185,6 +1351,78 @@ msgstr "필터 규칙이 삭제되었습니다."
 
 msgid "Could not delete the filter rule"
 msgstr "필터 규칙을 삭제할 수 없습니다 "
+
+msgid "Username"
+msgstr "사용자 이름"
+
+msgid "Registry URL"
+msgstr "레지스트리 URL"
+
+msgid "Flatpak index URL"
+msgstr "Flatpak 인덱스 URL"
+
+msgid "Flatpak Remote created."
+msgstr "Flatpak 원격 저장소가 생성되었습니다."
+
+msgid "Could not create the Flatpak Remote."
+msgstr "Flatpak 원격 저장소를 생성하지 못했습니다."
+
+msgid "Flatpak Remote updated."
+msgstr "Flatpak 원격 저장소가 업데이트되었습니다."
+
+msgid "Could not update the Flatpak Remote."
+msgstr "Flatpak 원격 저장소를 업데이트하지 못했습니다."
+
+msgid "Flatpak Remote deleted."
+msgstr "Flatpak 원격 저장소가 삭제되었습니다."
+
+msgid "Could not delete the Flatpak Remote."
+msgstr "Flatpak 원격 저장소를 삭제하지 못했습니다."
+
+msgid "Flatpak remote is being scanned in task %<id>s."
+msgstr "작업 %<id>s에서 Flatpak 원격 저장소를 검사하고 있습니다."
+
+msgid "Could not scan the Flatpak remote"
+msgstr "Flatpak 원격 저장소를 검사하지 못했습니다."
+
+msgid "View and manage flatpak remote repositories"
+msgstr "Flatpak 원격 리포지토리 보기 및 관리"
+
+msgid "Flatpak Remote ID"
+msgstr "Flatpak 원격 저장소 ID"
+
+msgid "Flatpak Remote Name"
+msgstr "Flatpak 원격 저장소 이름"
+
+msgid "Flatpak Remote URL"
+msgstr "Flatpak 원격 저장소 URL"
+
+msgid "Manifests"
+msgstr "매니페스트"
+
+msgid "Manifest Name"
+msgstr "매니페스트 이름"
+
+msgid "Manifest Digest"
+msgstr "매니페스트 요약"
+
+msgid "Manifest tags"
+msgstr "매니페스트 태그"
+
+msgid "Flatpak remote repository is being mirrored to product in task %<id>s."
+msgstr "작업 %<id>s에서 Flatpak 원격 리포지토리를 제품에 미러링하고 있습니다."
+
+msgid "Could not mirror the Flatpak remote repository"
+msgstr "Flatpak 원격 리포지토리를 미러링하지 못했습니다."
+
+msgid "Running image"
+msgstr "이미지 실행"
+
+msgid "Running image digest"
+msgstr "이미지 다이제스트 실행"
+
+msgid "Host count"
+msgstr "호스트 수"
 
 msgid "Limit"
 msgstr "제한 "
@@ -1249,98 +1487,8 @@ msgstr "호스트가 제거되었습니다."
 msgid "Could not remove host(s)"
 msgstr "호스트를 제거할 수 없습니다."
 
-msgid "Manipulate errata for a host collection"
-msgstr "호스트 컬렉션의 에라타 조정"
-
-msgid "Install errata on content hosts contained within a host collection"
-msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에 에라타 설치"
-
-msgid "Successfully scheduled installation of errata."
-msgstr "에라타 설치가 성공적으로 예약되었습니다."
-
-msgid "Could not schedule installation of errata"
-msgstr "에라타 설치를 예약할 수 없습니다."
-
-msgid "List of Errata to install"
-msgstr "설치할 에라타 목록"
-
-msgid "Manipulate packages for a host collection"
-msgstr "호스트 컬렉션의 패키지 조정"
-
-msgid "comma-separated list of packages to install"
-msgstr "설치할 패키지의 쉼표로 구분된 목록"
-
-msgid "Install packages on content hosts contained within a host collection"
-msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에 패키지 설치"
-
-msgid "Successfully scheduled installation of package(s)."
-msgstr "패키지 설치가 성공적으로 예약되었습니다."
-
-msgid "Could not schedule installation of package(s)"
-msgstr "패키지 설치를 예약할 수 없습니다."
-
-msgid "Update packages on content hosts contained within a host collection"
-msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트의 패키지 업데이트"
-
-msgid "Successfully scheduled update of package(s)."
-msgstr "패키지 업데이트가 성공적으로 예약되었습니다."
-
-msgid "Could not schedule update of package(s)"
-msgstr "패키지 업데이트를 예약할 수 없습니다."
-
-msgid "Remove packages on content hosts contained within a host collection"
-msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에서 패키지 제거"
-
-msgid "Successfully scheduled removal of package(s)."
-msgstr "패키지 제거가 성공적으로 예약되었습니다."
-
-msgid "Could not schedule removal of package(s)"
-msgstr "패키지 제거 일정을 정할 수 없습니다."
-
-msgid "Manipulate package-groups for a host collection"
-msgstr "호스트 컬렉션에 대한 패키지 그룹 조정"
-
-msgid "comma-separated list of package-groups to install"
-msgstr "설치할 패키지 그룹의 쉼표로 구분된 목록"
-
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
-msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에 패키지 그룹 설치"
-
-msgid "Successfully scheduled installation of package-group(s)."
-msgstr "패키지 그룹의 설치가 성공적으로 예약되었습니다."
-
-msgid "Could not schedule installation of package-group(s)"
-msgstr "패키지 그룹 설치를 예약할 수 없습니다."
-
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
-msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트의 패키지 그룹 업데이트"
-
-msgid "Successfully scheduled update of package-groups(s)."
-msgstr "패키지 그룹 업데이트가 성공적으로 예약되었습니다."
-
-msgid "Could not schedule update of package-group(s)"
-msgstr "패키지 그룹 업데이트를 예약할 수 없습니다."
-
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
-msgstr "호스트 컬렉션 내에 포함된 콘텐츠 호스트에서 패키지 그룹 제거"
-
-msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "패키지 그룹 제거가 성공적으로 예약되었습니다."
-
-msgid "Could not schedule removal of package-group(s)"
-msgstr "패키지 그룹 제거를 예약할 수 없습니다."
-
 msgid "Arch"
 msgstr "아키텍처 "
-
-msgid "Errata is being applied with task %{id}."
-msgstr "에라타는 %{id} 작업에 적용 중입니다."
-
-msgid "Could not apply errata"
-msgstr "에라타를 적용할 수 없습니다."
 
 msgid "Erratum ID"
 msgstr "에라타 ID"
@@ -1354,20 +1502,44 @@ msgstr "에라타 재계산이 시작되었습니다."
 msgid "Could not recalculate errata"
 msgstr "에라타를 다시 계산할 수 없습니다."
 
+msgid "Staged image"
+msgstr "준비된 이미지"
+
+msgid "Staged image digest"
+msgstr "준비된 이미지 다이제스트"
+
+msgid "Available image"
+msgstr "사용 가능한 이미지"
+
+msgid "Available image digest"
+msgstr "사용 가능한 이미지 다이제스트"
+
+msgid "Rollback image"
+msgstr "이미지 롤백"
+
+msgid "Rollback image digest"
+msgstr "이미지 다이제스트 롤백"
+
 msgid "Trace Status"
 msgstr "상태 추적"
+
+msgid "Last Checkin"
+msgstr "마지막 체크인 "
 
 msgid "Content Information"
 msgstr "콘텐츠 정보"
 
-msgid "Content view environments"
-msgstr "콘텐츠 보기 환경"
-
 msgid "Content view"
 msgstr "콘텐츠 뷰"
 
-msgid "Lifecycle environment"
-msgstr "라이프사이클 환경"
+msgid "Composite Content View"
+msgstr "복합 콘텐츠 뷰"
+
+msgid "Rolling Content View"
+msgstr "롤링 콘텐츠 뷰"
+
+msgid "Lifecycle Environment Name"
+msgstr "라이프사이클 환경 이름"
 
 msgid "Kickstart Repository"
 msgstr "킥스타트 리포지터리"
@@ -1387,12 +1559,6 @@ msgstr "버그 수정"
 msgid "Subscription Information"
 msgstr "서브스크립션 정보"
 
-msgid "Last Checkin"
-msgstr "마지막 체크인 "
-
-msgid "Autoheal"
-msgstr "자동 복구"
-
 msgid "Registered To"
 msgstr "등록 대상"
 
@@ -1402,8 +1568,23 @@ msgstr "등록 위치"
 msgid "Registered by Activation Keys"
 msgstr "활성화 키로 등록됨"
 
+msgid "bootc Image Information"
+msgstr "bootc 이미지 정보"
+
 msgid "Nvra"
 msgstr "Nvra"
+
+msgid "Persistence"
+msgstr "지속성"
+
+msgid ""
+"Generate a Containerfile RUN command from transiently installed packages on "
+"image mode hosts"
+msgstr ""
+"이미지 모드 호스트에 임시로 설치된 패키지에서 Containerfile RUN 명령 생성"
+
+msgid "No transient packages found"
+msgstr "임시 패키지를 찾을 수 없습니다."
 
 msgid "Host unregistered."
 msgstr "호스트가 등록되지 않았습니다."
@@ -1416,32 +1597,6 @@ msgstr "호스트가 성공적으로 등록되었습니다."
 
 msgid "Failed to register host"
 msgstr "호스트 등록에 실패했습니다"
-
-msgid "Subscription attached to the host successfully."
-msgstr "서브스크립션이 호스트에 성공적으로 연결되었습니다."
-
-msgid "Failed to attach subscriptions to the host"
-msgstr "호스트에 서브스크립션을 첨부하지 못했습니다."
-
-msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "추가할 이 서브스크립션의 수량입니다. 기본값은 1입니다."
-
-msgid "Auto attached subscriptions to the host successfully."
-msgstr "호스트에 서브스크립션을 자동으로 연결했습니다."
-
-msgid "Failed to auto attach subscriptions to the host"
-msgstr "호스트에 서브스크립션을을 자동으로 첨부하지 못했습니다."
-
-msgid "Subscription removed from the host successfully."
-msgstr "서브스크립션이 호스트에서 성공적으로 제거되었습니다."
-
-msgid "Failed to remove subscriptions from the host"
-msgstr "호스트에서 서브스크립션을 제거하지 못했습니다."
-
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
-msgstr ""
-"일치하는 ID 및 수량을 가진 서브스크립션의 첫 번째 인스턴스를 제거합니다."
 
 msgid "Content View id"
 msgstr "콘텐츠 뷰 ID"
@@ -1478,6 +1633,9 @@ msgstr "검색할 조직 이름 "
 
 msgid "Organization label to search by"
 msgstr "검색할 조직 레이블 "
+
+msgid "Activation key name to search by"
+msgstr "검색할 활성키 이름 "
 
 msgid "Capsule name to search by"
 msgstr "검색할 캡슐 이름 "
@@ -1521,6 +1679,9 @@ msgstr "검색할 작업 이름 "
 msgid "Content view version number"
 msgstr "콘텐츠 뷰 버전 번호"
 
+msgid "Flatpak remote name to search by"
+msgstr "검색할 Flatpak 원격 저장소 이름"
+
 msgid "Name to search by"
 msgstr "검색할 이름 "
 
@@ -1532,9 +1693,6 @@ msgstr "이전 "
 
 msgid "Lifecycle Path"
 msgstr "라이프 사이클 경로 "
-
-msgid "Library"
-msgstr "라이브러리"
 
 msgid "Prior Lifecycle Environment"
 msgstr "이전 라이프 사이클 환경 "
@@ -1578,9 +1736,6 @@ msgstr "프로필"
 msgid "RPMs"
 msgstr "RPM"
 
-msgid "Simple Content Access"
-msgstr "간단한 콘텐츠 액세스"
-
 msgid "Service Levels"
 msgstr "서비스 수준"
 
@@ -1593,17 +1748,8 @@ msgstr "업스트림 라이프사이클 환경"
 msgid "Upstream Content View"
 msgstr "업스트림 콘텐츠 뷰"
 
-msgid "Username"
-msgstr "사용자 이름"
-
 msgid "SSL CA Credential ID"
 msgstr "SSL CA 인증 정보 ID"
-
-msgid "Enabled"
-msgstr "활성화됨"
-
-msgid "Disabled"
-msgstr "사용 안함"
 
 msgid "Export Sync"
 msgstr "내보내기 동기화"
@@ -1640,6 +1786,9 @@ msgstr "CDN 구성이 업데이트되었습니다."
 
 msgid "Could not update CDN configuration."
 msgstr "CDN 구성을 업데이트할 수 없습니다."
+
+msgid "Organization title to search by"
+msgstr "검색할 조직 이름"
 
 msgid "Source RPM"
 msgstr "소스 RPM"
@@ -1689,9 +1838,6 @@ msgstr "요구 사항 "
 msgid "Provides"
 msgstr "제공 "
 
-msgid "Files"
-msgstr "파일"
-
 msgid "Size"
 msgstr "크기"
 
@@ -1700,9 +1846,6 @@ msgstr "모듈식"
 
 msgid "Package Group Name"
 msgstr "패키지 그룹 이름"
-
-msgid "Repository Name"
-msgstr "리포지터리 이름 "
 
 msgid "Default Packages"
 msgstr "기본 패키지"
@@ -1776,6 +1919,15 @@ msgstr "제품 프록시가 업데이트되었습니다."
 msgid "Could not update the product HTTP Proxy."
 msgstr "제품 HTTP 프록시를 업데이트할 수 없습니다."
 
+msgid "Verify checksum for one or more products"
+msgstr "하나 이상의 제품에 대한 체크섬 확인"
+
+msgid "Verified checksum of product repositories with task %{id}."
+msgstr "작업 %{id}에서 제품 리포지토리의 체크섬이 확인되었습니다."
+
+msgid "Could not verify checksum of repositories in the product"
+msgstr "제품의 리포지토리 체크섬을 확인하지 못했습니다."
+
 msgid "Product destroyed."
 msgstr "제품이 삭제되었습니다."
 
@@ -1818,6 +1970,12 @@ msgstr "덮어쓰기 "
 msgid "Location of the ansible collections requirements.yml file. "
 msgstr "ansible 컬렉션 requirements.yml 파일의 위치. "
 
+msgid "Orphaned"
+msgstr "종속된 패키지가 없음"
+
+msgid "Upstream Repository Name"
+msgstr "업스트림 리포지터리 이름 "
+
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
@@ -1846,9 +2004,6 @@ msgstr "다운로드 정책"
 msgid "Metadata Expiration"
 msgstr "메타데이터 만료"
 
-msgid "Upstream Repository Name"
-msgstr "업스트림 리포지터리 이름 "
-
 msgid "Container Image Tags Filter"
 msgstr "컨테이너 이미지 태그 필터"
 
@@ -1858,11 +2013,23 @@ msgstr "컨테이너 리포지터리 이름"
 msgid "Ignorable Content Units"
 msgstr "무시할 수 있는 콘텐츠 단위"
 
+msgid "Publish Settings"
+msgstr "게시 설정"
+
+msgid "Restrict to architecture"
+msgstr "아키텍처 제한"
+
+msgid "Restrict to OS Version"
+msgstr "OS 버전으로 제한"
+
 msgid "HTTP Proxy"
 msgstr "HTTP 프록시"
 
 msgid "HTTP Proxy Policy"
 msgstr "HTTP 프록시 정책"
+
+msgid "GPG Key Path"
+msgstr "GPG 키 경로"
 
 msgid "Sync"
 msgstr "동기화 "
@@ -1870,23 +2037,8 @@ msgstr "동기화 "
 msgid "Last Sync Date"
 msgstr "마지막 동기화 날짜 "
 
-msgid "Content Counts"
-msgstr "컨텐츠 수 "
-
-msgid "Source RPMS"
-msgstr "소스 RPMS"
-
-msgid "Package Groups"
-msgstr "패키지 그룹 "
-
-msgid "Container Image Manifest Lists"
-msgstr "컨테이너 이미지 매니페스트 목록"
-
-msgid "Container Image Manifests"
-msgstr "컨테이너 이미지 매니페스트"
-
-msgid "Container Image Tags"
-msgstr "컨테이너 이미지 태그"
+msgid "No restriction"
+msgstr "제한 없음"
 
 msgid "yes"
 msgstr "예"
@@ -1926,9 +2078,6 @@ msgstr "기다리는 중"
 
 msgid "Canceled"
 msgstr "취소함"
-
-msgid "Warning"
-msgstr "경고"
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "%{id} 작업에서 리포지토리가 동기화되고 있습니다."
@@ -2063,6 +2212,12 @@ msgstr "리포지토리가 다시 게시되었습니다."
 msgid "Could not republish the repository."
 msgstr "리포지토리를 다시 게시할 수 없습니다."
 
+msgid "Verified checksum of repository with task %{id}."
+msgstr "작업 %{id}에서 리포지토리의 체크섬이 확인되었습니다."
+
+msgid "Could not verify checksum of repository"
+msgstr "리포지토리의 체크섬을 확인하지 못했습니다."
+
 msgid "Reclaim space from an On Demand repository"
 msgstr "주문형 리포지토리에서 공간 회수"
 
@@ -2078,6 +2233,9 @@ msgstr "활성화된 리포지터리 "
 msgid "Registry Name"
 msgstr "레지스트리 이름"
 
+msgid "Enabled"
+msgstr "활성화됨"
+
 msgid "Repository enabled."
 msgstr "리포지토리가 활성화되었습니다."
 
@@ -2090,29 +2248,29 @@ msgstr "리포지토리가 비활성화되었습니다."
 msgid "Could not disable repository"
 msgstr "리포지터리를 비활성화할 수 없습니다 "
 
-msgid "This organization is not eligible for Simple Content Access"
-msgstr "이 조직은 간단한 콘텐츠 액세스에 적합하지 않습니다."
-
-msgid "Simple Content Access Enabled."
-msgstr "간단한 콘텐츠 액세스가 활성화되었습니다."
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr "이 조직에 대해 간단한 콘텐츠 액세스를 활성화할 수 없습니다."
-
-msgid "Simple Content Access Disabled."
-msgstr "간단한 콘텐츠 액세스가 비활성화되었습니다."
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr "이 조직에 대해 간단한 콘텐츠 액세스를 비활성화할 수 없습니다."
-
 msgid "Time UTC"
 msgstr "시간 UTC"
+
+msgid "Contract"
+msgstr "계약 "
+
+msgid "Account"
+msgstr "계정 "
+
+msgid "Support"
+msgstr "지원"
+
+msgid "Quantity"
+msgstr "수량 "
 
 msgid "Consumed"
 msgstr "사용됨 "
 
+msgid "Product Host Count"
+msgstr "제품 호스트 수"
+
 msgid "Physical"
-msgstr "물리적 "
+msgstr "물리적"
 
 msgid "Guests of %s"
 msgstr "%s의 게스트"
@@ -2148,7 +2306,7 @@ msgid "Status Message"
 msgstr "상태 메세지 "
 
 msgid "Time"
-msgstr "시각"
+msgstr "시간 "
 
 msgid "Interval"
 msgstr "간격 "

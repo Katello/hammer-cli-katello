@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-katello package.
+# This file is distributed under the same license as the hammer_cli_katello package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
@@ -10,19 +10,18 @@
 # francis <hackgo@gmail.com>, 2017
 # Carmela Rubiños <carmela.rubinos@gmail.com>, 2017
 # Sergio Ocón-Cárdenas, 2017
-# Amit Upadhye <aupadhye@redhat.com>, 2023
-# Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Bryan Kearney <bryan.kearney@gmail.com>, 2026
+# Amit Upadhye <aupadhye@redhat.com>, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_katello 5.1.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 17:04+0000\n"
+"POT-Creation-Date: 2026-09-22 19:21+0200\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden "
-"<ewoud+transifex@kohlvanwijngaarden.nl>, 2024\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2026\n"
 "Language-Team: Spanish (https://app.transifex.com/foreman/teams/114/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,6 +44,9 @@ msgstr ""
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "Manipular lifecycle_environments en el servidor"
+
+msgid "Manipulate content view environments"
+msgstr ""
 
 msgid "Manipulate products"
 msgstr "Manipular productos"
@@ -100,10 +102,10 @@ msgstr "Ver flujos de módulos"
 msgid "Manipulate source RPMs"
 msgstr ""
 
-msgid "Simple content access commands"
+msgid "Manipulate docker content"
 msgstr ""
 
-msgid "Manipulate docker content"
+msgid "Manipulate flatpak remotes"
 msgstr ""
 
 msgid "ID"
@@ -190,14 +192,41 @@ msgstr ""
 msgid "Could not refresh the alternate content source"
 msgstr ""
 
+msgid "Refresh all alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr ""
+
+msgid "Could not refresh all alternate content sources"
+msgstr ""
+
+msgid "Refresh alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr ""
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr ""
+
+msgid "Destroy alternate content sources"
+msgstr ""
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr ""
+
+msgid "Could not destroy the specified alternate content sources"
+msgstr ""
+
 msgid "Host Limit"
 msgstr "Límite de acogida"
 
-msgid "Lifecycle Environment"
-msgstr "El entorno de ciclo de vida"
+msgid "Content View Environments"
+msgstr ""
 
-msgid "Content View"
-msgstr "Vista del contenido"
+msgid "Multi Content View Environment"
+msgstr ""
 
 msgid "Unlimited"
 msgstr "Ilimitado"
@@ -205,11 +234,35 @@ msgstr "Ilimitado"
 msgid "%{consumed} of %{limit}"
 msgstr "%{consumed} de %{limit}"
 
-msgid "Auto Attach"
-msgstr "Fijación automática"
-
 msgid "Release Version"
 msgstr "Versión del lanzamiento"
+
+msgid "Content View Environment Labels"
+msgstr ""
+
+msgid "Organization"
+msgstr "Organización"
+
+msgid "Content View"
+msgstr "Vista del contenido"
+
+msgid "Version"
+msgstr "Versión"
+
+msgid "Content View version Id"
+msgstr ""
+
+msgid "Composite"
+msgstr "Compuesto"
+
+msgid "Rolling"
+msgstr ""
+
+msgid "Content View Environment id"
+msgstr ""
+
+msgid "Lifecycle environment"
+msgstr ""
 
 msgid "Associated Hosts"
 msgstr ""
@@ -238,9 +291,6 @@ msgstr ""
 msgid "Purpose Role"
 msgstr ""
 
-msgid "Purpose Addons"
-msgstr ""
-
 msgid "Activation key created."
 msgstr "Clave de activación creada."
 
@@ -267,54 +317,6 @@ msgstr "Clave de activación borrada."
 
 msgid "Could not delete the activation key"
 msgstr "No se ha podido borrar la llave de activación"
-
-msgid "List associated subscriptions"
-msgstr "Mostrar suscripciones asociadas"
-
-msgid "Attached"
-msgstr "Adjuntado"
-
-msgid "Quantity"
-msgstr "Cantidad"
-
-msgid "Start Date"
-msgstr "Fecha de inicio"
-
-msgid "End Date"
-msgstr "Fecha de finalización"
-
-msgid "Support"
-msgstr "Soporte"
-
-msgid "Contract"
-msgstr "Contrato"
-
-msgid "Account"
-msgstr "Cuenta"
-
-msgid "ID of the activation key"
-msgstr "ID de la clave de activación"
-
-msgid "Activation key name to search by"
-msgstr "Nombre de llave de activación para realizar la búsqueda"
-
-msgid "Subscription added to activation key."
-msgstr "Suscripción añadida a la clave de activación."
-
-msgid "Could not add subscription to activation key"
-msgstr "No se ha podido añadir la suscripción a la llave de activación"
-
-msgid "Remove subscription"
-msgstr "Eliminar suscripción"
-
-msgid "ID of subscription"
-msgstr "ID de suscripción"
-
-msgid "Subscription removed from activation key."
-msgstr "Suscripción eliminada de la clave de activación."
-
-msgid "Could not remove subscription from activation key"
-msgstr "No se ha podido eliminar la suscripción de la llave de activación"
 
 msgid "List associated host collections"
 msgstr "Mostrar recopilaciones de hosts asociados"
@@ -364,9 +366,6 @@ msgstr "No se ha podido eliminar el host"
 msgid "Manage the capsule content"
 msgstr "Gestionar el contenido de Capsule"
 
-msgid "Organization"
-msgstr "Organización"
-
 msgid "Lifecycle environment successfully added to the capsule."
 msgstr "Entorno del ciclo de vida añadido correctamente a la cápsula."
 
@@ -382,11 +381,29 @@ msgstr "Entorno del ciclo de vida retirado con éxito de la cápsula."
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "No se ha podido eliminar el entorno del ciclo de vida de Capsule"
 
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr ""
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr ""
+
 msgid "Capsule content is being synchronized in task %{id}."
 msgstr "El contenido de la cápsula se está sincronizando en la tarea %{id}."
 
 msgid "Could not synchronize capsule content"
 msgstr "No se ha podido sincronizar el contenido de Capsule"
+
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr ""
+
+msgid "Could not update capsule content counts"
+msgstr ""
+
+msgid "Capsule content checksum is being verified in task %{id}."
+msgstr ""
+
+msgid "Could not verify capsule content checksum"
+msgstr ""
 
 msgid "Last sync"
 msgstr "Última sincronización"
@@ -421,32 +438,65 @@ msgstr "Entornos de ciclo de vida"
 msgid "Content Views"
 msgstr "Vistas de contenido"
 
-msgid "Composite"
-msgstr "Compuesto"
-
 msgid "Last Published"
 msgstr "Última publicación"
 
-msgid "Content"
-msgstr "Contenido"
+msgid "Repositories"
+msgstr "Repositorios"
 
-msgid "Hosts"
-msgstr "Hosts"
+msgid "Repository ID"
+msgstr "ID de repositorio"
 
-msgid "Yum repos"
-msgstr "Repositorios Yum"
+msgid "Repository Name"
+msgstr "Nombre del repositorio"
 
-msgid "Container Image repos"
-msgstr "Repositorios de imágenes de contenedores"
+msgid "Content Counts"
+msgstr "Recuentos de contenido"
+
+msgid "Warning"
+msgstr ""
 
 msgid "Packages"
 msgstr "Paquetes"
 
-msgid "Package groups"
+msgid "SRPMs"
+msgstr ""
+
+msgid "Module Streams"
+msgstr "Corriente de módulo"
+
+msgid "Package Groups"
 msgstr "Grupos de paquetes"
 
 msgid "Errata"
 msgstr "Erratas"
+
+msgid "Debian Packages"
+msgstr ""
+
+msgid "Container Tags"
+msgstr ""
+
+msgid "Container Manifests"
+msgstr ""
+
+msgid "Container Manifest Lists"
+msgstr ""
+
+msgid "Files"
+msgstr "Archivos"
+
+msgid "Ansible Collections"
+msgstr "Colecciones de Ansible"
+
+msgid "OSTree Refs"
+msgstr ""
+
+msgid "Python Packages"
+msgstr ""
+
+msgid "Content view must be synced to see content counts"
+msgstr ""
 
 msgid "Content Source name"
 msgstr ""
@@ -490,6 +540,9 @@ msgstr "Tipo de contenido"
 
 msgid "Product"
 msgstr "Producto"
+
+msgid "Content"
+msgstr "Contenido"
 
 msgid "Content Credential created."
 msgstr ""
@@ -690,6 +743,12 @@ msgstr "Actualización de la anulación de contenido."
 msgid "Could not update content override"
 msgstr "No se ha podido actualizar el contenido"
 
+msgid "You must use --force to set an override other than 'enabled'"
+msgstr ""
+
+msgid "Force the override. Required for overrides other than 'enabled'"
+msgstr ""
+
 msgid "Label of the content"
 msgstr "Etiqueta del contenido"
 
@@ -710,9 +769,6 @@ msgstr ""
 msgid "Remove a content override"
 msgstr "Eliminar una modificación de contenido"
 
-msgid "Version"
-msgstr "Versión"
-
 msgid "Filename"
 msgstr "Archivo"
 
@@ -731,11 +787,23 @@ msgstr ""
 msgid "Yum Repositories"
 msgstr "Repositorios Yum"
 
+msgid "File Repositories"
+msgstr "Repositorios de archivos"
+
 msgid "Container Image Repositories"
 msgstr "Repositorios de imágenes de contenedores"
 
 msgid "OSTree Repositories"
 msgstr "Repositorios OSTree"
+
+msgid "Ansible Repositories"
+msgstr ""
+
+msgid "Debian Repositories"
+msgstr ""
+
+msgid "Python Repositories"
+msgstr ""
 
 msgid "Versions"
 msgstr "Versiones"
@@ -745,6 +813,15 @@ msgstr "Publicado"
 
 msgid "Components"
 msgstr "Componentes"
+
+msgid "Latest version"
+msgstr ""
+
+msgid "Not yet published"
+msgstr "Aún no publicado"
+
+msgid "Always update to the latest"
+msgstr ""
 
 msgid "Activation Keys"
 msgstr "Llaves de activación"
@@ -757,6 +834,9 @@ msgstr "No se ha podido crear la vista de contenido"
 
 msgid "Create a composite content view"
 msgstr "Crear una vista de contenido compuesta"
+
+msgid "Create a rolling content view"
+msgstr ""
 
 msgid "Designate this Content View for importing from upstream servers only."
 msgstr ""
@@ -916,17 +996,72 @@ msgstr "Componentes eliminados de la vista de contenido."
 msgid "Could not remove the components"
 msgstr "No se han podido extraer los componentes"
 
+msgid "Lifecycle Environment"
+msgstr "El entorno de ciclo de vida"
+
+msgid "Default"
+msgstr ""
+
+msgid "Hosts Count"
+msgstr ""
+
+msgid "Activation Keys Count"
+msgstr ""
+
+msgid "Hostgroups Count"
+msgstr ""
+
+msgid "Created At"
+msgstr ""
+
+msgid "Updated At"
+msgstr ""
+
+msgid "Organization Id"
+msgstr ""
+
+msgid "Organization Label"
+msgstr ""
+
+msgid "Content View Label"
+msgstr "Etiqueta de vista de contenido"
+
+msgid "Default Content View"
+msgstr ""
+
+msgid "Lifecycle Environment Id"
+msgstr ""
+
+msgid "Lifecycle Environment Label"
+msgstr ""
+
+msgid "Library"
+msgstr "Biblioteca"
+
+msgid "Hostgroups"
+msgstr ""
+
+msgid "Title"
+msgstr "Título"
+
 msgid "Content View numeric identifier"
 msgstr "Identificador numérico de la vista de contenido"
 
 msgid "Content View name"
 msgstr "Contenido Nombre de la vista"
 
-msgid "count of unused versions to keep"
-msgstr "recuento de versiones no utilizadas que deben conservarse"
+msgid "(deprecated) Number of versions to keep"
+msgstr ""
 
-msgid "Invalid value for --count option: value must be 0 or greater."
-msgstr "Valor no válido para la opción --count: el valor debe ser 0 o mayor."
+msgid "Number of unused versions to keep"
+msgstr ""
+
+msgid "Invalid value for --versions-to-keep: value must be 0 or greater."
+msgstr ""
+
+msgid ""
+"The --count option is deprecated and will be removed in the next release."
+msgstr ""
 
 msgid "No versions to delete."
 msgstr "No hay versiones que eliminar."
@@ -944,16 +1079,49 @@ msgstr "Versión '%{version}' de la vista de contenido '%{view}' eliminada."
 msgid "Content View Name"
 msgstr "Nombre de vista de contenido"
 
-msgid "Content View Label"
-msgstr "Etiqueta de vista de contenido"
-
-msgid "Repositories"
-msgstr "Repositorios"
-
 msgid "Has Applied Filters"
 msgstr ""
 
 msgid "Applied Filters"
+msgstr ""
+
+msgid "Inclusion"
+msgstr "Inclusión"
+
+msgid "Original packages"
+msgstr ""
+
+msgid "Original module streams"
+msgstr ""
+
+msgid "Rules"
+msgstr "Reglas"
+
+msgid "UUID"
+msgstr ""
+
+msgid "Module stream Id"
+msgstr ""
+
+msgid "Types"
+msgstr "Tipos"
+
+msgid "Architecture"
+msgstr "Arquitectura"
+
+msgid "Content view filter Id"
+msgstr ""
+
+msgid "Errata Id"
+msgstr ""
+
+msgid "Date type"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
 msgstr ""
 
 msgid "Dependency Solving"
@@ -964,6 +1132,13 @@ msgstr "Content View Version se vuelve a publicar con la tarea %{id}."
 
 msgid "Could not republish the Content View"
 msgstr "No se ha podido volver a publicar la vista de contenido"
+
+msgid ""
+"Verifying checksum of Content View Version repositories with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repositories in the Content View Version"
+msgstr ""
 
 msgid "Content view is being promoted with task %{id}."
 msgstr "La vista de contenido se está promocionando con la tarea %{id}."
@@ -1047,9 +1222,6 @@ msgstr "Uuid"
 msgid "checksum"
 msgstr ""
 
-msgid "Architecture"
-msgstr "Arquitectura"
-
 msgid "Nav"
 msgstr ""
 
@@ -1083,9 +1255,6 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-msgid "Repository ID"
-msgstr "ID de repositorio"
-
 msgid "Docker Manifest ID"
 msgstr ""
 
@@ -1094,9 +1263,6 @@ msgstr ""
 
 msgid "Errata ID"
 msgstr "ID de erratas"
-
-msgid "Title"
-msgstr "Título"
 
 msgid "Issued"
 msgstr "Publicado"
@@ -1113,9 +1279,6 @@ msgstr "Soltar"
 msgid "Solution"
 msgstr "Solución"
 
-msgid "Module Streams"
-msgstr "Corriente de módulo"
-
 msgid "Stream"
 msgstr "Corriente"
 
@@ -1125,20 +1288,20 @@ msgstr "Suma de comprobación"
 msgid "Filter ID"
 msgstr "ID de filtro"
 
-msgid "Inclusion"
-msgstr "Inclusión"
-
-msgid "Rules"
-msgstr "Reglas"
-
 msgid "Minimum Version"
 msgstr "Versión mínima"
 
 msgid "Maximum Version"
 msgstr "Versión máxima"
 
-msgid "Types"
-msgstr "Tipos"
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+msgid "Module Stream ID"
+msgstr ""
 
 msgid "Created"
 msgstr "Creado"
@@ -1187,6 +1350,78 @@ msgstr "Regla de filtro eliminada."
 
 msgid "Could not delete the filter rule"
 msgstr "No se ha podido borrar la regla de filtro"
+
+msgid "Username"
+msgstr ""
+
+msgid "Registry URL"
+msgstr "URL del registro"
+
+msgid "Flatpak index URL"
+msgstr ""
+
+msgid "Flatpak Remote created."
+msgstr ""
+
+msgid "Could not create the Flatpak Remote."
+msgstr ""
+
+msgid "Flatpak Remote updated."
+msgstr ""
+
+msgid "Could not update the Flatpak Remote."
+msgstr ""
+
+msgid "Flatpak Remote deleted."
+msgstr ""
+
+msgid "Could not delete the Flatpak Remote."
+msgstr ""
+
+msgid "Flatpak remote is being scanned in task %<id>s."
+msgstr ""
+
+msgid "Could not scan the Flatpak remote"
+msgstr ""
+
+msgid "View and manage flatpak remote repositories"
+msgstr ""
+
+msgid "Flatpak Remote ID"
+msgstr ""
+
+msgid "Flatpak Remote Name"
+msgstr ""
+
+msgid "Flatpak Remote URL"
+msgstr ""
+
+msgid "Manifests"
+msgstr ""
+
+msgid "Manifest Name"
+msgstr ""
+
+msgid "Manifest Digest"
+msgstr ""
+
+msgid "Manifest tags"
+msgstr ""
+
+msgid "Flatpak remote repository is being mirrored to product in task %<id>s."
+msgstr ""
+
+msgid "Could not mirror the Flatpak remote repository"
+msgstr ""
+
+msgid "Running image"
+msgstr ""
+
+msgid "Running image digest"
+msgstr ""
+
+msgid "Host count"
+msgstr ""
 
 msgid "Limit"
 msgstr "Límite"
@@ -1251,109 +1486,8 @@ msgstr "El anfitrión o anfitriones han sido eliminados."
 msgid "Could not remove host(s)"
 msgstr "No se ha podido eliminar el host"
 
-msgid "Manipulate errata for a host collection"
-msgstr "Manipular las erratas de una colección huésped"
-
-msgid "Install errata on content hosts contained within a host collection"
-msgstr ""
-"Instalar erratas en hosts de contenido incluidos en una colección de hosts"
-
-msgid "Successfully scheduled installation of errata."
-msgstr "Programada con éxito la instalación de la fe de erratas."
-
-msgid "Could not schedule installation of errata"
-msgstr "No se ha podido programar la instalación de erratas"
-
-msgid "List of Errata to install"
-msgstr "Lista de erratas a instalar"
-
-msgid "Manipulate packages for a host collection"
-msgstr "Manipular paquetes para una colección de hosts"
-
-msgid "comma-separated list of packages to install"
-msgstr "lista separada por comas de los paquetes a instalar"
-
-msgid "Install packages on content hosts contained within a host collection"
-msgstr ""
-"Instalar paquetes en hosts de contenido incluidos en una colección de hosts"
-
-msgid "Successfully scheduled installation of package(s)."
-msgstr "Instalación de paquete(s) programada con éxito."
-
-msgid "Could not schedule installation of package(s)"
-msgstr "No se ha podido programar la instalación de paquete(s)"
-
-msgid "Update packages on content hosts contained within a host collection"
-msgstr ""
-"Actualizar paquetes en hosts de contenido incluidos en una colección de hosts"
-
-msgid "Successfully scheduled update of package(s)."
-msgstr "Actualización de paquete(s) programada con éxito."
-
-msgid "Could not schedule update of package(s)"
-msgstr "No se ha podido programar la actualización de los paquetes"
-
-msgid "Remove packages on content hosts contained within a host collection"
-msgstr ""
-"Eliminar paquetes en hosts de contenido incluidos en una colección de hosts"
-
-msgid "Successfully scheduled removal of package(s)."
-msgstr "Programada con éxito la retirada de paquete(s)."
-
-msgid "Could not schedule removal of package(s)"
-msgstr "No se ha podido programar la retirada de paquetes"
-
-msgid "Manipulate package-groups for a host collection"
-msgstr "Manipular grupos de paquetes para una colección de hosts"
-
-msgid "comma-separated list of package-groups to install"
-msgstr "lista separada por comas de los grupos de paquetes a instalar"
-
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
-msgstr ""
-"Instalación de grupos de paquetes en hosts de contenido incluidos en una "
-"colección de hosts"
-
-msgid "Successfully scheduled installation of package-group(s)."
-msgstr ""
-"Se ha programado correctamente la instalación de los grupos de paquetes."
-
-msgid "Could not schedule installation of package-group(s)"
-msgstr "No se ha podido programar la instalación de grupo(s) de paquetes"
-
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
-msgstr ""
-"Actualización de grupos de paquetes en hosts de contenido incluidos en una "
-"colección de hosts"
-
-msgid "Successfully scheduled update of package-groups(s)."
-msgstr "Actualización de grupos de paquetes programada con éxito."
-
-msgid "Could not schedule update of package-group(s)"
-msgstr "No se ha podido programar la actualización de los grupos de paquetes."
-
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
-msgstr ""
-"Eliminar grupos de paquetes en hosts de contenido incluidos en una colección "
-"de hosts"
-
-msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "Programada con éxito la eliminación de grupos de paquetes."
-
-msgid "Could not schedule removal of package-group(s)"
-msgstr "No se ha podido programar la eliminación de los grupos de paquetes."
-
 msgid "Arch"
 msgstr "Arquitectura"
-
-msgid "Errata is being applied with task %{id}."
-msgstr "La errata se está aplicando con la tarea %{id}."
-
-msgid "Could not apply errata"
-msgstr "No se ha podido aplicar la fe de erratas"
 
 msgid "Erratum ID"
 msgstr "Fe de erratas"
@@ -1367,19 +1501,43 @@ msgstr ""
 msgid "Could not recalculate errata"
 msgstr "No se ha podido recalcular la fe de erratas"
 
+msgid "Staged image"
+msgstr ""
+
+msgid "Staged image digest"
+msgstr ""
+
+msgid "Available image"
+msgstr ""
+
+msgid "Available image digest"
+msgstr ""
+
+msgid "Rollback image"
+msgstr ""
+
+msgid "Rollback image digest"
+msgstr ""
+
 msgid "Trace Status"
 msgstr ""
+
+msgid "Last Checkin"
+msgstr "Último registro"
 
 msgid "Content Information"
 msgstr "Información sobre el contenido"
 
-msgid "Content view environments"
-msgstr ""
-
 msgid "Content view"
 msgstr ""
 
-msgid "Lifecycle environment"
+msgid "Composite Content View"
+msgstr ""
+
+msgid "Rolling Content View"
+msgstr ""
+
+msgid "Lifecycle Environment Name"
 msgstr ""
 
 msgid "Kickstart Repository"
@@ -1400,12 +1558,6 @@ msgstr "Corrección de errores"
 msgid "Subscription Information"
 msgstr "Información de suscripción"
 
-msgid "Last Checkin"
-msgstr "Último registro"
-
-msgid "Autoheal"
-msgstr "AutoHeal"
-
 msgid "Registered To"
 msgstr "Registrado en"
 
@@ -1415,7 +1567,21 @@ msgstr "Registrado en"
 msgid "Registered by Activation Keys"
 msgstr "Registrado por claves de activación"
 
+msgid "bootc Image Information"
+msgstr ""
+
 msgid "Nvra"
+msgstr ""
+
+msgid "Persistence"
+msgstr ""
+
+msgid ""
+"Generate a Containerfile RUN command from transiently installed packages on "
+"image mode hosts"
+msgstr ""
+
+msgid "No transient packages found"
 msgstr ""
 
 msgid "Host unregistered."
@@ -1429,33 +1595,6 @@ msgstr "Host registrado correctamente."
 
 msgid "Failed to register host"
 msgstr "No se ha podido registrar el host"
-
-msgid "Subscription attached to the host successfully."
-msgstr "Suscripción conectada al host correctamente."
-
-msgid "Failed to attach subscriptions to the host"
-msgstr "Error al adjuntar suscripciones al host"
-
-msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "Cantidad de suscripciones a añadir. Por defecto 1"
-
-msgid "Auto attached subscriptions to the host successfully."
-msgstr "Suscripciones adjuntas automáticamente al host con éxito."
-
-msgid "Failed to auto attach subscriptions to the host"
-msgstr "Error al adjuntar suscripciones automáticamente al host"
-
-msgid "Subscription removed from the host successfully."
-msgstr "Suscripción eliminada correctamente del host."
-
-msgid "Failed to remove subscriptions from the host"
-msgstr "Error al eliminar suscripciones del host"
-
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
-msgstr ""
-"Eliminar la primera instancia de una suscripción con id y cantidad "
-"coincidentes"
 
 msgid "Content View id"
 msgstr ""
@@ -1492,6 +1631,9 @@ msgstr "Nombre de organización para realizar la búsqueda"
 
 msgid "Organization label to search by"
 msgstr "Etiqueta de organización para realizar la búsqueda"
+
+msgid "Activation key name to search by"
+msgstr "Nombre de llave de activación para realizar la búsqueda"
 
 msgid "Capsule name to search by"
 msgstr "Nombre de Capsule para realizar la búsqueda"
@@ -1535,6 +1677,9 @@ msgstr "Nombre de la tarea para realizar la búsqueda"
 msgid "Content view version number"
 msgstr "Número de versión de la vista de contenido"
 
+msgid "Flatpak remote name to search by"
+msgstr ""
+
 msgid "Name to search by"
 msgstr "Nombre a buscar"
 
@@ -1546,9 +1691,6 @@ msgstr "Anterior"
 
 msgid "Lifecycle Path"
 msgstr "Ruta de ciclo de vida"
-
-msgid "Library"
-msgstr "Biblioteca"
 
 msgid "Prior Lifecycle Environment"
 msgstr "Entorno del ciclo de vida anterior"
@@ -1592,9 +1734,6 @@ msgstr "Perfiles"
 msgid "RPMs"
 msgstr "RPMs"
 
-msgid "Simple Content Access"
-msgstr "Acceso simple al contenido"
-
 msgid "Service Levels"
 msgstr "Niveles de servicio"
 
@@ -1607,16 +1746,7 @@ msgstr ""
 msgid "Upstream Content View"
 msgstr ""
 
-msgid "Username"
-msgstr ""
-
 msgid "SSL CA Credential ID"
-msgstr ""
-
-msgid "Enabled"
-msgstr "Habilitado"
-
-msgid "Disabled"
 msgstr ""
 
 msgid "Export Sync"
@@ -1653,6 +1783,9 @@ msgid "Updated CDN configuration."
 msgstr ""
 
 msgid "Could not update CDN configuration."
+msgstr ""
+
+msgid "Organization title to search by"
 msgstr ""
 
 msgid "Source RPM"
@@ -1703,9 +1836,6 @@ msgstr "Requiere"
 msgid "Provides"
 msgstr "Proporciona"
 
-msgid "Files"
-msgstr "Archivos"
-
 msgid "Size"
 msgstr ""
 
@@ -1714,9 +1844,6 @@ msgstr ""
 
 msgid "Package Group Name"
 msgstr "Nombre del grupo de paquetes"
-
-msgid "Repository Name"
-msgstr "Nombre del repositorio"
 
 msgid "Default Packages"
 msgstr "Paquetes por defecto"
@@ -1790,6 +1917,15 @@ msgstr ""
 msgid "Could not update the product HTTP Proxy."
 msgstr ""
 
+msgid "Verify checksum for one or more products"
+msgstr ""
+
+msgid "Verified checksum of product repositories with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repositories in the product"
+msgstr ""
+
 msgid "Product destroyed."
 msgstr "Producto destruido."
 
@@ -1833,6 +1969,12 @@ msgstr "Sobrescribir"
 msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
+msgid "Orphaned"
+msgstr ""
+
+msgid "Upstream Repository Name"
+msgstr "Nombre del repositorio"
+
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
@@ -1859,9 +2001,6 @@ msgstr "Descargar Política"
 msgid "Metadata Expiration"
 msgstr ""
 
-msgid "Upstream Repository Name"
-msgstr "Nombre del repositorio"
-
 msgid "Container Image Tags Filter"
 msgstr "Contenedor Imagen Etiquetas Filtro"
 
@@ -1871,10 +2010,22 @@ msgstr "Contenedor Nombre del repositorio"
 msgid "Ignorable Content Units"
 msgstr "Unidades de contenido ignorable"
 
+msgid "Publish Settings"
+msgstr ""
+
+msgid "Restrict to architecture"
+msgstr "Restringir a la arquitectura"
+
+msgid "Restrict to OS Version"
+msgstr ""
+
 msgid "HTTP Proxy"
 msgstr ""
 
 msgid "HTTP Proxy Policy"
+msgstr ""
+
+msgid "GPG Key Path"
 msgstr ""
 
 msgid "Sync"
@@ -1883,23 +2034,8 @@ msgstr "Sincronizar"
 msgid "Last Sync Date"
 msgstr "Última fecha de sincronización"
 
-msgid "Content Counts"
-msgstr "Recuentos de contenido"
-
-msgid "Source RPMS"
-msgstr "Fuente RPMS"
-
-msgid "Package Groups"
-msgstr "Grupos de paquetes"
-
-msgid "Container Image Manifest Lists"
-msgstr "Listas de manifiestos de imágenes de contenedores"
-
-msgid "Container Image Manifests"
-msgstr "Manifiestos de imágenes de contenedores"
-
-msgid "Container Image Tags"
-msgstr "Etiquetas de imagen de contenedor"
+msgid "No restriction"
+msgstr ""
 
 msgid "yes"
 msgstr "sí"
@@ -1939,9 +2075,6 @@ msgstr "Esperando"
 
 msgid "Canceled"
 msgstr "Cancelado"
-
-msgid "Warning"
-msgstr ""
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "El repositorio se está sincronizando en la tarea %{id}."
@@ -2073,6 +2206,12 @@ msgstr ""
 msgid "Could not republish the repository."
 msgstr ""
 
+msgid "Verified checksum of repository with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repository"
+msgstr ""
+
 msgid "Reclaim space from an On Demand repository"
 msgstr ""
 
@@ -2088,6 +2227,9 @@ msgstr "Repositorios habilitados"
 msgid "Registry Name"
 msgstr "Nombre de registro"
 
+msgid "Enabled"
+msgstr "Habilitado"
+
 msgid "Repository enabled."
 msgstr "Repositorio habilitado."
 
@@ -2100,26 +2242,26 @@ msgstr "Repositorio desactivado."
 msgid "Could not disable repository"
 msgstr "No se ha podido inhabilitar el repositorio"
 
-msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
-
-msgid "Simple Content Access Enabled."
-msgstr ""
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Simple Content Access Disabled."
-msgstr ""
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
-
 msgid "Time UTC"
 msgstr ""
 
+msgid "Contract"
+msgstr "Contrato"
+
+msgid "Account"
+msgstr "Cuenta"
+
+msgid "Support"
+msgstr "Soporte"
+
+msgid "Quantity"
+msgstr "Cantidad"
+
 msgid "Consumed"
 msgstr "Consumidas"
+
+msgid "Product Host Count"
+msgstr ""
 
 msgid "Physical"
 msgstr "Físico"

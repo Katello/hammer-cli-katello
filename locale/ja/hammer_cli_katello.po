@@ -1,25 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-katello package.
+# This file is distributed under the same license as the hammer_cli_katello package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
 # 山田 修司 🍣 Shuji Yamada <uzy.exe@gmail.com>, 2017
 # e93ed3aa97dec2eb31063731872555fc_1460a05 <71305a0095156d8e18373a5b7cfeb79e_8587>, 2017
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2017
-# Bryan Kearney <bryan.kearney@gmail.com>, 2023
-# Amit Upadhye <aupadhye@redhat.com>, 2023
-# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
+# Amit Upadhye <aupadhye@redhat.com>, 2026
+# Bryan Kearney <bryan.kearney@gmail.com>, 2026
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2026
+# Ondřej Gajdušek, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_katello 5.1.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 17:04+0000\n"
+"POT-Creation-Date: 2026-09-22 19:21+0200\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden "
-"<ewoud+transifex@kohlvanwijngaarden.nl>, 2025\n"
+"Last-Translator: Ondřej Gajdušek, 2026\n"
 "Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,6 +41,9 @@ msgstr "サーバーでのコンテンツ認証情報の操作"
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "サーバーでの lifecycle_environments の操作"
+
+msgid "Manipulate content view environments"
+msgstr "コンテンツビュー環境を操作する"
 
 msgid "Manipulate products"
 msgstr "製品の操作"
@@ -96,11 +99,11 @@ msgstr "モジュールストリームの表示"
 msgid "Manipulate source RPMs"
 msgstr "ソース RPM の操作"
 
-msgid "Simple content access commands"
-msgstr "Simple Content Access コマンド"
-
 msgid "Manipulate docker content"
 msgstr "Docker コンテンツの操作"
+
+msgid "Manipulate flatpak remotes"
+msgstr "Flatpak リモートを操作する"
 
 msgid "ID"
 msgstr "ID"
@@ -142,7 +145,7 @@ msgid "SSL CA Cert"
 msgstr "SSL CA 証明書"
 
 msgid "Id"
-msgstr "ID"
+msgstr "Id"
 
 msgid "SSL Client Cert"
 msgstr "SSL クライアント証明書"
@@ -186,14 +189,41 @@ msgstr "タスク %{id} で代替コンテンツソースを更新中です。"
 msgid "Could not refresh the alternate content source"
 msgstr "代替コンテンツソースを更新できませんでした"
 
+msgid "Refresh all alternate content sources"
+msgstr "すべての代替コンテンツソースの更新"
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr "すべての代替コンテンツソースを正常に更新しました"
+
+msgid "Could not refresh all alternate content sources"
+msgstr "すべての代替コンテンツソースを更新できませんでした"
+
+msgid "Refresh alternate content sources"
+msgstr "代替コンテンツソースの更新"
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr "指定された代替コンテンツソースを正常に更新しました"
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr "指定された代替コンテンツソースを更新できませんでした"
+
+msgid "Destroy alternate content sources"
+msgstr "代替コンテンツソースを破棄する"
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr "指定された代替コンテンツソースを正常に破棄しました"
+
+msgid "Could not destroy the specified alternate content sources"
+msgstr "指定された代替コンテンツソースを破棄できませんでした"
+
 msgid "Host Limit"
 msgstr "ホストの制限"
 
-msgid "Lifecycle Environment"
-msgstr "ライフサイクル環境"
+msgid "Content View Environments"
+msgstr "コンテンツビュー環境"
 
-msgid "Content View"
-msgstr "コンテンツビュー"
+msgid "Multi Content View Environment"
+msgstr "マルチコンテンツビュー環境"
 
 msgid "Unlimited"
 msgstr "無制限"
@@ -201,11 +231,35 @@ msgstr "無制限"
 msgid "%{consumed} of %{limit}"
 msgstr "%{consumed} / %{limit}"
 
-msgid "Auto Attach"
-msgstr "自動アタッチ"
-
 msgid "Release Version"
 msgstr "リリースバージョン"
+
+msgid "Content View Environment Labels"
+msgstr "コンテンツビュー環境ラベル"
+
+msgid "Organization"
+msgstr "組織"
+
+msgid "Content View"
+msgstr "コンテンツビュー"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "Content View version Id"
+msgstr "コンテンツビューバージョン ID"
+
+msgid "Composite"
+msgstr "複合"
+
+msgid "Rolling"
+msgstr "ローリング"
+
+msgid "Content View Environment id"
+msgstr "コンテンツビュー環境 ID"
+
+msgid "Lifecycle environment"
+msgstr "ライフサイクル環境"
 
 msgid "Associated Hosts"
 msgstr "関連付けられたホスト"
@@ -234,9 +288,6 @@ msgstr "目的の用途"
 msgid "Purpose Role"
 msgstr "目的のロール"
 
-msgid "Purpose Addons"
-msgstr "目的のアドオン"
-
 msgid "Activation key created."
 msgstr "アクティベーションキーが作成されました。"
 
@@ -263,54 +314,6 @@ msgstr "アクティベーションキーが削除されました。"
 
 msgid "Could not delete the activation key"
 msgstr "アクティベーションキーを削除できませんでした"
-
-msgid "List associated subscriptions"
-msgstr "関連付けられたサブスクリプションを一覧表示します"
-
-msgid "Attached"
-msgstr "割り当て済み"
-
-msgid "Quantity"
-msgstr "数量"
-
-msgid "Start Date"
-msgstr "開始日"
-
-msgid "End Date"
-msgstr "終了日"
-
-msgid "Support"
-msgstr "サポート"
-
-msgid "Contract"
-msgstr "コントラクト"
-
-msgid "Account"
-msgstr "アカウント"
-
-msgid "ID of the activation key"
-msgstr "アクティベーションキーの ID"
-
-msgid "Activation key name to search by"
-msgstr "検索するアクティベーションキー名"
-
-msgid "Subscription added to activation key."
-msgstr "サブスクリプションがアクティベーションキーに追加されました。"
-
-msgid "Could not add subscription to activation key"
-msgstr "サブスクリプションをアクティベーションキーに追加できませんでした"
-
-msgid "Remove subscription"
-msgstr "サブスクリプションの削除"
-
-msgid "ID of subscription"
-msgstr "サブスクリプション ID"
-
-msgid "Subscription removed from activation key."
-msgstr "サブスクリプションがアクティベーションキーから削除されました。"
-
-msgid "Could not remove subscription from activation key"
-msgstr "サブスクリプションをアクティベーションキーから削除できませんでした"
 
 msgid "List associated host collections"
 msgstr "関連付けられているホストコレクションを一覧表示します"
@@ -360,9 +363,6 @@ msgstr "ホストを削除できませんでした"
 msgid "Manage the capsule content"
 msgstr "Capsule コンテンツを管理します"
 
-msgid "Organization"
-msgstr "組織"
-
 msgid "Lifecycle environment successfully added to the capsule."
 msgstr "ライフサイクル環境が Capsule に正常に追加されました。"
 
@@ -378,17 +378,35 @@ msgstr "ライフサイクル環境が Capsule から正常に削除されまし
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "ライフサイクル環境を Capsule から削除できませんでした"
 
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr "タスク %{id} で Capsule の領域回収が開始されました。"
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr "Capsule 領域回収は失敗しました。"
+
 msgid "Capsule content is being synchronized in task %{id}."
 msgstr "タスク %{id} で Capsule コンテンツが同期されています。"
 
 msgid "Could not synchronize capsule content"
 msgstr "Capsule コンテンツを同期できませんでした"
 
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr "タスク %{id} で Capsule のコンテンツ数が更新されています。"
+
+msgid "Could not update capsule content counts"
+msgstr "Capsule のコンテンツ数を更新できませんでした"
+
+msgid "Capsule content checksum is being verified in task %{id}."
+msgstr "タスク %{id} で Capsule のコンテンツチェックサムが検証されています。"
+
+msgid "Could not verify capsule content checksum"
+msgstr "Capsule のコンテンツチェックサムを検証できませんでした"
+
 msgid "Last sync"
 msgstr "最終同期"
 
 msgid "Status"
-msgstr "ステータス"
+msgstr "状態"
 
 msgid "Currently running sync tasks"
 msgstr "現在実行中の同期タスク"
@@ -417,32 +435,65 @@ msgstr "ライフサイクル環境"
 msgid "Content Views"
 msgstr "コンテンツビュー"
 
-msgid "Composite"
-msgstr "複合"
-
 msgid "Last Published"
 msgstr "最終公開日"
 
-msgid "Content"
-msgstr "コンテンツ"
+msgid "Repositories"
+msgstr "リポジトリー"
 
-msgid "Hosts"
-msgstr "ホスト"
+msgid "Repository ID"
+msgstr "リポジトリー ID"
 
-msgid "Yum repos"
-msgstr "Yum レポジトリー"
+msgid "Repository Name"
+msgstr "リポジトリー名"
 
-msgid "Container Image repos"
-msgstr "コンテナーイメージのレポジトリー"
+msgid "Content Counts"
+msgstr "コンテンツ数"
+
+msgid "Warning"
+msgstr "警告"
 
 msgid "Packages"
 msgstr "パッケージ"
 
-msgid "Package groups"
+msgid "SRPMs"
+msgstr "SRPMs"
+
+msgid "Module Streams"
+msgstr "モジュールストリーム"
+
+msgid "Package Groups"
 msgstr "パッケージグループ"
 
 msgid "Errata"
 msgstr "エラータ"
+
+msgid "Debian Packages"
+msgstr "Debian パッケージ"
+
+msgid "Container Tags"
+msgstr "コンテナータグ"
+
+msgid "Container Manifests"
+msgstr "コンテナーマニフェスト"
+
+msgid "Container Manifest Lists"
+msgstr "コンテナーマニフェストのリスト"
+
+msgid "Files"
+msgstr "ファイル"
+
+msgid "Ansible Collections"
+msgstr "Ansible コレクション"
+
+msgid "OSTree Refs"
+msgstr "OSTree 参照"
+
+msgid "Python Packages"
+msgstr "Python パッケージ"
+
+msgid "Content view must be synced to see content counts"
+msgstr "コンテンツ数を確認するには、コンテンツビューを同期する必要があります"
 
 msgid "Content Source name"
 msgstr "コンテンツソース名"
@@ -486,6 +537,9 @@ msgstr "コンテンツタイプ"
 
 msgid "Product"
 msgstr "製品"
+
+msgid "Content"
+msgstr "コンテンツ"
 
 msgid "Content Credential created."
 msgstr "コンテンツ認証情報が作成されました。"
@@ -713,13 +767,21 @@ msgid "Imports a repository"
 msgstr "リポジトリーのインポート"
 
 msgid "Override product content defaults"
-msgstr "製品コンテンツのデフォルトを上書きします"
+msgstr "製品コンテンツのデフォルトをオーバーライドする"
 
 msgid "Updated content override."
-msgstr "コンテンツの上書きを更新しました。"
+msgstr "コンテンツのオーバーライドを更新しました。"
 
 msgid "Could not update content override"
-msgstr "コンテンツの上書きを更新できませんでした"
+msgstr "コンテンツのオーバーライドを更新できませんでした"
+
+msgid "You must use --force to set an override other than 'enabled'"
+msgstr ""
+"'enabled' 以外のオーバーライドを設定するには --force を使用する必要があります"
+
+msgid "Force the override. Required for overrides other than 'enabled'"
+msgstr ""
+"オーバーライドを強制適用します。'enabled' 以外のオーバーライドに必須です"
 
 msgid "Label of the content"
 msgstr "コンテンツのラベル"
@@ -729,19 +791,17 @@ msgid ""
 "To enable or disable a repo select 'enabled'.\n"
 "Default value: enabled"
 msgstr ""
-"パラメーターキーまたは名前を上書きします。\n"
+"パラメーターキーまたは名前をオーバーライドします。\n"
 "リポジトリーを有効化するには、「有効化」を選択します。\n"
 "デフォルト値: 有効化"
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
 msgstr ""
-"値を上書きします。リポジトリーの有効化については、ブール値を使用できます。"
+"値をオーバーライドします。リポジトリーの有効化については、ブール値を使用でき"
+"ます"
 
 msgid "Remove a content override"
-msgstr "コンテンツの上書きの削除"
-
-msgid "Version"
-msgstr "バージョン"
+msgstr "コンテンツのオーバーライドを削除する"
 
 msgid "Filename"
 msgstr "ファイル名"
@@ -761,11 +821,23 @@ msgstr "依存関係の解決"
 msgid "Yum Repositories"
 msgstr "Yum リポジトリー"
 
+msgid "File Repositories"
+msgstr "ファイルリポジトリー"
+
 msgid "Container Image Repositories"
 msgstr "コンテナーイメージのリポジトリー"
 
 msgid "OSTree Repositories"
 msgstr "OSTree リポジトリー"
+
+msgid "Ansible Repositories"
+msgstr "Ansible リポジトリー"
+
+msgid "Debian Repositories"
+msgstr "Debian リポジトリー"
+
+msgid "Python Repositories"
+msgstr "Python リポジトリー"
 
 msgid "Versions"
 msgstr "バージョン"
@@ -775,6 +847,15 @@ msgstr "公開済み"
 
 msgid "Components"
 msgstr "コンポーネント"
+
+msgid "Latest version"
+msgstr "最新バージョン"
+
+msgid "Not yet published"
+msgstr "公開前"
+
+msgid "Always update to the latest"
+msgstr "常に最新に更新する"
 
 msgid "Activation Keys"
 msgstr "アクティベーションキー"
@@ -787,6 +868,9 @@ msgstr "コンテンツビューを作成できませんでした"
 
 msgid "Create a composite content view"
 msgstr "複合コンテンツビューを作成します"
+
+msgid "Create a rolling content view"
+msgstr "ローリングコンテンツビューを作成する"
 
 msgid "Designate this Content View for importing from upstream servers only."
 msgstr ""
@@ -877,7 +961,7 @@ msgid ""
 "content-view-version-id option"
 msgstr ""
 "コンポーネントのコンテンツビューバージョン番号。これを使用するか、--"
-"component-content-view-version-id オプションを使用してください。"
+"component-content-view-version-id オプションを使用してください"
 
 msgid "Select the latest version of the components content view is desired"
 msgstr "コンポーネントのコンテンツビューの最新版が必要な場合には選択します"
@@ -890,7 +974,7 @@ msgid ""
 "view-version or --latest for the latest version"
 msgstr ""
 "-component-content-view-version-id または --component-content-view-version を"
-"指定するか、最新版は --latest を指定してください。"
+"指定するか、最新版は --latest を指定してください"
 
 msgid "Content View Id"
 msgstr "コンテンツビュー ID"
@@ -939,17 +1023,72 @@ msgstr "コンポーネントがコンテンツビューから削除されまし
 msgid "Could not remove the components"
 msgstr "ユーザーロールを削除できませんでした"
 
+msgid "Lifecycle Environment"
+msgstr "ライフサイクル環境"
+
+msgid "Default"
+msgstr "デフォルト"
+
+msgid "Hosts Count"
+msgstr "ホスト数"
+
+msgid "Activation Keys Count"
+msgstr "アクティベーションキー数"
+
+msgid "Hostgroups Count"
+msgstr "ホストグループ数"
+
+msgid "Created At"
+msgstr "作成:"
+
+msgid "Updated At"
+msgstr "更新:"
+
+msgid "Organization Id"
+msgstr "組織 ID"
+
+msgid "Organization Label"
+msgstr "組織ラベル"
+
+msgid "Content View Label"
+msgstr "コンテンツビューラベル"
+
+msgid "Default Content View"
+msgstr "デフォルトのコンテンツビュー"
+
+msgid "Lifecycle Environment Id"
+msgstr "ライフサイクル環境 ID"
+
+msgid "Lifecycle Environment Label"
+msgstr "ライフサイクル環境ラベル"
+
+msgid "Library"
+msgstr "ライブラリー"
+
+msgid "Hostgroups"
+msgstr "ホストグループ"
+
+msgid "Title"
+msgstr "タイトル"
+
 msgid "Content View numeric identifier"
 msgstr "コンテンツビューの数値 ID"
 
 msgid "Content View name"
 msgstr "コンテンツビュー名"
 
-msgid "count of unused versions to keep"
-msgstr "使用していないバージョンで保存するバージョン数"
+msgid "(deprecated) Number of versions to keep"
+msgstr "(非推奨) 保持するバージョンの数"
 
-msgid "Invalid value for --count option: value must be 0 or greater."
-msgstr "--count オプションの値が無効です: 値は 0 以上である必要があります。"
+msgid "Number of unused versions to keep"
+msgstr "保持する未使用バージョンの数"
+
+msgid "Invalid value for --versions-to-keep: value must be 0 or greater."
+msgstr "--versions-to-keep の値が無効です: 値は 0 以上である必要があります。"
+
+msgid ""
+"The --count option is deprecated and will be removed in the next release."
+msgstr "--count オプションは非推奨となり、次のリリースで削除される予定です。"
 
 msgid "No versions to delete."
 msgstr "削除するバージョンはありません。"
@@ -968,29 +1107,72 @@ msgstr ""
 msgid "Content View Name"
 msgstr "コンテンツビュー名"
 
-msgid "Content View Label"
-msgstr "コンテンツビューラベル"
-
-msgid "Repositories"
-msgstr "リポジトリー"
-
 msgid "Has Applied Filters"
 msgstr "フィルターが適用済み"
 
 msgid "Applied Filters"
 msgstr "適用されたフィルター"
 
+msgid "Inclusion"
+msgstr "組み込み"
+
+msgid "Original packages"
+msgstr "オリジナルパッケージ"
+
+msgid "Original module streams"
+msgstr "オリジナルモジュールストリーム"
+
+msgid "Rules"
+msgstr "ルール"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "Module stream Id"
+msgstr "モジュールストリーム ID"
+
+msgid "Types"
+msgstr "タイプ"
+
+msgid "Architecture"
+msgstr "アーキテクチャー"
+
+msgid "Content view filter Id"
+msgstr "コンテンツビューフィルター ID"
+
+msgid "Errata Id"
+msgstr "エラータ ID"
+
+msgid "Date type"
+msgstr "日付タイプ"
+
+msgid "Start date"
+msgstr "開始日"
+
+msgid "End date"
+msgstr "終了日"
+
 msgid "Dependency Solving"
 msgstr "依存関係の解決"
 
 msgid "Content View Version is being republished with task %{id}."
-msgstr "タスク %{id} でコンテンツビューバージョンが再公開されています"
+msgstr "タスク %{id} でコンテンツビューバージョンが再公開されています。"
 
 msgid "Could not republish the Content View"
 msgstr "コンテンツビューを再公開できませんでした"
 
+msgid ""
+"Verifying checksum of Content View Version repositories with task %{id}."
+msgstr ""
+"タスク %{id} を使用して、コンテンツビューバージョンリポジトリーのチェックサム"
+"を検証します。"
+
+msgid "Could not verify checksum of repositories in the Content View Version"
+msgstr ""
+"コンテンツビューバージョンのリポジトリーのチェックサムを検証できませんでした"
+
 msgid "Content view is being promoted with task %{id}."
-msgstr "タスク %{id} でコンテンツビューがプロモートされています"
+msgstr "タスク %{id} でコンテンツビューがプロモートされています。"
 
 msgid "Could not promote the content view"
 msgstr "コンテンツビューをプロモートできませんでした"
@@ -998,7 +1180,7 @@ msgstr "コンテンツビューをプロモートできませんでした"
 msgid ""
 "force content view promotion and bypass lifecycle environment restriction"
 msgstr ""
-"コンテンツビューを強制的にプロモートしてライフサイクル環境の制限を無視する"
+"コンテンツビューを強制的にプロモートしてライフサイクル環境の制限を無視します"
 
 msgid "Name of the target environment"
 msgstr "ターゲット環境の名前"
@@ -1060,9 +1242,6 @@ msgstr "UUID"
 msgid "checksum"
 msgstr "チェックサム"
 
-msgid "Architecture"
-msgstr "アーキテクチャー"
-
 msgid "Nav"
 msgstr "Nav"
 
@@ -1096,9 +1275,6 @@ msgstr "Docker タグの管理"
 msgid "Tag"
 msgstr "タグ"
 
-msgid "Repository ID"
-msgstr "リポジトリー ID"
-
 msgid "Docker Manifest ID"
 msgstr "Docker マニフェスト ID"
 
@@ -1107,9 +1283,6 @@ msgstr "Docker マニフェスト名"
 
 msgid "Errata ID"
 msgstr "エラータ ID"
-
-msgid "Title"
-msgstr "タイトル"
 
 msgid "Issued"
 msgstr "発行済み"
@@ -1126,9 +1299,6 @@ msgstr "リリース"
 msgid "Solution"
 msgstr "解決"
 
-msgid "Module Streams"
-msgstr "モジュールストリーム"
-
 msgid "Stream"
 msgstr "ストリーム"
 
@@ -1138,20 +1308,20 @@ msgstr "チェックサム"
 msgid "Filter ID"
 msgstr "フィルター ID"
 
-msgid "Inclusion"
-msgstr "組み込み"
-
-msgid "Rules"
-msgstr "ルール"
-
 msgid "Minimum Version"
 msgstr "最小のバージョン"
 
 msgid "Maximum Version"
 msgstr "最大のバージョン"
 
-msgid "Types"
-msgstr "タイプ"
+msgid "Start Date"
+msgstr "開始日"
+
+msgid "End Date"
+msgstr "終了日"
+
+msgid "Module Stream ID"
+msgstr "モジュールストリーム ID"
 
 msgid "Created"
 msgstr "作成日時"
@@ -1200,6 +1370,79 @@ msgstr "フィルタールールが削除されました。"
 
 msgid "Could not delete the filter rule"
 msgstr "フィルタールールを削除できませんでした"
+
+msgid "Username"
+msgstr "ユーザー名"
+
+msgid "Registry URL"
+msgstr "レジストリー URL"
+
+msgid "Flatpak index URL"
+msgstr "Flatpak インデックス URL"
+
+msgid "Flatpak Remote created."
+msgstr "Flatpak リモートが作成されました。"
+
+msgid "Could not create the Flatpak Remote."
+msgstr "Flatpak リモートを作成できませんでした。"
+
+msgid "Flatpak Remote updated."
+msgstr "Flatpak リモートが更新されました。"
+
+msgid "Could not update the Flatpak Remote."
+msgstr "Flatpak リモートを更新できませんでした。"
+
+msgid "Flatpak Remote deleted."
+msgstr "Flatpak リモートが削除されました。"
+
+msgid "Could not delete the Flatpak Remote."
+msgstr "Flatpak リモートを削除できませんでした。"
+
+msgid "Flatpak remote is being scanned in task %<id>s."
+msgstr "Flatpak リモートはタスク %<id>s でスキャンされています。"
+
+msgid "Could not scan the Flatpak remote"
+msgstr "Flatpak リモートをスキャンできませんでした"
+
+msgid "View and manage flatpak remote repositories"
+msgstr "Flatpak リモートリポジトリーを表示および管理する"
+
+msgid "Flatpak Remote ID"
+msgstr "Flatpak リモート ID"
+
+msgid "Flatpak Remote Name"
+msgstr "Flatpak リモート名"
+
+msgid "Flatpak Remote URL"
+msgstr "Flatpak リモート URL"
+
+msgid "Manifests"
+msgstr "マニフェスト"
+
+msgid "Manifest Name"
+msgstr "マニフェスト名"
+
+msgid "Manifest Digest"
+msgstr "マニフェストダイジェスト"
+
+msgid "Manifest tags"
+msgstr "マニフェストタグ"
+
+msgid "Flatpak remote repository is being mirrored to product in task %<id>s."
+msgstr ""
+"タスク %<id>s で Flatpak リモートリポジトリーを製品にミラーリングしています。"
+
+msgid "Could not mirror the Flatpak remote repository"
+msgstr "Flatpak リモートリポジトリーをミラーリングできませんでした"
+
+msgid "Running image"
+msgstr "実行中のイメージ"
+
+msgid "Running image digest"
+msgstr "実行中のイメージダイジェスト"
+
+msgid "Host count"
+msgstr "ホスト数"
 
 msgid "Limit"
 msgstr "制限"
@@ -1264,107 +1507,8 @@ msgstr "ホストが削除されました。"
 msgid "Could not remove host(s)"
 msgstr "ホストを削除できませんでした"
 
-msgid "Manipulate errata for a host collection"
-msgstr "ホストコレクションのエラータを操作します"
-
-msgid "Install errata on content hosts contained within a host collection"
-msgstr ""
-"ホストコレクション内に含まれるコンテンツホストにエラータをインストールします"
-
-msgid "Successfully scheduled installation of errata."
-msgstr "エラータのインストールが正常にスケジュールされました。"
-
-msgid "Could not schedule installation of errata"
-msgstr "エラータのインストールをスケジュールできませんでした"
-
-msgid "List of Errata to install"
-msgstr "インストールするエラータのリスト"
-
-msgid "Manipulate packages for a host collection"
-msgstr "ホストコレクションのパッケージを操作します"
-
-msgid "comma-separated list of packages to install"
-msgstr "インストールするパッケージのコンマ区切りリスト"
-
-msgid "Install packages on content hosts contained within a host collection"
-msgstr ""
-"ホストコレクション内に含まれるコンテンツホストにパッケージをインストールしま"
-"す"
-
-msgid "Successfully scheduled installation of package(s)."
-msgstr "パッケージのインストールが正常にスケジュールされました。"
-
-msgid "Could not schedule installation of package(s)"
-msgstr "パッケージのインストールをスケジュールできませんでした"
-
-msgid "Update packages on content hosts contained within a host collection"
-msgstr "ホストコレクション内に含まれるコンテンツホストでパッケージを更新します"
-
-msgid "Successfully scheduled update of package(s)."
-msgstr "パッケージの更新が正常にスケジュールされました。"
-
-msgid "Could not schedule update of package(s)"
-msgstr "パッケージの更新をスケジュールできませんでした"
-
-msgid "Remove packages on content hosts contained within a host collection"
-msgstr "ホストコレクション内に含まれるコンテンツホストでパッケージを削除します"
-
-msgid "Successfully scheduled removal of package(s)."
-msgstr "パッケージの削除が正常にスケジュールされました。"
-
-msgid "Could not schedule removal of package(s)"
-msgstr "パッケージの削除をスケジュールできませんでした"
-
-msgid "Manipulate package-groups for a host collection"
-msgstr "ホストコレクションのパッケージグループを操作します"
-
-msgid "comma-separated list of package-groups to install"
-msgstr "インストールするパッケージグループのコンマ区切りリスト"
-
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
-msgstr ""
-"ホストコレクション内に含まれるコンテンツホストにパッケージグループをインス"
-"トールします"
-
-msgid "Successfully scheduled installation of package-group(s)."
-msgstr "パッケージグループのインストールが正常にスケジュールされました。"
-
-msgid "Could not schedule installation of package-group(s)"
-msgstr "パッケージグループのインストールをスケジュールできませんでした"
-
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
-msgstr ""
-"ホストコレクション内に含まれるコンテンツホストでパッケージグループを更新しま"
-"す"
-
-msgid "Successfully scheduled update of package-groups(s)."
-msgstr "パッケージグループの更新が正常にスケジュールされました。"
-
-msgid "Could not schedule update of package-group(s)"
-msgstr "パッケージグループの更新をスケジュールできませんでした"
-
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
-msgstr ""
-"ホストコレクション内に含まれるコンテンツホストでパッケージグループを削除しま"
-"す"
-
-msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "パッケージグループの削除が正常にスケジュールされました。"
-
-msgid "Could not schedule removal of package-group(s)"
-msgstr "パッケージグループの削除をスケジュールできませんでした"
-
 msgid "Arch"
 msgstr "アーキテクチャー"
-
-msgid "Errata is being applied with task %{id}."
-msgstr "タスク %{id} でエラータを適用中です。"
-
-msgid "Could not apply errata"
-msgstr "エラータを適用できませんでした"
 
 msgid "Erratum ID"
 msgstr "エラータ ID"
@@ -1378,20 +1522,44 @@ msgstr "エラータの再計算を開始しました。"
 msgid "Could not recalculate errata"
 msgstr "エラータを再計算できませんでした"
 
+msgid "Staged image"
+msgstr "ステージングされたイメージ"
+
+msgid "Staged image digest"
+msgstr "ステージングされたイメージダイジェスト"
+
+msgid "Available image"
+msgstr "利用可能なイメージ"
+
+msgid "Available image digest"
+msgstr "利用可能なイメージダイジェスト"
+
+msgid "Rollback image"
+msgstr "ロールバックイメージ"
+
+msgid "Rollback image digest"
+msgstr "ロールバックイメージダイジェスト"
+
 msgid "Trace Status"
 msgstr "トレースステータス"
+
+msgid "Last Checkin"
+msgstr "最終チェックイン"
 
 msgid "Content Information"
 msgstr "コンテンツ情報"
 
-msgid "Content view environments"
-msgstr "コンテンツビュー環境"
-
 msgid "Content view"
 msgstr "コンテンツビュー"
 
-msgid "Lifecycle environment"
-msgstr "ライフサイクル環境"
+msgid "Composite Content View"
+msgstr "複合コンテンツビュー"
+
+msgid "Rolling Content View"
+msgstr "ローリングコンテンツビュー"
+
+msgid "Lifecycle Environment Name"
+msgstr "ライフサイクル環境名"
 
 msgid "Kickstart Repository"
 msgstr "Kickstart リポジトリー"
@@ -1411,12 +1579,6 @@ msgstr "バグ修正"
 msgid "Subscription Information"
 msgstr "サブスクリプションの情報"
 
-msgid "Last Checkin"
-msgstr "最終チェックイン"
-
-msgid "Autoheal"
-msgstr "自動修復"
-
 msgid "Registered To"
 msgstr "登録先:"
 
@@ -1426,8 +1588,24 @@ msgstr "登録時:"
 msgid "Registered by Activation Keys"
 msgstr "アクティベーションキーでの登録"
 
+msgid "bootc Image Information"
+msgstr "bootc イメージ情報"
+
 msgid "Nvra"
 msgstr "Nvra"
+
+msgid "Persistence"
+msgstr "永続性"
+
+msgid ""
+"Generate a Containerfile RUN command from transiently installed packages on "
+"image mode hosts"
+msgstr ""
+"イメージモードホスト上の一時的にインストールされたパッケージから "
+"Containerfile RUN コマンドを生成する"
+
+msgid "No transient packages found"
+msgstr "一時パッケージが見つかりません"
 
 msgid "Host unregistered."
 msgstr "ホストの登録が解除されました。"
@@ -1440,32 +1618,6 @@ msgstr "ホストは正常に登録されました。"
 
 msgid "Failed to register host"
 msgstr "ホストの登録に失敗しました"
-
-msgid "Subscription attached to the host successfully."
-msgstr "サブスクリプションがホストに正常にアタッチされました。"
-
-msgid "Failed to attach subscriptions to the host"
-msgstr "ホストへのサブスクリプションのアタッチに失敗しました"
-
-msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "このサブスクリプションの追加数。デフォルトは 1"
-
-msgid "Auto attached subscriptions to the host successfully."
-msgstr "サブスクリプションがホストに正常に自動アタッチされました。"
-
-msgid "Failed to auto attach subscriptions to the host"
-msgstr "ホストへのサブスクリプションの自動アタッチに失敗しました"
-
-msgid "Subscription removed from the host successfully."
-msgstr "サブスクリプションがホストから正常に削除されました。"
-
-msgid "Failed to remove subscriptions from the host"
-msgstr "ホストからのサブスクリプションの削除に失敗しました"
-
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
-msgstr ""
-"ID および数量が一致するサブスクリプションの最初のインスタンスを削除する"
 
 msgid "Content View id"
 msgstr "コンテンツビュー ID"
@@ -1502,6 +1654,9 @@ msgstr "検索する組織名"
 
 msgid "Organization label to search by"
 msgstr "検索する組織ラベル"
+
+msgid "Activation key name to search by"
+msgstr "検索するアクティベーションキー名"
 
 msgid "Capsule name to search by"
 msgstr "検索する Capsule 名"
@@ -1545,6 +1700,9 @@ msgstr "検索するタスク名"
 msgid "Content view version number"
 msgstr "コンテンツビューバージョン数"
 
+msgid "Flatpak remote name to search by"
+msgstr "検索に使用する Flatpak リモート名"
+
 msgid "Name to search by"
 msgstr "検索する名前"
 
@@ -1556,9 +1714,6 @@ msgstr "以前"
 
 msgid "Lifecycle Path"
 msgstr "ライフサイクルパス"
-
-msgid "Library"
-msgstr "ライブラリー"
 
 msgid "Prior Lifecycle Environment"
 msgstr "以前のライフサイクル環境"
@@ -1602,9 +1757,6 @@ msgstr "プロファイル"
 msgid "RPMs"
 msgstr "RPM"
 
-msgid "Simple Content Access"
-msgstr "シンプルコンテンツアクセス"
-
 msgid "Service Levels"
 msgstr "サービスレベル"
 
@@ -1617,17 +1769,8 @@ msgstr "アップストリームのライフサイクル環境"
 msgid "Upstream Content View"
 msgstr "アップストリームのコンテンツビュー"
 
-msgid "Username"
-msgstr "ユーザー名"
-
 msgid "SSL CA Credential ID"
 msgstr "SSL CA 認証情報 ID"
-
-msgid "Enabled"
-msgstr "有効化済み"
-
-msgid "Disabled"
-msgstr "無効化済み"
 
 msgid "Export Sync"
 msgstr "エクスポートの同期"
@@ -1664,6 +1807,9 @@ msgstr "CDN 設定を更新しました。"
 
 msgid "Could not update CDN configuration."
 msgstr "CDN 設定を更新できませんでした。"
+
+msgid "Organization title to search by"
+msgstr "検索に使用する組織タイトル"
 
 msgid "Source RPM"
 msgstr "ソース RPM"
@@ -1713,9 +1859,6 @@ msgstr "必須:"
 msgid "Provides"
 msgstr "提供"
 
-msgid "Files"
-msgstr "ファイル"
-
 msgid "Size"
 msgstr "サイズ"
 
@@ -1724,9 +1867,6 @@ msgstr "モジュラー"
 
 msgid "Package Group Name"
 msgstr "パッケージグループ名"
-
-msgid "Repository Name"
-msgstr "リポジトリー名"
 
 msgid "Default Packages"
 msgstr "デフォルトパッケージ"
@@ -1800,6 +1940,15 @@ msgstr "製品のプロキシーが更新されました。"
 msgid "Could not update the product HTTP Proxy."
 msgstr "製品の HTTP プロキシーを更新できませんでした。"
 
+msgid "Verify checksum for one or more products"
+msgstr "1 つ以上の製品のチェックサムを確認します"
+
+msgid "Verified checksum of product repositories with task %{id}."
+msgstr "タスク %{id} で製品リポジトリーのチェックサムを検証しました。"
+
+msgid "Could not verify checksum of repositories in the product"
+msgstr "製品内のリポジトリーのチェックサムを検証できませんでした"
+
 msgid "Product destroyed."
 msgstr "製品が破棄されました。"
 
@@ -1819,7 +1968,7 @@ msgid "Synchronization plan assigned."
 msgstr "同期プランが割り当てられました。"
 
 msgid "Could not assign synchronization plan"
-msgstr "同期プランを割り当てることができませんでした。"
+msgstr "同期プランを割り当てることができませんでした"
 
 msgid "Delete assignment sync plan and product"
 msgstr "割り当て同期プランおよび製品の削除"
@@ -1837,10 +1986,16 @@ msgid "Default Enabled?"
 msgstr "デフォルトで有効化しますか?"
 
 msgid "Override"
-msgstr "上書き"
+msgstr "オーバーライド"
 
 msgid "Location of the ansible collections requirements.yml file. "
 msgstr "Ansible コレクションの requirements.yml ファイルの場所。 "
+
+msgid "Orphaned"
+msgstr "孤立"
+
+msgid "Upstream Repository Name"
+msgstr "アップストリームのリポジトリー名"
 
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
@@ -1870,9 +2025,6 @@ msgstr "ダウンロードポリシー"
 msgid "Metadata Expiration"
 msgstr "メタデータの有効期限"
 
-msgid "Upstream Repository Name"
-msgstr "アップストリームのリポジトリー名"
-
 msgid "Container Image Tags Filter"
 msgstr "コンテナーイメージのタグフィルター"
 
@@ -1882,11 +2034,23 @@ msgstr "コンテナーのリポジトリー名"
 msgid "Ignorable Content Units"
 msgstr "無視できるコンテンツユニット"
 
+msgid "Publish Settings"
+msgstr "公開設定"
+
+msgid "Restrict to architecture"
+msgstr "アーキテクチャーに制限"
+
+msgid "Restrict to OS Version"
+msgstr "OS バージョンに制限する"
+
 msgid "HTTP Proxy"
 msgstr "HTTP プロキシー"
 
 msgid "HTTP Proxy Policy"
 msgstr "HTTPプロキシーポリシー"
+
+msgid "GPG Key Path"
+msgstr "GPG キーパス"
 
 msgid "Sync"
 msgstr "同期"
@@ -1894,23 +2058,8 @@ msgstr "同期"
 msgid "Last Sync Date"
 msgstr "最終同期日"
 
-msgid "Content Counts"
-msgstr "コンテンツ数"
-
-msgid "Source RPMS"
-msgstr "ソース RPM"
-
-msgid "Package Groups"
-msgstr "パッケージグループ"
-
-msgid "Container Image Manifest Lists"
-msgstr "コンテナーイメージマニフェストリスト"
-
-msgid "Container Image Manifests"
-msgstr "コンテナーイメージマニフェスト"
-
-msgid "Container Image Tags"
-msgstr "コンテナーイメージタグ"
+msgid "No restriction"
+msgstr "制限なし"
 
 msgid "yes"
 msgstr "yes"
@@ -1928,7 +2077,7 @@ msgid "Complete Mirroring"
 msgstr "完全ミラーリング"
 
 msgid "Not Synced"
-msgstr "同期なし"
+msgstr "同期されていません"
 
 msgid "Failed"
 msgstr "失敗"
@@ -1950,9 +2099,6 @@ msgstr "待機中"
 
 msgid "Canceled"
 msgstr "取り消されました"
-
-msgid "Warning"
-msgstr "警告"
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "タスク %{id} でリポジトリーを同期中です。"
@@ -2088,6 +2234,12 @@ msgstr "リポジトリーが再公開されました。"
 msgid "Could not republish the repository."
 msgstr "リポジトリーを再公開できませんでした。"
 
+msgid "Verified checksum of repository with task %{id}."
+msgstr "タスク %{id} によるリポジトリーのチェックサムを検証しました。"
+
+msgid "Could not verify checksum of repository"
+msgstr "リポジトリーのチェックサムを検証できませんでした"
+
 msgid "Reclaim space from an On Demand repository"
 msgstr "オンデマンドリポジトリーからの領域の再利用"
 
@@ -2103,6 +2255,9 @@ msgstr "有効化されたリポジトリー"
 msgid "Registry Name"
 msgstr "レジストリー名"
 
+msgid "Enabled"
+msgstr "有効化済み"
+
 msgid "Repository enabled."
 msgstr "リポジトリーが有効化されました。"
 
@@ -2115,26 +2270,26 @@ msgstr "リポジトリーが無効化されました。"
 msgid "Could not disable repository"
 msgstr "リポジトリーを無効化できませんでした"
 
-msgid "This organization is not eligible for Simple Content Access"
-msgstr "この組織は Simple Content Access の対象外です"
-
-msgid "Simple Content Access Enabled."
-msgstr "Simple Content Access が有効になりました。"
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr "この組織に対して Simple Content Access を有効にできませんでした"
-
-msgid "Simple Content Access Disabled."
-msgstr "Simple Content Access が無効になりました。"
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr "この組織に対して Simple Content Access を無効にできませんでした"
-
 msgid "Time UTC"
 msgstr "時刻 UTC"
 
+msgid "Contract"
+msgstr "コントラクト"
+
+msgid "Account"
+msgstr "アカウント"
+
+msgid "Support"
+msgstr "サポート"
+
+msgid "Quantity"
+msgstr "数量"
+
 msgid "Consumed"
 msgstr "使用済み"
+
+msgid "Product Host Count"
+msgstr "製品ホスト数"
 
 msgid "Physical"
 msgstr "物理"
