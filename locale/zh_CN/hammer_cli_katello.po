@@ -1,25 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-katello package.
+# This file is distributed under the same license as the hammer_cli_katello package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
 # mbacovsky <martin.bacovsky@gmail.com>, 2017
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2017
 # tim123, 2017
-# Amit Upadhye <aupadhye@redhat.com>, 2023
-# Bryan Kearney <bryan.kearney@gmail.com>, 2023
-# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Bryan Kearney <bryan.kearney@gmail.com>, 2026
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2026
+# Amit Upadhye <aupadhye@redhat.com>, 2026
+# Ondřej Gajdušek, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_katello 5.1.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 17:04+0000\n"
+"POT-Creation-Date: 2026-09-22 19:21+0200\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden "
-"<ewoud+transifex@kohlvanwijngaarden.nl>, 2024\n"
+"Last-Translator: Ondřej Gajdušek, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/foreman/teams/114/"
 "zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,9 @@ msgstr "操作服务器上的内容凭证"
 
 msgid "Manipulate lifecycle_environments on the server"
 msgstr "在服务器上处理 lifecycle_environments"
+
+msgid "Manipulate content view environments"
+msgstr "操作内容视图环境"
 
 msgid "Manipulate products"
 msgstr "处理产品"
@@ -97,11 +100,11 @@ msgstr "查看模块流"
 msgid "Manipulate source RPMs"
 msgstr "操作源 RPM"
 
-msgid "Simple content access commands"
-msgstr "简单内容访问命令"
-
 msgid "Manipulate docker content"
 msgstr "操作 docker 内容"
+
+msgid "Manipulate flatpak remotes"
+msgstr "操作 flatpak remotes"
 
 msgid "ID"
 msgstr "ID"
@@ -187,14 +190,41 @@ msgstr "在任务 %{id} 中刷新了备用内容源。"
 msgid "Could not refresh the alternate content source"
 msgstr "无法刷新备用内容源"
 
+msgid "Refresh all alternate content sources"
+msgstr "刷新所有备用内容源"
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr "成功刷新所有备用内容源"
+
+msgid "Could not refresh all alternate content sources"
+msgstr "无法刷新所有备用内容源"
+
+msgid "Refresh alternate content sources"
+msgstr "销毁备用内容源"
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr "成功刷新指定的备用内容源"
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr "无法刷新指定的备用内容源"
+
+msgid "Destroy alternate content sources"
+msgstr "销毁备用内容源"
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr "成功销毁指定的备用内容源"
+
+msgid "Could not destroy the specified alternate content sources"
+msgstr "无法销毁指定的备用内容源"
+
 msgid "Host Limit"
 msgstr "主机限制"
 
-msgid "Lifecycle Environment"
-msgstr "生命周期环境"
+msgid "Content View Environments"
+msgstr "内容视图环境"
 
-msgid "Content View"
-msgstr "内容视图"
+msgid "Multi Content View Environment"
+msgstr "多内容视图环境"
 
 msgid "Unlimited"
 msgstr "无限制"
@@ -202,11 +232,35 @@ msgstr "无限制"
 msgid "%{consumed} of %{limit}"
 msgstr "%{consumed}（共 %{limit}）"
 
-msgid "Auto Attach"
-msgstr "自动附加"
-
 msgid "Release Version"
 msgstr "发行版本"
+
+msgid "Content View Environment Labels"
+msgstr "内容视图环境标签"
+
+msgid "Organization"
+msgstr "机构"
+
+msgid "Content View"
+msgstr "内容视图"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Content View version Id"
+msgstr "內容视图版本 ID"
+
+msgid "Composite"
+msgstr "组成"
+
+msgid "Rolling"
+msgstr "滚动"
+
+msgid "Content View Environment id"
+msgstr "内容视图环境 ID"
+
+msgid "Lifecycle environment"
+msgstr "生命周期环境"
 
 msgid "Associated Hosts"
 msgstr "关联的主机"
@@ -235,9 +289,6 @@ msgstr "目的使用"
 msgid "Purpose Role"
 msgstr "目的角色"
 
-msgid "Purpose Addons"
-msgstr "目的插件"
-
 msgid "Activation key created."
 msgstr "创建激活码。"
 
@@ -264,54 +315,6 @@ msgstr "删除激活码。"
 
 msgid "Could not delete the activation key"
 msgstr "无法删除激活码"
-
-msgid "List associated subscriptions"
-msgstr "列出关联的订阅"
-
-msgid "Attached"
-msgstr "已附加"
-
-msgid "Quantity"
-msgstr "数量"
-
-msgid "Start Date"
-msgstr "开始日期"
-
-msgid "End Date"
-msgstr "结束日期"
-
-msgid "Support"
-msgstr "支援"
-
-msgid "Contract"
-msgstr "合同"
-
-msgid "Account"
-msgstr "帐号"
-
-msgid "ID of the activation key"
-msgstr "激活码 ID"
-
-msgid "Activation key name to search by"
-msgstr "用来进行搜索的激活码名称"
-
-msgid "Subscription added to activation key."
-msgstr "订阅添加到激活码。"
-
-msgid "Could not add subscription to activation key"
-msgstr "无法为激活码添加订阅"
-
-msgid "Remove subscription"
-msgstr "删除订阅"
-
-msgid "ID of subscription"
-msgstr "订阅 ID"
-
-msgid "Subscription removed from activation key."
-msgstr "订阅从激活码中删除。"
-
-msgid "Could not remove subscription from activation key"
-msgstr "无法从激活码中删除订阅"
 
 msgid "List associated host collections"
 msgstr "列出关联的主机集"
@@ -361,9 +364,6 @@ msgstr "无法删除主机"
 msgid "Manage the capsule content"
 msgstr "管理 capsule 內容"
 
-msgid "Organization"
-msgstr "机构"
-
 msgid "Lifecycle environment successfully added to the capsule."
 msgstr "生命周期环境已成功添加到 capsule 中。"
 
@@ -379,11 +379,29 @@ msgstr "生命周期环境已成功从 capsul 中移除。"
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr "无法从 capsule 中移除生命周期环境"
 
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr "Capsule 空间回收已在任务 %{id} 中启动。"
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr "Capsule 空间回收失败。"
+
 msgid "Capsule content is being synchronized in task %{id}."
 msgstr "Capsule 內容正在任务（%{id}）中被同步。"
 
 msgid "Could not synchronize capsule content"
 msgstr "无法同步 capsule 內容"
+
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr "在任务 %{id} 中更新 Capsule 内容计数。"
+
+msgid "Could not update capsule content counts"
+msgstr "无法更新 Capsule 内容计数"
+
+msgid "Capsule content checksum is being verified in task %{id}."
+msgstr "在任务 %{id} 中验证 Capsule 内容校验和。"
+
+msgid "Could not verify capsule content checksum"
+msgstr "无法验证 Capsule 内容校验和"
 
 msgid "Last sync"
 msgstr "最后同步"
@@ -418,32 +436,65 @@ msgstr "生命周期环境"
 msgid "Content Views"
 msgstr "内容视图"
 
-msgid "Composite"
-msgstr "组成"
-
 msgid "Last Published"
 msgstr "最后发布的"
 
-msgid "Content"
-msgstr "内容"
+msgid "Repositories"
+msgstr "软件仓库"
 
-msgid "Hosts"
-msgstr "主机"
+msgid "Repository ID"
+msgstr "仓库 ID"
 
-msgid "Yum repos"
-msgstr "Yum 仓库"
+msgid "Repository Name"
+msgstr "仓库名称"
 
-msgid "Container Image repos"
-msgstr "容器镜像仓库"
+msgid "Content Counts"
+msgstr "内容计数"
+
+msgid "Warning"
+msgstr "警告"
 
 msgid "Packages"
 msgstr "软件包"
 
-msgid "Package groups"
+msgid "SRPMs"
+msgstr "SRPMS"
+
+msgid "Module Streams"
+msgstr "模块流"
+
+msgid "Package Groups"
 msgstr "软件包组"
 
 msgid "Errata"
 msgstr "勘误"
+
+msgid "Debian Packages"
+msgstr "Debian 软件包"
+
+msgid "Container Tags"
+msgstr "容器标签"
+
+msgid "Container Manifests"
+msgstr "容器清单"
+
+msgid "Container Manifest Lists"
+msgstr "容器清单列表"
+
+msgid "Files"
+msgstr "文件"
+
+msgid "Ansible Collections"
+msgstr "Ansible 系列"
+
+msgid "OSTree Refs"
+msgstr "OSTree Ref"
+
+msgid "Python Packages"
+msgstr "Python 软件包"
+
+msgid "Content view must be synced to see content counts"
+msgstr "内容视图必须同步才能查看内容计数"
 
 msgid "Content Source name"
 msgstr "内容源名称"
@@ -487,6 +538,9 @@ msgstr "内容类型"
 
 msgid "Product"
 msgstr "产品"
+
+msgid "Content"
+msgstr "内容"
 
 msgid "Content Credential created."
 msgstr "创建了内容凭证。"
@@ -701,6 +755,12 @@ msgstr "更新的内容覆盖。"
 msgid "Could not update content override"
 msgstr "无法更新内容覆盖"
 
+msgid "You must use --force to set an override other than 'enabled'"
+msgstr "您必须使用 --force 设置 'enabled' 以外的覆盖选项"
+
+msgid "Force the override. Required for overrides other than 'enabled'"
+msgstr "强制覆盖。对非 'enabled' 的覆盖选项为必填。"
+
 msgid "Label of the content"
 msgstr "内容标签"
 
@@ -718,9 +778,6 @@ msgstr "覆盖值。请注意，对于仓库启用，可以使用一个布尔值
 
 msgid "Remove a content override"
 msgstr "删除内容覆盖"
-
-msgid "Version"
-msgstr "版本"
 
 msgid "Filename"
 msgstr "文件名"
@@ -740,11 +797,23 @@ msgstr "解决依赖关系"
 msgid "Yum Repositories"
 msgstr "Yum 仓库"
 
+msgid "File Repositories"
+msgstr "文件仓库"
+
 msgid "Container Image Repositories"
 msgstr "容器镜像仓库"
 
 msgid "OSTree Repositories"
 msgstr "OSTree 仓库"
+
+msgid "Ansible Repositories"
+msgstr "Ansible 存储库"
+
+msgid "Debian Repositories"
+msgstr "Debian 存储库"
+
+msgid "Python Repositories"
+msgstr "Python 存储库"
 
 msgid "Versions"
 msgstr "版本"
@@ -754,6 +823,15 @@ msgstr "已发表"
 
 msgid "Components"
 msgstr "组件"
+
+msgid "Latest version"
+msgstr "最新版本"
+
+msgid "Not yet published"
+msgstr "尚未发布"
+
+msgid "Always update to the latest"
+msgstr "始终更新至最新的"
 
 msgid "Activation Keys"
 msgstr "激活码"
@@ -766,6 +844,9 @@ msgstr "无法创建内容视图"
 
 msgid "Create a composite content view"
 msgstr "创建复合内容视图"
+
+msgid "Create a rolling content view"
+msgstr "创建滚动内容视图"
 
 msgid "Designate this Content View for importing from upstream servers only."
 msgstr "将此内容视图指定为仅从上游服务器导入。"
@@ -914,17 +995,72 @@ msgstr "从内容视图中删除的组件。"
 msgid "Could not remove the components"
 msgstr "无法删除组件"
 
+msgid "Lifecycle Environment"
+msgstr "生命周期环境"
+
+msgid "Default"
+msgstr "默认"
+
+msgid "Hosts Count"
+msgstr "主机数"
+
+msgid "Activation Keys Count"
+msgstr "激活码计数"
+
+msgid "Hostgroups Count"
+msgstr "主机组数"
+
+msgid "Created At"
+msgstr "创建于"
+
+msgid "Updated At"
+msgstr "更新於"
+
+msgid "Organization Id"
+msgstr "机构 ID"
+
+msgid "Organization Label"
+msgstr "机构标签"
+
+msgid "Content View Label"
+msgstr "内容视图标签"
+
+msgid "Default Content View"
+msgstr "默认内容视图"
+
+msgid "Lifecycle Environment Id"
+msgstr "生命周期环境 ID"
+
+msgid "Lifecycle Environment Label"
+msgstr "生命周期环境 ID"
+
+msgid "Library"
+msgstr "库"
+
+msgid "Hostgroups"
+msgstr "主机组"
+
+msgid "Title"
+msgstr "提示"
+
 msgid "Content View numeric identifier"
 msgstr "内容视图数字标识符"
 
 msgid "Content View name"
 msgstr "内容视图名称"
 
-msgid "count of unused versions to keep"
-msgstr "要保留的未使用的版本数"
+msgid "(deprecated) Number of versions to keep"
+msgstr "（已弃用）要保留的版本数量"
 
-msgid "Invalid value for --count option: value must be 0 or greater."
-msgstr "--count 选项的值无效：值必须为 0 或更大。"
+msgid "Number of unused versions to keep"
+msgstr "要保留的未使用的版本数量"
+
+msgid "Invalid value for --versions-to-keep: value must be 0 or greater."
+msgstr "无效的 --versions-to-keep 值：必须是大于等于 0 的值。"
+
+msgid ""
+"The --count option is deprecated and will be removed in the next release."
+msgstr "--count 选项已弃用，并将在以后的版本中删除。"
 
 msgid "No versions to delete."
 msgstr "没有要删除的版本。"
@@ -941,17 +1077,50 @@ msgstr "删除内容视图 '%{view}' 的版本 '%{version}'。"
 msgid "Content View Name"
 msgstr "内容视图名称"
 
-msgid "Content View Label"
-msgstr "内容视图标签"
-
-msgid "Repositories"
-msgstr "软件仓库"
-
 msgid "Has Applied Filters"
 msgstr "有应用的过滤"
 
 msgid "Applied Filters"
 msgstr "应用的过滤"
+
+msgid "Inclusion"
+msgstr "包含"
+
+msgid "Original packages"
+msgstr "原始软件包"
+
+msgid "Original module streams"
+msgstr "原始模块流"
+
+msgid "Rules"
+msgstr "规则"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "Module stream Id"
+msgstr "模块流 Id"
+
+msgid "Types"
+msgstr "类型"
+
+msgid "Architecture"
+msgstr "架构"
+
+msgid "Content view filter Id"
+msgstr "内容视图过滤器 ID"
+
+msgid "Errata Id"
+msgstr "勘误 ID"
+
+msgid "Date type"
+msgstr "日期类型"
+
+msgid "Start date"
+msgstr "开始日期"
+
+msgid "End date"
+msgstr "结束日期"
 
 msgid "Dependency Solving"
 msgstr "解决依赖项"
@@ -961,6 +1130,13 @@ msgstr "内容视图版本被重新发布（任务 %{id}）。"
 
 msgid "Could not republish the Content View"
 msgstr "无法重新发布内容视图"
+
+msgid ""
+"Verifying checksum of Content View Version repositories with task %{id}."
+msgstr "通过任务%{id} 验证内容视图版本存储库的校验和。"
+
+msgid "Could not verify checksum of repositories in the Content View Version"
+msgstr "无法验证内容视图版本中的存储库校验和"
 
 msgid "Content view is being promoted with task %{id}."
 msgstr "内容视图被提升（任务 %{id}）。"
@@ -1031,9 +1207,6 @@ msgstr "Uuid"
 msgid "checksum"
 msgstr "校验和"
 
-msgid "Architecture"
-msgstr "架构"
-
 msgid "Nav"
 msgstr "Nav"
 
@@ -1067,9 +1240,6 @@ msgstr "管理 Docker 标签"
 msgid "Tag"
 msgstr "标签"
 
-msgid "Repository ID"
-msgstr "仓库 ID"
-
 msgid "Docker Manifest ID"
 msgstr "Docker 清单 ID"
 
@@ -1078,9 +1248,6 @@ msgstr "Docker 清单名称"
 
 msgid "Errata ID"
 msgstr "勘误 ID"
-
-msgid "Title"
-msgstr "提示"
 
 msgid "Issued"
 msgstr "发行"
@@ -1097,9 +1264,6 @@ msgstr "发行"
 msgid "Solution"
 msgstr "解决"
 
-msgid "Module Streams"
-msgstr "模块流"
-
 msgid "Stream"
 msgstr "流"
 
@@ -1109,20 +1273,20 @@ msgstr "校验和"
 msgid "Filter ID"
 msgstr "过滤器 ID"
 
-msgid "Inclusion"
-msgstr "包含"
-
-msgid "Rules"
-msgstr "规则"
-
 msgid "Minimum Version"
 msgstr "最小版本"
 
 msgid "Maximum Version"
 msgstr "最大版本"
 
-msgid "Types"
-msgstr "类型"
+msgid "Start Date"
+msgstr "开始日期"
+
+msgid "End Date"
+msgstr "结束日期"
+
+msgid "Module Stream ID"
+msgstr "模块流 ID"
 
 msgid "Created"
 msgstr "创建"
@@ -1171,6 +1335,78 @@ msgstr "删除过滤规则。"
 
 msgid "Could not delete the filter rule"
 msgstr "无法删除过滤器规则"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Registry URL"
+msgstr "Registry URL"
+
+msgid "Flatpak index URL"
+msgstr "Flatpak index URL"
+
+msgid "Flatpak Remote created."
+msgstr "Flatpak Remote 已创建"
+
+msgid "Could not create the Flatpak Remote."
+msgstr "无法创建 Flatpak Remote。"
+
+msgid "Flatpak Remote updated."
+msgstr "Flatpak Remote 已更新"
+
+msgid "Could not update the Flatpak Remote."
+msgstr "无法更新 Flatpak Remote。"
+
+msgid "Flatpak Remote deleted."
+msgstr "Flatpak Remote 已删除"
+
+msgid "Could not delete the Flatpak Remote."
+msgstr "无法删除 Flatpak Remote。"
+
+msgid "Flatpak remote is being scanned in task %<id>s."
+msgstr "正在任务 %s 中扫描 Flatpak Remote。"
+
+msgid "Could not scan the Flatpak remote"
+msgstr "无法扫描 Flatpak Remote"
+
+msgid "View and manage flatpak remote repositories"
+msgstr "查看并管理 Flatpak 远程存储库"
+
+msgid "Flatpak Remote ID"
+msgstr "Flatpak Remote ID"
+
+msgid "Flatpak Remote Name"
+msgstr "Flatpak Remote 名称"
+
+msgid "Flatpak Remote URL"
+msgstr "Flatpak Remote URL"
+
+msgid "Manifests"
+msgstr "清单"
+
+msgid "Manifest Name"
+msgstr "清单名称"
+
+msgid "Manifest Digest"
+msgstr "清单摘要"
+
+msgid "Manifest tags"
+msgstr "清单标签"
+
+msgid "Flatpak remote repository is being mirrored to product in task %<id>s."
+msgstr "正在任务 % <id>s 中将 Flatpak Remote 存储库镜像到产品。"
+
+msgid "Could not mirror the Flatpak remote repository"
+msgstr "无法镜像 Flatpa Remote 存储库"
+
+msgid "Running image"
+msgstr "运行的镜像"
+
+msgid "Running image digest"
+msgstr "运行镜像摘要"
+
+msgid "Host count"
+msgstr "主机数"
 
 msgid "Limit"
 msgstr "限制"
@@ -1235,98 +1471,8 @@ msgstr "主机已被删除。"
 msgid "Could not remove host(s)"
 msgstr "无法删除主机"
 
-msgid "Manipulate errata for a host collection"
-msgstr "为一个主机集合处理勘误"
-
-msgid "Install errata on content hosts contained within a host collection"
-msgstr "在主机集合中包含的内容主机上安装勘误"
-
-msgid "Successfully scheduled installation of errata."
-msgstr "成功调度了勘误安装。"
-
-msgid "Could not schedule installation of errata"
-msgstr "无法调度勘误安装"
-
-msgid "List of Errata to install"
-msgstr "要安装的勘误列表"
-
-msgid "Manipulate packages for a host collection"
-msgstr "为主机集合处理软件包"
-
-msgid "comma-separated list of packages to install"
-msgstr "以逗号分隔的要安装的软件包列表"
-
-msgid "Install packages on content hosts contained within a host collection"
-msgstr "在主机集合中包含的内容主机上安装软件包"
-
-msgid "Successfully scheduled installation of package(s)."
-msgstr "成功调度了软件包安装。"
-
-msgid "Could not schedule installation of package(s)"
-msgstr "无法安排软件包安装"
-
-msgid "Update packages on content hosts contained within a host collection"
-msgstr "更新主机集合中包含的内容主机上的软件包"
-
-msgid "Successfully scheduled update of package(s)."
-msgstr "成功调度了软件包更新。"
-
-msgid "Could not schedule update of package(s)"
-msgstr "无法调度软件包更新"
-
-msgid "Remove packages on content hosts contained within a host collection"
-msgstr "删除主机集合中包含的内容主机上的软件包"
-
-msgid "Successfully scheduled removal of package(s)."
-msgstr "成功调度了软件包删除。"
-
-msgid "Could not schedule removal of package(s)"
-msgstr "无法调度软件包删除"
-
-msgid "Manipulate package-groups for a host collection"
-msgstr "为一个主机集合处理软件包组"
-
-msgid "comma-separated list of package-groups to install"
-msgstr "以逗号分隔的要安装的软件包组列表"
-
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
-msgstr "在主机集合中包含的内容主机上安装软件包组"
-
-msgid "Successfully scheduled installation of package-group(s)."
-msgstr "成功调度了软件包组安装。"
-
-msgid "Could not schedule installation of package-group(s)"
-msgstr "无法调度软件包组安装"
-
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
-msgstr "在主机集合中包含的内容主机上更新软件包组"
-
-msgid "Successfully scheduled update of package-groups(s)."
-msgstr "成功调度了软件包组的更新。"
-
-msgid "Could not schedule update of package-group(s)"
-msgstr "无法调度软件包组的更新"
-
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
-msgstr "在主机集合中包含的内容主机上删除软件包组"
-
-msgid "Successfully scheduled removal of package-groups(s)."
-msgstr "成功调度了删除软件包组。"
-
-msgid "Could not schedule removal of package-group(s)"
-msgstr "无法调度删除软件包组"
-
 msgid "Arch"
 msgstr "架构"
-
-msgid "Errata is being applied with task %{id}."
-msgstr "勘误被应用（任务%{id}）。"
-
-msgid "Could not apply errata"
-msgstr "无法应用勘误"
 
 msgid "Erratum ID"
 msgstr "勘误：ID"
@@ -1340,20 +1486,44 @@ msgstr "勘误重新计算已启动。"
 msgid "Could not recalculate errata"
 msgstr "无法重新计算勘误"
 
+msgid "Staged image"
+msgstr "预发布镜像"
+
+msgid "Staged image digest"
+msgstr "预发布镜像摘要"
+
+msgid "Available image"
+msgstr "可用镜像"
+
+msgid "Available image digest"
+msgstr "可用的镜像摘要"
+
+msgid "Rollback image"
+msgstr "回滚镜像"
+
+msgid "Rollback image digest"
+msgstr "回滚镜像摘要"
+
 msgid "Trace Status"
 msgstr "跟踪状态"
+
+msgid "Last Checkin"
+msgstr "最后签到"
 
 msgid "Content Information"
 msgstr "内容信息"
 
-msgid "Content view environments"
-msgstr "内容视图环境"
-
 msgid "Content view"
 msgstr "内容视图"
 
-msgid "Lifecycle environment"
-msgstr "生命周期环境"
+msgid "Composite Content View"
+msgstr "复合内容视图"
+
+msgid "Rolling Content View"
+msgstr "滚动内容视图"
+
+msgid "Lifecycle Environment Name"
+msgstr "生命周期环境名称"
 
 msgid "Kickstart Repository"
 msgstr "Kickstart 仓库"
@@ -1373,12 +1543,6 @@ msgstr "程序漏洞修正"
 msgid "Subscription Information"
 msgstr "订阅信息"
 
-msgid "Last Checkin"
-msgstr "最后签到"
-
-msgid "Autoheal"
-msgstr "Autoheal"
-
 msgid "Registered To"
 msgstr "注册到"
 
@@ -1388,8 +1552,22 @@ msgstr "注册于"
 msgid "Registered by Activation Keys"
 msgstr "通过激活密钥注册"
 
+msgid "bootc Image Information"
+msgstr "bootc 镜像信息"
+
 msgid "Nvra"
 msgstr "Nvra"
+
+msgid "Persistence"
+msgstr "持久化"
+
+msgid ""
+"Generate a Containerfile RUN command from transiently installed packages on "
+"image mode hosts"
+msgstr "从镜像模式主机上临时安装的软件包生成 Containerfile RUN 命令"
+
+msgid "No transient packages found"
+msgstr "没有找到临时软件包"
 
 msgid "Host unregistered."
 msgstr "主机未注册。"
@@ -1402,31 +1580,6 @@ msgstr "主机成功注册。"
 
 msgid "Failed to register host"
 msgstr "注册主机失败"
-
-msgid "Subscription attached to the host successfully."
-msgstr "订阅已成功附加到主机。"
-
-msgid "Failed to attach subscriptions to the host"
-msgstr "将订阅附加到主机失败"
-
-msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr "这个订阅要添加的数量。默认为 1"
-
-msgid "Auto attached subscriptions to the host successfully."
-msgstr "自动将订阅自动附加到主机成功。"
-
-msgid "Failed to auto attach subscriptions to the host"
-msgstr "无法自动将订阅附加到主机"
-
-msgid "Subscription removed from the host successfully."
-msgstr "订阅已成功从主机中删除。"
-
-msgid "Failed to remove subscriptions from the host"
-msgstr "从主机上删除订阅失败"
-
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
-msgstr "删除第一个匹配 ID 和数量的订阅实例"
 
 msgid "Content View id"
 msgstr "内容视图 ID"
@@ -1463,6 +1616,9 @@ msgstr "用來进行搜索的机构名称"
 
 msgid "Organization label to search by"
 msgstr "用來进行搜索的机构标记"
+
+msgid "Activation key name to search by"
+msgstr "用来进行搜索的激活码名称"
 
 msgid "Capsule name to search by"
 msgstr "用来进行搜索的 Capsule 名"
@@ -1506,6 +1662,9 @@ msgstr "用于进行搜索的任务名称"
 msgid "Content view version number"
 msgstr "內容视图版本号"
 
+msgid "Flatpak remote name to search by"
+msgstr "用于搜索的 Flatpak Remote 名称"
+
 msgid "Name to search by"
 msgstr "用来进行搜索的名称"
 
@@ -1517,9 +1676,6 @@ msgstr "前"
 
 msgid "Lifecycle Path"
 msgstr "生命週期路徑"
-
-msgid "Library"
-msgstr "库"
 
 msgid "Prior Lifecycle Environment"
 msgstr "前生命周期环境"
@@ -1563,9 +1719,6 @@ msgstr "配置集"
 msgid "RPMs"
 msgstr "RPM"
 
-msgid "Simple Content Access"
-msgstr "简单内容访问"
-
 msgid "Service Levels"
 msgstr "服务等级"
 
@@ -1578,17 +1731,8 @@ msgstr "上游生命周期环境"
 msgid "Upstream Content View"
 msgstr "上游内容视图"
 
-msgid "Username"
-msgstr "用户名"
-
 msgid "SSL CA Credential ID"
 msgstr "SSL CA 凭证 ID"
-
-msgid "Enabled"
-msgstr "启用"
-
-msgid "Disabled"
-msgstr "禁用"
 
 msgid "Export Sync"
 msgstr "导出同步"
@@ -1625,6 +1769,9 @@ msgstr "更新的 CDN 配置。"
 
 msgid "Could not update CDN configuration."
 msgstr "无法更新 CDN 配置。"
+
+msgid "Organization title to search by"
+msgstr "要搜索的机构标题"
 
 msgid "Source RPM"
 msgstr "源 RPM"
@@ -1674,9 +1821,6 @@ msgstr "需要"
 msgid "Provides"
 msgstr "提供"
 
-msgid "Files"
-msgstr "文件"
-
 msgid "Size"
 msgstr "大小"
 
@@ -1685,9 +1829,6 @@ msgstr "模块化"
 
 msgid "Package Group Name"
 msgstr "软件包组名称"
-
-msgid "Repository Name"
-msgstr "仓库名称"
 
 msgid "Default Packages"
 msgstr "默认软件包"
@@ -1761,6 +1902,15 @@ msgstr "更新了智能代理。"
 msgid "Could not update the product HTTP Proxy."
 msgstr "无法更新产品 HTTP 代理。"
 
+msgid "Verify checksum for one or more products"
+msgstr "验证一个或多个产品的校验和"
+
+msgid "Verified checksum of product repositories with task %{id}."
+msgstr "通过任务 %{id} 验证产品软件仓库的校验和。"
+
+msgid "Could not verify checksum of repositories in the product"
+msgstr "无法验证产品中存储库的校验和"
+
 msgid "Product destroyed."
 msgstr "产品已销毁。"
 
@@ -1803,6 +1953,12 @@ msgstr "覆盖"
 msgid "Location of the ansible collections requirements.yml file. "
 msgstr "ansible 集合 requirements.yml 文件的位置。 "
 
+msgid "Orphaned"
+msgstr "Orphaned"
+
+msgid "Upstream Repository Name"
+msgstr "上游仓库名称"
+
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
@@ -1829,9 +1985,6 @@ msgstr "下载政策"
 msgid "Metadata Expiration"
 msgstr "元数据过期"
 
-msgid "Upstream Repository Name"
-msgstr "上游仓库名称"
-
 msgid "Container Image Tags Filter"
 msgstr "容器镜像标签过滤"
 
@@ -1841,11 +1994,23 @@ msgstr "容器仓库名称"
 msgid "Ignorable Content Units"
 msgstr "可忽略的内容单元"
 
+msgid "Publish Settings"
+msgstr "发布设置"
+
+msgid "Restrict to architecture"
+msgstr "限制架构"
+
+msgid "Restrict to OS Version"
+msgstr "仅限操作系统版本"
+
 msgid "HTTP Proxy"
 msgstr "HTTP 代理"
 
 msgid "HTTP Proxy Policy"
 msgstr "HTTP 代理策略"
+
+msgid "GPG Key Path"
+msgstr "GPG 密钥路径"
 
 msgid "Sync"
 msgstr "同步"
@@ -1853,23 +2018,8 @@ msgstr "同步"
 msgid "Last Sync Date"
 msgstr "最後同步日期"
 
-msgid "Content Counts"
-msgstr "内容计数"
-
-msgid "Source RPMS"
-msgstr "源 RPMS"
-
-msgid "Package Groups"
-msgstr "软件包组"
-
-msgid "Container Image Manifest Lists"
-msgstr "容器镜像清单列表"
-
-msgid "Container Image Manifests"
-msgstr "容器图像清单"
-
-msgid "Container Image Tags"
-msgstr "容器镜像标签"
+msgid "No restriction"
+msgstr "没有限制"
 
 msgid "yes"
 msgstr "是"
@@ -1909,9 +2059,6 @@ msgstr "等候"
 
 msgid "Canceled"
 msgstr "已取消"
-
-msgid "Warning"
-msgstr "警告"
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "仓库正在同步（任务 %{id}）"
@@ -2042,6 +2189,12 @@ msgstr "重新发布的仓库。"
 msgid "Could not republish the repository."
 msgstr "无法重新发布仓库。"
 
+msgid "Verified checksum of repository with task %{id}."
+msgstr "通过任务 %{id} 验证仓库的校验和。"
+
+msgid "Could not verify checksum of repository"
+msgstr "无法验证仓库的校验和"
+
 msgid "Reclaim space from an On Demand repository"
 msgstr "重新声明来自 On Demand 存储库的空间"
 
@@ -2057,6 +2210,9 @@ msgstr "启用的仓库"
 msgid "Registry Name"
 msgstr "Registry 名称"
 
+msgid "Enabled"
+msgstr "启用"
+
 msgid "Repository enabled."
 msgstr "仓库已启用。"
 
@@ -2069,26 +2225,26 @@ msgstr "仓库已禁用。"
 msgid "Could not disable repository"
 msgstr "无法禁用软件仓库"
 
-msgid "This organization is not eligible for Simple Content Access"
-msgstr "此机构没有资格使用简单内容访问"
-
-msgid "Simple Content Access Enabled."
-msgstr "启用简单内容访问。"
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr "无法为这个机构启用简单内容访问"
-
-msgid "Simple Content Access Disabled."
-msgstr "禁用简单内容访问。"
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr "无法为此机构禁用简单内容访问"
-
 msgid "Time UTC"
 msgstr "时间 UTC"
 
+msgid "Contract"
+msgstr "合同"
+
+msgid "Account"
+msgstr "帐号"
+
+msgid "Support"
+msgstr "支援"
+
+msgid "Quantity"
+msgstr "数量"
+
 msgid "Consumed"
 msgstr "已消耗"
+
+msgid "Product Host Count"
+msgstr "产品主机计数"
 
 msgid "Physical"
 msgstr "物理"

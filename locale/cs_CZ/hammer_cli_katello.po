@@ -1,20 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-katello package.
+# This file is distributed under the same license as the hammer_cli_katello package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
 # mhulan <mhulan@redhat.com>, 2017
-# Pavel Borecki <pavel.borecki@gmail.com>, 2023
+# Pavel Borecki <pavel.borecki@gmail.com>, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_katello 5.1.0.pre.main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-12 17:04+0000\n"
+"POT-Creation-Date: 2026-09-22 19:21+0200\n"
 "PO-Revision-Date: 2017-09-11 13:28+0000\n"
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2023\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2026\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/foreman/"
 "teams/114/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,9 @@ msgid "Manipulate content credentials on the server"
 msgstr ""
 
 msgid "Manipulate lifecycle_environments on the server"
+msgstr ""
+
+msgid "Manipulate content view environments"
 msgstr ""
 
 msgid "Manipulate products"
@@ -93,10 +96,10 @@ msgstr ""
 msgid "Manipulate source RPMs"
 msgstr ""
 
-msgid "Simple content access commands"
+msgid "Manipulate docker content"
 msgstr ""
 
-msgid "Manipulate docker content"
+msgid "Manipulate flatpak remotes"
 msgstr ""
 
 msgid "ID"
@@ -183,13 +186,40 @@ msgstr ""
 msgid "Could not refresh the alternate content source"
 msgstr ""
 
+msgid "Refresh all alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed all alternate content sources"
+msgstr ""
+
+msgid "Could not refresh all alternate content sources"
+msgstr ""
+
+msgid "Refresh alternate content sources"
+msgstr ""
+
+msgid "Successfully refreshed specified alternate content sources"
+msgstr ""
+
+msgid "Could not refresh the specified alternate content sources"
+msgstr ""
+
+msgid "Destroy alternate content sources"
+msgstr ""
+
+msgid "Sucessfully destroyed specified alternate content sources"
+msgstr ""
+
+msgid "Could not destroy the specified alternate content sources"
+msgstr ""
+
 msgid "Host Limit"
 msgstr "Limit strojů"
 
-msgid "Lifecycle Environment"
-msgstr "Prostředí životního cyklu"
+msgid "Content View Environments"
+msgstr ""
 
-msgid "Content View"
+msgid "Multi Content View Environment"
 msgstr ""
 
 msgid "Unlimited"
@@ -198,11 +228,35 @@ msgstr "Neomezený"
 msgid "%{consumed} of %{limit}"
 msgstr "%{consumed} z %{limit}"
 
-msgid "Auto Attach"
-msgstr "Automaticky připojit"
-
 msgid "Release Version"
 msgstr "Verze vydání"
+
+msgid "Content View Environment Labels"
+msgstr ""
+
+msgid "Organization"
+msgstr "Organizace"
+
+msgid "Content View"
+msgstr ""
+
+msgid "Version"
+msgstr "Verze"
+
+msgid "Content View version Id"
+msgstr ""
+
+msgid "Composite"
+msgstr ""
+
+msgid "Rolling"
+msgstr ""
+
+msgid "Content View Environment id"
+msgstr ""
+
+msgid "Lifecycle environment"
+msgstr ""
 
 msgid "Associated Hosts"
 msgstr ""
@@ -231,9 +285,6 @@ msgstr ""
 msgid "Purpose Role"
 msgstr ""
 
-msgid "Purpose Addons"
-msgstr ""
-
 msgid "Activation key created."
 msgstr "Aktivační klíč vytvořen."
 
@@ -260,54 +311,6 @@ msgstr "Aktivační klíč smazán."
 
 msgid "Could not delete the activation key"
 msgstr ""
-
-msgid "List associated subscriptions"
-msgstr ""
-
-msgid "Attached"
-msgstr "Připojeno"
-
-msgid "Quantity"
-msgstr "Množství"
-
-msgid "Start Date"
-msgstr "Datum zahájení"
-
-msgid "End Date"
-msgstr "Datum skončení"
-
-msgid "Support"
-msgstr "Podpora"
-
-msgid "Contract"
-msgstr "Smlouva"
-
-msgid "Account"
-msgstr "Účet"
-
-msgid "ID of the activation key"
-msgstr "Identifikátor aktivačního klíče"
-
-msgid "Activation key name to search by"
-msgstr "Název aktivačního klíče podle kterého hledat"
-
-msgid "Subscription added to activation key."
-msgstr "Aktivačnímu klíči přiděleno předplatné."
-
-msgid "Could not add subscription to activation key"
-msgstr ""
-
-msgid "Remove subscription"
-msgstr "Odebrat předplatné"
-
-msgid "ID of subscription"
-msgstr "Identifikátor předplatného"
-
-msgid "Subscription removed from activation key."
-msgstr "Aktivačnímu klíči odebráno předplatné."
-
-msgid "Could not remove subscription from activation key"
-msgstr "Nedaří se odebrat předplatné z aktivačního klíče"
 
 msgid "List associated host collections"
 msgstr ""
@@ -357,9 +360,6 @@ msgstr "Stroj se nedaří odebrat"
 msgid "Manage the capsule content"
 msgstr ""
 
-msgid "Organization"
-msgstr "Organizace"
-
 msgid "Lifecycle environment successfully added to the capsule."
 msgstr "Prostředí životního cyklu úspěšně přidáno do kapsle."
 
@@ -375,10 +375,28 @@ msgstr "Prostředí životního cyklu úspěšně odebráno z kapsle."
 msgid "Could not remove the lifecycle environment from the capsule"
 msgstr ""
 
+msgid "Capsule reclaim space has been started in task %{id}."
+msgstr ""
+
+msgid "Capsule reclaim space was unsuccessful."
+msgstr ""
+
 msgid "Capsule content is being synchronized in task %{id}."
 msgstr ""
 
 msgid "Could not synchronize capsule content"
+msgstr ""
+
+msgid "Capsule content counts are being updated in task %{id}."
+msgstr ""
+
+msgid "Could not update capsule content counts"
+msgstr ""
+
+msgid "Capsule content checksum is being verified in task %{id}."
+msgstr ""
+
+msgid "Could not verify capsule content checksum"
 msgstr ""
 
 msgid "Last sync"
@@ -414,31 +432,64 @@ msgstr "Prostředí životního cyklu"
 msgid "Content Views"
 msgstr ""
 
-msgid "Composite"
-msgstr ""
-
 msgid "Last Published"
 msgstr "Naposledy zveřejněno"
 
-msgid "Content"
-msgstr "Obsah"
+msgid "Repositories"
+msgstr "Repozitáře"
 
-msgid "Hosts"
-msgstr "Stroje"
+msgid "Repository ID"
+msgstr "Identifikátor repozitáře"
 
-msgid "Yum repos"
-msgstr "Yum repozitáře"
+msgid "Repository Name"
+msgstr "Název repozitáře"
 
-msgid "Container Image repos"
-msgstr "Repozitáře s obrazy kontejnerů"
+msgid "Content Counts"
+msgstr "Počty obsahu"
+
+msgid "Warning"
+msgstr ""
 
 msgid "Packages"
 msgstr "Balíčky"
 
-msgid "Package groups"
+msgid "SRPMs"
+msgstr ""
+
+msgid "Module Streams"
+msgstr ""
+
+msgid "Package Groups"
 msgstr "Skupiny balíčků"
 
 msgid "Errata"
+msgstr ""
+
+msgid "Debian Packages"
+msgstr ""
+
+msgid "Container Tags"
+msgstr ""
+
+msgid "Container Manifests"
+msgstr ""
+
+msgid "Container Manifest Lists"
+msgstr ""
+
+msgid "Files"
+msgstr "Soubory"
+
+msgid "Ansible Collections"
+msgstr ""
+
+msgid "OSTree Refs"
+msgstr ""
+
+msgid "Python Packages"
+msgstr ""
+
+msgid "Content view must be synced to see content counts"
 msgstr ""
 
 msgid "Content Source name"
@@ -481,6 +532,9 @@ msgstr "Typ obsahu"
 
 msgid "Product"
 msgstr "Produkt"
+
+msgid "Content"
+msgstr "Obsah"
 
 msgid "Content Credential created."
 msgstr ""
@@ -681,6 +735,12 @@ msgstr ""
 msgid "Could not update content override"
 msgstr ""
 
+msgid "You must use --force to set an override other than 'enabled'"
+msgstr ""
+
+msgid "Force the override. Required for overrides other than 'enabled'"
+msgstr ""
+
 msgid "Label of the content"
 msgstr "Štítek obsahu"
 
@@ -695,9 +755,6 @@ msgstr ""
 
 msgid "Remove a content override"
 msgstr ""
-
-msgid "Version"
-msgstr "Verze"
 
 msgid "Filename"
 msgstr "Název souboru"
@@ -717,10 +774,22 @@ msgstr ""
 msgid "Yum Repositories"
 msgstr "Yum repozitáře"
 
+msgid "File Repositories"
+msgstr ""
+
 msgid "Container Image Repositories"
 msgstr "Repozitáře s obrazy kontejnerů"
 
 msgid "OSTree Repositories"
+msgstr ""
+
+msgid "Ansible Repositories"
+msgstr ""
+
+msgid "Debian Repositories"
+msgstr ""
+
+msgid "Python Repositories"
 msgstr ""
 
 msgid "Versions"
@@ -732,6 +801,15 @@ msgstr "Zveřejněno"
 msgid "Components"
 msgstr "Součásti"
 
+msgid "Latest version"
+msgstr ""
+
+msgid "Not yet published"
+msgstr "Zatím nezveřejněno"
+
+msgid "Always update to the latest"
+msgstr ""
+
 msgid "Activation Keys"
 msgstr "Aktivační klíče"
 
@@ -742,6 +820,9 @@ msgid "Could not create the content view"
 msgstr ""
 
 msgid "Create a composite content view"
+msgstr ""
+
+msgid "Create a rolling content view"
 msgstr ""
 
 msgid "Designate this Content View for importing from upstream servers only."
@@ -888,16 +969,71 @@ msgstr ""
 msgid "Could not remove the components"
 msgstr ""
 
+msgid "Lifecycle Environment"
+msgstr "Prostředí životního cyklu"
+
+msgid "Default"
+msgstr ""
+
+msgid "Hosts Count"
+msgstr ""
+
+msgid "Activation Keys Count"
+msgstr ""
+
+msgid "Hostgroups Count"
+msgstr ""
+
+msgid "Created At"
+msgstr ""
+
+msgid "Updated At"
+msgstr ""
+
+msgid "Organization Id"
+msgstr ""
+
+msgid "Organization Label"
+msgstr ""
+
+msgid "Content View Label"
+msgstr ""
+
+msgid "Default Content View"
+msgstr ""
+
+msgid "Lifecycle Environment Id"
+msgstr ""
+
+msgid "Lifecycle Environment Label"
+msgstr ""
+
+msgid "Library"
+msgstr "Knihovna"
+
+msgid "Hostgroups"
+msgstr "Skupiny strojů"
+
+msgid "Title"
+msgstr "Nadpis"
+
 msgid "Content View numeric identifier"
 msgstr ""
 
 msgid "Content View name"
 msgstr "Název pohledu na obsah"
 
-msgid "count of unused versions to keep"
+msgid "(deprecated) Number of versions to keep"
 msgstr ""
 
-msgid "Invalid value for --count option: value must be 0 or greater."
+msgid "Number of unused versions to keep"
+msgstr ""
+
+msgid "Invalid value for --versions-to-keep: value must be 0 or greater."
+msgstr ""
+
+msgid ""
+"The --count option is deprecated and will be removed in the next release."
 msgstr ""
 
 msgid "No versions to delete."
@@ -914,16 +1050,49 @@ msgstr ""
 msgid "Content View Name"
 msgstr ""
 
-msgid "Content View Label"
-msgstr ""
-
-msgid "Repositories"
-msgstr "Repozitáře"
-
 msgid "Has Applied Filters"
 msgstr ""
 
 msgid "Applied Filters"
+msgstr ""
+
+msgid "Inclusion"
+msgstr "Zahrnutí"
+
+msgid "Original packages"
+msgstr ""
+
+msgid "Original module streams"
+msgstr ""
+
+msgid "Rules"
+msgstr "Pravidla"
+
+msgid "UUID"
+msgstr ""
+
+msgid "Module stream Id"
+msgstr ""
+
+msgid "Types"
+msgstr "Typy"
+
+msgid "Architecture"
+msgstr "Architektura"
+
+msgid "Content view filter Id"
+msgstr ""
+
+msgid "Errata Id"
+msgstr ""
+
+msgid "Date type"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
 msgstr ""
 
 msgid "Dependency Solving"
@@ -933,6 +1102,13 @@ msgid "Content View Version is being republished with task %{id}."
 msgstr ""
 
 msgid "Could not republish the Content View"
+msgstr ""
+
+msgid ""
+"Verifying checksum of Content View Version repositories with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repositories in the Content View Version"
 msgstr ""
 
 msgid "Content view is being promoted with task %{id}."
@@ -1002,9 +1178,6 @@ msgstr ""
 msgid "checksum"
 msgstr ""
 
-msgid "Architecture"
-msgstr "Architektura"
-
 msgid "Nav"
 msgstr ""
 
@@ -1038,9 +1211,6 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-msgid "Repository ID"
-msgstr "Identifikátor repozitáře"
-
 msgid "Docker Manifest ID"
 msgstr ""
 
@@ -1049,9 +1219,6 @@ msgstr ""
 
 msgid "Errata ID"
 msgstr ""
-
-msgid "Title"
-msgstr "Nadpis"
 
 msgid "Issued"
 msgstr "Vydáno"
@@ -1068,9 +1235,6 @@ msgstr "Vydání"
 msgid "Solution"
 msgstr "Řešení"
 
-msgid "Module Streams"
-msgstr ""
-
 msgid "Stream"
 msgstr ""
 
@@ -1080,20 +1244,20 @@ msgstr "Kontrolní součet"
 msgid "Filter ID"
 msgstr "Identif. filtru"
 
-msgid "Inclusion"
-msgstr "Zahrnutí"
-
-msgid "Rules"
-msgstr "Pravidla"
-
 msgid "Minimum Version"
 msgstr "Minimální verze"
 
 msgid "Maximum Version"
 msgstr "Maximální verze"
 
-msgid "Types"
-msgstr "Typy"
+msgid "Start Date"
+msgstr "Datum zahájení"
+
+msgid "End Date"
+msgstr "Datum skončení"
+
+msgid "Module Stream ID"
+msgstr ""
 
 msgid "Created"
 msgstr "Vytvořeno"
@@ -1141,6 +1305,78 @@ msgid "Filter rule deleted."
 msgstr "Pravidlo filtru smazáno."
 
 msgid "Could not delete the filter rule"
+msgstr ""
+
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+msgid "Registry URL"
+msgstr "URL adresa registru"
+
+msgid "Flatpak index URL"
+msgstr ""
+
+msgid "Flatpak Remote created."
+msgstr ""
+
+msgid "Could not create the Flatpak Remote."
+msgstr ""
+
+msgid "Flatpak Remote updated."
+msgstr ""
+
+msgid "Could not update the Flatpak Remote."
+msgstr ""
+
+msgid "Flatpak Remote deleted."
+msgstr ""
+
+msgid "Could not delete the Flatpak Remote."
+msgstr ""
+
+msgid "Flatpak remote is being scanned in task %<id>s."
+msgstr ""
+
+msgid "Could not scan the Flatpak remote"
+msgstr ""
+
+msgid "View and manage flatpak remote repositories"
+msgstr ""
+
+msgid "Flatpak Remote ID"
+msgstr ""
+
+msgid "Flatpak Remote Name"
+msgstr ""
+
+msgid "Flatpak Remote URL"
+msgstr ""
+
+msgid "Manifests"
+msgstr ""
+
+msgid "Manifest Name"
+msgstr ""
+
+msgid "Manifest Digest"
+msgstr ""
+
+msgid "Manifest tags"
+msgstr ""
+
+msgid "Flatpak remote repository is being mirrored to product in task %<id>s."
+msgstr ""
+
+msgid "Could not mirror the Flatpak remote repository"
+msgstr ""
+
+msgid "Running image"
+msgstr ""
+
+msgid "Running image digest"
+msgstr ""
+
+msgid "Host count"
 msgstr ""
 
 msgid "Limit"
@@ -1206,98 +1442,8 @@ msgstr "Stroj(e) byl(y) odebrán(y)."
 msgid "Could not remove host(s)"
 msgstr "Nedaří se odebrat stroje"
 
-msgid "Manipulate errata for a host collection"
-msgstr ""
-
-msgid "Install errata on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled installation of errata."
-msgstr ""
-
-msgid "Could not schedule installation of errata"
-msgstr ""
-
-msgid "List of Errata to install"
-msgstr ""
-
-msgid "Manipulate packages for a host collection"
-msgstr ""
-
-msgid "comma-separated list of packages to install"
-msgstr ""
-
-msgid "Install packages on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled installation of package(s)."
-msgstr "Instalace balíčku/ů úspěšně naplánována."
-
-msgid "Could not schedule installation of package(s)"
-msgstr "Nepodařilo se naplánovat instalaci balíčků"
-
-msgid "Update packages on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled update of package(s)."
-msgstr ""
-
-msgid "Could not schedule update of package(s)"
-msgstr ""
-
-msgid "Remove packages on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled removal of package(s)."
-msgstr ""
-
-msgid "Could not schedule removal of package(s)"
-msgstr ""
-
-msgid "Manipulate package-groups for a host collection"
-msgstr ""
-
-msgid "comma-separated list of package-groups to install"
-msgstr "čárkou oddělovaný seznam skupin balíčků k instalaci"
-
-msgid ""
-"Install package-groups on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled installation of package-group(s)."
-msgstr ""
-
-msgid "Could not schedule installation of package-group(s)"
-msgstr ""
-
-msgid ""
-"Update package-groups on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled update of package-groups(s)."
-msgstr ""
-
-msgid "Could not schedule update of package-group(s)"
-msgstr ""
-
-msgid ""
-"Remove package-groups on content hosts contained within a host collection"
-msgstr ""
-
-msgid "Successfully scheduled removal of package-groups(s)."
-msgstr ""
-
-msgid "Could not schedule removal of package-group(s)"
-msgstr ""
-
 msgid "Arch"
 msgstr "Architektura"
-
-msgid "Errata is being applied with task %{id}."
-msgstr ""
-
-msgid "Could not apply errata"
-msgstr ""
 
 msgid "Erratum ID"
 msgstr ""
@@ -1311,19 +1457,43 @@ msgstr ""
 msgid "Could not recalculate errata"
 msgstr ""
 
+msgid "Staged image"
+msgstr ""
+
+msgid "Staged image digest"
+msgstr ""
+
+msgid "Available image"
+msgstr ""
+
+msgid "Available image digest"
+msgstr ""
+
+msgid "Rollback image"
+msgstr ""
+
+msgid "Rollback image digest"
+msgstr ""
+
 msgid "Trace Status"
+msgstr ""
+
+msgid "Last Checkin"
 msgstr ""
 
 msgid "Content Information"
 msgstr "Informace o obsahu"
 
-msgid "Content view environments"
-msgstr ""
-
 msgid "Content view"
 msgstr ""
 
-msgid "Lifecycle environment"
+msgid "Composite Content View"
+msgstr ""
+
+msgid "Rolling Content View"
+msgstr ""
+
+msgid "Lifecycle Environment Name"
 msgstr ""
 
 msgid "Kickstart Repository"
@@ -1344,12 +1514,6 @@ msgstr "Oprava"
 msgid "Subscription Information"
 msgstr "Informace o předplatném"
 
-msgid "Last Checkin"
-msgstr ""
-
-msgid "Autoheal"
-msgstr "Automatické léčení"
-
 msgid "Registered To"
 msgstr "Registrováno na"
 
@@ -1359,7 +1523,21 @@ msgstr ""
 msgid "Registered by Activation Keys"
 msgstr "Registrováno aktivačními klíči"
 
+msgid "bootc Image Information"
+msgstr ""
+
 msgid "Nvra"
+msgstr ""
+
+msgid "Persistence"
+msgstr ""
+
+msgid ""
+"Generate a Containerfile RUN command from transiently installed packages on "
+"image mode hosts"
+msgstr ""
+
+msgid "No transient packages found"
 msgstr ""
 
 msgid "Host unregistered."
@@ -1373,31 +1551,6 @@ msgstr "Stroj úspěšně zaregistrován."
 
 msgid "Failed to register host"
 msgstr "Stroj se nepodařilo zaregistrovat"
-
-msgid "Subscription attached to the host successfully."
-msgstr "Předplatné stroji úspěšně přiděleno."
-
-msgid "Failed to attach subscriptions to the host"
-msgstr "Nepodařilo se připojit předplatné k hostiteli"
-
-msgid "Quantity of this subscriptions to add. Defaults to 1"
-msgstr ""
-
-msgid "Auto attached subscriptions to the host successfully."
-msgstr "Hostiteli úspěšně automaticky přiděleno předplatné."
-
-msgid "Failed to auto attach subscriptions to the host"
-msgstr ""
-
-msgid "Subscription removed from the host successfully."
-msgstr "Předplatné stroji úspěšně odebráno."
-
-msgid "Failed to remove subscriptions from the host"
-msgstr ""
-
-msgid ""
-"Remove the first instance of a subscription with matching id and quantity"
-msgstr ""
 
 msgid "Content View id"
 msgstr ""
@@ -1434,6 +1587,9 @@ msgstr "Název organizace pomocí kterého hledat"
 
 msgid "Organization label to search by"
 msgstr ""
+
+msgid "Activation key name to search by"
+msgstr "Název aktivačního klíče podle kterého hledat"
 
 msgid "Capsule name to search by"
 msgstr ""
@@ -1477,6 +1633,9 @@ msgstr ""
 msgid "Content view version number"
 msgstr "Číslo verze pohledu na obsah"
 
+msgid "Flatpak remote name to search by"
+msgstr ""
+
 msgid "Name to search by"
 msgstr "Název podle kterého hledat"
 
@@ -1488,9 +1647,6 @@ msgstr "Před"
 
 msgid "Lifecycle Path"
 msgstr ""
-
-msgid "Library"
-msgstr "Knihovna"
 
 msgid "Prior Lifecycle Environment"
 msgstr ""
@@ -1534,9 +1690,6 @@ msgstr "Profily"
 msgid "RPMs"
 msgstr "RPM balíčky"
 
-msgid "Simple Content Access"
-msgstr ""
-
 msgid "Service Levels"
 msgstr ""
 
@@ -1549,16 +1702,7 @@ msgstr ""
 msgid "Upstream Content View"
 msgstr ""
 
-msgid "Username"
-msgstr "Uživatelské jméno"
-
 msgid "SSL CA Credential ID"
-msgstr ""
-
-msgid "Enabled"
-msgstr "Zapnuto"
-
-msgid "Disabled"
 msgstr ""
 
 msgid "Export Sync"
@@ -1595,6 +1739,9 @@ msgid "Updated CDN configuration."
 msgstr ""
 
 msgid "Could not update CDN configuration."
+msgstr ""
+
+msgid "Organization title to search by"
 msgstr ""
 
 msgid "Source RPM"
@@ -1645,9 +1792,6 @@ msgstr "Vyžaduje"
 msgid "Provides"
 msgstr ""
 
-msgid "Files"
-msgstr "Soubory"
-
 msgid "Size"
 msgstr "Velikost"
 
@@ -1656,9 +1800,6 @@ msgstr ""
 
 msgid "Package Group Name"
 msgstr "Název skupiny balíčků"
-
-msgid "Repository Name"
-msgstr "Název repozitáře"
 
 msgid "Default Packages"
 msgstr "Výchozí balíčky"
@@ -1732,6 +1873,15 @@ msgstr ""
 msgid "Could not update the product HTTP Proxy."
 msgstr ""
 
+msgid "Verify checksum for one or more products"
+msgstr ""
+
+msgid "Verified checksum of product repositories with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repositories in the product"
+msgstr ""
+
 msgid "Product destroyed."
 msgstr "Produkt zlikvidován."
 
@@ -1774,6 +1924,12 @@ msgstr "Přebít"
 msgid "Location of the ansible collections requirements.yml file. "
 msgstr ""
 
+msgid "Orphaned"
+msgstr ""
+
+msgid "Upstream Repository Name"
+msgstr "Název upstream repozitáře"
+
 msgid ""
 "Limit the repository type to return. View available types with \"hammer "
 "repository types\""
@@ -1800,9 +1956,6 @@ msgstr "Zásada stahování"
 msgid "Metadata Expiration"
 msgstr ""
 
-msgid "Upstream Repository Name"
-msgstr "Název upstream repozitáře"
-
 msgid "Container Image Tags Filter"
 msgstr "Filtr štítků obrazů kontejnerů"
 
@@ -1812,10 +1965,22 @@ msgstr ""
 msgid "Ignorable Content Units"
 msgstr "Ignorovatelné jednotky obsahu"
 
+msgid "Publish Settings"
+msgstr ""
+
+msgid "Restrict to architecture"
+msgstr "Omezit na architekturu"
+
+msgid "Restrict to OS Version"
+msgstr ""
+
 msgid "HTTP Proxy"
 msgstr ""
 
 msgid "HTTP Proxy Policy"
+msgstr ""
+
+msgid "GPG Key Path"
 msgstr ""
 
 msgid "Sync"
@@ -1824,23 +1989,8 @@ msgstr "Synchronizovat"
 msgid "Last Sync Date"
 msgstr "Datum poslední synchronizace"
 
-msgid "Content Counts"
-msgstr "Počty obsahu"
-
-msgid "Source RPMS"
+msgid "No restriction"
 msgstr ""
-
-msgid "Package Groups"
-msgstr "Skupiny balíčků"
-
-msgid "Container Image Manifest Lists"
-msgstr "Seznamy manifestů obrazů kontejnerů"
-
-msgid "Container Image Manifests"
-msgstr "Manifest obrazu v kontejneru"
-
-msgid "Container Image Tags"
-msgstr "Štítky obrazu kontejneru"
 
 msgid "yes"
 msgstr "ano"
@@ -1880,9 +2030,6 @@ msgstr "Čeká se"
 
 msgid "Canceled"
 msgstr "Zrušeno"
-
-msgid "Warning"
-msgstr ""
 
 msgid "Repository is being synchronized in task %{id}."
 msgstr "Repozitář je synchronizován v úloze %{id}."
@@ -2007,6 +2154,12 @@ msgstr ""
 msgid "Could not republish the repository."
 msgstr ""
 
+msgid "Verified checksum of repository with task %{id}."
+msgstr ""
+
+msgid "Could not verify checksum of repository"
+msgstr ""
+
 msgid "Reclaim space from an On Demand repository"
 msgstr ""
 
@@ -2022,6 +2175,9 @@ msgstr "Zapnout repozitáře"
 msgid "Registry Name"
 msgstr "Název registrů"
 
+msgid "Enabled"
+msgstr "Zapnuto"
+
 msgid "Repository enabled."
 msgstr "Repozitář zapnut."
 
@@ -2034,26 +2190,26 @@ msgstr "Repozitář vypnut."
 msgid "Could not disable repository"
 msgstr ""
 
-msgid "This organization is not eligible for Simple Content Access"
-msgstr ""
-
-msgid "Simple Content Access Enabled."
-msgstr ""
-
-msgid "Could not enable Simple Content Access for this organization"
-msgstr ""
-
-msgid "Simple Content Access Disabled."
-msgstr ""
-
-msgid "Could not disable Simple Content Access for this organization"
-msgstr ""
-
 msgid "Time UTC"
 msgstr ""
 
+msgid "Contract"
+msgstr "Smlouva"
+
+msgid "Account"
+msgstr "Účet"
+
+msgid "Support"
+msgstr "Podpora"
+
+msgid "Quantity"
+msgstr "Množství"
+
 msgid "Consumed"
 msgstr "Spotřebováno"
+
+msgid "Product Host Count"
+msgstr ""
 
 msgid "Physical"
 msgstr "Fyzický"
