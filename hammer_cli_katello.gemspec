@@ -69,5 +69,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'theforeman-rubocop', '~> 0.1.0'
 
   gem.add_dependency 'hammer_cli_foreman', '>= 3.18', '< 6.0'
-  gem.add_dependency 'hammer_cli_foreman_tasks', '~> 0.0.20'
+  gem.add_dependency 'hammer_cli_foreman_tasks', '>= 0.0.20', '< 1.0'
 end
