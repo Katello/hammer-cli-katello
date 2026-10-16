@@ -135,7 +135,7 @@ msgid "Upstream username"
 msgstr "업스트림 사용자 이름"
 
 msgid "Verify SSL"
-msgstr "SSL 확인 "
+msgstr "SSL 확인"
 
 msgid "SSL CA Cert"
 msgstr "SSL CA 인증서"
@@ -387,7 +387,7 @@ msgid "Last sync"
 msgstr "마지막 동기화"
 
 msgid "Status"
-msgstr "상태 "
+msgstr "상태"
 
 msgid "Currently running sync tasks"
 msgstr "현재 동기화 작업을 실행 중입니다."
@@ -2112,7 +2112,7 @@ msgid "Consumed"
 msgstr "사용됨 "
 
 msgid "Physical"
-msgstr "물리적 "
+msgstr "물리적"
 
 msgid "Guests of %s"
 msgstr "%s의 게스트"
@@ -2148,7 +2148,7 @@ msgid "Status Message"
 msgstr "상태 메세지 "
 
 msgid "Time"
-msgstr "시각"
+msgstr "시간 "
 
 msgid "Interval"
 msgstr "간격 "

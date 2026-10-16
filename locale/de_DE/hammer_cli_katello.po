@@ -1556,7 +1556,7 @@ msgid "SSL CA Credential ID"
 msgstr ""
 
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiviert"
 
 msgid "Disabled"
 msgstr ""
