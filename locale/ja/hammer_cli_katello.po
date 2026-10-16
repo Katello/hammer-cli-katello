@@ -142,7 +142,7 @@ msgid "SSL CA Cert"
 msgstr "SSL CA 証明書"
 
 msgid "Id"
-msgstr "ID"
+msgstr "Id"
 
 msgid "SSL Client Cert"
 msgstr "SSL クライアント証明書"
@@ -388,7 +388,7 @@ msgid "Last sync"
 msgstr "最終同期"
 
 msgid "Status"
-msgstr "ステータス"
+msgstr "状態"
 
 msgid "Currently running sync tasks"
 msgstr "現在実行中の同期タスク"
@@ -713,13 +713,13 @@ msgid "Imports a repository"
 msgstr "リポジトリーのインポート"
 
 msgid "Override product content defaults"
-msgstr "製品コンテンツのデフォルトを上書きします"
+msgstr "製品コンテンツのデフォルトをオーバーライドする"
 
 msgid "Updated content override."
-msgstr "コンテンツの上書きを更新しました。"
+msgstr "コンテンツのオーバーライドを更新しました。"
 
 msgid "Could not update content override"
-msgstr "コンテンツの上書きを更新できませんでした"
+msgstr "コンテンツのオーバーライドを更新できませんでした"
 
 msgid "Label of the content"
 msgstr "コンテンツのラベル"
@@ -734,11 +734,10 @@ msgstr ""
 "デフォルト値: 有効化"
 
 msgid "Override value. Note for repo enablement you can use a boolean value"
-msgstr ""
-"値を上書きします。リポジトリーの有効化については、ブール値を使用できます。"
+msgstr "値をオーバーライドします。リポジトリーの有効化については、ブール値を使用できます"
 
 msgid "Remove a content override"
-msgstr "コンテンツの上書きの削除"
+msgstr "コンテンツのオーバーライドを削除する"
 
 msgid "Version"
 msgstr "バージョン"
@@ -876,8 +875,7 @@ msgid ""
 "Content View Version number of the component. Either use this or --component-"
 "content-view-version-id option"
 msgstr ""
-"コンポーネントのコンテンツビューバージョン番号。これを使用するか、--"
-"component-content-view-version-id オプションを使用してください。"
+"コンポーネントのコンテンツビューバージョン番号。これを使用するか、--component-content-view-version-id オプションを使用してください"
 
 msgid "Select the latest version of the components content view is desired"
 msgstr "コンポーネントのコンテンツビューの最新版が必要な場合には選択します"
@@ -889,8 +887,7 @@ msgid ""
 "Please provide --component-content-view-version-id or --component-content-"
 "view-version or --latest for the latest version"
 msgstr ""
-"-component-content-view-version-id または --component-content-view-version を"
-"指定するか、最新版は --latest を指定してください。"
+"-component-content-view-version-id または --component-content-view-version を指定するか、最新版は --latest を指定してください"
 
 msgid "Content View Id"
 msgstr "コンテンツビュー ID"
@@ -984,21 +981,20 @@ msgid "Dependency Solving"
 msgstr "依存関係の解決"
 
 msgid "Content View Version is being republished with task %{id}."
-msgstr "タスク %{id} でコンテンツビューバージョンが再公開されています"
+msgstr "タスク %{id} でコンテンツビューバージョンが再公開されています。"
 
 msgid "Could not republish the Content View"
 msgstr "コンテンツビューを再公開できませんでした"
 
 msgid "Content view is being promoted with task %{id}."
-msgstr "タスク %{id} でコンテンツビューがプロモートされています"
+msgstr "タスク %{id} でコンテンツビューがプロモートされています。"
 
 msgid "Could not promote the content view"
 msgstr "コンテンツビューをプロモートできませんでした"
 
 msgid ""
 "force content view promotion and bypass lifecycle environment restriction"
-msgstr ""
-"コンテンツビューを強制的にプロモートしてライフサイクル環境の制限を無視する"
+msgstr "コンテンツビューを強制的にプロモートしてライフサイクル環境の制限を無視します"
 
 msgid "Name of the target environment"
 msgstr "ターゲット環境の名前"
@@ -1819,7 +1815,7 @@ msgid "Synchronization plan assigned."
 msgstr "同期プランが割り当てられました。"
 
 msgid "Could not assign synchronization plan"
-msgstr "同期プランを割り当てることができませんでした。"
+msgstr "同期プランを割り当てることができませんでした"
 
 msgid "Delete assignment sync plan and product"
 msgstr "割り当て同期プランおよび製品の削除"
@@ -1837,7 +1833,7 @@ msgid "Default Enabled?"
 msgstr "デフォルトで有効化しますか?"
 
 msgid "Override"
-msgstr "上書き"
+msgstr "オーバーライド"
 
 msgid "Location of the ansible collections requirements.yml file. "
 msgstr "Ansible コレクションの requirements.yml ファイルの場所。 "
@@ -1928,7 +1924,7 @@ msgid "Complete Mirroring"
 msgstr "完全ミラーリング"
 
 msgid "Not Synced"
-msgstr "同期なし"
+msgstr "同期されていません"
 
 msgid "Failed"
 msgstr "失敗"

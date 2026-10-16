@@ -162,7 +162,7 @@ msgid "URL"
 msgstr "URL"
 
 msgid "Download policy"
-msgstr ""
+msgstr "Download policy"
 
 msgid "Alternate Content Source updated."
 msgstr ""

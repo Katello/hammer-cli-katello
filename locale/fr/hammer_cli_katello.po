@@ -443,7 +443,7 @@ msgid "Container Image repos"
 msgstr "Référentiels d'images de conteneurs"
 
 msgid "Packages"
-msgstr "Packages"
+msgstr "Paquets"
 
 msgid "Package groups"
 msgstr "Groupes de paquets"
@@ -1184,7 +1184,7 @@ msgid "Reboot Suggested"
 msgstr "Redémarrage suggéré"
 
 msgid "Release"
-msgstr "Sortie"
+msgstr "Version"
 
 msgid "Solution"
 msgstr "Solution"
@@ -1823,7 +1823,7 @@ msgid "FAIL"
 msgstr "ÉCHEC"
 
 msgid "Sync State"
-msgstr "État de synchronisation"
+msgstr "État de Sync"
 
 msgid "Product created."
 msgstr "Produit créé."
