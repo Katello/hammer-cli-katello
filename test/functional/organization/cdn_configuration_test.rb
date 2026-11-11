@@ -43,4 +43,16 @@ describe HammerCLIKatello::Organization::ConfigureCdnCommand do
       run_cmd(@cmd + params).exit_code
     )
   end
+
+  %w(https://cdn-eu.redhat.com https://cdn-us.redhat.com).each do |url|
+    it "forwards #{url} unchanged for Red Hat CDN" do
+      org_id = '100'
+      params = ["--id=#{org_id}", "--type=redhat_cdn", "--url=#{url}"]
+
+      api_expects(:organizations, :cdn_configuration)
+        .with_params('id' => org_id, 'type' => 'redhat_cdn', 'url' => url)
+
+      assert_success(run_cmd(@cmd + params))
+    end
+  end
 end
