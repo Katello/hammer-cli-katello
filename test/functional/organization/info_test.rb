@@ -11,13 +11,14 @@ describe HammerCLIKatello::Organization::InfoCommand do
     { "type" => 'network_sync' }
   end
 
-  it "includes cdn configuration attributes" do
+  it "displays the selected CDN URL when the response includes a default URL" do
     org_id = 2
     params = ["--id=#{org_id}"]
     api_expects(:organizations, :index).returns(index_response([{'id' => org_id}]))
 
     cdn_configuration = {
-      "url" => "https://cdn.redhat.com",
+      "url" => "https://cdn-eu.redhat.com",
+      "default_url" => "https://cdn.redhat.com",
       "type" => "redhat_cdn"
     }
 
