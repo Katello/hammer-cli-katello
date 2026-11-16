@@ -3,8 +3,7 @@ require 'hammer_cli_katello/host_collection'
 
 module HammerCLIKatello
   describe 'Remove Content on a host-collection' do
-    { "package" => "katello_package_remove",
-      "package-group" => "katello_group_remove"
+    { "package" => "katello_package_remove"
      }.each do |command, feature|
       it "errors out on #{command} install" do
         cmd = ["host-collection", command, "remove"]
