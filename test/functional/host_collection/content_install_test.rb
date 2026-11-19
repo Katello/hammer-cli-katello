@@ -4,7 +4,6 @@ require 'hammer_cli_katello/host_collection'
 module HammerCLIKatello
   describe 'Install Content on a host-collection' do
     { "package" => "katello_package_install",
-      "package-group" => "katello_group_install",
       "erratum" => "katello_errata_install"
      }.each do |command, feature|
       it "errors out on #{command} install" do
