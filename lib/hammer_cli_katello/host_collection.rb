@@ -225,11 +225,6 @@ module HammerCLIKatello
                HammerCLIKatello::HostCollectionPackageCommand.desc,
                HammerCLIKatello::HostCollectionPackageCommand
 
-    require 'hammer_cli_katello/host_collection_package_group'
-    subcommand HammerCLIKatello::HostCollectionPackageGroupCommand.command_name,
-               HammerCLIKatello::HostCollectionPackageGroupCommand.desc,
-               HammerCLIKatello::HostCollectionPackageGroupCommand
-
     require 'hammer_cli_katello/host_collection_erratum'
     subcommand HammerCLIKatello::HostCollectionErratumCommand.command_name,
                HammerCLIKatello::HostCollectionErratumCommand.desc,
